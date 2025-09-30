@@ -187,3 +187,49 @@ python + postgreSQL
 | 熟悉数据库结构           | Siqi Li                |
 
 下次会议时间，预计：周二-9月30日
+
+
+
+## 第5次线上会议
+
+主题: 讨论项目情况，任务进度，进行新的任务
+
+会议时间: 2025年9月30日 19:00 
+
+结束时间：2025.9.30 21:00
+
+### 会议材料
+
+[Taiga REST API](https://docs.taiga.io/api.html#importers-github)
+
+![image-20250930211019284](./images/image-20250930211019284.png)
+
+![c2f4a3193e9578a9b8b7d2aea4fb29f2](./images/c2f4a3193e9578a9b8b7d2aea4fb29f2.png)
+
+### 会议结论
+
+EVENT配置失败，暂且搁置
+
+taiga与Github之间已经有auth授权与一次性的项目import，但是缺少update的功能
+
+任务：
+
+- 后端
+
+  用户上传Action配置文件，动态展示所需要的板块
+
+  用api看到workflow里边job数量和内容的，执行时间和是否success也能看到
+
+- 前端：
+
+  1. 进度条调试
+
+  ![image-20250930205357895](./images/image-20250930205357895.png)
+
+  2. CICD的可视化
+
+     适配用户的Action文件
+
+     ![image-20250930210127278](./images/image-20250930210127278.png)
+
+下次会议时间，预计：周日-10.5号

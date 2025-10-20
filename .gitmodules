@@ -1,3 +1,0 @@
-[submodule "taiga-back"]
-	path = taiga-back
-	url = https://github.com/taigaio/taiga-back.git

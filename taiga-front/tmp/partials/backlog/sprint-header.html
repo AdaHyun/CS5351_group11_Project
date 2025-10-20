@@ -1,0 +1,22 @@
+
+
+
+<div class="sprint-summary">
+  <div class="sprint-name-container">
+    <div class="sprint-name">
+      <button title="{{'BACKLOG.COMPACT_SPRINT' | translate}}" class="compact-sprint">
+        <tg-svg svg-icon="icon-arrow-right"></tg-svg>
+      </button><a ng-if="::isVisible" href="{{::taskboardUrl}}" title="{{'BACKLOG.GO_TO_TASKBOARD' | translate}}"><span>{{::name}}</span></a>
+    </div>
+    <div class="sprint-date">{{::estimatedDateRange}}</div>
+  </div>
+  <div class="sprint-points"><a ng-if="::isEditable" href="" title="{{'BACKLOG.EDIT_SPRINT' | translate}}" class="edit-sprint">
+      <tg-svg svg-icon="icon-edit"></tg-svg></a>
+    <div class="sprint-info">
+      <ul>
+        <li><span class="number">{{::closedPoints | number}}</span><span translate="BACKLOG.CLOSED_POINTS" class="description"></span></li>
+        <li><span class="number">{{::totalPoints | number}}</span><span translate="BACKLOG.TOTAL_POINTS" class="description"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>

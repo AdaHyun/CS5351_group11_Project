@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<div ng-controller="EpicDetailController as ctrl" ng-init="section='epics'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <div class="main detail">
+    <div ng-class="{blocked: epic.is_blocked}" class="detail-header-container">
+      <tg-detail-nav item="epic"></tg-detail-nav>
+      <div class="detail-header">
+        <tg-detail-header item="epic" section-name="sectionName" project="project" required-perm="modify_epic" ng-if="project &amp;&amp; epic" format="text"></tg-detail-header>
+        <div class="epic-selector"><span class="epic-selector-text">{{'EPIC.EPIC_COLOR' | translate}}</span>
+          <tg-color-selector is-color-required="true" init-color="epic.color" on-select-color="ctrl.onSelectColor(color)" required-perm="modify_epic" class="color-selector"></tg-color-selector>
+        </div>
+        <div class="subheader">
+          <tg-tag-line ng-if="epic &amp;&amp; project" project="project" item="epic" permissions="modify_epic" class="tags-block"></tg-tag-line>
+          <tg-created-by-display ng-model="epic" class="ticket-created-by"></tg-created-by-display>
+        </div>
+      </div>
+    </div>
+    <div ng-if="attachmentsReady" class="detail-content">
+      <section class="duty-content">
+        <tg-item-wysiwyg type="epic" model="epic" required-perm="modify_epic"></tg-item-wysiwyg>
+      </section>
+      <!-- Custom Fields-->
+      <tg-custom-attributes-values ng-model="epic" type="epic" project="project" required-edition-perm="modify_epic"></tg-custom-attributes-values>
+      <tg-attachments-full obj-id="epic.id" type="epic" project-id="projectId" edit-permission="modify_epic"></tg-attachments-full>
+      <tg-related-userstories project="immutableProject" userstories="userstories" epic="immutableEpic"></tg-related-userstories>
+      <tg-history-section ng-if="epic" type="epic" name="epic" id="epic.id" project="project"></tg-history-section>
+    </div>
+  </div>
+  <sidebar class="sidebar ticket-data">
+    <section class="ticket-header"><span tg-epic-status-display ng-model="epic" class="ticket-title"></span><span tg-epic-status-button ng-model="epic" class="detail-status"></span></section>
+    <section tg-assigned-to ng-model="epic" required-perm="modify_epic" class="ticket-section ticket-assigned-to"></section>
+    <section tg-watchers item="epic" active-users="activeUsers" on-watch="ctrl.onWatch" on-unwatch="ctrl.onUnwatch" required-perm="modify_epic" class="ticket-section ticket-watchers"></section>
+    <section class="ticket-section ticket-detail-settings">
+      <tg-us-team-requirement-button ng-model="epic"></tg-us-team-requirement-button>
+      <tg-us-client-requirement-button ng-model="epic"></tg-us-client-requirement-button>
+      <tg-block-button tg-check-permission="modify_epic" ng-model="epic"></tg-block-button>
+      <tg-delete-button tg-check-permission="delete_epic" on-delete-title="{{'EPIC.ACTION_DELETE' | translate}}" on-delete-go-to-url="onDeleteGoToUrl" ng-model="epic"></tg-delete-button>
+    </section>
+  </sidebar>
+  <div tg-lb-block ng-model="epic" title="EPIC.LIGHTBOX_TITLE_BLOKING_EPIC" class="lightbox lightbox-block"></div>
+</div>

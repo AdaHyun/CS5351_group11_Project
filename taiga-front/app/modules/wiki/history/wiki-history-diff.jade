@@ -1,0 +1,23 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.diff-status-wrapper(
+    ng-if="key === 'attachments'"
+)
+    include history-templates/history-attachments
+
+.diff-status-wrapper(
+    ng-if="key === 'content_diff'"
+)
+    p.diff(
+        ng-if="diff[0]"
+        ng-bind-html="diff[0]"
+    )
+    p.diff(
+        ng-if="diff[1]"
+        ng-bind-html="diff[1]"
+    )

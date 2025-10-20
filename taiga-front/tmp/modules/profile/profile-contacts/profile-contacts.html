@@ -1,0 +1,22 @@
+
+<section class="profile-contacts">
+  <div ng-if="vm.contacts === undefined">
+    <div class="spin"><img src="v-1758905376214/svg/spinner-circle.svg" alt="Loading..."/></div>
+  </div>
+  <div ng-if="vm.contacts &amp;&amp; !vm.contacts.size" class="empty-small"><img src="v-1758905376214/images/empty/empty_contact.png" alt="{{ 'USER.PROFILE.CONTACTS_EMPTY' | translate }}"/>
+    <div ng-if="!vm.isCurrentUser">
+      <p translate="USER.PROFILE.CONTACTS_EMPTY" translate-values="{username: vm.user.get('full_name_display')}"></p>
+    </div>
+    <div ng-if="vm.isCurrentUser">
+      <p translate="USER.PROFILE.CURRENT_USER_CONTACTS_EMPTY"></p>
+      <p translate="USER.PROFILE.CURRENT_USER_CONTACTS_EMPTY_EXPLAIN"></p>
+    </div>
+  </div>
+  <div tg-repeat="contact in ::vm.contacts" class="list-itemtype-user"><a tg-nav="user-profile:username=contact.get('username')" title="{{::contact.get('name')}}" class="list-itemtype-avatar"><img tg-avatar="contact" alt="{{::contact.get('full_name')}}"/></a>
+    <div class="list-itemtype-user-data">
+      <h2><a tg-nav="user-profile:username=contact.get('username')" title="{{::contact.get('full_name_display') }}">{{::contact.get('full_name_display')}}</a></h2>
+      <p>{{::contact.get('roles').join(", ")}}</p>
+      <p ng-if="contact.get('bio')" class="extra-info">{{::contact.get('bio')}}</p>
+    </div>
+  </div>
+</section>

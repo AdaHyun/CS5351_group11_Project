@@ -1,0 +1,27 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.avatar
+    img(
+        src!="<%- imgurl %>"
+        alt!="<%- full_name %>"
+        style!="background-color: <%- bg %>"
+    )
+    .user-data
+        .name
+            span(ng-non-bindable) <%- full_name %>
+            <% if (isOwner) { %>
+            tg-svg.owner-badge(
+                svg-icon="icon-badge",
+                svg-title-translate="COMMON.OWNER"
+            )
+            <% }  %>
+        .data
+            span.email <%- email %>
+            <% if (pending) { %>
+            span.pending <%- pending %>
+            <% }  %>

@@ -1,0 +1,30 @@
+
+<div class="assigned-inline">
+  <div ng-if="isAssigned">
+    <div ng-if="assignedUsers.length &gt; 1" class="user-list">
+      <div ng-repeat="assignedUser in assignedUsers" class="user-list-item"><img tg-avatar="assignedUser" title="{{assignedUser.full_name_display}}" alt="{{assignedUser.full_name_display}}"/></div>
+      <div ng-if="hiddenUsers" class="user-list-item counter"><span>+{{ hiddenUsers }}</span></div>
+    </div>
+    <div ng-if="assignedUsers.length == 1" class="ticket-user-list">
+      <div class="user-list-single">
+        <div class="user-list-avatar"><img tg-avatar="assignedUsers[0]" title="{{assignedUsers[0].full_name_display}}" alt="{{assignedUsers[0].full_name_display}}"/></div>
+        <div class="user-list-name"><span>{{ assignedUsers[0].full_name_display }}</span></div>
+        <tg-svg svg-icon="icon-close" title="{{'COMMON.ASSIGNED_TO.DELETE_ASSIGNMENT' | translate}}" ng-click="unassign(assignedUsers[0])" class="remove-user"></tg-svg>
+      </div>
+    </div>
+    <div class="add-assigned"><a href="" class="users-dropdown tg-add-assigned">
+        <tg-svg data-assigned-user-id="{{assignedUser.id}}" svg-icon="icon-add" title="{{'COMMON.ASSIGNED_USERS.ADD_ASSIGNED' | translate}}" class="add-assigned"></tg-svg><span>{{ "COMMON.ASSIGNED_USERS.ADD_ASSIGNED" | translate }}</span></a></div>
+  </div>
+  <div ng-if="!isAssigned" class="ticket-user-list">
+    <div class="user-list-single">
+      <div class="user-list-avatar"><img tg-avatar="" alt="{{ 'COMMON.ASSIGNED_TO.ASSIGN' | translate }}"/></div>
+      <div class="user-list-name"><a href="" title="{{ 'COMMON.ASSIGNED_TO.TITLE_ACTION_EDIT_ASSIGNMENT'|translate }}" class="users-dropdown user-assigned"><span class="assigned-name">{{ "COMMON.ASSIGNED_TO.ASSIGN" | translate }}</span></a>&nbsp;<span translate="COMMON.OR" class="read-only"></span>&nbsp;<a href="#" ng-click="selfAssign()" title="{{'COMMON.ASSIGNED_TO.SELF' | translate}}" class="self-assign"><span>{{ "COMMON.ASSIGNED_TO.SELF" | translate }}</span></a></div>
+    </div>
+  </div>
+  <div ng-class="{'multiple': assignedUsers.length &gt; 0}" class="pop-users popover">
+    <input type="text" data-maxlength="500" placeholder="{{'LIGHTBOX.ASSIGNED_TO.SEARCH' | translate}}" ng-model="usersSearch" class="users-search"/><a href="" data-user-id="{{ user.id }}" title="{{ user.full_name_display }}" ng-repeat="user in selected" ng-class="{'selected': selected.indexOf(user) == -1 }" class="user-list-single selected"><img style="background: {{user.avatar.bg }}" src="{{ user.avatar.url }}" class="user-list-avatar"/><span href="" title="{{ user.full_name_display }}" class="user-list-name">{{ user.full_name_display }}</span>
+      <tg-svg href="" ng-click="unassign(user)" ng-if="selected.indexOf(user) &gt; -1" svg-icon="icon-close" title="{{'COMMON.ASSIGNED_TO.DELETE_ASSIGNMENT' | translate}}" class="remove"></tg-svg></a><a href="" data-user-id="{{ user.id }}" title="{{ user.full_name_display }}" ng-repeat="user in users" ng-click="assign(user)" class="user-list-single"><img style="background: {{user.avatar.bg }}" src="{{ user.avatar.url }}" class="user-list-avatar"/><span href="" title="{{ user.full_name_display }}" class="user-list-name">{{ user.full_name_display }}</span>
+      <tg-svg href="" data-user-id="{{ user.id }}" ng-if="selected.indexOf(user) &gt; -1" svg-icon="icon-close" title="{{'COMMON.ASSIGNED_TO.DELETE_ASSIGNMENT' | translate}}" class="remove"></tg-svg></a>
+    <div ng-if="showMore" class="show-more"><span translate="COMMON.ASSIGNED_TO.TOO_MANY"></span></div>
+  </div>
+</div>

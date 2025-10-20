@@ -1,0 +1,21 @@
+
+<div ng-class="{'hidden': !epics.length}" tg-bind-scope="tg-bind-scope" class="search-result-table-container">
+  <div class="search-result-table-header">
+    <div class="row title">
+      <div translate="SEARCH.FILTER_EPICS" class="user-stories"></div>
+      <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+    </div>
+  </div>
+  <div class="search-result-table-body">
+    <div ng-repeat="epic in epics track by epic.id" class="row table-main">
+      <div class="user-stories">
+        <div class="user-story-name"><a href="" tg-nav="project-epics-detail:project=project.slug,ref=epic.ref"><span tg-bo-ref="epic.ref" class="ref"></span><span ng-bind-html="epic.subject | emojify"></span></a></div>
+      </div>
+      <div tg-listitem-epic-status="epic" class="status"></div>
+    </div>
+  </div>
+</div>
+<div ng-class="{'hidden': epics.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}"/>
+  <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+  <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+</div>

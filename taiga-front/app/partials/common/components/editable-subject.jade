@@ -1,0 +1,26 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.view-subject {{ item.subject }}
+    tg-svg.edit(
+        svg-icon="icon-edit",
+        title="{{'COMMON.EDIT' | translate}}"
+    )
+.edit-subject
+    input(
+        type="text"
+        ng-model="item.subject"
+        data-required="true"
+        data-maxlength="500"
+        ng-model-options="{ debounce: 200 }"
+    )
+    span.save-container
+       a.save(href="")
+           tg-svg(
+               svg-icon="icon-save"
+               svg-title-translate="COMMON.SAVE"
+           )

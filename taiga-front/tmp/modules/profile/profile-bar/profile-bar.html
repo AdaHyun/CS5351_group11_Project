@@ -1,0 +1,15 @@
+
+<section class="profile-bar">
+  <div ng-class="::{'is-current-user': vm.isCurrentUser}" class="profile-image-wrapper"><img tg-avatar-big="vm.user" alt="{{::vm.user.get('full_name')}}" class="profile-img"/><a title="{{ 'USER.PROFILE.USER_SETTINGS' | translate }}" tg-nav="user-settings-user-profile" translate="USER.PROFILE.USER_SETTINGS" class="profile-edition"></a></div>
+  <div class="profile-data">
+    <h1 ng-class="{'not-full-name': !vm.user.get('full_name')}">{{::vm.user.get("full_name_display")}}</h1>
+    <div class="username">@{{::vm.user.get("username")}}</div>
+    <h2>{{::vm.stats.get('roles').join(", ")}}</h2>
+  </div>
+  <div class="profile-stats">
+    <div class="stat"><span class="stat-number">{{::vm.stats.get('total_num_projects')}}</span><span translate="USER.PROFILE.PROJECTS" class="stat-name"></span></div>
+    <div class="stat"><span class="stat-number">{{::vm.stats.get('total_num_closed_userstories')}}</span><span translate="USER.PROFILE.CLOSED_US" class="stat-name"></span></div>
+    <div class="stat"><span class="stat-number">{{::vm.stats.get('total_num_contacts')}}</span><span translate="USER.PROFILE.CONTACTS" class="stat-name"></span></div>
+  </div>
+  <div ng-if="::vm.user.get('bio')" class="profile-quote"><span>{{::vm.user.get("bio") | limitTo:210 }}{{vm.user.get("bio").length < 210 ? '' : '...'}}</span></div>
+</section>

@@ -1,0 +1,52 @@
+
+<div class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <div class="single-project centered">
+    <section class="single-project-intro">
+      <div href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}" class="project-logo"><img tg-project-logo-big-src="vm.project" alt="{{::vm.project.get('name')}}"/></div>
+      <div class="single-project-title-wrapper">
+        <div class="intro-options">
+          <div class="intro-title">
+            <h1 class="project-name"> {{::vm.project.get("name")}}</h1>
+            <tg-svg ng-if="::vm.project.get('is_private')" svg-icon="icon-private" svgTitleTranslate:="svgTitleTranslate:" PROJECT.PRIVATE="PROJECT.PRIVATE"></tg-svg>
+          </div>
+          <div ng-if="vm.user" class="track-buttons-container">
+            <tg-like-project-button project="vm.project"></tg-like-project-button>
+            <tg-watch-project-button project="vm.project"></tg-watch-project-button>
+            <tg-contact-project-button ng-if="vm.project.get('is_contact_activated')" project="vm.project"></tg-contact-project-button>
+          </div>
+          <div ng-if="!vm.user" class="track-container">
+            <div class="list-itemtype-track"><span title="{{ 'PROJECT.LIKE_BUTTON.COUNTER_TITLE'|translate:{total:vm.project.get(&quot;total_fans&quot;)||0}:'messageformat' }}" class="list-itemtype-track-likers">
+                <tg-svg svg-icon="icon-like"></tg-svg><span>{{ ::vm.project.get('total_fans') }}</span></span><span title="{{ 'PROJECT.WATCH_BUTTON.COUNTER_TITLE'|translate:{total:vm.project.get(&quot;total_watchers&quot;)||0}:'messageformat' }}" class="list-itemtype-track-watchers">
+                <tg-svg svg-icon="icon-watch"></tg-svg><span>{{ ::vm.project.get('total_watchers') }}</span></span></div>
+          </div>
+        </div>
+        <p class="description">{{vm.project.get('description')}}</p>
+      </div>
+    </section>
+    <div ng-if="::vm.project.get('tags').size" class="single-project-tags tags-container"><span tg-repeat="tag in ::vm.project.get('tags')" class="tag"><span class="tag-name">{{::tag}}</span></span></div>
+    <div class="project-data">
+      <section ng-if="vm.project" class="timeline">
+        <div tg-user-timeline="tg-user-timeline" projectId="vm.project.get('id')"></div>
+      </section>
+      <section class="involved-data">
+        <div ng-if="vm.project.get('is_looking_for_people')" class="looking-for-people"><img src="v-1758905376214/images/looking-for-people.png" title="{{'PROJECT.LOOKING_FOR_PEOPLE' | translate}}"/>
+          <div class="looking-for-people-content">
+            <h3 ng-class="{'is-empty': !vm.project.get('looking_for_people_note')}">{{'PROJECT.LOOKING_FOR_PEOPLE' | translate}}</h3>
+            <p ng-if="vm.project.get('looking_for_people_note')">{{::vm.project.get('looking_for_people_note')}}</p>
+            <tg-contact-project-button ng-if="vm.isAuthenticated &amp;&amp; vm.project.get('is_contact_activated')" project="vm.project" layout="large"></tg-contact-project-button>
+            <div ng-if="!vm.isAuthenticated">
+              <p><a href="{{ vm.registerUrl }}" ng-if="vm.publicRegisterEnabled" title="{{ 'REGISTER_FORM.TITLE' | translate }}" translate="REGISTER_FORM.TITLE"></a></p>
+              <p><a href="{{ vm.loginUrl }}" title="{{ 'REGISTER_FORM.LINK_LOGIN' | translate }}" translate="REGISTER_FORM.LINK_LOGIN"></a></p>
+            </div>
+          </div>
+        </div>
+        <h2 class="title">{{"PROJECT.SECTION.TEAM" | translate}}</h2>
+        <ul class="involved-team">
+          <li tg-repeat="member in vm.members"><a tg-nav="user-profile:username=member.get('username')" title="{{::member.get('full_name')}}"><img tg-avatar="member" alt="{{::member.get('full_name')}}"/>
+              <tg-svg ng-if="member.get('id') == vm.project.getIn(['owner', 'id'])" svg-icon="icon-badge" svgTitleTranslate:="svgTitleTranslate:" COMMON.OWNER="COMMON.OWNER"></tg-svg></a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

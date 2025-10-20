@@ -1,0 +1,9 @@
+
+<div class="entry-wrapper"><img tg-avatar="entry.user" ng-alt="{{entry.user.name}}" class="entry-avatar"/>
+  <div class="entry-main">
+    <div class="entry-data"><span class="entry-creator">{{entry.user.full_name_display}}</span><span class="entry-date">{{entry.date | momentFormat:'DD MMM YYYY HH:mm'}}</span>
+      <tg-svg svg-icon="icon-arrow-down" ng-class="{'inactive': !displayFullEntry}" ng-click="displayFullEntry=!displayFullEntry" ng-show="entry.comment.length &gt;= 75" class="display-full-entry"></tg-svg>
+    </div>
+    <div ng-class="{'ellipsed': !displayFullEntry &amp;&amp; entry.comment.length &gt;= 75, 'blurry': entry.comment.length &gt;= 75 &amp;&amp; !displayFullEntry}" ng-bind-html="entry.comment | markdownToHTML" class="entry-text"></div>
+  </div>
+</div>

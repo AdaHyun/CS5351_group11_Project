@@ -1,0 +1,10 @@
+
+<div ng-class="{visible: vm.open}" class="live-announcement">
+  <div class="live-announcement-inner"><img src="v-1758905376214/images/notification-decoration.png" alt="Loading..." class="anouncement-decoration"/>
+    <div class="text">
+      <h2 class="title">{{vm.title}}</h2>
+      <p ng-bind-html="vm.desc" class="warning"></p><a ng-click="vm.close()" href="" ng-title="COMMON.CLOSE | translate" class="close">
+        <tg-svg svg-icon="icon-close"></tg-svg></a>
+    </div>
+  </div>
+</div>

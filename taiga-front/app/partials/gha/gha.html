@@ -1,0 +1,81 @@
+<div class="ghainspector" tg-main>
+  <div class="row">
+    <div class="col col-6">
+      <h2>{{ 'GHA.UPLOAD_TITLE' | translate }}</h2>
+      <p class="help">{{ 'GHA.UPLOAD_HELP' | translate }}</p>
+      <input type="file" onchange="angular.element(this).scope().onFileChange(this)" />
+      <div class="or">{{ 'GHA.OR' | translate }}</div>
+      <textarea ng-model="form.yaml" rows="10" style="width:100%" placeholder="name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4"></textarea>
+      <div style="margin-top:10px;">
+        <button class="btn btn-primary" ng-click="doPreview()">{{ 'GHA.BTN_PREVIEW' | translate }}</button>
+      </div>
+
+      <div class="preview" ng-if="preview">
+        <h3>{{ 'GHA.PREVIEW' | translate }}</h3>
+        <p><strong>{{ 'GHA.WORKFLOW_NAME' | translate }}:</strong> {{ preview.name || '—' }}</p>
+        <p><strong>{{ 'GHA.TRIGGERS' | translate }}:</strong> {{ preview.on | json }}</p>
+        <p><strong>{{ 'GHA.JOBS_COUNT' | translate }}:</strong> {{ preview.jobs_count }}</p>
+        <div class="cards">
+          <div class="card" ng-repeat="j in preview.jobs">
+            <div class="card-title">{{ j.name }} <small>({{ j.key }})</small></div>
+            <div>{{ 'GHA.RUNS_ON' | translate }}: {{ j.runs_on || '—' }}</div>
+            <div>{{ 'GHA.NEEDS' | translate }}: <span ng-if="j.needs && j.needs.length">{{ j.needs.join(', ') }}</span><span ng-if="!j.needs || !j.needs.length">—</span></div>
+            <div>{{ 'GHA.STEPS_COUNT' | translate }}: {{ j.steps_count }}</div>
+            <div ng-if="j.step_names && j.step_names.length">{{ 'GHA.STEP_NAMES' | translate }}: {{ j.step_names.join(', ') }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-6">
+      <h2>{{ 'GHA.RUNS_TITLE' | translate }}</h2>
+      <div class="form-grid">
+        <input type="text" ng-model="form.owner" placeholder="owner (org/user)" />
+        <input type="text" ng-model="form.repo" placeholder="repo" />
+        <input type="text" ng-model="form.workflow" placeholder="workflow (id or file, e.g., ci.yml)" />
+        <input type="number" ng-model="form.per_page" placeholder="per_page" min="1" max="20" />
+        <input type="password" ng-model="form.token" placeholder="GitHub Token (optional)" />
+      </div>
+      <div style="margin-top:10px;">
+        <button class="btn btn-default" ng-click="fetchRuns()">{{ 'GHA.BTN_FETCH_RUNS' | translate }}</button>
+      </div>
+
+      <div class="runs" ng-if="runs">
+        <h3>{{ 'GHA.RECENT_RUNS' | translate }} — {{ runs.repo }} / {{ runs.workflow }}</h3>
+        <div class="run" ng-repeat="r in runs.runs">
+          <div class="run-header">
+            <a ng-href="{{ r.html_url }}" target="_blank">#{{ r.id }}</a>
+            <span class="status status-{{ r.conclusion || r.status }}">{{ r.conclusion || r.status }}</span>
+            <span class="event">{{ r.event }}</span>
+            <span class="time">{{ r.created_at | date:'yyyy-MM-dd HH:mm' }}</span>
+          </div>
+          <div class="jobs">
+            <div class="job" ng-repeat="j in r.jobs">
+              <div class="job-title">{{ j.name }}</div>
+              <div class="job-status">{{ j.conclusion || j.status }}</div>
+              <div class="job-time">
+                {{ j.started_at | date:'HH:mm:ss' }} - {{ j.completed_at | date:'HH:mm:ss' }}
+              </div>
+              <div class="job-steps" ng-if="j.steps && j.steps.length">
+                <div class="step" ng-repeat="s in j.steps">
+                  <span class="step-name">{{ s.name }}</span>
+                  <span class="step-status">{{ s.conclusion || s.status }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" ng-if="error" style="margin-top:10px;">{{ error }}</div>
+</div>
+

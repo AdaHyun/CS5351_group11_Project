@@ -1,0 +1,26 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-contact-project {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+  .lightbox-contact-project-container {
+    max-width: 600px;
+    text-align: center;
+    width: 90%; }
+  .lightbox-contact-project-logo {
+    width: 5rem; }
+  .lightbox-contact-project-title {
+    margin: 0; }
+  .lightbox-contact-project-name {
+    font-size: 1.4rem;
+    color: #008AA8;
+    margin-bottom: 1rem; }
+  .lightbox-contact-project-message {
+    max-height: 400px; }
+  .lightbox-contact-project-button {
+    display: block;
+    margin-top: .5rem;
+    width: 100%; }

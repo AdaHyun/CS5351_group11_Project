@@ -1,0 +1,5 @@
+<span class="detail-status-inner js-edit-status <% if(editable){ %>clickable<% }%>"><span style="background-color:<%- status.color %>"><span class="e2e-status"><%- status.name %></span><% if(editable){ %>
+    <tg-svg svg-icon="icon-arrow-down"></tg-svg><% }%></span></span>
+<ul class="pop-status popover"><% _.each(statuses, function(st) { %>
+  <li><a href="" title="<%- st.name %>" data-status-id="<%- st.id %>" class="status"><span class="item-text"><%- st.name %></span></a></li><% }); %>
+</ul>

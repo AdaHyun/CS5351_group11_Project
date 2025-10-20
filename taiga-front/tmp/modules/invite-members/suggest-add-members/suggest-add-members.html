@@ -1,0 +1,12 @@
+
+<div class="add-member-suggest">
+  <form class="add-member-suggest-filter">
+    <input type="text" ng-model="vm.contactQuery" placeholder="{{'LIGHTBOX.ADD_MEMBER.PLACEHOLDER' | translate}}" ng-keyup="vm.filterContacts()" class="add-member-suggest-filter-input"/><span ng-if="!vm.filteredContacts.size" ng-class="{'to-send': vm.isEmail()}" translate="LIGHTBOX.ADD_MEMBER.ADD_EMAIL" class="add-member-suggest-filter-hint"></span>
+    <button ng-click="vm.onInviteEmail({email: vm.contactQuery})" ng-if="vm.isEmail()" class="add-member-suggest-filter-addmail e2e-add-member-suggest-filter-addmail">
+      <tg-svg svg-icon="icon-add-user"></tg-svg>
+    </button>
+  </form>
+  <ul class="add-member-suggest-list">
+    <li tg-repeat="contact in vm.filteredContacts" ng-click="vm.setInvited(contact)" class="add-member-suggest-single e2e-add-member-suggest-single"><img tg-avatar="contact" alt="{{contact.get('full_name_display')}}" class="add-member-suggest-avatar"/><span class="add-member-suggest-name">{{contact.get('full_name_display')}}</span></li>
+  </ul>
+</div>

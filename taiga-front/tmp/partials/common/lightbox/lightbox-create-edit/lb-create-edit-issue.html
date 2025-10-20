@@ -1,0 +1,13 @@
+
+<section tg-assigned-to-inline="tg-assigned-to-inline" ng-model="obj" required-perm="modify_{{ objType }}" class="ticket-assigned-to"></section>
+<div class="ticket-data-container">
+  <tg-issue-type-button not-auto-save="true" ng-model="obj" class="ticket-status"></tg-issue-type-button>
+  <tg-issue-severity-button not-auto-save="true" ng-model="obj" class="ticket-status"></tg-issue-severity-button>
+  <tg-issue-priority-button not-auto-save="true" ng-model="obj" class="ticket-status"></tg-issue-priority-button>
+</div>
+<div class="ticket-detail-settings">
+  <tg-due-date-popover due-date="obj.due_date" is-closed="obj.is_closed" item="obj" obj-type="issue" not-auto-save="true"></tg-due-date-popover>
+  <button type="button" ng-class="{ 'item-unblock': obj.is_blocked, 'item-block': !obj.is_blocked }" class="btn-icon is-blocked">
+    <tg-svg svg-icon="icon-lock"></tg-svg>
+  </button>
+</div>

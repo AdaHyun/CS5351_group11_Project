@@ -1,0 +1,25 @@
+
+<section class="notifications-list">
+  <div ng-if="vm.loading">
+    <div class="spin"><img src="v-1758905376214/svg/spinner-circle.svg" alt="Loading..."/></div>
+  </div>
+  <div ng-if="!vm.loading">
+    <div ng-if="vm.notificationsList.size == 0 &amp;&amp; !vm.onlyUnread" class="empty"><span>{{ 'EVENTS.NO_EVENTS_YET' | translate }}</span></div>
+    <div ng-if="vm.notificationsList.size &gt; 0" infinite-scroll="vm.loadNotifications()" infinite-scroll-disabled="vm.scrollDisabled" ng-attr-infinite-scroll-container="vm.infiniteScrollContainer" ng-attr-infinite-scroll-distance="vm.infiniteScrollDistance">
+      <div tg-repeat="notification in vm.notificationsList track by $index" ng-class="{'new': !notification.get('read')}" class="entry">
+        <div class="entry-avatar">
+          <!-- profile image with url-->
+          <div ng-if="notification.getIn(['data', 'user', 'is_profile_visible'])" class="profile-picture"><a tg-nav="user-profile:username=notification.getIn(['data', 'user', 'username'])" title="{{::notification.getIn(['data', 'user', 'name']) }}"><img tg-avatar="notification.getIn(['data', 'user'])" alt="{{::notification.getIn(['data', 'user', 'name'])}}"/></a></div>
+          <!-- profile image without url-->
+          <div ng-if="!notification.getIn(['data', 'user', 'is_profile_visible'])" class="profile-picture"><img tg-avatar="notification.getIn(['data', 'user'])" alt="{{::notification.getIn(['data', 'user', 'name'])}}"/></div>
+        </div>
+        <div class="entry-content">
+          <p tg-compile-html="notification.get('title_html')"></p>
+          <div class="entry-extra-data"><a href="" ng-click="vm.setAsRead(notification, notification.get('projectUrl'))" class="entry-project">{{::notification.getIn(['data', 'project', 'name'])}}</a>
+            <div class="entry-date">{{::notification.get('created') | momentFromNow}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

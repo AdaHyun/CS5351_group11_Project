@@ -1,0 +1,51 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.home-wrapper {
+  display: flex; }
+  @media screen and (max-width: 1023px) {
+    .home-wrapper {
+      flex-direction: column; } }
+  .home-wrapper .duty-summary {
+    flex: 1; }
+    @media screen and (max-width: 1215px) {
+      .home-wrapper .duty-summary {
+        flex-direction: column; } }
+  .home-wrapper .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1.5rem; }
+    @media screen and (max-width: 1023px) {
+      .home-wrapper .dashboard-container {
+        margin-right: 0; } }
+    @media screen and (max-width: 768px) {
+      .home-wrapper .dashboard-container {
+        flex-direction: column; } }
+  .home-wrapper .watching-container,
+  .home-wrapper .working-on-container {
+    flex: 1; }
+  .home-wrapper .working-on-container {
+    margin-right: 2rem; }
+    @media screen and (max-width: 768px) {
+      .home-wrapper .working-on-container {
+        margin-right: 0; } }
+  .home-wrapper .toggle-hidden {
+    border-top: 1px solid #A9AABC;
+    margin: 2rem 0;
+    padding-top: .5rem;
+    text-align: center; }
+  .home-wrapper .project-list {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0; }
+  .home-wrapper .see-more-projects-btn {
+    display: block; }
+  .home-wrapper .title-bar {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    align-content: center;
+    background: #F1F1F4;
+    display: flex;
+    margin: 0 0 .5rem;
+    padding: .5rem 1rem; }

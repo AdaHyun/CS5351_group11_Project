@@ -1,0 +1,105 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-related-userstory-row {
+  font-size: .875rem;
+  align-items: center;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  padding: .5rem 0 .5rem .5rem; }
+  tg-related-userstory-row.sortable {
+    cursor: move; }
+    tg-related-userstory-row.sortable:hover {
+      background: #E9F6F3; }
+      tg-related-userstory-row.sortable:hover .userstory-settings {
+        opacity: 1;
+        transition: all .2s ease-in; }
+      tg-related-userstory-row.sortable:hover .icon-drag {
+        opacity: 1; }
+    tg-related-userstory-row.sortable .icon-drag {
+      width: 0.75rem;
+      height: 0.75rem;
+      cursor: move;
+      fill: #E2E3E9;
+      opacity: 0;
+      transition: opacity .1s; }
+  tg-related-userstory-row .status {
+    flex-shrink: 0;
+    position: relative;
+    width: 125px; }
+  tg-related-userstory-row .assigned-to-column {
+    flex-shrink: 0;
+    width: 150px; }
+    tg-related-userstory-row .assigned-to-column img {
+      flex-basis: 35px;
+      height: 35px;
+      width: 35px; }
+  tg-related-userstory-row .project {
+    cursor: pointer;
+    flex-basis: 100px; }
+    tg-related-userstory-row .project img {
+      width: 40px; }
+  tg-related-userstory-row .userstory-name {
+    display: flex;
+    flex: 1;
+    margin-right: 1rem; }
+    tg-related-userstory-row .userstory-name a {
+      cursor: pointer; }
+  tg-related-userstory-row .closed {
+    border-left: 10px solid #E2E3E9;
+    color: #E2E3E9; }
+    tg-related-userstory-row .closed a,
+    tg-related-userstory-row .closed svg {
+      fill: #E2E3E9; }
+    tg-related-userstory-row .closed .userstory-name a {
+      color: #E2E3E9;
+      text-decoration: line-through; }
+  tg-related-userstory-row .blocked {
+    background: rgba(255, 160, 160, 0.2);
+    border-left: 10px solid #ffa0a0; }
+  tg-related-userstory-row .userstory-settings {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    opacity: 0;
+    width: 60px; }
+    tg-related-userstory-row .userstory-settings svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: #70728F;
+      margin-right: .5rem;
+      transition: fill .2s ease-in; }
+      tg-related-userstory-row .userstory-settings svg:hover {
+        fill: #5A5B72; }
+    tg-related-userstory-row .userstory-settings a:hover {
+      cursor: pointer; }
+  tg-related-userstory-row .delete-userstory:hover .icon-trash {
+    fill: #E44057; }
+  tg-related-userstory-row .avatar {
+    align-items: center;
+    display: flex; }
+    tg-related-userstory-row .avatar img {
+      flex-basis: 35px;
+      height: 35px;
+      width: 35px; }
+    tg-related-userstory-row .avatar figcaption {
+      margin-left: .5rem; }
+  tg-related-userstory-row .related-text {
+    display: inline-flex;
+    flex: 1;
+    margin: 0 .5rem 0 0; }
+    tg-related-userstory-row .related-text .related-ref {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      margin-inline-end: 1ch; }
+    tg-related-userstory-row .related-text .related-subject {
+      align-items: center;
+      color: #2E3440;
+      display: flex;
+      margin-inline-end: .75rem; }
+    tg-related-userstory-row .related-text:hover .related-ref {
+      color: #2E3440; }
+    tg-related-userstory-row .related-text:hover .related-subject {
+      color: #008AA8; }

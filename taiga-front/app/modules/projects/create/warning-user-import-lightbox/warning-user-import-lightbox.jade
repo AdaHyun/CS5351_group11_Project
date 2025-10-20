@@ -1,0 +1,24 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close(on-close="onClose()")
+
+.warning-users-import-lightbox
+    h1.warning-users-import-title(translate="PROJECT.IMPORT.WARNING.TITLE")
+    p(translate="PROJECT.IMPORT.WARNING.DESCRIPTION")
+    .actions
+        button.btn-small(
+            variant="secondary",
+            translate="PROJECT.IMPORT.WARNING.CHECK",
+            ng-click="onClose()"
+        )
+        button.btn-small(
+            variant="primary",
+            type="submit",
+            translate="PROJECT.IMPORT.IMPORT",
+            ng-click="onConfirm()"
+        )

@@ -1,0 +1,25 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+section.duty-custom-fields(ng-show="ctrl.customAttributes.length")
+    .custom-fields-header
+        span(translate="COMMON.CUSTOM_ATTRIBUTES.CUSTOM_FIELDS")
+        a.collapse(
+            href=""
+            ng-class="{'open': !collapsed}"
+            ng-click="toggleCollapse()"
+        )
+            tg-svg(svg-icon="icon-arrow-down")
+
+    .custom-fields-body(
+        ng-show="!collapsed"
+    )
+        .custom-attribute(
+            ng-repeat="attr in ctrl.customAttributes"
+            tg-custom-attribute-value="ctrl.getAttributeValue(attr)"
+            required-edition-perm!="<%- requiredEditionPerm %>"
+        )

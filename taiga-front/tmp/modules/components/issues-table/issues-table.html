@@ -1,0 +1,124 @@
+
+<section tg-check-permission="add_issue" ng-class="{'in-taskboard': ctrl.sprintIssues, 'empty': !ctrl.issues.length}" class="issues-options">
+  <div ng-if="ctrl.sprintIssues" class="issues-options-start">
+    <div class="sprint-issues-title">
+      <tg-svg svg-icon="icon-issues"></tg-svg><span class="sprint-issues-title-txt">Sprint Issues</span>
+    </div>
+    <div id="show-tags" class="display-tags-button">
+      <div ng-class="{'active': ctrl.showTags}" class="check js-check">
+        <input type="checkbox" id="show-tags-input" ng-checked="ctrl.showTags" ng-model="ctrl.showTags" ng-change="ctrl.toggleTags()"/>
+        <div></div>
+      </div>
+      <label for="show-tags-input" translate="BACKLOG.TAGS.SHOW"></label>
+    </div>
+  </div>
+  <div class="new-issue">
+    <button ng-class="{'btn-small': !ctrl.sprintIssues, 'btn-board': ctrl.sprintIssues}" type="button" variant="primary" ng-click="ctrl.onAddNewIssue()">
+      <tg-svg svg-icon="icon-add"></tg-svg><span ng-if="!ctrl.sprintIssues">{{"ISSUES.ACTION_NEW_ISSUE" | translate}}</span>
+    </button>
+    <button ng-class="{'btn-icon': !ctrl.sprintIssues, 'btn-board': ctrl.sprintIssues}" type="button" variant="secondary" ng-click="ctrl.onAddIssuesInBulk()">
+      <tg-svg svg-icon="icon-bulk"></tg-svg>
+    </button>
+  </div>
+</section>
+<section ng-class="{empty: !ctrl.issues.length}" class="issues-table basic-table">
+  <div class="row title">
+    <div data-fieldname="type" ng-if="!ctrl.sprintIssues" class="level-field"><span class="wide">{{"ISSUES.TABLE.COLUMNS.TYPE" | translate}}</span>
+      <div class="mobile">
+        <div class="tooltip pop-help">{{"ISSUES.TABLE.COLUMNS.TYPE" | translate}}</div><span class="first-letter">{{"ISSUES.TABLE.COLUMNS.TYPE" | translate}}</span>
+      </div>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="severity" ng-if="!ctrl.sprintIssues" class="level-field"><span class="wide">{{"ISSUES.TABLE.COLUMNS.SEVERITY" | translate}}</span>
+      <div class="mobile">
+        <div class="tooltip pop-help">{{"ISSUES.TABLE.COLUMNS.SEVERITY" | translate}}</div><span class="first-letter">{{"ISSUES.TABLE.COLUMNS.SEVERITY" | translate}}</span>
+      </div>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="priority" ng-if="!ctrl.sprintIssues" class="level-field"><span class="wide">{{"ISSUES.TABLE.COLUMNS.PRIORITY" | translate}}</span>
+      <div class="mobile">
+        <div class="tooltip pop-help">{{"ISSUES.TABLE.COLUMNS.PRIORITY" | translate}}</div><span class="first-letter">{{"ISSUES.TABLE.COLUMNS.PRIORITY" | translate}}</span>
+      </div>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="ref" class="subject"><span>{{"ISSUES.TABLE.COLUMNS.ISSUE" | translate}}</span>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="status" class="issue-field"><span>{{"ISSUES.TABLE.COLUMNS.STATUS" | translate}}</span>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div ng-if="ctrl.sprintIssues" data-fieldname="attachments" class="attachments-field skip-issuesOrder"><span>{{"ISSUES.TABLE.COLUMNS.ATTACHMENTS" | translate}}</span>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="modified_date" class="modified-field"><span>{{"ISSUES.TABLE.COLUMNS.MODIFIED" | translate}}</span>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div data-fieldname="assigned_to" class="assigned-field"><span>{{"ISSUES.TABLE.COLUMNS.ASSIGNED_TO" | translate}}</span>
+      <svg viewBox="0 0 16 16">
+        <path d="M11.6232 6.57199C12.5713 6.57199 12.9872 5.37569 12.2435 4.7876L8.62027 1.92248C8.25672 1.635 7.74328 1.635 7.37973 1.92248L3.75652 4.7876C3.01283 5.37569 3.42868 6.57199 4.37679 6.57199L11.6232 6.57199Z" class="arrow-up"></path>
+        <path d="M11.6232 9.42892C12.5713 9.42892 12.9872 10.6252 12.2435 11.2133L8.62027 14.0784C8.25672 14.3659 7.74328 14.3659 7.37973 14.0784L3.75652 11.2133C3.01283 10.6252 3.42868 9.42892 4.37679 9.42892H11.6232Z" class="arrow-down"></path>
+      </svg>
+    </div>
+    <div ng-if="ctrl.sprintIssues" class="options-field skip-issuesOrder"></div>
+  </div>
+  <div ng-repeat="issue in ctrl.issues track by issue.id" ng-class="{'is-blocked': issue.is_blocked}" class="row table-main">
+    <div tg-listitem-type="issue" ng-if="!ctrl.sprintIssues" class="level-field"></div>
+    <div tg-listitem-severity="issue" ng-if="!ctrl.sprintIssues" class="level-field"></div>
+    <div tg-listitem-priority="issue" ng-if="!ctrl.sprintIssues" class="level-field"></div>
+    <div class="subject"><a href="" tg-nav="project-issues-detail:project=project.slug,ref=issue.ref" title="#{{ ::issue.ref }} {{ ::issue.subject }}"><span class="issue-text"><span tg-bo-ref="::issue.ref" class="issue-ref"></span><span ng-bind-html="issue.subject | emojify" class="issue-subject"></span></span><span ng-if="issue.is_blocked" ng-attr-title="{{::issue.blocked_note}}" class="blocked">
+          <tg-svg svg-icon="icon-lock"></tg-svg></span>
+        <tg-due-date ng-if="issue.due_date" due-date="::issue.due_date" is-closed="::issue.is_closed" obj-type="issue" class="due-date"></tg-due-date><span ng-if="ctrl.showTags" ng-attr-title="{{tag[0]}}" ng-repeat="tag in issue.tags" ng-style="{background: tag[1]}" ng-class="{'last':$last}" class="tag">{{tag[0]}}</span></a></div>
+    <div tg-issue-status-inline-edition="issue" class="issue-field"><a href="" title="{{'ISSUES.TABLE.TITLE_ACTION_CHANGE_STATUS' | translate}}" class="issue-status"><span class="issue-status-bind"></span>
+        <tg-svg tg-check-permission="modify_issue" svg-icon="icon-arrow-down"></tg-svg></a></div>
+    <div ng-if="ctrl.sprintIssues" title="{{ 'ISSUES.TABLE.COLUMNS.ATTACHMENTS' | translate }}" class="attachments-field"><span>{{ issue.attachments.length }}</span>
+      <tg-svg svg-icon="icon-paperclip"></tg-svg>
+    </div>
+    <div title="{{ issue.modified_date|momentFormat:'DD MMM YYYY HH:mm' }}" class="modified-field">{{ issue.modified_date|momentFormat:'DD MMM YYYY'}}</div>
+    <div tg-issue-assigned-to-inline-edition="issue" class="assigned-field">
+      <div title="{{'ISSUES.TABLE.TITLE_ACTION_ASSIGNED_TO' | translate}}" class="issue-assignedto">
+        <figure class="avatar"></figure>
+        <tg-svg tg-check-permission="modify_issue" svg-icon="icon-arrow-down"></tg-svg>
+      </div>
+    </div>
+    <div ng-if="ctrl.sprintIssues" class="options-field">
+      <button type="button" ng-click="displayOptions(issue.id)" ng-class="{'active': issueOptions == issue.id}" class="options-button">
+        <tg-svg svg-icon="icon-more-vertical"></tg-svg>
+      </button>
+      <div ng-show="issueOptions == issue.id" ng-mouseleave="hideOptions()" ng-mouseenter="displayOptions(issue.id)" class="options">
+        <button ng-click="ctrl.edit(issue)" type="button" class="option">
+          <tg-svg svg-icon="icon-edit"></tg-svg><span>{{'COMMON.EDIT' | translate}}</span>
+        </button>
+        <button ng-click="ctrl.delete(issue)" type="button" class="option">
+          <tg-svg svg-icon="icon-trash"></tg-svg><span>{{'COMMON.DELETE' | translate}}</span>
+        </button>
+        <button ng-click="ctrl.detach(issue)" type="button" class="option">
+          <tg-svg svg-icon="icon-detach"></tg-svg><span>{{'COMMON.CARD.DETACH_ISSUE_FROM_SPRINT' | translate}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section ng-if="ctrl.issues != undefined &amp;&amp; ctrl.issues.length == 0 &amp;&amp; !ctrl.sprintIssues" class="empty-large"><img src="v-1758905376214/images/empty/empty_moon.png" alt="{{ISSUES.TABLE.EMPTY.TITLE | translate }}"/>
+  <p translate="ISSUES.TABLE.EMPTY.TITLE" class="title"></p><a href="" ng-click="ctrl.onAddNewIssue()" tg-check-permission="add_issue" title="{{ ISSUES.ACTION_NEW_ISSUE | translate }}" translate="ISSUES.TABLE.EMPTY.SUBTITLE"></a>
+</section>

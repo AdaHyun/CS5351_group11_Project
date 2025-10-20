@@ -1,0 +1,15 @@
+
+<tg-svg svg-icon="icon-drag" tg-check-permission="modify_epic" class="icon-drag"></tg-svg>
+<div class="userstory-name"><a tg-nav="project-userstories-detail:project=vm.userstory.getIn(['project_extra_info', 'slug']),ref=vm.userstory.get('ref')"><span ng-attr-title="{{vm.userstory.get('subject')}}" class="related-text"><span class="related-ref">{{ '#'+vm.userstory.get('ref') }}</span><span class="related-subject">{{ vm.userstory.get('subject') | emojify}}</span></span>
+    <tg-belong-to-epics format="pill" ng-if="vm.userstory.get('epics')" epics="vm.userstory.get('epics')"></tg-belong-to-epics></a>
+</div>
+<div class="userstory-settings"><a tg-check-permission="modify_epic" title="{{'US.REMOVE_RELATIONSHIP_WITH_EPIC' | translate}}" href="" ng-click="vm.onDeleteRelatedUserstory()" class="delete-userstory e2e-delete-userstory">
+    <tg-svg svg-icon="icon-broken-link"></tg-svg></a></div>
+<div tg-nav="project:project=vm.userstory.getIn(['project_extra_info', 'slug'])" class="project"><img tg-project-logo-small-src="::vm.userstory.get('project_extra_info')" alt="{{::vm.userstory.getIn(['project_extra_info', 'name'])}}"/></div>
+<div class="status"><span ng-style="{'color': vm.userstory.getIn(['status_extra_info', 'color'])}" class="userstory-status">{{vm.userstory.getIn(['status_extra_info', 'name'])}}</span></div>
+<div class="assigned-to-column">
+  <figure class="avatar"><img style="background-color: {{ vm.avatar.bg }}" src="{{ vm.avatar.url }}" alt="{{ vm.avatar.full_name_display }}"/>
+    <figcaption>{{ vm.getAssignedToFullNameDisplay() }}</figcaption>
+  </figure>
+</div>
+<div tg-related-userstories-create-form="tg-related-userstories-create-form"></div>

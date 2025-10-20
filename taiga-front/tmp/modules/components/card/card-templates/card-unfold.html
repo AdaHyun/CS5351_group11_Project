@@ -1,0 +1,6 @@
+
+<div ng-click="!$event.ctrlKey &amp;&amp; !$event.metaKey &amp;&amp; vm.toggleFold()" ng-if="vm.visible('unfold') &amp;&amp; (vm.hasTasks() || vm.hasVisibleAttachments())" role="button" class="card-unfold ng-animate-disabled">
+  <tg-svg ng-if="vm.zoomLevel == 2" svg-icon="{{ !vm.item.get('foldStatusChanged') ? 'icon-arrow-down' : 'icon-arrow-up' }}"></tg-svg>
+  <tg-svg ng-if="vm.zoomLevel != 2" svg-icon="{{ vm.item.get('foldStatusChanged') ? 'icon-arrow-down' : 'icon-arrow-up' }}"></tg-svg>
+</div>
+<div tg-loading="vm.item.get('loading-extra')" class="loading-extra"></div>

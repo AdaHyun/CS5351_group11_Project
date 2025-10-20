@@ -1,0 +1,6 @@
+
+<div>
+  <nav class="profile-content-tabs"><a href="" ng-repeat="tab in ::vm.tabs" title="{{tab.title}}" ng-click="vm.toggleTab(tab)" ng-class="{active: tab.active}" class="tab">
+      <tg-svg svg-icon="{{::tab.icon}}"></tg-svg><span>{{::tab.name}}</span></a></nav>
+  <ng-transclude></ng-transclude>
+</div>

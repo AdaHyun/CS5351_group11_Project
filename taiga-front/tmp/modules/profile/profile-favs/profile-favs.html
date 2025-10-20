@@ -1,0 +1,25 @@
+
+<section class="profile-favs">
+  <div class="profile-filter">
+    <div ng-if="::vm.enableFilterByTextQuery" class="searchbox">
+      <tg-svg svg-icon="icon-search"></tg-svg>
+      <input type="text" ng-model="vm.q" ng-change="vm.filterByTextQuery()" placeholder="{{ 'USER.PROFILE_FAVS.FILTER_INPUT_PLACEHOLDER'|translate }}"/>
+    </div>
+    <div class="filters"><a href="" ng-if="::vm.enableFilterByAll" ng-click="vm.showAll()" ng-class="{active: vm.type === null}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_ALL_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_ALL'|translate }}"></a><a href="" ng-if="::vm.enableFilterByProjects" ng-click="vm.showProjectsOnly()" ng-class="{active: vm.type === 'project'}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_PROJECTS_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_PROJECTS'|translate }}"></a><a href="" ng-if="::vm.enableFilterByEpics" ng-click="vm.showEpicsOnly()" ng-class="{active: vm.type === 'epic'}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_EPICS_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_EPICS'|translate }}"></a><a href="" ng-if="::vm.enableFilterByUserStories" ng-click="vm.showUserStoriesOnly()" ng-class="{active: vm.type === 'userstory'}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_USER_STORIES_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_USER_STORIES'|translate }}"></a><a href="" ng-if="::vm.enableFilterByTasks" ng-click="vm.showTasksOnly()" ng-class="{active: vm.type === 'task'}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_TASKS_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_TASKS'|translate }}"></a><a href="" ng-if="::vm.enableFilterByIssues" ng-click="vm.showIssuesOnly()" ng-class="{active: vm.type === 'issue'}" title="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_ISSUES_TITLE'|translate }}" translate="{{ 'USER.PROFILE_FAVS.FILTER_TYPE_ISSUES'|translate }}"></a></div>
+  </div>
+  <div infinite-scroll="vm.loadItems()" infinite-scroll-disabled="vm.scrollDisabled">
+    <div tg-repeat="item in vm.items track by $index" ng-switch="item.get('type')">
+      <div ng-switch-when="project" tg-fav-item="item" item-type="project"></div>
+      <div ng-switch-when="epic" tg-fav-item="item" item-type="epic"></div>
+      <div ng-switch-when="userstory" tg-fav-item="item" item-type="userstory"></div>
+      <div ng-switch-when="task" tg-fav-item="item" item-type="task"></div>
+      <div ng-switch-when="issue" tg-fav-item="item" item-type="issue"></div>
+    </div>
+  </div>
+  <div ng-if="vm.isLoading">
+    <div class="spin"><img src="v-1758905376214/svg/spinner-circle.svg" alt="{{ 'COMMON.LOADING'|translate }}"/></div>
+  </div>
+  <div ng-if="vm.hasNoResults &amp;&amp; !vm.isLoading" class="empty-small"><img ng-if="vm.tabName === 'likes'" src="v-1758905376214/images/empty/empty_like.png" alt="{{ 'USER.PROFILE_FAVS.EMPTY_TITLE' | translate }}"/><img ng-if="vm.tabName === 'upvotes'" src="v-1758905376214/images/empty/empty_upvote.png" alt="{{ 'USER.PROFILE_FAVS.EMPTY_TITLE' | translate }}"/><img ng-if="vm.tabName === 'watchers'" src="v-1758905376214/images/empty/empty_watch.png" alt="{{ 'USER.PROFILE_FAVS.EMPTY_TITLE' | translate }}"/>
+    <p class="title">{{ 'USER.PROFILE_FAVS.EMPTY_TITLE' | translate }}</p>
+  </div>
+</section>

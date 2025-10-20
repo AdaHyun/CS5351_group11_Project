@@ -1,0 +1,244 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.ticket-estimation .points-per-role {
+  display: flex;
+  flex-direction: column; }
+
+.ticket-estimation .ticket-role-points {
+  font-size: .875rem;
+  background: #F9F9FB;
+  color: #70728F;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .1rem;
+  min-height: 2rem;
+  padding: .5rem;
+  position: relative; }
+  .ticket-estimation .ticket-role-points:last-child {
+    background: #E5E9F0;
+    border-bottom: 0; }
+    .ticket-estimation .ticket-role-points:last-child::first-letter {
+      text-transform: uppercase; }
+  .ticket-estimation .ticket-role-points .points {
+    color: #4C566A;
+    overflow: hidden;
+    padding-left: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.ticket-estimation .popover {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  background: #FFFFFF;
+  border: 1px solid #D8DEE9;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+  color: #008AA8;
+  display: none;
+  left: 0.5rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem;
+  position: absolute;
+  text-align: "";
+  top: 100%;
+  width: 188px;
+  z-index: 2; }
+  .ticket-estimation .popover:hover {
+    color: #70728F; }
+  .ticket-estimation .popover a {
+    padding: .25rem; }
+  .ticket-estimation .popover li {
+    margin-bottom: .25rem; }
+    .ticket-estimation .popover li:last-child {
+      margin-bottom: 0; }
+    .ticket-estimation .popover li:hover {
+      background: #ECEFF4;
+      color: #70728F; }
+      .ticket-estimation .popover li:hover a {
+        color: #70728F; }
+  .ticket-estimation .popover.horizontal li {
+    margin-bottom: .25rem;
+    white-space: nowrap;
+    width: 100%; }
+  .ticket-estimation .popover.horizontal a {
+    width: 100%; }
+    .ticket-estimation .popover.horizontal a.active {
+      color: #FFFFFF; }
+  .ticket-estimation .popover.horizontal .point {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+    min-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s ease;
+    white-space: nowrap; }
+    .ticket-estimation .popover.horizontal .point:hover {
+      transition: all .25s ease; }
+  .ticket-estimation .popover.pop-points-open li {
+    display: inline-flex;
+    margin: 0;
+    padding: 0; }
+  .ticket-estimation .popover a.active {
+    background: #008AA8;
+    color: #FFFFFF; }
+  .ticket-estimation .popover .point {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    transition: all .25s ease;
+    width: 2.5rem; }
+    .ticket-estimation .popover .point:hover {
+      transition: all .25s ease; }
+  .ticket-estimation .popover .severity,
+  .ticket-estimation .popover .priority,
+  .ticket-estimation .popover .status,
+  .ticket-estimation .popover .type,
+  .ticket-estimation .popover .role {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    min-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s ease;
+    white-space: nowrap; }
+    .ticket-estimation .popover .severity:hover,
+    .ticket-estimation .popover .priority:hover,
+    .ticket-estimation .popover .status:hover,
+    .ticket-estimation .popover .type:hover,
+    .ticket-estimation .popover .role:hover {
+      transition: all .25s ease; }
+  .ticket-estimation .popover::before {
+    background: #FFFFFF;
+    content: '';
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    top: -5px;
+    transform: rotate(45deg);
+    width: 10px; }
+  .ticket-estimation .popover .item-text {
+    /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-align: left;
+    white-space: initial;
+    /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+  .ticket-estimation .popover.fix {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #008AA8;
+    display: none;
+    left: -160px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: "";
+    top: 100%;
+    width: 200px;
+    z-index: 2; }
+    .ticket-estimation .popover.fix:hover {
+      color: #70728F; }
+    .ticket-estimation .popover.fix a {
+      padding: .25rem; }
+    .ticket-estimation .popover.fix li {
+      margin-bottom: .25rem; }
+      .ticket-estimation .popover.fix li:last-child {
+        margin-bottom: 0; }
+      .ticket-estimation .popover.fix li:hover {
+        background: #ECEFF4;
+        color: #70728F; }
+        .ticket-estimation .popover.fix li:hover a {
+          color: #70728F; }
+    .ticket-estimation .popover.fix.horizontal li {
+      margin-bottom: .25rem;
+      white-space: nowrap;
+      width: 100%; }
+    .ticket-estimation .popover.fix.horizontal a {
+      width: 100%; }
+      .ticket-estimation .popover.fix.horizontal a.active {
+        color: #FFFFFF; }
+    .ticket-estimation .popover.fix.horizontal .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: auto;
+      justify-content: flex-start;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .ticket-estimation .popover.fix.horizontal .point:hover {
+        transition: all .25s ease; }
+    .ticket-estimation .popover.fix.pop-points-open li {
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .ticket-estimation .popover.fix a.active {
+      background: #008AA8;
+      color: #FFFFFF; }
+    .ticket-estimation .popover.fix .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      transition: all .25s ease;
+      width: 2.5rem; }
+      .ticket-estimation .popover.fix .point:hover {
+        transition: all .25s ease; }
+    .ticket-estimation .popover.fix .severity,
+    .ticket-estimation .popover.fix .priority,
+    .ticket-estimation .popover.fix .status,
+    .ticket-estimation .popover.fix .type,
+    .ticket-estimation .popover.fix .role {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .ticket-estimation .popover.fix .severity:hover,
+      .ticket-estimation .popover.fix .priority:hover,
+      .ticket-estimation .popover.fix .status:hover,
+      .ticket-estimation .popover.fix .type:hover,
+      .ticket-estimation .popover.fix .role:hover {
+        transition: all .25s ease; }
+    .ticket-estimation .popover.fix::before {
+      background: #FFFFFF;
+      content: '';
+      height: 10px;
+      left: 90%;
+      position: absolute;
+      top: -5px;
+      transform: rotate(45deg);
+      width: 10px; }
+    .ticket-estimation .popover.fix .item-text {
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-align: left;
+      white-space: initial;
+      /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }

@@ -1,0 +1,73 @@
+
+<div class="epics-table e2e-epic-table">
+  <div class="epics-table-header e2e-epics-table-header">
+    <div translate="EPICS.TABLE.NAME" class="name"></div>
+    <div translate="EPICS.TABLE.PROJECT" ng-if="vm.options.project" class="project"></div>
+    <div translate="EPICS.TABLE.SPRINT" ng-if="vm.options.sprint" class="sprint"></div>
+    <div translate="EPICS.TABLE.ASSIGNED_TO" ng-if="vm.options.assigned" class="assigned"></div>
+    <div translate="EPICS.TABLE.STATUS" ng-if="vm.options.status" class="status-holder"></div>
+    <div translate="EPICS.TABLE.PROGRESS" ng-if="vm.options.progress" class="progress"></div>
+    <div ng-mouseleave="vm.hideEpicTableOption()" class="epics-table-options-wrapper">
+      <button ng-click="vm.displayOptions = true" class="epics-table-option-button e2e-epics-column-button"><span translate="EPICS.TABLE.VIEW_OPTIONS"></span>
+        <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+      </button>
+      <form ng-show="vm.displayOptions" ng-mouseenter="vm.keepEpicTableOption()" class="epics-table-dropdown e2e-epics-column-dropdown ng-hide">
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.PROJECT" for="switch-project" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-project" name="switch-project" type="checkbox" ng-checked="vm.options.project" ng-model="vm.options.project" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.SPRINT" for="switch-sprint" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-sprint" name="switch-sprint" type="checkbox" ng-checked="vm.options.sprint" ng-model="vm.options.sprint" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.ASSIGNED_TO" for="switch-assigned" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-assigned" name="switch-assigned" type="checkbox" ng-checked="vm.options.assigned" ng-model="vm.options.assigned" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.STATUS" for="switch-status" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-status" name="switch-status" type="checkbox" ng-checked="vm.options.status" ng-model="vm.options.status" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.PROGRESS" for="switch-progress" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-progress" name="switch-progress" type="checkbox" ng-checked="vm.options.progress" ng-model="vm.options.progress" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.CLOSED_EPICS" for="switch-closed" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-closed" name="switch-closed" type="checkbox" ng-checked="vm.options.closed" ng-model="vm.options.closed" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label translate="EPICS.TABLE.CLOSED_US" for="switch-closed_us" class="epics-table-options-vote"></label>
+          <div class="check">
+            <input id="switch-closed_us" name="switch-closed_us" type="checkbox" ng-checked="vm.options.closed_us" ng-model="vm.options.closed_us" ng-change="vm.updateViewOptions()" class="activate-input"/>
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div tg-epics-sortable="vm.reorderEpic(epic, newIndex)" infinite-scroll="vm.nextPage()" infinite-scroll-disabled="vm.disabledEpicsPagination" infinite-scroll-immediate-check="false" class="epics-table-body">
+    <div tg-repeat="epic in vm.epics track by epic.get('id')" tg-bind-scope="tg-bind-scope" class="epics-table-body-row">
+      <tg-epic-row epic="epic" options="vm.options" class="e2e-epic"></tg-epic-row>
+    </div>
+    <div tg-loading="vm.loadingEpics"></div>
+  </div>
+</div>

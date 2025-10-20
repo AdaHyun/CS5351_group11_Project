@@ -1,0 +1,74 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.user-profile {
+  max-width: 780px; }
+  .user-profile form {
+    display: flex; }
+  .user-profile fieldset {
+    margin-bottom: 1rem; }
+  .user-profile label {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    display: block;
+    margin-bottom: .2rem; }
+  .user-profile .project-details-image {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    width: 180px; }
+    .user-profile .project-details-image .image {
+      width: 100%; }
+  .user-profile .image-container {
+    margin-bottom: .5rem;
+    position: relative; }
+  .user-profile .loading-overlay {
+    display: none; }
+    .user-profile .loading-overlay.active {
+      align-items: center;
+      background: rgba(22, 23, 29, 0.8);
+      bottom: 0;
+      display: flex;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%; }
+  .user-profile .loading-spinner {
+    animation-timing-function: ease-in-out;
+    animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+    margin: 0 auto;
+    max-height: 1rem;
+    max-width: 1rem;
+    transform-origin: 32 32;
+    border: 0;
+    transform-origin: center center; }
+  .user-profile .use-default-image {
+    font-size: .875rem;
+    display: block;
+    margin-top: .5rem;
+    text-align: center; }
+    .user-profile .use-default-image:hover {
+      color: #FF6363; }
+  .user-profile .project-details-form-data {
+    flex: 1;
+    max-width: 500px; }
+  @media screen and (max-width: 1023px) {
+    .user-profile form {
+      display: block; } }
+  .user-profile .button-full {
+    width: 100%; }
+  .user-profile .actions {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem; }
+  .user-profile .verify-email,
+  .user-profile .download-profile,
+  .user-profile .delete-account {
+    font-size: .875rem;
+    display: block;
+    flex: 1;
+    margin-top: .5rem; }
+  .user-profile .delete-account {
+    text-align: right; }

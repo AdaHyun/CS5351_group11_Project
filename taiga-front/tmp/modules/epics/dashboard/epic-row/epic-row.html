@@ -1,0 +1,31 @@
+
+<div ng-class="{'is-blocked':  vm.epic.get('is_blocked'), 'is-closed': vm.epic.get('is_closed'), 'unfold': vm.displayUserStories, 'not-empty': vm.epic.getIn(['user_stories_counts', 'opened']) || vm.epic.getIn(['user_stories_counts', 'closed'])}" ng-click="vm.toggleUserStoryList()" ng-hide="!vm.options.closed &amp;&amp; vm.epic.get('is_closed')" class="epic-row e2e-epic-row">
+  <tg-svg svg-icon="icon-draggable" ng-if="vm.canEditEpics()" class="icon-drag"></tg-svg>
+  <div ng-if="vm.options.name" class="name">
+    <div class="fold-us">
+      <tg-svg svg-icon="icon-chevron-down" ng-if="vm.epic.getIn(['user_stories_counts', 'total'])"></tg-svg>
+    </div><span ng-style="::{'background-color': vm.epic.get('color')}" class="epic-pill"></span><a tg-nav="project-epics-detail:project=vm.project.slug,ref=vm.epic.get('ref')" ng-attr-title="{{::vm.epic.get('subject')}}"><span ng-bind-html="'#'+vm.epic.get('ref')" class="ref"></span><span ng-bind-html="vm.epic.get('subject') | emojify" class="subject"></span></a>
+  </div>
+  <div ng-if="vm.options.project" class="project"></div>
+  <div ng-if="vm.options.sprint" class="sprint"></div>
+  <div ng-if="vm.options.assigned &amp;&amp; vm.epic.get('assigned_to')" class="assigned e2e-assigned-to"><img tg-avatar="vm.epic.get('assigned_to_extra_info')"/></div>
+  <div ng-if="vm.options.assigned &amp;&amp; !vm.epic.get('assigned_to')" class="assigned"><img src="v-1758905376214/images/unnamed.png" alt="{{EPICS.DASHBOARD.UNASSIGNED | translate}}"/></div>
+  <div ng-if="vm.options.status &amp;&amp; !vm.canEditEpics()" class="status-holder"><span>{{vm.epic.getIn(['status_extra_info', 'name'])}}</span></div>
+  <div ng-if="vm.options.status &amp;&amp; vm.canEditEpics()" ng-mouseleave="vm.displayStatusList = false" tg-isolate-click="tg-isolate-click" class="status-holder">
+    <button ng-click="vm.displayStatusList = true" ng-style="{'color': vm.epic.getIn(['status_extra_info', 'color'])}" tg-loading="vm.loadingStatus"><span class="e2e-epic-status">{{vm.epic.getIn(['status_extra_info', 'name'])}}</span>
+      <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+    </button>
+    <ul ng-if="vm.displayStatusList" class="epic-statuses">
+      <li ng-repeat="status in vm.project.epic_statuses | orderBy:'order'" ng-click="vm.updateStatus(status.id)" class="status e2e-edit-epic-status"><span class="item-text">{{status.name}}</span></li>
+    </ul>
+  </div>
+  <div ng-if="vm.options.progress" class="progress">
+    <div class="progress-bar"></div>
+    <div ng-if="::vm.percentage" ng-style="{'width':vm.percentage}" class="progress-status"></div>
+  </div>
+</div>
+<div ng-if="vm.displayUserStories &amp;&amp; vm.epicStories" class="epic-stories-wrapper">
+  <div tg-repeat="story in vm.epicStories track by story.get('id')" class="epic-story">
+    <tg-story-row story="story" options="vm.options" class="e2e-story"></tg-story-row>
+  </div>
+</div>

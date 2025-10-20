@@ -1,0 +1,72 @@
+
+<section class="admin-kanban-powerups">
+  <div class="project-values-title">
+    <h2>{{ sectionName | translate }}</h2>
+    <button variant="primary" translate="ADMIN.PROJECT_KANBAN_OPTIONS.ACTION_ADD_SWIMLANE" ng-click="displaySwimlaneForm()" class="btn-small"></button>
+  </div>
+  <div class="admin-swimlanes-manager">
+    <div ng-if="values" tg-sortable-swimlanes="tg-sortable-swimlanes" class="admin-swimlanes-list">
+      <div ng-if="values.length == 1 &amp;&amp; isNewSwimlane" translate="ADMIN.PROJECT_KANBAN_OPTIONS.POPUP_NEW_SWIMLANE" class="tooltip"></div>
+      <div class="sortable">
+        <div tg-bind-scope="tg-bind-scope" tg-project-swimlanes-single="tg-project-swimlanes-single" ng-repeat="value in values track by value.id" class="admin-swimlane-single">
+          <div ng-if="!displaySwimlaneSingleForm" class="admin-swimlane-item">
+            <div class="admin-swimlane-item-start">
+              <div class="admin-swimlane-item-drag">
+                <tg-svg svg-icon="icon-draggable"></tg-svg>
+              </div>
+              <div class="admin-swimlane-item-name">{{value.name}}</div>
+            </div>
+            <div class="admin-swimlane-item-end">
+              <button type="button" ng-click="setDefaultSwimlane(value)" ng-if="values.length &gt; 1" ng-attr-title="{{getDefaultTitle(value)}}" class="btn-default-swimlane">
+                <tg-svg ng-class="{'default': value.id == project.default_swimlane}" svg-icon="icon-star" class="btn-default-swimlane-icon"></tg-svg><span ng-class="{'visibility-hidden': value.id != project.default_swimlane}" class="default-text">{{'ADMIN.PROJECT_KANBAN_OPTIONS.DEFAULT' | translate }}</span>
+              </button>
+              <button type="button" ng-click="editSwimlaneSingleForm($event)" arial-label="{{'COMMON.EDIT' | translate }}" class="form-button edit-swimlane-single">
+                <tg-svg svg-icon="icon-edit"></tg-svg>
+              </button>
+              <button ng-disabled="value.id == project.default_swimlane &amp;&amp; project.swimlanes.length &gt; 1" type="button" arial-label="{{'COMMON.DELETE' | translate }}" ng-click="removeSwimlaneDialog($event, value)" ng-attr-title="{{ removeSwimlaneTitle(value) }}" class="form-button delete-swimlane">
+                <tg-svg svg-icon="icon-trash"></tg-svg>
+              </button>
+            </div>
+          </div>
+          <form ng-if="displaySwimlaneSingleForm" class="admin-swimlane-form">
+            <input type="text" maxlength="48" ng-model="swimlaneSingleForm.name" ng-value="value.name" placeholder="{{'ADMIN.PROJECT_KANBAN_OPTIONS.SWIMLANE_NAME' | translate }}"/>
+            <button type="button" max="max" arial-label="{{'COMMON.SAVE' | translate }}" ng-click="updateSwimlane(value)" class="form-button add-swimlane-single">
+              <tg-svg svg-icon="icon-check-empty"></tg-svg>
+            </button>
+            <button type="button" arial-label="{{'COMMON.CANCEL' | translate }}" ng-click="cancelEditSwimlaneSingleForm($event)" class="form-button cancel-swimlane-single">
+              <tg-svg svg-icon="icon-close"></tg-svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <form ng-show="isFormVisible" tg-bind-scope="tg-bind-scope" class="admin-swimlanes-form">
+      <input id="admin-swimlanes-form-input" type="text" placeholder="{{'ADMIN.PROJECT_KANBAN_OPTIONS.SWIMLANE_NAME' | translate }}" ng-model="swimlane.name"/>
+      <button arial-label="{{'COMMON.SAVE' | translate }}" ng-click="ctrl.addSwimlane()" class="form-button add-swimlane">
+        <tg-svg svg-icon="icon-check-empty"></tg-svg>
+      </button>
+      <button arial-label="{{'COMMON.CANCEL' | translate }}" ng-click="hideSwimlaneForm()" class="form-button cancel-swimlane">
+        <tg-svg svg-icon="icon-close"></tg-svg>
+      </button>
+    </form>
+    <div ng-if="!values.length &amp;&amp; !isFormVisible &amp;&amp; !deletingSwimlane" translate="ADMIN.PROJECT_KANBAN_OPTIONS.NO_SWIMLANES" class="empty"></div>
+  </div>
+  <div class="project-values-title">
+    <h2 translate="ADMIN.PROJECT_KANBAN_OPTIONS.WIP_LIMITS"></h2>
+  </div>
+  <div ng-if="!values.length" class="admin-wip-manager">
+    <tg-wip-limit-selector ng-repeat="status in ctrl.filterArchivedProjectStatuses() track by status.id" status="status"></tg-wip-limit-selector>
+  </div>
+  <div ng-if="values.length" class="admin-wip-manager">
+    <div tg-project-swimlanes-wip="tg-project-swimlanes-wip" ng-repeat="value in values track by value.id" class="admin-swimlane-wip-single">
+      <button ng-class="{folded: wipClosed}" ng-click="toggleWipVisibility()" class="admin-swimlane-title">
+        <h2 class="title-name"> {{ value.name }}</h2>
+        <tg-svg ng-if="!wipClosed" svg-icon="icon-unfolded-swimlane" class="unfold-action"></tg-svg>
+        <tg-svg ng-if="wipClosed" svg-icon="icon-folded-swimlane" class="fold-action"></tg-svg>
+      </button>
+      <div ng-if="!wipClosed" class="admin-wip-container">
+        <tg-wip-limit-selector ng-repeat="status in ctrl.filterArchivedSwimlaneStatus(value) track by status.id" status="status"></tg-wip-limit-selector>
+      </div>
+    </div>
+  </div>
+</section>

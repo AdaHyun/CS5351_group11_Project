@@ -1,0 +1,78 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-create-epic {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  opacity: 1; }
+  .lightbox-create-epic .create-epic-container {
+    max-width: 700px;
+    width: 90%; }
+  .lightbox-create-epic .subject-container {
+    align-items: center;
+    display: flex; }
+    .lightbox-create-epic .subject-container .subject {
+      padding-left: 1rem;
+      width: 100%; }
+  .lightbox-create-epic .tags-block {
+    width: 100%; }
+    .lightbox-create-epic .tags-block .tags-container {
+      align-items: center;
+      column-gap: .5rem;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: .5rem; }
+    .lightbox-create-epic .tags-block .tag {
+      align-items: center;
+      display: flex;
+      font-size: .875rem;
+      min-height: 2rem; }
+      .lightbox-create-epic .tags-block .tag:first-child {
+        margin-inline-start: 0; }
+  .lightbox-create-epic .attachments {
+    margin-bottom: 0; }
+  .lightbox-create-epic .settings {
+    display: flex;
+    justify-content: center; }
+    .lightbox-create-epic .settings fieldset {
+      margin-right: .5rem; }
+      .lightbox-create-epic .settings fieldset:hover {
+        color: #FFFFFF;
+        transition: all .2s ease-in;
+        transition-delay: .2s; }
+      .lightbox-create-epic .settings fieldset:last-child {
+        margin: 0; }
+    .lightbox-create-epic .settings input {
+      display: none; }
+      .lightbox-create-epic .settings input:checked + label {
+        background: #008AA8;
+        border: 1px solid #008AA8;
+        color: #fff; }
+      .lightbox-create-epic .settings input:checked + .blocked {
+        background: #E44057;
+        border: 1px solid #E44057;
+        color: #FFFFFF; }
+  .lightbox-create-epic label {
+    font-size: .875rem;
+    background: #F9F9FB;
+    border: 1px solid #ECEFF4;
+    color: #4C566A;
+    cursor: pointer;
+    display: block;
+    padding-block-end: .5rem;
+    padding-block-start: .5rem;
+    text-align: center;
+    text-transform: none;
+    transition: all .2s ease-in; }
+    .lightbox-create-epic label:hover {
+      background: #008AA8;
+      border: 1px solid #008AA8;
+      color: #FFFFFF; }
+    .lightbox-create-epic label.blocked:hover {
+      background: #E44057;
+      border: 1px solid #E44057; }
+  .lightbox-create-epic .create-epic-button {
+    display: block;
+    width: 100%; }

@@ -1,0 +1,95 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.featured-projects {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%;
+  margin-bottom: 4rem; }
+  .featured-projects .title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #434456;
+    text-align: center; }
+
+.featured-projects-inner {
+  align-items: stretch;
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 -.5rem; }
+
+.featured-project {
+  background: #FFFFFF;
+  border: 1px solid #D8DEE9;
+  margin: .5rem;
+  display: flex;
+  flex-basis: 23%;
+  flex-wrap: wrap; }
+  .featured-project .tags-container {
+    display: flex;
+    height: .3rem; }
+  .featured-project .project-tag {
+    flex: 1; }
+  .featured-project .project-card-inner {
+    padding: 1rem; }
+  .featured-project .project-card-description {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #4C566A; }
+  .featured-project .project-card-statistics {
+    column-gap: .5rem;
+    display: flex;
+    row-gap: .5rem;
+    margin-top: auto; }
+    .featured-project .project-card-statistics svg {
+      fill: currentColor; }
+      .featured-project .project-card-statistics svg:not(.icon-private) {
+        width: 0.75rem;
+        height: 0.75rem; }
+      .featured-project .project-card-statistics svg.icon-private {
+        width: 1.2rem;
+        height: 1.2rem; }
+  .featured-project .statistic {
+    font-size: .875rem;
+    align-items: center;
+    color: #4C566A;
+    column-gap: .25rem;
+    display: flex;
+    row-gap: .25rem; }
+    .featured-project .statistic.active {
+      color: #70728F; }
+      .featured-project .statistic.active svg {
+        fill: currentColor; }
+  .featured-project .project-card-header {
+    display: flex;
+    flex-grow: 0; }
+    .featured-project .project-card-header .icon-badge {
+      fill: #008AA8; }
+  .featured-project .project-card-logo {
+    display: inline-block;
+    flex-basis: 50px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: .5rem; }
+    .featured-project .project-card-logo img {
+      width: 100%; }
+  .featured-project .project-card-name {
+    font-size: 1.1rem;
+    column-gap: .25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: .25rem; }
+    .featured-project .project-card-name a {
+      color: #4C566A; }
+  @media screen and (max-width: 1023px) {
+    .featured-project {
+      flex-basis: 45%; } }
+  @media screen and (max-width: 768px) {
+    .featured-project {
+      flex-basis: 100%; } }

@@ -1,0 +1,22 @@
+
+<div class="dropdown-user-inner">
+  <div class="dropdown-user-navbar"><a tg-nav="profile" title="{{ vm.user.get('full_name_display') }}" class="user-avatar"><img tg-avatar="vm.user" alt="{{ vm.user.get('full_name_display') }}"/></a>
+    <button class="chevron">
+      <tg-svg svg-icon="icon-chevron-down"></tg-svg>
+    </button>
+  </div>
+  <div class="navbar-dropdown dropdown-user">
+    <div class="dropdown-user-profile"><a tg-nav="profile" href="#" class="profile-link avatar"><img tg-avatar="vm.user" alt="{{ ::vm.user.get('full_name_display') }}"/></a>
+      <div class="dropdown-user-data"><a tg-nav="profile" href="#" class="profile-link full-name">{{ ::vm.user.get('full_name_display') }}</a>
+        <div class="profile-link email">{{ ::vm.user.get('email') }}</div>
+        <p><a href="#" tg-nav="user-settings-user-profile" title="{{'PROJECT.NAVIGATION.EDIT_PROFILE' | translate}}" translate="PROJECT.NAVIGATION.EDIT_PROFILE" class="edit-profile"></a></p>
+      </div>
+    </div>
+    <ul>
+      <li ng-repeat="plugin in vm.userSettingsPlugins" class="plugin"><a href="" tg-nav="user-settings-contrib:plugin=plugin.slug" ng-class="{active: plugin.slug == currentPlugin.slug}" class="secondary"><span class="title">{{ plugin.name }}</span></a></li>
+      <li class="user-profile-option"><a href="#" tg-nav="user-settings-user-change-password" title="{{'PROJECT.NAVIGATION.ACCOUNT_SETTINGS' | translate}}" translate="PROJECT.NAVIGATION.ACCOUNT_SETTINGS" class="secondary"></a></li>
+      <li class="user-profile-option"><a href="#" tg-nav="user-settings-mail-notifications" title="{{'PROJECT.NAVIGATION.NOTIFICATIONS_TITLE' | translate}}" translate="PROJECT.NAVIGATION.NOTIFICATIONS" class="secondary"></a></li>
+      <li class="user-profile-option"><a href="#" ng-click="vm.logout()" title="{{'COMMON.LOGOUT' | translate}}" translate="COMMON.LOGOUT"></a></li>
+    </ul>
+  </div>
+</div>

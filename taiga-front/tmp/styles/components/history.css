@@ -1,0 +1,31 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.history-tabs {
+  background: #F1F1F4;
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem; }
+  .history-tabs a {
+    display: inline-block;
+    padding: .75rem 1rem; }
+    .history-tabs a:hover {
+      color: #25A28C; }
+  .history-tabs .history-tab {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid transparent;
+    color: #70728F;
+    transition: all .1s linear; }
+    .history-tabs .history-tab.active {
+      border-bottom: 3px solid #434456;
+      color: #434456; }
+  .history-tabs .order-comments {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #434456;
+    margin-left: auto;
+    transition: none; }
+  .history-tabs .icon-arrow-up,
+  .history-tabs .icon-arrow-down {
+    width: 0.75rem;
+    height: 0.75rem; }

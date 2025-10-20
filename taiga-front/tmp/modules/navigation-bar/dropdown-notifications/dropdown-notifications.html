@@ -1,0 +1,11 @@
+<a href="" title="{{ 'EVENTS.TITLE' | translate }}" tg-nav="notifications" ng-mouseover="visible=true" ng-class="{'active': active, 'pending-notifications': total}">
+  <tg-svg svg-icon="icon-bell"></tg-svg>
+  <div ng-if="total" ng-class="{'counter-active': newEvent, 'large': total &gt; 99, 'small': total &lt; 10}" class="counter">{{ total }}</div></a>
+<div ng-show="visible" ng-mouseleave="visible=false" class="navbar-dropdown-notifications">
+  <div class="header"><a href="" ng-class="{'disabled': !total}" ng-click="!total||setAllAsRead()" class="action">{{ 'EVENTS.DISMISS_ALL' | translate }}</a></div>
+  <div class="notifications-wrapper">
+    <div ng-if="!total &amp;&amp; !loading" class="empty"><span>{{ 'EVENTS.NO_NEW_EVENTS' | translate }}</span></div>
+    <tg-notifications-list id="my-notifications" only-unread="true" infinite-scroll-container="#my-notifications" infinite-scroll-disabled="true" class="dropdown-notifications-list"></tg-notifications-list>
+  </div>
+  <div class="notifications-bottom"><a tg-nav="notifications" class="action">{{ 'EVENTS.VIEW_ALL' | translate }}</a></div>
+</div>

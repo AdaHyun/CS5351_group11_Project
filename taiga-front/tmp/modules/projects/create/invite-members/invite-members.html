@@ -1,0 +1,6 @@
+
+<fieldset class="create-project-invite">
+  <div class="create-project-invite-avatars">
+    <tg-single-member tg-repeat="member in vm.members track by member.get('id')" disabled="vm.isDisabled(member.get('id'))" avatar="member" ng-click="vm.onToggleInvitedMember({member: member.get('id')})"></tg-single-member>
+  </div>
+</fieldset>

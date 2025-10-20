@@ -1,0 +1,32 @@
+
+<div tg-discover-search="tg-discover-search">
+  <div class="discover-search">
+    <tg-discover-search-bar filter="vm.filter" q="vm.q" on-change="vm.onChangeFilter(filter, q)"></tg-discover-search-bar>
+  </div>
+  <div ng-if="!vm.searchResult.size &amp;&amp; !vm.loadingGlobal &amp;&amp; !vm.loadingList" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ DISCOVER.EMPTY | translate }}"/>
+    <p translate="DISCOVER.EMPTY" class="title"></p>
+  </div>
+  <div ng-if="vm.searchResult.size || vm.loadingGlobal || vm.loadingList" class="discover-results">
+    <div tg-loading="vm.loadingGlobal" class="spin"></div>
+    <div ng-if="!vm.loadingGlobal" class="discover-results-inner">
+      <tg-discover-search-list-header on-change="vm.onChangeOrder(orderBy)" order-by="vm.orderBy"></tg-discover-search-list-header>
+      <div ng-show="vm.loadingList" tg-loading="vm.loadingList" class="spin"></div>
+      <ul ng-if="!vm.loadingList &amp;&amp; vm.searchResult.size" class="project-list">
+        <li tg-repeat="project in vm.searchResult track by project.get('id')" class="list-itemtype-project">
+          <div class="list-itemtype-project-left"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{ ::project.get('name') }}" class="list-itemtype-project-image"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/></a>
+            <div class="list-itemtype-project-data">
+              <div class="list-itemtype-data-title"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{ ::project.get('name') }}">{{project.get('name')}}</a>
+                <tg-svg ng-if="project.get('is_looking_for_people')" svg-icon="icon-recruit" svg-title="{{ ::project.get('looking_for_people_note') }}" class="look-for-people"></tg-svg>
+              </div>
+              <div class="list-itemtype-data-meta">{{ ::project.get('description') | limitTo:300 }}<span ng-if="::project.get('description').length &gt; 300">...</span></div>
+            </div>
+          </div>
+          <div class="list-itemtype-project-right project-statistics"><span ng-class="{'active': project.get('is_fan')}" title="{{ 'PROJECT.FANS_COUNTER_TITLE'|translate:{total:project.get('total_fans')||0}:'messageformat' }}" class="statistic">
+              <tg-svg svg-icon="icon-like"></tg-svg><span>{{::project.get('total_fans')}}</span></span><span ng-class="{'active': project.get('is_watcher')}" title="{{ 'PROJECT.WATCHERS_COUNTER_TITLE'|translate:{total:project.get('total_watchers')||0}:'messageformat' }}" class="statistic">
+              <tg-svg svg-icon="icon-watch"></tg-svg><span>{{::project.get('total_watchers')}}</span></span><span ng-class="{'active': project.get('i_am_member')}" title="{{ 'PROJECT.MEMBERS_COUNTER_TITLE'|translate:{total:project.get('members').size||0}:'messageformat' }}" class="statistic">
+              <tg-svg svg-icon="icon-team"></tg-svg><span class="statistics-num">{{ ::project.get('members').size }}</span></span></div>
+        </li>
+      </ul><a variant="secondary" tg-loading="vm.loadingPagination" href="#" ng-click="vm.showMore()" ng-if="vm.nextSearchPage" class="btn-small more-results">{{ 'DISCOVER.VIEW_MORE' | translate }}</a>
+    </div>
+  </div>
+</div>

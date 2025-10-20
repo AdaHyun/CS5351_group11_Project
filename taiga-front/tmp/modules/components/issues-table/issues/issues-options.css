@@ -1,0 +1,37 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.issues-options {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem; }
+
+.issues-options-start {
+  display: flex; }
+
+.new-issue {
+  column-gap: .5rem;
+  display: flex;
+  row-gap: .5rem; }
+
+.in-taskboard {
+  background: #ECEFF4;
+  display: flex;
+  justify-content: space-between;
+  padding: .75rem; }
+  .in-taskboard.empty {
+    background: #F9F9FB; }
+  .in-taskboard .sprint-issues-title {
+    align-items: center;
+    border-inline-end: 1px solid #A9AABC;
+    display: flex;
+    margin-inline-end: 1rem;
+    padding-inline-end: 1rem; }
+    .in-taskboard .sprint-issues-title .icon {
+      fill: #D8DEE9;
+      margin-right: .5rem; }
+  .in-taskboard .sprint-issues-title-txt {
+    color: #70728F;
+    text-transform: uppercase; }

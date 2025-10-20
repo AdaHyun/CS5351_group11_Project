@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<div tg-github-webhooks ng-controller="GithubController as ctrl" ng-init="section='admin'" class="wrapper roles">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="third-parties" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="third-parties-github" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-third-parties-webhooks" class="third-parties-webhooks"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span class="title">Webhooks</span></a></li>
+          <li id="adminmenu-third-parties-github"><a href="" tg-nav="project-admin-third-parties-github:project=project.slug"><span class="title">Github</span></a></li>
+          <li id="adminmenu-third-parties-gitlab"><a href="" tg-nav="project-admin-third-parties-gitlab:project=project.slug"><span class="title">Gitlab</span></a></li>
+          <li id="adminmenu-third-parties-bitbucket"><a href="" tg-nav="project-admin-third-parties-bitbucket:project=project.slug"><span class="title">Bitbucket</span></a></li>
+          <li id="adminmenu-third-parties-gogs"><a href="" tg-nav="project-admin-third-parties-gogs:project=project.slug"><span class="title">Gogs</span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-common admin-third-parties">
+    <header>
+      <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+    </header>
+    <form>
+      <fieldset>
+        <label for="secret-key" translate="ADMIN.THIRD_PARTIES.SECRET_KEY"></label>
+        <input id="secret-key" type="text" name="secret-key" ng-model="github.secret" placeholder="{{'ADMIN.THIRD_PARTIES.SECRET_KEY' | translate}}">
+      </fieldset>
+      <fieldset>
+        <div tg-select-input-text class="select-input-text">
+          <div>
+            <label for="payload-url" translate="ADMIN.THIRD_PARTIES.PAYLOAD_URL"></label>
+            <div class="field-with-option">
+              <input id="payload-url" type="text" name="payload-url" readonly="readonly" ng-model="github.webhooks_url" placeholder="{{'ADMIN.THIRD_PARTIES.PAYLOAD_URL' | translate}}">
+              <div title="{{'COMMON.COPY_TO_CLIPBOARD' | translate}}" class="option-wrapper select-input-content">
+                <tg-svg svg-icon="icon-clipboard"></tg-svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-small"></button>
+    </form><a href="https://docs.taiga.io/integrations-github.html" target="_blank" class="help-button">
+      <tg-svg svg-icon="icon-question"></tg-svg><span translate="ADMIN.HELP"></span></a>
+  </section>
+</div>

@@ -1,0 +1,25 @@
+
+<section tg-attachments-drop="vm.addAttachments(files)" class="attachments attachment-simple">
+  <div class="attachments-header">
+    <h3 class="attachments-title"><span class="attachments-num">{{vm.attachments.size}}</span> <span translate="ATTACHMENT.SECTION_NAME" class="attachments-text"></span></h3>
+    <div id="a11y-add-attach" title="{{'ATTACHMENT.ADD' | translate}}" class="add-attach">
+      <button type="button" variant="primary" ng-click="displayAttachmentInput()" class="btn-icon add-attachment-button">
+        <tg-svg svg-icon="icon-add"></tg-svg>
+      </button>
+      <input aria-label="{{'ATTACHMENT.ADD' | translate}}" id="add-attach" type="file" multiple="multiple" ng-model="files" tg-file-change="vm.addAttachments(files)"/>
+    </div>
+  </div>
+  <div ng-if="!vm.attachments.size" class="attachments-empty">
+    <div>{{'ATTACHMENT.DROP' | translate}}</div>
+  </div>
+  <div class="attachment-body attachment-list">
+    <div tg-repeat="attachment in vm.attachments track by $index" class="single-attachment">
+      <div class="attachment-name">
+        <tg-svg svg-icon="icon-attachment"></tg-svg><span>{{attachment.get('name')}}</span>
+      </div>
+      <div class="attachment-size"><span>{{attachment.get('size') | sizeFormat}}</span></div>
+      <div class="attachment-settings"><a href="#" title="{{'COMMON.DELETE' | translate}}" ng-click="vm.deleteAttachment(attachment)" class="settings attachment-delete">
+          <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+    </div>
+  </div>
+</section>

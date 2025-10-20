@@ -1,0 +1,113 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.auth {
+  background: url("../images/bg.png") no-repeat center center;
+  background-size: cover;
+  align-items: center;
+  background: #FFFFFF;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2; }
+  .auth .white-link,
+  .auth .white-link:visited {
+    color: #FFFFFF; }
+  .auth .checksley-error-list {
+    color: #FF6363; }
+    .auth .checksley-error-list li {
+      margin: .5rem 0;
+      text-align: left; }
+  .auth .auth-container {
+    flex-basis: 400px; }
+  .auth .logo-svg {
+    text-align: center;
+    width: 100%; }
+    .auth .logo-svg svg {
+      height: 8rem;
+      width: 8rem; }
+  .auth .logo {
+    font-size: 2.1rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #2E3440;
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center; }
+  .auth .tagline {
+    font-size: 1.7rem;
+    color: #2E3440;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase; }
+  .auth form {
+    margin-bottom: 1rem; }
+  .auth fieldset {
+    margin-bottom: .5rem; }
+    .auth fieldset.end {
+      display: flex;
+      justify-content: flex-end; }
+  .auth .login-text,
+  .auth .register-text {
+    color: #2E3440;
+    font-size: .875rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center; }
+    .auth .login-text a,
+    .auth .register-text a {
+      color: #2E3440;
+      text-decoration: underline; }
+      .auth .login-text a:hover,
+      .auth .register-text a:hover {
+        color: #008AA8; }
+  .auth .register-terms {
+    margin: .5rem 0 .75rem; }
+    .auth .register-terms input[type='checkbox'],
+    .auth .register-terms input[type='radio'] {
+      margin-right: .5rem; }
+  .auth .button {
+    color: #FFFFFF;
+    display: block;
+    text-align: center; }
+  .auth a:hover {
+    color: #008AA8; }
+  .auth .btn-small {
+    margin: 0 0 0 auto; }
+    .auth .btn-small.full {
+      width: 100%; }
+
+.moustache {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: moustache;
+  animation-timing-function: ease-in-out;
+  fill: rgba(37, 162, 140, 0.9);
+  stroke: #5CBAA9;
+  stroke-width: 1px;
+  transform-origin: 50% 50%;
+  transition: .3s; }
+  .moustache:hover {
+    fill: rgba(92, 186, 169, 0.9);
+    transition: .3s; }
+
+@keyframes moustache {
+  0% {
+    transform: rotate(0); }
+  10% {
+    transform: rotate(-10deg); }
+  30% {
+    transform: rotate(0); }
+  70% {
+    transform: rotate(0); }
+  80% {
+    transform: rotate(10deg); }
+  90% {
+    transform: rotate(0); } }

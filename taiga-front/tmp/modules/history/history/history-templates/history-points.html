@@ -1,0 +1,4 @@
+
+<div ng-repeat="(key, diff) in vm.diff" class="diff-points-wrapper"><span translate="ACTIVITY.US_POINTS" translate-values="{role: vm.diff.key}" class="key"></span><span class="diff">{{diff[0]}}</span>
+  <tg-svg svg-icon="icon-arrow-right" svg-title-translate="COMMON.EDIT" class="comment-option"></tg-svg><span class="diff">{{diff[1]}}</span>
+</div>

@@ -1,0 +1,14 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.move-to-sprint-button {
+  color: #fff; }
+  .move-to-sprint-button:not(.disabled) {
+    cursor: pointer; }
+    .move-to-sprint-button:not(.disabled):hover {
+      color: #5CBAA9; }
+  .move-to-sprint-button.disabled {
+    opacity: .5; }
+    .move-to-sprint-button.disabled:hover {
+      color: #fff; }

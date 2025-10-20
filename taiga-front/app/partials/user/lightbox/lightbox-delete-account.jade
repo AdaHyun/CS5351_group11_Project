@@ -1,0 +1,26 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close
+
+form
+    h2.title(translate="LIGHTBOX.DELETE_ACCOUNT.CONFIRM")
+
+    p(ng-bind-html="'LIGHTBOX.DELETE_ACCOUNT.BLOCK_PROJECT' | translate")
+    div.options
+        button.js-cancel.btn-small(
+            variant="primary"
+            type="button",
+            title="{{'LIGHTBOX.DELETE_ACCOUNT.CANCEL' | translate}}"
+        )
+            span(translate="LIGHTBOX.DELETE_ACCOUNT.CANCEL")
+        button.js-confirm.btn-small(
+            variant="destructive"
+            type="button",
+            title="{{'LIGHTBOX.DELETE_ACCOUNT.ACCEPT' | translate}}"
+        )
+            span(translate="LIGHTBOX.DELETE_ACCOUNT.ACCEPT")

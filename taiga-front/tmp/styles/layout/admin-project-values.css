@@ -1,0 +1,233 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-attributes .admin-attributes-section {
+  margin-bottom: 2rem; }
+  .admin-attributes .admin-attributes-section .checksley-error-list {
+    height: 0;
+    position: relative; }
+    .admin-attributes .admin-attributes-section .checksley-error-list li {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      background: rgba(255, 99, 99, 0.7);
+      position: absolute;
+      width: 100%; }
+  .admin-attributes .admin-attributes-section .admin-tags-section-wrapper .row.tag-row.table-main.edition {
+    padding-left: 1rem; }
+  .admin-attributes .admin-attributes-section .admin-tags-section-wrapper-empty {
+    color: #70728F;
+    padding: 10vh 0 0;
+    text-align: center; }
+  .admin-attributes .admin-attributes-section .loading-spinner {
+    max-height: 3rem;
+    max-width: 3rem; }
+
+.admin-roles header {
+  position: relative; }
+
+.admin-roles h1 {
+  margin-bottom: 0; }
+
+.admin-roles p {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #70728F; }
+
+.project-values-title {
+  align-content: center;
+  align-items: center;
+  background: #D8DEE9;
+  display: flex;
+  justify-content: space-between;
+  padding: .8em 1rem;
+  text-transform: uppercase; }
+  .project-values-title h2 {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    margin: 0; }
+    .project-values-title h2 span {
+      margin-left: .5rem;
+      text-transform: none; }
+
+.admin-swimlanes-manager {
+  margin-block-end: 1.5rem;
+  margin-block-start: 1.5rem;
+  padding-inline-start: 1rem; }
+  .admin-swimlanes-manager .empty {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    align-items: center;
+    color: #4C566A;
+    display: flex;
+    justify-content: center;
+    min-height: 50px; }
+  .admin-swimlanes-manager .admin-swimlanes-form,
+  .admin-swimlanes-manager .admin-swimlane-form {
+    align-items: center;
+    display: flex;
+    width: 500px; }
+  .admin-swimlanes-manager .admin-swimlane-form {
+    padding-block-end: .5rem;
+    padding-block-start: .5rem; }
+  .admin-swimlanes-manager .admin-swimlanes-form {
+    margin-block-start: .5rem; }
+  .admin-swimlanes-manager .add-swimlane,
+  .admin-swimlanes-manager .add-swimlane-single {
+    margin-inline-end: .25rem;
+    margin-inline-start: .5rem; }
+  .admin-swimlanes-manager .admin-swimlane-single {
+    opacity: 1; }
+    .admin-swimlanes-manager .admin-swimlane-single.ng-leave {
+      transition: all linear .3s;
+      transition-delay: .2s; }
+      .admin-swimlanes-manager .admin-swimlane-single.ng-leave.ng-leave-active {
+        opacity: 0; }
+  .admin-swimlanes-manager .admin-swimlanes-list {
+    position: relative;
+    width: 500px; }
+  .admin-swimlanes-manager .tooltip {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #2E3440;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    bottom: 2rem;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #F9F9FB;
+    display: none;
+    left: calc(50% - 190/2 * 1px);
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem 1rem 1.5rem 1rem;
+    position: absolute;
+    text-align: left;
+    width: 220px;
+    z-index: 2;
+    display: block; }
+    .admin-swimlanes-manager .tooltip li {
+      margin-bottom: .25rem;
+      padding: 0 .25rem; }
+      .admin-swimlanes-manager .tooltip li:last-child {
+        margin-bottom: 0; }
+    .admin-swimlanes-manager .tooltip::before {
+      background: #2E3440;
+      content: '';
+      height: 15px;
+      left: calc( 50% - 7px);
+      position: absolute;
+      top: calc( 100% - 7px);
+      transform: rotate(45deg);
+      width: 15px; }
+    .admin-swimlanes-manager .tooltip.ng-enter {
+      opacity: 0;
+      transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+      transition-delay: .5s; }
+      .admin-swimlanes-manager .tooltip.ng-enter.ng-enter-active {
+        opacity: 1; }
+    .admin-swimlanes-manager .tooltip.ng-leave {
+      transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s; }
+      .admin-swimlanes-manager .tooltip.ng-leave.ng-leave-active {
+        opacity: 0; }
+  .admin-swimlanes-manager .admin-swimlane-item {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    align-items: center;
+    background: #F9F9FB;
+    border-radius: 3px;
+    color: #4C566A;
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem 1rem; }
+    .admin-swimlanes-manager .admin-swimlane-item .admin-swimlane-item-start,
+    .admin-swimlanes-manager .admin-swimlane-item .admin-swimlane-item-end {
+      align-items: center;
+      display: flex;
+      justify-content: center; }
+    .admin-swimlanes-manager .admin-swimlane-item .admin-swimlane-item-drag {
+      fill: #008AA8;
+      margin-inline-end: 1rem; }
+    .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled] {
+      background: none; }
+      .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled] .icon {
+        fill: #D8DEE9; }
+    .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled]:hover {
+      background: none; }
+      .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled]:hover .icon {
+        fill: #D8DEE9; }
+    .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane:hover .icon {
+      fill: #E44057; }
+    .admin-swimlanes-manager .admin-swimlane-item:hover {
+      cursor: grab; }
+  .admin-swimlanes-manager .btn-default-swimlane {
+    align-items: center;
+    background: none;
+    display: flex; }
+    .admin-swimlanes-manager .btn-default-swimlane:hover .btn-default-swimlane-icon .icon {
+      fill: rgba(246, 201, 92, 0.25);
+      stroke: #F6C95C; }
+    .admin-swimlanes-manager .btn-default-swimlane .btn-default-swimlane-icon .icon {
+      fill: none;
+      height: 13px;
+      margin-inline-end: .25rem;
+      stroke: #D8DEE9;
+      width: 13px; }
+    .admin-swimlanes-manager .btn-default-swimlane .btn-default-swimlane-icon.default .icon {
+      fill: rgba(246, 201, 92, 0.25);
+      stroke: rgba(246, 201, 92, 0.25); }
+    .admin-swimlanes-manager .btn-default-swimlane .default-text {
+      font-size: .7rem;
+      font-style: italic; }
+      .admin-swimlanes-manager .btn-default-swimlane .default-text.visibility-hidden {
+        visibility: hidden; }
+
+.admin-wip-manager {
+  margin-block-start: 1.5rem;
+  margin-inline-start: 1rem;
+  width: 500px; }
+  .admin-wip-manager .admin-swimlane-title {
+    align-items: center;
+    background: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(216, 222, 233, 0.5);
+    display: flex;
+    margin-bottom: 1px;
+    padding: .625rem 1rem;
+    transition: all .6 ease;
+    width: 100%;
+    z-index: 2; }
+    .admin-wip-manager .admin-swimlane-title.folded {
+      border-bottom: solid 1px #ECEFF4; }
+      .admin-wip-manager .admin-swimlane-title.folded tg-svg {
+        fill: #70728F; }
+      .admin-wip-manager .admin-swimlane-title.folded .title-name {
+        color: #70728F; }
+    .admin-wip-manager .admin-swimlane-title:hover tg-svg {
+      fill: #4C566A; }
+    .admin-wip-manager .admin-swimlane-title:hover .title-name {
+      color: #4C566A; }
+    .admin-wip-manager .admin-swimlane-title tg-svg {
+      fill: #008AA8;
+      height: 1rem;
+      transition: all .6 ease;
+      width: 1rem; }
+    .admin-wip-manager .admin-swimlane-title .title-name {
+      font-size: .875rem;
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      color: #008AA8;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+      margin-right: .75rem;
+      text-align: initial;
+      transition: all .6 ease; }
+  .admin-wip-manager .admin-swimlane-wip-single {
+    overflow: hidden; }
+  .admin-wip-manager .admin-wip-container {
+    overflow-x: hidden; }
+    .admin-wip-manager .admin-wip-container.ng-move, .admin-wip-manager .admin-wip-container.ng-enter, .admin-wip-manager .admin-wip-container.ng-leave {
+      transition: all linear .25s; }
+    .admin-wip-manager .admin-wip-container.ng-leave.ng-leave-active, .admin-wip-manager .admin-wip-container.ng-move, .admin-wip-manager .admin-wip-container.ng-enter {
+      opacity: 0; }
+    .admin-wip-manager .admin-wip-container.ng-leave, .admin-wip-manager .admin-wip-container.ng-move.ng-move-active, .admin-wip-manager .admin-wip-container.ng-enter.ng-enter-active {
+      opacity: 1; }
+  .admin-wip-manager .admin-wip-list {
+    position: relative;
+    width: 500px; }

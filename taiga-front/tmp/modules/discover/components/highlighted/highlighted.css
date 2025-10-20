@@ -1,0 +1,273 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.highlighted {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4rem; }
+  @media screen and (max-width: 1023px) {
+    .highlighted {
+      flex-direction: column; }
+      .highlighted tg-most-active {
+        margin-top: 4rem; } }
+  .highlighted tg-most-liked,
+  .highlighted tg-most-active {
+    align-content: stretch;
+    display: flex;
+    flex: 1; }
+  .highlighted tg-most-liked {
+    margin-right: 8%; }
+    @media screen and (max-width: 1023px) {
+      .highlighted tg-most-liked {
+        margin-right: 0; } }
+  .highlighted .most-active,
+  .highlighted .most-liked {
+    align-content: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: column; }
+  .highlighted .header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem; }
+    .highlighted .header svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: #70728F;
+      margin-left: .5rem; }
+  .highlighted .title-wrapper {
+    align-items: center;
+    display: flex; }
+    .highlighted .title-wrapper svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: #70728F;
+      margin-right: .5rem; }
+  .highlighted .title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #434456;
+    display: inline-block;
+    margin: 0; }
+  .highlighted .highlighted-projects-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start; }
+  .highlighted .loading-container {
+    margin-top: calc(50% - 1rem); }
+  .highlighted .loading-spinner {
+    display: block;
+    margin: 2rem auto;
+    max-height: 3rem;
+    max-width: 3rem; }
+  .highlighted .view-more-projects {
+    margin-top: auto;
+    width: 100%; }
+  .highlighted .empty-highlighted-project {
+    border: 2px dashed #E2E3E9;
+    flex: 1;
+    padding: 2rem;
+    text-align: center; }
+    .highlighted .empty-highlighted-project svg {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      fill: #70728F;
+      margin: 1rem auto; }
+    .highlighted .empty-highlighted-project span {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #5A5B72;
+      display: block; }
+
+.filter-highlighted {
+  position: relative; }
+  .filter-highlighted .current-filter {
+    display: flex;
+    padding: 1rem; }
+    .filter-highlighted .current-filter span {
+      margin-left: .2rem;
+      position: relative;
+      top: .2rem; }
+    .filter-highlighted .current-filter:hover svg {
+      fill: currentColor; }
+  .filter-highlighted .filter-list {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #008AA8;
+    display: none;
+    left: calc(50% - 190/2 * 1px);
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: "";
+    top: 2.5rem;
+    width: 200px;
+    z-index: 2;
+    display: block;
+    overflow: unset; }
+    .filter-highlighted .filter-list:hover {
+      color: #70728F; }
+    .filter-highlighted .filter-list a {
+      padding: .25rem; }
+    .filter-highlighted .filter-list li {
+      margin-bottom: .25rem; }
+      .filter-highlighted .filter-list li:last-child {
+        margin-bottom: 0; }
+      .filter-highlighted .filter-list li:hover {
+        background: #ECEFF4;
+        color: #70728F; }
+        .filter-highlighted .filter-list li:hover a {
+          color: #70728F; }
+    .filter-highlighted .filter-list.horizontal li {
+      margin-bottom: .25rem;
+      white-space: nowrap;
+      width: 100%; }
+    .filter-highlighted .filter-list.horizontal a {
+      width: 100%; }
+      .filter-highlighted .filter-list.horizontal a.active {
+        color: #FFFFFF; }
+    .filter-highlighted .filter-list.horizontal .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: auto;
+      justify-content: flex-start;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .filter-highlighted .filter-list.horizontal .point:hover {
+        transition: all .25s ease; }
+    .filter-highlighted .filter-list.pop-points-open li {
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .filter-highlighted .filter-list a.active {
+      background: #008AA8;
+      color: #FFFFFF; }
+    .filter-highlighted .filter-list .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      transition: all .25s ease;
+      width: 2.5rem; }
+      .filter-highlighted .filter-list .point:hover {
+        transition: all .25s ease; }
+    .filter-highlighted .filter-list .severity,
+    .filter-highlighted .filter-list .priority,
+    .filter-highlighted .filter-list .status,
+    .filter-highlighted .filter-list .type,
+    .filter-highlighted .filter-list .role {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .filter-highlighted .filter-list .severity:hover,
+      .filter-highlighted .filter-list .priority:hover,
+      .filter-highlighted .filter-list .status:hover,
+      .filter-highlighted .filter-list .type:hover,
+      .filter-highlighted .filter-list .role:hover {
+        transition: all .25s ease; }
+    .filter-highlighted .filter-list::before {
+      background: #FFFFFF;
+      content: '';
+      height: 0.5rem;
+      left: calc(50% - .25rem);
+      position: absolute;
+      top: -0.25rem;
+      transform: rotate(45deg);
+      width: 0.5rem; }
+    .filter-highlighted .filter-list .item-text {
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-align: left;
+      white-space: initial;
+      /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+    .filter-highlighted .filter-list li {
+      cursor: pointer; }
+    .filter-highlighted .filter-list.ng-enter {
+      animation: dropdownFade .2s ease-in; }
+    .filter-highlighted .filter-list.ng-leave {
+      animation: dropdownFade .2s ease-in;
+      animation-direction: reverse; }
+
+.highlighted-project {
+  align-items: flex-start;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  flex-basis: 9rem;
+  min-height: 9rem;
+  padding: 1.5rem 0; }
+  .highlighted-project:nth-last-child(-n+2) {
+    border-bottom: 0; }
+  .highlighted-project .project-logo {
+    flex-basis: 3rem;
+    height: auto;
+    margin-right: 1rem;
+    width: 3rem; }
+    .highlighted-project .project-logo img {
+      width: 100%; }
+  .highlighted-project .project-data-container {
+    flex: 1; }
+  .highlighted-project .single-project-header {
+    align-content: center;
+    display: flex;
+    justify-content: space-between; }
+  .highlighted-project .project-title {
+    font-size: 1.1rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    display: inline-block;
+    margin-bottom: .5rem; }
+    .highlighted-project .project-title a {
+      color: #16171D; }
+      .highlighted-project .project-title a:hover {
+        color: #25A28C; }
+  .highlighted-project .project-description {
+    font-size: .875rem;
+    color: #5A5B72;
+    margin-bottom: 0; }
+  .highlighted-project .project-statistics {
+    align-items: flex-start;
+    display: flex;
+    flex-basis: 140px;
+    justify-content: flex-end;
+    text-align: center; }
+    .highlighted-project .project-statistics svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      fill: #70728F; }
+  .highlighted-project .statistic {
+    font-size: .875rem;
+    align-items: center;
+    color: #70728F;
+    display: flex;
+    margin-right: .5rem; }
+    .highlighted-project .statistic span {
+      margin-left: .2rem; }
+    .highlighted-project .statistic.active {
+      color: #008AA8; }
+      .highlighted-project .statistic.active svg {
+        fill: #008AA8; }

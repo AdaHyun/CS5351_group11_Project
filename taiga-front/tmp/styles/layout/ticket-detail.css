@@ -1,0 +1,133 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.detail {
+  background: #F1F1F4;
+  padding: 0; }
+  .detail .detail-header-container,
+  .detail .detail-content {
+    background: #fff;
+    padding: 1rem; }
+  .detail .detail-header-container {
+    display: flex;
+    margin: 0 0 .5rem;
+    position: relative; }
+    @media screen and (max-width: 768px) {
+      .detail .detail-header-container {
+        display: block; } }
+  .detail .detail-ref {
+    flex-shrink: 1; }
+  .detail .detail-header {
+    flex-grow: 1; }
+    @media screen and (max-width: 768px) {
+      .detail .detail-header {
+        padding: 0; } }
+  .detail .action-buttons {
+    margin-top: .5rem; }
+
+.subheader {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  @media screen and (max-width: 768px) {
+    .subheader {
+      flex-direction: column;
+      justify-content: flex-start; } }
+  .subheader .ticket-created-by {
+    flex-shrink: 1; }
+    @media screen and (max-width: 768px) {
+      .subheader .ticket-created-by {
+        align-self: flex-end;
+        flex-basis: auto; } }
+  .subheader .tags-container {
+    align-items: flex-end;
+    column-gap: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: .25rem;
+    row-gap: .5rem; }
+  .subheader .tags-block {
+    align-items: flex-end;
+    flex: 1;
+    flex-grow: 1; }
+    .subheader .tags-block .tag {
+      font-size: .875rem;
+      align-items: center;
+      display: flex;
+      min-height: 2rem; }
+      .subheader .tags-block .tag:first-child {
+        margin-inline-start: 0; }
+  .subheader.has-tags .relate-to-epic {
+    flex-basis: 100%;
+    margin-top: 0; }
+
+.duty-content {
+  position: relative; }
+  .duty-content .in-progress {
+    cursor: progress; }
+  .duty-content:hover .view-description .edit {
+    opacity: 1;
+    top: -1.5rem;
+    transition: all .2s linear; }
+  .duty-content:hover .view-description .editable {
+    background: #F1F1F4;
+    cursor: pointer; }
+  .duty-content:hover .view-description .no-description {
+    color: #434456; }
+  .duty-content.wysiwyg {
+    overflow: visible; }
+  .duty-content .read-mode .wysiwyg {
+    padding: 1rem; }
+  .duty-content .no-description {
+    color: #A9AABC;
+    padding: 1rem;
+    padding-inline-start: 2rem; }
+  .duty-content .save-container {
+    position: absolute;
+    right: 1rem;
+    top: .2rem; }
+    .duty-content .save-container:hover {
+      opacity: .3;
+      transition: opacity .2s linear; }
+    .duty-content .save-container .loading-spinner {
+      animation-timing-function: ease-in-out;
+      animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+      margin: 0 auto;
+      max-height: 1rem;
+      max-width: 1rem;
+      transform-origin: 32 32;
+      max-height: 1.5rem;
+      max-width: 1.5rem; }
+  .duty-content .edit {
+    cursor: pointer;
+    fill: #5A5B72; }
+  .duty-content .view-description .edit {
+    background: #F1F1F4;
+    height: 2rem;
+    left: 0;
+    opacity: 0;
+    padding: .2rem .5rem;
+    position: absolute;
+    top: 0;
+    transition: all .2s linear;
+    width: 2rem; }
+  .duty-content .edit-description {
+    margin-bottom: 2rem; }
+    .duty-content .edit-description .save {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      top: .3rem; }
+    .duty-content .edit-description .edit {
+      display: inline-block;
+      position: absolute;
+      right: 2.5rem;
+      top: .4rem;
+      transition: all .2s linear; }
+    .duty-content .edit-description .preview {
+      padding-top: 1.5rem; }
+
+.comment-list {
+  padding: 1rem; }

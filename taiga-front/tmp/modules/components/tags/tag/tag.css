@@ -1,0 +1,30 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.tag {
+  font-size: .875rem;
+  display: inline-block;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  background: #A9AABC;
+  border-radius: 2px;
+  color: #FFFFFF;
+  display: inline-flex;
+  padding: .1rem .5rem;
+  text-align: center; }
+  .tag span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .tag .icon-close {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    fill: #FFFFFF; }
+  .tag .loading-spinner {
+    height: 1rem;
+    width: 1rem; }

@@ -1,0 +1,120 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.custom-field-options {
+  margin-bottom: 1rem;
+  text-align: right; }
+
+.custom-fields-table {
+  margin-bottom: 2em; }
+  .custom-fields-table .row {
+    border-bottom: 0; }
+  .custom-fields-table .table-header {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid #E2E3E9; }
+    .custom-fields-table .table-header .custom-name,
+    .custom-fields-table .table-header .custom-description {
+      padding-left: 1.1rem; }
+  .custom-fields-table .table-body .row:hover {
+    background: rgba(92, 186, 169, 0.05);
+    cursor: move;
+    transition: background .2s linear; }
+    .custom-fields-table .table-body .row:hover .icon-draggable,
+    .custom-fields-table .table-body .row:hover .custom-options {
+      opacity: 1;
+      transition: opacity .2s linear; }
+  .custom-fields-table .table-body form.row:hover {
+    background: none;
+    cursor: default; }
+  .custom-fields-table .single-custom-field {
+    border-bottom: 1px solid #E2E3E9;
+    color: #5A5B72; }
+  .custom-fields-table .js-view-custom-field {
+    padding: .75rem 0; }
+    .custom-fields-table .js-view-custom-field .custom-extra-attr-wrapper {
+      margin-left: 1em; }
+  .custom-fields-table .icon-draggable {
+    fill: #70728F;
+    opacity: 0;
+    padding: 0 .25rem 0 .1rem;
+    transition: color .2s linear; }
+  .custom-fields-table .custom-name,
+  .custom-fields-table .custom-description {
+    margin-right: .5rem; }
+  .custom-fields-table .custom-name {
+    align-items: center;
+    display: flex;
+    flex-basis: 25%;
+    flex-shrink: 0; }
+    .custom-fields-table .custom-name a {
+      padding: 0 .5em; }
+    .custom-fields-table .custom-name svg {
+      height: 1rem;
+      width: 1rem; }
+  .custom-fields-table .custom-description {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    flex-basis: 50%;
+    flex-grow: 8; }
+  .custom-fields-table .custom-field-type {
+    flex-basis: 12%;
+    flex-grow: 0;
+    flex-shrink: 0; }
+  .custom-fields-table .custom-options {
+    flex-basis: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    opacity: 0;
+    text-align: center; }
+    .custom-fields-table .custom-options svg {
+      cursor: pointer;
+      fill: #70728F;
+      margin-right: .5rem;
+      transition: color .2s linear;
+      vertical-align: middle; }
+      .custom-fields-table .custom-options svg:hover {
+        fill: #25A28C;
+        transition: color .2s linear; }
+      .custom-fields-table .custom-options svg.icon-trash {
+        fill: #E44057; }
+      .custom-fields-table .custom-options svg.icon-close, .custom-fields-table .custom-options svg.icon-check-empty {
+        fill: #008AA8; }
+  .custom-fields-table .custom-options-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    padding-right: 1rem;
+    transition: opacity .3s linear; }
+    .custom-fields-table .custom-options-wrapper:hover {
+      opacity: 1; }
+    .custom-fields-table .custom-options-wrapper a {
+      display: inline-block; }
+  .custom-fields-table .custom-field-extra {
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    color: #70728F;
+    font-size: .95em; }
+  .custom-fields-table .js-view-custom-field-extra {
+    padding: .5em; }
+  .custom-fields-table .js-edit-custom-field {
+    margin-left: .4rem; }
+  .custom-fields-table .custom-extra-attr-wrapper {
+    flex-grow: 1; }
+  .custom-fields-table .custom-extra-actions {
+    padding: .5em 0; }
+    .custom-fields-table .custom-extra-actions a {
+      color: #008AA8;
+      display: flex; }
+    .custom-fields-table .custom-extra-actions svg {
+      height: 1rem;
+      margin-right: .25em;
+      width: 1rem; }
+  .custom-fields-table .js-form .custom-options-wrapper,
+  .custom-fields-table .js-new-custom-field:hover .custom-options-wrapper {
+    opacity: 1; }

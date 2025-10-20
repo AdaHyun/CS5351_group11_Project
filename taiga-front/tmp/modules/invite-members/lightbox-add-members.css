@@ -1,0 +1,7 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-add-member .add-members-wrapper {
+  max-width: 900px;
+  width: 90%; }

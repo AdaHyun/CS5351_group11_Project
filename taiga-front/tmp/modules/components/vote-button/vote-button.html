@@ -1,0 +1,4 @@
+
+<div class="ticket-section-label">{{ 'COMMON.FIELDS.VOTES'|translate }}</div>
+<div title="{{ 'COMMON.VOTE_BUTTON.COUNTER_TITLE'|translate:{total:vm.item.total_voters||0}:'messageformat' }}" tg-loading="vm.loading" class="votes">{{ vm.item.total_voters }}</div><a ng-if="::vm.user" href="" title="{{ 'COMMON.VOTE_BUTTON.BUTTON_TITLE' | translate }}" ng-click="vm.toggleVote()" ng-class="{'voted': vm.item.is_voter}" class="vote-button">
+  <tg-svg svg-icon="icon-upvote"></tg-svg></a>

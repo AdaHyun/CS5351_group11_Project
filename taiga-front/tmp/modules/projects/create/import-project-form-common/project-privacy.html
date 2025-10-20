@@ -1,0 +1,15 @@
+
+<div role="group" class="create-project-privacity">
+  <fieldset>
+    <input type="radio" name="is_private" id="template-public" data-required="true" aria-hidden="true" ng-value="false" ng-model="vm.projectForm.is_private" required="required" ng-checked="vm.canCreatePublicProjects"/>
+    <label for="template-public">
+      <tg-svg svg-icon="icon-discover"></tg-svg><span translate="PROJECT.CREATE.PUBLIC_PROJECT"></span>
+    </label>
+  </fieldset>
+  <fieldset>
+    <input type="radio" name="is_private" id="template-private" data-required="true" ng-value="true" ng-model="vm.projectForm.is_private" aria-hidden="true" required="required"/>
+    <label for="template-private">
+      <tg-svg svg-icon="icon-private"></tg-svg><span translate="PROJECT.CREATE.PRIVATE_PROJECT"></span>
+    </label>
+  </fieldset>
+</div>

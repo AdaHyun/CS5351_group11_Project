@@ -1,0 +1,27 @@
+
+<div ng-class="{'hidden': !userstories.length}" tg-bind-scope="tg-bind-scope" class="search-result-table-container">
+  <div class="search-result-table-header">
+    <div class="row title">
+      <div translate="SEARCH.FILTER_USER_STORIES" class="user-stories"></div>
+      <div translate="COMMON.FIELDS.SPRINT" class="sprint"></div>
+      <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+      <div translate="COMMON.FIELDS.POINTS" class="points"></div>
+    </div>
+  </div>
+  <div class="search-result-table-body">
+    <div ng-repeat="us in userstories track by us.id" class="row table-main">
+      <div class="user-stories">
+        <div class="user-story-name"><a href="" tg-nav="project-userstories-detail:project=project.slug,ref=us.ref"><span tg-bo-ref="us.ref" class="ref"></span><span ng-bind-html="us.subject | emojify"></span></a></div>
+      </div>
+      <div class="sprint">
+        <div class="sprint-link"><a href="" tg-nav="project-taskboard:project=project.slug,sprint=us.milestone_slug" tg-bo-bind="us.milestone_name"></a></div>
+      </div>
+      <div tg-listitem-us-status="us" class="status"></div>
+      <div tg-bo-bind="us.total_points" class="points"></div>
+    </div>
+  </div>
+</div>
+<div ng-class="{'hidden': userstories.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}"/>
+  <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+  <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+</div>

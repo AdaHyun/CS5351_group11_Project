@@ -1,0 +1,50 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.discover-header {
+  background: url("../images/discover.png") repeat-x bottom left #E2E3E9;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1rem 2rem;
+  text-align: center; }
+  .discover-header .discover-header-inner {
+    margin: 1rem auto;
+    max-width: 1200px;
+    padding: 0 1.25rem;
+    width: 100%;
+    margin: 0 auto; }
+  .discover-header .title {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: 2.1rem;
+    line-height: 3rem;
+    margin-bottom: 0; }
+  .discover-header .project-number {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #4C566A; }
+  .discover-header form {
+    margin: 0 30%;
+    position: relative; }
+    @media screen and (max-width: 768px) {
+      .discover-header form {
+        margin: 0 .5rem; } }
+  .discover-header input[type='text'] {
+    background: #fff;
+    border: 0;
+    padding: 1rem;
+    width: 100%; }
+    .discover-header input[type='text']:focus {
+      outline-color: #5CBAA9; }
+    .discover-header input[type='text']:-webkit-autofill {
+      background: rgba(146, 209, 197, 0.5); }
+  .discover-header .search-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #70728F;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    transition: fill .2s; }
+    .discover-header .search-button:hover {
+      cursor: pointer;
+      fill: #25A28C; }

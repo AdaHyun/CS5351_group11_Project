@@ -1,0 +1,304 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.related-tasks {
+  margin-bottom: 2rem;
+  position: relative; }
+
+.related-tasks-header {
+  align-content: center;
+  align-items: center;
+  background: #F1F1F4;
+  display: flex;
+  justify-content: space-between;
+  min-height: 36px; }
+  .related-tasks-header .related-tasks-title {
+    font-size: 1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #434456;
+    margin-left: 1rem; }
+
+.related-tasks-body {
+  width: 100%; }
+  .related-tasks-body .row {
+    font-size: .875rem;
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    border-left: 10px solid transparent;
+    display: flex;
+    padding: .5rem 0 .5rem .5rem; }
+    .related-tasks-body .row:hover .task-settings {
+      opacity: 1;
+      transition: all .2s ease-in; }
+    .related-tasks-body .row .task-name {
+      flex: 1; }
+    .related-tasks-body .row .task-settings {
+      flex-shrink: 0;
+      width: 60px; }
+    .related-tasks-body .row .status {
+      flex-shrink: 0;
+      margin-right: 1rem;
+      width: 8rem; }
+    .related-tasks-body .row .task-status-bind {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .related-tasks-body .row .task-status {
+      display: flex; }
+    .related-tasks-body .row .assigned-to {
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 150px; }
+  .related-tasks-body .single-related-task:hover {
+    background: #C9E8E2; }
+    .related-tasks-body .single-related-task:hover .icon-drag {
+      opacity: 1; }
+    .related-tasks-body .single-related-task:hover.blocked .icon-drag {
+      fill: rgba(228, 64, 87, 0.25);
+      opacity: 1; }
+  .related-tasks-body .single-related-task .task-reorder {
+    display: flex;
+    margin-right: 1rem; }
+  .related-tasks-body .single-related-task .icon-drag {
+    width: 1rem;
+    height: 1rem;
+    cursor: move;
+    fill: #008AA8;
+    transition: opacity .1s; }
+  .related-tasks-body .related-task-create-form {
+    padding: 0; }
+    .related-tasks-body .related-task-create-form.active {
+      padding: .5rem 0 .5rem .5rem; }
+  .related-tasks-body .iocaine {
+    background: rgba(92, 186, 169, 0.1);
+    border-left: 10px solid #5CBAA9; }
+  .related-tasks-body .task-name {
+    display: flex;
+    margin-right: 1rem; }
+    .related-tasks-body .task-name .task-name-subject {
+      color: #2E3440; }
+    .related-tasks-body .task-name span {
+      margin-right: .25rem; }
+    .related-tasks-body .task-name input {
+      font-size: 1rem;
+      margin-right: 1rem;
+      padding: 3px;
+      width: 85%; }
+    .related-tasks-body .task-name.loading {
+      margin: 0;
+      padding: 8px;
+      text-align: center;
+      width: 100%; }
+      .related-tasks-body .task-name.loading span {
+        animation: loading .5s linear, spin 1s linear infinite; }
+  .related-tasks-body .status {
+    position: relative; }
+    .related-tasks-body .status .not-clickable:hover {
+      color: #434456; }
+    .related-tasks-body .status .popover {
+      left: 0;
+      top: 1rem; }
+    .related-tasks-body .status .icon {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: currentColor;
+      margin-left: .2rem; }
+  .related-tasks-body .closed,
+  .related-tasks-body .closed:hover {
+    border-left: 10px solid #E2E3E9;
+    color: #4C566A; }
+    .related-tasks-body .closed svg,
+    .related-tasks-body .closed:hover svg {
+      fill: #4C566A;
+      stroke: 0; }
+    .related-tasks-body .closed .icon-draggable,
+    .related-tasks-body .closed:hover .icon-draggable {
+      fill: #70728F; }
+    .related-tasks-body .closed .task-name a,
+    .related-tasks-body .closed:hover .task-name a {
+      color: #4C566A;
+      opacity: .5;
+      text-decoration: line-through; }
+    .related-tasks-body .closed .task-reorder,
+    .related-tasks-body .closed:hover .task-reorder {
+      margin-right: .5rem; }
+  .related-tasks-body .icon-iocaine {
+    display: none; }
+  .related-tasks-body .pop-status {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #008AA8;
+    display: none;
+    left: 40%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: "";
+    top: 0;
+    width: 200px;
+    z-index: 2; }
+    .related-tasks-body .pop-status:hover {
+      color: #70728F; }
+    .related-tasks-body .pop-status a {
+      padding: .25rem; }
+    .related-tasks-body .pop-status li {
+      margin-bottom: .25rem; }
+      .related-tasks-body .pop-status li:last-child {
+        margin-bottom: 0; }
+      .related-tasks-body .pop-status li:hover {
+        background: #ECEFF4;
+        color: #70728F; }
+        .related-tasks-body .pop-status li:hover a {
+          color: #70728F; }
+    .related-tasks-body .pop-status.horizontal li {
+      margin-bottom: .25rem;
+      white-space: nowrap;
+      width: 100%; }
+    .related-tasks-body .pop-status.horizontal a {
+      width: 100%; }
+      .related-tasks-body .pop-status.horizontal a.active {
+        color: #FFFFFF; }
+    .related-tasks-body .pop-status.horizontal .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: auto;
+      justify-content: flex-start;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .related-tasks-body .pop-status.horizontal .point:hover {
+        transition: all .25s ease; }
+    .related-tasks-body .pop-status.pop-points-open li {
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .related-tasks-body .pop-status a.active {
+      background: #008AA8;
+      color: #FFFFFF; }
+    .related-tasks-body .pop-status .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      transition: all .25s ease;
+      width: 2.5rem; }
+      .related-tasks-body .pop-status .point:hover {
+        transition: all .25s ease; }
+    .related-tasks-body .pop-status .severity,
+    .related-tasks-body .pop-status .priority,
+    .related-tasks-body .pop-status .status,
+    .related-tasks-body .pop-status .type,
+    .related-tasks-body .pop-status .role {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .related-tasks-body .pop-status .severity:hover,
+      .related-tasks-body .pop-status .priority:hover,
+      .related-tasks-body .pop-status .status:hover,
+      .related-tasks-body .pop-status .type:hover,
+      .related-tasks-body .pop-status .role:hover {
+        transition: all .25s ease; }
+    .related-tasks-body .pop-status::before {
+      background: #FFFFFF;
+      content: '';
+      height: 15px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 0; }
+    .related-tasks-body .pop-status .item-text {
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-align: left;
+      white-space: initial;
+      /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+    .related-tasks-body .pop-status.fix {
+      bottom: 0;
+      top: auto; }
+  .related-tasks-body .blocked,
+  .related-tasks-body .blocked:hover {
+    background: rgba(255, 160, 160, 0.2);
+    border-left: 10px solid rgba(228, 64, 87, 0.25); }
+    .related-tasks-body .blocked .task-name-ref,
+    .related-tasks-body .blocked .task-name-subject,
+    .related-tasks-body .blocked:hover .task-name-ref,
+    .related-tasks-body .blocked:hover .task-name-subject {
+      color: #E44057; }
+    .related-tasks-body .blocked .icon-draggable,
+    .related-tasks-body .blocked:hover .icon-draggable {
+      fill: #70728F; }
+  .related-tasks-body .task-settings {
+    align-items: center;
+    display: flex;
+    opacity: 0; }
+    .related-tasks-body .task-settings svg {
+      width: 1rem;
+      height: 1rem;
+      fill: #70728F;
+      margin-right: .5rem;
+      stroke: none;
+      transition: fill .2s ease-in; }
+      .related-tasks-body .task-settings svg:hover {
+        fill: #5A5B72; }
+    .related-tasks-body .task-settings a:hover {
+      cursor: pointer; }
+  .related-tasks-body .edit-task:hover .icon-edit,
+  .related-tasks-body .save-task:hover .icon-edit,
+  .related-tasks-body .delete-task:hover .icon-edit {
+    fill: #008AA8; }
+  .related-tasks-body .edit-task:hover .icon-save,
+  .related-tasks-body .save-task:hover .icon-save,
+  .related-tasks-body .delete-task:hover .icon-save {
+    fill: #008AA8; }
+  .related-tasks-body .edit-task:hover .icon-trash,
+  .related-tasks-body .save-task:hover .icon-trash,
+  .related-tasks-body .delete-task:hover .icon-trash {
+    fill: #E44057; }
+  .related-tasks-body .task-assignedto {
+    position: relative; }
+    .related-tasks-body .task-assignedto.editable {
+      cursor: pointer; }
+    .related-tasks-body .task-assignedto:hover .icon {
+      opacity: 1;
+      transition: opacity .3s linear; }
+    .related-tasks-body .task-assignedto figcaption {
+      max-width: 50%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .related-tasks-body .task-assignedto .icon {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: #70728F;
+      opacity: 0;
+      position: absolute;
+      right: .5rem;
+      top: .5rem;
+      transition: opacity .3s linear; }
+  .related-tasks-body .avatar {
+    align-items: center;
+    display: flex; }
+    .related-tasks-body .avatar img {
+      flex-basis: 35px;
+      height: 35px;
+      width: 35px; }
+    .related-tasks-body .avatar figcaption {
+      margin-left: .5rem; }

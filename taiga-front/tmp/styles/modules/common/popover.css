@@ -1,0 +1,126 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.global-popover {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  background: #FFFFFF;
+  border: 1px solid #D8DEE9;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+  color: #008AA8;
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem;
+  position: absolute;
+  text-align: "";
+  width: 170px;
+  z-index: 2;
+  position: absolute;
+  z-index: 99; }
+  .global-popover:hover {
+    color: #70728F; }
+  .global-popover a {
+    padding: .25rem; }
+  .global-popover li {
+    margin-bottom: .25rem; }
+    .global-popover li:last-child {
+      margin-bottom: 0; }
+    .global-popover li:hover {
+      background: #ECEFF4;
+      color: #70728F; }
+      .global-popover li:hover a {
+        color: #70728F; }
+  .global-popover.horizontal li {
+    margin-bottom: .25rem;
+    white-space: nowrap;
+    width: 100%; }
+  .global-popover.horizontal a {
+    width: 100%; }
+    .global-popover.horizontal a.active {
+      color: #FFFFFF; }
+  .global-popover.horizontal .point {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+    min-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s ease;
+    white-space: nowrap; }
+    .global-popover.horizontal .point:hover {
+      transition: all .25s ease; }
+  .global-popover.pop-points-open li {
+    display: inline-flex;
+    margin: 0;
+    padding: 0; }
+  .global-popover a.active {
+    background: #008AA8;
+    color: #FFFFFF; }
+  .global-popover .point {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    transition: all .25s ease;
+    width: 2.5rem; }
+    .global-popover .point:hover {
+      transition: all .25s ease; }
+  .global-popover .severity,
+  .global-popover .priority,
+  .global-popover .status,
+  .global-popover .type,
+  .global-popover .role {
+    align-items: center;
+    color: #008AA8;
+    display: flex;
+    min-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s ease;
+    white-space: nowrap; }
+    .global-popover .severity:hover,
+    .global-popover .priority:hover,
+    .global-popover .status:hover,
+    .global-popover .type:hover,
+    .global-popover .role:hover {
+      transition: all .25s ease; }
+  .global-popover::before {
+    background: #FFFFFF;
+    content: '';
+    height: 15px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 0; }
+  .global-popover .item-text {
+    /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-align: left;
+    white-space: initial;
+    /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+  .global-popover ul {
+    margin-bottom: 0; }
+  .global-popover button {
+    appearance: none;
+    background: none;
+    color: #008AA8;
+    display: flex;
+    padding: .25rem;
+    width: 100%; }
+    .global-popover button:hover {
+      background: #ECEFF4;
+      color: #70728F; }
+    .global-popover button svg {
+      width: 1rem;
+      height: 1rem;
+      fill: #008AA8;
+      margin-inline-end: .5rem; }

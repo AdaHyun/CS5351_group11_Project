@@ -1,0 +1,4 @@
+
+<nav class="history-tabs"><a ng-if="showCommentTab()" href="" title="{{COMMENTS.COMMENT}}" ng-click="onActiveComments()" ng-class="{active: activeTab}" translate="COMMENTS.COMMENTS_COUNT" translate-values="{comments: commentsNum}" class="history-tab e2e-comments-tab"></a><a ng-if="showActivityTab()" href="" title="Activities" ng-click="onActiveActivities()" ng-class="{active: !activeTab}" translate="ACTIVITY.ACTIVITIES_COUNT" translate-values="{activities: activitiesNum}" class="history-tab e2e-activity-tab"></a><a href="" title="Order Comments" ng-click="onOrderComments()" ng-class="{'new-first': top, 'old-first': !top}" ng-if="commentsNum &gt; 1 &amp;&amp; activeTab" class="order-comments"><span translate="COMMENTS.OLDER_FIRST" ng-if="!onReverse"></span>
+    <tg-svg svg-icon="icon-arrow-up" ng-if="!onReverse"></tg-svg><span translate="COMMENTS.RECENT_FIRST" ng-if="onReverse"></span>
+    <tg-svg svg-icon="icon-arrow-up" ng-if="onReverse"></tg-svg></a></nav>

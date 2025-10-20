@@ -1,0 +1,17 @@
+
+<section tg-select-input-text="tg-select-input-text" class="project-csv">
+  <div class="project-values-title">
+    <h2 translate="{{::sectionTitle}}"></h2><a title="{{'ADMIN.CSV.DOWNLOAD' | translate}}" ng-href="{{csvUrl}}" ng-show="csvUrl" target="_blank" class="btn-small"><span translate="ADMIN.CSV.DOWNLOAD"></span></a>
+  </div>
+  <div class="csv-regenerate-field">
+    <div class="field-with-options">
+      <input type="text" placeholder="{{'ADMIN.CSV.URL_FIELD_PLACEHOLDER' | translate}}" readonly="readonly" ng-model="csvUrl"/>
+      <div class="option-wrapper select-input-content">
+        <tg-svg svg-icon="icon-clipboard"></tg-svg>
+      </div>
+    </div><a href="" title="{{'ADMIN.CSV.TITLE_REGENERATE_URL' | translate}}" ng-click="ctrl.regenerateUuid()">
+      <tg-svg svg-icon="icon-add" ng-hide="csvUrl"></tg-svg><span ng-hide="csvUrl" translate="ADMIN.CSV.ACTION_GENERATE_URL"></span>
+      <tg-svg svg-icon="icon-reload" ng-show="csvUrl"></tg-svg><span ng-Show="csvUrl" translate="ADMIN.CSV.ACTION_REGENERATE"></span></a><a href="" ng-show="csvUrl" title="{{'ADMIN.CSV.TITLE_DELETE_URL' | translate}}" ng-click="ctrl.deleteUuid()">
+      <tg-svg svg-icon="icon-trash" ng-show="csvUrl"></tg-svg><span ng-Show="csvUrl" translate="ADMIN.CSV.ACTION_DELETE_URL"></span></a>
+  </div>
+</section>

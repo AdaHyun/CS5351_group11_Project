@@ -1,0 +1,20 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+div
+    nav.profile-content-tabs
+        a.tab(
+            href=""
+            ng-repeat="tab in ::vm.tabs"
+            title="{{tab.title}}"
+            ng-click="vm.toggleTab(tab)"
+            ng-class="{active: tab.active}"
+        )
+            tg-svg(svg-icon="{{::tab.icon}}")
+            span {{::tab.name}}
+
+    ng-transclude

@@ -1,0 +1,69 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close
+.add-member-wrapper
+    h2.title(translate="LIGHTBOX.ADD_MEMBER.TITLE")
+    form.add-member-form(ng-submit="vm.submit()")
+        .add-single-member(ng-repeat="member in vm.memberInvites")
+            fieldset
+                input(
+                    ng-if="$first"
+                    type="email"
+                    required
+                    placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_TYPE_EMAIL' | translate}}"
+                    data-required="true"
+                    name="email-{{$index}}"
+                    data-type="email"
+                    ng-model="member.email"
+                )
+                input(
+                    ng-if="!$first"
+                    type="email"
+                    placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_TYPE_EMAIL' | translate}}"
+                    name="email-{{$index}}"
+                    data-type="email"
+                    ng-model="member.email"
+                )
+            fieldset
+                select(
+                    ng-if="vm.project"
+                    name="role-{{$index}}"
+                    ng-model="member.role_id"
+                    ng-options="role.id as role.name for role in vm.project.roles"
+                )
+            fieldset
+                a.add-fieldset.ng-animate-disabled(
+                    href=""
+                    ng-click="vm.addSingleMember()"
+                    ng-if="$last && vm.canAddUsers"
+                )
+                    tg-svg(svg-icon="icon-add")
+                a.remove-fieldset.ng-animate-disabled(
+                    href=""
+                    ng-click="vm.removeSingleMember($index)"
+                    ng-if="!$last || ($last && !vm.canAddUsers && vm.membersLimit > 1)"
+                )
+                    tg-svg(svg-icon="icon-trash")
+
+        tg-lightbox-add-members-warning-message(ng-if="vm.showWarningMessage", project="vm.project")
+
+        fieldset.invitation-text
+            textarea(
+                ng-attr-placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_INVITATION_TEXT' | translate}}"
+                maxlength="255"
+                ng-model="vm.invitationText"
+            )
+
+        button.button-green.button-large.button-block(
+            type="submit"
+            title="{{'COMMON.CREATE' | translate}}"
+            translate="COMMON.CREATE"
+            tg-loading="vm.submitInvites"
+        )
+
+    p.help-text(translate="LIGHTBOX.ADD_MEMBER.HELP_TEXT")

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div ng-controller="ProjectProfileController as ctrl" ng-init="section='admin'; sectionName='ADMIN.REPORTS.TITLE'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="project-profile" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="reports" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-details"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.PROJECT_PROFILE.PROJECT_DETAILS" class="title"></span></a></li>
+          <li id="adminmenu-default-values"><a href="" tg-nav="project-admin-project-profile-default-values:project=project.slug"><span translate="ADMIN.PROJECT_PRESETS.MENU_TITLE" class="title"></span></a></li>
+          <li id="adminmenu-modules"><a href="" tg-nav="project-admin-project-profile-modules:project=project.slug"><span translate="ADMIN.MODULES.TITLE" class="title"></span></a></li>
+          <li id="adminmenu-export"><a href="" tg-nav="project-admin-project-profile-export:project=project.slug"><span translate="ADMIN.PROJECT_EXPORT.TITLE" class="title"></span></a></li>
+          <li id="adminmenu-reports"><a href="" tg-nav="project-admin-project-profile-reports:project=project.slug"><span translate="ADMIN.REPORTS.TITLE" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section tg-project-export class="main admin-common">
+    <header>
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+      <p translate="ADMIN.REPORTS.SUBTITLE" class="admin-subtitle"></p>
+    </header>
+    <p translate="ADMIN.REPORTS.DESCRIPTION"></p>
+    <div tg-csv-epic class="admin-attributes-section"></div>
+    <div tg-csv-us class="admin-attributes-section"></div>
+    <div tg-csv-task class="admin-attributes-section"></div>
+    <div tg-csv-issue class="admin-attributes-section"></div>
+    <div><a href="https://community.taiga.io/t/making-csv-reports/163" target="_blank" class="help-button">
+        <tg-svg svg-icon="icon-question"></tg-svg><span translate="ADMIN.REPORTS.HELP"></span></a></div>
+  </section>
+</div>

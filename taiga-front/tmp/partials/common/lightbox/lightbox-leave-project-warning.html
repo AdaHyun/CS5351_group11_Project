@@ -1,0 +1,12 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="content">
+  <tg-svg svg-icon="icon-exclamation"></tg-svg>
+  <h2 class="title">{{'LIGHTBOX.LEAVE_PROJECT_WARNING.TITLE' | translate}}</h2>
+  <div ng-if="isCurrentUser">
+    <p>{{'LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.DESC' | translate}}</p><a tg-nav="project-admin-home:project=project.slug" translate="LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.BUTTON" class="btn-big"></a>
+  </div>
+  <div ng-if="!isCurrentUser">
+    <p>{{'LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.DESC' | translate}}</p><a tg-nav="project-admin-home:project=project.slug" href="" class="button-big"><span translate="LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.BUTTON"></span></a>
+  </div>
+</div>

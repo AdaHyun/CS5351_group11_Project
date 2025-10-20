@@ -1,0 +1,32 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.loading-bar {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .loading-bar .item {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: loadBar;
+    animation-timing-function: ease-in;
+    background: #5A5B72;
+    flex: 1;
+    height: 5px; }
+  .loading-bar .item-1 {
+    animation-delay: 1s;
+    background: #a8e440; }
+  .loading-bar .item-2 {
+    animation-delay: 2s;
+    background: #e4ce40; }
+  .loading-bar .item-3 {
+    animation-delay: 3s;
+    background: #e47c40; }
+  .loading-bar .item-4 {
+    animation-delay: 4s;
+    background: #e44057; }
+  .loading-bar .item-5 {
+    animation-delay: 5s;
+    background: #4056e4; }

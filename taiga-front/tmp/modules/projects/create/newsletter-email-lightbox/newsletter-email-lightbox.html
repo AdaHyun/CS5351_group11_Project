@@ -1,0 +1,28 @@
+
+<tg-lightbox-close on-close="vm.onClose()"></tg-lightbox-close>
+<form>
+  <h2 translate="PROJECT.NEWSLETTER_OPENING.LIGHTBOX_TITLE" class="lightbox-title"></h2>
+  <div class="newsletter-info">
+    <div class="custom-checkbox">
+      <input type="checkbox" name="confirm-email" id="confirm-email" ng-model="preference"/>
+      <label for="confirm-email" tabindex="0"></label>
+    </div>
+    <div class="text-container">
+      <label for="confirm-email" translate="PROJECT.NEWSLETTER_OPENING.CONFIRMATION" class="confirm-label"></label>
+      <p class="text-info"><span translate="PROJECT.NEWSLETTER_OPENING.NO_SHARE" class="italic"></span><br/><span translate="PROJECT.NEWSLETTER_OPENING.OPT_OUT" class="italic"></span></p>
+    </div>
+  </div>
+  <div class="option-container">
+    <div class="ask">
+      <div class="custom-checkbox">
+        <input type="checkbox" name="ask" id="dont-ask" ng-model="dontAsk"/>
+        <label for="dont-ask" tabindex="0"></label>
+      </div>
+      <label for="dont-ask" translate="PROJECT.NEWSLETTER_OPENING.DONT_ASK" class="ask-label"></label>
+    </div>
+    <div class="options">
+      <button variant="secondary" ng-click="closeLightbox()" class="btn-small btn-cancel js-cancel"><span translate="COMMON.CANCEL"></span></button>
+      <button variant="primary" ng-click="setEmail()" class="btn-small"><span translate="PROJECT.NEWSLETTER_OPENING.SAVE_PREFERENCE"></span></button>
+    </div>
+  </div>
+</form>

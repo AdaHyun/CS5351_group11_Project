@@ -1,0 +1,42 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.project-csv {
+  margin-bottom: 2.5rem; }
+  .project-csv .project-values-title {
+    margin-bottom: 1rem; }
+  .project-csv .csv-regenerate-field {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem; }
+    .project-csv .csv-regenerate-field a {
+      font-size: .875rem;
+      display: flex;
+      margin-left: 1em;
+      white-space: nowrap; }
+    .project-csv .csv-regenerate-field .icon:not(.icon-clipboard) {
+      fill: currentColor;
+      height: .9rem;
+      margin-right: .3rem;
+      vertical-align: middle;
+      width: .9rem; }
+  .project-csv .field-with-options {
+    display: flex;
+    width: 100%; }
+    .project-csv .field-with-options input {
+      flex-grow: 1; }
+  .project-csv .option-wrapper {
+    align-items: center;
+    border: 1px solid #70728F;
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    padding: 0 1rem; }
+  .project-csv .button {
+    padding: .5rem 1rem; }
+    .project-csv .button span {
+      margin: 0; }

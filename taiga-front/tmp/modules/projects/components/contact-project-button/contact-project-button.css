@@ -1,0 +1,13 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.contact-team-large {
+  font-size: .875rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  justify-content: center;
+  margin-left: 0;
+  width: 100%; }
+  .contact-team-large .icon-mail {
+    margin-right: .5rem;
+    vertical-align: center; }

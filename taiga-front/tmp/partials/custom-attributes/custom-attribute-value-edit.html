@@ -1,0 +1,31 @@
+
+
+<form autocomplete="off" class="custom-field-single editable <%= type === 'checkbox' ? 'custom-field-checkbox' : '' %>">
+  <div class="custom-field-data">
+    <label for="custom-field-value" class="custom-field-name"><%- name %></label><% if (description){ %><span class="custom-field-description"><%- description %></span><% } %>
+  </div>
+  <div class="custom-field-value-container"><% if (type=="richtext") { %>
+    <div class="custom-field-value rich-text">
+      <tg-custom-field-edit-wysiwyg></tg-custom-field-edit-wysiwyg>
+    </div><% } else { %>
+    <div class="custom-field-value"><% if (type=="text") { %>
+      <input id="custom-field-value" name="value" type="text" value="<%- value %>"/><% } else if (type=="multiline") { %>
+      <textarea id="custom-field-value" name="value"><%- value %></textarea><% } else if (type=="date") { %>
+      <input id="custom-field-value" name="value" type="text" data-pikaday="data-pikaday" value="<%- value %>"/><% } else if (type=="url") { %>
+      <input id="custom-field-value" name="value" data-type="url" type="url" value="<%- value %>"/><% } else if (type=="dropdown") { %>
+      <select id="custom-field-value" name="value" ng-model="model">
+        <option></option>
+        <option ng-repeat="option in extra" value="{{ option }}">{{ option }}</option>
+      </select><% } else if (type=="number") { %>
+      <input id="custom-field-value" name="value" type="number" value="<%- value %>"/><% } else if (type=="checkbox") { %>
+      <div class="check">
+        <input name="value" type="checkbox" ng-checked="model"/>
+        <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+      </div><% } else { %>
+      <input id="custom-field-value" name="value" type="text" value="<%- value %>"/><% } %>
+    </div><% } %>
+    <% if (type != "richtext") { %>
+    <div class="custom-field-options"><a href="" title="{{'COMMON.CUSTOM_ATTRIBUTES.SAVE' | translate}}" class="js-save-description">
+        <tg-svg svg-icon="icon-save"></tg-svg></a></div><% } %>
+  </div>
+</form>

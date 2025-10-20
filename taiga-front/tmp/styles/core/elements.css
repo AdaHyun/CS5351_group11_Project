@@ -1,0 +1,101 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+blockquote,
+blockquote p {
+  line-height: 1.25rem; }
+
+blockquote {
+  margin: 0 0 20px;
+  padding: .5rem 1.25rem; }
+  blockquote cite {
+    font-size: .875rem;
+    display: block; }
+    blockquote cite::before {
+      content: '\2014 \0020'; }
+
+ul,
+ol {
+  margin-bottom: 20px; }
+
+ul {
+  list-style: none outside; }
+
+ol {
+  list-style: decimal; }
+
+sup {
+  font-size: .875rem;
+  vertical-align: super; }
+
+.clickable {
+  cursor: pointer; }
+
+.not-clickable {
+  cursor: default; }
+
+.draggable {
+  cursor: move; }
+
+svg {
+  height: 1rem;
+  width: 1rem; }
+
+.pika-single {
+  min-width: 240px;
+  width: auto;
+  z-index: 99; }
+  .pika-single .pika-title {
+    color: #434456; }
+  .pika-single .is-selected .pika-button {
+    background: #25A28C;
+    border-radius: 0 !important;
+    /* stylelint-disable-line declaration-no-important */
+    box-shadow: inset 0 1px 3px #25A28C; }
+  .pika-single .is-today .pika-button {
+    color: #25A28C; }
+  .pika-single .is-today.is-selected button {
+    color: #fff; }
+  .pika-single .pika-button:hover {
+    /* stylelint-disable declaration-no-important */
+    background: #5CBAA9 !important;
+    border-radius: 0 !important;
+    box-shadow: inset 0 1px 3px #5CBAA9 !important;
+    /* stylelint-enable declaration-no-important */ }
+
+.spin img {
+  animation-timing-function: ease-in-out;
+  animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+  margin: 0 auto;
+  max-height: 1rem;
+  max-width: 1rem;
+  transform-origin: 32 32;
+  max-height: 2rem;
+  max-width: 2rem; }
+
+div.awesomplete input {
+  display: inline-block; }
+
+div.awesomplete > ul {
+  background: rgba(0, 0, 0, 0.95);
+  color: #5CBAA9;
+  top: 2.25rem;
+  transition: all .2s ease; }
+  div.awesomplete > ul::before {
+    background: rgba(0, 0, 0, 0.95); }
+  div.awesomplete > ul[hidden] {
+    position: absolute;
+    top: 1.5rem;
+    transform: scale(1); }
+  div.awesomplete > ul > li:hover {
+    background: #5CBAA9;
+    color: #000; }
+
+div.awesomplete mark {
+  background: #5CBAA9;
+  color: #000; }
+
+div.awesomplete li:hover mark {
+  background: #5CBAA9;
+  color: #000; }

@@ -1,0 +1,13 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.defined-points(title="{{'BACKLOG.EXCESS_OF_POINTS' | translate}}")
+
+.project-points-progress(title="{{'BACKLOG.PENDING_POINTS' | translate}}",
+                         style!="width: <%- projectPointsPercentaje %>%")
+.closed-points-progress(title="{{'BACKLOG.CLOSED_POINTS' | translate}}",
+                        style!="width: <%- closedPointsPercentaje %>%")

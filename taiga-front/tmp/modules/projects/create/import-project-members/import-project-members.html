@@ -1,0 +1,41 @@
+
+<div class="import-project-members">
+  <div ng-include="'projects/create/import/import-header.html'"></div>
+  <h2 translate="PROJECT.IMPORT.PROJECT_MEMBERS" class="import-project-members-title"></h2>
+  <p translate="PROJECT.IMPORT.PROCESS_DESCRIPTION" translate-values="{'platform': vm.platform}"></p>
+  <tg-create-project-members-restrictions is-private="vm.project.get('is_private')" limit-members-private-project="vm.limitMembersPrivateProject" limit-members-public-project="vm.limitMembersPublicProject"></tg-create-project-members-restrictions>
+  <div ng-if="vm.members.size" class="import-project-members-system">
+    <div class="import-project-members-logo"><img ng-src="{{vm.logo}}"/></div>
+    <div class="import-project-members-logo"><img src="v-1758905376214/images/logo-color.png" alt="Taiga Logo"/></div>
+  </div>
+  <ul ng-if="vm.members.size">
+    <li tg-repeat="member in vm.members track by member.get('id')" class="import-project-members-row">
+      <div class="import-project-members-single">
+        <div ng-if="!member.get('avatar')" class="avatar empty">{{member.get('full_name')[0].toUpperCase()}}</div>
+        <div ng-if="member.get('avatar')" class="avatar"><img ng-src="{{member.get('avatar')}}"/></div><span class="import-project-members-username">{{member.get('full_name') || member.get('username') }}</span>
+      </div>
+      <div class="import-project-members-actions">
+        <div ng-if="vm.showSuggestedMatch(member)" class="import-project-members-match"><span translate="PROJECT.IMPORT.MATCH" translate-values="{user_external:member.get('full_name'), user_internal: member.getIn(['user', 'full_name'])}"></span>
+          <button ng-click="vm.confirmUser(member, member.get('user'))" class="import-project-members-match-true">
+            <tg-svg svg-icon="icon-check-empty"></tg-svg>
+          </button>
+          <button ng-click="vm.discardSuggestedUser(member)" class="import-project-members-match-false">
+            <tg-svg svg-icon="icon-close"></tg-svg>
+          </button>
+        </div>
+        <div ng-if="vm.getUser(member) &amp;&amp; !vm.showSuggestedMatch(member)" class="import-project-members-selected">
+          <button ng-click="vm.unselectUser(member)" class="import-project-members-delete">
+            <tg-svg svg-icon="icon-close"></tg-svg>
+          </button><span>{{vm.getUser(member).get('full_name') || vm.getUser(member)}}</span><span class="import-project-members-selected-img"><img tg-avatar="vm.getUser(member)"/></span>
+        </div>
+        <button ng-if="!vm.getUser(member) &amp;&amp; !vm.showSuggestedMatch(member)" ng-click="vm.searchUser(member)" translate="PROJECT.IMPORT.CHOOSE" class="button button-trans import-project-members-choose ng-animate-disabled"></button>
+      </div>
+    </li>
+  </ul>
+  <div class="create-project-action">
+    <button variant="secondary" type="button" ng-click="vm.onCancel()" title="{{'PROJECT.CREATE.BACK' | translate}}" translate="PROJECT.CREATE.BACK" class="btn-small create-project-action-cancel"></button>
+    <button variant="primary" ng-if="vm.members.size &gt; 0" ng-click="vm.beforeSubmitUsers()" translate="PROJECT.IMPORT.IMPORT" class="btn-small create-project-action-submit"></button>
+  </div>
+  <tg-select-import-user-lightbox is-private="vm.project.get('is_private')" limit-members-private-project="vm.limitMembersPrivateProject" limit-members-public-project="vm.limitMembersPublicProject" visible="vm.selectImportUserLightbox" user="vm.searchingUser" display-email-selector="vm.displayEmailSelector" selectable-users="vm.selectableUsers" on-close="vm.selectImportUserLightbox = false" on-select-user="vm.confirmUser(user, taigaUser)" class="lightbox"></tg-select-import-user-lightbox>
+  <tg-warning-user-import-lightbox visible="vm.warningImportUsers" on-confirm="vm.submit()" on-close="vm.warningImportUsers = false" class="lightbox"></tg-warning-user-import-lightbox>
+</div>

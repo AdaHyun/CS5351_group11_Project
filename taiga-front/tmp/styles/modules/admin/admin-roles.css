@@ -1,0 +1,57 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-roles .save {
+  display: inline-block; }
+
+.admin-roles .role-name {
+  font-size: 1.7rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  color: #434456; }
+
+.admin-roles .icon:hover {
+  fill: #25A28C;
+  transition: fill .2s linear; }
+
+.admin-roles .icon-edit {
+  cursor: pointer;
+  fill: #70728F;
+  margin-left: .5rem;
+  opacity: 0;
+  transition: opacity .2s linear; }
+
+.admin-roles .icon-save {
+  fill: #70728F;
+  margin-left: .5rem;
+  transition: fill .2s linear; }
+
+.admin-roles .edit-role {
+  background-color: #E2E3E9;
+  display: none;
+  margin-bottom: 1rem;
+  padding: .3rem 1rem; }
+  .admin-roles .edit-role input {
+    background-color: #fff;
+    width: 50%; }
+
+.admin-roles .any-computable-role {
+  background: #FF6363;
+  color: #fff;
+  margin-bottom: .5rem;
+  padding: .5rem; }
+
+.admin-roles .general-category {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 2rem; }
+  .admin-roles .general-category.external-user {
+    justify-content: flex-start; }
+  .admin-roles .general-category .check {
+    margin-left: .5rem; }
+    .admin-roles .general-category .check input {
+      height: 40px;
+      width: 85px; }

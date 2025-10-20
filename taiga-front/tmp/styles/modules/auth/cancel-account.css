@@ -1,0 +1,14 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.cancel-account fieldset {
+  text-align: center; }
+
+.cancel-account p {
+  color: #434456;
+  margin-bottom: .5rem;
+  text-align: center; }
+
+.cancel-account form {
+  margin-top: 1rem; }

@@ -1,0 +1,37 @@
+
+<div class="import-project-github-form">
+  <div ng-include="'projects/create/import/import-header.html'"></div>
+  <div tg-loading="vm.fetchingUsers" class="spin"></div>
+  <form ng-if="!vm.fetchingUsers" name="projectForm" ng-submit="vm.saveForm()">
+    <div ng-include="'projects/create/import-project-form-common/name.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/description.html'"></div>
+    <div role="group" class="create-project-github-import-type">
+      <p translate="PROJECT.IMPORT.GITHUB.HOW_DO_YOU_WANT_TO_IMPORT" class="question"></p>
+      <div class="create-project-github-import-type-question">
+        <fieldset>
+          <input type="radio" name="project_type" id="template-issues" data-required="true" aria-hidden="true" ng-value="'issues'" ng-model="vm.projectForm.project_type" required="required"/>
+          <label for="template-issues"><span translate="PROJECT.IMPORT.GITHUB.ISSUES_PROJECT" class="create-project-github-import-type-name"></span>
+            <p translate="PROJECT.IMPORT.GITHUB.ISSUES_PROJECT_DESCRIPTION" class="create-project-github-import-type-description"></p>
+          </label>
+        </fieldset>
+        <fieldset>
+          <input type="radio" name="project_type" id="template-scrum" data-required="true" aria-hidden="true" ng-value="'scrum'" ng-model="vm.projectForm.project_type" required="required"/>
+          <label for="template-scrum"><span translate="PROJECT.IMPORT.GITHUB.SCRUM_PROJECT" class="create-project-github-import-type-name"></span>
+            <p translate="PROJECT.IMPORT.GITHUB.SCRUM_PROJECT_DESCRIPTION" class="create-project-github-import-type-description"></p>
+          </label>
+        </fieldset>
+        <fieldset>
+          <input type="radio" name="project_type" id="template-kanban" data-required="true" aria-hidden="true" ng-value="'kanban'" ng-model="vm.projectForm.project_type" required="required"/>
+          <label for="template-kanban"><span translate="PROJECT.IMPORT.GITHUB.KANBAN_PROJECT" class="create-project-github-import-type-name"></span>
+            <p translate="PROJECT.IMPORT.GITHUB.KANBAN_PROJECT_DESCRIPTION" class="create-project-github-import-type-description"></p>
+          </label>
+        </fieldset>
+      </div>
+    </div>
+    <div ng-include="'projects/create/import-project-form-common/project-privacy.html'"></div>
+    <tg-create-project-restrictions is-private="vm.projectForm.is_private" can-create-public-projects="vm.canCreatePublicProjects" can-create-private-projects="vm.canCreatePrivateProjects"></tg-create-project-restrictions>
+    <tg-create-project-members-restrictions is-private="vm.projectForm.is_private" limit-members-private-project="vm.limitMembersPrivateProject" limit-members-public-project="vm.limitMembersPublicProject"></tg-create-project-members-restrictions>
+    <div ng-include="'projects/create/import-project-form-common/links.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/actions.html'"></div>
+  </form>
+</div>

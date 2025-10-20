@@ -1,0 +1,59 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close(on-close="vm.onClose()")
+
+form
+    h2.lightbox-title(translate="PROJECT.NEWSLETTER_OPENING.LIGHTBOX_TITLE")
+    .newsletter-info
+        .custom-checkbox
+            input(
+                type="checkbox"
+                name="confirm-email"
+                id="confirm-email"
+                ng-model="preference"
+            )
+            label(
+                for="confirm-email"
+                tabindex="0"
+            )
+        .text-container
+            label.confirm-label(for="confirm-email" translate="PROJECT.NEWSLETTER_OPENING.CONFIRMATION")
+            p.text-info
+                span.italic(
+                    translate="PROJECT.NEWSLETTER_OPENING.NO_SHARE"
+                )
+                br
+                span.italic(translate="PROJECT.NEWSLETTER_OPENING.OPT_OUT")
+
+    .option-container
+        .ask
+            .custom-checkbox
+                input(
+                    type="checkbox"
+                    name="ask"
+                    id="dont-ask"
+                    ng-model="dontAsk"
+                )
+                label(
+                    for="dont-ask"
+                    tabindex="0"
+                )
+            label.ask-label(for="dont-ask" translate="PROJECT.NEWSLETTER_OPENING.DONT_ASK")
+        div.options
+            button.btn-small.btn-cancel.js-cancel(
+                variant="secondary"
+                ng-click="closeLightbox()"
+
+            )
+                span(translate="COMMON.CANCEL")
+
+            button.btn-small(
+                    variant="primary"
+                    ng-click="setEmail()"
+                )
+                span(translate="PROJECT.NEWSLETTER_OPENING.SAVE_PREFERENCE")

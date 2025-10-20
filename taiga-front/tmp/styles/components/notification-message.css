@@ -1,0 +1,155 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.notification-message-success {
+  background: rgba(92, 186, 169, 0.95);
+  box-shadow: 0 25px 10px -15px rgba(0, 0, 0, 0.05);
+  right: -370px;
+  top: 2%;
+  transition: opacity .2s ease-in;
+  width: 370px; }
+  .notification-message-success.active {
+    animation: animSlide 2000ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 1; }
+  .notification-message-success.inactive {
+    animation: animSlideOut .5s;
+    opacity: 0;
+    transform: none; }
+  .notification-message-success p {
+    margin: 0; }
+  .notification-message-success .warning {
+    font-size: 1.1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 1.2; }
+
+@keyframes animSlide {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  0.52% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -34.485, 0, 0, 1); }
+  1.02% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -66.555, 0, 0, 1); }
+  2.28% {
+    transform: matrix3d(1.111, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -141.457, 0, 0, 1); }
+  3.52% {
+    transform: matrix3d(1.281, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -205.594, 0, 0, 1); }
+  4.1% {
+    transform: matrix3d(1.111, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -232.117, 0, 0, 1); }
+  4.78% {
+    transform: matrix3d(1.034, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -260.381, 0, 0, 1); }
+  6.03% {
+    transform: matrix3d(0.947, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -304.285, 0, 0, 1); }
+  8.11% {
+    transform: matrix3d(0.986, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -357.804, 0, 0, 1); }
+  11.03% {
+    transform: matrix3d(1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -399.29, 0, 0, 1); }
+  12.11% {
+    transform: matrix3d(1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -407.374, 0, 0, 1); }
+  16.04% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -417.343, 0, 0, 1); }
+  16.12% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -417.342, 0, 0, 1); }
+  20% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -413.214, 0, 0, 1); }
+  27.23% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -403.135, 0, 0, 1); }
+  38.34% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -399.585, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -400, 0, 0, 1); } }
+
+@keyframes animSlideOut {
+  0% {
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -400, 0, 0, 1); }
+  100% {
+    opacity: 0;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -400, 0, 0, 1); } }
+
+.notification-message-error {
+  background: rgba(255, 99, 99, 0.9);
+  opacity: 1;
+  top: 0;
+  transform: translateY(-100%);
+  width: 100%; }
+  .notification-message-error.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .6s ease-in-out; }
+  .notification-message-error.inactive {
+    transition: all .6s ease-in-out; }
+  .notification-message-error .icon-error {
+    width: 3rem;
+    height: 3rem;
+    fill: #fff;
+    margin-right: .5rem; }
+  .notification-message-error .warning {
+    font-size: 1.7rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 2.4rem; }
+  .notification-message-error .text {
+    display: inline-block;
+    margin-left: .5rem;
+    width: 80%; }
+    .notification-message-error .text p {
+      margin: 0; }
+  .notification-message-error .close {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem; }
+  .notification-message-error .icon-close {
+    cursor: pointer;
+    fill: #fff; }
+
+.notification-message {
+  color: #fff;
+  display: flex;
+  opacity: 0;
+  padding: 1rem;
+  position: fixed;
+  z-index: 99; }
+
+.notification-light {
+  align-items: center;
+  background: rgba(112, 114, 143, 0.95);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  transition: all .6s;
+  width: 100%;
+  z-index: 99; }
+  .notification-light.inactive {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .6s; }
+  .notification-light.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all .6s; }
+  .notification-light p {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    margin: 0; }
+  .notification-light .warning {
+    color: #fff;
+    line-height: 1.5rem; }
+  .notification-light .close {
+    display: block;
+    margin-right: 1rem;
+    width: 2rem; }
+    .notification-light .close svg {
+      fill: #fff; }
+
+.notification-message-light-error {
+  background: rgba(255, 99, 99, 0.8); }

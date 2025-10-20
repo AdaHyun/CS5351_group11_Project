@@ -1,0 +1,34 @@
+
+<div class="transfer-project-wrapper">
+  <h2 translate="ADMIN.PROJECT_TRANSFER.DO_YOU_ACCEPT_PROJECT_OWNERNSHIP" class="transfer-title"></h2>
+  <div class="transfer-project-detail"><img tg-project-logo-small-src="vm.project" alt="{{vm.project.get('name')}}" class="transfer-project-image"/>
+    <div class="transfer-project-data">
+      <h3 class="transfer-project-title">{{::vm.project.get("name")}}</h3>
+      <div class="transfer-project-statistics">
+        <div ng-if="vm.project.get('is_private')" class="transfer-project-private">
+          <tg-svg svg-icon="icon-private"></tg-svg><span translate="ADMIN.PROJECT_TRANSFER.PRIVATE"></span>
+        </div>
+        <div class="transfer-project-members">
+          <tg-svg svg-icon="icon-team"></tg-svg><span>{{::vm.project.get("total_memberships")}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p translate="ADMIN.PROJECT_TRANSFER.PROPOSE_OWNERSHIP" translate-values="{owner: vm.project.getIn(['owner', 'full_name_display']), project: vm.project.get('name')}"></p>
+  <div ng-if="vm.canBeOwnedByUser.valid">
+    <p translate="{{vm.ownerMessage}}" translate-values="{maxProjects: vm.maxProjects, currentProjects: vm.currentProjects}"></p>
+    <button href="" ng-click="vm.addComment()" ng-if="!vm.showAddComment" translate="ADMIN.PROJECT_TRANSFER.ADD_COMMENT" class="btn-link transfer-project-comment-link ng-animate-disabled"></button>
+    <fieldset ng-if="vm.showAddComment" ng-class="{'open': vm.showAddComment}" class="transfer-project-comment-form">
+      <div class="transfer-project-comment-header">
+        <label translate="ADMIN.PROJECT_TRANSFER.ADD_COMMENT" class="transfer-project-comment-label"></label>
+        <tg-svg svg-icon="icon-close" ng-click="vm.hideComment()"></tg-svg>
+      </div>
+      <textarea name="reason" ng-model="vm.reason" class="transfer-project-comment"></textarea>
+    </fieldset>
+    <div class="transfer-project-options">
+      <button variant="secondary" ng-click="vm.transferReject(vm.token, vm.reason, $event)" href="#" title="{{'ADMIN.PROJECT_TRANSFER.REJECT' | translate}}" translate="ADMIN.PROJECT_TRANSFER.REJECT" tg-loading="vm.loadingReject" class="btn-small e2e-transfer-reject"></button>
+      <button variant="primary" ng-click="vm.transferAccept(vm.token, vm.reason, $event)" href="#" title="{{'ADMIN.PROJECT_TRANSFER.ACCEPT' | translate}}" translate="ADMIN.PROJECT_TRANSFER.ACCEPT" tg-loading="vm.loadingAccept" class="btn-small e2e-transfer-accept"></button>
+    </div>
+  </div>
+  <tg-cant-own-project-explanation ng-if="!vm.canBeOwnedByUser.valid"></tg-cant-own-project-explanation>
+</div>

@@ -1,0 +1,2 @@
+<span tg-repeat="epic in immutable_epics track by epic.get('id')" class="belong-to-epic-pill-wrapper">
+  <div ng-style="{'background': epic.get('color'), 'border-color': '{{ epic.get('color') | darker: -0.2 }}'}" title="#{{epic.get('ref')}} {{epic.get('subject')}}" class="belong-to-epic-pill"></div></span>

@@ -1,0 +1,17 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.doom-line {
+  align-items: center;
+  background: #CA81BE;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  margin: .25rem 0;
+  padding: .25rem 0; }
+  .doom-line span {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #fff; }

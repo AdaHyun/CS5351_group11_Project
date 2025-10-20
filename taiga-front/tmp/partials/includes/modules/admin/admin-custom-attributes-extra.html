@@ -1,0 +1,20 @@
+
+<div data-id="{{ attr.id }}" class="js-child-sortable">
+  <div ng-repeat="option in attr.extra track by $index" tg-bind-scope="tg-bind-scope" class="js-form">
+    <div class="row js-view-custom-field-extra">
+      <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+      <div class="custom-extra-attr-wrapper"><span>{{ option }}</span></div>
+    </div>
+    <div class="row js-edit-custom-field-extra hidden">
+      <div class="custom-extra-attr-wrapper">
+        <input type="text" name="name" ng-model="attr.extra[$index]" data-required="true" data-maxlength="64"/>
+      </div>
+      <div class="custom-options">
+        <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="attr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+            <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-extra-actions hidden"><a href="" class="js-add-option-custom-field-extra-button">
+    <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>

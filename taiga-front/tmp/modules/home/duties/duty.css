@@ -1,0 +1,43 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.working-on,
+.watching {
+  margin-bottom: 2rem; }
+  .working-on .duty-single,
+  .watching .duty-single {
+    border-bottom: 1px solid #D8DEE9;
+    cursor: pointer;
+    transition: background .2s; }
+    .working-on .duty-single:hover,
+    .watching .duty-single:hover {
+      background: #F9F9FB; }
+      .working-on .duty-single:hover .button-hide,
+      .watching .duty-single:hover .button-hide {
+        opacity: 1; }
+    .working-on .duty-single:last-child,
+    .watching .duty-single:last-child {
+      border: 0; }
+    .working-on .duty-single > a,
+    .watching .duty-single > a {
+      align-items: center;
+      border-bottom: 0;
+      display: flex;
+      flex-direction: row; }
+      .working-on .duty-single > a.blocked,
+      .watching .duty-single > a.blocked {
+        background: rgba(228, 64, 87, 0.25);
+        color: #E44057; }
+  .working-on .see-more,
+  .watching .see-more {
+    display: block;
+    margin: 2rem 30%; }
+  .working-on .button-hide,
+  .watching .button-hide {
+    opacity: 0; }
+    .working-on .button-hide svg,
+    .watching .button-hide svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      fill: #4C566A; }

@@ -1,0 +1,51 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="create-epic-container">
+  <h2 translate="EPICS.CREATE.TITLE" class="title"></h2>
+  <form ng-submit="vm.createEpic()">
+    <div class="subject-container">
+      <div class="color-selector">
+        <fieldset>
+          <tg-color-selector is-color-required="true" init-color="vm.newEpic.color" on-select-color="vm.selectColor(color)"></tg-color-selector>
+        </fieldset>
+      </div>
+      <div class="subject">
+        <fieldset>
+          <input type="text" name="subject" ng-model="vm.newEpic.subject" tg-auto-select="tg-auto-select" placeholder="{{'COMMON.FIELDS.SUBJECT' | translate}}" data-required="true" data-maxlength="140" class="e2e-create-epic-subject"/>
+        </fieldset>
+      </div>
+    </div>
+    <fieldset>
+      <select id="epic-status" name="status" ng-model="vm.newEpic.status" ng-options="s.id as s.name for s in vm.project.epic_statuses | orderBy:'order'" class="e2e-create-epic-status"></select>
+    </fieldset>
+    <fieldset class="tags-block">
+      <tg-tag-line-common project="vm.project" tags="vm.newEpic.tags" permissions="add_epic" on-add-tag="vm.addTag(name, color)" on-delete-tag="vm.deleteTag(tag)"></tg-tag-line-common>
+    </fieldset>
+    <fieldset>
+      <textarea ng-attr-placeholder="{{'EPICS.CREATE.PLACEHOLDER_DESCRIPTION' | translate}}" ng-model="vm.newEpic.description" class="e2e-create-epic-description"></textarea>
+    </fieldset>
+    <fieldset>
+      <tg-attachments-simple attachments="vm.attachments" on-add="vm.addAttachment(attachment)"></tg-attachments-simple>
+    </fieldset>
+    <div class="settings">
+      <fieldset class="team-requirement">
+        <input type="checkbox" name="team_requirement" ng-model="vm.newEpic.team_requirement" id="team-requirement"/>
+        <label for="team-requirement" translate="EPICS.CREATE.TEAM_REQUIREMENT" class="requirement trans-button e2e-create-epic-team-requirement"></label>
+      </fieldset>
+      <fieldset class="client-requirement">
+        <input type="checkbox" name="client_requirement" ng-model="vm.newEpic.client_requirement" id="client-requirement"/>
+        <label for="client-requirement" translate="EPICS.CREATE.CLIENT_REQUIREMENT" class="requirement trans-button e2e-create-epic-client-requirement"></label>
+      </fieldset>
+      <fieldset>
+        <input type="checkbox" name="blocked" ng-model="vm.newEpic.is_blocked" id="blocked" ng-click="displayBlockedReason = !displayBlockedReason"/>
+        <label for="blocked" translate="EPICS.CREATE.BLOCKED" class="requirement trans-button blocked e2e-create-epic-blocked"></label>
+      </fieldset>
+    </div>
+    <fieldset ng-if="displayBlockedReason">
+      <input type="text" name="blocked_note" maxlength="140" ng-model="vm.newEpic.blocked_note" placeholder="{{'EPICS.CREATE.BLOCKED_NOTE_PLACEHOLDER' | translate}}" class="e2e-create-epic-blocked-note"/>
+    </fieldset>
+    <fieldset>
+      <button type="submit" tg-loading="vm.loading" title="{{ 'EPICS.CREATE.CREATE_EPIC' | translate }}" translate="EPICS.CREATE.CREATE_EPIC" class="btn-big create-epic-button e2e-create-epic-button"></button>
+    </fieldset>
+  </form>
+</div>

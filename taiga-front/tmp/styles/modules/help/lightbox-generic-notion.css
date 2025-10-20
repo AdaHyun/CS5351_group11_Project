@@ -1,0 +1,7 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-generic-notion section {
+  display: flex;
+  flex-basis: 600px; }

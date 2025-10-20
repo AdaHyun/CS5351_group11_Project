@@ -1,0 +1,14 @@
+
+<header tg-backlog-sprint-header="tg-backlog-sprint-header"></header>
+<div class="summary-progress-wrapper">
+  <div tg-progress-bar="100 * sprint.closed_points / sprint.total_points" class="sprint-progress-bar"></div>
+</div>
+<div tg-bind-scope="tg-bind-scope" ng-class="{'sprint-empty-wrapper': !sprint.user_stories.length}" class="sprint-table">
+  <div ng-if="!sprint.user_stories.length" class="sprint-empty"><span tg-class-permission="{'hidden': 'modify_us'}">{{ 'BACKLOG.SPRINTS.WARNING_EMPTY_SPRINT_ANONYMOUS' | translate }}</span><span tg-class-permission="{'hidden': '!modify_us'}">{{ 'BACKLOG.SPRINTS.WARNING_EMPTY_SPRINT' | translate }}</span></div>
+  <div ng-repeat="us in sprint.user_stories track by us.id" tg-bind-scope="tg-bind-scope" data-id="{{ us.id }}" tg-class-permission="{'readonly': '!modify_us'}" ng-class="{closedRow: us.is_closed, blockedRow: us.is_blocked}" class="row milestone-us-item-row">
+    <div class="column-us"><a tg-nav="project-userstories-detail:project=project.slug,ref=us.ref" ng-if="us.milestone" tg-nav-get-params="{&quot;milestone&quot;: {{us.milestone}}}" tg-bo-title="'#' + us.ref + ' ' +  us.subject" ng-class="{closed: us.is_closed, blocked: us.is_blocked}" class="us-name clickable"><span tg-bo-ref="us.ref" class="us-ref-text"></span><span tg-bind-html="us.subject | emojify" class="us-name-text"></span>
+        <tg-belong-to-epics format="pill" ng-if="us.epics" epics="us.epics" class="us-epic-container"></tg-belong-to-epics>
+        <tg-due-date due-date="us.due_date" is-closed="us.is_closed" ng-if="us.due_date" obj-type="us" class="due-date"></tg-due-date></a></div>
+    <div ng-if="us.total_points" ng-class="{closed: us.is_closed, blocked: us.is_blocked}" class="column-points width-1"><span tg-bo-bind="us.total_points" class="points-container"></span></div>
+  </div>
+</div><a title="{{ 'BACKLOG.SPRINTS.TITLE_LINK_TASKBOARD' | translate: {&quot;name&quot;: sprint.name} }}" tg-nav="project-taskboard:project=project.slug,sprint=sprint.slug" tg-check-permission="view_milestones" variant="secondary" class="btn-small"><span translate="BACKLOG.SPRINTS.LINK_TASKBOARD"></span></a>

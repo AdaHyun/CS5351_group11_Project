@@ -1,0 +1,22 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+figure.avatar.avatar-assigned-to
+    a(href='#', title="{{'TASKBOARD.TITLE_ACTION_ASSIGN' | translate}}", ng-class="{'not-clickable': !clickable}")
+        img(
+            ng-style="{'background-color': avatar.bg}"
+            ng-src='{{avatar.url}}'
+        )
+figure.avatar.avatar-task-link
+  a(
+      tg-nav='project-tasks-detail:project=project.slug,ref=task.ref'
+      ng-attr-title='{{task.subject}}'
+  )
+        img(
+            ng-style="{'background-color': avatar.bg}"
+            ng-src='{{avatar.url}}'
+        )

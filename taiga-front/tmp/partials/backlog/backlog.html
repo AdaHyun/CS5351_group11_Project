@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<div tg-backlog ng-controller="BacklogController as ctrl" ng-init="section='backlog'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <main class="main scrum">
+    <section class="backlog">
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+      <div tg-toggle-burndown-visibility class="backlog-summary">
+        <div class="summary">
+          <div tg-backlog-progress-bar="stats" class="summary-progress-bar"></div>
+          <div class="data"><span ng-bind="stats.completedPercentage + '%'" class="number"></span></div>
+          <div ng-if="stats.total_points" class="summary-stats"><span ng-bind="stats.total_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.PROJECT_POINTS" class="description"></span></div>
+          <div class="summary-stats"><span ng-bind="stats.defined_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.DEFINED_POINTS" class="description"></span></div>
+          <div class="summary-stats"><span ng-bind="stats.closed_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.CLOSED_POINTS" class="description"></span></div>
+          <div class="summary-stats"><span ng-bind="stats.speed | number:0" class="number">--</span><span translate="BACKLOG.SUMMARY.POINTS_PER_SPRINT" class="description"></span></div>
+          <div title="{{'BACKLOG.SPRINT_SUMMARY.TOGGLE_BAKLOG_GRAPH' | translate}}" ng-if="!showGraphPlaceholder" class="stats js-toggle-burndown-visibility-button">
+            <tg-svg svg-icon="icon-graph"></tg-svg>
+          </div>
+        </div>
+        <div ng-if="showGraphPlaceholder &amp;&amp; project.i_am_admin" class="empty-burndown">
+          <tg-svg svg-icon="icon-graph"></tg-svg>
+          <div class="empty-text">
+            <p translate="BACKLOG.CUSTOMIZE_GRAPH" class="title"></p>
+            <p>{{'BACKLOG.CUSTOMIZE_GRAPH_TEXT' | translate}} <a href="" tg-nav="project-admin-project-profile-modules:project=project.slug" title="{{'BACKLOG.CUSTOMIZE_GRAPH_TITLE' | translate}}">{{'BACKLOG.CUSTOMIZE_GRAPH_ADMIN' | translate}}</a></p>
+          </div>
+        </div>
+        <div class="graphics-container js-burndown-graph">
+          <div tg-burndown-backlog-graph class="burndown"></div>
+        </div>
+      </div>
+      <div class="backlog-table">
+        <div class="backlog-top">
+          <div class="backlog-menu">
+            <div class="backlog-header">
+              <div class="backlog-header-title">
+                <h2>Backlog</h2>
+                <ng-container ng-if="ctrl.selectedFilters.length"><span class="backlog-stories-number squared">{{userstories.length}}</span><span translate="BACKLOG.TOTAL_STORIES_FILTERED" translate-values="{totalUserStories: ctrl.totalUserStories}" class="backlog-stories-number"></span></ng-container><span ng-if="!ctrl.selectedFilters.length" translate="BACKLOG.TOTAL_STORIES" translate-values="{totalUserStories: ctrl.totalUserStories}" class="backlog-stories-number"></span>
+              </div>
+              <div class="backlog-header-options">
+                <div class="new-us">
+                  <button variant="primary" ng-click="ctrl.addNewUs('standard')" tg-check-permission="add_us" class="btn-small">
+                    <tg-svg svg-icon="icon-add"></tg-svg><span class="text">{{'US.ADD' | translate}}</span>
+                  </button>
+                  <button variant="secondary" ng-click="ctrl.addNewUs('bulk')" tg-check-permission="add_us" aria-label="{{'US.ADD_BULK' | translate}}" class="btn-icon">
+                    <tg-svg svg-icon="icon-bulk"></tg-svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="backlog-table-options">
+              <div class="backlog-table-options-start">
+                <button id="show-filters-button" ng-class="{'active': ctrl.activeFilters}" class="btn-filter e2e-open-filter ng-animate-disabled">
+                  <tg-svg svg-icon="icon-filters"></tg-svg><span ng-if="!ctrl.activeFilters" translate="BACKLOG.FILTERS.TITLE" class="text"></span><span ng-if="ctrl.activeFilters" translate="BACKLOG.FILTERS.HIDE_TITLE" class="text"></span><span ng-if="ctrl.selectedFilters.length" class="selected-filters">{{ctrl.selectedFilters.length}}</span>
+                </button>
+                <tg-input-search q="ctrl.filterQ" change="ctrl.changeQ(q)"></tg-input-search>
+                <div id="show-tags" ng-if="userstories.length" class="display-tags-button">
+                  <div ng-class="{'active': ctrl.showTags}" class="check js-check">
+                    <input type="checkbox" id="show-tags-input" ng-checked="ctrl.showTags" ng-model="ctrl.showTags" ng-change="ctrl.toggleTags()">
+                    <div></div>
+                  </div>
+                  <label for="show-tags-input" translate="BACKLOG.TAGS.SHOW"></label>
+                </div>
+              </div>
+              <div class="backlog-table-options-end">
+                <button ng-if="currentSprint" title="{{'BACKLOG.MOVE_US_TO_CURRENT_SPRINT' | translate}}" id="move-to-current-sprint" class="btn-filter move-to-current-sprint move-to-sprint e2e-move-to-sprint"><span translate="BACKLOG.MOVE_US_TO_CURRENT_SPRINT" class="text"></span>
+                  <tg-svg svg-icon="icon-add-to-sprint"></tg-svg>
+                </button>
+                <button ng-if="!currentSprint" title="{{'BACKLOG.MOVE_US_TO_LATEST_SPRINT' | translate}}" id="move-to-latest-sprint" class="btn-filter move-to-latest-sprint move-to-sprint e2e-move-to-sprint"><span translate="BACKLOG.MOVE_US_TO_LATEST_SPRINT" class="text"></span>
+                  <tg-svg svg-icon="icon-add-to-sprint"></tg-svg>
+                </button>
+                <button ng-if="userstories.length &amp;&amp; ctrl.displayVelocity " title="{{'BACKLOG.FORECASTING.TITLE' | translate}}" ng-click="ctrl.toggleVelocityForecasting()" tg-check-permission="add_milestone" class="btn-filter active velocity-forecasting-btn ng-animate-disabled e2e-velocity-forecasting">
+                  <tg-svg svg-icon="icon-fold-column"></tg-svg><span translate="BACKLOG.FORECASTING.BACKLOG" class="text"></span>
+                </button>
+                <button ng-if="userstories.length &amp;&amp; !ctrl.displayVelocity &amp;&amp; stats.speed &gt; 0" title="{{'BACKLOG.FORECASTING.BACKLOG' | translate}}" translate="BACKLOG.FORECASTING.TITLE" ng-click="ctrl.toggleVelocityForecasting()" tg-check-permission="add_milestone" class="btn-filter velocity-forecasting-btn ng-animate-disabled e2e-velocity-forecasting"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{'expanded': !ctrl.activeFilters}" class="backlog-manager">
+          <div id="backlog-filter" ng-if="ctrl.activeFilters" class="backlog-filter">
+            <tg-filter filters="ctrl.filters" custom-filters="ctrl.customFilters" selected-filters="ctrl.selectedFilters" customFilters="ctl.customFilters" on-save-custom-filter="ctrl.saveCustomFilter(name)" on-add-filter="ctrl.addFilterBacklog(filter)" on-select-custom-filter="ctrl.selectCustomFilter(filter)" on-remove-custom-filter="ctrl.removeCustomFilter(filter)" on-remove-filter="ctrl.removeFilterBacklog(filter)"></tg-filter>
+          </div>
+          <section ng-class="{'hidden': !userstories.length}" class="backlog-table">
+            <div class="backlog-table-header">
+              <div class="row backlog-table-title">
+                <div tg-check-permission="modify_us" class="draggable-us-column"></div>
+                <div tg-check-permission="modify_us" class="input"></div>
+                <div translate="BACKLOG.TABLE.COLUMN_US" class="user-stories"></div>
+                <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+                <div title="{{'BACKLOG.TABLE.TITLE_COLUMN_POINTS' | translate}}" class="points">
+                  <div tg-us-role-points-selector class="inner"><span translate="COMMON.FIELDS.POINTS" class="header-points"></span>
+                    <tg-svg svg-icon="icon-filter"></tg-svg>
+                  </div>
+                </div>
+                <div class="us-header-options"></div>
+              </div>
+            </div>
+            <div tg-backlog-sortable ng-class="{'show-tags': ctrl.showTags, 'active-filters': ctrl.activeFilters, 'forecasted-stories': ctrl.displayVelocity}" infinite-scroll="ctrl.loadUserstories()" infinite-scroll-disabled="ctrl.disablePagination || !ctrl.firstLoadComplete" infinite-scroll-immediate-check="false" class="backlog-table-body">
+              <div ng-repeat="us in userstories | inArray:visibleUserStories:'ref' track by us.ref" tg-bind-scope ng-class="{blocked: us.is_blocked, new: us.new}" tg-class-permission="{'readonly': '!modify_us'}" data-id="{{ us.id }}" class="row us-item-row">
+                <div class="us-item-row-left">
+                  <div tg-check-permission="modify_us" class="draggable-us-row">
+                    <tg-svg svg-icon="icon-draggable"></tg-svg>
+                  </div>
+                  <div tg-check-permission="modify_us" class="input">
+                    <div class="custom-checkbox">
+                      <input type="checkbox" name="filter-mode" id="us-check-{{us.ref}}" value="{{option}}" ng-model="vm.filterMode">
+                      <label for="us-check-{{us.ref}}" tabindex="0"></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="user-stories user-story-main-data"><a href="" tg-nav="project-userstories-detail:project=project.slug,ref=us.ref" tg-nav-get-params="{{ ctrl.getLinkParams() }}" class="user-story-link"><span tg-bo-ref="us.ref" class="user-story-number"></span><span ng-bind-html="us.subject | emojify" class="user-story-name"></span></a>
+                  <tg-due-date due-date="us.due_date" is-closed="us.is_closed" ng-if="us.due_date" obj-type="us" class="due-date"></tg-due-date>
+                  <div ng-if="ctrl.showTags" ng-attr-title="{{tag[0]}}" ng-repeat="tag in us.tags" ng-style="{background: tag[1]}" ng-class="{'last':$last}" class="tag">{{tag[0]}}</div>
+                  <div ng-repeat="epic in us.epics" ng-style="{'background': epic.color}" ng-attr-title="#{{epic.ref}} {{epic.subject}}" class="belong-to-epic-pill"></div>
+                </div>
+                <div tg-us-status="us" on-update="ctrl.updateUserStoryStatus()" class="status"><a href="" title="{{'BACKLOG.STATUS_NAME' | translate}}" class="us-status"><span class="us-status-bind"></span>
+                    <tg-svg tg-check-permission="modify_us" svg-icon="icon-arrow-down"></tg-svg></a></div>
+                <div tg-backlog-us-points="us" class="points"></div>
+                <div tg-us-edit-selector tg-check-permission="modify_us" class="us-option">
+                  <button ng-class="{first: us.id === first_us_in_backlog}" class="us-option-popup-button js-popup-button">
+                    <tg-svg svg-icon="icon-more-vertical"></tg-svg>
+                  </button>
+                </div>
+              </div>
+              <div tg-loading="ctrl.loadingUserstories"></div>
+            </div>
+            <div ng-if="ctrl.displayVelocity" class="forecasting-add-sprint e2e-velocity-forecasting-add"><span ng-if="forecastNewSprint" translate="BACKLOG.FORECASTING.NEW_SPRINT" class="forecasting-text"></span><span ng-if="!forecastNewSprint" translate="BACKLOG.FORECASTING.CURRENT_SPRINT" class="forecasting-text"></span>
+              <div ng-if="forecastNewSprint" variant="icon" class="button btn-link">
+                <tg-svg svg-icon="icon-add"></tg-svg>
+                <button translate="BACKLOG.FORECASTING.ADD_NEW_SPRINT" class="text"></button>
+                <button translate="BACKLOG.FORECASTING.ADD_NEW_SPRINT_SHORT" class="text short"></button>
+              </div>
+              <div ng-if="!forecastNewSprint" variant="icon" class="button btn-link">
+                <tg-svg svg-icon="icon-add"></tg-svg>
+                <button translate="BACKLOG.MOVE_US_TO_CURRENT_SPRINT" class="text"></button>
+              </div>
+            </div>
+          </section>
+          <div ng-class="{'hidden': userstories === undefined || userstories.length || !ctrl.filterQ.length }" class="empty-backlog js-empty-backlog">
+            <p class="no-match">{{ 'BACKLOG.NO_MATCH' | translate:ctrl.translationData }}</p>
+            <p class="no-match-help">{{ 'BACKLOG.NO_MATCH_HELP' | translate }}</p>
+          </div>
+          <div ng-class="{'hidden': userstories === undefined || !!userstories.length || ctrl.filterQ.length}" class="empty-large js-empty-backlog">
+            <p translate="BACKLOG.EMPTY" class="title"></p>
+            <button title="{{'BACKLOG.CREATE_NEW_US' | translate}}" variant="primary" ng-click="ctrl.addNewUs('standard')" tg-check-permission="add_us" class="btn-small">
+              <tg-svg svg-icon="icon-add"></tg-svg><span class="text">{{'BACKLOG.CREATE_NEW_US_EMPTY_HELP' | translate}}</span>
+            </button><img src="v-1758905376214/images/empty/empty_mex.png" alt="{{'BACKLOG.EMPTY' | translate}}">
+          </div>
+        </div>
+      </div>
+    </section>
+    <sidebar class="sidebar">
+      <section class="sprints">
+        <header class="sprint-header">
+          <h1><span ng-bind="totalMilestones" ng-if="totalMilestones" class="number"></span><span translate="BACKLOG.SPRINTS.TITLE" class="title"></span></h1><a href="" title="{{ 'BACKLOG.SPRINTS.TITLE_ACTION_NEW_SPRINT' | translate}}" ng-click="ctrl.addNewSprint()" ng-if="totalMilestones" tg-check-permission="add_milestone" class="btn-link"><span>Add</span>
+            <tg-svg svg-icon="icon-add"></tg-svg></a>
+        </header>
+        <div ng-if="totalMilestones === 0" class="empty-small"><img src="v-1758905376214/images/empty/empty_sprint.png" alt="{{'BACKLOG.SPRINTS.EMPTY' | translate}}">
+          <p translate="BACKLOG.SPRINTS.EMPTY" class="title"></p><a href="" ng-click="ctrl.addNewSprint()" title="" tg-check-permission="add_milestone" class="btn-link"><span> {{'BACKLOG.SPRINTS.TITLE_ACTION_NEW_SPRINT' | translate}}</span>
+            <tg-svg svg-icon="icon-add"></tg-svg></a>
+        </div>
+        <div ng-repeat="sprint in ctrl.openSprints() track by sprint.id" tg-backlog-sprint="sprint" tg-sprint-sortable class="sprint sprint-open">
+          <tg-sprint project="project" sprint="sprint"></tg-sprint>
+        </div><a href="" tg-backlog-toggle-closed-sprints-visualization ng-if="totalClosedMilestones" class="filter-closed-sprints">
+          <tg-svg svg-icon="icon-folder"></tg-svg><span translate="BACKLOG.SPRINTS.ACTION_SHOW_CLOSED_SPRINTS" class="text"></span></a>
+        <div ng-repeat="sprint in closedSprints track by sprint.id" tg-backlog-sprint="sprint" tg-sprint-sortable class="sprint sprint-closed">
+          <tg-sprint project="project" sprint="sprint"></tg-sprint>
+        </div>
+      </section>
+    </sidebar>
+  </main>
+  <div tg-lb-create-edit class="lightbox lightbox-generic-form lightbox-create-edit"></div>
+  <div tg-lb-create-bulk-userstories class="lightbox lightbox-generic-bulk">
+    <tg-lightbox-close></tg-lightbox-close>
+    <form>
+      <h2 translate="COMMON.NEW_BULK" class="title"></h2>
+      <fieldset ng-if="project.us_statuses">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_STATUS' | translate }}</div>
+        <div class="bulk-status-selector-wrapper">
+          <button type="button" ng-click="toggleStatus()" ng-style="{'background-color': currentStatus.color}" class="bulk-status-selector"><span>{{ currentStatus.name }}</span>
+            <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+          </button>
+          <div ng-show="displayStatusSelector" class="bulk-status-option-wrapper">
+            <button type="button" ng-repeat="status in project.us_statuses" ng-click="setStatus(status)" ng-class="{'selected': status.id == currentStatus.id}" class="bulk-status-option">{{status.name}}</button>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="creation-position">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.LOCATION' | translate }}</div>
+        <div class="creation-position-fields">
+          <label class="custom-radio">
+            <input id="top-backlog" type="radio" ng-model="new.us_position" value="bottom" checked><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_BOTTOM' | translate }}</span>
+          </label>
+          <label class="custom-radio">
+            <input id="bottom-backlog" type="radio" ng-model="new.us_position" value="top"><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_TOP' | translate }}</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset ng-if="project.is_kanban_activated &amp;&amp; swimlanesList.size" class="swimlane-select">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_SWIMLANE' | translate }}</div>
+        <tg-swimlane-selector ng-model="new.swimlane" swimlanes="swimlanesList" default-swimlane-id="project.default_swimlane" user-story="new" has-unclassified-stories="noSwimlaneUserStories" ng-if="new"></tg-swimlane-selector>
+      </fieldset>
+      <fieldset>
+        <textarea cols="200" wrap="off" ng-model="new.bulk" data-required="true" data-linewidth="200" ng-attr-placeholder="{{'COMMON.ONE_ITEM_LINE' | translate}}"></textarea>
+      </fieldset>
+      <div class="lb-action-wrapper">
+        <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-small js-submit-button"></button>
+      </div>
+    </form>
+  </div>
+  <div tg-lb-create-edit-sprint class="lightbox lightbox-sprint-add-edit">
+    <tg-lightbox-close></tg-lightbox-close>
+    <form ng-if="createEditOpen">
+      <h2 translate="LIGHTBOX.ADD_EDIT_SPRINT.TITLE" class="title"></h2>
+      <fieldset>
+        <input type="text" name="name" ng-model="newSprint.name" ng-model-options="{ debounce: 200 }" data-required="true" data-maxlength="500" placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_NAME' | translate}}" class="sprint-name e2e-sprint-name">
+        <label class="last-sprint-name"></label>
+      </fieldset>
+      <fieldset class="dates">
+        <div>
+          <input type="text" name="estimated_start" picker-value="{{newSprint.estimated_start}}" data-required="true" tg-date-selector placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_START' | translate}}" class="date-start">
+        </div>
+        <div>
+          <input type="text" name="estimated_finish" picker-value="{{newSprint.estimated_finish}}" data-required="true" tg-date-selector placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_END' | translate}}" class="date-end">
+        </div>
+      </fieldset>
+      <div class="sprint-add-edit-actions">
+        <button type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-big button-large button-block"></button>
+        <button tg-check-permission="delete_milestone" title="{{'LIGHTBOX.ADD_EDIT_SPRINT.TITLE_ACTION_DELETE_SPRINT' | translate}}" class="btn-link delete-sprint">
+          <tg-svg svg-icon="icon-trash"></tg-svg><span class="delete-sprint-text">{{'LIGHTBOX.ADD_EDIT_SPRINT.ACTION_DELETE_SPRINT' | translate }}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

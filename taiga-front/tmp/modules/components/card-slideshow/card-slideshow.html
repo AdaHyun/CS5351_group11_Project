@@ -1,0 +1,8 @@
+
+<div ng-if="vm.images.size" class="card-slideshow">
+  <tg-svg ng-click="vm.previous()" ng-if="vm.images.size &gt; 1" svg-icon="icon-arrow-left" class="slideshow-icon slideshow-left"></tg-svg>
+  <tg-svg ng-click="vm.next()" ng-if="vm.images.size &gt; 1" svg-icon="icon-arrow-right" class="slideshow-icon slideshow-right"></tg-svg>
+  <div ng-if="$index == vm.index" tg-repeat="image in vm.images track by image.get('id')" class="card-slideshow-wrapper">
+    <tg-preload-image preload-src="{{image.get('thumbnail_card_url')}}"><img ng-src="{{image.get('thumbnail_card_url')}}"/></tg-preload-image>
+  </div>
+</div>

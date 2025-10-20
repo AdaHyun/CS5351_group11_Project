@@ -1,0 +1,8 @@
+
+<div class="type-data <% if(editable){ %>clickable<% }%>">
+  <div translate="COMMON.FIELDS.TYPE" class="label level-name"></div>
+  <div class="level-data"><span class="label"><%- type.name %></span><span style="background-color:<%- type.color %>" class="level-color"></span></div>
+  <ul class="popover pop-type"><% _.each(typees, function(tp) { %>
+    <li><a href="" title="<%- tp.name %>" data-type-id="<%- tp.id %>" class="type"><span class="item-text"><%- tp.name %></span></a></li><% }); %>
+  </ul>
+</div>

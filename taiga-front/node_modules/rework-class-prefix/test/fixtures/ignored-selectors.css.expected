@@ -1,0 +1,15 @@
+.prfx-my-class {
+  color: green;
+}
+
+.prfx-my-class .prfx-with-another-class {
+  box-sizing: border-box;
+}
+
+.ignored-class {
+  background-color: blue;
+}
+
+.prefix-that-is-ignored {
+  text-decoration: none;
+}

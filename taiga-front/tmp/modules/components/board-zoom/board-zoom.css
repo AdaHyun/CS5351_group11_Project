@@ -1,0 +1,45 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.board-zoom {
+  align-items: center;
+  display: flex; }
+  .board-zoom .board-zoom-title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: .7rem;
+    color: #008AA8;
+    margin-right: .5rem;
+    text-transform: uppercase; }
+
+.zoom-radio .checkmark {
+  align-items: center;
+  background-color: #D8DEE9;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  height: 16px;
+  width: 16px; }
+
+.zoom-radio input:checked ~ .checkmark {
+  background-color: #008AA8;
+  width: auto; }
+  .zoom-radio input:checked ~ .checkmark span {
+    display: block; }
+
+.zoom-radio:hover .checkmark {
+  background-color: #83EEDE; }
+
+.zoom-radio:not(:last-child) {
+  margin-right: .5rem; }
+
+.zoom-radio span {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-size: .7rem;
+  color: #FFFFFF;
+  display: none;
+  padding: 0 1.25rem; }
+
+.zoom-radio input {
+  display: none; }

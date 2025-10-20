@@ -1,0 +1,32 @@
+
+<div ng-if="project.is_kanban_activated &amp;&amp; swimlanesList.size" class="swimlane-select">
+  <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SWIMLANE' | translate }}</div>
+  <tg-swimlane-selector ng-model="obj.swimlane" swimlanes="swimlanesList" default-swimlane-id="project.default_swimlane" user-story="obj" has-unclassified-stories="noSwimlaneUserStories" ng-if="obj"></tg-swimlane-selector>
+</div>
+<section ng-if="mode == 'new'" class="creation-position">
+  <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.LOCATION' | translate }}</div>
+  <div class="creation-position-fields">
+    <label class="custom-radio">
+      <input id="top-backlog" type="radio" ng-model="obj.us_position" value="bottom"/><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_BOTTOM' | translate }}</span>
+    </label>
+    <label class="custom-radio">
+      <input id="bottom-backlog" type="radio" ng-model="obj.us_position" value="top"/><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_TOP' | translate }}</span>
+    </label>
+  </div>
+</section>
+<section tg-assigned-users-inline="tg-assigned-users-inline" ng-model="obj" required-perm="modify_{{ objType }}" class="ticket-assigned-to multiple-assign"></section>
+<div class="ticket-estimation">
+  <tg-lb-us-estimation ng-model="obj"></tg-lb-us-estimation>
+</div>
+<div class="ticket-detail-settings">
+  <tg-due-date-popover due-date="obj.due_date" is-closed="obj.is_closed" item="obj" obj-type="us" format="button" not-auto-save="true"></tg-due-date-popover>
+  <button type="button" aria-label="{{ 'COMMON.TEAM_REQUIREMENT' | translate }}" title="{{ 'COMMON.TEAM_REQUIREMENT' | translate }}" ng-class="{ 'active': isTeamRequirement() }" class="btn-icon team-requirement">
+    <tg-svg svg-icon="icon-team-requirement"></tg-svg>
+  </button>
+  <button type="button" aria-label="{{ 'COMMON.CLIENT_REQUIREMENT' | translate }}" title="{{ 'COMMON.CLIENT_REQUIREMENT' | translate }}" ng-class="{ 'active': isClientRequirement() }" class="btn-icon client-requirement">
+    <tg-svg svg-icon="icon-client-requirement"></tg-svg>
+  </button>
+  <button type="button" aria-label="{{ 'COMMON.BLOCK_TITLE' | translate }}" title="{{ 'COMMON.BLOCK_TITLE' | translate }}" ng-class="{ 'item-unblock': obj.is_blocked, 'item-block': !obj.is_blocked }" class="btn-icon is-blocked">
+    <tg-svg svg-icon="icon-lock"></tg-svg>
+  </button>
+</div>

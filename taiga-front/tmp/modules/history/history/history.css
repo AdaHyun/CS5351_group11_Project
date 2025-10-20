@@ -1,0 +1,20 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.activity {
+  align-items: flex-start;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  padding: 2rem 0; }
+  .activity .activity-avatar {
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    width: 60px; }
+  .activity .activity-data {
+    margin-bottom: 1rem; }
+  .activity .activity-creator {
+    color: #25A28C;
+    margin-right: .5rem; }
+  .activity .activity-date {
+    color: #70728F; }

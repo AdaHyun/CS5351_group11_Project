@@ -1,0 +1,12 @@
+
+<div class="summary">
+  <div tg-backlog-progress-bar="stats" class="summary-progress-bar"></div>
+  <div class="data"><span ng-bind="stats.completedPercentage + '%'" class="number"></span></div>
+  <div ng-if="stats.total_points" class="summary-stats"><span ng-bind="stats.total_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.PROJECT_POINTS" class="description"></span></div>
+  <div class="summary-stats"><span ng-bind="stats.defined_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.DEFINED_POINTS" class="description"></span></div>
+  <div class="summary-stats"><span ng-bind="stats.closed_points | number" class="number">--</span><span translate="BACKLOG.SUMMARY.CLOSED_POINTS" class="description"></span></div>
+  <div class="summary-stats"><span ng-bind="stats.speed | number:0" class="number">--</span><span translate="BACKLOG.SUMMARY.POINTS_PER_SPRINT" class="description"></span></div>
+  <div title="{{'BACKLOG.SPRINT_SUMMARY.TOGGLE_BAKLOG_GRAPH' | translate}}" ng-if="!showGraphPlaceholder" class="stats js-toggle-burndown-visibility-button">
+    <tg-svg svg-icon="icon-graph"></tg-svg>
+  </div>
+</div>

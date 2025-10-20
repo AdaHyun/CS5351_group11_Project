@@ -1,0 +1,53 @@
+
+<div class="create-project">
+  <div class="create-project-wrapper">
+    <h1 translate="PROJECT.CREATE.TITLE" class="create-project-title"></h1>
+    <h3 translate="PROJECT.CREATE.CHOOSE_TEMPLATE" class="create-project-description"></h3>
+    <ul class="create-project-selector e2e-create-project-selector">
+      <li><a title="{{'PROJECT.CREATE.TEMPLATE_SCRUM' | translate}}" tg-nav="create-project-scrum" href="" class="e2e-create-project-scrum">
+          <div class="create-project-selector-icon">
+            <tg-svg svg-icon="icon-scrum"></tg-svg>
+          </div>
+          <div class="create-project-selector-template-wrapper">
+            <p translate="PROJECT.CREATE.TEMPLATE_SCRUM" class="create-project-selector-template"></p>
+            <p translate="PROJECT.CREATE.TEMPLATE_SCRUM_DESC" class="create-project-selector-description"></p>
+            <div class="create-project-selector-question">
+              <tg-svg svg-icon="icon-question" ng-click="vm.displayHelp('scrum', $event)"></tg-svg>
+            </div>
+            <div ng-show="vm.displayScrumDesc" class="create-project-selector-long-description">
+              <p translate="PROJECT.CREATE.TEMPLATE_SCRUM_LONGDESC"></p>
+            </div>
+          </div></a></li>
+      <li><a tg-nav="create-project-kanban" title="{{'PROJECT.CREATE.TEMPLATE_KANBAN' | translate}}" href="" class="e2e-create-project-kanban">
+          <div class="create-project-selector-icon">
+            <tg-svg svg-icon="icon-kanban"></tg-svg>
+          </div>
+          <div class="create-project-selector-template-wrapper">
+            <p translate="PROJECT.CREATE.TEMPLATE_KANBAN" class="create-project-selector-template"></p>
+            <p translate="PROJECT.CREATE.TEMPLATE_KANBAN_DESC" class="create-project-selector-description"></p>
+            <div class="create-project-selector-question">
+              <tg-svg svg-icon="icon-question" ng-click="vm.displayHelp('kanban', $event)"></tg-svg>
+            </div>
+            <div ng-show="vm.displayKanbanDesc" class="create-project-selector-long-description">
+              <p translate="PROJECT.CREATE.TEMPLATE_KANBAN_LONGDESC"></p>
+            </div>
+          </div></a></li>
+      <li><a tg-nav="create-project-duplicate" title="{{'PROJECT.CREATE.DUPLICATE' | translate}}" href="" class="e2e-duplicate-project">
+          <div class="create-project-selector-icon">
+            <tg-svg svg-icon="icon-duplicate"></tg-svg>
+          </div>
+          <div class="create-project-selector-template-wrapper">
+            <p translate="PROJECT.CREATE.DUPLICATE" class="create-project-selector-template"></p>
+            <p translate="PROJECT.CREATE.DUPLICATE_DESC" class="create-project-selector-description"></p>
+          </div></a></li>
+      <li><a tg-nav="create-project-import" title="{{'PROJECT.CREATE.IMPORT' | translate}}" href="">
+          <div class="create-project-selector-icon">
+            <tg-svg svg-icon="icon-upload"></tg-svg>
+          </div>
+          <div class="create-project-selector-template-wrapper">
+            <p href="#" title="{{'PROJECT.CREATE.IMPORT' | translate}}" translate="PROJECT.CREATE.IMPORT" class="create-project-selector-template"></p>
+            <p translate="PROJECT.CREATE.IMPORT_DESC" class="create-project-selector-description"></p>
+          </div></a></li>
+    </ul>
+  </div>
+</div>

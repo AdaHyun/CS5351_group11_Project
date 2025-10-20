@@ -1,0 +1,4 @@
+<% if(vm.zoomLevel > 0 && (checkPermission(vm.getModifyPermisionKey()) || checkPermission(vm.getDeletePermisionKey()))) { %>
+<div class="card-actions">
+  <button class="js-popup-button"><%= svg({svgIcon: "icon-more-vertical" }) %></button>
+</div><% } %>

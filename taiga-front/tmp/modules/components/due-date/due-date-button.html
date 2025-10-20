@@ -1,0 +1,4 @@
+
+<label ng-if="vm.visible()" ng-disabled="vm.disabled()" ng-style="{background: vm.color()}" ng-attr-title="{{ vm.title() }}" ng-click="vm.setDueDate()" ng-class="{'active': vm.color(), 'disabled': !!vm.disabled()}" class="btn-icon due-date-button is-editable">
+  <tg-svg svg-icon="icon-clock"></tg-svg>
+</label>

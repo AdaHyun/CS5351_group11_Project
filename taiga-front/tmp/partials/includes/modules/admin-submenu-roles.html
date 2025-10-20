@@ -1,0 +1,12 @@
+
+<section ng-if="roles" class="admin-submenu admin-submenu-roles">
+  <nav>
+    <ul>
+      <li ng-repeat="item in roles" ng-class="{active: role.id == item.id}"><a href="" ng-click="ctrl.setRole(item)"><span class="single-role">{{ item.name }}</span></a></li>
+    </ul>
+    <div tg-new-role="tg-new-role">
+      <button variant="primary" title="{{'ADMIN.SUBMENU_ROLES.TITLE_ACTION_NEW_ROLE' | translate}}" translate="ADMIN.SUBMENU_ROLES.ACTION_NEW_ROLE" class="btn-small btn-menu-full add-button"></button>
+      <input type="text" class="hidden new"/>
+    </div>
+  </nav>
+</section>

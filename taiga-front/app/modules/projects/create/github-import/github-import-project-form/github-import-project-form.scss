@@ -1,0 +1,68 @@
+.import-project-github-form {
+    @include create-project;
+}
+
+.create-project-github-import-type {
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
+
+    p {
+        margin-bottom: .5rem;
+    }
+
+    &-question {
+        align-content: stretch;
+        align-items: stretch;
+        display: flex;
+    }
+
+    fieldset {
+        background: $white;
+        transition: background .2s linear;
+
+        &:last-child {
+            border: 0;
+        }
+    }
+
+    input {
+        height: 1rem;
+        left: .5rem;
+        position: absolute;
+        top: 1.2rem;
+        width: 1rem;
+        z-index: 1;
+
+        &:checked {
+            +label {
+                .create-project-github-import-type-name {
+                    color: $color-link-primary;
+                }
+            }
+        }
+    }
+
+    label {
+        background: $white;
+        height: 100%;
+        padding: 1rem;
+        transition: background .2s ease-in;
+
+        &:hover {
+            background: rgba($primary, .1);
+            cursor: pointer;
+        }
+    }
+
+    &-name {
+        @include font-type(normal);
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+
+    &-description {
+        @include font-type(regular);
+        @include font-size(small);
+    }
+}

@@ -1,0 +1,12 @@
+
+<fieldset class="search-list">
+  <label for="items-filter">{{ label }}</label><a href="" ng-if="filterClosed" ng-click="toggleShowClosed()" class="btn-link show-closed">
+    <tg-svg svg-icon="icon-folder"></tg-svg><span ng-if="!showClosed">{{ textShowClosed }}</span><span ng-if="showClosed">{{ textHideClosed }}</span></a>
+  <input id="items-filter" type="text" placeholder="{{ placeholder }}" ng-model="searchText" ng-change="filterItems(searchText)" class="items-filter"/>
+  <ul>
+    <li ng-repeat="item in items track by item.id" ng-class="{ 'selected': item.id == currentSelected.id }" data-choice-id="{{ item.id }}" ng-if="isVisible(item)" ng-disabled="itemDisabled(item)" class="choice">
+      <ng-include src="templateUrl"></ng-include>
+    </li>
+  </ul>
+  <p ng-show="!items.length" class="no-stories-found">{{ noItemsText }}</p>
+</fieldset>

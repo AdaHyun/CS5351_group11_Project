@@ -1,0 +1,100 @@
+
+<div ng-if="vm.type == 'points'" class="diff-wrapper">
+  <div ng-repeat="(key, diff) in vm.diff" class="diff-points-wrapper"><span translate="ACTIVITY.US_POINTS" translate-values="{role: vm.diff.key}" class="key"></span><span class="diff">{{diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right" svg-title-translate="COMMON.EDIT" class="comment-option"></tg-svg><span class="diff">{{diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'attachments'" class="diff-wrapper">
+  <div ng-if="vm.diff.new.length" ng-repeat="newAttachment in vm.diff.new" class="diff-attachments-new"><span translate="ACTIVITY.NEW_ATTACHMENT" class="key"></span><span class="diff">{{newAttachment.filename}}</span></div>
+  <div ng-if="vm.diff.changed.length" ng-repeat="editAttachment in vm.diff.changed" class="diff-attachments-update"> <span translate="ACTIVITY.UPDATED_ATTACHMENT" translate-values="{filename: editAttachment.filename}" class="key"></span><span ng-if="editAttachment.changes.is_deprecated" class="diff"><span ng-if="editAttachment.changes.is_deprecated[1] == false" translate="ACTIVITY.BECAME_UNDEPRECATED"></span><span ng-if="editAttachment.changes.is_deprecated[1] == true" translate="ACTIVITY.BECAME_DEPRECATED"></span></span><span ng-if="editAttachment.changes.description" class="diff"><span ng-if="editAttachment.changes.description[0].length">{{editAttachment.changes.description[0]}}</span><span ng-if="!editAttachment.changes.description[0].length">...</span>
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg><span>{{editAttachment.changes.description[1]}}</span></span></div>
+  <div ng-if="vm.diff.deleted.length" ng-repeat="deletedAttachment in vm.diff.deleted" class="diff-attachments-deleted"><span translate="ACTIVITY.DELETED_ATTACHMENT" class="key"></span><span class="diff">{{deletedAttachment.filename}}</span></div>
+</div>
+<div ng-if="vm.type == 'milestone'" class="diff-wrapper">
+  <div class="diff-milestone-wrapper"><span translate="ACTIVITY.FIELDS.MILESTONE" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span><span ng-if="!vm.diff[0]" translate="ACTIVITY.VALUES.NOT_SET" class="diff"></span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span><span ng-if="!vm.diff[1]" translate="ACTIVITY.VALUES.NOT_SET" class="diff"></span>
+  </div>
+</div>
+<div ng-if="vm.type == 'priority'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.PRIORITY" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'severity'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.SEVERITY" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'status'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.STATUS" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'subject'" class="diff-wrapper">
+  <div class="diff-subject-wrapper"><span translate="ACTIVITY.FIELDS.SUBJECT" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'description_diff'" class="diff-wrapper">
+  <div class="diff-status-wrapper">
+    <p translate="ACTIVITY.FIELDS.DESCRIPTION" class="key"></p>
+    <p ng-if="vm.diff[0]" ng-bind-html="vm.diff[0]" class="diff"></p>
+    <p ng-if="vm.diff[1]" ng-bind-html="vm.diff[1]" class="diff"></p>
+  </div>
+</div>
+<div ng-if="vm.type == 'assigned_to'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.ASSIGNED_TO" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span><span ng-if="!vm.diff[0]" translate="ACTIVITY.VALUES.UNASSIGNED" class="diff"></span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span><span ng-if="!vm.diff[1]" translate="ACTIVITY.VALUES.UNASSIGNED" class="diff"></span>
+  </div>
+</div>
+<div ng-if="vm.type == 'assigned_users'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.ASSIGNED_USERS" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span><span ng-if="!vm.diff[0]" translate="ACTIVITY.VALUES.UNASSIGNED" class="diff"></span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span><span ng-if="!vm.diff[1]" translate="ACTIVITY.VALUES.UNASSIGNED" class="diff"></span>
+  </div>
+</div>
+<div ng-if="vm.type == 'due_date'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.DUE_DATE" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0] | momentFormat:'DD MMM YYYY'}}</span><span ng-if="!vm.diff[0]" translate="ACTIVITY.VALUES.NOT_SET" class="diff"></span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1] | momentFormat:'DD MMM YYYY'}}</span><span ng-if="!vm.diff[1]" translate="ACTIVITY.VALUES.NOT_SET" class="diff"></span>
+  </div>
+</div>
+<div ng-if="vm.type == 'tags'" class="diff-wrapper">
+  <div class="diff-tags-wrapper">
+    <p ng-if="vm.diffRemoveTags"><span translate="ACTIVITY.TAGS_REMOVED" class="key"></span><span class="diff">{{vm.diffRemoveTags}}</span></p>
+    <p ng-if="vm.diffAddTags"><span translate="ACTIVITY.TAGS_ADDED" class="key"></span><span class="diff">{{vm.diffAddTags}}</span></p>
+  </div>
+</div>
+<div ng-if="vm.type == 'custom_attributes'" class="diff-wrapper">
+  <div ng-if="vm.diff.new.length" ng-repeat="newCustom in vm.diff.new" class="diff-status-wrapper"><span translate="ACTIVITY.CREATED_CUSTOM_ATTRIBUTE" class="key"></span><span class="diff">({{newCustom.name}})</span><span ng-if="newCustom.type == 'richtext'">
+      <p tg-bo-html="newCustom.value_diff" class="diff"></p></span><span ng-if="newCustom.type != 'richtext'"><span class="diff">{{newCustom.value}}</span></span></div>
+  <div ng-if="vm.diff.changed.length" ng-repeat="changeCustom in vm.diff.changed" class="diff-status-wrapper"><span translate="ACTIVITY.UPDATED_CUSTOM_ATTRIBUTE" class="key"></span><span class="diff">({{changeCustom.name}})</span><span ng-if="changeCustom.type == 'richtext'">
+      <p tg-bo-html="changeCustom.value_diff" class="diff"></p></span><span ng-if="changeCustom.type != 'richtext'"><span class="diff">{{changeCustom.changes.value[0]}}</span>
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg><span class="diff">{{changeCustom.changes.value[1]}}</span></span></div>
+</div>
+<div ng-if="vm.type == 'color'" class="diff-wrapper">
+  <div class="diff-color-wrapper"><span translate="ACTIVITY.FIELDS.COLOR" class="key"></span><span ng-if="vm.diff[0]" ng-style="{background: vm.diff[0]}" title="{{vm.diff[0]}}" class="diff"></span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" ng-style="{background: vm.diff[1]}" title="{{vm.diff[1]}}" class="diff"></span>
+  </div>
+</div>
+<div ng-if="vm.type == 'team_requirement'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.TEAM_REQUIREMENT" class="key"></span><span class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'client_requirement'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.CLIENT_REQUIREMENT" class="key"></span><span class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'is_blocked'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.BLOCKED" class="key"></span><span class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'type'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.TYPE" class="key"></span><span ng-if="vm.diff[0]" class="diff">{{vm.diff[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span ng-if="vm.diff[1]" class="diff">{{vm.diff[1]}}</span>
+  </div>
+</div>
+<div ng-if="vm.type == 'promoted_to'" class="diff-wrapper">
+  <div class="diff-status-wrapper"><span translate="ACTIVITY.FIELDS.PROMOTED_TO" class="key"></span><span ng-repeat="userstory in vm.promotedTo" ng-bind-html="'#' + userstory.ref + ' '+ userstory.subject | emojify"></span></div>
+</div>

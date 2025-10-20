@@ -1,0 +1,25 @@
+
+<header>
+  <h1 translate="WIKI.NAVIGATION.SECTION_NAME" class="title"></h1>
+</header>
+<ul class="wiki-link-container">
+  <li class="wiki-link fixed-link"><a href="" tg-nav="project-wiki:project=project.slug" translate="WIKI.NAVIGATION.HOME" class="link-title"></a></li>
+</ul>
+<ul class="sortable wiki-link-container">
+  <li ng-repeat="link in wikiLinks" data-id="{{ $index }}" tg-bind-scope="tg-bind-scope" tg-class-permission="{'is-sortable': 'add_wiki_link'}" ng-class="{'active': wiki.slug == link.href}" class="wiki-link e2e-wiki-page-link"><% if (addWikiLinkPermission) { %>
+    <tg-svg svg-icon="icon-drag" class="dragger"></tg-svg><% } %><a title="{{ link.title }}" href="{{ link.url }}" class="link-title">{{ link.title }}</a><% if (deleteWikiLinkPermission) { %><a title="{{'WIKI.DELETE_LINK_TITLE' | translate}}" class="js-delete-link remove-wiki-page">
+      <tg-svg svg-icon="icon-trash"></tg-svg></a><% } %>
+    <input type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}" value="{{ link.title }}" class="hidden"/>
+  </li>
+</ul>
+<ul class="sortable wiki-link-container">
+  <li class="new hidden">
+    <input type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}"/>
+  </li>
+</ul><% if (addWikiLinkPermission) { %><a href="" title="{{'WIKI.NAVIGATION.ACTION_ADD_LINK' | translate}}" class="add-button">
+  <div class="button-primary button-small">
+    <tg-svg svg-icon="icon-add"></tg-svg>
+  </div><span translate="WIKI.NAVIGATION.ACTION_ADD_LINK"></span></a><% } %>
+<ul ng-if="wikiLinks.length" class="wiki-link-container wiki-all-links">
+  <li class="wiki-link fixed-link"><a href="" tg-nav="project-wiki-list:project=project.slug" translate="WIKI.NAVIGATION.ALL_PAGES" class="link-title secondary"></a></li>
+</ul>

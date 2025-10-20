@@ -1,0 +1,19 @@
+{
+  "name": "flot-axislabels",
+  "version": "1.0.0",
+  "description": "Axis Labels plugin for flot :P by Xuan Luo",
+  "main": "jquery.flot.axislabels.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanfran/flot-axislabels.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanfran/flot-axislabels/issues"
+  },
+  "homepage": "https://github.com/juanfran/flot-axislabels#readme"
+}

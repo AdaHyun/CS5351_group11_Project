@@ -1,0 +1,9 @@
+
+<div class="wrapper">
+  <div class="notifications-page centered">
+    <header class="header">
+      <h1 class="title">{{ 'EVENTS.MY_EVENTS' | translate }}</h1><a href="" ng-if="vm.notificationsList.size &amp;&amp; !vm.notificationsList.get(0).get('read')" ng-click="vm.setAllAsRead()" class="action">{{ 'EVENTS.DISMISS_ALL' | translate }}</a><span ng-if="!vm.notificationsList.size || vm.notificationsList.get(0).get('read')" class="action disabled">{{ 'EVENTS.DISMISS_ALL' | translate }}</span>
+    </header>
+    <tg-notifications-list></tg-notifications-list>
+  </div>
+</div>

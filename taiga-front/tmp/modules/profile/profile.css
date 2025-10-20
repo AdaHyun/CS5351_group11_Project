@@ -1,0 +1,59 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile {
+  display: flex;
+  min-height: calc(100vh - 48px);
+  padding: 2rem 0; }
+  .profile .profile-bar {
+    margin-right: 1rem;
+    width: 200px; }
+  .profile .main {
+    display: flex;
+    padding: 0; }
+  .profile .timeline-wrapper {
+    margin-right: 3.5rem;
+    width: 768px; }
+    .profile .timeline-wrapper > div {
+      opacity: 1;
+      padding-top: 0;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.09, 0.43, 0.35, 0.95); }
+      .profile .timeline-wrapper > div.ng-hide {
+        opacity: 0;
+        padding-top: .5vh; }
+    .profile .timeline-wrapper .spin {
+      margin: 10% auto;
+      width: 3rem; }
+      .profile .timeline-wrapper .spin img {
+        animation-timing-function: ease-in-out;
+        animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+        margin: 0 auto;
+        max-height: 1rem;
+        max-width: 1rem;
+        transform-origin: 32 32;
+        max-height: 3rem;
+        max-width: 3rem; }
+  .profile .profile-sidebar {
+    flex-basis: 150px;
+    flex-shrink: 0;
+    width: 150px; }
+    .profile .profile-sidebar .button-gray {
+      display: block;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem; }
+  .profile .empty-tab {
+    padding: 5vh;
+    text-align: center; }
+    .profile .empty-tab svg {
+      fill: #E2E3E9;
+      height: 10rem;
+      margin: 2rem auto;
+      text-align: center;
+      width: 10rem; }
+    .profile .empty-tab p {
+      color: #70728F;
+      font-size: .9rem;
+      margin: 0; }

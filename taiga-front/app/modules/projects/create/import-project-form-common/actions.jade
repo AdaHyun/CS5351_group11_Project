@@ -1,0 +1,21 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.create-project-action
+    button.btn-small.create-project-action-cancel(
+        variant="secondary"
+        type="button"
+        ng-click="vm.onCancelForm()"
+        title="{{'PROJECT.CREATE.BACK' | translate}}"
+        translate="PROJECT.CREATE.BACK"
+    )
+    button.btn-small.create-project-action-submit.e2e-create-project-action-submit(
+        type="submit"
+        tg-loading="vm.formSubmitLoading"
+        ng-disabled="(vm.projectForm.is_private && !vm.canCreatePrivateProjects.valid && vm.canCreatePrivateProjects.reason == 'max_private_projects') || (!vm.projectForm.is_private && !vm.canCreatePublicProjects.valid && vm.canCreatePublicProjects.reason == 'max_public_projects')"
+        translate="PROJECT.CREATE.TITLE"
+    )

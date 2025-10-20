@@ -1,0 +1,50 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.wiki-pages-table {
+  display: flex; }
+  .wiki-pages-table .row {
+    padding: .5rem; }
+  .wiki-pages-table .title {
+    font-size: 1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+  .wiki-pages-table .table-main {
+    font-size: .875rem; }
+  .wiki-pages-table .title-field {
+    flex-basis: 180px;
+    flex-grow: 1;
+    flex-shrink: 0; }
+  .wiki-pages-table .created-field,
+  .wiki-pages-table .modified-field {
+    flex-basis: 10vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: .5rem; }
+  .wiki-pages-table .editions-field {
+    flex-basis: 80px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: .5rem;
+    text-align: center; }
+  .wiki-pages-table .creator-field,
+  .wiki-pages-table .last-modifier-field {
+    align-items: center;
+    display: flex;
+    flex-basis: 200px; }
+    .wiki-pages-table .creator-field .user-avatar,
+    .wiki-pages-table .last-modifier-field .user-avatar {
+      flex-grow: 0; }
+      .wiki-pages-table .creator-field .user-avatar img,
+      .wiki-pages-table .last-modifier-field .user-avatar img {
+        border-radius: 50%;
+        font-size: .6em;
+        max-height: 2rem;
+        max-width: 2rem;
+        min-height: 2rem;
+        min-width: 2rem;
+        overflow: hidden; }
+    .wiki-pages-table .creator-field .user-full-name,
+    .wiki-pages-table .last-modifier-field .user-full-name {
+      flex-grow: 1;
+      padding: .5rem; }

@@ -1,0 +1,2 @@
+
+<div ng-if="vm.visible('tags') &amp;&amp; vm.item.get('colorized_tags').size" class="card-tags"><span tg-repeat="tag in vm.item.get('colorized_tags') track by tag.get('name')" ng-style="{'background-color': vm.getTagColor(tag.get('color'))}" title="{{::tag.get('name')}}" class="card-tag">{{ vm.zoomLevel == 3 ? tag.get('name') : '' }}</span></div>

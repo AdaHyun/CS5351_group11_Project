@@ -1,0 +1,201 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.add-tag-container {
+  align-items: center;
+  background: #F1F1F4;
+  display: flex;
+  margin: .5rem 0;
+  padding: 1rem; }
+  .add-tag-container .color-column {
+    cursor: pointer;
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative; }
+  .add-tag-container .tag-name {
+    flex-basis: 80%;
+    margin-right: 1rem; }
+  .add-tag-container .options-column {
+    display: flex; }
+    .add-tag-container .options-column .loading-spinner {
+      margin-right: 1.2rem;
+      width: 1.2rem; }
+  .add-tag-container input[type='text'] {
+    background: #fff; }
+  .add-tag-container .icon.icon-check-empty, .add-tag-container .icon.icon-close, .add-tag-container .icon.icon-save {
+    opacity: 1; }
+
+.tags-table .table-tags-editor input[type='text'] {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: border-bottom .2s linear; }
+  .tags-table .table-tags-editor input[type='text']:focus {
+    border-bottom: 1px solid #5A5B72;
+    outline: none; }
+
+.tags-table .table-tags-editor .row.header-tag-row {
+  cursor: default;
+  padding-left: 1rem; }
+
+.tags-table .color-filter {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  padding: 0 10px;
+  position: relative; }
+  .tags-table .color-filter:hover input {
+    border-bottom: 1px solid #E2E3E9; }
+  .tags-table .color-filter input {
+    padding: 0; }
+  .tags-table .color-filter label {
+    cursor: pointer; }
+
+.tags-table .row.tag-row {
+  margin: .3rem 0;
+  padding: .7rem 1rem; }
+  .tags-table .row.tag-row:hover {
+    cursor: default; }
+
+.tags-table .row .loading-spinner {
+  margin-right: 1.2rem;
+  width: 1.2rem; }
+
+.tags-table .mix-tags {
+  position: relative; }
+  .tags-table .mix-tags .popover {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #4C566A;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    bottom: 2rem;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #FFFFFF;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    right: -110%;
+    text-align: center;
+    width: 120px;
+    z-index: 2; }
+    .tags-table .mix-tags .popover:hover {
+      color: #70728F; }
+    .tags-table .mix-tags .popover a {
+      padding: .25rem; }
+    .tags-table .mix-tags .popover li {
+      margin-bottom: .25rem; }
+      .tags-table .mix-tags .popover li:last-child {
+        margin-bottom: 0; }
+      .tags-table .mix-tags .popover li:hover {
+        background: #ECEFF4;
+        color: #70728F; }
+        .tags-table .mix-tags .popover li:hover a {
+          color: #70728F; }
+    .tags-table .mix-tags .popover.horizontal li {
+      margin-bottom: .25rem;
+      white-space: nowrap;
+      width: 100%; }
+    .tags-table .mix-tags .popover.horizontal a {
+      width: 100%; }
+      .tags-table .mix-tags .popover.horizontal a.active {
+        color: #FFFFFF; }
+    .tags-table .mix-tags .popover.horizontal .point {
+      align-items: center;
+      color: #FFFFFF;
+      display: flex;
+      height: auto;
+      justify-content: flex-start;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .tags-table .mix-tags .popover.horizontal .point:hover {
+        transition: all .25s ease; }
+    .tags-table .mix-tags .popover.pop-points-open li {
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .tags-table .mix-tags .popover a.active {
+      background: #008AA8;
+      color: #FFFFFF; }
+    .tags-table .mix-tags .popover .point {
+      align-items: center;
+      color: #FFFFFF;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      transition: all .25s ease;
+      width: 2.5rem; }
+      .tags-table .mix-tags .popover .point:hover {
+        transition: all .25s ease; }
+    .tags-table .mix-tags .popover .severity,
+    .tags-table .mix-tags .popover .priority,
+    .tags-table .mix-tags .popover .status,
+    .tags-table .mix-tags .popover .type,
+    .tags-table .mix-tags .popover .role {
+      align-items: center;
+      color: #FFFFFF;
+      display: flex;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .tags-table .mix-tags .popover .severity:hover,
+      .tags-table .mix-tags .popover .priority:hover,
+      .tags-table .mix-tags .popover .status:hover,
+      .tags-table .mix-tags .popover .type:hover,
+      .tags-table .mix-tags .popover .role:hover {
+        transition: all .25s ease; }
+    .tags-table .mix-tags .popover::before {
+      background: #4C566A;
+      content: '';
+      height: 15px;
+      left: calc(50% - 7px);
+      position: absolute;
+      top: calc(100% - 7px);
+      transform: rotate(45deg);
+      width: 15px; }
+    .tags-table .mix-tags .popover .item-text {
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-align: left;
+      white-space: initial;
+      /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+  .tags-table .mix-tags:hover .popover {
+    display: block; }
+
+.tags-table .mixing-options-column {
+  text-align: right; }
+  .tags-table .mixing-options-column .loading-spinner {
+    margin-right: 1.2rem;
+    width: 1.2rem; }
+
+.tags-table .mixing-tags-from,
+.tags-table .mixing-tags-to {
+  background: rgba(199, 232, 226, 0.2); }
+
+.tags-table .mixing-confirm {
+  margin: 0 .5rem; }
+
+.tags-table .mixing-help-text {
+  font-size: .7rem;
+  color: #4C566A;
+  display: inline;
+  padding-right: .5rem;
+  text-align: center; }
+  @media screen and (max-width: 1215px) {
+    .tags-table .mixing-help-text {
+      display: block;
+      padding: .5rem; } }

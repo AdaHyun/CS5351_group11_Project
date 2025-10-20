@@ -1,0 +1,23 @@
+
+<section ng-if="vm.featured.size" class="featured-projects">
+  <h1 class="title">{{ 'DISCOVER.FEATURED' | translate }}</h1>
+  <div class="featured-projects-inner">
+    <div tg-repeat="project in vm.featured track by project.get('id')" class="featured-project">
+      <div class="tags-container">
+        <div style="background: {{tag.get('color')}}" title="{{tag.get('name')}}" tg-repeat="tag in project.get('colorized_tags') track by tag.get('name')" class="project-tag"></div>
+      </div>
+      <div class="project-card-inner">
+        <div class="project-card-header"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}" class="project-card-logo"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/></a>
+          <h2 class="project-card-name"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}">{{::project.get('name')}}</a>
+            <tg-svg ng-if="project.get('is_looking_for_people')" svg-icon="icon-recruit" svg-title="{{ ::project.get('looking_for_people_note') }}" class="look-for-people"></tg-svg>
+          </h2>
+        </div>
+        <p class="project-card-description">{{ ::project.get('description') | limitTo:100 }}{{ ::project.get('description').length < 100 ? '' : '...'}}</p>
+        <div class="project-card-statistics"><span ng-class="{'active': project.get('is_fan')}" title="{{ 'PROJECT.FANS_COUNTER_TITLE'|translate:{total:project.get('total_fans')||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-like"></tg-svg><span>{{::project.get('total_fans')}}</span></span><span ng-class="{'active': project.get('is_watcher')}" title="{{ 'PROJECT.WATCHERS_COUNTER_TITLE'|translate:{total:project.get('total_watchers')||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-watch"></tg-svg><span>{{::project.get('total_watchers')}}</span></span><span ng-class="{'active': project.get('i_am_member')}" title="{{ 'PROJECT.MEMBERS_COUNTER_TITLE'|translate:{total:project.get('members').size||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-team"></tg-svg><span class="statistics-num">{{ ::project.get('members').size }}</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>

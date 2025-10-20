@@ -1,0 +1,8 @@
+
+<ul class="paginator"><% if (showPrevious) { %>
+  <li class="previous"><a href="" class="previous next_prev_button disabled"><span translate="PAGINATION.PREVIOUS"></span></a></li><% } %>
+  <% _.each(pages, function(item) { %>
+  <li class="<%- item.classes %>"><% if (item.type === "page") { %><a href="" data-pagenum="<%- item.num %>"><%- item.num %></a></a><% } else if (item.type === "page-active") { %><span class="active"><%- item.num %></span><% } else { %><span>...</span><% } %></li><% }); %>
+  <% if (showNext) { %>
+  <li class="next"><a href="" class="next next_prev_button disabled"><span translate="PAGINATION.NEXT"></span></a></li><% } %>
+</ul>

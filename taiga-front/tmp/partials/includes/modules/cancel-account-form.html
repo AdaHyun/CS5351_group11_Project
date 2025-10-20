@@ -1,0 +1,11 @@
+
+<div tg-cancel-account="tg-cancel-account" class="cancel-account">
+  <p><strong translate="CANCEL_ACCOUNT.TITLE"></strong></p>
+  <p><span translate="CANCEL_ACCOUNT.SUBTITLE"></span></p>
+  <form>
+    <fieldset>
+      <input type="hidden" name="cancel_token" ng-model="data.cancel_token" data-required="true" placeholder="{{'CANCEL_ACCOUNT.PLACEHOLDER_INPUT_TOKEN' | translate}}"/>
+      <button type="submit" title="{{'CANCEL_ACCOUNT.ACTION_LEAVING' | translate}}" translate="CANCEL_ACCOUNT.ACTION_LEAVING" class="button-cancel-account button-gray"></button>
+    </fieldset>
+  </form>
+</div>

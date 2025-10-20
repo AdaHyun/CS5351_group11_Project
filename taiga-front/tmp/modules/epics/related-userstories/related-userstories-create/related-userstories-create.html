@@ -1,0 +1,66 @@
+
+<button tg-check-permission="add_us" type="button" variant="primary" ng-click="showLightbox(selectedProject)" class="btn-icon add-button e2e-add-userstory-button">
+  <tg-svg svg-icon="icon-add"></tg-svg>
+</button>
+<div class="lightbox lightbox-create-related-user-stories">
+  <tg-lightbox-close></tg-lightbox-close>
+  <div class="lightbox-create-related-user-stories-wrapper">
+    <h2 translate="EPIC.CREATE_RELATED_USERSTORIES" class="title"></h2>
+    <div class="button-group">
+      <div class="button-group-single">
+        <input type="radio" name="related-with-selector" id="new-user-story" value="new-user-story" ng-model="relatedWithSelector" ng-init="relatedWithSelector='new-user-story'"/>
+        <label for="new-user-story" class="e2e-new-userstory-label"><span class="name">{{ 'EPIC.NEW_USERSTORY' | translate}}</span></label>
+      </div>
+      <div class="button-group-single">
+        <input type="radio" name="related-with-selector" id="existing-user-story" value="existing-user-story" ng-model="relatedWithSelector"/>
+        <label for="existing-user-story" class="e2e-existing-user-story-label"><span class="name">{{ 'EPIC.EXISTING_USERSTORY' | translate}}</span></label>
+      </div>
+    </div>
+    <fieldset class="project-selector">
+      <label ng-if="relatedWithSelector=='new-user-story'" translate="EPIC.CHOOSE_PROJECT_FOR_CREATION" for="project-selector-dropdown"></label>
+      <label ng-if="relatedWithSelector=='existing-user-story'" translate="EPIC.CHOOSE_PROJECT_FROM" for="project-selector-dropdown"></label>
+      <select ng-model="selectedProject" ng-change="selectProject(selectedProject)" data-required="true" ng-options="p.id as p.name for p in vm.projects | toMutable" id="project-selector-dropdown"></select>
+    </fieldset>
+    <fieldset ng-show="relatedWithSelector=='new-user-story'">
+      <div class="new-user-story-title">
+        <label ng-show="creationMode=='single-new-user-story'" translate="EPIC.SUBJECT"></label>
+        <label ng-show="creationMode=='bulk-new-user-stories'" translate="EPIC.SUBJECT_BULK_MODE"></label>
+        <div class="new-user-story-options">
+          <div class="new-user-story-option-single">
+            <input type="radio" name="new-user-story-selector" id="single-new-user-story" value="single-new-user-story" ng-model="creationMode" ng-init="creationMode='single-new-user-story'"/>
+            <label for="single-new-user-story" class="e2e-single-creation-label">
+              <tg-svg svg-icon="icon-add"></tg-svg>
+            </label>
+          </div>
+          <div class="new-user-story-option-single">
+            <input type="radio" name="new-user-story-selector" id="bulk-new-user-stories" value="bulk-new-user-stories" ng-model="creationMode"/>
+            <label for="bulk-new-user-stories" class="e2e-bulk-creation-label">
+              <tg-svg svg-icon="icon-bulk"></tg-svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <form class="new-user-story-form">
+        <div ng-show="creationMode=='single-new-user-story'" class="single-creation">
+          <input type="text" ng-model="relatedUserstoriesText" data-required="true" class="e2e-new-userstory-input-text"/>
+        </div>
+        <div ng-show="creationMode=='bulk-new-user-stories'" class="bulk-creation">
+          <textarea ng-model="relatedUserstoriesText" data-required="true" class="e2e-new-userstories-input-textarea"></textarea>
+        </div>
+      </form>
+      <button href="" ng-click="vm.bulkCreateRelatedUserStories(selectedProject, relatedUserstoriesText, closeLightbox)" tg-loading="vm.loading" translate="COMMON.SAVE" ng-show="relatedWithSelector=='new-user-story'" class="btn-big create-user-story e2e-create-userstory-button ng-animate-disabled"></button>
+    </fieldset>
+    <fieldset ng-show="relatedWithSelector=='existing-user-story'" class="existing-user-story">
+      <label translate="EPIC.CHOOSE_USERSTORY" for="userstory-filter"></label>
+      <input id="userstory-filter" type="text" placeholder="{{'EPIC.FILTER_USERSTORIES' | translate}}" ng-model="searchUserstory" ng-change="onUpdateSearchUserstory()" class="userstory-filter e2e-filter-userstories-input"/>
+      <form ng-show="relatedWithSelector=='existing-user-story' &amp;&amp; vm.projectUserstories.size" class="existing-user-story-form">
+        <select size="5" ng-model="selectedUserstory" data-required="true" class="userstory e2e-userstories-select">
+          <option value="" class="hidden"></option>
+          <option ng-repeat="us in vm.projectUserstories | toMutable track by us.id" value="{{ ::us.id }}">#{{::us.ref}} {{::us.subject}}</option>
+        </select>
+      </form>
+      <p ng-show="relatedWithSelector=='existing-user-story' &amp;&amp; !vm.projectUserstories.size" translate="EPIC.NO_USERSTORIES_FOUND" class="no-stories-found"></p>
+      <button href="" ng-click="vm.saveRelatedUserStory(selectedUserstory, closeLightbox)" tg-loading="vm.loading" translate="COMMON.SAVE" class="btn-big e2e-select-related-userstory-button"></button>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<div tg-user-notifications ng-controller="UserNotificationsController as ctrl" ng-init="section='mail-notifications'" class="wrapper">
+  <sidebar tg-user-settings-navigation="mail-notifications" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="usersettingsmenu-user-profile"><a href="" tg-nav="user-settings-user-profile" title="{{ 'USER_SETTINGS.MENU.SECTION_TITLE' | translate }}"><span translate="USER_SETTINGS.MENU.SECTION_TITLE" class="title"></span></a></li>
+          <li id="usersettingsmenu-change-password"><a href="" tg-nav="user-settings-user-change-password" title="{{ 'USER_SETTINGS.MENU.CHANGE_PASSWORD' | translate }}"><span translate="USER_SETTINGS.MENU.CHANGE_PASSWORD" class="title"></span></a></li>
+          <li id="usersettingsmenu-project-settings"><a href="" tg-nav="user-settings-user-project-settings" title="{{ 'USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES' | translate }}"><span translate="USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES" class="title"></span></a></li>
+          <li id="usersettingsmenu-mail-notifications"><a href="" tg-nav="user-settings-mail-notifications" title="{{ 'USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-live-notifications"><a href="" tg-nav="user-settings-live-notifications" title="{{ 'USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-web-notifications"><a href="" tg-nav="user-settings-web-notifications" title="{{ 'USER_SETTINGS.MENU.EVENTS' | translate }}"><span translate="USER_SETTINGS.MENU.EVENTS" class="title"></span></a></li>
+          <li id="usersettings-contrib" ng-repeat="plugin in userSettingsPlugins"><a href="" tg-nav="user-settings-contrib:plugin=plugin.slug" ng-class="{active: plugin.slug == currentPlugin.slug}"><span class="title">{{ plugin.name }}</span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-common">
+    <header>
+      <h1>{{sectionName | translate}}</h1>
+    </header>
+    <div ng-if="!ctrl.isSaas">
+      <p translate="NOTIFICATION.COMMUNICATION" class="total"></p>
+      <div class="newsletter-email setting">
+        <p translate="PROJECT.NEWSLETTER_OPENING.NOTIFY_EXPLANATION"></p>
+        <button ng-if="!ctrl.onPremiseSubscribed" ng-click="ctrl.subscribed()" class="btn-small subscribed-button"><span translate="PROJECT.NEWSLETTER_OPENING.SUBSCRIBE"></span><img ng-if="ctrl.loadPremise" src="v-1758905376214/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"></button>
+        <button variant="secondary" ng-if="ctrl.onPremiseSubscribed" class="btn-small subscribed"><span translate="PROJECT.NEWSLETTER_OPENING.SUBSCRIBED"></span>
+          <tg-svg svg-icon="icon-check-empty" class="check-sub"></tg-svg>
+        </button>
+        <div class="text-container">
+          <p class="text-info"><span translate="PROJECT.NEWSLETTER_OPENING.NO_SHARE" class="italic"></span><br><span translate="PROJECT.NEWSLETTER_OPENING.OPT_OUT" class="italic"></span></p>
+        </div>
+      </div>
+    </div>
+    <p translate="NOTIFICATION.MAIL" class="total"></p>
+    <section class="policy-table">
+      <div class="policy-table-header">
+        <div class="policy-table-row">
+          <div class="policy-table-project"><span translate="USER_SETTINGS.NOTIFICATIONS.COLUMN_PROJECT"></span></div>
+          <div class="policy-table-all"><span translate="USER_SETTINGS.NOTIFICATIONS.COLUMN_RECEIVE_ALL"></span></div>
+          <div class="policy-table-involved"><span translate="USER_SETTINGS.NOTIFICATIONS.COLUMN_ONLY_INVOLVED"></span></div>
+          <div class="policy-table-none"><span translate="USER_SETTINGS.NOTIFICATIONS.COLUMN_NO_NOTIFICATIONS"></span></div>
+        </div>
+      </div>
+      <div tg-user-notifications-list ng-model="notifyPolicies" class="policy-table-body"></div>
+    </section>
+  </section>
+</div>

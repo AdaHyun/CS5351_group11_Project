@@ -1,0 +1,22 @@
+
+<div ng-class="{readonly: !vm.permissions.canEdit}" class="detail-title-wrapper e2e-story-header">
+  <h2 ng-show="!vm.editMode" ng-hide="vm.editMode" class="detail-title-text ng-animate-disabled">
+    <div class="detail-ref">{{'#' + vm.item.ref}}</div><span ng-click="vm.editSubject(true)" ng-if="vm.permissions.canEdit" ng-bind-html="vm.item.subject | emojify" class="detail-subject e2e-title-subject"></span><span ng-if="!vm.permissions.canEdit" ng-bind-html="vm.item.subject | emojify" class="detail-subject e2e-title-subject"></span>
+    <tg-due-date due-date="vm.item.due_date" is-closed="vm.item.is_closed" ng-if="vm.item.due_date" obj-type="{{ vm.objType }}"></tg-due-date><a href="" ng-if="vm.permissions.canEdit" ng-click="vm.editSubject(true)" class="detail-edit">
+      <tg-svg svg-icon="icon-edit" class="e2e-detail-edit"></tg-svg></a>
+  </h2>
+  <div ng-if="vm.editMode" class="edit-title-wrapper">
+    <input type="text" ng-model="vm.item.subject" maxlength="500" autofocus="autofocus" required="required" ng-keydown="vm.onKeyDown($event)" class="edit-title-input e2e-title-input"/>
+    <button ng-click="vm.saveSubject()" tg-loading="vm.loadingSubject" class="edit-title-button save-title-button e2e-title-button">
+      <tg-svg svg-icon="icon-save"></tg-svg>
+    </button>
+    <button ng-click="vm.cancelEdit(false)" class="edit-title-button cancel-title-button e2e-cancel-title-button">
+      <tg-svg svg-icon="icon-close"></tg-svg>
+    </button>
+  </div>
+</div>
+<div class="detail-project">
+  <div class="section-name">{{ vm.sectionName }}</div>
+</div>
+<div ng-show="vm.item.is_blocked" class="detail-header-line block-desc-container"><span class="blocked-sign">
+    <tg-svg svg-icon="icon-lock"></tg-svg><span translate="COMMON.BLOCKED" class="block-description-title"></span></span><span ng-if="blocked_html_note" ng-bind-html="blocked_html_note" class="block-description"></span></div>

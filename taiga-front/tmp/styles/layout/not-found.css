@@ -1,0 +1,31 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.error-main {
+  background: url("../images/invitation_bg.jpg") no-repeat center center;
+  background-size: cover;
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2; }
+  .error-main .error-container {
+    color: #fff;
+    flex-basis: 400px;
+    text-align: center; }
+  .error-main .logo-svg {
+    padding: 0 32%;
+    text-align: center;
+    width: 100%; }
+  .error-main h1 {
+    color: #fff;
+    display: block;
+    margin-bottom: 1rem; }
+  .error-main a {
+    color: #5CBAA9; }

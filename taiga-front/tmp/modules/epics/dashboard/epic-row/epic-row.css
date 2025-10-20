@@ -1,0 +1,266 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.epic-row {
+  font-size: .875rem;
+  align-items: center;
+  background: #F9F9FB;
+  border-radius: 3px;
+  cursor: move;
+  display: flex;
+  margin-bottom: .5rem;
+  padding-left: 1rem;
+  position: relative;
+  transition: background .2s; }
+  .epic-row .vote,
+  .epic-row .status-holder,
+  .epic-row .sprint,
+  .epic-row .name,
+  .epic-row .progress {
+    padding: 1rem .5rem; }
+  .epic-row .vote {
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    text-align: center; }
+  .epic-row .assigned,
+  .epic-row .project {
+    flex-basis: 75px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    padding: .5rem;
+    text-align: center; }
+  .epic-row .status-holder {
+    flex-basis: 110px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    text-align: center; }
+  .epic-row .sprint {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%; }
+  .epic-row .name,
+  .epic-row .progress {
+    flex-basis: 20vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 40vw; }
+  .epic-row .progress {
+    flex-shrink: 3;
+    margin-right: 1rem;
+    position: relative; }
+    @media (max-width: 1110px) {
+      .epic-row .progress {
+        max-width: 234px; } }
+  .epic-row.unfold, .epic-row:hover {
+    background-color: #ECEFF4; }
+    .epic-row.unfold .icon-drag, .epic-row:hover .icon-drag {
+      opacity: 1; }
+  .epic-row.not-empty {
+    cursor: pointer; }
+  .epic-row.is-blocked {
+    background: rgba(228, 64, 87, 0.25); }
+  .epic-row.is-closed .name a {
+    color: #9b9cb1;
+    text-decoration: line-through; }
+  .epic-row.unfold .name .icon {
+    transform: rotate(0deg); }
+  .epic-row .fold-us {
+    flex-shrink: 0;
+    margin-left: .75rem;
+    width: 1rem; }
+  .epic-row .name {
+    align-items: center;
+    display: flex;
+    padding-left: 0; }
+    .epic-row .name a:hover .ref,
+    .epic-row .name a:hover .subject {
+      color: #008AA8; }
+    .epic-row .name .subject {
+      color: #4C566A;
+      margin-left: .25rem; }
+    .epic-row .name .icon {
+      transform: rotate(-90deg);
+      transition: all .2s; }
+  .epic-row .icon-drag {
+    width: 1rem;
+    height: 1rem;
+    cursor: move;
+    fill: #008AA8;
+    left: .5rem;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .1s; }
+  .epic-row .epic-pill {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .7rem;
+    background: #434456;
+    border-radius: 6px;
+    color: #fff;
+    height: 12px;
+    margin: 0 .5rem;
+    padding: .1rem .25rem;
+    width: 12px; }
+  .epic-row .status-holder {
+    cursor: pointer;
+    position: relative; }
+    .epic-row .status-holder button {
+      align-items: center;
+      background: none;
+      display: flex;
+      margin: 0 auto; }
+  .epic-row .icon-arrow-down {
+    width: 0.7rem;
+    height: 0.7rem;
+    fill: #70728F;
+    margin-left: .1rem; }
+  .epic-row .progress-bar,
+  .epic-row .progress-status {
+    height: 1.5rem;
+    left: 0;
+    position: absolute;
+    top: .25rem; }
+  .epic-row .progress-bar {
+    background-color: #FFFFFF;
+    max-width: 40vw;
+    padding-right: 1rem;
+    width: 100%; }
+  .epic-row .progress-status {
+    background-color: #008AA8;
+    width: 10vw; }
+  .epic-row .assigned {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    .epic-row .assigned img {
+      border-radius: 50%;
+      height: 2rem;
+      overflow: hidden;
+      width: 2rem; }
+  .epic-row .is-unassigned {
+    color: #70728F; }
+  .epic-row .epic-statuses {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    background: #FFFFFF;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+    color: #008AA8;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    text-align: "";
+    top: 40px;
+    width: 150px;
+    z-index: 2;
+    display: block;
+    text-align: left; }
+    .epic-row .epic-statuses:hover {
+      color: #70728F; }
+    .epic-row .epic-statuses a {
+      padding: .25rem; }
+    .epic-row .epic-statuses li {
+      margin-bottom: .25rem; }
+      .epic-row .epic-statuses li:last-child {
+        margin-bottom: 0; }
+      .epic-row .epic-statuses li:hover {
+        background: #ECEFF4;
+        color: #70728F; }
+        .epic-row .epic-statuses li:hover a {
+          color: #70728F; }
+    .epic-row .epic-statuses.horizontal li {
+      margin-bottom: .25rem;
+      white-space: nowrap;
+      width: 100%; }
+    .epic-row .epic-statuses.horizontal a {
+      width: 100%; }
+      .epic-row .epic-statuses.horizontal a.active {
+        color: #FFFFFF; }
+    .epic-row .epic-statuses.horizontal .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: auto;
+      justify-content: flex-start;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .epic-row .epic-statuses.horizontal .point:hover {
+        transition: all .25s ease; }
+    .epic-row .epic-statuses.pop-points-open li {
+      display: inline-flex;
+      margin: 0;
+      padding: 0; }
+    .epic-row .epic-statuses a.active {
+      background: #008AA8;
+      color: #FFFFFF; }
+    .epic-row .epic-statuses .point {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      height: 2.5rem;
+      justify-content: center;
+      transition: all .25s ease;
+      width: 2.5rem; }
+      .epic-row .epic-statuses .point:hover {
+        transition: all .25s ease; }
+    .epic-row .epic-statuses .severity,
+    .epic-row .epic-statuses .priority,
+    .epic-row .epic-statuses .status,
+    .epic-row .epic-statuses .type,
+    .epic-row .epic-statuses .role {
+      align-items: center;
+      color: #008AA8;
+      display: flex;
+      min-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all .25s ease;
+      white-space: nowrap; }
+      .epic-row .epic-statuses .severity:hover,
+      .epic-row .epic-statuses .priority:hover,
+      .epic-row .epic-statuses .status:hover,
+      .epic-row .epic-statuses .type:hover,
+      .epic-row .epic-statuses .role:hover {
+        transition: all .25s ease; }
+    .epic-row .epic-statuses::before {
+      background: #FFFFFF;
+      content: '';
+      height: 15px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 0; }
+    .epic-row .epic-statuses .item-text {
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      text-align: left;
+      white-space: initial;
+      /* stylelint-enable property-no-vendor-prefix, value-no-vendor-prefix */ }
+  .epic-row .loading-spinner {
+    height: 10px;
+    width: 10px; }
+
+.epic-stories-wrapper {
+  margin-bottom: .5rem; }

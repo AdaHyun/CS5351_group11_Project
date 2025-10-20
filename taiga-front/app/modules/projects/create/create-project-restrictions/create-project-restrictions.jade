@@ -1,0 +1,18 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.create-project-warning(
+    ng-if="isPrivate && !canCreatePrivateProjects.valid && canCreatePrivateProjects.reason == 'max_private_projects'"
+)
+    tg-svg(svg-icon="icon-exclamation")
+    span {{ 'PROJECT.CREATE.MAX_PRIVATE_PROJECTS' | translate }}
+
+.create-project-warning(
+    ng-if="!isPrivate && !canCreatePublicProjects.valid && canCreatePublicProjects.reason == 'max_public_projects'"
+)
+    tg-svg(svg-icon="icon-exclamation")
+    span {{ 'PROJECT.CREATE.MAX_PUBLIC_PROJECTS' | translate }}

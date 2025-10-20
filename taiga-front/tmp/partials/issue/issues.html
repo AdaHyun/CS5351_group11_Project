@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<div tg-issues-ordering tg-issues-pagination ng-controller="IssuesController as ctrl" ng-init="section='issues'" class="wrapper issues lightbox-generic-form">
+  <tg-project-menu></tg-project-menu>
+  <section class="main issue-main">
+    <div class="issue-top">
+      <header class="issue-header">
+        <header>
+          <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+        </header>
+        <div class="taskboard-actions">
+          <div class="issue-table-options-start">
+            <button ng-click="ctrl.openFilter = !ctrl.openFilter" title="{{ctrl.selectedFilters.length}} {{'COMMON.FILTERS.APPLIED_FILTERS_NUM' | translate}}" ng-class="{active: ctrl.openFilter}" class="btn-filter e2e-open-filter">
+              <tg-svg svg-icon="icon-filters"></tg-svg><span ng-if="!ctrl.openFilter" translate="BACKLOG.FILTERS.TITLE" class="text"></span><span ng-if="ctrl.openFilter" translate="BACKLOG.FILTERS.HIDE_TITLE" class="text"></span><span ng-if="ctrl.selectedFilters.length" class="selected-filters">{{ctrl.selectedFilters.length}}</span>
+            </button>
+            <tg-input-search q="ctrl.filterQ" change="ctrl.changeQ(q)"></tg-input-search>
+            <div id="show-tags" class="display-tags-button">
+              <div ng-class="{'active': ctrl.showTags}" class="check js-check">
+                <input type="checkbox" id="show-tags-input" ng-checked="ctrl.showTags" ng-model="ctrl.showTags" ng-change="ctrl.toggleShowTags()">
+                <div></div>
+              </div>
+              <label for="show-tags-input" translate="BACKLOG.TAGS.SHOW"></label>
+            </div>
+          </div>
+          <div tg-check-permission="add_issue" class="new-issue">
+            <button ng-class="{'btn-small': !ctrl.sprintIssues, 'btn-board': ctrl.sprintIssues}" type="button" variant="primary" ng-click="ctrl.addNewIssue('standard', null)">
+              <tg-svg svg-icon="icon-add"></tg-svg><span ng-if="!ctrl.sprintIssues">{{"ISSUES.ACTION_NEW_ISSUE" | translate}}</span>
+            </button>
+            <button ng-class="{'btn-icon': !ctrl.sprintIssues, 'btn-board': ctrl.sprintIssues}" type="button" variant="secondary" ng-click="ctrl.addIssuesInBulk()">
+              <tg-svg svg-icon="icon-bulk"></tg-svg>
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="issue-container">
+      <sidebar ng-if="ctrl.openFilter" class="filters-bar">
+        <tg-filter q="ctrl.filterQ" filters="ctrl.filters" custom-filters="ctrl.customFilters" selected-filters="ctrl.selectedFilters" customFilters="ctl.customFilters" on-save-custom-filter="ctrl.saveCustomFilter(name)" on-add-filter="ctrl.addFilter(filter)" on-select-custom-filter="ctrl.selectCustomFilter(filter)" on-remove-custom-filter="ctrl.removeCustomFilter(filter)" on-remove-filter="ctrl.removeFilter(filter)" on-change-q="ctrl.changeQ(q)"></tg-filter>
+      </sidebar>
+      <section ng-class="{filter: ctrl.openFilter}" class="issues-page">
+        <tg-issues-table issues="issues" show-tags="ctrl.showTags" on-load-issues="ctrl.loadIssues()" on-add-new-issue="ctrl.addNewIssue()" on-add-issues-in-bulk="ctrl.addIssuesInBulk()" on-toggle-tags="ctrl.toggleTags(tags)"></tg-issues-table>
+        <!-- Paginator is rendered using js.-->
+        <div class="paginator issues-paginator"></div>
+      </section>
+    </div>
+  </section>
+  <div tg-lb-create-edit class="lightbox lightbox-generic-form lightbox-create-edit"></div>
+  <div tg-lb-create-bulk-issues class="lightbox lightbox-generic-bulk">
+    <tg-lightbox-close></tg-lightbox-close>
+    <form>
+      <h2 translate="COMMON.NEW_BULK" class="title"></h2>
+      <fieldset>
+        <textarea cols="200" wrap="off" ng-model="new.bulk" data-required="true" data-linewidth="200" ng-attr-placeholder="{{'COMMON.ONE_ITEM_LINE' | translate}}"></textarea>
+      </fieldset>
+      <div class="lb-action-wrapper">
+        <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-big"></button>
+      </div>
+    </form>
+  </div>
+</div>

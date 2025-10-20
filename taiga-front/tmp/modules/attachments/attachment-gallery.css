@@ -1,0 +1,62 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.attachment-gallery {
+  display: flex;
+  flex-basis: 25%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 1rem; }
+  .attachment-gallery .single-attachment {
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    max-width: 200px; }
+    .attachment-gallery .single-attachment:hover .icon-delete {
+      opacity: 1; }
+    .attachment-gallery .single-attachment .attachment-name {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      display: inline-block;
+      max-width: 175px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      display: inline-block; }
+  .attachment-gallery .attachment-image {
+    display: inline-block; }
+  .attachment-gallery img {
+    height: 150px;
+    margin-bottom: .2rem;
+    width: 200px; }
+    .attachment-gallery img:hover {
+      filter: saturate(150%) hue-rotate(60deg);
+      transition: all 0.3s cubic-bezier(0.01, 0.7, 1, 1); }
+  .attachment-gallery.deprecated img {
+    opacity: .5; }
+  .attachment-gallery.deprecated .attachment-name {
+    color: #70728F; }
+  .attachment-gallery .attachment-data {
+    align-content: center;
+    display: flex;
+    justify-content: space-between; }
+  .attachment-gallery .icon-delete {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    transition-delay: .1s; }
+    .attachment-gallery .icon-delete svg {
+      fill: #ffa0a0; }
+    .attachment-gallery .icon-delete:hover svg {
+      color: #FF6363; }
+  .attachment-gallery .loading-container {
+    align-items: center;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    margin: 0 .5rem .5rem 0;
+    width: 200px; }
+  .attachment-gallery .loading-spinner {
+    margin: 0 auto;
+    max-height: 3rem;
+    max-width: 3rem; }

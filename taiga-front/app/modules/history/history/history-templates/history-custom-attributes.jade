@@ -1,0 +1,36 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.diff-status-wrapper(
+    ng-if="vm.diff.new.length"
+    ng-repeat="newCustom in vm.diff.new"
+)
+    span.key(translate="ACTIVITY.CREATED_CUSTOM_ATTRIBUTE")
+    span.diff ({{newCustom.name}})
+
+    span(ng-if="newCustom.type == 'richtext'")
+        p.diff(tg-bo-html="newCustom.value_diff")
+
+    span(ng-if="newCustom.type != 'richtext'")
+        span.diff {{newCustom.value}}
+
+.diff-status-wrapper(
+    ng-if="vm.diff.changed.length"
+    ng-repeat="changeCustom in vm.diff.changed"
+)
+    span.key(translate="ACTIVITY.UPDATED_CUSTOM_ATTRIBUTE")
+    span.diff ({{changeCustom.name}})
+
+    span(ng-if="changeCustom.type == 'richtext'")
+        p.diff(tg-bo-html="changeCustom.value_diff")
+
+    span(ng-if="changeCustom.type != 'richtext'")
+        span.diff {{changeCustom.changes.value[0]}}
+        tg-svg(
+            svg-icon="icon-arrow-right"
+        )
+        span.diff {{changeCustom.changes.value[1]}}

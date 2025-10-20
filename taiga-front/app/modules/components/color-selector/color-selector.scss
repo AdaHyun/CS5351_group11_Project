@@ -1,0 +1,72 @@
+@mixin color-selector-option {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+}
+
+.color-selector {
+    position: relative;
+    .tag-color {
+        @include color-selector-option;
+        border: 2px solid $color-black600;
+        border-radius: 3px;
+        margin: 0;
+        transition: background .3s ease-out;
+        &.disabled {
+            cursor: auto;
+        }
+        &.empty-color {
+            @include empty-color(30);
+        }
+    }
+}
+
+.color-selector-dropdown {
+    background: $color-white;
+    border: solid 1px $color-gray400;
+    box-shadow: 4px 4px 8px rgba(46, 52, 64, .1);
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    top: 2rem;
+    width: 306px;
+    z-index: $first-layer;
+}
+
+.color-selector-dropdown-list {
+    display: grid;
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
+    grid-template-columns: repeat(7, 1fr);
+    list-style-type: none;
+    margin-bottom: 0;
+    .color-selector-option {
+        @include color-selector-option;
+    }
+    .empty-color {
+        @include color-selector-option;
+        @include empty-color(34);
+    }
+}
+
+.custom-color-selector {
+    display: flex;
+    margin-top: .5rem;
+    .custom-color-input {
+        flex: 1;
+        margin: 0;
+        width: 0;
+    }
+    .display-custom-color-wrapper {
+        background: $mass-white;
+        margin-right: .5rem;
+    }
+    .display-custom-color {
+        @include color-selector-option;
+        &.empty-color {
+            @include empty-color(34);
+            cursor: default;
+        }
+    }
+}

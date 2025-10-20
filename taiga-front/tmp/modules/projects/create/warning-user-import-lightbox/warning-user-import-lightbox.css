@@ -1,0 +1,19 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.warning-users-import-lightbox {
+  max-width: 600px; }
+  .warning-users-import-lightbox .warning-users-import-title {
+    text-align: center; }
+  .warning-users-import-lightbox .actions {
+    display: flex;
+    margin: 2rem 0; }
+    .warning-users-import-lightbox .actions button {
+      flex: 1; }
+      .warning-users-import-lightbox .actions button:first-child {
+        flex: 0;
+        flex-basis: 40%;
+        margin-right: .5rem; }
+    .warning-users-import-lightbox .actions .button-trans {
+      color: #434456; }

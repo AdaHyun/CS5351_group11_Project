@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<div ng-controller="UserStoryDetailController as ctrl" ng-init="section='backlog-kanban'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <div class="main detail">
+    <div ng-class="{blocked: us.is_blocked}" class="detail-header-container">
+      <tg-detail-nav item="us"></tg-detail-nav>
+      <div class="detail-header">
+        <tg-detail-header item="us" section-name="sectionName" project="project" required-perm="modify_us" ng-if="project &amp;&amp; us" type="text"></tg-detail-header>
+        <div ng-if="!!project.is_epics_activated" class="detail-header-line belong-to-epics-wrapper">
+          <div class="related-to-epics">
+            <tg-belong-to-epics epics="::us.epics" item="::us" format="text"></tg-belong-to-epics>
+          </div>
+        </div>
+        <div ng-if="project.is_epics_activated" tg-check-permission="modify_epic" class="relate-to-epic"><a href="" title="{{'US.RELATE_TO_EPIC' | translate}}" ng-click="relateToEpic(us)" class="relate-to-epic-button ng-animate-disabled">
+            <tg-svg svg-icon="icon-epics" svg-title-translate="US.RELATE_TO_EPIC"></tg-svg><span translate="US.RELATE_TO_EPIC" class="relate-to-epic-text"></span></a></div>
+        <div ng-if="us.origin_task" tg-check-permission="view_tasks" class="detail-header-line item-origin-task"><span translate="US.PROMOTED_FROM_TASK"></span><a href="" tg-nav="project-tasks-detail:project=project.slug,ref=us.origin_task.ref" title="{{'US.TITLE_LINK_GO_TO_TASK' | translate}}" ng-bind-html="'#' + us.ref + ' ' + us.origin_task.subject | emojify"></a></div>
+        <div ng-if="us.from_task_ref" tg-check-permission="view_tasks" class="detail-header-line item-origin-task"><span translate="US.CONVERTED_FROM_TASK"></span></div>
+        <div ng-if="us.origin_issue" tg-check-permission="view_issues" class="detail-header-line item-origin-issue"><span translate="US.PROMOTED_FROM_ISSUE"></span><a href="" tg-nav="project-issues-detail:project=project.slug,ref=us.origin_issue.ref" title="{{'US.TITLE_LINK_GO_TO_ISSUE' | translate}}" ng-bind-html="'#' + us.origin_issue.ref + ' ' + us.origin_issue.subject | emojify"></a></div>
+        <div ng-if="sprint &amp;&amp; project.is_backlog_activated" class="action-buttons"><a variant="secondary" href="" tg-check-permission="view_milestones" tg-nav="project-taskboard:project=project.slug,sprint=sprint.slug" title="{{'US.TITLE_LINK_TASKBOARD' | translate}}" translate="US.LINK_TASKBOARD" class="btn-small"></a></div>
+        <div ng-class="{'has-tags': us.tags.length}" class="subheader">
+          <tg-tag-line ng-if="us &amp;&amp; project" project="project" item="us" permissions="modify_us" class="tags-block"></tg-tag-line>
+          <tg-created-by-display ng-model="us" class="ticket-created-by"></tg-created-by-display>
+        </div>
+      </div>
+    </div>
+    <div ng-if="attachmentsReady" class="detail-content">
+      <section class="duty-content">
+        <tg-item-wysiwyg type="us" model="us" required-perm="modify_us"></tg-item-wysiwyg>
+      </section>
+      <!-- Custom Fields-->
+      <tg-custom-attributes-values ng-model="us" type="userstory" project="project" required-edition-perm="modify_us"></tg-custom-attributes-values>
+      <tg-attachments-full obj-id="us.id" type="us" project-id="projectId" edit-permission="modify_us"></tg-attachments-full>
+      <section tg-related-tasks ng-show="showRelatedTasks()" class="related-tasks">
+        <div class="related-tasks-header"><span translate="COMMON.RELATED_TASKS" class="related-tasks-title"></span>
+          <div tg-related-task-create-button></div>
+        </div>
+        <div tg-tasks-sortable="reorderTask(task, newIndex)" class="related-tasks-body">
+          <div ng-repeat="task in tasks track by task.id" ng-class="{closed: task.is_closed, blocked: task.is_blocked, iocaine: task.is_iocaine}" tg-related-task-row tg-bind-scope ng-model="task" class="row single-related-task js-related-task"></div>
+          <div tg-related-task-create-form></div>
+        </div>
+      </section>
+      <tg-history-section ng-if="us" type="us" name="us" id="us.id" project="project" total-comments="us.total_comments"></tg-history-section>
+    </div>
+  </div>
+  <sidebar class="sidebar ticket-data">
+    <section class="ticket-header"><span tg-us-status-display ng-model="us" class="ticket-title"></span><span tg-us-status-button ng-model="us" class="detail-status"></span></section>
+    <section tg-us-estimation ng-model="us" class="ticket-section ticket-estimation"></section>
+    <section tg-assigned-users ng-model="us" required-perm="modify_us" class="ticket-section ticket-assigned-users"></section>
+    <section tg-watchers item="us" active-users="activeUsers" on-watch="ctrl.onWatch" on-unwatch="ctrl.onUnwatch" required-perm="modify_us" class="ticket-section ticket-watchers"></section>
+    <section ng-if="tribeEnabled &amp;&amp; !us.tribe_gig" class="ticket-section ticket-to-tribe">
+      <tg-tribe-button us-id="us.id" project-slug="project.slug"></tg-tribe-button><a href="" title="{{'US.TRIBE.PUBLISH_TITLE' | translate}}" ng-click="ctrl.onTribeInfo()" class="tribe-more-info">{{'US.TRIBE.PUBLISH_INFO' | translate}}</a>
+    </section>
+    <section class="ticket-section ticket-detail-settings">
+      <tg-due-date due-date="us.due_date" format="button" is-closed="us.is_closed" item="us" obj-type="us" tg-check-permission="modify_us"></tg-due-date>
+      <tg-us-team-requirement-button ng-model="us" tg-check-permission="modify_us"></tg-us-team-requirement-button>
+      <tg-us-client-requirement-button ng-model="us" tg-check-permission="modify_us"></tg-us-client-requirement-button>
+      <tg-block-button tg-check-permission="modify_us" ng-model="us"></tg-block-button>
+      <tg-delete-button tg-check-permission="delete_us" on-delete-title="{{'Delete User Story' | translate}}" on-delete-go-to-url="onDeleteGoToUrl" ng-model="us"></tg-delete-button>
+    </section>
+  </sidebar>
+  <div tg-lb-block title="{{ 'US.LIGHTBOX_TITLE_BLOKING_US' | translate }}" ng-model="us" class="lightbox lightbox-block"></div>
+  <div tg-lb-relatetoepic class="lightbox lightbox-relate-to-epic"></div>
+</div>

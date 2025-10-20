@@ -1,0 +1,128 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.epics-table {
+  margin-top: 2rem; }
+  .epics-table .loading {
+    margin: 2% auto;
+    width: 3rem; }
+    .epics-table .loading img {
+      animation-timing-function: ease-in-out;
+      animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+      margin: 0 auto;
+      max-height: 1rem;
+      max-width: 1rem;
+      transform-origin: 32 32;
+      max-height: 3rem;
+      max-width: 3rem; }
+
+.epics-table-header {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  display: flex;
+  padding-left: 1rem;
+  position: relative; }
+  .epics-table-header .vote,
+  .epics-table-header .status-holder,
+  .epics-table-header .sprint,
+  .epics-table-header .name,
+  .epics-table-header .progress {
+    padding: 1rem .5rem; }
+  .epics-table-header .vote {
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    text-align: center; }
+  .epics-table-header .assigned,
+  .epics-table-header .project {
+    flex-basis: 75px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    padding: .5rem;
+    text-align: center; }
+  .epics-table-header .status-holder {
+    flex-basis: 110px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    text-align: center; }
+  .epics-table-header .sprint {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%; }
+  .epics-table-header .name,
+  .epics-table-header .progress {
+    flex-basis: 20vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 40vw; }
+  .epics-table-header .progress {
+    flex-shrink: 3;
+    margin-right: 1rem;
+    position: relative; }
+    @media (max-width: 1110px) {
+      .epics-table-header .progress {
+        max-width: 234px; } }
+  .epics-table-header > div {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .7rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #70728F;
+    flex-wrap: nowrap;
+    text-transform: uppercase; }
+  .epics-table-header .project,
+  .epics-table-header .assigned {
+    padding: 1rem .5rem; }
+  .epics-table-header .status-holder {
+    padding-right: 1.5rem; }
+
+.epics-table-options-wrapper {
+  bottom: 3rem;
+  position: absolute;
+  right: .5rem; }
+
+.epics-table-option-button {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  align-items: center;
+  background: none;
+  display: flex; }
+  .epics-table-option-button .icon {
+    width: 0.7rem;
+    height: 0.7rem; }
+
+.epics-table-dropdown {
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
+  padding: .5rem;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  width: 250px;
+  z-index: 2; }
+  .epics-table-dropdown.ng-hide-remove {
+    animation: dropdownFade .2s; }
+  .epics-table-dropdown.ng-hide-add {
+    animation: dropdownFade .2s reverse; }
+  .epics-table-dropdown .fieldset {
+    font-size: .875rem;
+    border-bottom: 1px solid #E2E3E9;
+    color: #70728F;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0; }
+    .epics-table-dropdown .fieldset:last-child {
+      border: 0; }

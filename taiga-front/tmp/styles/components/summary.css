@@ -1,0 +1,214 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.summary {
+  align-content: center;
+  align-items: center;
+  background: #434456;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  height: 65px;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  padding: 1rem; }
+  .summary .summary-stats {
+    align-items: center;
+    display: flex;
+    margin: 0 .5rem; }
+  .summary .data .number {
+    color: #83EEDE; }
+  .summary .number {
+    font-size: 1.7rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    line-height: .9;
+    margin-right: .3rem; }
+  .summary .description {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    line-height: 1; }
+  .summary .stats {
+    cursor: pointer;
+    display: block;
+    height: 2rem;
+    margin-left: auto;
+    width: 2rem; }
+    .summary .stats path {
+      opacity: 1; }
+    .summary .stats:hover .graph {
+      fill: #5CBAA9;
+      transition: fill .2s; }
+    .summary .stats:hover svg {
+      fill: #25A28C; }
+    .summary .stats.active .graph {
+      fill: #25A28C; }
+    .summary .stats.active svg {
+      fill: #25A28C; }
+    .summary .stats svg {
+      fill: #8D8EA5;
+      height: 100%;
+      max-height: 2rem;
+      max-width: 2rem;
+      stroke: #8D8EA5;
+      transition: all .2s;
+      width: 100%; }
+    .summary .stats .graph {
+      fill: #434456;
+      transition: fill .2s; }
+  .summary .main-summary-stats {
+    display: flex;
+    transform: translateY(0);
+    transition: all .2s ease-in-out; }
+  .summary .show-role-points .points-per-role-stats {
+    transform: translateY(-35px); }
+  .summary .show-role-points .main-summary-stats {
+    transform: translateY(-65px); }
+
+.summary-progress-bar {
+  background: #fff;
+  height: 30px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding: 3px;
+  position: relative;
+  width: 15%; }
+  .summary-progress-bar .current-progress {
+    background-color: #008AA8;
+    height: 24px; }
+  .summary-progress-bar .defined-points {
+    background: #ffa0a0;
+    height: 24px;
+    position: absolute;
+    width: calc(100% - 6px); }
+  .summary-progress-bar .project-points-progress {
+    background: #fff;
+    height: 24px;
+    position: absolute; }
+  .summary-progress-bar .closed-points-progress {
+    background: #008AA8;
+    height: 24px;
+    position: absolute; }
+
+.large-summary {
+  align-content: flex-start;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: .75rem 1rem; }
+  .large-summary .stats-wrapper {
+    padding-top: .35rem; }
+  .large-summary .large-summary-wrapper {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap; }
+  .large-summary .summary-progress-wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(65px - 1.5rem); }
+  .large-summary .summary-progress-bar {
+    flex-basis: 200px;
+    min-width: 200px; }
+  .large-summary .summary-stats {
+    margin-right: 1rem; }
+    .large-summary .summary-stats:last-child {
+      border: 0;
+      margin: 0; }
+    .large-summary .summary-stats.summary-completed-points, .large-summary .summary-stats.summary-move-unfinished {
+      border-right: 1px solid #16171D;
+      margin-right: 0;
+      padding-right: 1rem; }
+      .large-summary .summary-stats.summary-completed-points + .summary-stats, .large-summary .summary-stats.summary-move-unfinished + .summary-stats {
+        border-left: 1px solid #5A5B72;
+        margin-left: 0;
+        padding-left: 1rem; }
+  .large-summary .icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: currentColor;
+    margin: .1rem .4rem 0 0;
+    vertical-align: middle; }
+    .large-summary .icon.icon-stats {
+      color: #25A28C;
+      float: right;
+      transition: color .3s linear; }
+      .large-summary .icon.icon-stats:hover {
+        color: #5CBAA9;
+        transition: color .3s linear; }
+      .large-summary .icon.icon-stats.active {
+        color: #5CBAA9; }
+      .large-summary .icon.icon-stats.active:hover {
+        color: #25A28C;
+        transition: color .3s linear; }
+  .large-summary a:hover .icon {
+    fill: #92D1C5;
+    stroke: #92D1C5; }
+  .large-summary .points-per-role-stats-content {
+    display: flex;
+    padding-left: 1rem; }
+    .large-summary .points-per-role-stats-content .summary-stats {
+      padding: 0; }
+  .large-summary .toggle-points-per-role {
+    color: #fff;
+    cursor: pointer; }
+    .large-summary .toggle-points-per-role svg {
+      width: 1rem;
+      height: 1rem; }
+  .large-summary .points-per-role-stats {
+    margin-left: .5rem;
+    transform: translateY(35px);
+    transition: all .2s ease-in-out; }
+    .large-summary .points-per-role-stats .number {
+      font-size: 1.1rem;
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      line-height: 1rem; }
+    .large-summary .points-per-role-stats .role {
+      font-size: .7rem;
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+  .large-summary .points-per-role-stats-title {
+    display: flex;
+    margin-bottom: .25rem; }
+    .large-summary .points-per-role-stats-title tg-svg {
+      transform: translateY(12px); }
+
+.empty-burndown {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  align-content: center;
+  align-items: center;
+  background: #F9F9FB;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 2rem 6rem; }
+  .empty-burndown svg {
+    width: 4rem;
+    height: 4rem;
+    fill: #008AA8;
+    flex-basis: 4rem;
+    flex-shrink: 0;
+    margin-right: 2rem; }
+  .empty-burndown p {
+    margin: 0; }
+  .empty-burndown .empty-text {
+    flex: 1; }
+  .empty-burndown .title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #008AA8;
+    margin: 0;
+    text-transform: uppercase; }
+  .empty-burndown a {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    animation: blink 2s infinite; }
+
+.graphics-container {
+  max-height: 0;
+  transition: max-height .5s ease-in;
+  overflow: hidden; }
+  .graphics-container.open {
+    transition: max-height .5s ease-in;
+    max-height: 300px; }
+  .graphics-container.shown {
+    max-height: 300px;
+    transition: none; }

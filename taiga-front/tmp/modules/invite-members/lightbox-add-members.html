@@ -1,0 +1,7 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="add-members-wrapper">
+  <h2 translate="LIGHTBOX.ADD_MEMBER.TITLE" class="title"></h2>
+  <tg-suggest-add-members ng-show="!vm.displayContactList" contacts="vm.contacts" on-invite-suggested="vm.inviteSuggested(contact)" on-invite-email="vm.inviteEmail(email)"></tg-suggest-add-members>
+  <tg-invite-members-form ng-show="vm.displayContactList" on-display-contact-list="vm.displayContactList = false" contacts-to-invite="vm.contactsToInvite" emails-to-invite="vm.emailsToInvite" on-remove-invited-contact="vm.removeContact(contact)" on-remove-invited-email="vm.removeEmail(email)" on-send-invites="vm.submit(invites)"></tg-invite-members-form>
+</div>

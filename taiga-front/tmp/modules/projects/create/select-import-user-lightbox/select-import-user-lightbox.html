@@ -1,0 +1,40 @@
+
+<tg-lightbox-close on-close="vm.onClose()"></tg-lightbox-close>
+<div ng-if="vm.visible" class="form">
+  <div class="candidate-user">
+    <div ng-if="!vm.user.get('avatar')" class="avatar empty">{{vm.user.get('full_name')[0].toUpperCase() || vm.user.get('username')[0].toUpperCase()}}</div>
+    <div ng-if="vm.user.get('avatar')" class="avatar"> <img ng-src="{{vm.user.get('avatar')}}"/></div><span class="candidate-user-name">{{vm.user.get('full_name') || vm.user.get('username')}}</span>
+  </div>
+  <h2 translate="PROJECT.IMPORT.WHO_IS" class="title"></h2>
+  <div ng-if="!vm.limitMembersPublicProject.valid &amp;&amp; !vm.isPrivate" class="create-project-warning">
+    <tg-svg svg-icon="icon-exclamation"></tg-svg><span translate="PROJECT.IMPORT.PROJECT_RESTRICTIONS.ACCOUNT_ALLOW_MEMBERS" translate-values="{'members': vm.limitMembersPublicProject.max}"></span>
+  </div>
+  <div ng-if="!vm.limitMembersPrivateProject.valid &amp;&amp; vm.isPrivate" class="create-project-warning">
+    <tg-svg svg-icon="icon-exclamation"></tg-svg><span translate="PROJECT.IMPORT.PROJECT_RESTRICTIONS.ACCOUNT_ALLOW_MEMBERS" translate-values="{'members': vm.limitMembersPrivateProject.max}"></span>
+  </div>
+  <form ng-if="vm.mode == 'mail'" ng-submit="vm.assignUser()">
+    <div class="create-project-warning">
+      <tg-svg svg-icon="icon-exclamation"></tg-svg><span translate="PROJECT.IMPORT.WARNING_MAIL_USER"></span>
+    </div>
+    <fieldset>
+      <label translate="PROJECT.IMPORT.WRITE_EMAIL_LABEL" for="user-name"></label>
+      <div class="group">
+        <input name="user-name" type="text" data-maxlength="500" ng-model="vm.userEmail"/>
+        <button type="submit" title="{{'PROJECT.IMPORT.ASSIGN' | translate}}" translate="PROJECT.IMPORT.ASSIGN" class="button-green button-large button-block"></button>
+      </div>
+    </fieldset>
+    <button ng-click="vm.mode = 'search'" class="search-user-mode">{{'PROJECT.IMPORT.SEARCH_CONTACT' | translate}}</button>
+  </form>
+  <div ng-if="vm.mode == 'search'">
+    <fieldset>
+      <input type="text" data-maxlength="500" placeholder="{{'LIGHTBOX.ASSIGNED_TO.SEARCH' | translate}}" ng-model="vm.usersSearch"/>
+    </fieldset>
+    <div class="lb-user-list">
+      <div ng-repeat="user in vm.selectableUsers | toMutable | filter: vm.usersSearch | orderBy:'full_name_display' | limitTo: 5 as filteredCollection" ng-click="vm.selectUser(user)" class="user-list-item">
+        <div class="user-list-avatar"><a href="#" title="{{'COMMON.ASSIGNED_TO.TITLE' | translate}}"><img tg-avatar="user"/></a></div><a href="" title="{{user.full_name_display || user.full_name || user}}" class="user-list-name">{{user.full_name_display || user.full_name || user}}</a>
+      </div>
+      <div ng-if="filteredCollection.length &gt; 5" class="more-users"><span translate="COMMON.ASSIGNED_TO.TOO_MANY"></span></div>
+    </div>
+    <button ng-click="vm.mode = 'mail'" ng-if="vm.displayEmailSelector" class="search-user-mode">{{'PROJECT.IMPORT.WRITE_EMAIL' | translate}}</button>
+  </div>
+</div>

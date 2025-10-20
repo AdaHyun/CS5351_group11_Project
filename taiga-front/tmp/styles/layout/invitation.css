@@ -1,0 +1,100 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.invitation-main {
+  align-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  justify-content: center;
+  z-index: 2; }
+  .invitation-main .btn-small.full {
+    width: 100%; }
+  .invitation-main .invitation-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    min-width: 420px; }
+  .invitation-main .avatar {
+    align-items: center;
+    display: flex;
+    flex-direction: column; }
+    .invitation-main .avatar .person-name {
+      font-size: 1.1rem;
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #2E3440; }
+    .invitation-main .avatar img {
+      margin-bottom: .5rem;
+      width: 50px; }
+  .invitation-main .invitation-text {
+    font-size: 1.1rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #2E3440;
+    text-align: center; }
+    .invitation-main .invitation-text .project-name {
+      font-size: 1.7rem;
+      display: block;
+      text-transform: uppercase; }
+  .invitation-main .invitation-form {
+    display: flex;
+    flex-basis: 100%;
+    width: 100%; }
+    .invitation-main .invitation-form fieldset {
+      margin-bottom: .5rem; }
+    .invitation-main .invitation-form input:focus + .forgot-pass {
+      opacity: 0;
+      transition: opacity .5s linear; }
+    .invitation-main .invitation-form .forgot-pass {
+      font-size: .875rem;
+      color: #70728F;
+      opacity: 1;
+      position: absolute;
+      right: 1rem;
+      top: .5rem;
+      transition: all .3s linear; }
+      .invitation-main .invitation-form .forgot-pass:hover {
+        color: #434456;
+        transition: color .3s linear; }
+    .invitation-main .invitation-form .checksley-error-list {
+      color: #FF6363; }
+      .invitation-main .invitation-form .checksley-error-list li {
+        margin: .5rem 0;
+        text-align: left; }
+  .invitation-main .login-form,
+  .invitation-main .register-form {
+    flex: 1;
+    padding: 1rem 3rem;
+    text-align: center; }
+    .invitation-main .login-form .form-header,
+    .invitation-main .register-form .form-header {
+      font-size: 1.1rem;
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #2E3440; }
+  .invitation-main .register-form fieldset:last-child {
+    margin-bottom: 1rem; }
+  .invitation-main .register-text {
+    color: #2E3440;
+    font-size: .9rem;
+    margin-left: .5rem;
+    padding-bottom: 1rem;
+    text-align: left; }
+    .invitation-main .register-text a {
+      color: #2E3440;
+      text-decoration: underline; }
+  .invitation-main .button-auth {
+    color: #2E3440;
+    display: block; }
+  .invitation-main .button-blackish:hover {
+    background: #25A28C; }
+  .invitation-main .login-form {
+    border-right: 1px solid rgba(46, 52, 64, 0.3); }
+  .invitation-main .public-register-disabled {
+    width: 400px; }
+    .invitation-main .public-register-disabled .login-form {
+      border-right: 0; }
+  .invitation-main .contrib-plugins-wrapper label {
+    color: #2E3440; }

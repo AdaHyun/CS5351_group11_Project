@@ -1,0 +1,21 @@
+
+<div class="ticket-section-label"><span>{{ 'COMMON.WATCH_BUTTON.WATCHERS'|translate }}</span><span ng-if="vm.watchers.length &gt; visibleWatchersCount &amp;&amp; !displayHidden">&nbsp;({{ vm.watchers.length }})</span></div>
+<div class="ticket-user-list-container">
+  <div ng-show="vm.loading" class="loading-container"><img src="v-1758905376214/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
+  <div ng-class="{ 'loading': vm.loading }" class="ticket-user-list-content">
+    <div class="ticket-user-list">
+      <div ng-repeat="watcher in vm.watchers track by watcher.id">
+        <div ng-if="($index + 1 &lt;= visibleWatchersCount) || displayHidden" ng-class="{ 'read-only': !isEditable }" class="user-list-single">
+          <div class="user-list-avatar"><img tg-avatar="watcher" alt="{{watcher.full_name_display}}"/></div>
+          <div class="user-list-name"><span>{{watcher.full_name_display}}</span></div>
+          <tg-svg ng-if="isEditable" svg-icon="icon-close" svg-title-translate="COMMON.WATCHERS.DELETE" data-watcher-id="{{ watcher.id }}" class="js-delete-watcher remove-user"></tg-svg>
+        </div>
+      </div>
+    </div><a href="" ng-if="vm.watchers.length &gt; visibleWatchersCount" ng-click="toggleFold()" ng-class="{ active: displayHidden }" role="button" class="ticket-section-unfold">
+      <tg-svg svg-icon="icon-view-more"></tg-svg></a>
+    <div class="ticket-users-actions"><a ng-if="isEditable" ng-click="vm.openWatchers()" class="ticket-users-action">
+        <tg-svg svg-icon="icon-add" class="users-action icon"></tg-svg><span>{{ 'COMMON.WATCHERS.ADD' | translate }}</span></a><a ng-if="!vm.item.is_watcher &amp;&amp; isAuthenticated" ng-click="vm.watch()" class="ticket-users-action">
+        <tg-svg svg-icon="icon-watch" class="users-action icon"></tg-svg><span>{{ 'COMMON.WATCH_BUTTON.WATCH' | translate }}</span></a><a ng-if="vm.item.is_watcher &amp;&amp; isAuthenticated" ng-click="vm.unwatch()" class="ticket-users-action">
+        <tg-svg svg-icon="icon-unwatch" class="users-action icon"></tg-svg><span>{{ 'COMMON.WATCH_BUTTON.UNWATCH' | translate }}</span></a></div>
+  </div>
+</div>

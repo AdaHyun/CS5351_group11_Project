@@ -1,0 +1,80 @@
+
+<section class="project-us-status">
+  <div class="project-values-title">
+    <h2>{{ sectionName | translate }}</h2>
+    <button variant="primary" title="{{'ADMIN.US_STATUS.ACTION_ADD_STATUS' | translate}}" class="btn-small show-add-new"><span translate="ADMIN.US_STATUS.ACTION_ADD_STATUS"></span></button>
+  </div>
+  <div class="colors-table">
+    <div class="table-header">
+      <div class="row">
+        <div translate="COMMON.FIELDS.COLOR" class="color-column"></div>
+        <div translate="COMMON.FIELDS.NAME" class="status-name"></div>
+        <div translate="COMMON.FIELDS.SLUG" class="status-slug"></div>
+        <div translate="ADMIN.US_STATUS.IS_CLOSED_COLUMN" class="is-closed-column"></div>
+        <div translate="ADMIN.US_STATUS.IS_ARCHIVED_COLUMN" class="is-archived-column"></div>
+        <div class="options-column"></div>
+      </div>
+    </div>
+    <div class="table-main">
+      <div class="sortable">
+        <div ng-repeat="value in values" tg-bind-scope="tg-bind-scope">
+          <form tg-bind-scope="tg-bind-scope">
+            <div class="row table-main visualization">
+              <tg-svg svg-icon="icon-draggable"></tg-svg>
+              <div class="color-column">
+                <div ng-style="{background: value.color}" class="current-color"></div>
+              </div>
+              <div class="status-name"><span>{{ value.name }}</span></div>
+              <div class="status-slug"><span>{{ value.slug }}</span></div>
+              <div class="is-closed-column">
+                <tg-svg ng-show="value.is_closed" svg-icon="icon-check"></tg-svg>
+              </div>
+              <div class="is-archived-column">
+                <tg-svg ng-show="value.is_archived" svg-icon="icon-check"></tg-svg>
+              </div>
+              <div class="options-column"><a href="" class="edit-value">
+                  <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}" svg-icon="icon-edit"></tg-svg></a><a href="" class="delete-value">
+                  <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}" svg-icon="icon-trash"></tg-svg></a></div>
+            </div>
+            <div class="row table-main edition hidden">
+              <div class="color-column">
+                <tg-color-selector init-color="value.color" on-select-color="value.color = color"></tg-color-selector>
+              </div>
+              <div class="status-name">
+                <input name="name" type="text" placeholder="{{'ADMIN.US_STATUS.PLACEHOLDER_WRITE_NAME' | translate}}" ng-model="value.name" data-required="true" data-maxlength="255"/>
+              </div>
+              <div class="is-closed-column">
+                <select name="is_closed" ng-model="value.is_closed" data-required="true" ng-options="e.id as e.name | translate for e in [{'id':true, 'name':'COMMON.YES'},{'id':false, 'name': 'COMMON.NO'}]"></select>
+              </div>
+              <div class="is-archived-column">
+                <select name="is_archived" ng-model="value.is_archived" data-required="true" ng-options="e.id as e.name | translate for e in [{'id':true, 'name':'COMMON.YES'},{'id':false, 'name': 'COMMON.NO'}]"></select>
+              </div>
+              <div class="options-column"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save e2e-save">
+                  <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="cancel">
+                  <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <form>
+        <div class="row table-main new-value hidden">
+          <div class="color-column">
+            <tg-color-selector init-color="newValue.color" on-select-color="newValue.color = color"></tg-color-selector>
+          </div>
+          <div class="status-name">
+            <input name="name" type="text" ng-model="newValue.name" data-required="true" data-maxlength="255" placeholder="{{'ADMIN.US_STATUS.PLACEHOLDER_WRITE_NAME' | translate}}"/>
+          </div>
+          <div class="is-closed-column">
+            <select name="is_closed" ng-model="newValue.is_closed" data-required="true" ng-options="e.id as e.name | translate for e in [{'id':true, 'name':'COMMON.YES'},{'id':false, 'name': 'COMMON.NO'}]"></select>
+          </div>
+          <div class="is-archived-column">
+            <select name="is_archived" ng-model="newValue.is_archived" data-required="true" ng-options="e.id as e.name | translate for e in [{'id':true, 'name':'COMMON.YES'},{'id':false, 'name': 'COMMON.NO'}]"></select>
+          </div>
+          <div class="options-column"><a href="" title="{{'COMMON.ADD' | translate}}" class="add-new e2e-save">
+              <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="delete-new">
+              <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

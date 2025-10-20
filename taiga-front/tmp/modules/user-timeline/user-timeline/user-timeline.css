@@ -1,0 +1,107 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile-timeline {
+  border-top: 1px solid #E2E3E9; }
+  .profile-timeline .activity-item {
+    border-bottom: 1px solid #E2E3E9;
+    padding: 1rem .5rem 1rem 0;
+    position: relative; }
+    .profile-timeline .activity-item p {
+      margin-bottom: 0;
+      word-break: break-word; }
+    .profile-timeline .activity-item a:first-child,
+    .profile-timeline .activity-item .username:first-child {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      color: #5A5B72; }
+    .profile-timeline .activity-item blockquote {
+      line-height: 1.4rem;
+      margin-bottom: 0;
+      margin-left: calc(35px + 1rem);
+      margin-top: .5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: pre-line; }
+      .profile-timeline .activity-item blockquote a {
+        display: flex; }
+    .profile-timeline .activity-item img {
+      max-height: 640px;
+      max-width: 640px; }
+    .profile-timeline .activity-item .activity-info {
+      align-items: center;
+      color: #70728F;
+      display: flex;
+      margin-right: 130px; }
+    .profile-timeline .activity-item .activity-date {
+      color: #70728F;
+      font-size: .75rem;
+      position: absolute;
+      right: .5rem;
+      top: 1.2rem; }
+    .profile-timeline .activity-item .profile-contact-picture,
+    .profile-timeline .activity-item .profile-member-picture {
+      border-radius: .1rem;
+      flex-basis: 2rem;
+      flex-shrink: 0;
+      margin-right: 1rem;
+      vertical-align: center;
+      width: 2rem; }
+      .profile-timeline .activity-item .profile-contact-picture img,
+      .profile-timeline .activity-item .profile-member-picture img {
+        border-radius: 50%;
+        font-size: .6em;
+        max-height: 2rem;
+        max-width: 2rem;
+        min-height: 2rem;
+        min-width: 2rem;
+        overflow: hidden; }
+    .profile-timeline .activity-item .new-color {
+      border-radius: 50%;
+      display: inline-block;
+      height: 1rem;
+      margin-left: .2rem;
+      position: relative;
+      top: .1rem;
+      width: 1rem; }
+  .profile-timeline .activity-member-view {
+    display: flex;
+    margin-bottom: .5rem;
+    margin-left: calc(35px + 1rem);
+    margin-top: .5rem; }
+    .profile-timeline .activity-member-view .profile-member-picture {
+      flex-basis: 3rem;
+      width: 3rem; }
+    .profile-timeline .activity-member-view .activity-member-info {
+      flex: 1; }
+    .profile-timeline .activity-member-view a {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+    .profile-timeline .activity-member-view p {
+      color: #70728F; }
+  .profile-timeline .single-attachment {
+    border: 0;
+    padding: 0; }
+    .profile-timeline .single-attachment span {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      display: inline-block;
+      max-width: 95%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: sub;
+      white-space: nowrap; }
+    .profile-timeline .single-attachment .icon {
+      fill: #434456;
+      margin-right: .5rem; }
+  .profile-timeline .spin {
+    margin: 10% auto;
+    width: 3rem; }
+    .profile-timeline .spin img {
+      animation-timing-function: ease-in-out;
+      animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+      margin: 0 auto;
+      max-height: 1rem;
+      max-width: 1rem;
+      transform-origin: 32 32;
+      max-height: 3rem;
+      max-width: 3rem; }

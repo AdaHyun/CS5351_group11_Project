@@ -1,0 +1,8 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.team h2 {
+  margin: 1rem 0; }
+  .team h2 span:last-child {
+    color: #008AA8; }

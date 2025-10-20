@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<div tg-user-profile ng-controller="UserSettingsController as ctrl" ng-init="section='user-settings'" class="wrapper">
+  <sidebar tg-user-settings-navigation="user-profile" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="usersettingsmenu-user-profile"><a href="" tg-nav="user-settings-user-profile" title="{{ 'USER_SETTINGS.MENU.SECTION_TITLE' | translate }}"><span translate="USER_SETTINGS.MENU.SECTION_TITLE" class="title"></span></a></li>
+          <li id="usersettingsmenu-change-password"><a href="" tg-nav="user-settings-user-change-password" title="{{ 'USER_SETTINGS.MENU.CHANGE_PASSWORD' | translate }}"><span translate="USER_SETTINGS.MENU.CHANGE_PASSWORD" class="title"></span></a></li>
+          <li id="usersettingsmenu-project-settings"><a href="" tg-nav="user-settings-user-project-settings" title="{{ 'USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES' | translate }}"><span translate="USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES" class="title"></span></a></li>
+          <li id="usersettingsmenu-mail-notifications"><a href="" tg-nav="user-settings-mail-notifications" title="{{ 'USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-live-notifications"><a href="" tg-nav="user-settings-live-notifications" title="{{ 'USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-web-notifications"><a href="" tg-nav="user-settings-web-notifications" title="{{ 'USER_SETTINGS.MENU.EVENTS' | translate }}"><span translate="USER_SETTINGS.MENU.EVENTS" class="title"></span></a></li>
+          <li id="usersettings-contrib" ng-repeat="plugin in userSettingsPlugins"><a href="" tg-nav="user-settings-contrib:plugin=plugin.slug" ng-class="{active: plugin.slug == currentPlugin.slug}"><span class="title">{{ plugin.name }}</span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main user-profile">
+    <header>
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+    </header>
+    <form>
+      <div tg-user-avatar class="project-details-image">
+        <fieldset class="image-container"><img tg-avatar-big="user" alt="avatar" class="image">
+          <div class="loading-overlay"><img src="v-1758905376214/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"></div>
+          <input type="file" id="avatar-field" tg-avatar-model="avatarAttachment" class="hidden">
+        </fieldset>
+        <button type="text" variant="secondary" title="{{'USER_PROFILE.CHANGE_PHOTO' | translate}}" class="btn-small button-full js-change-avatar">{{'USER_PROFILE.CHANGE_PHOTO' | translate}}</button><a href="#" title="{{ 'USER_PROFILE.ACTION_USE_GRAVATAR' | translate }}" class="use-default-image js-use-gravatar">{{ 'USER_PROFILE.ACTION_USE_GRAVATAR' | translate }}</a>
+      </div>
+      <div class="project-details-form-data">
+        <fieldset>
+          <label for="username" translate="USER_PROFILE.FIELD.USERNAME"></label>
+          <input type="text" autocorrect="off" autocapitalize="none" name="username" id="username" ng-model="user.username" data-required="true" data-maxlength="255" data-regexp="^[\w.-]+$" placeholder="{{'USER_PROFILE.FIELD.USERNAME' | translate}}">
+        </fieldset>
+        <fieldset>
+          <label for="email" translate="USER_PROFILE.FIELD.EMAIL"></label>
+          <div ng-if="user.verified_email === false"><a href="" title="{{'USER_PROFILE.ACTION_VERIFY_EMAIL' | translate}}" ng-click="ctrl.verifyEmail()" translate="USER_PROFILE.ACTION_VERIFY_EMAIL" class="verify-email"></a></div>
+          <input type="email" name="email" id="email" ng-model="user.email" data-type="email" data-required="true" data-maxlength="255" placeholder="{{'USER_PROFILE.FIELD.EMAIL' | translate}}">
+        </fieldset>
+        <fieldset>
+          <label for="full-name" translate="USER_PROFILE.FIELD.FULL_NAME"></label>
+          <input type="text" name="full_name" id="full-name" ng-model="user.full_name" data-required="true" data-maxlength="256" placeholder="{{'USER_PROFILE.FIELD.PLACEHOLDER_FULL_NAME' | translate}}">
+        </fieldset>
+        <fieldset>
+          <label for="lang" translate="USER_PROFILE.FIELD.LANGUAGE"></label>
+          <select name="lang" id="lang" ng-model="lang" ng-options="locale.code as locale.name for locale in locales">
+            <option value="" translate="USER_PROFILE.FIELD.LANGUAGE_DEFAULT"></option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label for="theme" translate="USER_PROFILE.FIELD.THEME"></label>
+          <select name="theme" id="theme" ng-model="theme" ng-options="availableTheme for availableTheme in availableThemes">
+            <option value="" translate="USER_PROFILE.FIELD.THEME_DEFAULT"></option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label for="bio" translate="USER_PROFILE.FIELD.BIO"></label>
+          <textarea name="bio" id="bio" ng-model="user.bio" ng-attr-placeholder="{{'USER_PROFILE.FIELD.PLACEHOLDER_BIO' | translate}}" ng-maxlength="210" maxlength="210"></textarea>
+        </fieldset>
+        <fieldset class="submit">
+          <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-small"></button>
+        </fieldset>
+        <div class="actions"><a href="" title="{{'USER_PROFILE.ACTION_DOWNLOAD_PROFILE' | translate}}" ng-click="ctrl.exportProfile()" translate="USER_PROFILE.ACTION_DOWNLOAD_PROFILE" class="download-profile"></a><a href="" title="{{'USER_PROFILE.ACTION_DELETE_ACCOUNT' | translate}}" ng-click="ctrl.openDeleteLightbox()" translate="USER_PROFILE.ACTION_DELETE_ACCOUNT" class="delete-account"></a></div>
+      </div>
+    </form>
+  </section>
+</div>
+<div tg-lb-delete-user class="lightbox lightbox-delete-account"></div>

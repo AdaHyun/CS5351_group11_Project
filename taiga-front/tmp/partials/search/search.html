@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<div tg-search ng-controller="SearchController as ctrl" ng-init="section='search'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar class="sidebar">
+    <section class="search-in">
+      <input type="text" placeholder="{{'SEARCH.PLACEHOLDER_SEARCH' | translate}}" ng-model="searchTerm" class="search-input">
+      <div tg-loading="loading" class="icon-search-wrapper">
+        <tg-svg svg-icon="icon-search" title="{{'SEARCH.TITLE_ACTION_SEARCH' | translate}}"></tg-svg>
+      </div>
+    </section>
+  </sidebar>
+  <section class="main search-result">
+    <header>
+      <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+    </header>
+    <ul class="search-filter">
+      <li data-name="epics" class="epics"><a href="#" title="{{ 'SEARCH.FILTER_EPICS' | translate }}">
+          <tg-svg svg-icon="icon-epics"></tg-svg><span class="num"></span><span translate="SEARCH.FILTER_EPICS" class="name"></span></a></li>
+      <li data-name="userstories" class="userstories"><a href="#" title="{{ 'SEARCH.FILTER_USER_STORIES' | translate }}" class="active">
+          <tg-svg svg-icon="icon-bulk"></tg-svg><span class="num"></span><span translate="SEARCH.FILTER_USER_STORIES" class="name"></span></a></li>
+      <li data-name="issues" class="issues"><a href="#" title="{{ 'SEARCH.FILTER_ISSUES' | translate }}">
+          <tg-svg svg-icon="icon-issues"></tg-svg><span class="num"></span><span translate="SEARCH.FILTER_ISSUES" class="name"></span></a></li>
+      <li data-name="tasks" class="tasks"><a href="#" title="{{ 'SEARCH.FILTER_TASKS' | translate }}">
+          <tg-svg svg-icon="icon-bulk"></tg-svg><span class="num"></span><span translate="SEARCH.FILTER_TASKS" class="name"></span></a></li>
+      <li data-name="wikipages" class="wikipages"><a href="#" title="{{ 'SEARCH.FILTER_WIKI' | translate }}">
+          <tg-svg svg-icon="icon-wiki"></tg-svg><span class="num"></span><span translate="SEARCH.FILTER_WIKI" class="name"></span></a></li>
+    </ul>
+    <section class="search-result-table"></section>
+    <script type="text/ng-template" id="search-issues">
+      <div ng-class="{'hidden': !issues.length}" tg-bind-scope class="search-result-table-container">
+        <div class="search-result-table-header">
+          <div class="row title">
+            <div translate="SEARCH.FILTER_ISSUES" class="user-stories"></div>
+            <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+            <div translate="COMMON.FIELDS.ASSIGNED_TO" class="assigned-to"></div>
+          </div>
+        </div>
+        <div class="search-result-table-body">
+          <div ng-repeat="issue in issues track by issue.id" class="row table-main">
+            <div class="user-stories">
+              <div class="user-story-name"><a href="" tg-nav="project-issues-detail:project=project.slug,ref=issue.ref"><span tg-bo-ref="issue.ref" class="ref"></span><span ng-bind-html="issue.subject | emojify"></span></a></div>
+            </div>
+            <div tg-listitem-issue-status="issue" class="status"></div>
+            <div tg-listitem-assignedto="issue" class="assigned-to"></div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{'hidden': issues.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}">
+        <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+        <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+      </div>
+    </script>
+    <script type="text/ng-template" id="search-epics">
+      <div ng-class="{'hidden': !epics.length}" tg-bind-scope class="search-result-table-container">
+        <div class="search-result-table-header">
+          <div class="row title">
+            <div translate="SEARCH.FILTER_EPICS" class="user-stories"></div>
+            <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+          </div>
+        </div>
+        <div class="search-result-table-body">
+          <div ng-repeat="epic in epics track by epic.id" class="row table-main">
+            <div class="user-stories">
+              <div class="user-story-name"><a href="" tg-nav="project-epics-detail:project=project.slug,ref=epic.ref"><span tg-bo-ref="epic.ref" class="ref"></span><span ng-bind-html="epic.subject | emojify"></span></a></div>
+            </div>
+            <div tg-listitem-epic-status="epic" class="status"></div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{'hidden': epics.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}">
+        <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+        <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+      </div>
+    </script>
+    <script type="text/ng-template" id="search-userstories">
+      <div ng-class="{'hidden': !userstories.length}" tg-bind-scope class="search-result-table-container">
+        <div class="search-result-table-header">
+          <div class="row title">
+            <div translate="SEARCH.FILTER_USER_STORIES" class="user-stories"></div>
+            <div translate="COMMON.FIELDS.SPRINT" class="sprint"></div>
+            <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+            <div translate="COMMON.FIELDS.POINTS" class="points"></div>
+          </div>
+        </div>
+        <div class="search-result-table-body">
+          <div ng-repeat="us in userstories track by us.id" class="row table-main">
+            <div class="user-stories">
+              <div class="user-story-name"><a href="" tg-nav="project-userstories-detail:project=project.slug,ref=us.ref"><span tg-bo-ref="us.ref" class="ref"></span><span ng-bind-html="us.subject | emojify"></span></a></div>
+            </div>
+            <div class="sprint">
+              <div class="sprint-link"><a href="" tg-nav="project-taskboard:project=project.slug,sprint=us.milestone_slug" tg-bo-bind="us.milestone_name"></a></div>
+            </div>
+            <div tg-listitem-us-status="us" class="status"></div>
+            <div tg-bo-bind="us.total_points" class="points"></div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{'hidden': userstories.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}">
+        <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+        <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+      </div>
+    </script>
+    <script type="text/ng-template" id="search-tasks">
+      <div ng-class="{'hidden': !tasks.length}" tg-bind-scope class="search-result-table-container">
+        <div class="search-result-table-header">
+          <div class="row title">
+            <div translate="SEARCH.FILTER_TASKS" class="user-stories"></div>
+            <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+            <div translate="COMMON.FIELDS.ASSIGNED_TO" class="assigned-to"></div>
+          </div>
+        </div>
+        <div class="search-result-table-body">
+          <div ng-repeat="task in tasks track by task.id" class="row table-main">
+            <div class="user-stories">
+              <div class="user-story-name"><a href="" tg-nav="project-tasks-detail:project=project.slug,ref=task.ref"><span tg-bo-ref="task.ref" class="ref"></span><span ng-bind-html="task.subject | emojify"></span></a></div>
+            </div>
+            <div tg-listitem-task-status="task" class="status"></div>
+            <div tg-listitem-assignedto="task" class="assigned-to"></div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{'hidden': tasks.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}">
+        <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+        <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+      </div>
+    </script>
+    <script type="text/ng-template" id="search-wikipages">
+      <div ng-class="{'hidden': !wikipages.length}" tg-bind-scope class="search-result-table-container">
+        <div class="search-result-table-header">
+          <div class="row title">
+            <div translate="SEARCH.FILTER_WIKI" class="user-stories"></div>
+          </div>
+        </div>
+        <div class="search-result-table-body">
+          <div ng-repeat="wikipage in wikipages track by wikipage.id" class="row table-main">
+            <div class="user-stories">
+              <div class="user-story-name"><a href="" tg-nav="project-wiki-page:project=project.slug,slug=wikipage.slug" tg-bo-bind="wikipage.slug"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{'hidden': wikipages.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}">
+        <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+        <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+      </div>
+    </script>
+  </section>
+</div>

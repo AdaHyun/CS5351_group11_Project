@@ -1,0 +1,21 @@
+
+<% if (vm.visible('extra_info')) { %>
+<div class="card-data <%= emptyTask() ? 'empty-tasks': '' %>">
+  <div class="card-statistics-init"><% if (vm.type == 'us') { %><span><% if (vm.item.getIn(['model', 'total_points'])) { %><span title="<%= translate('COMMON.CARD.ESTIMATION') %>" data-id="<%= vm.item.getIn(['model', 'id']) %>" translate="COMMON.CARD.PTS" class="card-estimation"><%= translate('COMMON.CARD.PTS', {pts: vm.item.getIn(['model', 'total_points']) }) %></span><% } %>
+      <% if (!vm.item.getIn(['model', 'total_points'])) { %><span class="card-estimation"><%= translate('COMMON.CARD.NO_PTS') %></span><% } %></span><% } %>
+    <% if (vm.item.getIn(['model', 'due_date'])) { %>
+    <div title="<%- dueDateTitle() %>" class="card-due-date"><%= svg({svgIcon: "icon-clock", svgTitle: translate('COMMON.CARD.DUE_DATE', { date: dueDateTitle() }), svgFill: dueDateColor() }) %></div><% } %>
+    <% if (vm.item.getIn(['model', 'is_iocaine'])) { %>
+    <div title="<%= translate('TASK.FIELDS.IS_IOCAINE') %>" class="card-iocaine"><%= svg({svgIcon: "icon-iocaine", svgTitle: translate('TASK.FIELDS.IS_IOCAINE')}) %></div><% } %>
+    <% if (vm.item.getIn(['model', 'is_blocked'])) { %><span ng-if="vm.item.getIn(['model', 'is_blocked'])" class="card-lock"><%= svg({svgIcon: "icon-lock" }) %></span><% } %>
+  </div>
+  <div class="card-statistics"><% if (totalAttachments()) { %>
+    <div title="<%= translate('ATTACHMENT.SECTION_NAME') %>" class="statistic card-attachments"><%= svg({svgIcon: "icon-paperclip" }) %><span><%= totalAttachments() %></span></div><% } %>
+    <% if (vm.item.getIn(['model', 'watchers']).size) { %>
+    <div title="<%= translate('COMMON.WATCHERS.WATCHERS') %>" class="statistic card-watchers"><%= svg({svgIcon: "icon-eye" }) %><span><%= vm.item.getIn(['model', 'watchers']).size %></span></div><% } %>
+    <% if (vm.item.getIn(['model', 'total_comments'])) { %>
+    <div title="<%= translate('COMMENTS.TITLE') %>" class="statistic card-comments"><%= svg({svgIcon: "icon-message-square" }) %><span><%= vm.item.getIn(['model', 'total_comments']) %></span></div><% } %>
+    <% if (vm.item.getIn(['model', 'tasks']) && vm.item.getIn(['model', 'tasks']).size) { %>
+    <div title="<%= translate('COMMON.CARD.TASKS', {completed: vm.getClosedTasks().size, total: vm.item.getIn(['model', 'tasks']).size }) %>" class="statistic card-completed-tasks <%= vm.getClosedTasks().size == vm.item.getIn(['model', 'tasks']).size ? 'completed' : '' %>"><%= vm.getClosedTasks().size %> / <%= vm.item.getIn(['model', 'tasks']).size %></div><% } %>
+  </div>
+</div><% } %>

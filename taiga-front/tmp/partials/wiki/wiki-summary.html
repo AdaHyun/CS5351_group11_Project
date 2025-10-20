@@ -1,0 +1,8 @@
+
+<div class="wiki-username-edition">
+  <div class="avatar"><img style="background-color: <%- user.avatar.bg %>" src="<%- user.avatar.url %>" alt="<%- user.name %>"/></div>
+  <div class="wiki-user-modification"><span translate="WIKI.SUMMARY.LAST_MODIFICATION" class="description"></span><span class="username"><%- user.name %></span></div>
+</div>
+<div class="wiki-last-modified"><span class="number"><%- lastModifiedDate %></span><span translate="WIKI.SUMMARY.LAST_EDIT" class="description"></span></div>
+<div class="wiki-times-edited"><span class="number"><%- totalEditions %></span><span translate="WIKI.SUMMARY.TIMES_EDITED" class="description"></span></div>
+<tg-svg tg-check-permission="delete_wiki_page" title="{{'WIKI.REMOVE' | translate}}" ng-click="ctrl.delete()" svg-icon="icon-trash" ng-if="wiki.id" class="remove"></tg-svg>

@@ -1,0 +1,40 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-submenu li {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid #A9AABC;
+  text-transform: uppercase; }
+  .admin-submenu li:last-child {
+    border-bottom: 0; }
+
+.admin-submenu ul a {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 1rem;
+  transition: none; }
+  .admin-submenu ul a span {
+    display: block;
+    max-width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.admin-submenu input {
+  margin: 0 1rem;
+  width: 85%; }
+
+.admin-submenu .button-gray {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+  padding: .5rem 0;
+  text-align: center; }
+  .admin-submenu .button-gray:hover {
+    background-color: #16171D; }
+
+.admin-submenu .btn-menu-full {
+  display: flex;
+  margin: 0 1rem;
+  width: calc(100% - 2rem); }

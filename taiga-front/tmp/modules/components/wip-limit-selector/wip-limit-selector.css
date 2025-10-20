@@ -1,0 +1,53 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-wip-limit-selector .wip-limit-status {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  align-items: center;
+  background: #F9F9FB;
+  border-radius: 3px;
+  color: #4C566A;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 1rem; }
+
+tg-wip-limit-selector .wip-limit-status-name {
+  font-size: .875rem;
+  flex: 1; }
+
+tg-wip-limit-selector .wip-number,
+tg-wip-limit-selector .wip-placeholder-text {
+  font-size: .875rem;
+  margin-right: .5rem;
+  text-align: end;
+  width: 100%; }
+
+tg-wip-limit-selector .wip-number {
+  color: #70728F; }
+
+tg-wip-limit-selector .wip-placeholder-text {
+  opacity: .5; }
+
+tg-wip-limit-selector .wip-limit-status-data,
+tg-wip-limit-selector .wip-limit-status-form {
+  align-items: center;
+  display: flex;
+  flex: 0;
+  flex-basis: 200px;
+  justify-content: flex-end; }
+
+tg-wip-limit-selector .wip-limit-status-data .form-button .icon {
+  fill: #D8DEE9; }
+
+tg-wip-limit-selector .wip-limit-status-data .form-button:hover .icon {
+  fill: #008AA8; }
+
+tg-wip-limit-selector .wip-limit-status-form-input {
+  font-size: .875rem;
+  background: #FFFFFF;
+  border: 2px solid #008AA8;
+  border-radius: 3px;
+  margin-inline-end: .5rem;
+  padding: .3rem .5rem .3rem .75rem;
+  width: 8rem; }

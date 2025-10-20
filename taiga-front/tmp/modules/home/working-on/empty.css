@@ -1,0 +1,55 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.working-on-empty,
+.watching-empty {
+  margin-bottom: 4rem; }
+  .working-on-empty p,
+  .watching-empty p {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    margin: 2rem 2rem 1rem;
+    text-align: center; }
+
+.empty-ticket {
+  display: flex; }
+  .empty-ticket:not(:last-child) {
+    border-bottom: 1px solid #E2E3E9;
+    padding: 1rem 0; }
+  .empty-ticket:last-child {
+    padding: 1rem 0 0; }
+  .empty-ticket .avatar {
+    background: #d4d5de;
+    flex-basis: 48px;
+    height: 48px;
+    margin-right: 1rem;
+    width: 48px; }
+  .empty-ticket .data {
+    display: flex;
+    flex-direction: column; }
+  .empty-ticket .line {
+    background: #F1F1F4;
+    height: 1rem;
+    margin-bottom: 1rem;
+    width: 8vw; }
+    @media screen and (max-width: 1215px) {
+      .empty-ticket .line {
+        width: 30vw; } }
+    @media screen and (max-width: 1023px) {
+      .empty-ticket .line {
+        width: 30vw; } }
+    @media screen and (max-width: 768px) {
+      .empty-ticket .line {
+        width: 30vw; } }
+    .empty-ticket .line:last-child {
+      margin: 0;
+      width: 18vw; }
+      @media screen and (max-width: 1215px) {
+        .empty-ticket .line:last-child {
+          width: 50vw; } }
+      @media screen and (max-width: 1023px) {
+        .empty-ticket .line:last-child {
+          width: 50vw; } }
+      @media screen and (max-width: 768px) {
+        .empty-ticket .line:last-child {
+          width: 50vw; } }

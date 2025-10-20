@@ -1,0 +1,9 @@
+
+<div class="owner-avatar"><img tg-avatar="owner" alt="{{::owner.full_name_display}}"/></div>
+<div class="owner-info">
+  <div class="title">{{ 'ADMIN.PROJECT_PROFILE.PROJECT_OWNER' | translate }}</div>
+  <div class="owner-name">{{::owner.full_name_display}}</div>
+</div>
+<div class="request"><a href="" ng-click="requestOwnership()">{{ 'ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP' | translate }}</a>
+  <p ng-if="!canRequest" translate="ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP_LIMIT" translate-values="{ 'maxProjects': owner.max_private_projects}" class="limit-message">{{ 'ADMIN.PROJECT_PROFILE.REQUEST_OWNERSHIP_LIMIT ' | translate }}</p>
+</div>

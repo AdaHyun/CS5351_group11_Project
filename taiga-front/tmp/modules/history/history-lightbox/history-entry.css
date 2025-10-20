@@ -1,0 +1,55 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.entry {
+  display: block; }
+  .entry .entry-wrapper {
+    align-items: flex-start;
+    border-bottom: 1px solid #E2E3E9;
+    display: flex;
+    padding: 2rem 0; }
+  .entry .entry-avatar {
+    flex-basis: 50px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    width: 50px; }
+  .entry .entry-main {
+    flex: 1;
+    max-width: calc(100% - 100px); }
+  .entry .entry-data {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: .5rem; }
+  .entry .entry-creator {
+    color: #25A28C;
+    margin-right: .5rem; }
+  .entry .entry-date {
+    font-size: .875rem;
+    color: #70728F; }
+  .entry .display-full-entry {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    fill: #25A28C;
+    margin-left: auto;
+    transform: rotate(0);
+    transition: transform .2s; }
+    .entry .display-full-entry.inactive {
+      transform: rotate(180deg); }
+  .entry .entry-text {
+    margin-bottom: 0; }
+    .entry .entry-text.ellipsed {
+      max-height: 3rem;
+      overflow: hidden; }
+    .entry .entry-text.blurry {
+      position: relative; }
+      .entry .entry-text.blurry::after {
+        background-image: linear-gradient(to top, #fff, transparent);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%; }

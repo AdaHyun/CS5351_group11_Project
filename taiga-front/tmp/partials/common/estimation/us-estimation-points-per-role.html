@@ -1,0 +1,6 @@
+
+<div class="ticket-section-label"><span>{{ 'COMMON.FIELDS.POINTS'|translate }}</span></div>
+<ul class="points-per-role"><% _.each(roles, function(role) { %>
+  <li data-role-id="<%- role.id %>" title="<%- role.name %>" class="ticket-role-points total <% if(editable){ %>clickable<% } %>"><span tg-loading="<%- loading == role.id %>" class="role"><%- role.name %></span><span class="points"><%- role.points %></span></li><% }); %>
+  <li class="ticket-role-points total"><span translate="US.TOTAL_POINTS" class="role"></span><span class="points"><%- totalPoints %></span></li>
+</ul>

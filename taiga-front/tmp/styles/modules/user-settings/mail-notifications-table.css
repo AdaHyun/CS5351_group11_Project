@@ -1,0 +1,31 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.policy-table .policy-table-row {
+  align-items: center;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  justify-content: center; }
+
+.policy-table .policy-table-header {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid #70728F; }
+
+.policy-table .policy-table-project,
+.policy-table .policy-table-all,
+.policy-table .policy-table-involved,
+.policy-table .policy-table-none,
+.policy-table .policy-table-enabled {
+  padding: 1rem; }
+
+.policy-table .policy-table-project {
+  flex-basis: 0;
+  flex-grow: 3; }
+
+.policy-table .policy-table-all,
+.policy-table .policy-table-involved,
+.policy-table .policy-table-none,
+.policy-table .policy-table-enabled {
+  flex-basis: 0;
+  flex-grow: 1; }

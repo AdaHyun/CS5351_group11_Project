@@ -1,0 +1,43 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-animated-counter {
+  display: block; }
+  tg-animated-counter.vertical .animated-counter-inner {
+    height: 100%;
+    width: 14px; }
+  tg-animated-counter.vertical .counter-translator {
+    transform: translateX(14px); }
+    tg-animated-counter.vertical .counter-translator.inc {
+      transform: translateX(0);
+      transition: transform .5s; }
+    tg-animated-counter.vertical .counter-translator.dec {
+      transform: translateX(-28px);
+      transition: transform .5s; }
+  tg-animated-counter.vertical .result {
+    height: 100%;
+    width: 14px; }
+  tg-animated-counter .animated-counter-inner {
+    height: 14px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%; }
+  tg-animated-counter .counter-translator {
+    transform: translateY(-14px); }
+    tg-animated-counter .counter-translator.inc {
+      transform: translateY(0);
+      transition: transform .5s; }
+    tg-animated-counter .counter-translator.dec {
+      transform: translateY(-28px);
+      transition: transform .5s; }
+  tg-animated-counter .result {
+    display: block;
+    height: 14px;
+    overflow: hidden;
+    width: 100%; }
+  tg-animated-counter .wip-amount .current {
+    color: #93C45D; }
+  tg-animated-counter .wip-amount.limit-over .current {
+    color: #E44057; }

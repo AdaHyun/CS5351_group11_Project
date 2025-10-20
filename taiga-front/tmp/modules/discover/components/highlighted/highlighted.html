@@ -1,0 +1,19 @@
+
+<div class="highlighted-projects-container">
+  <div tg-loading="loading" ng-show="loading" class="loading-container"></div>
+  <div tg-repeat="project in highlighted track by project.get('id')" ng-if="!loading" class="highlighted-project"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}" class="project-logo"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/></a>
+    <div class="project-data-container">
+      <div class="single-project-header">
+        <h2 class="project-title"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}">{{::project.get('name')}}</a>
+          <tg-svg ng-if="project.get('is_looking_for_people')" svg-icon="icon-recruit" svg-title="{{ ::project.get('looking_for_people_note') }}" class="look-for-people"></tg-svg>
+        </h2>
+        <div class="project-statistics"><span ng-class="{'active': project.get('is_fan')}" title="{{ 'PROJECT.FANS_COUNTER_TITLE'|translate:{total:project.get('total_fans')||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-like"></tg-svg><span>{{::project.get('total_fans')}}</span></span><span ng-class="{'active': project.get('is_watcher')}" title="{{ 'PROJECT.WATCHERS_COUNTER_TITLE'|translate:{total:project.get('total_watchers')||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-watch"></tg-svg><span>{{::project.get('total_watchers')}}</span></span><span ng-class="{'active': project.get('i_am_member')}" title="{{ 'PROJECT.MEMBERS_COUNTER_TITLE'|translate:{total:project.get('members').size||0}:'messageformat' }}" class="statistic">
+            <tg-svg svg-icon="icon-team"></tg-svg><span class="statistics-num">{{ ::project.get('members').size }}</span></span></div>
+      </div>
+      <p class="project-description">{{ ::project.get('description') | limitTo:150 }}{{ ::project.get('description').length < 150 ? '' : '...'}}</p>
+    </div>
+  </div>
+  <div ng-if="!loading"><a variant="secondary" ng-if="highlighted" tg-nav="discover-search" tg-nav-get-params="{&quot;order_by&quot;: &quot;{{orderBy}}&quot;}" href="#" class="view-more-projects btn-small">{{ 'DISCOVER.VIEW_MORE' | translate }}</a></div>
+</div>

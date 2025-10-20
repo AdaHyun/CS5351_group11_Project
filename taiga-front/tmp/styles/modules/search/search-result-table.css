@@ -1,0 +1,62 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.search-result-table {
+  border-top: 1px solid #D8DEE9; }
+  .search-result-table .row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem; }
+    .search-result-table .row .ref {
+      color: #008AA8;
+      margin-right: .5rem; }
+    .search-result-table .row .user-stories {
+      overflow: hidden;
+      padding-right: 1rem;
+      width: 100%; }
+    .search-result-table .row .status,
+    .search-result-table .row .points,
+    .search-result-table .row .sprint {
+      flex: 0 0 150px;
+      flex-grow: 0;
+      max-width: 150px;
+      padding: 0 1rem;
+      text-align: center; }
+    .search-result-table .row .assigned-to {
+      flex: 0 0 150px;
+      max-width: 150px;
+      padding: 0 1rem; }
+  .search-result-table .user-story-name a {
+    color: #4C566A; }
+  .search-result-table .user-story-name input {
+    vertical-align: top; }
+  .search-result-table .user-story-name span {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .search-result-table .table-main {
+    font-size: .875rem;
+    border-bottom: 1px solid #D8DEE9; }
+  .search-result-table .status,
+  .search-result-table .points,
+  .search-result-table .sprint {
+    position: relative; }
+  .search-result-table .avatar {
+    align-items: center;
+    display: flex; }
+    .search-result-table .avatar img {
+      width: 35px; }
+    .search-result-table .avatar .avatar-caption {
+      display: block;
+      margin-left: .5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 80px; }
+
+.search-result-table-header {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }

@@ -1,0 +1,34 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.wiki-username-edition
+    .avatar
+        img(
+            style!="background-color: <%- user.avatar.bg %>"
+            src!="<%- user.avatar.url %>"
+            alt!="<%- user.name %>"
+        )
+    .wiki-user-modification
+        span.description(translate="WIKI.SUMMARY.LAST_MODIFICATION")
+        span.username <%- user.name %>
+
+.wiki-last-modified
+    span.number <%- lastModifiedDate %>
+    span.description(translate="WIKI.SUMMARY.LAST_EDIT")
+
+.wiki-times-edited
+    span.number <%- totalEditions %>
+    span.description(translate="WIKI.SUMMARY.TIMES_EDITED")
+
+tg-svg.remove(
+    tg-check-permission="delete_wiki_page"
+    title="{{'WIKI.REMOVE' | translate}}"
+    ng-click="ctrl.delete()"
+    svg-icon="icon-trash"
+    ng-if="wiki.id"
+
+)

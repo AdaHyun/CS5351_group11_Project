@@ -1,0 +1,27 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-common header h1 {
+  display: flex; }
+  .admin-common header h1 .icon-bell {
+    margin-left: .25rem; }
+
+.admin-common .admin-subtitle {
+  color: #4C566A;
+  margin-block-end: 1rem; }
+
+.admin-common .total {
+  font-size: 1.1rem;
+  align-items: center;
+  background: none;
+  color: #434456;
+  display: flex;
+  padding: .3rem 0; }
+  .admin-common .total:hover .icon-edit {
+    opacity: 1;
+    transition: opacity .3s linear; }
+
+.admin-common.admin-roles .total {
+  background-color: #F9F9FB;
+  padding: .3rem 1rem; }

@@ -1,0 +1,18 @@
+
+<div class="assigned-inline">
+  <div class="ticket-user-list">
+    <div class="user-list-single">
+      <div ng-class="{ 'is-iocaine': isIocaine }" class="user-list-avatar"><img style="background-color: {{ bg }}" src="{{ avatar.url }}" alt="{{ fullName }}"/>
+        <div ng-if="isIocaine" title="{{ 'TASK.TITLE_ACTION_IOCAINE' | translate }}" class="iocaine-symbol">
+          <tg-svg svg-icon="icon-iocaine"></tg-svg>
+        </div>
+      </div>
+      <div ng-if="fullNameVisible" class="user-list-name"><span ng-if="!isEditable" class="assigned-name">{{ fullName }}</span><a title="{{ 'COMMON.ASSIGNED_TO.TITLE_ACTION_EDIT_ASSIGNMENT'|translate }}" ng-class="{ 'editable': isEditable }" ng-if="isEditable" class="users-dropdown user-assigned"><span class="assigned-name"><span ng-if="fullNameVisible">{{ fullName }}</span></span></a><span ng-if="isEditable &amp;&amp; isUnassigned"><span>&nbsp;</span><span translate="COMMON.OR" class="read-only"></span><a href="#" ng-click="selfAssign()" class="self-assign"><span>{{ "COMMON.ASSIGNED_TO.SELF" | translate }}</span></a></span></div>
+      <tg-svg ng-click="unassign()" ng-if="isEditable &amp;&amp; !isUnassigned" svg-icon="icon-close" title="{{'COMMON.ASSIGNED_TO.DELETE_ASSIGNMENT' | translate}}" class="remove-user"></tg-svg>
+    </div>
+  </div>
+  <div class="pop-users popover">
+    <input type="text" data-maxlength="500" placeholder="{{'LIGHTBOX.ASSIGNED_TO.SEARCH' | translate}}" ng-model="usersSearch" class="users-search"/><a href="" data-user-id="{{ user.id }}" title="{{ user.full_name_display }}" ng-repeat="user in users" class="user-list-single"><img style="background: {{user.avatar.bg }}" src="{{ user.avatar.url }}" class="user-list-avatar"/><span href="" title="{{ user.full_name_display }}" class="user-list-name">{{ user.full_name_display }}</span></a>
+    <div ng-if="showMore" class="show-more"><span translate="COMMON.ASSIGNED_TO.TOO_MANY"></span></div>
+  </div>
+</div>

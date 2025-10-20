@@ -1,0 +1,40 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.activity-diff tg-svg {
+  display: inline-block; }
+
+.activity-diff .key {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  background: #E2E3E9;
+  margin-right: .5rem;
+  padding: .25rem; }
+
+.activity-diff .diff {
+  line-height: 1.6; }
+
+.activity-diff .icon-arrow-right {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: #70728F;
+  margin: 0 .5rem; }
+
+.activity-diff .diff-status-wrapper p {
+  display: inline-block;
+  vertical-align: top; }
+
+.activity-diff .diff-status-wrapper ins {
+  background: rgba(164, 216, 207, 0.3);
+  text-decoration: underline; }
+
+.activity-diff .diff-status-wrapper del {
+  background: rgba(255, 160, 160, 0.3); }
+
+.activity-diff .diff-color-wrapper {
+  align-items: center;
+  display: flex; }
+  .activity-diff .diff-color-wrapper .diff {
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem; }

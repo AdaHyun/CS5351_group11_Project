@@ -1,0 +1,24 @@
+
+<form ng-submit="vm.sendInvites(vm.inviteContacts)" class="invite-members-form">
+  <ul class="invite-members-form-list">
+    <li ng-repeat="contact in vm.contactsToInvite | toMutable track by contact.id" class="invite-members-single e2e-invite-members-single">
+      <div class="invite-members-single-data"><img tg-avatar="contact" alt="{{contact.full_name}}" class="invite-members-single-avatar"/><span class="invite-members-single-name">{{contact.full_name}}</span><a href="" ng-click="vm.onRemoveInvitedContact({contact: contact})" translate="LIGHTBOX.ADD_MEMBER.REMOVE" class="invite-members-single-remove e2e-invite-members-single-remove"></a></div>
+      <select ng-model="vm.rolesValues[contact.username]" id="add-member-suggest-role-dropdown" ng-options="role.id as role.name for role in vm.roles | toMutable track by role.id" required="required" class="invite-members-single-role e2e-invite-members-single-role">
+        <option value="" selected="selected" translate="LIGHTBOX.ADD_MEMBER.CHOOSE_ROLE"></option>
+      </select>
+    </li>
+    <li ng-repeat="userMail in vm.emailsToInvite | toMutable track by userMail.email" class="invite-members-single e2e-invite-members-single">
+      <div class="invite-members-single-data"><span class="invite-members-single-email">{{userMail.email}}</span><a href="" ng-click="vm.onRemoveInvitedEmail({email: userMail})" translate="LIGHTBOX.ADD_MEMBER.REMOVE" class="invite-members-single-remove e2e-invite-members-single-remove"></a></div>
+      <select ng-model="vm.rolesValues[userMail.email]" id="add-email-suggest-role-dropdown" ng-options="role.id as role.name for role in vm.roles | toMutable track by role.id" required="required" class="invite-members-single-role e2e-invite-members-single-role">
+        <option value="" translate="LIGHTBOX.ADD_MEMBER.CHOOSE_ROLE"></option>
+      </select>
+    </li>
+  </ul>
+  <div ng-if="vm.contactsToInvite.size + vm.emailsToInvite.size &lt; vm.membersLimit" class="invite-members-single-new e2e-invite-members-single-new">
+    <tg-svg svg-icon="icon-add" ng-click="vm.onDisplayContactList()" class="invite-members-single-new-btn"></tg-svg>
+  </div>
+  <tg-lightbox-add-members-warning-message ng-if="vm.showWarningMessage" project="vm.project"></tg-lightbox-add-members-warning-message>
+  <textarea ng-model="vm.inviteContactsMessage" placeholder="{{'LIGHTBOX.ADD_MEMBER.PLACEHOLDER_INVITATION_TEXT' | translate}}" maxlength="250" class="invite-members-single-msg"></textarea>
+  <button variant="primary" type="submit" translate="LIGHTBOX.ADD_MEMBER.INVITE" ng-disabled="!vm.areRolesValidated" tg-loading="vm.loading" class="btn-small invite-members-single-send e2e-invite-members-single-send"></button>
+  <p translate="LIGHTBOX.ADD_MEMBER.HELP_TEXT" class="invite-members-single-help"></p>
+</form>

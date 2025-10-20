@@ -1,0 +1,4 @@
+
+<ul class="popover pop-status"><% _.each(statuses, function(status) { %>
+  <li class="popover-status"><a id="js-status-btn" href="" title="<%- status.name %>" data-status-id="<%- status.id %>" class="status <% if(currentStatus == status.id) { %> active-popover <% } %>"><span class="item-text"><%- status.name %></span></a></li><% }); %>
+</ul>

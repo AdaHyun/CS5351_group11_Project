@@ -1,0 +1,24 @@
+
+<section ng-if="vm.projects.size" class="home-project-list">
+  <div tg-bind-scope="tg-bind-scope" tg-repeat="project in vm.projects" ng-class="{'blocked-project': project.get('blocked_code')}" class="home-project">
+    <div href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" class="project-card-inner">
+      <div class="project-card-header"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}" class="project-card-logo"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/></a>
+        <h3 class="project-card-name"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{::project.get('name')}}" class="project-title">{{::project.get('name')}}</a>
+          <tg-svg ng-if="project.get('is_looking_for_people')" svg-icon="icon-recruit" svg-title="{{ ::project.get('looking_for_people_note') }}" class="look-for-people"></tg-svg>
+          <tg-svg ng-if="project.get('i_am_owner')" svg-icon="icon-badge" svg-title="COMMON.OWNER" class="owner-badge"></tg-svg>
+          <tg-svg ng-if="project.get('blocked_code')" svg-icon="icon-blocked-project" svg-title-translate="PROJECT.BLOCKED_PROJECT.BLOCKED"></tg-svg>
+        </h3>
+      </div>
+      <p class="project-card-description">{{::project.get('description')| limitTo:100 }}<span ng-if="::project.get('description').length &gt; 100">...</span></p>
+      <div class="project-card-statistics"><span ng-class="{'active': project.get('is_fan')}" title="{{ 'PROJECT.FANS_COUNTER_TITLE'|translate:{total:project.get('total_fans')||0}:'messageformat' }}" class="statistic">
+          <tg-svg svg-icon="icon-like"></tg-svg><span>{{::project.get('total_fans')}}</span></span><span ng-class="{'active': project.get('is_watcher')}" title="{{ 'PROJECT.WATCHERS_COUNTER_TITLE'|translate:{total:project.get('total_watchers')||0}:'messageformat' }}" class="statistic">
+          <tg-svg svg-icon="icon-watch"></tg-svg><span>{{::project.get('total_watchers')}}</span></span><span ng-class="{'active': project.get('i_am_member')}" title="{{ 'PROJECT.MEMBERS_COUNTER_TITLE'|translate:{total:project.get('members').size||0}:'messageformat' }}" class="statistic">
+          <tg-svg svg-icon="icon-team"></tg-svg><span class="statistics-num">{{ ::project.get('members').size }}</span></span><span ng-if="::project.get('is_private')" title="{{ 'PROJECT.PRIVATE' | translate }}" class="statistic">
+          <tg-svg svg-icon="icon-private"></tg-svg></span></div>
+    </div>
+  </div><a variant="primary" href="#" ng-show="vm.projects.size" tg-nav="projects" title="{{'PROJECT.NAVIGATION.MANAGE_PROJECTS' | translate}}" translate="PROJECT.NAVIGATION.MANAGE_PROJECTS" class="btn-small see-more-projects-btn"></a>
+</section>
+<section ng-if="vm.projects != undefined &amp;&amp; vm.projects.size === 0" class="projects-empty">
+  <tg-svg svg-icon="icon-project"></tg-svg>
+  <p translate="HOME.EMPTY_PROJECT_LIST"></p><a variant="primary" href="#" tg-nav="create-project" title="{{'PROJECT.NAVIGATION.TITLE_CREATE_PROJECT' | translate}}" translate="PROJECT.NAVIGATION.ACTION_CREATE_PROJECT" class="btn-small create-project-button"></a>
+</section>

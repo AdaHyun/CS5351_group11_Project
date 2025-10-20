@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<div ng-controller="ProjectValuesSectionController" ng-init="sectionName='ADMIN.PROJECT_VALUES_POINTS.TITLE'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="project-values" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="values-points" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-values-status"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.STATUS" class="title"></span></a></li>
+          <li id="adminmenu-values-points"><a href="" tg-nav="project-admin-project-values-points:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.POINTS" class="title"></span></a></li>
+          <li id="adminmenu-values-priorities"><a href="" tg-nav="project-admin-project-values-priorities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.PRIORITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-severities"><a href="" tg-nav="project-admin-project-values-severities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.SEVERITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-types"><a href="" tg-nav="project-admin-project-values-types:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TYPES" class="title"></span></a></li>
+          <li id="adminmenu-values-custom-fields"><a href="" tg-nav="project-admin-project-values-custom-fields:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.CUSTOM_FIELDS" class="title"></span></a></li>
+          <li id="adminmenu-values-tags"><a href="" tg-nav="project-admin-project-values-tags:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TAGS" class="title"></span></a></li>
+          <li id="adminmenu-values-due-dates"><a href="" tg-nav="project-admin-project-values-due-dates:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.DUE_DATES" class="title"></span></a></li>
+          <li id="adminmenu-values-kanban-power-ups" ng-show="project.is_kanban_activated"><a href="" tg-nav="project-admin-project-values-kanban-power-ups:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.KANBAN_OPTIONS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-common admin-attributes">
+    <header>
+      <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+    </header>
+    <p translate="ADMIN.PROJECT_VALUES_POINTS.SUBTITLE" class="admin-subtitle"></p>
+    <div tg-project-values ng-controller="ProjectValuesController as ctrl" ng-init="section='admin'; resource='userstories'; type='points'; sectionName='ADMIN.PROJECT_VALUES_POINTS.US_TITLE'" objName="points" type="points" class="admin-attributes-section">
+      <section class="project-values-table">
+        <div class="project-values-title">
+          <h2>{{sectionName | translate}}</h2>
+          <button variant="primary" title="{{'ADMIN.PROJECT_VALUES_POINTS.ACTION_ADD' | translate}}" class="btn-small show-add-new"><span translate="ADMIN.PROJECT_VALUES_POINTS.ACTION_ADD"></span></button>
+        </div>
+        <div class="project-values-header">
+          <div class="project-values-row">
+            <div class="project-values-name"><span translate="COMMON.FIELDS.NAME"></span></div>
+            <div class="project-values-value"><span translate="COMMON.FIELDS.VALUE"></span></div>
+            <div class="project-values-settings"></div>
+          </div>
+        </div>
+        <div class="project-values-body">
+          <div class="sortable">
+            <div ng-repeat="value in values track by value.id" tg-bind-scope>
+              <form tg-bind-scope>
+                <div class="project-values-row row table-main visualization">
+                  <tg-svg svg-icon="icon-draggable"></tg-svg>
+                  <div class="project-values-name"><span>{{ value.name }}</span></div>
+                  <div class="project-values-value"><span>{{ value.value }}</span></div>
+                  <div class="project-values-settings"><a href="" class="edit-value">
+                      <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}" svg-icon="icon-edit"></tg-svg></a><a href="" class="delete-value">
+                      <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}" svg-icon="icon-trash"></tg-svg></a></div>
+                </div>
+                <div class="project-values-row row table-main edition hidden">
+                  <div class="project-values-name">
+                    <input name="name" type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}" ng-model="value.name">
+                  </div>
+                  <div class="project-values-value">
+                    <input name="value" type="text" placeholder="{{'COMMON.FIELDS.VALUE' | translate}}" ng-model="value.value" data-type="number">
+                  </div>
+                  <div class="project-values-settings"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save e2e-save">
+                      <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="cancel">
+                      <tg-svg svg-icon="icon-close" class="cancel"></tg-svg></a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <form>
+            <div class="project-values-row new-value hidden">
+              <div class="project-values-name">
+                <input name="name" type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}" ng-model="newValue.name" data-required="true">
+              </div>
+              <div class="project-values-value">
+                <input name="value" type="text" placeholder="{{'COMMON.FIELDS.VALUE' | translate}}" ng-model="newValue.value" data-type="number">
+              </div>
+              <div class="project-values-settings"><a href="" title="{{'COMMON.ADD' | translate}}" class="add-new e2e-save">
+                  <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="delete-new">
+                  <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

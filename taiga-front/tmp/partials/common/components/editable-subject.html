@@ -1,0 +1,8 @@
+
+<div class="view-subject">{{ item.subject }}
+  <tg-svg svg-icon="icon-edit" title="{{'COMMON.EDIT' | translate}}" class="edit"></tg-svg>
+</div>
+<div class="edit-subject">
+  <input type="text" ng-model="item.subject" data-required="true" data-maxlength="500" ng-model-options="{ debounce: 200 }"/><span class="save-container"><a href="" class="save">
+      <tg-svg svg-icon="icon-save" svg-title-translate="COMMON.SAVE"></tg-svg></a></span>
+</div>

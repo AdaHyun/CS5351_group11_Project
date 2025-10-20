@@ -1,0 +1,8 @@
+
+<section ng-show="ctrl.customAttributes.length" class="duty-custom-fields">
+  <div class="custom-fields-header"><span translate="COMMON.CUSTOM_ATTRIBUTES.CUSTOM_FIELDS"></span><a href="" ng-class="{'open': !collapsed}" ng-click="toggleCollapse()" class="collapse">
+      <tg-svg svg-icon="icon-arrow-down"></tg-svg></a></div>
+  <div ng-show="!collapsed" class="custom-fields-body">
+    <div ng-repeat="attr in ctrl.customAttributes" tg-custom-attribute-value="ctrl.getAttributeValue(attr)" required-edition-perm="<%- requiredEditionPerm %>" class="custom-attribute"></div>
+  </div>
+</section>

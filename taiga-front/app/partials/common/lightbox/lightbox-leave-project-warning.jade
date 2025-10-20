@@ -1,0 +1,27 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close
+
+div.content
+    tg-svg(svg-icon="icon-exclamation")
+
+    h2.title {{'LIGHTBOX.LEAVE_PROJECT_WARNING.TITLE' | translate}}
+
+    div(ng-if="isCurrentUser")
+        p {{'LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.DESC' | translate}}
+
+        a.btn-big(
+            tg-nav="project-admin-home:project=project.slug"
+            translate="LIGHTBOX.LEAVE_PROJECT_WARNING.CURRENT_USER_OWNER.BUTTON"
+        )
+
+    div(ng-if="!isCurrentUser")
+        p {{'LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.DESC' | translate}}
+
+        a.button-big(tg-nav="project-admin-home:project=project.slug", href="")
+            span(translate="LIGHTBOX.LEAVE_PROJECT_WARNING.OTHER_USER_OWNER.BUTTON")

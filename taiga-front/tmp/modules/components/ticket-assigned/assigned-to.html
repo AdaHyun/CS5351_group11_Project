@@ -1,0 +1,20 @@
+
+<div class="ticket-section-label"><span>{{ 'COMMON.FIELDS.ASSIGNED'|translate }}</span></div>
+<div class="ticket-user-list-container">
+  <div ng-show="loading" class="loading-container"><img src="v-1758905376214/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
+  <div ng-class="{ 'loading': loading }" class="ticket-user-list-content">
+    <div class="ticket-user-list">
+      <div ng-if="assignedUser" ng-class="{ 'read-only': !isEditable }" class="user-list-single">
+        <div ng-class="{ 'is-iocaine': isIocaine }" class="user-list-avatar"><img tg-avatar="assignedUser" alt="{{assignedUser.full_name_display}}"/>
+          <div ng-if="isIocaine" title="{{ 'TASK.TITLE_ACTION_IOCAINE' | translate }}" class="iocaine-symbol">
+            <tg-svg svg-icon="icon-iocaine"></tg-svg>
+          </div>
+        </div>
+        <div class="user-list-name"><span>{{assignedUser.full_name_display}}</span></div>
+        <tg-svg ng-if="isEditable" svg-icon="icon-close" title="{{'COMMON.ASSIGNED_TO.DELETE_ASSIGNMENT' | translate}}" data-user-id="{{ assignedUser.id }}" class="remove-user"></tg-svg>
+      </div>
+    </div>
+    <div ng-if="isEditable" class="ticket-users-actions"><a ng-click="openAssignedUsers()" class="ticket-users-action">
+        <tg-svg svg-icon="icon-add" class="users-action icon"></tg-svg><span>{{ "COMMON.ASSIGNED_USERS.ADD_ASSIGNED" | translate }}</span></a><a ng-if="!isSelfAssigned" ng-click="selfAssign()" class="ticket-users-action"><span>{{ 'COMMON.ASSIGNED_TO.SELF' | translate }}</span></a></div>
+  </div>
+</div>

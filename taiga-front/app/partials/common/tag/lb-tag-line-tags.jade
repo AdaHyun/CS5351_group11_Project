@@ -1,0 +1,16 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+<% _.each(tags, function(tag) { %>
+span(
+    class="tag"
+    style!="<%- tag.style %>"
+)
+    span.tag-name <%- tag.name %>
+    a.remove-tag(href="", title="{{'COMMON.TAGS.DELETE' | translate}}")
+        tg-svg(svg-icon="icon-close")
+<% }); %>

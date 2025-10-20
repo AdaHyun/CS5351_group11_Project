@@ -1,0 +1,4 @@
+
+<div ng-style="{'background-color': tag[1]}" class="tag"><span ng-bind-html="tag[0] | emojify"></span>
+  <tg-svg ng-if="hasPermissions" svg-icon="icon-close" svg-title-translate="COMMON.TAG.DELETE" ng-click="onDeleteTag(tag)" tg-loading="loadingRemoveTag == tag[0]" class="icon-close e2e-delete-tag"></tg-svg>
+</div>

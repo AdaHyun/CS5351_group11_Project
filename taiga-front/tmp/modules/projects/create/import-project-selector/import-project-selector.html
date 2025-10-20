@@ -1,0 +1,25 @@
+
+<div class="import-project-selector">
+  <div ng-include="'projects/create/import/import-header.html'"></div>
+  <div class="import-project-selector">
+    <div class="import-project-selector-service"><img ng-src="{{vm.logo}}"/></div>
+    <div class="import-project-selector-boards">
+      <form ng-if="vm.projects.size &gt; 5" class="import-project-selector-filter">
+        <input ng-model="vm.searchText" placeholder="{{ vm.search }}"/>
+        <tg-svg svg-icon="icon-search" title="{{ 'PROJECT.IMPORT.PROJECT_SELECTOR.ACTION_SEARCH' | translate }}"></tg-svg>
+      </form>
+      <ul class="import-project-board-list">
+        <li ng-repeat="project in vm.projects | toMutable | orderBy:'name' | filter:vm.searchText as filteredProjects track by project.id" ng-click="vm.selectProject(project)" class="import-project-selector-title">{{project.name}}</li>
+      </ul>
+      <div ng-if="vm.projects.size == 0" class="import-project-board-no-projects empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ vm.noProjectsMsg }}" aria-hidden="true" role="presentation"/>
+        <p class="title">{{ vm.noProjectsMsg }}</p>
+      </div>
+      <div ng-if="vm.projects.size &gt; 0 &amp;&amp; filteredProjects.length == 0" class="import-project-board-no-results empty-filter">
+        <p translate="PROJECT.IMPORT.PROJECT_SELECTOR.NO_RESULTS"></p>
+      </div>
+      <div class="create-project-action">
+        <button variant="secondary" type="button" ng-click="vm.onCancel()" title="{{'PROJECT.IMPORT.PROJECT_SELECTOR.ACTION_BACK' | translate}}" translate="PROJECT.IMPORT.PROJECT_SELECTOR.ACTION_BACK" class="btn-small create-project-action-cancel"></button>
+      </div>
+    </div>
+  </div>
+</div>

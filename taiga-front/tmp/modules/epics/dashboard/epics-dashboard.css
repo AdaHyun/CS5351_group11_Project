@@ -1,0 +1,10 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.empty-epics {
+  text-align: center; }
+  .empty-epics a {
+    color: #25A28C;
+    display: block;
+    margin-bottom: 2rem; }

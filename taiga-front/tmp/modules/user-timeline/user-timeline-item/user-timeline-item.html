@@ -1,0 +1,20 @@
+
+<div class="activity-item"><span class="activity-date">{{::timeline.get('created') | momentFromNow}}</span>
+  <div tg-user-timeline-title="timeline" class="activity-info"></div>
+  <div class="activity-info">
+    <!-- profile image with url-->
+    <div ng-if="timeline.getIn(['data', 'user', 'is_profile_visible'])" class="profile-contact-picture"><a tg-nav="user-profile:username=timeline.getIn(['data', 'user', 'username'])" title="{{::timeline.getIn(['data', 'user', 'name']) }}"><img tg-avatar="timeline.getIn(['data', 'user'])" alt="{{::timeline.getIn(['data', 'user', 'name'])}}"/></a></div>
+    <!-- profile image without url-->
+    <div ng-if="!timeline.getIn(['data', 'user', 'is_profile_visible'])" class="profile-contact-picture"><img tg-avatar="timeline.getIn(['data', 'user'])" alt="{{::timeline.getIn(['data', 'user', 'name'])}}"/></div>
+    <p tg-compile-html="timeline.get('title_html')"></p>
+  </div>
+  <blockquote ng-if="::timeline.get('description')" class="activity-comment-quote">{{::timeline.get('description') | limitTo:300}}</blockquote>
+  <div ng-if="::timeline.has('member')" class="activity-member-view"><a tg-nav="user-profile:username=timeline.getIn(['member', 'user', 'username'])" title="{{::timeline.getIn(['member', 'user', 'name'])}}" class="profile-member-picture"><img tg-avatar="timeline.getIn(['member', 'user'])" alt="{{::timeline.getIn(['member','user', 'name'])}}"/></a>
+    <div class="activity-member-info"><a tg-nav="user-profile:username=timeline.getIn(['member', 'user', 'username'])" title="{{::timeline.getIn(['member','user', 'name'])}}"><span>{{::timeline.getIn(['member','user', 'name'])}}</span></a>
+      <p>{{::timeline.getIn(['member','role', 'name'])}}</p>
+    </div>
+  </div>
+  <div tg-repeat="attachment in timeline.get('attachments')">
+    <div tg-user-timeline-attachment="attachment"></div>
+  </div>
+</div>

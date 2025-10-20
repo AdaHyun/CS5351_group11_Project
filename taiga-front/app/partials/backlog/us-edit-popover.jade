@@ -1,0 +1,29 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+ul.popover.us-option-popup
+    li
+        button.e2e-edit.edit-story(
+            ng-click="ctrl.editUserStory(us.project, us.ref, $event)"
+            tg-check-permission="modify_us"
+        )
+            tg-svg(svg-icon="icon-edit")
+            span {{'COMMON.EDIT' | translate}}
+    li
+        button.e2e-delete(
+            ng-click="ctrl.deleteUserStory(us)"
+            tg-check-permission="delete_us"
+        )
+            tg-svg(svg-icon="icon-trash")
+            span {{'COMMON.DELETE' | translate}}
+    li
+        button.e2e-edit.move-to-top(
+            ng-click="ctrl.moveUsToTopOfBacklog(us)"
+            tg-check-permission="modify_us"
+        )
+            tg-svg(svg-icon="icon-move-to-top")
+            span {{'COMMON.MOVE_TO_TOP' | translate}}

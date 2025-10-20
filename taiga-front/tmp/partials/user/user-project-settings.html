@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<div ng-controller="UserProjectSettingsController as ctrl" ng-init="section='project-settings'" class="wrapper">
+  <sidebar tg-user-settings-navigation="project-settings" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="usersettingsmenu-user-profile"><a href="" tg-nav="user-settings-user-profile" title="{{ 'USER_SETTINGS.MENU.SECTION_TITLE' | translate }}"><span translate="USER_SETTINGS.MENU.SECTION_TITLE" class="title"></span></a></li>
+          <li id="usersettingsmenu-change-password"><a href="" tg-nav="user-settings-user-change-password" title="{{ 'USER_SETTINGS.MENU.CHANGE_PASSWORD' | translate }}"><span translate="USER_SETTINGS.MENU.CHANGE_PASSWORD" class="title"></span></a></li>
+          <li id="usersettingsmenu-project-settings"><a href="" tg-nav="user-settings-user-project-settings" title="{{ 'USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES' | translate }}"><span translate="USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES" class="title"></span></a></li>
+          <li id="usersettingsmenu-mail-notifications"><a href="" tg-nav="user-settings-mail-notifications" title="{{ 'USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.EMAIL_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-live-notifications"><a href="" tg-nav="user-settings-live-notifications" title="{{ 'USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS' | translate }}"><span translate="USER_SETTINGS.MENU.DESKTOP_NOTIFICATIONS" class="title"></span></a></li>
+          <li id="usersettingsmenu-web-notifications"><a href="" tg-nav="user-settings-web-notifications" title="{{ 'USER_SETTINGS.MENU.EVENTS' | translate }}"><span translate="USER_SETTINGS.MENU.EVENTS" class="title"></span></a></li>
+          <li id="usersettings-contrib" ng-repeat="plugin in userSettingsPlugins"><a href="" tg-nav="user-settings-contrib:plugin=plugin.slug" ng-class="{active: plugin.slug == currentPlugin.slug}"><span class="title">{{ plugin.name }}</span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-common">
+    <header>
+      <h1>{{ 'USER_SETTINGS.PROJECT_SETTINGS.SET_START_PAGES' | translate }}</h1>
+    </header>
+    <p translate="USER_SETTINGS.PROJECT_SETTINGS.START_PAGES_PER_PROJECT" class="total"></p>
+    <section class="project-settings-table">
+      <div class="project-settings-table-header">
+        <div class="project-settings-table-row">
+          <div class="project-settings-table-project"><span translate="USER_SETTINGS.PROJECT_SETTINGS.COLUMN_PROJECT"></span></div>
+          <div class="project-settings-table-homepage"><span translate="USER_SETTINGS.PROJECT_SETTINGS.COLUMN_STARTPAGE"></span></div>
+        </div>
+      </div>
+      <div class="project-settings-table-body">
+        <div ng-repeat="projectSettings in userProjectSettings" class="project-settings-table-row">
+          <div class="project-settings-table-project"><span>{{ projectSettings.project_name }}</span></div>
+          <div class="project-settings-table-homepage">
+            <select id="projects-settings-{{projectSettings.id}}-homepage-dropdown" ng-model="projectSettings.homepage" ng-options="section.id as section.title for section in ctrl.filteredSections(projectSettings)" ng-change="ctrl.updateCustomHomePage(projectSettings)"></select>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>

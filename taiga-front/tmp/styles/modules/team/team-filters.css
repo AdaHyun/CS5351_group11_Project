@@ -1,0 +1,60 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.menu-secondary .team-filters header {
+  padding: 1rem 1rem 0 1rem; }
+
+.menu-secondary .team-filters .search-in {
+  border-right: 0;
+  margin-top: 0;
+  padding-top: 0;
+  position: relative; }
+  .menu-secondary .team-filters .search-in .icon-search-wrapper {
+    right: 1rem;
+    top: .5rem; }
+
+.menu-secondary .team-filters li {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ECEFF4;
+  text-transform: uppercase; }
+  .menu-secondary .team-filters li:last-child {
+    border-bottom: 0; }
+  .menu-secondary .team-filters li .icon {
+    fill: #2E3440;
+    opacity: 0;
+    transition: opacity .3s linear; }
+  .menu-secondary .team-filters li:hover {
+    background: #FFFFFF; }
+    .menu-secondary .team-filters li:hover a {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #70728F; }
+  .menu-secondary .team-filters li.active {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    background: #FFFFFF; }
+    .menu-secondary .team-filters li.active a {
+      color: #008AA8; }
+    .menu-secondary .team-filters li.active .icon {
+      fill: #008AA8;
+      opacity: 1; }
+    .menu-secondary .team-filters li.active:hover {
+      background: #FFFFFF; }
+      .menu-secondary .team-filters li.active:hover a {
+        font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+        color: #70728F; }
+      .menu-secondary .team-filters li.active:hover .icon {
+        fill: #70728F;
+        opacity: 1; }
+
+.menu-secondary .team-filters a {
+  align-content: center;
+  align-items: center;
+  color: #70728F;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; }
+  .menu-secondary .team-filters a:hover, .menu-secondary .team-filters a.active {
+    transition: color .3s linear; }
+    .menu-secondary .team-filters a:hover .icon, .menu-secondary .team-filters a.active .icon {
+      fill: currentColor;
+      opacity: 1; }

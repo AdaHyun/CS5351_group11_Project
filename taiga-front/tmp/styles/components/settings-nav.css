@@ -1,0 +1,33 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.settings-nav {
+  width: 300px;
+  background: #F9F9FB;
+  padding: 0; }
+  @media screen and (max-width: 1959px) {
+    .settings-nav {
+      width: 250px; } }
+  @media screen and (max-width: 1407px) {
+    .settings-nav {
+      width: 230px; } }
+  @media screen and (max-width: 1215px) {
+    .settings-nav {
+      width: 210px; } }
+  @media screen and (max-width: 1023px) {
+    .settings-nav {
+      width: 190px; } }
+  @media screen and (max-width: 768px) {
+    .settings-nav {
+      width: 170px; } }
+  .settings-nav .active {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    background: #FFFFFF; }
+    .settings-nav .active a {
+      color: #008AA8; }
+    .settings-nav .active:hover {
+      background: #FFFFFF; }
+      .settings-nav .active:hover a {
+        font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+        color: #70728F; }

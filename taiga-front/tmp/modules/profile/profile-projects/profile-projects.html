@@ -1,0 +1,28 @@
+
+<section class="profile-projects">
+  <div ng-if="vm.projects === undefined">
+    <div class="spin"><img src="v-1758905376214/svg/spinner-circle.svg" alt="Loading..."/></div>
+  </div>
+  <div ng-if="vm.projects &amp;&amp; !vm.projects.size" class="empty-tab">
+    <tg-svg svg-icon="icon-unwatch"></tg-svg>
+    <p translate="USER.PROFILE.PROJECTS_EMPTY" translate-values="{username: vm.user.get('full_name_display')}"></p>
+  </div>
+  <div tg-repeat="project in vm.projects" ng-class="{'blocked-project': project.get('blocked_code')}" class="list-itemtype-project">
+    <div class="list-itemtype-project-left">
+      <div class="project-list-single-title-wrapper"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{ ::project.get('name') }}" class="list-itemtype-project-image"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/></a>
+        <div class="project-list-single-title">
+          <h2><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" title="{{ ::project.get('name') }}" class="project-title">{{::project.get('name')}}</a>
+            <tg-svg ng-if="project.get('blocked_code')" svg-icon="icon-blocked-project" svg-title-translate="PROJECT.BLOCKED_PROJECT.BLOCKED"></tg-svg>
+          </h2>
+          <p class="project-description">{{ ::project.get('description') | limitTo:300 }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="list-itemtype-project-right">
+      <div class="list-itemtype-track"><span ng-class="{'active': project.get('is_fan')}" title="{{ 'PROJECT.LIKE_BUTTON.COUNTER_TITLE'|translate:{total:project.get(&quot;total_fans&quot;)||0}:'messageformat' }}" class="list-itemtype-track-likers">
+          <tg-svg svg-icon="icon-like"></tg-svg><span>{{ ::project.get('total_fans') }}</span></span><span ng-class="{'active': project.get('is_watcher')}" title="{{ 'PROJECT.WATCH_BUTTON.COUNTER_TITLE'|translate:{total:project.get(&quot;total_watchers&quot;)||0}:'messageformat' }}" class="list-itemtype-track-watchers">
+          <tg-svg svg-icon="icon-watch"></tg-svg><span>{{ ::project.get('total_watchers') }}</span></span></div>
+      <div class="list-itemtype-project-members"><a tg-repeat="contact in ::project.get('contacts')" tg-nav="user-profile:username=contact.get('username')" title="{{::contact.get('full_name')}}"><img tg-avatar="contact" alt="{{::contact.get('full_name')}}"/></a></div>
+    </div>
+  </div>
+</section>

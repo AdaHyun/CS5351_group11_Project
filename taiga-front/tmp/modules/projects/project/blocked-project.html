@@ -1,0 +1,14 @@
+
+<div ng-controller="Project as vm" class="blocked-project-detail">
+  <div class="blocked-project-inner">
+    <div class="blocked-project-title">
+      <div class="project-image"><img tg-project-logo-small-src="vm.project" alt="{{::vm.project.get('name')}}"/>
+        <tg-svg svg-icon="icon-blocked-project" svgTitleTranslate:="svgTitleTranslate:" PROJECT.BLOCKED_PROJECT.BLOCKED="PROJECT.BLOCKED_PROJECT.BLOCKED"></tg-svg>
+      </div><span class="project-title">{{::vm.project.get("name")}}</span>
+    </div>
+    <div class="blocked-project-message">
+      <h1 class="project-block-title">{{'PROJECT.BLOCKED_PROJECT.BLOCKED' | translate}}</h1>
+      <tg-blocked-project-explanation class="project-block-message"></tg-blocked-project-explanation>
+    </div>
+  </div>
+</div>

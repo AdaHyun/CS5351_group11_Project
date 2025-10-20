@@ -1,0 +1,123 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.notifications-page {
+  margin-top: 1.5rem;
+  min-width: initial;
+  padding-bottom: 5rem; }
+  .notifications-page .header {
+    align-items: center;
+    background: #F9F9FB;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1rem; }
+  .notifications-page .title {
+    color: #008AA8;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    margin: 0;
+    text-transform: uppercase; }
+  .notifications-page .action {
+    color: #008AA8;
+    line-height: .75em; }
+    .notifications-page .action.disabled {
+      color: #4C566A; }
+  .notifications-page .empty {
+    margin: 4rem auto;
+    text-align: center;
+    width: 100%; }
+  .notifications-page .notifications-list .entry {
+    align-items: center;
+    font-size: .95rem;
+    margin: .5rem 0;
+    padding: 1rem .6rem; }
+    .notifications-page .notifications-list .entry.new {
+      background-color: #E9F6F3; }
+    .notifications-page .notifications-list .entry .entry-content {
+      flex: 1;
+      font-size: 1.05rem; }
+    .notifications-page .notifications-list .entry .entry-project {
+      color: #70728F;
+      max-width: initial;
+      text-overflow: initial;
+      white-space: initial; }
+    .notifications-page .notifications-list .entry .entry-avatar {
+      flex-basis: 3rem;
+      margin-right: 1rem;
+      width: 3rem; }
+    .notifications-page .notifications-list .entry .entry-date {
+      font-size: .85rem;
+      margin-right: .5rem; }
+
+.notifications-list .entry {
+  color: #4C566A;
+  display: flex;
+  font-size: .9rem;
+  margin-bottom: .1rem;
+  padding: .8rem .5rem;
+  position: relative; }
+  .notifications-list .entry p {
+    line-height: 1.25em;
+    margin-bottom: 0; }
+  .notifications-list .entry a {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+    .notifications-list .entry a.user-link, .notifications-list .entry a.project-link {
+      color: #4C566A; }
+  .notifications-list .entry .entry-avatar {
+    border-radius: .1rem;
+    flex-basis: 2.5rem;
+    flex-shrink: 0;
+    margin-right: .7rem;
+    vertical-align: center;
+    width: 2.5rem; }
+    .notifications-list .entry .entry-avatar img {
+      border-radius: 50%;
+      width: 100%; }
+  .notifications-list .entry .entry-content {
+    flex: 1; }
+  .notifications-list .entry .entry-project {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-size: .9rem;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .notifications-list .entry .entry-date {
+    font-size: .7rem;
+    margin-right: 1rem;
+    white-space: nowrap; }
+  .notifications-list .entry .entry-extra-data {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem; }
+  .notifications-list .entry.new {
+    background-color: #fff; }
+    .notifications-list .entry.new .entry-date {
+      position: relative; }
+      .notifications-list .entry.new .entry-date::after {
+        font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        background: #E44057;
+        border-radius: 50%;
+        content: '';
+        height: 6px;
+        position: absolute;
+        right: -1ch;
+        width: 6px; }
+
+.notifications-list .spin {
+  margin: 5% auto;
+  width: 3rem; }
+  .notifications-list .spin img {
+    animation-timing-function: ease-in-out;
+    animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+    margin: 0 auto;
+    max-height: 1rem;
+    max-width: 1rem;
+    transform-origin: 32 32;
+    max-height: 3rem;
+    max-width: 3rem; }

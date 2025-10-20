@@ -1,0 +1,17 @@
+
+<div ng-class="{'blocked-project': vm.item.get('project_blocked_code')}" class="list-itemtype-project">
+  <div class="list-itemtype-project-left">
+    <div class="list-itemtype-project-data-wrapper"><a href="#" tg-nav="project:project=vm.item.get('slug'),section=vm.item.get('my_homepage')" title="{{ ::vm.item.get('name') }}" class="list-itemtype-project-image"><img tg-project-logo-small-src="vm.item" title="{{ ::vm.item.get('name') }}"/></a>
+      <div class="list-itemtype-project-data">
+        <div class="list-itemtype-data-title"><a href="#" tg-nav="project:project=vm.item.get('slug'),section=vm.item.get('my_homepage')" title="{{ ::vm.item.get('name') }}" class="list-itemtype-project-name">{{ ::vm.item.get('name') }}</a>
+          <tg-svg ng-if="::vm.item.get('is_private')" svg-icon="icon-private" svg-title-translate="PROJECT.PRIVATE"></tg-svg>
+          <tg-svg ng-if="vm.item.get('blocked_code')" svg-icon="icon-blocked-project" svg-title-translate="PROJECT.BLOCKED_PROJECT.BLOCKED"></tg-svg>
+        </div>
+        <div class="list-itemtype-data-meta list-itemtype-project-description">{{ ::vm.item.get('description') }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="list-itemtype-track"><span ng-class="{'active': vm.item.get('is_fan')}" title="{{ 'PROJECT.LIKE_BUTTON.COUNTER_TITLE'|translate:{total:vm.item.get(&quot;total_fans&quot;)||0}:'messageformat' }}" class="list-itemtype-track-likers">
+      <tg-svg svg-icon="icon-like"></tg-svg><span>{{ ::vm.item.get('total_fans') }}</span></span><span ng-class="{'active': vm.item.get('is_watcher')}" title="{{ 'PROJECT.WATCH_BUTTON.COUNTER_TITLE'|translate:{total:vm.item.get(&quot;total_watchers&quot;)||0}:'messageformat' }}" class="list-itemtype-track-watchers">
+      <tg-svg svg-icon="icon-watch"></tg-svg><span>{{ ::vm.item.get('total_watchers') }}</span></span></div>
+</div>

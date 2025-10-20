@@ -1,0 +1,14 @@
+
+<div ng-if="vm.highlighted.size" class="most-active">
+  <div class="header">
+    <div class="title-wrapper">
+      <tg-svg svg-icon="icon-activity"></tg-svg>
+      <h1 class="title">{{ 'DISCOVER.MOST_ACTIVE' | translate }}</h1>
+    </div>
+    <tg-discover-home-order-by on-change="vm.orderBy(orderBy)" order-by="vm.currentOrderBy"></tg-discover-home-order-by>
+  </div>
+  <tg-highlighted loading="vm.loading" highlighted="vm.highlighted" order-by="vm.order_by"></tg-highlighted>
+</div>
+<div ng-if="!vm.highlighted.size" class="empty-highlighted-project">
+  <tg-svg svg-icon="icon-activity"></tg-svg><span>{{ 'DISCOVER.MOST_ACTIVE_EMPTY' | translate }}</span>
+</div>

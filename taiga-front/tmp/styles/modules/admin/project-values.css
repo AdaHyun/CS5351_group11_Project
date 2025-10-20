@@ -1,0 +1,56 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.project-values-row {
+  align-items: center;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  justify-content: center;
+  padding: 1rem; }
+  .project-values-row div {
+    margin-left: 1rem;
+    position: relative; }
+  .project-values-row .icon {
+    cursor: pointer;
+    fill: #70728F;
+    opacity: 0; }
+    .project-values-row .icon:hover {
+      fill: #434456;
+      transition: all .2s ease-in; }
+
+.project-values-header {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  border-bottom: 3px solid #E2E3E9; }
+
+.project-values-body form:last-child .project-values-row {
+  border: 0; }
+
+.project-values-body .project-values-row:hover {
+  background: #fbfefe;
+  cursor: move;
+  transition: background .2s ease-in; }
+  .project-values-body .project-values-row:hover .icon {
+    opacity: 1;
+    transition: opacity .2s ease-in; }
+
+.project-values-name {
+  flex-basis: 0;
+  flex-grow: 3; }
+
+.project-values-value {
+  flex-basis: 0;
+  flex-grow: 1; }
+
+.project-values-isclosed,
+.project-values-settings {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: right; }
+
+.project-values-settings a {
+  display: inline-block;
+  margin-right: .5rem; }
+
+.project-values-settings svg.icon-trash {
+  fill: #E44057; }

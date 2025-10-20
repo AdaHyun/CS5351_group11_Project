@@ -1,0 +1,22 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+section.team-filters
+    div.team-filters-inner
+        header
+            h1(translate="BACKLOG.FILTERS.TITLE")
+
+        form.search-in
+            fieldset
+                input(type="text", placeholder="{{'TEAM.PLACEHOLDER_INPUT_SEARCH' | translate}}", ng-model="filtersQ")
+                .icon-search-wrapper
+                    tg-svg(
+                        svg-icon="icon-search",
+                        title="{{'COMMON.FILTERS.TITLE_ACTION_FILTER_BUTTON' | translate}}"
+                    )
+
+        nav(tg-team-filters)

@@ -1,0 +1,148 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.detail-ref {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #008AA8;
+  margin-right: .5rem; }
+
+.detail-nav {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 4; }
+  .detail-nav a {
+    display: inline-block; }
+  .detail-nav svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor; }
+
+.detail-header {
+  flex: 1;
+  padding-inline-start: .5rem;
+  position: relative; }
+  .detail-header .detail-header-line {
+    font-size: .875rem;
+    display: flex;
+    margin: .5rem 0 0; }
+    .detail-header .detail-header-line a {
+      color: #008AA8;
+      padding: 0 .2rem; }
+    .detail-header .detail-header-line .item-ref {
+      margin-right: .25rem; }
+    .detail-header .detail-header-line p {
+      margin-bottom: 0; }
+  .detail-header .block-desc-container {
+    margin-bottom: .5rem; }
+  .detail-header .relate-to-epic {
+    flex-basis: 100%;
+    margin: 0 1rem .5rem 0; }
+    .detail-header .relate-to-epic .relate-to-epic-button {
+      align-content: flex-end;
+      color: #008AA8;
+      cursor: pointer;
+      display: flex; }
+      .detail-header .relate-to-epic .relate-to-epic-button .icon-epics {
+        fill: currentColor;
+        margin-right: .25rem; }
+      .detail-header .relate-to-epic .relate-to-epic-button .relate-to-epic-text {
+        font-size: .9375rem; }
+  .detail-header > .color-selector {
+    display: block;
+    margin-bottom: -2rem;
+    position: relative;
+    top: -2.6rem; }
+  .detail-header [item='epic'] .detail-project {
+    padding: .5rem 3rem 0 0; }
+  .detail-header .detail-project .section-name {
+    color: #4C566A;
+    text-transform: uppercase; }
+
+.detail-title-wrapper {
+  display: flex;
+  margin: 0 2rem .5rem 0;
+  transition: all .2s linear; }
+  .detail-title-wrapper .detail-title-text {
+    font-size: 1.7rem;
+    align-items: baseline;
+    color: #2E3440;
+    display: flex;
+    line-height: 2rem;
+    margin: 0; }
+    .detail-title-wrapper .detail-title-text:hover .detail-edit {
+      opacity: 1; }
+  .detail-title-wrapper .detail-subject {
+    color: #2E3440;
+    flex-grow: 1;
+    word-break: break-word; }
+  .detail-title-wrapper .edit-title-input {
+    font-size: 1.2rem; }
+  .detail-title-wrapper .detail-edit {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-inline-start: .5rem;
+    opacity: 0;
+    transition: opacity .2s; }
+    .detail-title-wrapper .detail-edit svg {
+      width: 1.2rem;
+      height: 1.2rem; }
+  .detail-title-wrapper .due-date-icon {
+    margin-inline-start: .5rem; }
+    .detail-title-wrapper .due-date-icon svg {
+      width: 1.2rem;
+      height: 1.2rem; }
+
+.edit-title-wrapper {
+  font-size: 1.4rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  display: flex;
+  flex: 1;
+  margin-right: 1.5rem; }
+  .edit-title-wrapper .edit-title-input {
+    background: #fff;
+    flex: 1; }
+  .edit-title-wrapper .edit-title-button {
+    background: none;
+    display: inline;
+    transition: fill .2s; }
+    .edit-title-wrapper .edit-title-button:hover {
+      fill: #25A28C; }
+  .edit-title-wrapper .save-title-button {
+    margin-left: .5rem; }
+
+.detail-project {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  color: #2E3440;
+  display: flex;
+  margin: 0 0 1rem;
+  text-transform: uppercase; }
+  .detail-project .section-name {
+    color: #70728F; }
+
+.block-desc-container {
+  background: #E44057;
+  padding: .5rem .75rem; }
+  .block-desc-container .blocked-sign {
+    align-items: flex-start;
+    display: flex; }
+    .block-desc-container .blocked-sign tg-svg {
+      fill: #FFFFFF; }
+  .block-desc-container .block-description p {
+    color: #FFFFFF;
+    line-height: 1rem;
+    opacity: .8; }
+  .block-desc-container .block-description-title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: .875rem;
+    color: #FFFFFF;
+    height: 1rem;
+    line-height: 1rem;
+    margin-top: .05rem;
+    padding: 0 .5rem; }

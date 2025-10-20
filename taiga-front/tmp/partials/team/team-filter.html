@@ -1,0 +1,7 @@
+
+<ul>
+  <li ng-class="{active: !filtersRole.id}"><a ng-click="ctrl.setRole()" href=""><span translate="TEAM.SECTION_FILTER_ALL" class="title"></span>
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg></a></li>
+  <li ng-repeat="role in roles" ng-class="{active: role.id == filtersRole.id}"><a ng-click="ctrl.setRole(role)" href=""><span tg-bo-bind="role.name" class="title"></span>
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg></a></li>
+</ul>

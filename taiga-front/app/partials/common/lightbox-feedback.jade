@@ -1,0 +1,34 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close
+form
+    h2.title(translate="LIGHTBOX.FEEDBACK.TITLE")
+    label {{'LIGHTBOX.FEEDBACK.COMMENT' | translate}}
+    fieldset
+        textarea(
+            ng-model="feedback.comment",
+            data-required="true"
+        )
+    fieldset.actions
+        button.btn-big(
+            variant="destructive"
+            type="submit",
+            title="{{'LIGHTBOX.FEEDBACK.ACTION_SEND' | translate}}",
+            translate="LIGHTBOX.FEEDBACK.ACTION_SEND"
+        )
+    .can-also
+        h3 {{'LIGHTBOX.FEEDBACK.YOU_CAN_ALSO' | translate}}
+        .text
+            span {{'LIGHTBOX.FEEDBACK.VISIT' | translate}}
+            a(href="https://community.taiga.io/c/faq/21", target="_blank") {{'LIGHTBOX.FEEDBACK.FAQ' | translate}}
+        .text
+            span {{'LIGHTBOX.FEEDBACK.CREATE' | translate}}
+            a(href="https://tree.taiga.io/project/taiga/issues") {{'LIGHTBOX.FEEDBACK.PUBLIC' | translate}}
+        .text
+            span {{'LIGHTBOX.FEEDBACK.EMAIL' | translate}}
+            a(href="mailto:support@taiga.io") {{'LIGHTBOX.FEEDBACK.SUPPORT' | translate}}

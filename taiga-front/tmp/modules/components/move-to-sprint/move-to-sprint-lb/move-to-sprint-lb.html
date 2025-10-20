@@ -1,0 +1,39 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="move-to-sprint-container">
+  <div class="move-to-sprint-header">
+    <h2 class="title">{{ 'TASKBOARD.MOVE_TO_SPRINT.TITLE_ACTION_MOVE_UNFINISHED'|translate }}</h2>
+    <ul>
+      <li ng-if="vm.ussCount" class="choice"><span ng-bind-html="'TASKBOARD.MOVE_TO_SPRINT.UNFINISHED_USER_STORIES_COUNT'|translate:{ total: vm.ussCount || 0 }:'messageformat'"></span>
+        <div ng-if="vm.hasManyItemTypes" class="check js-check">
+          <input type="checkbox" ng-checked="vm.typesSelected['uss']" ng-model="vm.typesSelected['uss']" ng-change="vm.updateSelected('uss', vm.typesSelected['uss'])" ng-disabled="!vm.sprints.length"/>
+          <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+        </div>
+      </li>
+      <li ng-if="vm.tasksCount" class="choice"><span ng-bind-html="'TASKBOARD.MOVE_TO_SPRINT.UNFINISHED_STORYLESS_TASKS_COUNT'|translate:{ total: vm.tasksCount || 0 }:'messageformat'"></span>
+        <div ng-if="vm.hasManyItemTypes" class="check js-check">
+          <input type="checkbox" ng-checked="vm.typesSelected['tasks']" ng-model="vm.typesSelected['tasks']" ng-change="vm.updateSelected('tasks', vm.typesSelected['tasks'])" ng-disabled="!vm.sprints.length"/>
+          <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+        </div>
+      </li>
+      <li ng-if="vm.issuesCount" class="choice"><span ng-bind-html="'TASKBOARD.MOVE_TO_SPRINT.UNFINISHED_ISSUES_COUNT'|translate:{ total: vm.issuesCount || 0 }:'messageformat'"></span>
+        <div ng-if="vm.hasManyItemTypes" class="check js-check">
+          <input type="checkbox" ng-checked="vm.typesSelected['issues']" ng-model="vm.typesSelected['issues']" ng-change="vm.updateSelected('issues', vm.typesSelected['issues'])" ng-disabled="!vm.sprints.length"/>
+          <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="move-to-sprint-controls">
+    <p ng-if="!vm.sprints.length">{{ 'TASKBOARD.MOVE_TO_SPRINT.NO_OPEN_SPRINTS'|translate }}</p>
+    <div ng-if="vm.sprints.length &gt; 0">
+      <fieldset>
+        <label>{{ 'TASKBOARD.MOVE_TO_SPRINT.MOVE_TO_OPEN_SPRINT'|translate }}</label>
+        <select ng-model="vm.selectedSprintId" ng-options="s.id as s.name for s in vm.sprints" id="sprint-selector-dropdown" autofocus="autofocus" class="sprint-select">
+          <option value="" disabled="disabled" selected="selected" translate="TASKBOARD.MOVE_TO_SPRINT.SELECT_DESTINATION_PLACEHOLDER"></option>
+        </select>
+      </fieldset>
+      <button variant="primary" href="" ng-click="vm.submit()" translate="COMMON.SAVE" ng-disabled="!(vm.selectedSprintId &amp;&amp; vm.someSelected)" class="btn-small move-button"></button>
+    </div>
+  </div>
+</div>

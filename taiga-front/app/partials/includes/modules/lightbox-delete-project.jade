@@ -1,0 +1,24 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+tg-lightbox-close
+form
+    h2.title(translate="LIGHTBOX.DELETE_PROJECT.TITLE")
+    p
+        span.question(translate="LIGHTBOX.DELETE_PROJECT.QUESTION")
+        span.subtitle(translate="LIGHTBOX.DELETE_PROJECT.SUBTITLE")
+    .options
+        button.btn-link.btn-cancel.js-cancel(
+            variant="icon"
+        )
+            span(translate="COMMON.CANCEL")
+
+        button.btn-small.btn-confirm.js-confirm(
+            variant="destructive"
+        )
+            tg-svg(svg-icon="icon-trash")
+            span(translate="LIGHTBOX.DELETE_PROJECT.CONFIRM")

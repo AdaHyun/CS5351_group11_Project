@@ -1,0 +1,14 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.history-tabs .order-comments {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  display: flex;
+  margin-left: auto;
+  transition: none; }
+
+.history-tabs .icon-arrow-up,
+.history-tabs .icon-arrow-down {
+  width: 0.75rem;
+  height: 0.75rem; }

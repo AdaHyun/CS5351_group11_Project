@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<div ng-controller="ProjectValuesSectionController" ng-init="sectionName='ADMIN.PROJECT_VALUES_TAGS.TITLE'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="project-values" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="values-tags" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-values-status"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.STATUS" class="title"></span></a></li>
+          <li id="adminmenu-values-points"><a href="" tg-nav="project-admin-project-values-points:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.POINTS" class="title"></span></a></li>
+          <li id="adminmenu-values-priorities"><a href="" tg-nav="project-admin-project-values-priorities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.PRIORITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-severities"><a href="" tg-nav="project-admin-project-values-severities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.SEVERITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-types"><a href="" tg-nav="project-admin-project-values-types:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TYPES" class="title"></span></a></li>
+          <li id="adminmenu-values-custom-fields"><a href="" tg-nav="project-admin-project-values-custom-fields:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.CUSTOM_FIELDS" class="title"></span></a></li>
+          <li id="adminmenu-values-tags"><a href="" tg-nav="project-admin-project-values-tags:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TAGS" class="title"></span></a></li>
+          <li id="adminmenu-values-due-dates"><a href="" tg-nav="project-admin-project-values-due-dates:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.DUE_DATES" class="title"></span></a></li>
+          <li id="adminmenu-values-kanban-power-ups" ng-show="project.is_kanban_activated"><a href="" tg-nav="project-admin-project-values-kanban-power-ups:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.KANBAN_OPTIONS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section tg-project-tags ng-controller="ProjectTagsController as ctrl" class="main admin-common admin-attributes colors-table tags-table">
+    <header class="header-with-actions">
+      <div class="title">
+        <header>
+          <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+        </header>
+        <p translate="ADMIN.PROJECT_VALUES_TAGS.SUBTITLE" class="admin-subtitle"></p>
+      </div>
+      <div class="action-buttons">
+        <button variant="primary" title="{{ 'ADMIN.PROJECT_VALUES_TAGS.NEW_TAG'|translate }}" translate="ADMIN.PROJECT_VALUES_TAGS.NEW_TAG" class="btn-small show-add-new"></button>
+      </div>
+    </header>
+    <div class="admin-attributes-section">
+      <section>
+        <div ng-if="!projectTagsAll.length &amp;&amp; ctrl.loading" tg-loading="ctrl.loading" class="admin-tags-section-wrapper-empty"></div>
+        <div class="admin-tags-section-wrapper">
+          <form class="add-tag-container new-value hidden">
+            <tg-color-selector init-color="newValue.color" on-select-color="newValue.color = color" class="color-column"></tg-color-selector>
+            <div class="tag-name">
+              <input name="tag" type="text" placeholder="{{'ADMIN.TYPES.PLACEHOLDER_WRITE_NAME' | translate}}" tg-auto-select ng-model="newValue.tag" data-required="true" data-maxlength="255">
+            </div>
+            <div tg-loading="loadingCreate" class="options-column"><a href="" class="add-new e2e-save">
+                <tg-svg title="{{'COMMON.ADD' | translate}}" svg-icon="icon-check-empty"></tg-svg></a><a href="" class="delete-new">
+                <tg-svg title="{{'COMMON.CANCEL' | translate}}" svg-icon="icon-close"></tg-svg></a></div>
+          </form>
+          <div ng-if="!projectTagsAll.length &amp;&amp; !ctrl.loading" class="empty-large tags-empty"><img src="v-1758905376214/images/empty/empty_field.png" alt="{{'BACKLOG.EMPTY' | translate}}">
+            <p translate="ADMIN.PROJECT_VALUES_TAGS.EMPTY" class="title"></p>
+          </div>
+          <div ng-if="projectTagsAll.length" class="table-header table-tags-editor">
+            <div class="row header-tag-row">
+              <div translate="COMMON.FIELDS.COLOR" class="color-column"></div>
+              <div translate="COMMON.FIELDS.NAME" class="status-name"></div>
+              <div class="color-filter">
+                <input id="filter-tags-input" type="text" name="name" ng-model="tagsFilter.name" ng-model-options="{debounce: 200}" class="e2e-tags-filter">
+                <label for="filter-tags-input">
+                  <tg-svg svg-icon="icon-search"></tg-svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div ng-if="projectTagsAll.length" class="table-main table-admin-tags">
+            <div ng-show="!mixingTags.toTag">
+              <div ng-show="!projectTags.length" tg-loading="ctrl.loading" class="empty-large admin-attributes-section-wrapper-empty"><img src="v-1758905376214/images/empty/empty_moon.png" alt="{{'BACKLOG.EMPTY' | translate}}">
+                <p translate="ADMIN.PROJECT_VALUES_TAGS.EMPTY_SEARCH"></p>
+              </div>
+              <div ng-repeat="tag in projectTags" tg-bind-scope class="e2e-tag-row">
+                <form tg-bind-scope>
+                  <div ng-class="{{ ctrl.mixingClass(tag) }}" class="row tag-row table-main visualization">
+                    <div class="color-column">
+                      <div ng-style="{background: tag.color}" ng-if="tag.color" class="current-color"></div>
+                      <div ng-if="!tag.color" class="current-color empty-color"></div>
+                    </div>
+                    <div class="status-name"><span ng-bind-html="tag.name | emojify"></span></div>
+                    <div class="options-column"><a href="" class="mix-tags">
+                        <tg-svg title="{{'ADMIN.PROJECT_VALUES_TAGS.MIXING_MERGE' | translate}}" svg-icon="icon-merge"></tg-svg>
+                        <div class="popover merge-explanation"><span translate="ADMIN.PROJECT_VALUES_TAGS.MIXING_MERGE"></span></div></a><a href="" class="edit-value">
+                        <tg-svg svg-icon="icon-edit" title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}"></tg-svg></a><a href="" tg-loading="loadingDelete" class="delete-tag">
+                        <tg-svg svg-icon="icon-trash" title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}"></tg-svg></a></div>
+                  </div>
+                  <div class="row tag-row table-main edition hidden">
+                    <tg-color-selector ng-model="tag" init-color="tag.color" on-select-color="tag.color = color" class="color-column"></tg-color-selector>
+                    <div class="status-name">
+                      <input name="to_tag" type="text" placeholder="{{'ADMIN.TYPES.PLACEHOLDER_WRITE_NAME' | translate}}" ng-model="tag.name" data-required="true" data-maxlength="255">
+                    </div>
+                    <div tg-loading="loadingEdit" class="options-column"><a href="" class="save e2e-save">
+                        <tg-svg title="{{'COMMON.SAVE' | translate}}" svg-icon="icon-check-empty"></tg-svg></a><a href="" class="cancel">
+                        <tg-svg title="{{'COMMON.CANCEL' | translate}}" svg-icon="icon-close"></tg-svg></a></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div ng-show="mixingTags.toTag">
+              <div ng-repeat="tag in projectTags" tg-bind-scope>
+                <form tg-bind-scope>
+                  <div ng-class="ctrl.mixingClass(tag)" class="row mixing-row table-main visualization">
+                    <div class="color-column">
+                      <div ng-if="tag.color" ng-style="{background: tag.color}" class="current-color"></div>
+                      <div ng-if="!tag.color" class="current-color empty-color"></div>
+                    </div>
+                    <div class="status-name"><span ng-bind-html="tag.name | emojify"></span></div>
+                    <div ng-if="mixingTags.toTag === tag.name" tg-loading="loadingMixing" class="mixing-options-column">
+                      <div translate="ADMIN.PROJECT_VALUES_TAGS.MIXING_HELP_TEXT" class="mixing-help-text"></div>
+                      <button variant="primary" ng-if="mixingTags.fromTags.length" translate="ADMIN.PROJECT_VALUES_TAGS.MIXING_MERGE" class="mixing-confirm btn-small"></button>
+                      <button variant="secondary" translate="COMMON.CANCEL" class="mixing-cancel btn-small"></button>
+                    </div>
+                    <div ng-if="mixingTags.fromTags.indexOf(tag.name) !== -1" class="mixing-options-column">
+                      <tg-svg title="{{'ADMIN.PROJECT_VALUES_TAGS.SELECTED' | translate}}" svg-icon="icon-merge" class="mixing-selected"></tg-svg>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

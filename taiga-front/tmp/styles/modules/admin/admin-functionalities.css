@@ -1,0 +1,73 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-functionalities .module-container {
+  max-width: 900px;
+  width: 100%; }
+
+.admin-functionalities .module {
+  align-content: center;
+  align-items: flex-start;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  padding: 1rem 0; }
+  .admin-functionalities .module.active .module-icon .icon {
+    fill: #434456;
+    stroke: #434456; }
+  .admin-functionalities .module.active .module-name {
+    color: #434456; }
+
+.admin-functionalities .module-icon {
+  flex-basis: 3rem;
+  flex-shrink: 0;
+  margin: 0 .5rem 0 0; }
+  .admin-functionalities .module-icon .icon {
+    width: 3rem;
+    height: 3rem;
+    fill: #70728F;
+    stroke: #70728F; }
+
+.admin-functionalities .module-name {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #70728F;
+  flex-basis: 100px;
+  flex-shrink: 0;
+  margin: 0 .5rem; }
+
+.admin-functionalities .module-desc {
+  font-size: .875rem;
+  color: #70728F;
+  flex: 1;
+  margin: 0 2rem 0 0; }
+  .admin-functionalities .module-desc p {
+    margin: 0; }
+
+.admin-functionalities .module-desc-options,
+.admin-functionalities .videoconference-attributes {
+  align-items: flex-start;
+  display: flex;
+  margin-top: .5rem; }
+  .admin-functionalities .module-desc-options .options,
+  .admin-functionalities .videoconference-attributes .options {
+    align-items: center;
+    display: flex;
+    height: 1.875rem; }
+  .admin-functionalities .module-desc-options fieldset,
+  .admin-functionalities .module-desc-options .icon,
+  .admin-functionalities .videoconference-attributes fieldset,
+  .admin-functionalities .videoconference-attributes .icon {
+    margin: 0 .5rem; }
+  .admin-functionalities .module-desc-options .icon,
+  .admin-functionalities .videoconference-attributes .icon {
+    fill: #70728F; }
+    .admin-functionalities .module-desc-options .icon:hover,
+    .admin-functionalities .videoconference-attributes .icon:hover {
+      fill: #25A28C; }
+
+.admin-functionalities .module-scrum .options {
+  align-self: flex-end; }
+
+.admin-functionalities .module-videoconference .options {
+  align-self: flex-start; }

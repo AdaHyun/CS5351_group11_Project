@@ -1,0 +1,253 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:after, blockquote:before {
+  content: "";
+  content: none; }
+
+q:after, q:before {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+  *:focus {
+    outline: 1px dotted #008AA8; }
+
+html {
+  min-height: 100%;
+  width: 100%; }
+
+body {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+  min-height: 100%;
+  overflow-x: hidden;
+  width: 100%; }
+  body .master.ng-animate {
+    transition: 0; }
+  body.loading-project {
+    overflow: hidden; }
+
+.loader-active {
+  overflow: hidden; }
+
+.drag-active {
+  overflow-x: hidden; }
+
+.master {
+  height: 100%;
+  min-height: 100%;
+  position: relative; }
+
+.centered {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%; }
+
+tg-svg {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  min-height: calc(100vh - 48px); }
+
+.menu-secondary {
+  background: #F9F9FB;
+  flex: 0 0 auto;
+  min-height: calc(100vh - 48px);
+  min-width: 0;
+  padding: 0; }
+  .menu-secondary .search-in {
+    margin-top: .5rem; }
+  .menu-secondary .settings-nav {
+    background-color: #F1F1F4; }
+  .menu-secondary li {
+    background: #F9F9FB;
+    padding: 0; }
+    .menu-secondary li .active {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      background: #FFFFFF; }
+      .menu-secondary li .active a {
+        color: #008AA8; }
+      .menu-secondary li .active:hover {
+        background: #FFFFFF; }
+        .menu-secondary li .active:hover a {
+          font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+          color: #70728F; }
+
+.menu-tertiary {
+  width: 300px;
+  background-color: #D8DEE9;
+  border-right: 1px solid #bdbdcd;
+  flex: 0 0 auto;
+  min-height: calc(100vh - 48px); }
+  @media screen and (max-width: 1959px) {
+    .menu-tertiary {
+      width: 250px; } }
+  @media screen and (max-width: 1407px) {
+    .menu-tertiary {
+      width: 230px; } }
+  @media screen and (max-width: 1215px) {
+    .menu-tertiary {
+      width: 210px; } }
+  @media screen and (max-width: 1023px) {
+    .menu-tertiary {
+      width: 190px; } }
+  @media screen and (max-width: 768px) {
+    .menu-tertiary {
+      width: 170px; } }
+  .menu-tertiary ul li a {
+    color: #434456; }
+  .menu-tertiary ul li:hover,
+  .menu-tertiary ul li:hover a {
+    background: #E5E9F0;
+    color: #70728F; }
+  .menu-tertiary ul li.active {
+    background: #008AA8; }
+    .menu-tertiary ul li.active a {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      background: #E5E9F0;
+      color: #008AA8; }
+      .menu-tertiary ul li.active a:hover,
+      .menu-tertiary ul li.active a:hover a {
+        background: #E5E9F0;
+        color: #70728F; }
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem; }
+
+.header-with-actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem; }
+  .header-with-actions header {
+    width: 100%; }
+
+.hidden {
+  display: none !important;
+  /* stylelint-disable-line declaration-no-important */ }

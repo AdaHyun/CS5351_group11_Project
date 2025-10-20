@@ -1,0 +1,25 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="add-member-wrapper">
+  <h2 translate="LIGHTBOX.ADD_MEMBER.TITLE" class="title"></h2>
+  <form ng-submit="vm.submit()" class="add-member-form">
+    <div ng-repeat="member in vm.memberInvites" class="add-single-member">
+      <fieldset>
+        <input ng-if="$first" type="email" required="required" placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_TYPE_EMAIL' | translate}}" data-required="true" name="email-{{$index}}" data-type="email" ng-model="member.email"/>
+        <input ng-if="!$first" type="email" placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_TYPE_EMAIL' | translate}}" name="email-{{$index}}" data-type="email" ng-model="member.email"/>
+      </fieldset>
+      <fieldset>
+        <select ng-if="vm.project" name="role-{{$index}}" ng-model="member.role_id" ng-options="role.id as role.name for role in vm.project.roles"></select>
+      </fieldset>
+      <fieldset><a href="" ng-click="vm.addSingleMember()" ng-if="$last &amp;&amp; vm.canAddUsers" class="add-fieldset ng-animate-disabled">
+          <tg-svg svg-icon="icon-add"></tg-svg></a><a href="" ng-click="vm.removeSingleMember($index)" ng-if="!$last || ($last &amp;&amp; !vm.canAddUsers &amp;&amp; vm.membersLimit &gt; 1)" class="remove-fieldset ng-animate-disabled">
+          <tg-svg svg-icon="icon-trash"></tg-svg></a></fieldset>
+    </div>
+    <tg-lightbox-add-members-warning-message ng-if="vm.showWarningMessage" project="vm.project"></tg-lightbox-add-members-warning-message>
+    <fieldset class="invitation-text">
+      <textarea ng-attr-placeholder="{{'LIGHTBOX.CREATE_MEMBER.PLACEHOLDER_INVITATION_TEXT' | translate}}" maxlength="255" ng-model="vm.invitationText"></textarea>
+    </fieldset>
+    <button type="submit" title="{{'COMMON.CREATE' | translate}}" translate="COMMON.CREATE" tg-loading="vm.submitInvites" class="button-green button-large button-block"></button>
+  </form>
+  <p translate="LIGHTBOX.ADD_MEMBER.HELP_TEXT" class="help-text"></p>
+</div>

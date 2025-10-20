@@ -1,0 +1,41 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.blocked-project-detail {
+  align-items: center;
+  background: url("../images/discover.png") bottom center repeat-x;
+  display: flex;
+  height: calc(100vh - 40px);
+  justify-content: center;
+  min-height: calc(100vh - 40px);
+  min-width: 100vw;
+  width: 100vw; }
+
+.blocked-project-inner {
+  width: 330px; }
+
+.blocked-project-title {
+  align-items: center;
+  display: flex; }
+  .blocked-project-title .project-image {
+    flex-basis: 6rem;
+    margin-right: 1rem;
+    max-width: 6rem;
+    position: relative; }
+  .blocked-project-title img {
+    width: 100%; }
+  .blocked-project-title .icon-blocked-project {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: -.5rem;
+    top: -.5rem; }
+  .blocked-project-title .project-title {
+    font-size: 1.4rem; }
+
+.blocked-project-message {
+  margin-top: 4rem;
+  text-align: center; }
+  .blocked-project-message .project-block-title {
+    font-size: 1.7rem; }

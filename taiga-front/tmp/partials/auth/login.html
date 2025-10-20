@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div class="wrapper">
+  <div class="auth">
+    <div class="auth-container">
+      <div class="logo-svg"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 267.204 267.245" xmlns:svg="http://www.w3.org/2000/svg">
+    <path d="M228.256 39.167l-11.755 82.74-82.74 11.756 11.756-82.74z" fill="#a295ae" opacity=".8"/>
+    <path d="M39.19 228.134l11.755-82.74 82.74-11.756-11.755 82.74z" fill="#5d6f6d" opacity=".8"/>
+    <path d="M39.19 39.277l82.74 11.755 11.756 82.74-82.74-11.755z" fill="#8cd592" opacity=".8"/>
+    <path d="M228.16 228.144l-82.74-11.755-11.756-82.742 82.74 11.756z" fill="#665e74" opacity=".8"/>
+    <path d="M133.738 267.245l-50.194-66.82 50.194-66.817 50.194 66.818z" fill="#3c3647" opacity=".8"/>
+    <path d="M267.204 133.48l-66.82 50.195-66.817-50.194 66.818-50.193z" fill="#837193" opacity=".8"/>
+    <path d="M133.616 0l50.194 66.82-50.194 66.817L83.422 66.82z" fill="#a2f4ac" opacity=".8"/>
+    <path d="M0 133.706l66.82-50.194 66.817 50.194L66.82 183.9z" fill="#7ea685" opacity=".8"/>
+    <path d="M133.602 101.85l31.772 31.772-31.772 31.772-31.772-31.772z" fill="#3c3647"/>
+</svg>
+
+      </div>
+      <h1 class="logo">Taiga</h1>
+      <h2 translate="COMMON.TAG_LINE_2" class="tagline"></h2>
+      <div tg-login class="login-form-container">
+        <form ng-if="defaultLoginEnabled" class="login-form">
+          <fieldset>
+            <input type="text" autocorrect="off" autocapitalize="none" autofocus required name="username" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_NAME' | translate}}">
+          </fieldset>
+          <fieldset class="login-password">
+            <input type="password" name="password" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_PASSWORD' | translate}}" ng-focus="capslockIcon = !capslockIcon" ng-keyup="onKeyUp($event)"><a href="" tg-nav="forgot-password" title="{{'LOGIN_COMMON.TITLE_LINK_FORGOT_PASSWORD' | translate}}" translate="LOGIN_COMMON.LINK_FORGOT_PASSWORD" class="forgot-pass"></a>
+            <tg-capslock></tg-capslock>
+          </fieldset>
+          <fieldset class="end">
+            <button variant="primary" type="submit" title="{{'LOGIN_COMMON.ACTION_SIGN_IN' | translate}}" translate="LOGIN_COMMON.ACTION_SIGN_IN" class="btn-small full"></button>
+          </fieldset>
+        </form>
+        <div ng-if="authPlugins.length" class="contrib-plugins-wrapper">
+          <label translate="LOGIN_COMMON.ALT_LOGIN" ng-if="defaultLoginEnabled"></label>
+          <fieldset ng-repeat="plugin in authPlugins" ng-include="plugin.template"></fieldset>
+        </div>
+        <tg-public-register-message></tg-public-register-message>
+      </div>
+    </div>
+  </div>
+</div>

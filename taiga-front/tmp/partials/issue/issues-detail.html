@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div ng-controller="IssueDetailController as ctrl" ng-init="section='issues'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <div class="main detail">
+    <div ng-class="{blocked: issue.is_blocked}" class="detail-header-container">
+      <tg-detail-nav item="issue"></tg-detail-nav>
+      <div class="detail-header">
+        <tg-detail-header item="issue" section-name="sectionName" project="project" required-perm="modify_issue" ng-if="project &amp;&amp; issue" format="text"></tg-detail-header>
+        <div ng-if="vm.item.external_reference" class="detail-header-line issue-external-reference"><span translate="ISSUES.EXTERNAL_REFERENCE"></span><a target="_blank" ng-href="{{::vm.item.external_reference[1]}}" ng-title="{{'ISSUES.GO_TO_EXTERNAL_REFERENCE' | translate}}"><span>{{ ::vm.item.external_reference[1] }}</span></a></div>
+        <div ng-if="issue.generated_user_stories.length" tg-check-permission="view_us" class="detail-header-line item-generated-us"><span ng-bind="'COMMON.PROMOTED_'+issue._name.toUpperCase() | translate"></span><a ng-repeat="userstory in issue.generated_user_stories track by userstory.id" tg-nav="project-userstories-detail:project=project.slug,ref=userstory.ref" ng-bind-html="'#' + userstory.ref + ' '+ userstory.subject | emojify" class="primary"></a></div>
+        <div class="action-buttons"><a type="button" variant="secondary" tg-check-permission="view_milestones" tg-nav="project-taskboard:project=project.slug,sprint=sprint.slug" ng-if="sprint &amp;&amp; project.is_backlog_activated" title="{{'ISSUES.TITLE_LINK_TASKBOARD' | translate}}" translate="ISSUES.LINK_TASKBOARD" class="btn-small"></a></div>
+        <div class="subheader">
+          <tg-tag-line ng-if="issue &amp;&amp; project" project="project" item="issue" permissions="modify_issue" class="tags-block"></tg-tag-line>
+          <tg-created-by-display ng-model="issue" class="ticket-created-by"></tg-created-by-display>
+        </div>
+      </div>
+    </div>
+    <div ng-if="attachmentsReady" class="detail-content">
+      <section class="duty-content">
+        <tg-item-wysiwyg type="issue" model="issue" required-perm="modify_issue"></tg-item-wysiwyg>
+      </section>
+      <!-- Custom Fields-->
+      <tg-custom-attributes-values ng-model="issue" type="issue" project="project" required-edition-perm="modify_issue"></tg-custom-attributes-values>
+      <tg-attachments-full obj-id="issue.id" type="issue" project-id="projectId" edit-permission="modify_issue"></tg-attachments-full>
+      <tg-history-section ng-if="issue" type="issue" name="issue" id="issue.id" project="project"></tg-history-section>
+    </div>
+  </div>
+  <sidebar class="sidebar ticket-data">
+    <section class="ticket-header"><span tg-issue-status-display ng-model="issue" class="ticket-title"></span><span tg-issue-status-button ng-model="issue" class="detail-status"></span></section>
+    <section class="ticket-section ticket-data-container">
+      <div tg-issue-type-button ng-model="issue" class="ticket-status"></div>
+      <div tg-issue-severity-button ng-model="issue" class="ticket-status"></div>
+      <div tg-issue-priority-button ng-model="issue" class="ticket-status"></div>
+    </section>
+    <section tg-assigned-to ng-model="issue" required-perm="modify_issue" class="ticket-section"></section>
+    <section tg-watchers item="issue" active-users="activeUsers" on-watch="ctrl.onWatch" on-unwatch="ctrl.onUnwatch" required-perm="modify_issue" class="ticket-section ticket-watchers"></section>
+    <section class="ticket-section ticket-detail-settings">
+      <tg-due-date due-date="issue.due_date" format="button" is-closed="issue.is_closed" item="issue" obj-type="issue" tg-check-permission="modify_issue"></tg-due-date>
+      <tg-promote-to-us-button tg-check-permission="add_us" ng-model="issue"></tg-promote-to-us-button>
+      <tg-assign-sprint-to-issue-button tg-check-permission="view_milestones" ng-model="issue" ng-if="project.is_backlog_activated"></tg-assign-sprint-to-issue-button>
+      <tg-block-button tg-check-permission="modify_issue" ng-model="issue"></tg-block-button>
+      <tg-delete-button tg-check-permission="delete_issue" on-delete-title="{{'ISSUES.ACTION_DELETE' | translate}}" on-delete-go-to-url="onDeleteGoToUrl" ng-model="issue"></tg-delete-button>
+    </section>
+  </sidebar>
+  <div tg-lb-block ng-model="issue" title="ISSUES.LIGHTBOX_TITLE_BLOKING_ISSUE" class="lightbox lightbox-block"></div>
+</div>

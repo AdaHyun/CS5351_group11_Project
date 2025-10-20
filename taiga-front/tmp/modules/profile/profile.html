@@ -1,0 +1,31 @@
+
+<div ng-if="vm.user" class="profile centered">
+  <tg-profile-bar user="vm.user" isCurrentUser="vm.isCurrentUser"></tg-profile-bar>
+  <div class="main">
+    <tg-profile-tabs class="timeline-wrapper">
+      <div tg-profile-tab="{{'USER.PROFILE.TABS.ACTIVITY_TAB' | translate}}" tab-title="{{'USER.PROFILE.TABS.ACTIVITY_TAB_TITLE' | translate}}" tab-icon="icon-timeline" tab-active="tab-active">
+        <div tg-user-timeline="tg-user-timeline" user="vm.user" current-user="vm.isCurrentUser"></div>
+      </div>
+      <div tg-profile-tab="{{'USER.PROFILE.TABS.PROJECTS_TAB' | translate}}" tab-title="{{'USER.PROFILE.TABS.PROJECTS_TAB_TITLE' | translate}}" tab-icon="icon-project" tab-disabled="{{vm.isCurrentUser}}">
+        <div tg-profile-projects="tg-profile-projects" user="vm.user"></div>
+      </div>
+      <div tg-profile-tab="{{'USER.PROFILE.TABS.LIKES_TAB' | translate}}" tab-title="{{'USER.PROFILE.TABS.LIKES_TAB_TITLE' | translate}}" tab-icon="icon-like">
+        <div tg-profile-liked="tg-profile-liked" user="vm.user"></div>
+      </div>
+      <div tg-profile-tab="{{'USER.PROFILE.TABS.WATCHED_TAB' | translate}}" tab-title="{{'USER.PROFILE.TABS.WATCHED_TAB_TITLE' | translate}}" tab-icon="icon-watch">
+        <div tg-profile-watched="tg-profile-watched" user="vm.user"></div>
+      </div>
+      <div tg-profile-tab="{{'USER.PROFILE.TABS.CONTACTS_TAB' | translate}}" tab-title="{{'USER.PROFILE.TABS.CONTACTS_TAB_TITLE' | translate}}" tab-icon="icon-team">
+        <div tg-profile-contacts="tg-profile-contacts" user="vm.user"></div>
+      </div>
+    </tg-profile-tabs>
+    <aside class="profile-sidebar">
+      <div ng-if="::vm.isCurrentUser">
+        <h4 translate="USER.PROFILE_SIDEBAR.TITLE"></h4>
+        <p translate="USER.PROFILE_SIDEBAR.DESCRIPTION"></p>
+        <button tg-nav="user-settings-user-profile" class="btn-big edit-profile"><span translate="USER.PROFILE_SIDEBAR.ADD_INFO"></span></button>
+      </div>
+      <div tg-profile-hints="tg-profile-hints" class="profile-hints"></div>
+    </aside>
+  </div>
+</div>

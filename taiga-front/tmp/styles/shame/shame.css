@@ -1,0 +1,16 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+_:-ms-fullscreen .taskboard-row,
+:root .taskboard-table-body .taskboard-row {
+  min-height: auto; }
+
+svg {
+  pointer-events: none; }
+
+a[ng-click] svg {
+  pointer-events: auto; }
+
+tg-card .card-title span:last-child {
+  word-break: break-word; }

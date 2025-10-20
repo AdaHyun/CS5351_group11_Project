@@ -1,0 +1,37 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.wiki-summary {
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem; }
+  .wiki-summary.summary {
+    background: #F1F1F4;
+    color: #5A5B72; }
+  .wiki-summary div {
+    display: flex;
+    margin-right: 1.25rem; }
+  .wiki-summary .wiki-user-modification {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+  .wiki-summary .avatar {
+    margin-right: .5rem;
+    width: 2.25rem; }
+  .wiki-summary img {
+    height: 100%;
+    width: 100%; }
+  .wiki-summary .username {
+    font-size: 1.1rem;
+    white-space: nowrap; }
+  .wiki-summary .remove {
+    fill: #70728F;
+    margin-left: auto;
+    transition: fill .1s linear; }
+    .wiki-summary .remove:hover {
+      cursor: pointer;
+      fill: #ffa0a0; }
+    .wiki-summary .remove svg {
+      width: 1.5rem;
+      height: 1.5rem; }

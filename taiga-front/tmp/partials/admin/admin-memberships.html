@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<div ng-controller="MembershipsController as ctrl" ng-init="section='admin'; sectionName='ADMIN.MEMBERSHIPS.TITLE'" tg-memberships class="wrapper memberships">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="memberships" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-membership admin-common">
+    <div class="header-with-actions">
+      <header>
+        <header>
+          <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+        </header>
+        <div ng-if="canAddUsers == false" class="header-message">
+          <tg-no-more-memberships-explanation project="project" owner-email="projectOwnerEmail"></tg-no-more-memberships-explanation>
+        </div>
+      </header>
+      <div ng-if="canAddUsers == true" class="action-buttons">
+        <button variant="primary" translate="ADMIN.MEMBERSHIPS.ADD_BUTTON" title="{{ ADMIN.MEMBERSHIPS.ADD_BUTTON_TITLE | translate }}" ng-click="ctrl.addNewMembers()" class="btn-small"></button>
+      </div>
+    </div>
+    <section class="admin-membership-table basic-table">
+      <div class="row title">
+        <div translate="ADMIN.MEMBERSHIP.COLUMN_MEMBER" class="header-member"></div>
+        <div translate="ADMIN.MEMBERSHIP.COLUMN_ADMIN" class="header-admin"></div>
+        <div translate="ADMIN.MEMBERSHIP.COLUMN_ROLE" class="header-role"></div>
+        <div translate="ADMIN.MEMBERSHIP.COLUMN_STATUS" class="header-status"></div>
+      </div>
+      <div ng-repeat="member in memberships" class="row">
+        <div tg-memberships-row-avatar="member" class="row-member"></div>
+        <div tg-memberships-row-admin-checkbox="member" class="row-admin"></div>
+        <div tg-memberships-row-role-selector="member" class="row-role"></div>
+        <div tg-memberships-row-actions="member" class="row-status"></div>
+      </div>
+    </section>
+    <div class="paginator memberships-paginator"></div>
+  </section>
+</div>

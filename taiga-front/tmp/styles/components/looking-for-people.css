@@ -1,0 +1,9 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.look-for-people {
+  width: 1rem;
+  height: 1rem;
+  fill: #70728F;
+  margin-left: .25rem; }

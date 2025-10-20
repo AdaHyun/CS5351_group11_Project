@@ -1,0 +1,54 @@
+
+<section class="project-values-table">
+  <div class="project-values-title">
+    <h2>{{sectionName | translate}}</h2>
+    <button variant="primary" title="{{'ADMIN.PROJECT_VALUES_POINTS.ACTION_ADD' | translate}}" class="btn-small show-add-new"><span translate="ADMIN.PROJECT_VALUES_POINTS.ACTION_ADD"></span></button>
+  </div>
+  <div class="project-values-header">
+    <div class="project-values-row">
+      <div class="project-values-name"><span translate="COMMON.FIELDS.NAME"></span></div>
+      <div class="project-values-value"><span translate="COMMON.FIELDS.VALUE"></span></div>
+      <div class="project-values-settings"></div>
+    </div>
+  </div>
+  <div class="project-values-body">
+    <div class="sortable">
+      <div ng-repeat="value in values track by value.id" tg-bind-scope="tg-bind-scope">
+        <form tg-bind-scope="tg-bind-scope">
+          <div class="project-values-row row table-main visualization">
+            <tg-svg svg-icon="icon-draggable"></tg-svg>
+            <div class="project-values-name"><span>{{ value.name }}</span></div>
+            <div class="project-values-value"><span>{{ value.value }}</span></div>
+            <div class="project-values-settings"><a href="" class="edit-value">
+                <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}" svg-icon="icon-edit"></tg-svg></a><a href="" class="delete-value">
+                <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}" svg-icon="icon-trash"></tg-svg></a></div>
+          </div>
+          <div class="project-values-row row table-main edition hidden">
+            <div class="project-values-name">
+              <input name="name" type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}" ng-model="value.name"/>
+            </div>
+            <div class="project-values-value">
+              <input name="value" type="text" placeholder="{{'COMMON.FIELDS.VALUE' | translate}}" ng-model="value.value" data-type="number"/>
+            </div>
+            <div class="project-values-settings"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save e2e-save">
+                <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="cancel">
+                <tg-svg svg-icon="icon-close" class="cancel"></tg-svg></a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <form>
+      <div class="project-values-row new-value hidden">
+        <div class="project-values-name">
+          <input name="name" type="text" placeholder="{{'COMMON.FIELDS.NAME' | translate}}" ng-model="newValue.name" data-required="true"/>
+        </div>
+        <div class="project-values-value">
+          <input name="value" type="text" placeholder="{{'COMMON.FIELDS.VALUE' | translate}}" ng-model="newValue.value" data-type="number"/>
+        </div>
+        <div class="project-values-settings"><a href="" title="{{'COMMON.ADD' | translate}}" class="add-new e2e-save">
+            <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="delete-new">
+            <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.due-date-button {
+  background: #ECEFF4;
+  cursor: pointer; }
+  .due-date-button.date-set {
+    color: #FFFFFF; }
+  .due-date-button.closed, .due-date-button.text-button.closed:hover {
+    background: #ECEFF4; }
+  .due-date-button.due-set, .due-date-button.text-button.due-set:hover {
+    background: #008AA8; }
+  .due-date-button.due-soon, .due-date-button.text-button.due-soon:hover {
+    background: rgba(228, 64, 87, 0.25); }
+  .due-date-button.past-due, .due-date-button.text-button.past-due:hover {
+    background: rgba(228, 64, 87, 0.25); }
+  .due-date-button.editable {
+    cursor: pointer; }
+  .due-date-button.text-button {
+    color: #FFFFFF;
+    margin: 0;
+    padding: .5rem; }
+    .due-date-button.text-button.not-set:hover {
+      color: #FFFFFF; }
+    .due-date-button.text-button.not-set {
+      color: #ECEFF4; }
+
+.related-tasks .task-name .due-date-icon {
+  top: .1rem; }
+
+.issues-table .subject .due-date-icon {
+  top: .25rem; }
+
+.card-statistics .due-date-icon {
+  margin: .1rem 0 0; }
+  .card-statistics .due-date-icon svg {
+    height: .9rem;
+    width: .9rem; }
+
+.due-date-button-wrapper {
+  display: flex;
+  position: relative; }
+
+.date-picker-container {
+  overflow: visible; }
+
+.date-picker-popover {
+  background: #fff;
+  border: 1px solid #5A5B72;
+  left: 0;
+  overflow: visible;
+  position: absolute;
+  top: 2rem;
+  width: auto;
+  z-index: 2; }
+
+.date-picker-popover-footer {
+  padding: .2rem .5rem;
+  text-align: right; }
+  .date-picker-popover-footer svg {
+    fill: #5A5B72;
+    height: 1rem;
+    width: 1rem; }
+  .date-picker-popover-footer a:hover svg {
+    fill: #FF6363; }

@@ -1,0 +1,6 @@
+
+<div ng-if="vm.diff.new.length" ng-repeat="newCustom in vm.diff.new" class="diff-status-wrapper"><span translate="ACTIVITY.CREATED_CUSTOM_ATTRIBUTE" class="key"></span><span class="diff">({{newCustom.name}})</span><span ng-if="newCustom.type == 'richtext'">
+    <p tg-bo-html="newCustom.value_diff" class="diff"></p></span><span ng-if="newCustom.type != 'richtext'"><span class="diff">{{newCustom.value}}</span></span></div>
+<div ng-if="vm.diff.changed.length" ng-repeat="changeCustom in vm.diff.changed" class="diff-status-wrapper"><span translate="ACTIVITY.UPDATED_CUSTOM_ATTRIBUTE" class="key"></span><span class="diff">({{changeCustom.name}})</span><span ng-if="changeCustom.type == 'richtext'">
+    <p tg-bo-html="changeCustom.value_diff" class="diff"></p></span><span ng-if="changeCustom.type != 'richtext'"><span class="diff">{{changeCustom.changes.value[0]}}</span>
+    <tg-svg svg-icon="icon-arrow-right"></tg-svg><span class="diff">{{changeCustom.changes.value[1]}}</span></span></div>

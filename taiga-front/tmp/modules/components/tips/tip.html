@@ -1,0 +1,18 @@
+
+<div ng-if="tipLoaded" ng-class="tip.color" class="tip">
+  <p translate="TIPS.TIPS_TITLE" class="title"></p>
+  <p translate="{{ tip.message }}"></p>
+  <div ng-switch="tip.contentType">
+    <p ng-switch-when="icon">
+      <tg-svg svg-icon="{{ tip.icon }}"></tg-svg><span ng-if="tip.icon == 'icon-upvote'">5</span>
+    </p>
+    <tg-board-zoom ng-switch-when="range"></tg-board-zoom>
+    <p ng-switch-when="arrows" class="arrows">
+      <tg-svg svg-icon="icon-arrow-left"></tg-svg>
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg>
+    </p>
+  </div>
+</div>
+<div ng-if="!tipLoaded" class="tip">
+  <p translate="COMMON.LOADING"></p>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<div ng-controller="RolesController as ctrl" ng-init="section='admin'" tg-roles class="wrapper roles">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="roles" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar class="menu-tertiary sidebar">
+    <section ng-if="roles" class="admin-submenu admin-submenu-roles">
+      <nav>
+        <ul>
+          <li ng-repeat="item in roles" ng-class="{active: role.id == item.id}"><a href="" ng-click="ctrl.setRole(item)"><span class="single-role">{{ item.name }}</span></a></li>
+        </ul>
+        <div tg-new-role>
+          <button variant="primary" title="{{'ADMIN.SUBMENU_ROLES.TITLE_ACTION_NEW_ROLE' | translate}}" translate="ADMIN.SUBMENU_ROLES.ACTION_NEW_ROLE" class="btn-small btn-menu-full add-button"></button>
+          <input type="text" class="hidden new">
+        </div>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-roles admin-common">
+    <header class="header-with-actions">
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+      <div ng-if="!role.external_user" class="action-buttons">
+        <button variant="destructive" title="{{'COMMON.DELETE' | translate}}" ng-click="ctrl.delete()" class="btn-small"><span translate="COMMON.DELETE"></span></button>
+      </div>
+    </header>
+    <tg-edit-role ng-if="!role.external_user">
+      <div class="edit-role">
+        <input type="text" value="{{ role.name }}"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save">
+          <tg-svg svg-icon="icon-save"></tg-svg></a>
+      </div>
+      <p class="total"><span title="{{'ADMIN.ROLES.COUNT_MEMBERS' | translate}}" class="role-name">{{ role.name }}</span><a href="" class="edit-value">
+          <tg-svg svg-icon="icon-edit"></tg-svg></a></p>
+    </tg-edit-role>
+    <div ng-if="role.external_user">
+      <p class="total"><span class="role-name">{{ role.name }}</span></p>
+    </div>
+    <div ng-hide="anyComputableRole" translate="ADMIN.ROLES.WARNING_NO_ROLE" class="any-computable-role"></div>
+    <div ng-if="role.external_user" class="general-category external-user"><span translate="ADMIN.ROLES.NOTE_EXTERNAL_USERS"></span></div>
+    <div ng-if="!role.external_user" class="general-category"><span translate="ADMIN.ROLES.HELP_ROLE_ENABLED"></span>
+      <div class="check">
+        <input type="checkbox" ng-model="role.computable" ng-change="ctrl.toggleComputable()">
+        <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+      </div>
+    </div>
+    <div tg-role-permissions ng-model="role"></div>
+  </section>
+</div>

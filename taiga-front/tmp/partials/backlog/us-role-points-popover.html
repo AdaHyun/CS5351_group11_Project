@@ -1,0 +1,5 @@
+
+<ul class="popover pop-role">
+  <li><a href="" title="{{'COMMON.ROLES.ALL' | translate}}" translate="COMMON.ROLES.ALL" class="clear-selection active-popover"></a></li><% _.each(roles, function(role) { %>
+  <li><a href="" title="<%- role.name %>" data-role-id="<%- role.id %>" class="role"><span class="item-text"><%- role.name %></span></a></li><% }); %>
+</ul>

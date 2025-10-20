@@ -1,0 +1,22 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="form lb-select-user-form">
+  <h2 class="title">{{ lbTitle }}</h2>
+  <fieldset>
+    <input type="text" data-maxlength="500" placeholder="{{'LIGHTBOX.SELECT_USER.SEARCH' | translate}}" ng-model="searchText"/>
+  </fieldset>
+  <div class="lb-user-list lb-select-user-list">
+    <div ng-repeat="item in collection track by $index">
+      <div ng-class="{'is-active': selected.indexOf(item) &gt; -1}" ng-if="item.type != 'role' || item.userIds.length" ng-click="addItem(item)" class="user-list-item">
+        <div class="user-list-avatar"><img style="background: {{ item.avatar.bg }}" ng-src="{{ item.avatar.url }}" ng-if="item.type == 'user'"/><img src="v-1758905376214/images/avatar-role.png" ng-if="item.type == 'role'"/></div>
+        <div ng-if="item.type == 'user'" class="user-list-name">{{ item.name }}</div>
+        <div ng-if="item.type == 'role'" class="user-list-name"><span class="role">{{ item.name }}</span><span class="users">{{ item.userNames }}</span></div>
+        <tg-svg svg-icon="icon-close" ng-if="selected.indexOf(item) &gt; -1" title="{{'LIGHTBOX.SELECT_USER.REMOVE' | translate}}" ng-click="removeItem(item, $event)" class="remove-selected"></tg-svg>
+      </div>
+    </div>
+  </div>
+  <div ng-if="!searchText" class="lb-select-user-actions">
+    <button type="button" variant="primary" tg-loading="loading" class="btn-small lb-select-user-confirm">{{'COMMON.ADD' | translate}}</button>
+  </div>
+  <div ng-if="searchText" class="lb-select-user-actions"><a href="" ng-click="clearSearch()" class="lb-select-user-link-back">{{'COMMON.BACK' | translate}}</a></div>
+</div>

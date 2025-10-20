@@ -1,0 +1,23 @@
+
+<div ng-class="{'hidden': !issues.length}" tg-bind-scope="tg-bind-scope" class="search-result-table-container">
+  <div class="search-result-table-header">
+    <div class="row title">
+      <div translate="SEARCH.FILTER_ISSUES" class="user-stories"></div>
+      <div translate="COMMON.FIELDS.STATUS" class="status"></div>
+      <div translate="COMMON.FIELDS.ASSIGNED_TO" class="assigned-to"></div>
+    </div>
+  </div>
+  <div class="search-result-table-body">
+    <div ng-repeat="issue in issues track by issue.id" class="row table-main">
+      <div class="user-stories">
+        <div class="user-story-name"><a href="" tg-nav="project-issues-detail:project=project.slug,ref=issue.ref"><span tg-bo-ref="issue.ref" class="ref"></span><span ng-bind-html="issue.subject | emojify"></span></a></div>
+      </div>
+      <div tg-listitem-issue-status="issue" class="status"></div>
+      <div tg-listitem-assignedto="issue" class="assigned-to"></div>
+    </div>
+  </div>
+</div>
+<div ng-class="{'hidden': issues.length}" class="empty-large"><img src="v-1758905376214/images/empty/empty_tex.png" alt="{{ 'SEARCH.EMPTY_TITLE' | translate }}"/>
+  <p class="title">{{ 'SEARCH.EMPTY_TITLE' | translate }}</p>
+  <p>{{ 'SEARCH.EMPTY_DESCRIPTION' | translate }}</p>
+</div>

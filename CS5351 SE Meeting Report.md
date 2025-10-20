@@ -276,5 +276,9 @@ UI设计
 
   CICD可视化
 
-论文撰写
+- CICD流程
+
+![61e5c8f1202f7da48e4856a3b27883ed](./images/61e5c8f1202f7da48e4856a3b27883ed.jpg)
+
+- 论文撰写
 

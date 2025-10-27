@@ -9,7 +9,7 @@
   <div ng-if="vm.options.project" class="project"></div>
   <div ng-if="vm.options.sprint" class="sprint"></div>
   <div ng-if="vm.options.assigned &amp;&amp; vm.epic.get('assigned_to')" class="assigned e2e-assigned-to"><img tg-avatar="vm.epic.get('assigned_to_extra_info')"/></div>
-  <div ng-if="vm.options.assigned &amp;&amp; !vm.epic.get('assigned_to')" class="assigned"><img src="v-1758905376214/images/unnamed.png" alt="{{EPICS.DASHBOARD.UNASSIGNED | translate}}"/></div>
+  <div ng-if="vm.options.assigned &amp;&amp; !vm.epic.get('assigned_to')" class="assigned"><img src="v-1761561684208/images/unnamed.png" alt="{{EPICS.DASHBOARD.UNASSIGNED | translate}}"/></div>
   <div ng-if="vm.options.status &amp;&amp; !vm.canEditEpics()" class="status-holder"><span>{{vm.epic.getIn(['status_extra_info', 'name'])}}</span></div>
   <div ng-if="vm.options.status &amp;&amp; vm.canEditEpics()" ng-mouseleave="vm.displayStatusList = false" tg-isolate-click="tg-isolate-click" class="status-holder">
     <button ng-click="vm.displayStatusList = true" ng-style="{'color': vm.epic.getIn(['status_extra_info', 'color'])}" tg-loading="vm.loadingStatus"><span class="e2e-epic-status">{{vm.epic.getIn(['status_extra_info', 'name'])}}</span>

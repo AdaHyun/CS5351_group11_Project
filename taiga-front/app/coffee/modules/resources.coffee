@@ -237,10 +237,6 @@ urls = {
     "importers-asana-list-projects": "/importers/asana/list_projects"
     "importers-asana-list-users": "/importers/asana/list_users"
     "importers-asana-import-project": "/importers/asana/import_project"
-
-    # GitHub Actions helper
-    , "gha-preview": "/gha/preview"
-    , "gha-github-runs": "/gha/github_runs"
 }
 
 # Initialize api urls service

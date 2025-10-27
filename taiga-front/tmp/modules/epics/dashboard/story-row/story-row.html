@@ -8,7 +8,7 @@
   <div ng-if="vm.options.project" tg-nav="project:project=vm.story.getIn(['project_extra_info', 'slug'])" class="project"><img tg-project-logo-small-src="::vm.story.get('project_extra_info')" alt="{{::vm.story.getIn(['project_extra_info', 'name'])}}" title="{{::vm.story.getIn(['project_extra_info', 'name'])}}"/></div>
   <div ng-if="vm.options.sprint" class="sprint">{{::vm.story.get('milestone_name')}}</div>
   <div ng-if="vm.options.assigned &amp;&amp; vm.story.get('assigned_to')" class="assigned"><img tg-avatar="vm.story.get('assigned_to_extra_info')" alt="{{::vm.story.getIn(['assigned_to_extra_info', 'full_name_display'])}}"/></div>
-  <div ng-if="vm.options.assigned &amp;&amp; !vm.story.get('assigned_to')" class="assigned"><img src="v-1758905376214/images/unnamed.png" alt="{{EPICS.DASHBOARD.UNASSIGNED | translate}}"/></div>
+  <div ng-if="vm.options.assigned &amp;&amp; !vm.story.get('assigned_to')" class="assigned"><img src="v-1761561684208/images/unnamed.png" alt="{{EPICS.DASHBOARD.UNASSIGNED | translate}}"/></div>
   <div ng-if="vm.options.status" class="status-holder">{{vm.story.getIn(['status_extra_info', 'name'])}}</div>
   <div ng-if="vm.options.progress" class="progress">
     <div class="progress-bar"></div>

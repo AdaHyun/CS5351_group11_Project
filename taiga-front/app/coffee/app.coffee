@@ -104,18 +104,6 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
         }
     )
 
-    # GitHub Actions Inspector (CI/CD visualization)
-    $routeProvider.when("/gha",
-        {
-            access: { requiresLogin: true },
-            templateUrl: "gha/gha.html",
-            controller: "GHAController",
-            controllerAs: "vm",
-            title: "GHA.TITLE",
-            loader: true
-        }
-    )
-
     # My Projects
     $routeProvider.when("/projects/",
         {
@@ -1100,10 +1088,6 @@ modules = [
     "taigaWikiHistory",
     "taigaEpics",
     "taigaUtils"
-
-    ,
-    # CI/CD visualization module
-    "taigaGHA"
 
     # template cache
     "templates",

@@ -13,5 +13,5 @@
   "privacyPolicyUrl": null,
   "termsOfServiceUrl": null,
   "maxUploadFileSize": null,
-  "contribPlugins": []
+  "contribPlugins": ["plugins/github-auth/github-auth.json"]
 }

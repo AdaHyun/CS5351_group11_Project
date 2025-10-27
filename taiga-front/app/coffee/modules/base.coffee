@@ -118,9 +118,6 @@ urls = {
     "user-settings-contrib": "/user-settings/contrib/:plugin"
 
     "notifications": "/notifications"
-
-    # CI/CD visualization (GHA Inspector)
-    , "gha-inspector": "/gha"
 }
 
 init = ($log, $navurls) ->

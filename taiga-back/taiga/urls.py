@@ -21,6 +21,7 @@ urlpatterns = [
     path('api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api/cicd/', include('taiga.cicd.urls')),
+    path("api/workflows/", include("taiga.workflows.urls")),
 
 ]
 

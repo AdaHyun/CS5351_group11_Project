@@ -282,3 +282,60 @@ UI设计
 
 - 论文撰写
 
+## 第7次线下会议
+
+主题: 同步任务进度，讨论bug
+
+会议时间: 2025年10月29日 19:00 
+
+结束时间：2025.10.29 21:00
+
+### 会议内容
+
+后端完成网页关于Github的auth授权登陆，CICD工作流水设计
+
+前端无进度
+
+### 会议结论
+
+任务
+
+- 后端
+
+  修改GitHub账号登陆页面卡死无法回退到网页的Bug
+
+- 前端
+
+  编写CICD可视化页面
+
+  user story 模块Bug
+
+- 论文
+
+  先完成前三章
+
+  1. Intro()
+
+     ![image-20251029231107375](./images/image-20251029231107375.png)
+
+  2. Related work (刘轩铭)
+
+     ![image-20251029231120081](./images/image-20251029231120081.png)
+
+  3. Preliminaries
+
+     ![image-20251029231145133](./images/image-20251029231145133.png)
+
+     ![228defbbb568fdc952bcba015959855e](./images/228defbbb568fdc952bcba015959855e.png)
+
+     ![image-20251029231217453](./images/image-20251029231217453.png)
+
+     张博煜：
+
+     ![cad94efe67dcc1b7fc0138448892e1dc](./images/cad94efe67dcc1b7fc0138448892e1dc.png)
+
+     李泽宇：
+
+     ![53b5140c13d2b20aaec25feb97f7a3ab](./images/53b5140c13d2b20aaec25feb97f7a3ab.png)
+
+     

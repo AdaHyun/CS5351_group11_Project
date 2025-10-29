@@ -119,7 +119,7 @@
     animation: dropdownFade .2s reverse; }
   .epics-table-dropdown .fieldset {
     font-size: .875rem;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     color: #70728F;
     display: flex;
     justify-content: space-between;

@@ -12,7 +12,7 @@ tg-filter {
   padding: 1rem 0; }
 
 .custom-filters {
-  border-bottom: 1px solid #D8DEE9;
+  border-bottom: 1px solid #8F3D38;
   color: #2E3440;
   margin-bottom: .75rem;
   padding-bottom: .75rem; }
@@ -34,11 +34,11 @@ tg-filter {
     font-size: .875rem;
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     background: none;
-    color: #008AA8;
+    color: #4B70F6;
     padding: 0;
     text-transform: lowercase; }
     .custom-filters-header .add-custom-filter[disabled] {
-      color: rgba(0, 138, 168, 0.5); }
+      color: rgba(75, 112, 246, 0.5); }
 
 .custom-filters-add-form {
   display: block;
@@ -78,18 +78,18 @@ tg-filter {
     border: 0;
     border-left: 5px solid transparent; }
   .single-filter.single-filter-type-general:hover {
-    background: #FFFFFF; }
+    background: #EBE6D9; }
   .single-filter.single-filter-type-tag {
     background: #70728F;
     border-radius: 4px;
-    color: #FFFFFF;
+    color: #EBE6D9;
     opacity: 1; }
     .single-filter.single-filter-type-tag:hover {
       opacity: .7; }
   .single-filter.single-filter-type-user .name {
     padding-left: 0; }
   .single-filter .user-pic {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #EBE6D9;
     border-radius: 50%;
     height: 28px;
     /* default */
@@ -116,7 +116,7 @@ tg-filter {
     margin-top: .5rem; }
     .single-filter.single-filter-type-custom .name {
       background: none;
-      color: #008AA8;
+      color: #4B70F6;
       padding: .25rem; }
     .single-filter.single-filter-type-custom .remove-filter {
       background: none;
@@ -124,7 +124,7 @@ tg-filter {
       opacity: 0;
       padding: .25rem; }
       .single-filter.single-filter-type-custom .remove-filter svg {
-        fill: #008AA8;
+        fill: #4B70F6;
         height: 1rem;
         width: 1rem; }
     .single-filter.single-filter-type-custom.active, .single-filter.single-filter-type-custom:hover {
@@ -153,7 +153,7 @@ tg-filter {
     color: #E44057; }
 
 .filters-applied {
-  border-bottom: 1px solid #D8DEE9;
+  border-bottom: 1px solid #8F3D38;
   margin-bottom: .5rem;
   padding-bottom: .5rem; }
   .filters-applied .filters-title {
@@ -162,7 +162,7 @@ tg-filter {
   .filters-applied .single-applied-filter {
     font-size: .875rem;
     align-items: center;
-    background: #FFFFFF;
+    background: #EBE6D9;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     display: inline-flex;
@@ -216,14 +216,14 @@ tg-filter {
     display: inline-block; }
   .filters-advanced .radio-mark {
     align-items: center;
-    border: 2px solid #D8DEE9;
+    border: 2px solid #8F3D38;
     display: flex;
     height: 16px;
     justify-content: center;
     margin-right: .5rem;
     width: 16px; }
   .filters-advanced .radio-mark-inner {
-    background: #008AA8;
+    background: #4B70F6;
     height: 8px;
     opacity: 0;
     width: 8px; }
@@ -258,7 +258,7 @@ tg-filter {
     background-color: #ECEFF4;
     color: #2E3440; }
   .filters-cat-single .icon {
-    fill: #008AA8;
+    fill: #4B70F6;
     float: right;
     height: 1rem;
     width: 1rem; }

@@ -6,7 +6,7 @@
   font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.7rem;
-  color: #008AA8;
+  color: #4B70F6;
   margin-right: .5rem; }
 
 .detail-nav {
@@ -30,7 +30,7 @@
     display: flex;
     margin: .5rem 0 0; }
     .detail-header .detail-header-line a {
-      color: #008AA8;
+      color: #4B70F6;
       padding: 0 .2rem; }
     .detail-header .detail-header-line .item-ref {
       margin-right: .25rem; }
@@ -43,7 +43,7 @@
     margin: 0 1rem .5rem 0; }
     .detail-header .relate-to-epic .relate-to-epic-button {
       align-content: flex-end;
-      color: #008AA8;
+      color: #4B70F6;
       cursor: pointer;
       display: flex; }
       .detail-header .relate-to-epic .relate-to-epic-button .icon-epics {
@@ -112,7 +112,7 @@
     display: inline;
     transition: fill .2s; }
     .edit-title-wrapper .edit-title-button:hover {
-      fill: #25A28C; }
+      fill: #4B70F6; }
   .edit-title-wrapper .save-title-button {
     margin-left: .5rem; }
 
@@ -132,16 +132,16 @@
     align-items: flex-start;
     display: flex; }
     .block-desc-container .blocked-sign tg-svg {
-      fill: #FFFFFF; }
+      fill: #EBE6D9; }
   .block-desc-container .block-description p {
-    color: #FFFFFF;
+    color: #EBE6D9;
     line-height: 1rem;
     opacity: .8; }
   .block-desc-container .block-description-title {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: .875rem;
-    color: #FFFFFF;
+    color: #EBE6D9;
     height: 1rem;
     line-height: 1rem;
     margin-top: .05rem;

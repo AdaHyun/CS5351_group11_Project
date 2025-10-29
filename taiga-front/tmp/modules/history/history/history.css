@@ -4,7 +4,7 @@
 /* Do not use this except for the main layout */
 .activity {
   align-items: flex-start;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   display: flex;
   padding: 2rem 0; }
   .activity .activity-avatar {
@@ -14,7 +14,7 @@
   .activity .activity-data {
     margin-bottom: 1rem; }
   .activity .activity-creator {
-    color: #25A28C;
+    color: #4B70F6;
     margin-right: .5rem; }
   .activity .activity-date {
     color: #70728F; }

@@ -11,19 +11,19 @@
   font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
   font-weight: 500;
   align-content: flex-end;
-  color: #008AA8;
+  color: #4B70F6;
   cursor: pointer;
   display: flex;
   margin: .5rem 0 0 .25rem;
   transition: all .1s ease; }
   .add-tag-button:hover {
-    background: #D8DEE9; }
+    background: #8F3D38; }
   .add-tag-button .icon-add {
     fill: currentColor; }
   .add-tag-button .add-tag-text {
     font-size: .875rem;
     line-height: 1rem; }
   .add-tag-button tg-svg {
-    fill: #008AA8;
+    fill: #4B70F6;
     margin-left: .25rem;
     margin-right: 0; }

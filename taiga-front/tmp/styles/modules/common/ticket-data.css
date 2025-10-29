@@ -34,11 +34,11 @@
   .ticket-header .pop-status {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     left: 0;
     list-style-type: none;
@@ -69,10 +69,10 @@
     .ticket-header .pop-status.horizontal a {
       width: 100%; }
       .ticket-header .pop-status.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .ticket-header .pop-status.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -88,11 +88,11 @@
       margin: 0;
       padding: 0; }
     .ticket-header .pop-status a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .ticket-header .pop-status .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -106,7 +106,7 @@
     .ticket-header .pop-status .type,
     .ticket-header .pop-status .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -120,7 +120,7 @@
       .ticket-header .pop-status .role:hover {
         transition: all .25s ease; }
     .ticket-header .pop-status::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -189,11 +189,11 @@
   .ticket-status .type-data .popover {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     list-style-type: none;
     margin: 0;
@@ -224,10 +224,10 @@
     .ticket-status .type-data .popover.horizontal a {
       width: 100%; }
       .ticket-status .type-data .popover.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .ticket-status .type-data .popover.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -243,11 +243,11 @@
       margin: 0;
       padding: 0; }
     .ticket-status .type-data .popover a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .ticket-status .type-data .popover .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -261,7 +261,7 @@
     .ticket-status .type-data .popover .type,
     .ticket-status .type-data .popover .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -275,7 +275,7 @@
       .ticket-status .type-data .popover .role:hover {
         transition: all .25s ease; }
     .ticket-status .type-data .popover::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -320,11 +320,11 @@
   .ticket-status .severity-data .popover {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     list-style-type: none;
     margin: 0;
@@ -355,10 +355,10 @@
     .ticket-status .severity-data .popover.horizontal a {
       width: 100%; }
       .ticket-status .severity-data .popover.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .ticket-status .severity-data .popover.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -374,11 +374,11 @@
       margin: 0;
       padding: 0; }
     .ticket-status .severity-data .popover a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .ticket-status .severity-data .popover .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -392,7 +392,7 @@
     .ticket-status .severity-data .popover .type,
     .ticket-status .severity-data .popover .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -406,7 +406,7 @@
       .ticket-status .severity-data .popover .role:hover {
         transition: all .25s ease; }
     .ticket-status .severity-data .popover::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -451,11 +451,11 @@
   .ticket-status .priority-data .popover {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     list-style-type: none;
     margin: 0;
@@ -486,10 +486,10 @@
     .ticket-status .priority-data .popover.horizontal a {
       width: 100%; }
       .ticket-status .priority-data .popover.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .ticket-status .priority-data .popover.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -505,11 +505,11 @@
       margin: 0;
       padding: 0; }
     .ticket-status .priority-data .popover a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .ticket-status .priority-data .popover .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -523,7 +523,7 @@
     .ticket-status .priority-data .popover .type,
     .ticket-status .priority-data .popover .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -537,7 +537,7 @@
       .ticket-status .priority-data .popover .role:hover {
         transition: all .25s ease; }
     .ticket-status .priority-data .popover::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -619,14 +619,14 @@
       background: rgba(255, 255, 255, 0.4);
       cursor: pointer; }
       .ticket-user-list .user-list-single:hover:not(.read-only) .user-list-name {
-        color: #008AA8; }
+        color: #4B70F6; }
       .ticket-user-list .user-list-single:hover:not(.read-only) .remove-user {
         opacity: 1; }
     .ticket-user-list .user-list-single.read-only .user-list-name,
     .ticket-user-list .user-list-single .read-only {
       color: #5A5B72; }
     .ticket-user-list .user-list-single:not(.read-only) .user-list-name a {
-      color: #008AA8; }
+      color: #4B70F6; }
   .ticket-user-list .user-list-avatar {
     flex-basis: 3rem;
     margin-right: .25rem;
@@ -685,28 +685,28 @@
   justify-content: center; }
   .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed) {
     background: #ECEFF4;
-    color: #008AA8;
+    color: #4B70F6;
     margin-inline-end: .5rem;
     padding: .75rem; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed):hover {
-      background: #D8DEE9;
+      background: #8F3D38;
       color: #70728F; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed).editable {
       cursor: pointer; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed) + input {
       display: none; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed):disabled, .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed).disabled {
-      background-color: #D8DEE9;
+      background-color: #8F3D38;
       color: rgba(46, 52, 64, 0.5);
       cursor: not-allowed;
       opacity: .5;
       pointer-events: none; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed).active {
       background: #70728F;
-      color: #FFFFFF; }
+      color: #EBE6D9; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed).assign-issue-button.button-set {
       background: #70728F;
-      color: #FFFFFF; }
+      color: #EBE6D9; }
     .ticket-detail-settings [class^='btn-']:not(.select-option):not(.show-closed).item-unblock {
       background: #E44057; }
   .ticket-detail-settings [class^='btn-'].item-unblock {
@@ -717,4 +717,4 @@
       height: 1rem;
       width: 1rem; }
     .ticket-detail-settings [class^='btn-'].item-unblock svg {
-      fill: #FFFFFF; }
+      fill: #EBE6D9; }

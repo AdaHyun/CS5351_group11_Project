@@ -49,7 +49,7 @@
     .wiki-nav .wiki-link-container.wiki-all-links {
       border-top: 1px solid #70728F; }
   .wiki-nav input[type='text'] {
-    background: #E2E3E9;
+    background: #edcebf;
     color: #434456;
     margin: 1rem 1rem 1rem 2rem;
     width: 80%; }
@@ -85,7 +85,7 @@
   .menu-secondary .wiki-link:last-child {
     border-bottom: 0; }
   .menu-secondary .wiki-link:hover {
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .menu-secondary .wiki-link:hover a {
       font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
       color: #70728F; }
@@ -112,11 +112,11 @@
     cursor: move; }
   .menu-secondary .wiki-link.active {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .menu-secondary .wiki-link.active a {
-      color: #008AA8; }
+      color: #4B70F6; }
     .menu-secondary .wiki-link.active:hover {
-      background: #FFFFFF; }
+      background: #EBE6D9; }
       .menu-secondary .wiki-link.active:hover a {
         font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
         color: #70728F; }

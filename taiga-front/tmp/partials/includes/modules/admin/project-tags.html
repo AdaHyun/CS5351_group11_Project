@@ -11,7 +11,7 @@
           <tg-svg title="{{'COMMON.ADD' | translate}}" svg-icon="icon-check-empty"></tg-svg></a><a href="" class="delete-new">
           <tg-svg title="{{'COMMON.CANCEL' | translate}}" svg-icon="icon-close"></tg-svg></a></div>
     </form>
-    <div ng-if="!projectTagsAll.length &amp;&amp; !ctrl.loading" class="empty-large tags-empty"><img src="v-1761561684208/images/empty/empty_field.png" alt="{{'BACKLOG.EMPTY' | translate}}"/>
+    <div ng-if="!projectTagsAll.length &amp;&amp; !ctrl.loading" class="empty-large tags-empty"><img src="v-1761499053914/images/empty/empty_field.png" alt="{{'BACKLOG.EMPTY' | translate}}"/>
       <p translate="ADMIN.PROJECT_VALUES_TAGS.EMPTY" class="title"></p>
     </div>
     <div ng-if="projectTagsAll.length" class="table-header table-tags-editor">
@@ -28,7 +28,7 @@
     </div>
     <div ng-if="projectTagsAll.length" class="table-main table-admin-tags">
       <div ng-show="!mixingTags.toTag">
-        <div ng-show="!projectTags.length" tg-loading="ctrl.loading" class="empty-large admin-attributes-section-wrapper-empty"><img src="v-1761561684208/images/empty/empty_moon.png" alt="{{'BACKLOG.EMPTY' | translate}}"/>
+        <div ng-show="!projectTags.length" tg-loading="ctrl.loading" class="empty-large admin-attributes-section-wrapper-empty"><img src="v-1761499053914/images/empty/empty_moon.png" alt="{{'BACKLOG.EMPTY' | translate}}"/>
           <p translate="ADMIN.PROJECT_VALUES_TAGS.EMPTY_SEARCH"></p>
         </div>
         <div ng-repeat="tag in projectTags" tg-bind-scope="tg-bind-scope" class="e2e-tag-row">

@@ -30,13 +30,13 @@
         display: flex; }
       .taskboard .graphics-container .burndown-help-info tg-svg {
         cursor: pointer;
-        fill: #D8DEE9;
+        fill: #8F3D38;
         margin-right: .45rem; }
       .taskboard .graphics-container .burndown-help-info .tooltip {
         font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
         font-size: .875rem;
         background: #2E3440;
-        border: 1px solid #D8DEE9;
+        border: 1px solid #8F3D38;
         border-radius: 4px;
         box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
         color: #F9F9FB;
@@ -92,13 +92,13 @@
     width: 100%; }
 
 .taskboard-header {
-  background: #FFFFFF;
+  background: #EBE6D9;
   padding: 0 1rem 1rem 0; }
   .taskboard-header .button-filter {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: 0; }
     .taskboard-header .button-filter svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
 
 .taskboard-inner {
   display: flex;

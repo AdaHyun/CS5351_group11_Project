@@ -8,7 +8,7 @@ tg-swimlane-selector {
   tg-swimlane-selector .select {
     font-size: .875rem;
     background: #F9F9FB;
-    border: 2px solid #D8DEE9;
+    border: 2px solid #8F3D38;
     border-radius: 3px;
     color: #2E3440;
     cursor: pointer;
@@ -20,7 +20,7 @@ tg-swimlane-selector {
     padding-inline-start: 1rem;
     width: 100%; }
     tg-swimlane-selector .select tg-svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     tg-swimlane-selector .select .swimlane-select-text {
       overflow: hidden;
       text-align: left;
@@ -30,12 +30,12 @@ tg-swimlane-selector {
       tg-swimlane-selector .select .swimlane-select-text.unclassified {
         font-style: italic; }
     tg-swimlane-selector .select.active {
-      border-color: #008AA8; }
+      border-color: #4B70F6; }
   tg-swimlane-selector .options {
-    background-color: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background-color: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
-    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+    box-shadow: 4px 4px 8px rgba(143, 61, 56, 0.5);
     padding: .5rem;
     position: absolute;
     top: calc(1.5rem + 4px);
@@ -47,7 +47,7 @@ tg-swimlane-selector {
   tg-swimlane-selector .option {
     font-size: .875rem;
     background: transparent;
-    color: #008AA8;
+    color: #4B70F6;
     cursor: pointer;
     display: block;
     padding: .25rem;

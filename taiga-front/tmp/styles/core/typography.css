@@ -31,7 +31,7 @@ h1 {
   font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
-  color: #008AA8;
+  color: #4B70F6;
   margin-block-end: 1rem; }
   h1 .date {
     display: inline-block;
@@ -74,7 +74,7 @@ hr {
 
 a,
 a:visited {
-  color: #008AA8;
+  color: #4B70F6;
   text-decoration: none; }
   a:hover,
   a:visited:hover {
@@ -87,5 +87,5 @@ a.secondary:visited {
   text-decoration: none; }
   a.secondary:hover,
   a.secondary:visited:hover {
-    color: #008AA8;
+    color: #4B70F6;
     transition: color .3s linear; }

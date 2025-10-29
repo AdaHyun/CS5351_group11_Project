@@ -74,9 +74,9 @@
     .import-project-github-form-title-wrapper .icon {
       width: 1.75rem;
       height: 1.75rem;
-      fill: #008AA8;
+      fill: #4B70F6;
       margin-right: 1rem;
-      stroke: #25A28C;
+      stroke: #4B70F6;
       vertical-align: middle; }
   .import-project-github-form-title, .import-project-github-form-description {
     margin: 0;
@@ -151,10 +151,10 @@
     .import-project-github-form-privacity input {
       display: none; }
     .import-project-github-form-privacity input:checked + label {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
       .import-project-github-form-privacity input:checked + label .icon {
-        fill: #FFFFFF; }
+        fill: #EBE6D9; }
     .import-project-github-form-privacity label {
       min-height: 37px;
       padding: 0 .75rem; }
@@ -179,7 +179,7 @@
       margin-left: .5rem; }
   .import-project-github-form-selector a {
     align-items: center;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     color: #434456;
     cursor: pointer;
     display: flex;
@@ -188,10 +188,10 @@
     .import-project-github-form-selector a:hover {
       color: currentColor; }
   .import-project-github-form-selector li:hover {
-    background: rgba(0, 138, 168, 0.1);
+    background: rgba(75, 112, 246, 0.1);
     transition: background .3s ease-in; }
   .import-project-github-form-selector li:first-child {
-    border-top: 1px solid #E2E3E9; }
+    border-top: 1px solid #edcebf; }
   .import-project-github-form-selector-icon {
     align-self: flex-start;
     padding: 1.5rem 1rem; }
@@ -218,7 +218,7 @@
     right: 1.5rem;
     top: 1.5rem; }
     .import-project-github-form-selector-question:hover svg {
-      fill: #25A28C;
+      fill: #4B70F6;
       transition: fill .2s linear; }
     .import-project-github-form-selector-question svg {
       width: 1.2rem;
@@ -258,7 +258,7 @@
     .import-project-github-form-warning p {
       margin-bottom: 0; }
       .import-project-github-form-warning p a {
-        color: #008AA8;
+        color: #4B70F6;
         display: inline-block;
         margin-left: .25rem; }
   .import-project-github-form .spin {
@@ -288,14 +288,14 @@
     width: 1rem;
     z-index: 1; }
     .create-project-github-import-type input:checked + label .create-project-github-import-type-name {
-      color: #008AA8; }
+      color: #4B70F6; }
   .create-project-github-import-type label {
     background: #fff;
     height: 100%;
     padding: 1rem;
     transition: background .2s ease-in; }
     .create-project-github-import-type label:hover {
-      background: rgba(37, 162, 140, 0.1);
+      background: rgba(75, 112, 246, 0.1);
       cursor: pointer; }
   .create-project-github-import-type-name {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;

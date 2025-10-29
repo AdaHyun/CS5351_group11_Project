@@ -14,7 +14,7 @@
     height: 100%;
     width: 100%; }
   .kanban.swimlane .kanban-header {
-    background: #FFFFFF;
+    background: #EBE6D9;
     position: sticky;
     top: 0;
     z-index: 2; }
@@ -53,13 +53,13 @@
   width: 100%; }
 
 .kanban-header {
-  background: #FFFFFF;
+  background: #EBE6D9;
   padding: 0 1rem 1rem 0; }
   .kanban-header .button-filter {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: 0; }
     .kanban-header .button-filter svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
 
 .kanban-table-options-start {
   align-items: center;

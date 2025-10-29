@@ -48,7 +48,7 @@
   padding: 0 10px;
   position: relative; }
   .tags-table .color-filter:hover input {
-    border-bottom: 1px solid #E2E3E9; }
+    border-bottom: 1px solid #edcebf; }
   .tags-table .color-filter input {
     padding: 0; }
   .tags-table .color-filter label {
@@ -70,11 +70,11 @@
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
     background: #4C566A;
-    border: 1px solid #D8DEE9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     bottom: 2rem;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #FFFFFF;
+    color: #EBE6D9;
     display: none;
     list-style-type: none;
     margin: 0;
@@ -104,10 +104,10 @@
     .tags-table .mix-tags .popover.horizontal a {
       width: 100%; }
       .tags-table .mix-tags .popover.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .tags-table .mix-tags .popover.horizontal .point {
       align-items: center;
-      color: #FFFFFF;
+      color: #EBE6D9;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -123,11 +123,11 @@
       margin: 0;
       padding: 0; }
     .tags-table .mix-tags .popover a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .tags-table .mix-tags .popover .point {
       align-items: center;
-      color: #FFFFFF;
+      color: #EBE6D9;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -141,7 +141,7 @@
     .tags-table .mix-tags .popover .type,
     .tags-table .mix-tags .popover .role {
       align-items: center;
-      color: #FFFFFF;
+      color: #EBE6D9;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;

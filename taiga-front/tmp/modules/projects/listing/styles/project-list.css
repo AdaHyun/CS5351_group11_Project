@@ -14,7 +14,7 @@
     .project-list-wrapper .project-list-title h1 {
       font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
       font-size: 1.4rem;
-      color: #008AA8;
+      color: #4B70F6;
       margin: 0; }
   .project-list-wrapper .icon-private,
   .project-list-wrapper .icon-badge,
@@ -74,7 +74,7 @@
       transition: opacity .2s;
       width: 1.1rem; }
   .project-list-wrapper .gu-transit {
-    background-color: #ebebf0;
+    background-color: #f0d7cb;
     height: 5rem;
     opacity: 1; }
     .project-list-wrapper .gu-transit * {

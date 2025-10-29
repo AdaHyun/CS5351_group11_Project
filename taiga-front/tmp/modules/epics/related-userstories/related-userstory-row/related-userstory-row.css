@@ -5,7 +5,7 @@
 tg-related-userstory-row {
   font-size: .875rem;
   align-items: center;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   display: flex;
   padding: .5rem 0 .5rem .5rem; }
   tg-related-userstory-row.sortable {
@@ -21,7 +21,7 @@ tg-related-userstory-row {
       width: 0.75rem;
       height: 0.75rem;
       cursor: move;
-      fill: #E2E3E9;
+      fill: #edcebf;
       opacity: 0;
       transition: opacity .1s; }
   tg-related-userstory-row .status {
@@ -47,13 +47,13 @@ tg-related-userstory-row {
     tg-related-userstory-row .userstory-name a {
       cursor: pointer; }
   tg-related-userstory-row .closed {
-    border-left: 10px solid #E2E3E9;
-    color: #E2E3E9; }
+    border-left: 10px solid #edcebf;
+    color: #edcebf; }
     tg-related-userstory-row .closed a,
     tg-related-userstory-row .closed svg {
-      fill: #E2E3E9; }
+      fill: #edcebf; }
     tg-related-userstory-row .closed .userstory-name a {
-      color: #E2E3E9;
+      color: #edcebf;
       text-decoration: line-through; }
   tg-related-userstory-row .blocked {
     background: rgba(255, 160, 160, 0.2);
@@ -91,7 +91,7 @@ tg-related-userstory-row {
     margin: 0 .5rem 0 0; }
     tg-related-userstory-row .related-text .related-ref {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       margin-inline-end: 1ch; }
     tg-related-userstory-row .related-text .related-subject {
@@ -102,4 +102,4 @@ tg-related-userstory-row {
     tg-related-userstory-row .related-text:hover .related-ref {
       color: #2E3440; }
     tg-related-userstory-row .related-text:hover .related-subject {
-      color: #008AA8; }
+      color: #4B70F6; }

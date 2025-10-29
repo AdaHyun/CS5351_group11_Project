@@ -67,11 +67,11 @@
 .project-details .looking-for-people,
 .project-details .get-feedback {
   font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   padding: 1rem 0; }
 
 .project-details .looking-for-people {
-  border-top: 1px solid #E2E3E9;
+  border-top: 1px solid #edcebf;
   margin-bottom: 0; }
 
 .project-details .looking-for-people-selector,
@@ -151,7 +151,7 @@
     text-align: center;
     transition: all .2s linear; }
     .project-privacy-settings label:hover {
-      background: rgba(0, 138, 168, 0.4);
+      background: rgba(75, 112, 246, 0.4);
       color: #434456; }
       .project-privacy-settings label:hover svg {
         fill: #434456; }
@@ -167,12 +167,12 @@
     width: 100%; }
   .project-privacy-settings .privacy-project:checked + label {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
-    background: #008AA8;
-    color: #FFFFFF; }
+    background: #4B70F6;
+    color: #EBE6D9; }
     .project-privacy-settings .privacy-project:checked + label svg {
       width: 1.1rem;
       height: 1.1rem;
-      fill: #FFFFFF; }
+      fill: #EBE6D9; }
   .project-privacy-settings .privacy-project:checked ~ input[type='text'] {
     display: block; }
   .project-privacy-settings .privacy-project[disabled] + label {
@@ -207,19 +207,19 @@ tg-admin-project-restrictions .icon-alert {
 tg-admin-project-restrictions p {
   margin-bottom: 0; }
   tg-admin-project-restrictions p a {
-    color: #008AA8;
+    color: #4B70F6;
     display: inline-block; }
 
 .admin-project-profile-owner-actions {
   align-items: center;
-  border-top: 1px solid #E2E3E9;
+  border-top: 1px solid #edcebf;
   display: flex;
   justify-content: space-between;
   padding-top: 1rem; }
   .admin-project-profile-owner-actions a {
-    color: #008AA8; }
+    color: #4B70F6; }
     .admin-project-profile-owner-actions a:hover {
-      color: #008AA8;
+      color: #4B70F6;
       transition: color .2s; }
   .admin-project-profile-owner-actions img {
     width: 100%; }

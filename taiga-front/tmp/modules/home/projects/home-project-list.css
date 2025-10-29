@@ -3,8 +3,8 @@
 ***********************/
 /* Do not use this except for the main layout */
 .home-project {
-  background: #FFFFFF;
-  border: 1px solid #D8DEE9;
+  background: #EBE6D9;
+  border: 1px solid #8F3D38;
   margin: .5rem;
   cursor: pointer;
   margin-bottom: 1rem;
@@ -48,7 +48,7 @@
     display: flex;
     flex-grow: 0; }
     .home-project .project-card-header .icon-badge {
-      fill: #008AA8; }
+      fill: #4B70F6; }
   .home-project .project-card-logo {
     display: inline-block;
     flex-basis: 50px;
@@ -69,11 +69,11 @@
       color: #4C566A; }
   .home-project:hover {
     border: 1px solid rgba(92, 186, 169, 0.2);
-    box-shadow: 0 0 5px #E2E3E9; }
+    box-shadow: 0 0 5px #edcebf; }
   .home-project.blocked-project {
-    border: #E2E3E9; }
+    border: #edcebf; }
     .home-project.blocked-project:hover {
-      border: #E2E3E9;
+      border: #edcebf;
       box-shadow: none; }
     .home-project.blocked-project .tags-container,
     .home-project.blocked-project .project-card-logo,
@@ -85,7 +85,7 @@
 .projects-empty {
   text-align: center; }
   .projects-empty svg {
-    fill: #E2E3E9;
+    fill: #edcebf;
     height: 100px;
     margin: 1rem auto;
     text-align: center;

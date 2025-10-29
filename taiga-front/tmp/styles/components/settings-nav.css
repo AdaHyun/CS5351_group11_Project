@@ -23,11 +23,11 @@
       width: 170px; } }
   .settings-nav .active {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .settings-nav .active a {
-      color: #008AA8; }
+      color: #4B70F6; }
     .settings-nav .active:hover {
-      background: #FFFFFF; }
+      background: #EBE6D9; }
       .settings-nav .active:hover a {
         font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
         color: #70728F; }

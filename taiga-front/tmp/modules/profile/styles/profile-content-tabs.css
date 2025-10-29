@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .profile-content-tabs {
-  border-top: 1px solid #E2E3E9;
+  border-top: 1px solid #edcebf;
   display: flex;
   z-index: 2; }
   .profile-content-tabs .tab {
@@ -15,8 +15,8 @@
       transition: color .2s linear; }
     .profile-content-tabs .tab.active {
       background: #fff;
-      border-left: 1px solid #E2E3E9;
-      border-right: 1px solid #E2E3E9;
+      border-left: 1px solid #edcebf;
+      border-right: 1px solid #edcebf;
       position: relative;
       top: 1px;
       transition: color .2s linear; }

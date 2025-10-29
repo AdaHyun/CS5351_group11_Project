@@ -6,7 +6,7 @@
   background: url("../images/bg.png") no-repeat center center;
   background-size: cover;
   align-items: center;
-  background: #FFFFFF;
+  background: #EBE6D9;
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -19,7 +19,7 @@
   z-index: 2; }
   .auth .white-link,
   .auth .white-link:visited {
-    color: #FFFFFF; }
+    color: #EBE6D9; }
   .auth .checksley-error-list {
     color: #FF6363; }
     .auth .checksley-error-list li {
@@ -34,7 +34,7 @@
       height: 8rem;
       width: 8rem; }
   .auth .logo {
-    font-size: 2.1rem;
+    font-size: 3rem;
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     color: #2E3440;
     display: block;
@@ -67,18 +67,18 @@
       text-decoration: underline; }
       .auth .login-text a:hover,
       .auth .register-text a:hover {
-        color: #008AA8; }
+        color: #4B70F6; }
   .auth .register-terms {
     margin: .5rem 0 .75rem; }
     .auth .register-terms input[type='checkbox'],
     .auth .register-terms input[type='radio'] {
       margin-right: .5rem; }
   .auth .button {
-    color: #FFFFFF;
+    color: #EBE6D9;
     display: block;
     text-align: center; }
   .auth a:hover {
-    color: #008AA8; }
+    color: #4B70F6; }
   .auth .btn-small {
     margin: 0 0 0 auto; }
     .auth .btn-small.full {
@@ -89,7 +89,7 @@
   animation-iteration-count: infinite;
   animation-name: moustache;
   animation-timing-function: ease-in-out;
-  fill: rgba(37, 162, 140, 0.9);
+  fill: rgba(75, 112, 246, 0.9);
   stroke: #5CBAA9;
   stroke-width: 1px;
   transform-origin: 50% 50%;

@@ -3,23 +3,23 @@
 ***********************/
 /* Do not use this except for the main layout */
 .search-filter {
-  border-top: 1px solid #D8DEE9;
+  border-top: 1px solid #8F3D38;
   display: flex;
   margin-bottom: 0;
   z-index: 2; }
   .search-filter a {
-    background: #FFFFFF;
-    color: #D8DEE9;
+    background: #EBE6D9;
+    color: #8F3D38;
     display: flex;
     padding: 1rem 1.25rem; }
     .search-filter a.active {
-      border-left: 1px solid #D8DEE9;
-      border-right: 1px solid #D8DEE9;
+      border-left: 1px solid #8F3D38;
+      border-right: 1px solid #8F3D38;
       color: #4C566A;
       position: relative;
       top: 1px; }
       .search-filter a.active .icon {
-        fill: #008AA8; }
+        fill: #4B70F6; }
   .search-filter .icon {
     fill: currentColor;
     margin-right: .4rem; }

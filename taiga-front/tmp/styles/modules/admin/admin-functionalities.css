@@ -9,7 +9,7 @@
 .admin-functionalities .module {
   align-content: center;
   align-items: flex-start;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   display: flex;
   padding: 1rem 0; }
   .admin-functionalities .module.active .module-icon .icon {
@@ -64,7 +64,7 @@
     fill: #70728F; }
     .admin-functionalities .module-desc-options .icon:hover,
     .admin-functionalities .videoconference-attributes .icon:hover {
-      fill: #25A28C; }
+      fill: #4B70F6; }
 
 .admin-functionalities .module-scrum .options {
   align-self: flex-end; }

@@ -19,7 +19,7 @@
   color: #5A5B72; }
 
 .admin-webhooks .single-webhook-wrapper {
-  border-bottom: 1px solid #E2E3E9; }
+  border-bottom: 1px solid #edcebf; }
 
 .admin-webhooks .webhook-service,
 .admin-webhooks .webhook-url {
@@ -45,7 +45,7 @@
     display: inline-block;
     vertical-align: middle; }
   .admin-webhooks .webhook-url a {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: .5rem;
     white-space: nowrap; }
 
@@ -61,7 +61,7 @@
   .admin-webhooks .webhook-options svg {
     fill: #70728F; }
     .admin-webhooks .webhook-options svg:hover {
-      fill: #25A28C;
+      fill: #4B70F6;
       transition: fill .2s linear; }
 
 .admin-webhooks .webhook-options-wrapper {
@@ -81,7 +81,7 @@
   display: none; }
 
 .admin-webhooks .history-single-wrapper {
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   margin-left: 22%; }
 
 .admin-webhooks .history-single {
@@ -150,7 +150,7 @@
   font-family: 'courier new', 'monospace';
   align-content: center;
   align-items: center;
-  background: #E2E3E9;
+  background: #edcebf;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

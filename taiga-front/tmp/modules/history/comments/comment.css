@@ -34,7 +34,7 @@
   display: block; }
   .comment .comment-wrapper {
     align-items: flex-start;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     display: flex;
     padding: 2rem 0; }
     .comment .comment-wrapper:hover .comment-option {
@@ -57,21 +57,21 @@
     justify-content: flex-start;
     margin-bottom: 1rem; }
   .comment .comment-creator {
-    color: #008AA8;
+    color: #4B70F6;
     margin-right: .5rem; }
   .comment .comment-date {
     font-size: .875rem;
     color: #70728F; }
   .comment .comment-edited {
     font-size: .875rem;
-    background: #E2E3E9;
+    background: #edcebf;
     margin: 0 .5rem;
     padding: .25rem; }
     .comment .comment-edited .separator {
       margin: 0 .25rem; }
     .comment .comment-edited a {
-      color: #25A28C;
-      fill: #25A28C; }
+      color: #4B70F6;
+      fill: #4B70F6; }
     .comment .comment-edited svg {
       width: 0.75rem;
       height: 0.75rem;
@@ -101,7 +101,7 @@
       .comment .comment-options .icon-trash:hover {
         fill: #FF6363; }
   .comment .deleted-comment-wrapper {
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     padding: 1rem 0;
     width: 100%; }
   .comment .deleted-comment-main {
@@ -110,8 +110,8 @@
     display: flex;
     width: 100%; }
   .comment .toggle-deleted-comment {
-    color: #25A28C;
-    fill: #25A28C;
+    color: #4B70F6;
+    fill: #4B70F6;
     margin: 0 1rem;
     transition: none; }
     .comment .toggle-deleted-comment .icon-arrow-down,
@@ -123,8 +123,8 @@
     margin-left: auto;
     transition: all .2s; }
     .comment .restore-comment:hover {
-      color: #25A28C;
-      fill: #25A28C; }
+      color: #4B70F6;
+      fill: #4B70F6; }
     .comment .restore-comment .icon-reload {
       width: 0.8rem;
       height: 0.8rem;

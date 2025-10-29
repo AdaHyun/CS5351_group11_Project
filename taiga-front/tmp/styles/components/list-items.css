@@ -3,13 +3,13 @@
 ***********************/
 /* Do not use this except for the main layout */
 .list-itemtype-project {
-  border-bottom: 1px solid #D8DEE9;
+  border-bottom: 1px solid #8F3D38;
   display: flex;
   padding: .5rem;
   justify-content: space-between; }
   .list-itemtype-project .list-itemtype-track {
     font-size: .875rem;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     flex-shrink: 0;
     justify-content: flex-end; }
@@ -25,12 +25,12 @@
       margin-right: .25rem; }
     .list-itemtype-project .list-itemtype-track-likers.active,
     .list-itemtype-project .list-itemtype-track-watchers.active {
-      color: #008AA8; }
+      color: #4B70F6; }
       .list-itemtype-project .list-itemtype-track-likers.active .icon,
       .list-itemtype-project .list-itemtype-track-watchers.active .icon {
         fill: currentcolor; }
   .list-itemtype-project .icon {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .list-itemtype-project .list-itemtype-data-title {
     color: #4C566A;
     margin-block-start: .25rem;
@@ -92,13 +92,13 @@
     padding: .5rem; }
 
 .list-itemtype-ticket {
-  border-bottom: 1px solid #D8DEE9;
+  border-bottom: 1px solid #8F3D38;
   display: flex;
   padding: .5rem;
   position: relative; }
   .list-itemtype-ticket .list-itemtype-track {
     font-size: .875rem;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     flex-shrink: 0;
     justify-content: flex-end; }
@@ -114,12 +114,12 @@
       margin-right: .25rem; }
     .list-itemtype-ticket .list-itemtype-track-likers.active,
     .list-itemtype-ticket .list-itemtype-track-watchers.active {
-      color: #008AA8; }
+      color: #4B70F6; }
       .list-itemtype-ticket .list-itemtype-track-likers.active .icon,
       .list-itemtype-ticket .list-itemtype-track-watchers.active .icon {
         fill: currentcolor; }
   .list-itemtype-ticket .icon {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .list-itemtype-ticket .list-itemtype-data-title {
     color: #4C566A;
     margin-block-start: .25rem;
@@ -149,18 +149,18 @@
     flex: 1;
     margin-right: 1rem; }
   .list-itemtype-ticket .ticket-id {
-    color: #008AA8; }
+    color: #4B70F6; }
   .list-itemtype-ticket .ticket-blocked {
     color: #E44057;
     margin-right: .25rem; }
 
 .list-itemtype-user {
-  border-bottom: 1px solid #D8DEE9;
+  border-bottom: 1px solid #8F3D38;
   display: flex;
   padding: .5rem; }
   .list-itemtype-user .list-itemtype-track {
     font-size: .875rem;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     flex-shrink: 0;
     justify-content: flex-end; }
@@ -176,12 +176,12 @@
       margin-right: .25rem; }
     .list-itemtype-user .list-itemtype-track-likers.active,
     .list-itemtype-user .list-itemtype-track-watchers.active {
-      color: #008AA8; }
+      color: #4B70F6; }
       .list-itemtype-user .list-itemtype-track-likers.active .icon,
       .list-itemtype-user .list-itemtype-track-watchers.active .icon {
         fill: currentcolor; }
   .list-itemtype-user .icon {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .list-itemtype-user .list-itemtype-data-title {
     color: #4C566A;
     margin-block-start: .25rem;

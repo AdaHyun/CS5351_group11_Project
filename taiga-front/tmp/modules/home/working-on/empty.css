@@ -14,12 +14,12 @@
 .empty-ticket {
   display: flex; }
   .empty-ticket:not(:last-child) {
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     padding: 1rem 0; }
   .empty-ticket:last-child {
     padding: 1rem 0 0; }
   .empty-ticket .avatar {
-    background: #d4d5de;
+    background: #e7bfab;
     flex-basis: 48px;
     height: 48px;
     margin-right: 1rem;

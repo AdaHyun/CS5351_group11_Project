@@ -6,11 +6,11 @@
   background: #ECEFF4;
   cursor: pointer; }
   .due-date-button.date-set {
-    color: #FFFFFF; }
+    color: #EBE6D9; }
   .due-date-button.closed, .due-date-button.text-button.closed:hover {
     background: #ECEFF4; }
   .due-date-button.due-set, .due-date-button.text-button.due-set:hover {
-    background: #008AA8; }
+    background: #4B70F6; }
   .due-date-button.due-soon, .due-date-button.text-button.due-soon:hover {
     background: rgba(228, 64, 87, 0.25); }
   .due-date-button.past-due, .due-date-button.text-button.past-due:hover {
@@ -18,11 +18,11 @@
   .due-date-button.editable {
     cursor: pointer; }
   .due-date-button.text-button {
-    color: #FFFFFF;
+    color: #EBE6D9;
     margin: 0;
     padding: .5rem; }
     .due-date-button.text-button.not-set:hover {
-      color: #FFFFFF; }
+      color: #EBE6D9; }
     .due-date-button.text-button.not-set {
       color: #ECEFF4; }
 

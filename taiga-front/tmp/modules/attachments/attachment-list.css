@@ -4,7 +4,7 @@
 /* Do not use this except for the main layout */
 .attachment-simple.attachment-dragover .attachments-empty {
   background-color: #ECEFF4;
-  border-color: #008AA8;
+  border-color: #4B70F6;
   font-style: italic; }
 
 .attachment-simple .attachment-name {
@@ -20,7 +20,7 @@
 
 .attachment-full.attachment-dragover .attachments-empty {
   background-color: #ECEFF4;
-  border-color: #008AA8;
+  border-color: #4B70F6;
   font-style: italic; }
 
 .attachment-full .attachment-settings {
@@ -88,7 +88,7 @@
     pointer-events: none; }
   .attachment-list .attachment-settings .icon-edit:hover,
   .attachment-list .attachment-settings .icon-save:hover {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .attachment-list .attachment-settings .icon-trash:hover,
   .attachment-list .attachment-settings .icon-close:hover {
     fill: #E44057; }
@@ -107,7 +107,7 @@
       color: #70728F; }
 
 .attachment-list progress {
-  background: #D8DEE9;
+  background: #8F3D38;
   border: none;
   bottom: 0;
   height: 2px;
@@ -115,4 +115,4 @@
   position: absolute;
   width: 100%; }
   .attachment-list progress::-webkit-progress-bar, .attachment-list progress::-moz-progress-bar {
-    background: #008AA8; }
+    background: #4B70F6; }

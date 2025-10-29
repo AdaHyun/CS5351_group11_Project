@@ -11,7 +11,7 @@
   color: #434456; }
 
 .admin-roles .icon:hover {
-  fill: #25A28C;
+  fill: #4B70F6;
   transition: fill .2s linear; }
 
 .admin-roles .icon-edit {
@@ -27,7 +27,7 @@
   transition: fill .2s linear; }
 
 .admin-roles .edit-role {
-  background-color: #E2E3E9;
+  background-color: #edcebf;
   display: none;
   margin-bottom: 1rem;
   padding: .3rem 1rem; }

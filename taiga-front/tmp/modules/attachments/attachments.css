@@ -5,14 +5,14 @@
 .attachments {
   margin-bottom: 2rem; }
   .attachments .gu-transit {
-    background: #E2E3E9;
+    background: #edcebf;
     height: 40px; }
     .attachments .gu-transit * {
       display: none; }
   .attachments .gu-mirror {
     opacity: 1; }
     .attachments .gu-mirror form {
-      background: #fbfefe;
+      background: white;
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
       transition: background .2s ease-in; }
 
@@ -45,7 +45,7 @@
     .attachments-header .view-gallery:hover svg, .attachments-header .view-gallery.is-active svg,
     .attachments-header .view-list:hover svg,
     .attachments-header .view-list.is-active svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     .attachments-header .view-gallery svg,
     .attachments-header .view-list svg {
       width: 1.2rem;
@@ -75,7 +75,7 @@
 
 .single-attachment {
   font-size: .875rem;
-  background: #FFFFFF; }
+  background: #EBE6D9; }
   .single-attachment .attachment-name {
     display: flex;
     padding-right: 1rem; }
@@ -103,7 +103,7 @@
   .more-attachments span {
     color: #70728F; }
   .more-attachments .more-attachments-num {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: .5rem; }
 
 .attachment-preview .attachment-preview-container svg {

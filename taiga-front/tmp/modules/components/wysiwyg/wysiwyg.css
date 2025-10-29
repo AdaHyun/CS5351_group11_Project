@@ -80,7 +80,7 @@ tg-html-editor .ck-content i,
 
 tg-html-editor .ck-content h1,
 .wysiwyg h1 {
-  font-size: 2.1rem; }
+  font-size: 3rem; }
 
 tg-html-editor .ck-content h2,
 .wysiwyg h2 {
@@ -153,7 +153,7 @@ tg-html-editor .ck-content a,
 
 tg-html-editor .ck-content a[href],
 .wysiwyg a[href] {
-  color: #008AA8;
+  color: #4B70F6;
   font-weight: 600; }
 
 tg-html-editor .ck-content blockquote,
@@ -174,7 +174,7 @@ tg-html-editor .ck-content code,
 
 tg-html-editor .ck-content p > code,
 .wysiwyg p > code {
-  background-color: #D8DEE9;
+  background-color: #8F3D38;
   border-radius: 6px;
   padding: .2rem .4rem; }
 
@@ -189,7 +189,7 @@ tg-html-editor .ck-content img,
 tg-html-editor .ck-content .mention,
 .wysiwyg .mention {
   background: none;
-  color: #008AA8;
+  color: #4B70F6;
   cursor: pointer; }
 
 tg-html-editor .ck-content .ck-horizontal-line hr,
@@ -205,7 +205,7 @@ tg-html-editor .ck-content .table table,
 tg-html-editor .ck-content table,
 .wysiwyg .table table,
 .wysiwyg table {
-  border: 1px solid #D8DEE9; }
+  border: 1px solid #8F3D38; }
   tg-html-editor .ck-content .table table td,
   tg-html-editor .ck-content table td,
   .wysiwyg .table table td,
@@ -228,7 +228,7 @@ tg-html-editor .ck-content table,
   .wysiwyg .table table th,
   .wysiwyg table td,
   .wysiwyg table th {
-    border: 1px solid #D8DEE9;
+    border: 1px solid #8F3D38;
     min-width: 2em;
     padding: .4em; }
 
@@ -269,7 +269,7 @@ tg-html-editor .ck-content .image {
     background: inherit; }
 
 .ck-body-wrapper .ck.ck-link-actions .ck-button.ck-link-actions__preview .ck-button__label {
-  color: #008AA8;
+  color: #4B70F6;
   font-weight: 600; }
 
 tg-custom-field-edit-wysiwyg {

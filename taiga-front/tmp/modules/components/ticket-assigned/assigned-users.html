@@ -1,7 +1,7 @@
 
 <div class="ticket-section-label"><span>{{ 'COMMON.FIELDS.ASSIGNED'|translate }}</span><span ng-if="assignedUsers.length &gt; visibleAssignedUsersCount &amp;&amp; !displayHidden">&nbsp;({{ assignedUsers.length }})</span></div>
 <div class="ticket-user-list-container">
-  <div ng-show="loading" class="loading-container"><img src="v-1761561684208/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
+  <div ng-show="loading" class="loading-container"><img src="v-1761499053914/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
   <div ng-class="{ 'loading': loading }" class="ticket-user-list-content">
     <div class="ticket-user-list">
       <div ng-repeat="assignedUser in assignedUsers track by assignedUser.id">

@@ -1,7 +1,7 @@
 
 <div class="ticket-section-label"><span>{{ 'COMMON.WATCH_BUTTON.WATCHERS'|translate }}</span><span ng-if="vm.watchers.length &gt; visibleWatchersCount &amp;&amp; !displayHidden">&nbsp;({{ vm.watchers.length }})</span></div>
 <div class="ticket-user-list-container">
-  <div ng-show="vm.loading" class="loading-container"><img src="v-1761561684208/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
+  <div ng-show="vm.loading" class="loading-container"><img src="v-1761499053914/svg/spinner-circle.svg" alt="{{'COMMON.LOADING' | translate}}" class="loading-spinner"/></div>
   <div ng-class="{ 'loading': vm.loading }" class="ticket-user-list-content">
     <div class="ticket-user-list">
       <div ng-repeat="watcher in vm.watchers track by watcher.id">

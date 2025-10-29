@@ -4,13 +4,13 @@
 /* Do not use this except for the main layout */
 @keyframes new-task-status-blink-folded-column {
   0% {
-    background-color: #D8DEE9; }
+    background-color: #8F3D38; }
   100% {
     background-color: #F9F9FB; } }
 
 @keyframes new-task-status-blink {
   0% {
-    background-color: #D8DEE9; }
+    background-color: #8F3D38; }
   100% {
     background-color: #ECEFF4; } }
 
@@ -130,7 +130,7 @@ tg-card[type='task'].folded-dragging {
   .taskboard-table-header .btn-board {
     margin-right: .75rem; }
     .taskboard-table-header .btn-board:hover svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
 
 .taskbord-utility-wrapper {
   flex: 1;
@@ -254,7 +254,7 @@ tg-card[type='task'].folded-dragging {
   .taskboard-table-body .row-fold .taskboard-row-title-box a:hover.us-ref {
     color: #4C566A; }
   .taskboard-table-body .row-fold .taskboard-row-title-box a:hover.us-subject {
-    color: #008AA8; }
+    color: #4B70F6; }
   .taskboard-table-body .row-fold .taskboard-cards-box {
     display: grid;
     grid-auto-flow: column;
@@ -288,13 +288,13 @@ tg-card[type='task'].folded-dragging {
     color: #4C566A; }
   .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box a:hover .us-ref,
   .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box a:hover .us-subject {
-    color: #008AA8; }
+    color: #4B70F6; }
   .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box .folding-actions {
     background-color: transparent; }
     .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box .folding-actions:hover {
-      background: linear-gradient(0deg, rgba(228, 64, 87, 0.25), rgba(228, 64, 87, 0.25)), #D8DEE9; }
+      background: linear-gradient(0deg, rgba(228, 64, 87, 0.25), rgba(228, 64, 87, 0.25)), #8F3D38; }
   .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box .btn-board:hover {
-    background: linear-gradient(0deg, rgba(228, 64, 87, 0.25), rgba(228, 64, 87, 0.25)), #D8DEE9; }
+    background: linear-gradient(0deg, rgba(228, 64, 87, 0.25), rgba(228, 64, 87, 0.25)), #8F3D38; }
     .taskboard-table-body .taskboard-row.blocked .taskboard-row-title-box .btn-board:hover svg {
       fill: #2E3440; }
 
@@ -309,7 +309,7 @@ tg-card[type='task'].folded-dragging {
     .taskboard-row-title-box a:hover .us-ref {
       color: #2E3440; }
     .taskboard-row-title-box a:hover .us-subject {
-      color: #008AA8; }
+      color: #4B70F6; }
   .taskboard-row-title-box span {
     display: block; }
   .taskboard-row-title-box .taskboard-column {
@@ -318,7 +318,7 @@ tg-card[type='task'].folded-dragging {
     flex-flow: row wrap;
     flex-direction: column; }
   .taskboard-row-title-box .us-ref {
-    color: #008AA8;
+    color: #4B70F6;
     float: left;
     padding-right: .25rem; }
   .taskboard-row-title-box .us-subject {
@@ -388,7 +388,7 @@ tg-card[type='task'].folded-dragging {
     .taskboard-row-title-box .folding-actions:hover {
       background-color: #ECEFF4; }
       .taskboard-row-title-box .folding-actions:hover svg {
-        fill: #008AA8; }
+        fill: #4B70F6; }
   .taskboard-row-title-box .taskboard-us {
     padding: .5rem;
     position: relative;
@@ -396,14 +396,14 @@ tg-card[type='task'].folded-dragging {
   .taskboard-row-title-box .add-new-task svg {
     display: block; }
   .taskboard-row-title-box .add-new-task tg-svg {
-    color: #008AA8;
+    color: #4B70F6;
     position: absolute;
     right: .5rem;
     top: .6rem; }
     .taskboard-row-title-box .add-new-task tg-svg.add-action {
       right: 2rem; }
     .taskboard-row-title-box .add-new-task tg-svg:hover svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
 
 .issues-wrapper {
   max-width: 1400px;

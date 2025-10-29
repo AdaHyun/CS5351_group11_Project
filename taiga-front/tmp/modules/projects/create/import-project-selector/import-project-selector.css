@@ -14,7 +14,7 @@
     width: 4rem; }
   .import-project-selector .import-project-selector-filter {
     align-items: center;
-    background: #E2E3E9;
+    background: #edcebf;
     display: flex;
     padding: .5rem; }
     .import-project-selector .import-project-selector-filter input {
@@ -28,8 +28,8 @@
       fill: #5A5B72;
       margin: 0 1rem; }
   .import-project-selector .import-project-selector-title {
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     padding: 1rem; }
     .import-project-selector .import-project-selector-title:hover {
-      background: rgba(37, 162, 140, 0.1);
+      background: rgba(75, 112, 246, 0.1);
       cursor: pointer; }

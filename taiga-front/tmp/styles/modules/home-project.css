@@ -32,7 +32,7 @@
     width: 24px; }
 
 .single-project .project-name {
-  color: #008AA8;
+  color: #4B70F6;
   margin-bottom: 0; }
 
 .single-project .private {
@@ -47,7 +47,7 @@
 
 .single-project .track-container .list-itemtype-track {
   font-size: .875rem;
-  color: #008AA8;
+  color: #4B70F6;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-end; }
@@ -64,13 +64,13 @@
     margin-right: .25rem; }
   .single-project .track-container .list-itemtype-track-likers.active,
   .single-project .track-container .list-itemtype-track-watchers.active {
-    color: #008AA8; }
+    color: #4B70F6; }
     .single-project .track-container .list-itemtype-track-likers.active .icon,
     .single-project .track-container .list-itemtype-track-watchers.active .icon {
       fill: currentcolor; }
 
 .single-project .track-container .icon {
-  fill: #008AA8; }
+  fill: #4B70F6; }
 
 .single-project .description {
   font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
@@ -129,7 +129,7 @@
   margin-bottom: .5rem; }
 
 .single-project .looking-for-people a {
-  color: #008AA8;
+  color: #4B70F6;
   font-size: .8rem;
   font-weight: 600; }
 
@@ -160,7 +160,7 @@
     height: 1.2rem;
     background-color: #fff;
     bottom: 5%;
-    fill: #008AA8;
+    fill: #4B70F6;
     padding: .1rem;
     position: absolute;
     right: 5%; }

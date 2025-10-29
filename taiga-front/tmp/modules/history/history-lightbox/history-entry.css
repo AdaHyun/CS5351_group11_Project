@@ -6,7 +6,7 @@
   display: block; }
   .entry .entry-wrapper {
     align-items: flex-start;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     display: flex;
     padding: 2rem 0; }
   .entry .entry-avatar {
@@ -23,7 +23,7 @@
     display: flex;
     margin-bottom: .5rem; }
   .entry .entry-creator {
-    color: #25A28C;
+    color: #4B70F6;
     margin-right: .5rem; }
   .entry .entry-date {
     font-size: .875rem;
@@ -32,7 +32,7 @@
     width: 1.25rem;
     height: 1.25rem;
     cursor: pointer;
-    fill: #25A28C;
+    fill: #4B70F6;
     margin-left: auto;
     transform: rotate(0);
     transition: transform .2s; }

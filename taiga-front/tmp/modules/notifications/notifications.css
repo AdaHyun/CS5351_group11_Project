@@ -14,13 +14,13 @@
     margin: 0;
     padding: 1rem; }
   .notifications-page .title {
-    color: #008AA8;
+    color: #4B70F6;
     font-size: 1.4rem;
     line-height: 1.4rem;
     margin: 0;
     text-transform: uppercase; }
   .notifications-page .action {
-    color: #008AA8;
+    color: #4B70F6;
     line-height: .75em; }
     .notifications-page .action.disabled {
       color: #4C566A; }

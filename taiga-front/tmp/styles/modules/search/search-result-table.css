@@ -3,14 +3,14 @@
 ***********************/
 /* Do not use this except for the main layout */
 .search-result-table {
-  border-top: 1px solid #D8DEE9; }
+  border-top: 1px solid #8F3D38; }
   .search-result-table .row {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: .5rem; }
     .search-result-table .row .ref {
-      color: #008AA8;
+      color: #4B70F6;
       margin-right: .5rem; }
     .search-result-table .row .user-stories {
       overflow: hidden;
@@ -40,7 +40,7 @@
     white-space: nowrap; }
   .search-result-table .table-main {
     font-size: .875rem;
-    border-bottom: 1px solid #D8DEE9; }
+    border-bottom: 1px solid #8F3D38; }
   .search-result-table .status,
   .search-result-table .points,
   .search-result-table .sprint {

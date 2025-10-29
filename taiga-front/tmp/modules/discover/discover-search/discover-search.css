@@ -30,10 +30,10 @@
     transition: all .2s;
     transition-delay: .2s; }
     .discover-search .searchbox-filters label.active {
-      background: #008AA8;
+      background: #4B70F6;
       color: #fff; }
     .discover-search .searchbox-filters label:hover {
-      background: #E2E3E9;
+      background: #edcebf;
       color: #5A5B72; }
 
 .discover-results {
@@ -80,9 +80,9 @@
       fill: #70728F;
       stroke: #70728F; }
     .discover-results .statistic.active {
-      color: #008AA8; }
+      color: #4B70F6; }
       .discover-results .statistic.active svg {
-        fill: #008AA8; }
+        fill: #4B70F6; }
   .discover-results .more-results {
     display: block;
     margin: 0 20rem;

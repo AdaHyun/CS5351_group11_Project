@@ -15,9 +15,9 @@
     color: #70728F;
     margin: 0; }
   .card-placeholder:not(.not-found) .placeholder-board-card {
-    background: #FFFFFF;
+    background: #EBE6D9;
     border-radius: 4px;
-    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+    box-shadow: 4px 4px 8px rgba(143, 61, 56, 0.5);
     margin-bottom: 1rem;
     margin-top: .5rem;
     padding: 1rem; }
@@ -41,11 +41,11 @@
     flex-basis: 60%;
     height: 16px; }
     .card-placeholder:not(.not-found) .placeholder-board-text.small {
-      background: #D8DEE9;
+      background: #8F3D38;
       flex-basis: 24px;
       margin-right: 1rem; }
     .card-placeholder:not(.not-found) .placeholder-board-text.big {
-      background: #D8DEE9;
+      background: #8F3D38;
       flex: 1 1 auto; }
   .card-placeholder:not(.not-found) .placeholder-board-avatar {
     background: #ECEFF4;

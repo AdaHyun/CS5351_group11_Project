@@ -41,11 +41,11 @@
       fill: #5CBAA9;
       transition: fill .2s; }
     .summary .stats:hover svg {
-      fill: #25A28C; }
+      fill: #4B70F6; }
     .summary .stats.active .graph {
-      fill: #25A28C; }
+      fill: #4B70F6; }
     .summary .stats.active svg {
-      fill: #25A28C; }
+      fill: #4B70F6; }
     .summary .stats svg {
       fill: #8D8EA5;
       height: 100%;
@@ -75,7 +75,7 @@
   position: relative;
   width: 15%; }
   .summary-progress-bar .current-progress {
-    background-color: #008AA8;
+    background-color: #4B70F6;
     height: 24px; }
   .summary-progress-bar .defined-points {
     background: #ffa0a0;
@@ -87,7 +87,7 @@
     height: 24px;
     position: absolute; }
   .summary-progress-bar .closed-points-progress {
-    background: #008AA8;
+    background: #4B70F6;
     height: 24px;
     position: absolute; }
 
@@ -129,7 +129,7 @@
     margin: .1rem .4rem 0 0;
     vertical-align: middle; }
     .large-summary .icon.icon-stats {
-      color: #25A28C;
+      color: #4B70F6;
       float: right;
       transition: color .3s linear; }
       .large-summary .icon.icon-stats:hover {
@@ -138,7 +138,7 @@
       .large-summary .icon.icon-stats.active {
         color: #5CBAA9; }
       .large-summary .icon.icon-stats.active:hover {
-        color: #25A28C;
+        color: #4B70F6;
         transition: color .3s linear; }
   .large-summary a:hover .icon {
     fill: #92D1C5;
@@ -184,7 +184,7 @@
   .empty-burndown svg {
     width: 4rem;
     height: 4rem;
-    fill: #008AA8;
+    fill: #4B70F6;
     flex-basis: 4rem;
     flex-shrink: 0;
     margin-right: 2rem; }
@@ -195,7 +195,7 @@
   .empty-burndown .title {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
-    color: #008AA8;
+    color: #4B70F6;
     margin: 0;
     text-transform: uppercase; }
   .empty-burndown a {

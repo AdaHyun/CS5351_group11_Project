@@ -71,7 +71,7 @@
     margin-top: auto;
     width: 100%; }
   .highlighted .empty-highlighted-project {
-    border: 2px dashed #E2E3E9;
+    border: 2px dashed #edcebf;
     flex: 1;
     padding: 2rem;
     text-align: center; }
@@ -100,11 +100,11 @@
   .filter-highlighted .filter-list {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     left: calc(50% - 190/2 * 1px);
     list-style-type: none;
@@ -137,10 +137,10 @@
     .filter-highlighted .filter-list.horizontal a {
       width: 100%; }
       .filter-highlighted .filter-list.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .filter-highlighted .filter-list.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -156,11 +156,11 @@
       margin: 0;
       padding: 0; }
     .filter-highlighted .filter-list a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .filter-highlighted .filter-list .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -174,7 +174,7 @@
     .filter-highlighted .filter-list .type,
     .filter-highlighted .filter-list .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -188,7 +188,7 @@
       .filter-highlighted .filter-list .role:hover {
         transition: all .25s ease; }
     .filter-highlighted .filter-list::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 0.5rem;
       left: calc(50% - .25rem);
@@ -216,7 +216,7 @@
 
 .highlighted-project {
   align-items: flex-start;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   display: flex;
   flex-basis: 9rem;
   min-height: 9rem;
@@ -244,7 +244,7 @@
     .highlighted-project .project-title a {
       color: #16171D; }
       .highlighted-project .project-title a:hover {
-        color: #25A28C; }
+        color: #4B70F6; }
   .highlighted-project .project-description {
     font-size: .875rem;
     color: #5A5B72;
@@ -268,6 +268,6 @@
     .highlighted-project .statistic span {
       margin-left: .2rem; }
     .highlighted-project .statistic.active {
-      color: #008AA8; }
+      color: #4B70F6; }
       .highlighted-project .statistic.active svg {
-        fill: #008AA8; }
+        fill: #4B70F6; }

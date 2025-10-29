@@ -1,7 +1,7 @@
 
 <div ng-class="{'is-active': vm.open, 'is-inactive': vm.open == false}" class="tribe-linked js-tribe-linked">
   <div class="tribe-linked-inner">
-    <div class="tribe-linked-header"><img ng-click="vm.show()" alt="" title="{{ 'US.TRIBE.PUBLISHED_AS_GIG' | translate }}" src="v-1761561684208/images/tribe-logo.png" class="tribe-logo"/>
+    <div class="tribe-linked-header"><img ng-click="vm.show()" alt="" title="{{ 'US.TRIBE.PUBLISHED_AS_GIG' | translate }}" src="v-1761499053914/images/tribe-logo.png" class="tribe-logo"/>
       <p class="title">{{ "US.TRIBE.PUBLISHED_AS_GIG" | translate }}</p><a ng-click="vm.hide()" href="" title="{{ 'US.TRIBE.CLOSE' | translate }}" class="close">
         <tg-svg svg-icon="icon-close" class="icon-remove"></tg-svg></a>
     </div><a href="{{::vm.tribeHost}}/gigs/{{gigId}}" title="gigTitle" target="_blank" rel="nofollow" class="gig-title">{{gigTitle}}</a><a href="{{::vm.tribeHost}}/gigs/{{gigId}}/link-with-task-manager?from=taiga" title="{{ 'US.TRIBE.EDIT_LINK' | translate }}" rel="nofollow" class="delete-link">{{ 'US.TRIBE.EDIT_LINK' | translate }}</a><a ng-href="{{::vm.tribeHost}}/gigs/sync/{{gigId}}?from=taiga" title="{{ 'US.TRIBE.SINCHRONIZE_LINK' }}" rel="nofollow" class="synchronize-link button-tribe">{{ 'US.TRIBE.SYNCHRONIZE_LINK' | translate }}</a>

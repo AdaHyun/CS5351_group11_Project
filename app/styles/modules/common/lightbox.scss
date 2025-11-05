@@ -159,9 +159,13 @@
 
 .lightbox-generic-bulk {
     form {
+        background-color: $card;
+        border: 3px solid $color-link-red;
+        border-radius: 3px;
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        padding: 10px;
     }
     textarea {
         max-height: 12rem;
@@ -221,7 +225,7 @@
     .bulk-status-option {
         @include font-size(small);
         background: transparent;
-        color: $color-link-primary;
+        color: $color-black;
         cursor: pointer;
         display: block;
         padding: .25rem;
@@ -775,8 +779,12 @@
     $pop-width: 203px;
     $sidebar-width: calc(200px + 2rem);
     form {
+        background-color: $card;
+        border: 3px solid $color-link-red;
+        border-radius: 3px;
         flex-basis: $width;
         max-width: $width;
+        padding: 10px;
         width: $width;
     }
     label {
@@ -799,7 +807,7 @@
             background: none;
             flex-basis: $sidebar-width;
             flex-shrink: 0;
-            margin-left: $spacing;
+            margin-right: $spacing;
             min-width: $sidebar-width;
             padding-left: $spacing;
             width: $sidebar-width;
@@ -1078,7 +1086,7 @@
             width: 0;
 
             &:checked ~ .radio-label {
-                color: $color-link-primary;
+                color: $color-black;
             }
             &:checked + .radio-control::before {
                 transform: scale(1);

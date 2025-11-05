@@ -15,6 +15,7 @@ html {
 }
 body {
     @include font-type(regular);
+    background-color: $color-white;
     line-height: 1.25;
     min-height: 100%;
     overflow-x: hidden;

@@ -352,7 +352,7 @@
         "PAGE_DESCRIPTION": "Create your account in Taiga, a project management platform for startups and agile developers & designers who want a simple, beautiful tool that makes work truly enjoyable."
     },
     "REGISTER_FORM": {
-        "TITLE": "Register a new Taiga account (free)",
+        "TITLE": "Register a new account (free)",
         "PLACEHOLDER_NAME": "Pick a username",
         "PLACEHOLDER_FULL_NAME": "Pick your full name",
         "PLACEHOLDER_EMAIL": "Your email",

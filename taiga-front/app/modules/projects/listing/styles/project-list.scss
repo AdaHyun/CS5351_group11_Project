@@ -10,7 +10,7 @@
         h1 {
             @include font-type(regular);
             @include font-size(larger);
-            color: $color-link-primary;
+            color: $color-solid-primary;
             margin: 0;
         }
     }

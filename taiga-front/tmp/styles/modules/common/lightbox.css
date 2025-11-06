@@ -46,7 +46,7 @@
       width: 6rem;
       height: 6rem;
       display: block;
-      fill: #E2E3E9; }
+      fill: #edcebf; }
   .lightbox .title {
     text-align: center; }
   .lightbox fieldset {
@@ -81,7 +81,7 @@
     .lightbox-generic-form .existing-or-new-selector input:checked + label:hover {
       background: #5CBAA9; }
     .lightbox-generic-form .existing-or-new-selector input + label {
-      background: rgba(226, 227, 233, 0.7);
+      background: rgba(237, 206, 191, 0.7);
       cursor: pointer;
       display: block;
       font-size: 1em;
@@ -130,7 +130,7 @@
     .lightbox-generic-form .settings .requirement:hover,
     .lightbox-generic-form .settings .iocaine:hover {
       background: #5CBAA9;
-      border: 1px solid #008AA8; }
+      border: 1px solid #FFFFFF; }
     .lightbox-generic-form .settings .requirement svg,
     .lightbox-generic-form .settings .iocaine svg {
       width: 0.75rem;
@@ -141,8 +141,8 @@
   .lightbox-generic-form .settings .client-requirement input:checked + label,
   .lightbox-generic-form .settings .team-requirement input:checked + label,
   .lightbox-generic-form .settings .iocaine-flag input:checked + label {
-    background: #008AA8;
-    border: 1px solid #008AA8;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
     color: #fff; }
   .lightbox-generic-form .settings .blocking-flag label {
     align-self: stretch;
@@ -168,12 +168,16 @@
   .lightbox-generic-form .attachment-delete:hover {
     cursor: pointer; }
     .lightbox-generic-form .attachment-delete:hover svg {
-      fill: #E44057; }
+      fill: #8F3D38; }
 
 .lightbox-generic-bulk form {
+  background-color: #fff8e4;
+  border: 3px solid #8F3D38;
+  border-radius: 3px;
   flex-basis: 600px;
   flex-grow: 0;
-  max-width: 600px; }
+  max-width: 600px;
+  padding: 10px; }
 
 .lightbox-generic-bulk textarea {
   max-height: 12rem;
@@ -204,7 +208,7 @@
   font-size: .875rem;
   border: 2px solid transparent;
   border-radius: 3px;
-  color: #FFFFFF;
+  color: #EBE6D9;
   display: flex;
   justify-content: space-between;
   padding: .25rem 1rem;
@@ -215,10 +219,10 @@
     fill: currentColor; }
 
 .lightbox-generic-bulk .bulk-status-option-wrapper {
-  background-color: #FFFFFF;
-  border: 1px solid #D8DEE9;
+  background-color: #EBE6D9;
+  border: 1px solid #8F3D38;
   border-radius: 4px;
-  box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+  box-shadow: 4px 4px 8px rgba(143, 61, 56, 0.5);
   padding: .5rem;
   position: absolute;
   top: calc(1.5rem + 4px);
@@ -228,7 +232,7 @@
 .lightbox-generic-bulk .bulk-status-option {
   font-size: .875rem;
   background: transparent;
-  color: #008AA8;
+  color: #000000;
   cursor: pointer;
   display: block;
   padding: .25rem;
@@ -277,7 +281,7 @@
 
 .lightbox-sprint-add-edit .delete-sprint {
   font-size: .875rem;
-  color: #008AA8;
+  color: #FFFFFF;
   display: flex;
   transition: color .3s linear; }
   .lightbox-sprint-add-edit .delete-sprint .delete-sprint-text {
@@ -480,7 +484,7 @@
     width: 100%; }
 
 .lightbox-generic-loading .progress-bar-wrapper {
-  background: #d4d5de;
+  background: #e7bfab;
   height: 30px;
   margin-bottom: 1rem;
   padding: 3px;
@@ -494,7 +498,7 @@
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
-    background: #d4d5de;
+    background: #e7bfab;
     bottom: 35px;
     color: #5A5B72;
     padding: .3rem;
@@ -580,7 +584,7 @@
   .lightbox-select-user .add-comment textarea {
     margin-top: 1rem; }
   .lightbox-select-user .add-comment a {
-    color: #008AA8; }
+    color: #FFFFFF; }
 
 .lb-create-edit-userstory .points-per-role {
   flex-direction: row;
@@ -606,7 +610,7 @@
   .lightbox-import-error h2 {
     margin-top: 1rem; }
   .lightbox-import-error .description a {
-    color: #008AA8; }
+    color: #FFFFFF; }
   .lightbox-import-error img {
     height: 5rem; }
 
@@ -622,7 +626,7 @@
   .lightbox-leave-project-warning .btn-big {
     color: #2E3440; }
     .lightbox-leave-project-warning .btn-big:hover {
-      color: #FFFFFF; }
+      color: #EBE6D9; }
 
 .lightbox-request-ownership {
   text-align: center; }
@@ -676,12 +680,16 @@
 .lightbox-create-edit {
   z-index: 99; }
   .lightbox-create-edit form {
+    background-color: #fff8e4;
+    border: 3px solid #8F3D38;
+    border-radius: 3px;
     flex-basis: 700px;
     max-width: 700px;
+    padding: 10px;
     width: 700px; }
   .lightbox-create-edit label {
     font-size: .875rem;
-    color: #008AA8;
+    color: #FFFFFF;
     padding-left: .25rem; }
   .lightbox-create-edit textarea {
     min-height: 13rem; }
@@ -696,7 +704,7 @@
       background: none;
       flex-basis: calc(200px + 2rem);
       flex-shrink: 0;
-      margin-left: 1rem;
+      margin-right: 1rem;
       min-width: calc(200px + 2rem);
       padding-left: 1rem;
       width: calc(200px + 2rem); }
@@ -713,14 +721,14 @@
   .lightbox-create-edit .status-dropdown {
     align-content: center;
     border-radius: 3px;
-    color: #FFFFFF;
+    color: #EBE6D9;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding: .5rem .75rem;
     width: 100%; }
     .lightbox-create-edit .status-dropdown svg {
-      fill: #FFFFFF;
+      fill: #EBE6D9;
       height: .9rem;
       width: .9rem; }
   .lightbox-create-edit .assigned-inline {
@@ -784,11 +792,11 @@
   .lightbox-create-edit .pop-status {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #6191BD;
     display: none;
     list-style-type: none;
     margin: 0;
@@ -818,10 +826,10 @@
     .lightbox-create-edit .pop-status.horizontal a {
       width: 100%; }
       .lightbox-create-edit .pop-status.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .lightbox-create-edit .pop-status.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -837,11 +845,11 @@
       margin: 0;
       padding: 0; }
     .lightbox-create-edit .pop-status a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #FFFFFF;
+      color: #8F3D38; }
     .lightbox-create-edit .pop-status .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -855,7 +863,7 @@
     .lightbox-create-edit .pop-status .type,
     .lightbox-create-edit .pop-status .role {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -869,7 +877,7 @@
       .lightbox-create-edit .pop-status .role:hover {
         transition: all .25s ease; }
     .lightbox-create-edit .pop-status::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -888,11 +896,11 @@
   .lightbox-create-edit .pop-users {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #6191BD;
     display: none;
     left: 0;
     list-style-type: none;
@@ -923,10 +931,10 @@
     .lightbox-create-edit .pop-users.horizontal a {
       width: 100%; }
       .lightbox-create-edit .pop-users.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .lightbox-create-edit .pop-users.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -942,11 +950,11 @@
       margin: 0;
       padding: 0; }
     .lightbox-create-edit .pop-users a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #FFFFFF;
+      color: #8F3D38; }
     .lightbox-create-edit .pop-users .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -960,7 +968,7 @@
     .lightbox-create-edit .pop-users .type,
     .lightbox-create-edit .pop-users .role {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -974,7 +982,7 @@
       .lightbox-create-edit .pop-users .role:hover {
         transition: all .25s ease; }
     .lightbox-create-edit .pop-users::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       left: calc($pop-width / 3);
@@ -1027,9 +1035,9 @@
       .lightbox-create-edit .pop-users .user-list-single:hover {
         background: #ECEFF4; }
         .lightbox-create-edit .pop-users .user-list-single:hover .user-list-name {
-          color: #008AA8; }
+          color: #FFFFFF; }
         .lightbox-create-edit .pop-users .user-list-single:hover tg-svg {
-          fill: #008AA8; }
+          fill: #FFFFFF; }
       .lightbox-create-edit .pop-users .user-list-single .user-list-avatar {
         border-radius: 50%;
         flex: 0 0 auto;
@@ -1096,7 +1104,7 @@
   width: 0; }
   .lightbox-create-edit .creation-position input[type='radio']:checked ~ .radio-label,
   .lightbox-generic-bulk .creation-position input[type='radio']:checked ~ .radio-label {
-    color: #008AA8; }
+    color: #000000; }
   .lightbox-create-edit .creation-position input[type='radio']:checked + .radio-control::before,
   .lightbox-generic-bulk .creation-position input[type='radio']:checked + .radio-control::before {
     transform: scale(1); }
@@ -1108,7 +1116,7 @@
 
 .lightbox-create-edit .creation-position .radio-control,
 .lightbox-generic-bulk .creation-position .radio-control {
-  border: 2px solid #D8DEE9;
+  border: 2px solid #8F3D38;
   border-radius: 50%;
   display: grid;
   height: 18px;
@@ -1118,7 +1126,7 @@
   width: 18px; }
   .lightbox-create-edit .creation-position .radio-control::before,
   .lightbox-generic-bulk .creation-position .radio-control::before {
-    background-color: #008AA8;
+    background-color: #FFFFFF;
     border-radius: 50%;
     content: '';
     display: block;
@@ -1167,7 +1175,7 @@
     .lightbox-relate-to-epic .related-with-selector input:checked + label:hover {
       background: #5CBAA9; }
     .lightbox-relate-to-epic .related-with-selector input + label {
-      background: rgba(226, 227, 233, 0.7);
+      background: rgba(237, 206, 191, 0.7);
       cursor: pointer;
       display: block;
       padding: 2rem 1rem;

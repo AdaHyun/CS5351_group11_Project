@@ -24,7 +24,7 @@
   .related-tasks-body .row {
     font-size: .875rem;
     align-items: center;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     border-left: 10px solid transparent;
     display: flex;
     padding: .5rem 0 .5rem .5rem; }
@@ -55,7 +55,7 @@
     .related-tasks-body .single-related-task:hover .icon-drag {
       opacity: 1; }
     .related-tasks-body .single-related-task:hover.blocked .icon-drag {
-      fill: rgba(228, 64, 87, 0.25);
+      fill: rgba(143, 61, 56, 0.25);
       opacity: 1; }
   .related-tasks-body .single-related-task .task-reorder {
     display: flex;
@@ -64,7 +64,7 @@
     width: 1rem;
     height: 1rem;
     cursor: move;
-    fill: #008AA8;
+    fill: #FFFFFF;
     transition: opacity .1s; }
   .related-tasks-body .related-task-create-form {
     padding: 0; }
@@ -106,7 +106,7 @@
       margin-left: .2rem; }
   .related-tasks-body .closed,
   .related-tasks-body .closed:hover {
-    border-left: 10px solid #E2E3E9;
+    border-left: 10px solid #edcebf;
     color: #4C566A; }
     .related-tasks-body .closed svg,
     .related-tasks-body .closed:hover svg {
@@ -128,11 +128,11 @@
   .related-tasks-body .pop-status {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #6191BD;
     display: none;
     left: 40%;
     list-style-type: none;
@@ -163,10 +163,10 @@
     .related-tasks-body .pop-status.horizontal a {
       width: 100%; }
       .related-tasks-body .pop-status.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .related-tasks-body .pop-status.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -182,11 +182,11 @@
       margin: 0;
       padding: 0; }
     .related-tasks-body .pop-status a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #FFFFFF;
+      color: #8F3D38; }
     .related-tasks-body .pop-status .point {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -200,7 +200,7 @@
     .related-tasks-body .pop-status .type,
     .related-tasks-body .pop-status .role {
       align-items: center;
-      color: #008AA8;
+      color: #6191BD;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -214,7 +214,7 @@
       .related-tasks-body .pop-status .role:hover {
         transition: all .25s ease; }
     .related-tasks-body .pop-status::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -236,12 +236,12 @@
   .related-tasks-body .blocked,
   .related-tasks-body .blocked:hover {
     background: rgba(255, 160, 160, 0.2);
-    border-left: 10px solid rgba(228, 64, 87, 0.25); }
+    border-left: 10px solid rgba(143, 61, 56, 0.25); }
     .related-tasks-body .blocked .task-name-ref,
     .related-tasks-body .blocked .task-name-subject,
     .related-tasks-body .blocked:hover .task-name-ref,
     .related-tasks-body .blocked:hover .task-name-subject {
-      color: #E44057; }
+      color: #8F3D38; }
     .related-tasks-body .blocked .icon-draggable,
     .related-tasks-body .blocked:hover .icon-draggable {
       fill: #70728F; }
@@ -263,15 +263,15 @@
   .related-tasks-body .edit-task:hover .icon-edit,
   .related-tasks-body .save-task:hover .icon-edit,
   .related-tasks-body .delete-task:hover .icon-edit {
-    fill: #008AA8; }
+    fill: #FFFFFF; }
   .related-tasks-body .edit-task:hover .icon-save,
   .related-tasks-body .save-task:hover .icon-save,
   .related-tasks-body .delete-task:hover .icon-save {
-    fill: #008AA8; }
+    fill: #FFFFFF; }
   .related-tasks-body .edit-task:hover .icon-trash,
   .related-tasks-body .save-task:hover .icon-trash,
   .related-tasks-body .delete-task:hover .icon-trash {
-    fill: #E44057; }
+    fill: #8F3D38; }
   .related-tasks-body .task-assignedto {
     position: relative; }
     .related-tasks-body .task-assignedto.editable {

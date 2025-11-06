@@ -4,7 +4,7 @@
 /* Do not use this except for the main layout */
 .policy-table .policy-table-row {
   align-items: center;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   display: flex;
   justify-content: center; }
 

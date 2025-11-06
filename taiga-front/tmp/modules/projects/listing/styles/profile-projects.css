@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .profile-projects {
-  border-top: 1px solid #E2E3E9; }
+  border-top: 1px solid #edcebf; }
   .profile-projects .list-itemtype-project {
     display: flex;
     justify-content: space-between;

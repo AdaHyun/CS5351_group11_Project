@@ -3,6 +3,6 @@
 ***********************/
 /* Do not use this except for the main layout */
 .profile-contacts {
-  border-top: 1px solid #E2E3E9;
+  border-top: 1px solid #edcebf;
   display: flex;
   flex-direction: column; }

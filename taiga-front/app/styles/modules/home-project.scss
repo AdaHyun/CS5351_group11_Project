@@ -31,7 +31,7 @@
         }
     }
     .project-name {
-        color: $color-link-primary;
+        color: $primary;
         margin-bottom: 0;
     }
     .private {
@@ -105,7 +105,6 @@
             margin-bottom: .5rem;
         }
         a {
-            color: $color-link-primary;
             font-size: .8rem;
             font-weight: 600;
         }

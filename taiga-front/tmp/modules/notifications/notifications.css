@@ -14,13 +14,13 @@
     margin: 0;
     padding: 1rem; }
   .notifications-page .title {
-    color: #008AA8;
+    color: #FFFFFF;
     font-size: 1.4rem;
     line-height: 1.4rem;
     margin: 0;
     text-transform: uppercase; }
   .notifications-page .action {
-    color: #008AA8;
+    color: #FFFFFF;
     line-height: .75em; }
     .notifications-page .action.disabled {
       color: #4C566A; }
@@ -101,7 +101,7 @@
       .notifications-list .entry.new .entry-date::after {
         font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
         font-weight: 500;
-        background: #E44057;
+        background: #8F3D38;
         border-radius: 50%;
         content: '';
         height: 6px;

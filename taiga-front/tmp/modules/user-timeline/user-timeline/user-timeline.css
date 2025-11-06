@@ -3,9 +3,9 @@
 ***********************/
 /* Do not use this except for the main layout */
 .profile-timeline {
-  border-top: 1px solid #E2E3E9; }
+  border-top: 1px solid #edcebf; }
   .profile-timeline .activity-item {
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     padding: 1rem .5rem 1rem 0;
     position: relative; }
     .profile-timeline .activity-item p {

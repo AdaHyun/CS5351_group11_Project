@@ -13,7 +13,7 @@
             background-color: $color-link-primary;
             transition: all .2s linear;
             &::before {
-                background-color: $color-white;
+                background-color: $color-black;
                 left: calc(90% - 10px);
             }
         }
@@ -33,7 +33,7 @@
         position: relative;
         width: 100%;
         &::before {
-            background-color: $color-white;
+            background-color: $color-black;
             border-radius: 50%;
             content: '';
             height: 10px;
@@ -56,7 +56,7 @@
             background-color: $color-link-primary;
             transition: all .2s linear;
             &::before {
-                background-color: $color-white;
+                background-color: $color-black;
                 left: calc(90% - 10px);
             }
         }

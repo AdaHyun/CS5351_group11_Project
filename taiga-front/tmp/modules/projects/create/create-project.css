@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .create-project {
-  margin: 1rem auto;
+  margin: 0rem auto;
   max-width: 1200px;
   padding: 0 1.25rem;
   width: 100%;
@@ -74,9 +74,9 @@
     .create-project-title-wrapper .icon {
       width: 1.75rem;
       height: 1.75rem;
-      fill: #008AA8;
+      fill: #FFFFFF;
       margin-right: 1rem;
-      stroke: #25A28C;
+      stroke: #5C8E9B;
       vertical-align: middle; }
   .create-project-title, .create-project-description {
     margin: 0;
@@ -151,10 +151,10 @@
     .create-project-privacity input {
       display: none; }
     .create-project-privacity input:checked + label {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #FFFFFF;
+      color: #EBE6D9; }
       .create-project-privacity input:checked + label .icon {
-        fill: #FFFFFF; }
+        fill: #EBE6D9; }
     .create-project-privacity label {
       min-height: 37px;
       padding: 0 .75rem; }
@@ -179,7 +179,7 @@
       margin-left: .5rem; }
   .create-project-selector a {
     align-items: center;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     color: #434456;
     cursor: pointer;
     display: flex;
@@ -188,10 +188,10 @@
     .create-project-selector a:hover {
       color: currentColor; }
   .create-project-selector li:hover {
-    background: rgba(0, 138, 168, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     transition: background .3s ease-in; }
   .create-project-selector li:first-child {
-    border-top: 1px solid #E2E3E9; }
+    border-top: 1px solid #edcebf; }
   .create-project-selector-icon {
     align-self: flex-start;
     padding: 1.5rem 1rem; }
@@ -218,7 +218,7 @@
     right: 1.5rem;
     top: 1.5rem; }
     .create-project-selector-question:hover svg {
-      fill: #25A28C;
+      fill: #5C8E9B;
       transition: fill .2s linear; }
     .create-project-selector-question svg {
       width: 1.2rem;
@@ -246,19 +246,19 @@
   .create-project-warning {
     font-size: .875rem;
     background: #ECEFF4;
-    border: 2px solid #E44057;
+    border: 2px solid #8F3D38;
     display: flex;
     margin-bottom: 1rem;
     padding: 1rem; }
     .create-project-warning .icon-alert {
-      fill: #E44057;
+      fill: #8F3D38;
       margin-right: .5rem;
       margin-top: .15rem;
       vertical-align: middle; }
     .create-project-warning p {
       margin-bottom: 0; }
       .create-project-warning p a {
-        color: #008AA8;
+        color: #FFFFFF;
         display: inline-block;
         margin-left: .25rem; }
   .create-project .spin {
@@ -279,13 +279,13 @@
     width: 1rem; }
 
 .import-project-members .import-project-members-choose {
-  color: #008AA8; }
+  color: #FFFFFF; }
 
 .import-project-members .import-project-members-match-true svg {
-  fill: #008AA8; }
+  fill: #FFFFFF; }
 
 .import-project-members .import-project-members-match-false svg {
-  fill: #E44057; }
+  fill: #8F3D38; }
 
 .import-project-members .avatar {
   height: 3rem;
@@ -296,6 +296,6 @@
     width: 3rem; }
 
 .import-project-members .import-project-members-delete svg {
-  fill: #E44057;
+  fill: #8F3D38;
   height: 1rem;
   width: 1rem; }

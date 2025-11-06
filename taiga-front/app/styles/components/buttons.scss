@@ -254,11 +254,14 @@
 
 .button-primary {
     @extend %button;
-    background: $color-solid-primary;
+    background: $color-link-red;
     padding: .25rem;
+    span {
+        color: $color-link-primary;
+    }
 
     &:hover {
-        background: $color-link-primary;
+        background: $color-solid-primary;
         color: $color-white;
     }
 }

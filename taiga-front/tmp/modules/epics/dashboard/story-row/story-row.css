@@ -5,7 +5,7 @@
 .story-row {
   font-size: .875rem;
   align-items: center;
-  background: #FFFFFF;
+  background: #EBE6D9;
   border-radius: 3px;
   display: flex;
   margin-left: 1.5rem;
@@ -65,14 +65,14 @@
   .story-row:hover {
     background-color: #F9F9FB; }
   .story-row.is-blocked {
-    background: rgba(228, 64, 87, 0.25); }
+    background: rgba(143, 61, 56, 0.25); }
     .story-row.is-blocked a,
     .story-row.is-blocked span,
     .story-row.is-blocked div {
-      color: #FFFFFF; }
+      color: #EBE6D9; }
     .story-row.is-blocked svg {
-      fill: #FFFFFF;
-      stroke: #FFFFFF; }
+      fill: #EBE6D9;
+      stroke: #EBE6D9; }
   .story-row .deco-space {
     display: inline-block;
     margin-left: .75rem;
@@ -91,7 +91,7 @@
       cursor: pointer; }
       .story-row .name a:hover .ref,
       .story-row .name a:hover .subject {
-        color: #008AA8; }
+        color: #8F3D38; }
     .story-row .name .subject {
       color: #4C566A;
       margin-left: .25rem; }
@@ -106,7 +106,7 @@
     max-width: 40vw;
     width: 100%; }
   .story-row .progress-status {
-    background-color: #008AA8;
+    background-color: #70728F;
     width: 10vw; }
   .story-row .project {
     align-items: center;

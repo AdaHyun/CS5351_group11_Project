@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 tg-project-menu {
-  background-color: #3B4252;
+  background-color: #EA7B4B;
   z-index: 9; }
   tg-project-menu .sticky-project-menu {
     height: calc(100vh - 48px);

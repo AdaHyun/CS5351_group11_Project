@@ -39,7 +39,10 @@
 }
 
 .backlog-top {
-    background-color: $white;
+    background-color: $color-white;
+    border: 3px solid $color-link-red;
+    border-radius: .2rem;
+    box-sizing: border-box;
     height: 115px;
     position: sticky;
     top: 0;
@@ -48,7 +51,7 @@
 
 .backlog-menu {
     color: $color-black900;
-    padding: 1rem 0;
+    padding: 1rem .5rem;
 }
 
 .backlog-header {

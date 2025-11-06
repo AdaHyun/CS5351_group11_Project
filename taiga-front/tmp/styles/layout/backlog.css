@@ -35,7 +35,10 @@
     transform: translate(0); }
 
 .backlog-top {
-  background-color: #fff;
+  background-color: #EBE6D9;
+  border: 3px solid #8F3D38;
+  border-radius: .2rem;
+  box-sizing: border-box;
   height: 115px;
   position: sticky;
   top: 0;
@@ -43,7 +46,7 @@
 
 .backlog-menu {
   color: #2E3440;
-  padding: 1rem 0; }
+  padding: 1rem .5rem; }
 
 .backlog-header {
   display: flex;
@@ -117,7 +120,7 @@
 .multiple-drag-mirror.us-item-row {
   align-items: center;
   background: #ECEFF4;
-  border: 1px solid #83EEDE;
+  border: 1px solid #6191BD;
   border-radius: 4px;
   cursor: grabbing;
   display: flex;

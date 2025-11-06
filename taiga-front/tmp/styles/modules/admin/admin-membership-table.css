@@ -52,10 +52,10 @@
   padding: .4rem .5rem; }
 
 .admin-membership-table .active {
-  background-color: #E2E3E9; }
+  background-color: #edcebf; }
 
 .admin-membership-table .resend {
-  background-color: #008AA8;
+  background-color: #FFFFFF;
   color: #fff; }
 
 .admin-membership-table .delete {

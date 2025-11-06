@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .featured-projects {
-  margin: 1rem auto;
+  margin: 0rem auto;
   max-width: 1200px;
   padding: 0 1.25rem;
   width: 100%;
@@ -23,8 +23,8 @@
   margin: 0 -.5rem; }
 
 .featured-project {
-  background: #FFFFFF;
-  border: 1px solid #D8DEE9;
+  background: #EBE6D9;
+  border: 1px solid #8F3D38;
   margin: .5rem;
   display: flex;
   flex-basis: 23%;
@@ -68,7 +68,7 @@
     display: flex;
     flex-grow: 0; }
     .featured-project .project-card-header .icon-badge {
-      fill: #008AA8; }
+      fill: #FFFFFF; }
   .featured-project .project-card-logo {
     display: inline-block;
     flex-basis: 50px;

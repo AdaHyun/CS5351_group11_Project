@@ -43,7 +43,7 @@
 .add-member-suggest .add-member-suggest-single {
   align-items: center;
   background: #fff;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   cursor: pointer;
   display: flex;
   flex-basis: calc(25% - 1rem);

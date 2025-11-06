@@ -19,7 +19,7 @@
     display: flex;
     margin: 0 .5rem; }
   .summary .data .number {
-    color: #83EEDE; }
+    color: #6191BD; }
   .summary .number {
     font-size: 1.7rem;
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
@@ -41,11 +41,11 @@
       fill: #5CBAA9;
       transition: fill .2s; }
     .summary .stats:hover svg {
-      fill: #25A28C; }
+      fill: #5C8E9B; }
     .summary .stats.active .graph {
-      fill: #25A28C; }
+      fill: #5C8E9B; }
     .summary .stats.active svg {
-      fill: #25A28C; }
+      fill: #5C8E9B; }
     .summary .stats svg {
       fill: #8D8EA5;
       height: 100%;
@@ -75,7 +75,7 @@
   position: relative;
   width: 15%; }
   .summary-progress-bar .current-progress {
-    background-color: #008AA8;
+    background-color: #6191BD;
     height: 24px; }
   .summary-progress-bar .defined-points {
     background: #ffa0a0;
@@ -87,7 +87,7 @@
     height: 24px;
     position: absolute; }
   .summary-progress-bar .closed-points-progress {
-    background: #008AA8;
+    background: #6191BD;
     height: 24px;
     position: absolute; }
 
@@ -129,7 +129,7 @@
     margin: .1rem .4rem 0 0;
     vertical-align: middle; }
     .large-summary .icon.icon-stats {
-      color: #25A28C;
+      color: #5C8E9B;
       float: right;
       transition: color .3s linear; }
       .large-summary .icon.icon-stats:hover {
@@ -138,7 +138,7 @@
       .large-summary .icon.icon-stats.active {
         color: #5CBAA9; }
       .large-summary .icon.icon-stats.active:hover {
-        color: #25A28C;
+        color: #5C8E9B;
         transition: color .3s linear; }
   .large-summary a:hover .icon {
     fill: #92D1C5;
@@ -184,7 +184,7 @@
   .empty-burndown svg {
     width: 4rem;
     height: 4rem;
-    fill: #008AA8;
+    fill: #FFFFFF;
     flex-basis: 4rem;
     flex-shrink: 0;
     margin-right: 2rem; }
@@ -195,7 +195,7 @@
   .empty-burndown .title {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
-    color: #008AA8;
+    color: #FFFFFF;
     margin: 0;
     text-transform: uppercase; }
   .empty-burndown a {

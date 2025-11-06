@@ -9,13 +9,13 @@
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: .7rem;
-    color: #008AA8;
+    color: #70728F;
     margin-right: .5rem;
     text-transform: uppercase; }
 
 .zoom-radio .checkmark {
   align-items: center;
-  background-color: #D8DEE9;
+  background-color: #8F3D38;
   border-radius: 16px;
   cursor: pointer;
   display: flex;
@@ -23,13 +23,14 @@
   width: 16px; }
 
 .zoom-radio input:checked ~ .checkmark {
-  background-color: #008AA8;
+  background-color: #FFFFFF;
   width: auto; }
   .zoom-radio input:checked ~ .checkmark span {
+    color: #8F3D38;
     display: block; }
 
 .zoom-radio:hover .checkmark {
-  background-color: #83EEDE; }
+  background-color: #6191BD; }
 
 .zoom-radio:not(:last-child) {
   margin-right: .5rem; }
@@ -37,7 +38,7 @@
 .zoom-radio span {
   font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
   font-size: .7rem;
-  color: #FFFFFF;
+  color: #EBE6D9;
   display: none;
   padding: 0 1.25rem; }
 

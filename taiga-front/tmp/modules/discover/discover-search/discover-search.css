@@ -1,0 +1,92 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.discover-search .discover-header form {
+  margin: 0 8rem;
+  position: relative; }
+
+.discover-search .discover-header .search-button {
+  left: 1rem;
+  right: auto; }
+
+.discover-search .discover-header .searchbox input {
+  padding-left: 3.5rem;
+  padding-right: 23rem; }
+
+.discover-search .searchbox-filters {
+  position: absolute;
+  right: 1rem;
+  top: .7rem;
+  width: auto; }
+  .discover-search .searchbox-filters input {
+    display: none; }
+  .discover-search .searchbox-filters label {
+    border-radius: 4px;
+    color: #70728F;
+    cursor: pointer;
+    display: inline-block;
+    padding: .4rem .75rem;
+    transition: all .2s;
+    transition-delay: .2s; }
+    .discover-search .searchbox-filters label.active {
+      background: #008AA8;
+      color: #fff; }
+    .discover-search .searchbox-filters label:hover {
+      background: #E2E3E9;
+      color: #5A5B72; }
+
+.discover-results {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%; }
+  .discover-results .discover-results-inner .spin {
+    margin-top: 4rem; }
+  .discover-results .list-itemtype-project {
+    border-bottom: 1px solid #70728F;
+    display: flex;
+    padding: 1rem 0; }
+    .discover-results .list-itemtype-project:last-child {
+      border-bottom: 0; }
+  .discover-results .list-itemtype-project-left {
+    align-items: flex-start;
+    display: flex;
+    width: 100%; }
+  .discover-results .list-itemtype-project-image {
+    flex-shrink: 0;
+    margin-right: 1rem; }
+  .discover-results .list-itemtype-project-data {
+    flex: 1;
+    vertical-align: middle; }
+  .discover-results .project-statistics {
+    display: flex;
+    flex-basis: 300px;
+    justify-content: flex-end; }
+    .discover-results .project-statistics svg {
+      width: 0.7rem;
+      height: 0.7rem;
+      fill: #70728F;
+      margin-right: .2rem; }
+  .discover-results .statistic {
+    font-size: .875rem;
+    align-self: start;
+    color: #70728F;
+    display: flex;
+    margin-right: .5rem; }
+    .discover-results .statistic span {
+      margin-left: .2rem; }
+    .discover-results .statistic svg {
+      fill: #70728F;
+      stroke: #70728F; }
+    .discover-results .statistic.active {
+      color: #008AA8; }
+      .discover-results .statistic.active svg {
+        fill: #008AA8; }
+  .discover-results .more-results {
+    display: block;
+    margin: 0 20rem;
+    transition: inherit; }
+  .discover-results div[tg-loading] img {
+    display: block;
+    margin: 0 auto; }

@@ -1,0 +1,19 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<form>
+  <h2 translate="LIGHTBOX.SET_DUE_DATE.TITLE" class="title"></h2>
+  <fieldset class="date">
+    <input type="text" name="due_date" picker-value="{{ new_due_date }}" data-required="true" tg-date-selector="tg-date-selector" placeholder="{{'LIGHTBOX.SET_DUE_DATE.PLACEHOLDER_DUE_DATE' | translate}}" class="due-date no-focus"/>
+    <ul class="due-date-suggestions">
+      <li data-quantity='1' data-unit="weeks" class="suggestion clickable"><span>{{ 'LIGHTBOX.SET_DUE_DATE.SUGGESTIONS.IN_ONE_WEEK' | translate }}</span></li>
+      <li data-quantity='2' data-unit="weeks" class="suggestion clickable"><span>{{ 'LIGHTBOX.SET_DUE_DATE.SUGGESTIONS.IN_TWO_WEEKS' | translate }}</span></li>
+      <li data-quantity='1' data-unit="months" class="suggestion clickable"><span>{{ 'LIGHTBOX.SET_DUE_DATE.SUGGESTIONS.IN_ONE_MONTH' | translate }}</span></li>
+      <li data-quantity='3' data-unit="months" class="suggestion clickable"><span>{{ 'LIGHTBOX.SET_DUE_DATE.SUGGESTIONS.IN_THREE_MONTHS' | translate }}</span></li>
+    </ul>
+  </fieldset>
+  <fieldset class="reason"><span>{{ 'LIGHTBOX.SET_DUE_DATE.REASON_FOR_DUE_DATE' | translate }}</span>
+    <textarea name="due_date_reason" ng-attr-placeholder="{{'LIGHTBOX.SET_DUE_DATE.PLACEHOLDER_REASON_FOR_DUE_DATE' | translate}}" ng-model="object.due_date_reason" class="due-date-reason no-focus"></textarea>
+  </fieldset>
+  <button type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="submit-button btn-big"></button><a href="" title="{{'LIGHTBOX.SET_DUE_DATE.TITLE_ACTION_DELETE_DUE_DATE' | translate}}" v-if="new_due_date" class="delete-due-date">
+    <tg-svg svg-icon="icon-trash"></tg-svg></a>
+</form>

@@ -1,0 +1,91 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url("../fonts/Ubuntu-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url("../fonts/Ubuntu-Medium.ttf") format("truetype"); }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2E3440;
+  font-weight: normal;
+  line-height: 1.5; }
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    font-weight: inherit; }
+
+h1 {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #008AA8;
+  margin-block-end: 1rem; }
+  h1 .date {
+    display: inline-block;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #434456; }
+
+h2 {
+  font-size: 1.4rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1rem; }
+
+p {
+  line-height: 1.5;
+  margin: 0 0 20px; }
+  p img {
+    margin: 0; }
+
+em {
+  font-style: italic; }
+
+small {
+  font-size: .875rem; }
+
+strong {
+  font-weight: bold; }
+
+hr {
+  border: solid #16171D;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: 10px 0 30px; }
+
+a,
+a:visited {
+  color: #008AA8;
+  text-decoration: none; }
+  a:hover,
+  a:visited:hover {
+    color: #4C566A;
+    transition: color .3s linear; }
+
+a.secondary,
+a.secondary:visited {
+  color: #4C566A;
+  text-decoration: none; }
+  a.secondary:hover,
+  a.secondary:visited:hover {
+    color: #008AA8;
+    transition: color .3s linear; }

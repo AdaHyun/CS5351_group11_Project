@@ -1,0 +1,28 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile-content-tabs {
+  border-top: 1px solid #E2E3E9;
+  display: flex;
+  z-index: 2; }
+  .profile-content-tabs .tab {
+    color: #70728F;
+    display: flex;
+    padding: 1rem; }
+    .profile-content-tabs .tab:hover, .profile-content-tabs .tab.active {
+      color: #5A5B72;
+      transition: color .2s linear; }
+    .profile-content-tabs .tab.active {
+      background: #fff;
+      border-left: 1px solid #E2E3E9;
+      border-right: 1px solid #E2E3E9;
+      position: relative;
+      top: 1px;
+      transition: color .2s linear; }
+  .profile-content-tabs .icon {
+    fill: #434456;
+    height: .8rem;
+    margin-right: .5rem;
+    stroke: #434456;
+    transition: fill .2s linear; }

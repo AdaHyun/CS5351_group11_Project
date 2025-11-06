@@ -1,0 +1,18 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.epic-header-container {
+  display: flex; }
+  .epic-header-container .color-selector {
+    margin-right: .5rem; }
+  .epic-header-container tg-detail-header {
+    flex: 1;
+    width: 100%; }
+
+.epic-selector {
+  align-items: center;
+  display: flex;
+  margin: .25rem 0; }
+  .epic-selector .epic-selector-text {
+    margin-right: .5rem; }

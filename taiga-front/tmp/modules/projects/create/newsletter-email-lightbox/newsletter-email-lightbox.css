@@ -1,0 +1,75 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.newsletter-email.setting .lightbox-title {
+  font-size: .875rem;
+  text-align: left; }
+
+.newsletter-email form {
+  max-width: 700px; }
+
+.newsletter-email .subscribed {
+  background: #F9F9FB;
+  margin-bottom: 1.5rem; }
+  .newsletter-email .subscribed:hover {
+    background: #F9F9FB;
+    cursor: default; }
+  .newsletter-email .subscribed span {
+    color: #4C566A;
+    font-style: italic;
+    font-weight: bold; }
+
+.newsletter-email .newsletter-info {
+  display: flex; }
+  .newsletter-email .newsletter-info .confirm-label {
+    display: inline-block;
+    line-height: 1.5;
+    margin: 0 0 10px; }
+
+.newsletter-email .subscribed-button {
+  margin-bottom: 1.5rem; }
+
+.newsletter-email .loading-spinner {
+  margin-left: .5rem; }
+
+.newsletter-email .check-sub {
+  fill: #93C45D;
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.newsletter-email .ask {
+  display: flex; }
+  .newsletter-email .ask .ask-label {
+    line-height: 1.5;
+    margin-bottom: 0; }
+
+.newsletter-email .custom-checkbox {
+  flex-basis: 18px;
+  flex-grow: 0;
+  height: 18px;
+  margin-right: .5rem;
+  margin-top: .2rem; }
+
+.newsletter-email .option-container {
+  display: flex;
+  justify-content: space-between; }
+
+.newsletter-email .options .btn-small {
+  margin-left: 1rem; }
+
+.newsletter-email .lightbox-title {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center; }
+
+.newsletter-email p,
+.newsletter-email label {
+  color: #4C566A; }
+
+.newsletter-email .text-container {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  color: #70728F; }
+  .newsletter-email .text-container .italic {
+    color: #70728F;
+    font-style: italic; }

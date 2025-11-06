@@ -1,0 +1,10 @@
+
+<section tg-related-tasks="tg-related-tasks" ng-show="showRelatedTasks()" class="related-tasks">
+  <div class="related-tasks-header"><span translate="COMMON.RELATED_TASKS" class="related-tasks-title"></span>
+    <div tg-related-task-create-button="tg-related-task-create-button"></div>
+  </div>
+  <div tg-tasks-sortable="reorderTask(task, newIndex)" class="related-tasks-body">
+    <div ng-repeat="task in tasks track by task.id" ng-class="{closed: task.is_closed, blocked: task.is_blocked, iocaine: task.is_iocaine}" tg-related-task-row="tg-related-task-row" tg-bind-scope="tg-bind-scope" ng-model="task" class="row single-related-task js-related-task"></div>
+    <div tg-related-task-create-form="tg-related-task-create-form"></div>
+  </div>
+</section>

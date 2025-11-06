@@ -1,0 +1,81 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.card-placeholder:not(.not-found) {
+  cursor: default;
+  padding: 1.625rem 1rem; }
+  .card-placeholder:not(.not-found) .title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #70728F; }
+  .card-placeholder:not(.not-found) p {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #70728F;
+    margin: 0; }
+  .card-placeholder:not(.not-found) .placeholder-board-card {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    padding: 1rem; }
+    .card-placeholder:not(.not-found) .placeholder-board-card.clean {
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0; }
+  .card-placeholder:not(.not-found) .placeholder-board-row {
+    border-radius: 4px;
+    display: flex;
+    margin-bottom: .5rem; }
+    .card-placeholder:not(.not-found) .placeholder-board-row.avatar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0; }
+  .card-placeholder:not(.not-found) .placeholder-board-text {
+    background: #E5E9F0;
+    border-radius: 4px;
+    flex-basis: 60%;
+    height: 16px; }
+    .card-placeholder:not(.not-found) .placeholder-board-text.small {
+      background: #D8DEE9;
+      flex-basis: 24px;
+      margin-right: 1rem; }
+    .card-placeholder:not(.not-found) .placeholder-board-text.big {
+      background: #D8DEE9;
+      flex: 1 1 auto; }
+  .card-placeholder:not(.not-found) .placeholder-board-avatar {
+    background: #ECEFF4;
+    border-radius: 28px;
+    height: 28px;
+    margin-top: .5rem;
+    width: 28px; }
+  .card-placeholder:not(.not-found) .placeholder-board-user {
+    background: #F9F9FB;
+    border-radius: 4px;
+    flex-basis: 115px;
+    height: 16px; }
+  .card-placeholder:not(.not-found) .placeholder-board-last-text {
+    background: #ECEFF4;
+    border-radius: 4px;
+    flex-basis: 65px;
+    height: 16px;
+    margin-top: .5rem; }
+
+.card-placeholder.not-found {
+  color: #70728F;
+  padding: 2rem; }
+  .card-placeholder.not-found .title {
+    font-size: 1.1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #2E3440; }
+  .card-placeholder.not-found p {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    margin-bottom: 1.5rem; }
+  .card-placeholder.not-found strong {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: normal; }

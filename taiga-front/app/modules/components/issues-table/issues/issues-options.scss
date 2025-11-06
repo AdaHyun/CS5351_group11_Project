@@ -1,0 +1,41 @@
+.issues-options {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.issues-options-start {
+    display: flex;
+}
+
+.new-issue {
+    column-gap: .5rem;
+    display: flex;
+    row-gap: .5rem;
+}
+
+.in-taskboard {
+    background: $color-gray200;
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem;
+    &.empty {
+        background: $color-gray100;
+    }
+    .sprint-issues-title {
+        align-items: center;
+        border-inline-end: 1px solid $default-tags;
+        display: flex;
+        margin-inline-end: 1rem;
+        padding-inline-end: 1rem;
+        .icon {
+            fill: $color-gray400;
+            margin-right: .5rem;
+        }
+    }
+    .sprint-issues-title-txt {
+        color: $color-link-tertiary;
+        text-transform: uppercase;
+    }
+}

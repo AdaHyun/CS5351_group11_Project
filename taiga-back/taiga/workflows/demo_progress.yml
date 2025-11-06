@@ -1,0 +1,43 @@
+name: Demo CI Progress
+
+on:
+  workflow_dispatch:
+
+jobs:
+  alpha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Alpha Step 1
+        run: |
+          for i in {1..3}; do
+            echo "alpha step1 tick $i/3"
+            sleep 2
+          done
+
+      - name: Alpha Step 2
+        run: |
+          for i in {1..3}; do
+            echo "alpha step2 tick $i/3"
+            sleep 2
+          done
+
+  beta:
+    needs: alpha
+    runs-on: ubuntu-latest
+    steps:
+      - name: Beta Step 1
+        run: echo "beta start"
+
+      - name: Beta Long Step
+        run: |
+          for i in {1..5}; do
+            echo "beta long tick $i/5"
+            sleep 2
+          done
+
+      - name: Beta Done
+        run: echo "beta done"
+

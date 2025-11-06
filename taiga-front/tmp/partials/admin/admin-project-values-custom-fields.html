@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<div ng-controller="ProjectValuesSectionController" ng-init="sectionName='ADMIN.CUSTOM_FIELDS.TITLE'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="project-values" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="values-custom-fields" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-values-status"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.STATUS" class="title"></span></a></li>
+          <li id="adminmenu-values-points"><a href="" tg-nav="project-admin-project-values-points:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.POINTS" class="title"></span></a></li>
+          <li id="adminmenu-values-priorities"><a href="" tg-nav="project-admin-project-values-priorities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.PRIORITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-severities"><a href="" tg-nav="project-admin-project-values-severities:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.SEVERITIES" class="title"></span></a></li>
+          <li id="adminmenu-values-types"><a href="" tg-nav="project-admin-project-values-types:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TYPES" class="title"></span></a></li>
+          <li id="adminmenu-values-custom-fields"><a href="" tg-nav="project-admin-project-values-custom-fields:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.CUSTOM_FIELDS" class="title"></span></a></li>
+          <li id="adminmenu-values-tags"><a href="" tg-nav="project-admin-project-values-tags:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.TAGS" class="title"></span></a></li>
+          <li id="adminmenu-values-due-dates"><a href="" tg-nav="project-admin-project-values-due-dates:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.DUE_DATES" class="title"></span></a></li>
+          <li id="adminmenu-values-kanban-power-ups" ng-show="project.is_kanban_activated"><a href="" tg-nav="project-admin-project-values-kanban-power-ups:project=project.slug"><span translate="ADMIN.SUBMENU_PROJECT_VALUES.KANBAN_OPTIONS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-common admin-attributes">
+    <header>
+      <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+    </header>
+    <p translate="ADMIN.CUSTOM_FIELDS.SUBTITLE" class="admin-subtitle"></p>
+    <div tg-project-custom-attributes ng-controller="ProjectCustomAttributesController as ctrl" ng-init="init('epic'); customFieldSectionTitle='ADMIN.CUSTOM_FIELDS.EPIC_DESCRIPTION'; customFieldButtonTitle='ADMIN.CUSTOM_FIELDS.EPIC_ADD'" class="admin-attributes-section">
+      <section class="custom-fields-table basic-table">
+        <div class="project-values-title">
+          <h2>{{ customFieldSectionTitle | translate }}</h2>
+          <button variant="primary" title="{{ customFieldButtonTitle | translate }}" translate="ADMIN.CUSTOM_ATTRIBUTES.ADD" class="btn-small show-add-new js-add-custom-field-button"></button>
+        </div>
+        <div class="table-header">
+          <div class="row">
+            <div translate="COMMON.FIELDS.NAME" class="custom-name"></div>
+            <div translate="COMMON.FIELDS.DESCRIPTION" class="custom-description"></div>
+            <div translate="COMMON.FIELDS.TYPE" class="custom-field-type"></div>
+            <div class="custom-options"></div>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="js-sortable">
+            <div ng-repeat="attr in customAttributes track by attr.id" tg-bind-scope class="e2e-item">
+              <form tg-bind-scope class="js-form">
+                <div class="row single-custom-field js-view-custom-field">
+                  <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                  <div class="custom-name"><span>{{ attr.name }}</span><a href="" ng-click="toggleExtraVisible(attr.id)" ng-if="attr.type == 'dropdown'">
+                      <tg-svg ng-if="!isExtraVisible[attr.id]" svg-icon="icon-arrow-right"></tg-svg>
+                      <tg-svg ng-if="isExtraVisible[attr.id]" svg-icon="icon-arrow-down"></tg-svg></a></div>
+                  <div class="custom-description">{{ attr.description }}</div>
+                  <div ng-switch on="attr.type" class="custom-field-type"><span ng-switch-default translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_TEXT"></span><span ng-switch-when="richtext" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_RICHTEXT"></span><span ng-switch-when="multiline" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_MULTI"></span><span ng-switch-when="date" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DATE"></span><span ng-switch-when="url" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_URL"></span><span ng-switch-when="dropdown" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DROPDOWN"></span><span ng-switch-when="checkbox" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_CHECKBOX"></span><span ng-switch-when="number" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_NUMBER"></span></div>
+                  <div class="custom-options">
+                    <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.EDIT' | translate}}" class="js-edit-custom-field-button">
+                        <tg-svg svg-icon="icon-edit"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" class="js-delete-custom-field-button">
+                        <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                  </div>
+                </div>
+                <div class="js-edit-custom-field hidden">
+                  <div class="row single-custom-field">
+                    <fieldset class="custom-name">
+                      <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="attr.name" data-required="true" data-maxlength="64">
+                    </fieldset>
+                    <fieldset class="custom-description">
+                      <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="attr.description">
+                    </fieldset>
+                    <fieldset class="custom-field-type">
+                      <select ng-model="attr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES"></select>
+                    </fieldset>
+                    <fieldset class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_UPDATE' | translate}}" class="js-update-custom-field-button">
+                          <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_CANCEL_EDITION' | translate}}" class="js-cancel-edit-custom-field-button">
+                          <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div ng-show="attr.type == 'dropdown' &amp;&amp; isExtraVisible[attr.id]" class="custom-field-extra">
+                  <div data-id="{{ attr.id }}" class="js-child-sortable">
+                    <div ng-repeat="option in attr.extra track by $index" tg-bind-scope class="js-form">
+                      <div class="row js-view-custom-field-extra">
+                        <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                        <div class="custom-extra-attr-wrapper"><span>{{ option }}</span></div>
+                      </div>
+                      <div class="row js-edit-custom-field-extra hidden">
+                        <div class="custom-extra-attr-wrapper">
+                          <input type="text" name="name" ng-model="attr.extra[$index]" data-required="true" data-maxlength="64">
+                        </div>
+                        <div class="custom-options">
+                          <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="attr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                              <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="custom-extra-actions hidden"><a href="" class="js-add-option-custom-field-extra-button">
+                      <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <form tg-bind-scope>
+            <div class="row single-custom-field js-new-custom-field hidden">
+              <fieldset class="custom-name">
+                <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="newAttr.name" data-required="true" data-maxlength="64">
+              </fieldset>
+              <fieldset class="custom-description">
+                <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="newAttr.description">
+              </fieldset>
+              <fieldset class="custom-field-type">
+                <select ng-model="newAttr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES">
+                  <option value="" translate="ADMIN.CUSTOM_ATTRIBUTES.FIELD_TYPE_DEFAULT"></option>
+                </select>
+              </fieldset>
+              <fieldset class="custom-options">
+                <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.SAVE_TITLE' | translate}}" class="js-create-custom-field-button">
+                    <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.CANCEL_TITLE' | translate}}" class="js-cancel-new-custom-field-button">
+                    <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+              </fieldset>
+            </div>
+            <div ng-show="newAttr.type == 'dropdown' &amp;&amp; isExtraVisible[-1]" class="custom-field-extra">
+              
+              <div data-id="-1" class="js-child-sortable">
+                <div ng-repeat="option in newAttr.extra track by $index" tg-bind-scope class="js-form">
+                  <div class="row js-new-custom-field-extra">
+                    <div class="custom-extra-attr-wrapper">
+                      <input type="text" name="name" ng-model="newAttr.extra[$index]" data-required="true" data-maxlength="64">
+                    </div>
+                    <div class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="newAttr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                          <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="custom-extra-actions"><a href="" class="js-add-option-custom-field-extra-button">
+                  <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div tg-project-custom-attributes ng-controller="ProjectCustomAttributesController as ctrl" ng-init="init('userstory'); customFieldSectionTitle='ADMIN.CUSTOM_FIELDS.US_DESCRIPTION'; customFieldButtonTitle='ADMIN.CUSTOM_FIELDS.US_ADD'" class="admin-attributes-section">
+      <section class="custom-fields-table basic-table">
+        <div class="project-values-title">
+          <h2>{{ customFieldSectionTitle | translate }}</h2>
+          <button variant="primary" title="{{ customFieldButtonTitle | translate }}" translate="ADMIN.CUSTOM_ATTRIBUTES.ADD" class="btn-small show-add-new js-add-custom-field-button"></button>
+        </div>
+        <div class="table-header">
+          <div class="row">
+            <div translate="COMMON.FIELDS.NAME" class="custom-name"></div>
+            <div translate="COMMON.FIELDS.DESCRIPTION" class="custom-description"></div>
+            <div translate="COMMON.FIELDS.TYPE" class="custom-field-type"></div>
+            <div class="custom-options"></div>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="js-sortable">
+            <div ng-repeat="attr in customAttributes track by attr.id" tg-bind-scope class="e2e-item">
+              <form tg-bind-scope class="js-form">
+                <div class="row single-custom-field js-view-custom-field">
+                  <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                  <div class="custom-name"><span>{{ attr.name }}</span><a href="" ng-click="toggleExtraVisible(attr.id)" ng-if="attr.type == 'dropdown'">
+                      <tg-svg ng-if="!isExtraVisible[attr.id]" svg-icon="icon-arrow-right"></tg-svg>
+                      <tg-svg ng-if="isExtraVisible[attr.id]" svg-icon="icon-arrow-down"></tg-svg></a></div>
+                  <div class="custom-description">{{ attr.description }}</div>
+                  <div ng-switch on="attr.type" class="custom-field-type"><span ng-switch-default translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_TEXT"></span><span ng-switch-when="richtext" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_RICHTEXT"></span><span ng-switch-when="multiline" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_MULTI"></span><span ng-switch-when="date" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DATE"></span><span ng-switch-when="url" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_URL"></span><span ng-switch-when="dropdown" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DROPDOWN"></span><span ng-switch-when="checkbox" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_CHECKBOX"></span><span ng-switch-when="number" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_NUMBER"></span></div>
+                  <div class="custom-options">
+                    <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.EDIT' | translate}}" class="js-edit-custom-field-button">
+                        <tg-svg svg-icon="icon-edit"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" class="js-delete-custom-field-button">
+                        <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                  </div>
+                </div>
+                <div class="js-edit-custom-field hidden">
+                  <div class="row single-custom-field">
+                    <fieldset class="custom-name">
+                      <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="attr.name" data-required="true" data-maxlength="64">
+                    </fieldset>
+                    <fieldset class="custom-description">
+                      <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="attr.description">
+                    </fieldset>
+                    <fieldset class="custom-field-type">
+                      <select ng-model="attr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES"></select>
+                    </fieldset>
+                    <fieldset class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_UPDATE' | translate}}" class="js-update-custom-field-button">
+                          <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_CANCEL_EDITION' | translate}}" class="js-cancel-edit-custom-field-button">
+                          <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div ng-show="attr.type == 'dropdown' &amp;&amp; isExtraVisible[attr.id]" class="custom-field-extra">
+                  <div data-id="{{ attr.id }}" class="js-child-sortable">
+                    <div ng-repeat="option in attr.extra track by $index" tg-bind-scope class="js-form">
+                      <div class="row js-view-custom-field-extra">
+                        <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                        <div class="custom-extra-attr-wrapper"><span>{{ option }}</span></div>
+                      </div>
+                      <div class="row js-edit-custom-field-extra hidden">
+                        <div class="custom-extra-attr-wrapper">
+                          <input type="text" name="name" ng-model="attr.extra[$index]" data-required="true" data-maxlength="64">
+                        </div>
+                        <div class="custom-options">
+                          <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="attr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                              <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="custom-extra-actions hidden"><a href="" class="js-add-option-custom-field-extra-button">
+                      <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <form tg-bind-scope>
+            <div class="row single-custom-field js-new-custom-field hidden">
+              <fieldset class="custom-name">
+                <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="newAttr.name" data-required="true" data-maxlength="64">
+              </fieldset>
+              <fieldset class="custom-description">
+                <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="newAttr.description">
+              </fieldset>
+              <fieldset class="custom-field-type">
+                <select ng-model="newAttr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES">
+                  <option value="" translate="ADMIN.CUSTOM_ATTRIBUTES.FIELD_TYPE_DEFAULT"></option>
+                </select>
+              </fieldset>
+              <fieldset class="custom-options">
+                <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.SAVE_TITLE' | translate}}" class="js-create-custom-field-button">
+                    <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.CANCEL_TITLE' | translate}}" class="js-cancel-new-custom-field-button">
+                    <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+              </fieldset>
+            </div>
+            <div ng-show="newAttr.type == 'dropdown' &amp;&amp; isExtraVisible[-1]" class="custom-field-extra">
+              
+              <div data-id="-1" class="js-child-sortable">
+                <div ng-repeat="option in newAttr.extra track by $index" tg-bind-scope class="js-form">
+                  <div class="row js-new-custom-field-extra">
+                    <div class="custom-extra-attr-wrapper">
+                      <input type="text" name="name" ng-model="newAttr.extra[$index]" data-required="true" data-maxlength="64">
+                    </div>
+                    <div class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="newAttr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                          <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="custom-extra-actions"><a href="" class="js-add-option-custom-field-extra-button">
+                  <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div tg-project-custom-attributes ng-controller="ProjectCustomAttributesController as ctrl" ng-init="init('task'); customFieldSectionTitle='ADMIN.CUSTOM_FIELDS.TASK_DESCRIPTION'; customFieldButtonTitle='ADMIN.CUSTOM_FIELDS.TASK_ADD'" class="admin-attributes-section">
+      <section class="custom-fields-table basic-table">
+        <div class="project-values-title">
+          <h2>{{ customFieldSectionTitle | translate }}</h2>
+          <button variant="primary" title="{{ customFieldButtonTitle | translate }}" translate="ADMIN.CUSTOM_ATTRIBUTES.ADD" class="btn-small show-add-new js-add-custom-field-button"></button>
+        </div>
+        <div class="table-header">
+          <div class="row">
+            <div translate="COMMON.FIELDS.NAME" class="custom-name"></div>
+            <div translate="COMMON.FIELDS.DESCRIPTION" class="custom-description"></div>
+            <div translate="COMMON.FIELDS.TYPE" class="custom-field-type"></div>
+            <div class="custom-options"></div>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="js-sortable">
+            <div ng-repeat="attr in customAttributes track by attr.id" tg-bind-scope class="e2e-item">
+              <form tg-bind-scope class="js-form">
+                <div class="row single-custom-field js-view-custom-field">
+                  <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                  <div class="custom-name"><span>{{ attr.name }}</span><a href="" ng-click="toggleExtraVisible(attr.id)" ng-if="attr.type == 'dropdown'">
+                      <tg-svg ng-if="!isExtraVisible[attr.id]" svg-icon="icon-arrow-right"></tg-svg>
+                      <tg-svg ng-if="isExtraVisible[attr.id]" svg-icon="icon-arrow-down"></tg-svg></a></div>
+                  <div class="custom-description">{{ attr.description }}</div>
+                  <div ng-switch on="attr.type" class="custom-field-type"><span ng-switch-default translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_TEXT"></span><span ng-switch-when="richtext" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_RICHTEXT"></span><span ng-switch-when="multiline" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_MULTI"></span><span ng-switch-when="date" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DATE"></span><span ng-switch-when="url" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_URL"></span><span ng-switch-when="dropdown" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DROPDOWN"></span><span ng-switch-when="checkbox" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_CHECKBOX"></span><span ng-switch-when="number" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_NUMBER"></span></div>
+                  <div class="custom-options">
+                    <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.EDIT' | translate}}" class="js-edit-custom-field-button">
+                        <tg-svg svg-icon="icon-edit"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" class="js-delete-custom-field-button">
+                        <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                  </div>
+                </div>
+                <div class="js-edit-custom-field hidden">
+                  <div class="row single-custom-field">
+                    <fieldset class="custom-name">
+                      <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="attr.name" data-required="true" data-maxlength="64">
+                    </fieldset>
+                    <fieldset class="custom-description">
+                      <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="attr.description">
+                    </fieldset>
+                    <fieldset class="custom-field-type">
+                      <select ng-model="attr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES"></select>
+                    </fieldset>
+                    <fieldset class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_UPDATE' | translate}}" class="js-update-custom-field-button">
+                          <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_CANCEL_EDITION' | translate}}" class="js-cancel-edit-custom-field-button">
+                          <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div ng-show="attr.type == 'dropdown' &amp;&amp; isExtraVisible[attr.id]" class="custom-field-extra">
+                  <div data-id="{{ attr.id }}" class="js-child-sortable">
+                    <div ng-repeat="option in attr.extra track by $index" tg-bind-scope class="js-form">
+                      <div class="row js-view-custom-field-extra">
+                        <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                        <div class="custom-extra-attr-wrapper"><span>{{ option }}</span></div>
+                      </div>
+                      <div class="row js-edit-custom-field-extra hidden">
+                        <div class="custom-extra-attr-wrapper">
+                          <input type="text" name="name" ng-model="attr.extra[$index]" data-required="true" data-maxlength="64">
+                        </div>
+                        <div class="custom-options">
+                          <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="attr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                              <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="custom-extra-actions hidden"><a href="" class="js-add-option-custom-field-extra-button">
+                      <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <form tg-bind-scope>
+            <div class="row single-custom-field js-new-custom-field hidden">
+              <fieldset class="custom-name">
+                <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="newAttr.name" data-required="true" data-maxlength="64">
+              </fieldset>
+              <fieldset class="custom-description">
+                <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="newAttr.description">
+              </fieldset>
+              <fieldset class="custom-field-type">
+                <select ng-model="newAttr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES">
+                  <option value="" translate="ADMIN.CUSTOM_ATTRIBUTES.FIELD_TYPE_DEFAULT"></option>
+                </select>
+              </fieldset>
+              <fieldset class="custom-options">
+                <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.SAVE_TITLE' | translate}}" class="js-create-custom-field-button">
+                    <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.CANCEL_TITLE' | translate}}" class="js-cancel-new-custom-field-button">
+                    <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+              </fieldset>
+            </div>
+            <div ng-show="newAttr.type == 'dropdown' &amp;&amp; isExtraVisible[-1]" class="custom-field-extra">
+              
+              <div data-id="-1" class="js-child-sortable">
+                <div ng-repeat="option in newAttr.extra track by $index" tg-bind-scope class="js-form">
+                  <div class="row js-new-custom-field-extra">
+                    <div class="custom-extra-attr-wrapper">
+                      <input type="text" name="name" ng-model="newAttr.extra[$index]" data-required="true" data-maxlength="64">
+                    </div>
+                    <div class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="newAttr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                          <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="custom-extra-actions"><a href="" class="js-add-option-custom-field-extra-button">
+                  <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div tg-project-custom-attributes ng-controller="ProjectCustomAttributesController as ctrl" ng-init="init('issue'); customFieldSectionTitle='ADMIN.CUSTOM_FIELDS.ISSUE_DESCRIPTION'; customFieldButtonTitle='ADMIN.CUSTOM_FIELDS.ISSUE_ADD'" class="admin-attributes-section">
+      <section class="custom-fields-table basic-table">
+        <div class="project-values-title">
+          <h2>{{ customFieldSectionTitle | translate }}</h2>
+          <button variant="primary" title="{{ customFieldButtonTitle | translate }}" translate="ADMIN.CUSTOM_ATTRIBUTES.ADD" class="btn-small show-add-new js-add-custom-field-button"></button>
+        </div>
+        <div class="table-header">
+          <div class="row">
+            <div translate="COMMON.FIELDS.NAME" class="custom-name"></div>
+            <div translate="COMMON.FIELDS.DESCRIPTION" class="custom-description"></div>
+            <div translate="COMMON.FIELDS.TYPE" class="custom-field-type"></div>
+            <div class="custom-options"></div>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="js-sortable">
+            <div ng-repeat="attr in customAttributes track by attr.id" tg-bind-scope class="e2e-item">
+              <form tg-bind-scope class="js-form">
+                <div class="row single-custom-field js-view-custom-field">
+                  <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                  <div class="custom-name"><span>{{ attr.name }}</span><a href="" ng-click="toggleExtraVisible(attr.id)" ng-if="attr.type == 'dropdown'">
+                      <tg-svg ng-if="!isExtraVisible[attr.id]" svg-icon="icon-arrow-right"></tg-svg>
+                      <tg-svg ng-if="isExtraVisible[attr.id]" svg-icon="icon-arrow-down"></tg-svg></a></div>
+                  <div class="custom-description">{{ attr.description }}</div>
+                  <div ng-switch on="attr.type" class="custom-field-type"><span ng-switch-default translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_TEXT"></span><span ng-switch-when="richtext" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_RICHTEXT"></span><span ng-switch-when="multiline" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_MULTI"></span><span ng-switch-when="date" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DATE"></span><span ng-switch-when="url" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_URL"></span><span ng-switch-when="dropdown" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_DROPDOWN"></span><span ng-switch-when="checkbox" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_CHECKBOX"></span><span ng-switch-when="number" translate="ADMIN.CUSTOM_FIELDS.FIELD_TYPE_NUMBER"></span></div>
+                  <div class="custom-options">
+                    <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.EDIT' | translate}}" class="js-edit-custom-field-button">
+                        <tg-svg svg-icon="icon-edit"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" class="js-delete-custom-field-button">
+                        <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                  </div>
+                </div>
+                <div class="js-edit-custom-field hidden">
+                  <div class="row single-custom-field">
+                    <fieldset class="custom-name">
+                      <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="attr.name" data-required="true" data-maxlength="64">
+                    </fieldset>
+                    <fieldset class="custom-description">
+                      <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="attr.description">
+                    </fieldset>
+                    <fieldset class="custom-field-type">
+                      <select ng-model="attr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES"></select>
+                    </fieldset>
+                    <fieldset class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_UPDATE' | translate}}" class="js-update-custom-field-button">
+                          <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.ACTION_CANCEL_EDITION' | translate}}" class="js-cancel-edit-custom-field-button">
+                          <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div ng-show="attr.type == 'dropdown' &amp;&amp; isExtraVisible[attr.id]" class="custom-field-extra">
+                  <div data-id="{{ attr.id }}" class="js-child-sortable">
+                    <div ng-repeat="option in attr.extra track by $index" tg-bind-scope class="js-form">
+                      <div class="row js-view-custom-field-extra">
+                        <tg-svg svg-icon="icon-draggable" class="e2e-drag"></tg-svg>
+                        <div class="custom-extra-attr-wrapper"><span>{{ option }}</span></div>
+                      </div>
+                      <div class="row js-edit-custom-field-extra hidden">
+                        <div class="custom-extra-attr-wrapper">
+                          <input type="text" name="name" ng-model="attr.extra[$index]" data-required="true" data-maxlength="64">
+                        </div>
+                        <div class="custom-options">
+                          <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="attr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                              <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="custom-extra-actions hidden"><a href="" class="js-add-option-custom-field-extra-button">
+                      <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <form tg-bind-scope>
+            <div class="row single-custom-field js-new-custom-field hidden">
+              <fieldset class="custom-name">
+                <input type="text" name="name" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_NAME' | translate}}" ng-model="newAttr.name" data-required="true" data-maxlength="64">
+              </fieldset>
+              <fieldset class="custom-description">
+                <input type="text" name="description" placeholder="{{'ADMIN.CUSTOM_ATTRIBUTES.SET_FIELD_DESCRIPTION' | translate}}" ng-model="newAttr.description">
+              </fieldset>
+              <fieldset class="custom-field-type">
+                <select ng-model="newAttr.type" ng-options="type.key as type.name|translate for type in TYPE_CHOICES">
+                  <option value="" translate="ADMIN.CUSTOM_ATTRIBUTES.FIELD_TYPE_DEFAULT"></option>
+                </select>
+              </fieldset>
+              <fieldset class="custom-options">
+                <div class="custom-options-wrapper"><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.SAVE_TITLE' | translate}}" class="js-create-custom-field-button">
+                    <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'ADMIN.CUSTOM_ATTRIBUTES.CANCEL_TITLE' | translate}}" class="js-cancel-new-custom-field-button">
+                    <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+              </fieldset>
+            </div>
+            <div ng-show="newAttr.type == 'dropdown' &amp;&amp; isExtraVisible[-1]" class="custom-field-extra">
+              
+              <div data-id="-1" class="js-child-sortable">
+                <div ng-repeat="option in newAttr.extra track by $index" tg-bind-scope class="js-form">
+                  <div class="row js-new-custom-field-extra">
+                    <div class="custom-extra-attr-wrapper">
+                      <input type="text" name="name" ng-model="newAttr.extra[$index]" data-required="true" data-maxlength="64">
+                    </div>
+                    <div class="custom-options">
+                      <div class="custom-options-wrapper"><a href="" tabindex="-1" title="{{'ADMIN.CUSTOM_ATTRIBUTES.DELETE' | translate}}" ng-if="newAttr.extra.length &gt; 1" class="js-delete-custom-field-extra-button">
+                          <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="custom-extra-actions"><a href="" class="js-add-option-custom-field-extra-button">
+                  <tg-svg svg-icon="icon-add"></tg-svg><span>Add option</span></a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

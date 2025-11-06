@@ -1,0 +1,33 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+div.verify-email-form(tg-verify-email)
+    p
+        strong(translate="VERIFY_EMAIL_FORM.TITLE")
+    p
+        span(translate="VERIFY_EMAIL_FORM.SUBTITLE")
+
+    form
+        fieldset
+            input(
+                type="hidden"
+                name="email_token"
+                ng-model="data.email_token"
+                data-required="true"
+                placeholder="{{'VERIFY_EMAIL_FORM.PLACEHOLDER_INPUT_TOKEN' | translate}}"
+            )
+
+            a.ng-submit-form.btn-big(
+                href=""
+                title="{{'VERIFY_EMAIL_FORM.ACTION_VERIFY_EMAIL' | translate}}"
+                translate="VERIFY_EMAIL_FORM.ACTION_VERIFY_EMAIL"
+            )
+        fieldset.end
+            button.btn-big(
+                type="submit",
+                class="hidden"
+            )

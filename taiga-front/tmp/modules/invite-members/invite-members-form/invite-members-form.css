@@ -1,0 +1,54 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.invite-members-form {
+  border-top: 1px solid #E2E3E9;
+  margin: 0 5rem; }
+  .invite-members-form .invite-members-form-list {
+    margin: 0;
+    margin-bottom: 1rem; }
+  .invite-members-form .invite-members-single {
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem; }
+  .invite-members-form .invite-members-single-data {
+    align-items: center;
+    display: flex;
+    flex: 1; }
+  .invite-members-form .invite-members-single-avatar {
+    height: 4rem;
+    margin-right: 1rem;
+    width: 4rem; }
+  .invite-members-form .invite-members-single-remove {
+    color: #E44057;
+    margin-left: 1rem;
+    transition: color .2s; }
+  .invite-members-form .invite-members-single-role {
+    flex-basis: 40%;
+    flex-shrink: 0; }
+  .invite-members-form .invite-members-single-new {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0; }
+    .invite-members-form .invite-members-single-new .invite-members-single-new-btn {
+      cursor: pointer; }
+    .invite-members-form .invite-members-single-new .icon-add {
+      width: 2rem;
+      height: 2rem;
+      fill: #434456;
+      transition: fill .2s; }
+    .invite-members-form .invite-members-single-new:hover .icon-add {
+      fill: #5CBAA9; }
+  .invite-members-form .invite-members-single-send {
+    font-size: 1.1rem;
+    display: block;
+    margin: 1.5rem 0 1rem;
+    padding: 1rem;
+    width: 100%; }
+  .invite-members-form .invite-members-single-help {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }

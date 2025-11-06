@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<div tg-project-modules ng-controller="ProjectProfileController as ctrl" ng-init="section='admin'; sectionName='ADMIN.MODULES.TITLE'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <sidebar tg-admin-navigation="project-profile" class="menu-secondary sidebar settings-nav">
+    <section class="admin-menu">
+      <nav>
+        <ul>
+          <li id="adminmenu-project-profile"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.MENU.PROJECT" class="title"></span></a></li>
+          <li id="adminmenu-project-values"><a href="" tg-nav="project-admin-project-values-status:project=project.slug"><span translate="ADMIN.MENU.ATTRIBUTES" class="title"></span></a></li>
+          <li id="adminmenu-memberships"><a href="" tg-nav="project-admin-memberships:project=project.slug"><span translate="ADMIN.MENU.MEMBERS" class="title"></span></a></li>
+          <li id="adminmenu-roles"><a href="" tg-nav="project-admin-roles:project=project.slug"><span translate="ADMIN.MENU.PERMISSIONS" class="title"></span></a></li>
+          <li id="adminmenu-third-parties"><a href="" tg-nav="project-admin-third-parties-webhooks:project=project.slug"><span translate="ADMIN.MENU.INTEGRATIONS" class="title"></span></a></li>
+          <li id="adminmenu-contrib" ng-if="adminPlugins.length &gt; 0"><a href="" tg-nav="project-admin-contrib:project=project.slug,plugin=adminPlugins[0].slug"><span translate="COMMON.PLUGINS" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <sidebar tg-admin-navigation="modules" class="menu-tertiary sidebar">
+    <section class="admin-submenu">
+      <nav>
+        <ul>
+          <li id="adminmenu-details"><a href="" tg-nav="project-admin-project-profile-details:project=project.slug"><span translate="ADMIN.PROJECT_PROFILE.PROJECT_DETAILS" class="title"></span></a></li>
+          <li id="adminmenu-default-values"><a href="" tg-nav="project-admin-project-profile-default-values:project=project.slug"><span translate="ADMIN.PROJECT_PRESETS.MENU_TITLE" class="title"></span></a></li>
+          <li id="adminmenu-modules"><a href="" tg-nav="project-admin-project-profile-modules:project=project.slug"><span translate="ADMIN.MODULES.TITLE" class="title"></span></a></li>
+          <li id="adminmenu-export"><a href="" tg-nav="project-admin-project-profile-export:project=project.slug"><span translate="ADMIN.PROJECT_EXPORT.TITLE" class="title"></span></a></li>
+          <li id="adminmenu-reports"><a href="" tg-nav="project-admin-project-profile-reports:project=project.slug"><span translate="ADMIN.REPORTS.TITLE" class="title"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </sidebar>
+  <section class="main admin-functionalities">
+    <header>
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+    </header>
+    <form class="module-container">
+      <div ng-class="{true:'active', false:''}[project.is_epics_activated]" class="module module-epics">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-epic"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.EPICS" class="module-name"></div>
+        <div class="module-desc">
+          <p translate="ADMIN.MODULES.EPICS_DESCRIPTION"></p>
+        </div>
+        <div class="module-activation module-direct-active">
+          <div class="check">
+            <input id="functionality-epics" name="functionality-epics" type="checkbox" ng-checked="project.is_epics_activated" ng-model="project.is_epics_activated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{true:'active', false:''}[project.is_backlog_activated]" class="module module-scrum">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-scrum"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.BACKLOG" class="module-name"></div>
+        <div class="module-desc">
+          <p translate="ADMIN.MODULES.BACKLOG_DESCRIPTION"></p>
+          <div ng-if="project.is_backlog_activated" class="module-desc-options">
+            <fieldset>
+              <label for="total-sprints">{{ 'ADMIN.MODULES.NUMBER_SPRINTS' | translate }}</label>
+              <input id="total-sprints" name="total-sprints" type="number" min="0" placeholder="{{'ADMIN.MODULES.NUMBER_SPRINTS_HELP' | translate}}" ng-model="project.total_milestones" data-type="digits">
+            </fieldset>
+            <fieldset>
+              <label for="total-story-points">{{ 'ADMIN.MODULES.NUMBER_US_POINTS' | translate }}</label>
+              <input id="total-story-points" name="total-story-points" type="number" min="0" placeholder="{{'ADMIN.MODULES.NUMBER_US_POINTS_HELP' | translate}}" ng-model="project.total_story_points" data-type="digits">
+            </fieldset>
+            <div class="options"><a href="" ng-if="project.is_backlog_activated" class="save">
+                <tg-svg svg-icon="icon-check-empty"></tg-svg></a></div>
+          </div>
+        </div>
+        <div class="module-activation module-direct-active">
+          <div class="check">
+            <input id="functionality-backlog" name="functionality-backlog" type="checkbox" ng-checked="project.is_backlog_activated" ng-model="project.is_backlog_activated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{true:'active', false:''}[project.is_kanban_activated]" class="module module-kanban">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-kanban"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.KANBAN" class="module-name"></div>
+        <div translate="ADMIN.MODULES.KANBAN_DESCRIPTION" class="module-desc"></div>
+        <div class="module-activation module-direct-active">
+          <div class="check">
+            <input id="functionality-kanban" name="functionality-kanban" type="checkbox" ng-checked="project.is_kanban_activated" ng-model="project.is_kanban_activated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{true:'active', false:''}[project.is_issues_activated]" class="module module-issues">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-issues"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.ISSUES" class="module-name"></div>
+        <div translate="ADMIN.MODULES.ISSUES_DESCRIPTION" class="module-desc"></div>
+        <div class="module-activation module-direct-active">
+          <div class="check">
+            <input id="functionality-issues" name="functionality-issues" type="checkbox" ng-checked="project.is_issues_activated" ng-model="project.is_issues_activated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{true:'active', false:''}[project.is_wiki_activated]" class="module module-wiki">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-wiki"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.WIKI" class="module-name"></div>
+        <div translate="ADMIN.MODULES.WIKI_DESCRIPTION" class="module-desc"></div>
+        <div class="module-activation module-direct-active">
+          <div class="check">
+            <input id="functionality-wiki" name="functionality-wiki" type="checkbox" ng-checked="project.is_wiki_activated" ng-model="project.is_wiki_activated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{true:'active', false:''}[isVideoconferenceActivated]" class="module module-videoconference">
+        <div class="module-icon">
+          <tg-svg svg-icon="icon-module-meet"></tg-svg>
+        </div>
+        <div translate="ADMIN.MODULES.MEETUP" class="module-name"></div>
+        <div class="module-desc">
+          <p translate="ADMIN.MODULES.MEETUP_DESCRIPTION"></p>
+          <div ng-if="isVideoconferenceActivated" class="videoconference-attributes">
+            <select id="videoconference-type" name="videoconference-type" ng-model="project.videoconferences" ng-options="e.id as e.name|translate for e in [{'id':'whereby-com', 'name':'ADMIN.MODULES.WHEREBYCOM_CHAT_ROOM'},{'id':'jitsi', 'name': 'ADMIN.MODULES.JITSI_CHAT_ROOM'},{'id':'talky', 'name': 'ADMIN.MODULES.TALKY_CHAT_ROOM'},{'id':'custom', 'name': 'ADMIN.MODULES.CUSTOM_CHAT_ROOM'}]">
+              <option value="" translate="ADMIN.MODULES.SELECT_VIDEOCONFERENCE"></option>
+            </select>
+            <fieldset ng-if="project.videoconferences &amp;&amp; project.videoconferences != 'custom'">
+              <input id="videoconference-prefix" name="videoconference-prefix" type="text" ng-model="project.videoconferences_extra_data" data-maxlength="250" placeholder="{{'ADMIN.MODULES.SALT_CHAT_ROOM' | translate}}">
+            </fieldset>
+            <fieldset ng-if="project.videoconferences == 'custom'">
+              <input id="videoconference-url" name="videoconference-url" type="text" ng-model="project.videoconferences_extra_data" data-maxlength="250" placeholder="{{'ADMIN.MODULES.URL_CHAT_ROOM' | translate}}" data-url data-required="true">
+            </fieldset>
+            <fieldset class="options"><a href="" ng-if="project.videoconferences" class="save">
+                <tg-svg svg-icon="icon-check-empty"></tg-svg></a></fieldset>
+          </div>
+        </div>
+        <div class="module-activation">
+          <div class="check">
+            <input id="functionality-video" name="functionality-video" type="checkbox" ng-checked="project.isVideoconferenceActivated" ng-model="isVideoconferenceActivated" class="activate-input">
+            <div></div><span translate="COMMON.YES" class="check-text check-yes"></span><span translate="COMMON.NO" class="check-text check-no"></span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,18 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+button.btn-filter.ng-animate-disabled.e2e-show-tag-input(
+    variant="secondary"
+    ng-if="!vm.addTag && vm.checkPermissions()"
+    title="{{'COMMON.TAGS.ADD' | translate}}"
+    ng-click="vm.displayTagInput()"
+)
+    span.add-tag-text(translate="COMMON.TAGS.ADD")
+    tg-svg(
+        svg-icon="icon-add"
+        svg-title-translate="COMMON.TAGS.ADD"
+    )

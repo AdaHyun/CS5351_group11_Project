@@ -1,0 +1,20 @@
+
+<div class="task-reorder"><% if(perms.modify_task) { %>
+  <tg-svg svg-icon="icon-draggable" class="icon-drag"></tg-svg><% } %>
+</div>
+<div class="task-name"><a tg-nav="project-tasks-detail:project=project.slug,ref=task.ref" class="clickable"><span class="task-name-ref">#<%- task.ref %></span><span ng-non-bindable="ng-non-bindable" class="task-name-subject"><%= emojify(task.subject) %></span></a>
+  <tg-due-date due-date="task.due_date" obj-type="task" ng-if="task.due_date"></tg-due-date>
+</div>
+<div class="task-settings"><% if(perms.modify_task) { %><a href="" title="{{'COMMON.EDIT' | translate}}" class="edit-task">
+    <tg-svg svg-icon="icon-edit"></tg-svg></a><% } %>
+  <% if(perms.delete_task) { %><a title="{{'COMMON.DELETE' | translate}}" href="" class="delete-task">
+    <tg-svg svg-icon="icon-trash"></tg-svg></a><% } %>
+</div>
+<div tg-related-task-status="task" ng-model="task" class="status"><a href="" title="{{'TASK.TITLE_SELECT_STATUS' | translate}}" ng-style="{'color': task.status_extra_info.color}" class="task-status"><span class="task-status-bind"></span><% if(perms.modify_task) { %>
+    <tg-svg svg-icon="icon-arrow-down" ng-style="{'fill': task.status_extra_info.color}"></tg-svg><% } %></a></div>
+<div tg-related-task-assigned-to-inline-edition="task" class="assigned-to">
+  <div title="{{'COMMON.FIELDS.ASSIGNED_TO' | translate}}" class="task-assignedto &lt;% if(perms.modify_task) { %&gt;editable&lt;% } %&gt;">
+    <figure class="avatar"></figure><% if(perms.modify_task) { %>
+    <tg-svg svg-icon="icon-arrow-down"></tg-svg><% } %>
+  </div>
+</div>

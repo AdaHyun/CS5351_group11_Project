@@ -1,0 +1,20 @@
+
+<div ng-class="{'active': active}" class="dropdown-project-list"><a href="" title="{{'PROJECT.NAVIGATION.PROJECTS' | translate}}" tg-nav="projects" class="dropdown-project-list-projects">
+    <tg-svg svg-icon="icon-folder" class="icon-folder"></tg-svg><span>{{'PROJECT.NAVIGATION.PROJECTS' | translate}}</span>
+    <div ng-if="vm.projects.size === 0" class="empty-projects"></div></a>
+  <div class="navbar-dropdown">
+    <div ng-if="vm.projects.size">
+      <ul class="dropdown-project-list-ul">
+        <li tg-repeat="project in vm.projects track by project.get('id')"><a href="#" tg-nav="project:project=project.get('slug'),section=project.get('my_homepage')" ng-class="{'blocked-project': project.get('blocked_code'), 'active': vm.currentProject == project.get('id')}" class="dropdown-project-list-link secondary"><img tg-project-logo-small-src="::project" alt="{{::project.get('name')}}"/><span>{{::project.get("name")}}</span>
+            <tg-svg svg-icon="icon-slash" ng-if="project.get('blocked_code')" svg-title="PROJECT.BLOCKED_PROJECT.BLOCKED"></tg-svg></a></li>
+      </ul><a href="#" tg-nav="projects" title="{{'PROJECT.NAVIGATION.VIEW_ALL_PROJECTS' | translate}}" translate="PROJECT.NAVIGATION.VIEW_ALL_PROJECTS" class="see-more-projects-btn"></a>
+      <div class="create-options"><a href="#" tg-nav="create-project" title="{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT' | translate}}" class="create-project-btn button-primary">
+          <tg-svg svg-icon="icon-plus-1"></tg-svg><span>{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT' | translate}}</span></a></div>
+    </div>
+    <div ng-if="!vm.projects.size">
+      <h2>{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT_FIRST' | translate}}</h2>
+      <p class="dropdown-project-list-desc">{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT_FIRST_TEXT' | translate}}</p>
+      <div class="create-options"><a href="#" tg-nav="create-project" title="{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT' | translate}}" class="create-project-btn button-primary"><span>{{'PROJECT.NAVIGATION.ACTION_CREATE_PROJECT' | translate}}</span></a></div>
+    </div>
+  </div>
+</div>

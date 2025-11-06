@@ -1,0 +1,84 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.project-list-wrapper {
+  position: relative; }
+  .project-list-wrapper .project-list-title {
+    align-items: center;
+    background: #F1F1F4;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 1rem;
+    padding: .9rem 1rem; }
+    .project-list-wrapper .project-list-title h1 {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      font-size: 1.4rem;
+      color: #008AA8;
+      margin: 0; }
+  .project-list-wrapper .icon-private,
+  .project-list-wrapper .icon-badge,
+  .project-list-wrapper .icon-blocked-project {
+    width: 1rem;
+    height: 1rem; }
+  .project-list-wrapper .icon-badge {
+    fill: #5CBAA9;
+    stroke: #5CBAA9; }
+  .project-list-wrapper .create-project-btn {
+    font-size: .875rem;
+    margin-right: .25rem;
+    padding: .6rem 2.5rem; }
+  .project-list-wrapper .import-project-button {
+    padding: .53rem .8rem; }
+    .project-list-wrapper .import-project-button:hover .icon-upload {
+      fill: #5CBAA9; }
+    .project-list-wrapper .import-project-button .icon-upload {
+      fill: #fff; }
+  .project-list-wrapper .project-list-section {
+    display: flex; }
+  .project-list-wrapper .project-list {
+    flex: 1;
+    margin-right: 2rem; }
+  .project-list-wrapper .help-area {
+    font-size: .875rem;
+    color: #70728F;
+    width: 200px; }
+  .project-list-wrapper .list-itemtype-project {
+    background: rgba(255, 255, 255, 0.6); }
+    .project-list-wrapper .list-itemtype-project:hover {
+      background: rgba(92, 186, 169, 0.1);
+      cursor: move;
+      transition: background .3s; }
+      .project-list-wrapper .list-itemtype-project:hover .drag {
+        opacity: 1; }
+    .project-list-wrapper .list-itemtype-project.blocked-project .list-itemtype-project-image,
+    .project-list-wrapper .list-itemtype-project.blocked-project .project-title,
+    .project-list-wrapper .list-itemtype-project.blocked-project .private,
+    .project-list-wrapper .list-itemtype-project.blocked-project .project-description,
+    .project-list-wrapper .list-itemtype-project.blocked-project .icon-badge {
+      opacity: .25; }
+    .project-list-wrapper .list-itemtype-project.blocked-project:hover .icon-drag {
+      opacity: 1; }
+    .project-list-wrapper .list-itemtype-project .list-itemtype-project-data-wrapper {
+      display: flex; }
+    .project-list-wrapper .list-itemtype-project .list-itemtype-project-image {
+      flex-shrink: 0;
+      margin-right: 1rem; }
+  .project-list-wrapper .drag {
+    align-self: center;
+    opacity: 0; }
+    .project-list-wrapper .drag svg {
+      fill: #70728F;
+      height: 1.1rem;
+      margin-right: .5rem;
+      transition: opacity .2s;
+      width: 1.1rem; }
+  .project-list-wrapper .gu-transit {
+    background-color: #ebebf0;
+    height: 5rem;
+    opacity: 1; }
+    .project-list-wrapper .gu-transit * {
+      display: none; }
+  .project-list-wrapper .gu-mirror {
+    background: white;
+    opacity: 1; }

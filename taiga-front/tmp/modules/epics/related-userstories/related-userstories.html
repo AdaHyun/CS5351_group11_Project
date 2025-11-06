@@ -1,0 +1,10 @@
+
+<section ng-if="vm.showRelatedUserStoriesSection()" class="related-userstories">
+  <div class="related-userstories-header"><span translate="COMMON.RELATED_USERSTORIES" class="related-userstories-title"></span>
+    <tg-related-userstories-create tg-check-permission="modify_epic" show-create-related-userstories-lightbox="vm.showCreateRelatedUserstoriesLightbox" project="vm.project" epic="vm.epic" epic-userstories="vm.userstories" load-related-userstories="vm.loadRelatedUserstories()"></tg-related-userstories-create>
+  </div>
+  <div tg-related-userstories-sortable="vm.reorderRelatedUserstory(us, newIndex)" class="related-userstories-body">
+    <tg-related-userstory-row tg-repeat="us in vm.userstories track by us.get('id')" ng-class="{closed: us.get('is_closed'), blocked: us.get('is_blocked'), sortable: vm.userCanSort()}" userstory="us" epic="vm.epic" project="vm.project" load-related-userstories="vm.loadRelatedUserstories()" tg-bind-scope="tg-bind-scope" class="row"></tg-related-userstory-row>
+  </div>
+  <div tg-related-userstories-create-form="tg-related-userstories-create-form"></div>
+</section>

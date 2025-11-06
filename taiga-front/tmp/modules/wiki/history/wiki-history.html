@@ -1,0 +1,6 @@
+
+<nav ng-if="vm.historyEntries.count()&gt;0" class="history-tabs"><a ng-class="{active: vm.toggle}" ng-click="vm.toggle = !vm.toggle" href="" title="{{ACTIVITY.TITLE}}" translate="ACTIVITY.TITLE" class="history-tab"></a></nav>
+<p>{{ disablePagination }}</p>
+<section ng-if="vm.historyEntries.count()&gt;0 &amp;&amp; vm.toggle" infinite-scroll="vm.nextPage()" infinite-scroll-immediate-check="false" infinite-scroll-disabled="vm.disablePagination" class="wiki-history">
+  <tg-wiki-history-entry tg-repeat="historyEntry in vm.historyEntries" history-entry="historyEntry" class="wiki-history-entry"></tg-wiki-history-entry>
+</section>

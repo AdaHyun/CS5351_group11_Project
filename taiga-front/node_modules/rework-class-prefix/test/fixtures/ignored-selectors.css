@@ -1,0 +1,15 @@
+.my-class {
+  color: green;
+}
+
+.my-class .with-another-class {
+  box-sizing: border-box;
+}
+
+.ignored-class {
+  background-color: blue;
+}
+
+.prefix-that-is-ignored {
+  text-decoration: none;
+}

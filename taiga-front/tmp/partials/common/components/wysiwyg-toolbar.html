@@ -1,0 +1,14 @@
+
+<div ng-class="{'edit-mode': editMode, 'read-mode': !editMode, 'html-read-mode': htmlReadMode}" class="editor">
+  <div ng-if="outdated">
+    <p class="outdated">{{'COMMON.WYSIWYG.OUTDATED' | translate}}</p>
+  </div>
+  <div ng-if="markdown.length" tg-bind-wysiwyg-html="markdown" class="wysiwyg js-wysiwyg-html"></div>
+  <div ng-if="!markdown.length" class="wysiwyg js-wysiwyg-html">
+    <p class="placeholder">{{ placeholder }}</p>
+  </div>
+  <div class="editor-wrapper"></div>
+  <div ng-if="editMode" class="mode-editor"><a ng-if="mode=='markdown'" href="https://community.taiga.io/t/taiga-markdown-syntax/191" target="_blank" title="{{'COMMON.WYSIWYG.MARKDOWN_HELP' | translate}}" class="help-markdown">
+      <tg-svg svg-icon="icon-question"></tg-svg><span translate="COMMON.WYSIWYG.MARKDOWN_HELP"></span></a></div>
+</div>
+<div ng-class="{visible: editMode}" class="tools"><a variant="primary" ng-class="{disabled: required &amp;&amp; !markdown.length}" tg-loading="saving" href="#" ng-click="save($event)" translate="COMMON.SAVE" class="e2e-save-editor btn-small"></a><a variant="secondary" href="#" ng-click="cancelWithConfirmation($event)" title="{{ 'COMMON.CANCEL' | translate }}" translate="COMMON.CANCEL" class="e2e-cancel-editor btn-small"></a></div>

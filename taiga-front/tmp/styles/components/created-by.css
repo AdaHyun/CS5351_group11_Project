@@ -1,0 +1,33 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.ticket-created-by {
+  display: flex;
+  justify-content: flex-end; }
+  @media screen and (max-width: 768px) {
+    .ticket-created-by {
+      margin: 1rem 0 .5rem; } }
+  .ticket-created-by .user-avatar {
+    flex-basis: 2rem;
+    flex-grow: 0;
+    margin-left: .5rem; }
+    .ticket-created-by .user-avatar img {
+      border-radius: 50%;
+      font-size: .6em;
+      max-height: 2rem;
+      max-width: 2rem;
+      min-height: 2rem;
+      min-width: 2rem;
+      overflow: hidden; }
+  .ticket-created-by .created-by .created-title,
+  .ticket-created-by .created-by .created-date {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #5A5B72;
+    display: block;
+    text-align: right; }
+  .ticket-created-by .created-by .created-title {
+    color: #008AA8; }
+  .ticket-created-by .created-by .created-date {
+    margin-left: .5rem; }

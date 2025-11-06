@@ -1,0 +1,15 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-input-search {
+  display: block;
+  position: relative; }
+  tg-input-search tg-svg {
+    height: 14px;
+    position: absolute;
+    right: 1rem;
+    top: 9px;
+    width: 14px; }
+    tg-input-search tg-svg svg {
+      fill: #008AA8; }

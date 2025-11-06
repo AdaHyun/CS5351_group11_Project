@@ -1,0 +1,25 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.most-active(ng-if="vm.highlighted.size")
+    .header
+        .title-wrapper
+            tg-svg(svg-icon="icon-activity")
+            h1.title {{ 'DISCOVER.MOST_ACTIVE' | translate }}
+        tg-discover-home-order-by(on-change="vm.orderBy(orderBy)", order-by="vm.currentOrderBy")
+    
+    tg-highlighted(
+        loading="vm.loading",
+        highlighted="vm.highlighted"
+        order-by="vm.order_by"
+    )
+
+.empty-highlighted-project(
+    ng-if="!vm.highlighted.size"
+)
+    tg-svg(svg-icon="icon-activity")
+    span {{ 'DISCOVER.MOST_ACTIVE_EMPTY' | translate }}

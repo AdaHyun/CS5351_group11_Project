@@ -1,0 +1,23 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.type-data(class!="<% if(editable){ %>clickable<% }%>")
+    .label.level-name(translate="COMMON.FIELDS.TYPE")
+    .level-data
+        span.label <%- type.name %>
+        span.level-color(style!="background-color:<%- type.color %>")
+
+    ul.popover.pop-type
+        <% _.each(typees, function(tp) { %>
+        li
+            a.type(
+                href=""
+                title!="<%- tp.name %>"
+                data-type-id!="<%- tp.id %>"
+            )
+                span.item-text <%- tp.name %>
+        <% }); %>

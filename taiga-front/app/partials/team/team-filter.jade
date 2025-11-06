@@ -1,0 +1,28 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+ul
+    li(
+        ng-class="{active: !filtersRole.id}"
+    )
+        a(
+            ng-click="ctrl.setRole()"
+            href=""
+        )
+          span.title(translate="TEAM.SECTION_FILTER_ALL")
+          tg-svg(svg-icon="icon-arrow-right")
+
+    li(
+        ng-repeat="role in roles"
+        ng-class="{active: role.id == filtersRole.id}"
+    )
+        a(
+            ng-click="ctrl.setRole(role)"
+            href=""
+        )
+            span.title(tg-bo-bind="role.name")
+            tg-svg(svg-icon="icon-arrow-right")

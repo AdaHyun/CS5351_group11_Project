@@ -1,0 +1,44 @@
+
+<div ng-if="vm.inViewPort" ng-attr-title="{{ vm.zoomLevel == 0 || vm.folded ? (vm.item.getIn(['model', 'subject']) | emojify) : vm.item.getIn(['model', 'blocked_note']) }}" ng-class="{'card-blocked': vm.item.getIn(['model', 'is_blocked']), 'archived': vm.archived, 'with-assigned-user': vm.item.get('assigned_users').size, 'with-fold-action': vm.visible('unfold') &amp;&amp; (vm.hasTasks() || vm.hasVisibleAttachments())}" class="card-inner {{'zoom-' + vm.zoomLevel}} type-{{::vm.type}}">
+  <div ng-if="vm.visible('tags') &amp;&amp; vm.item.get('colorized_tags').size" class="card-tags"><span tg-repeat="tag in vm.item.get('colorized_tags') track by tag.get('name')" ng-style="{'background-color': vm.getTagColor(tag.get('color'))}" title="{{::tag.get('name')}}" class="card-tag">{{ vm.zoomLevel == 3 ? tag.get('name') : '' }}</span></div>
+  <tg-card-actions item="vm.item" zoom-level="vm.zoomLevel" vm="vm"></tg-card-actions>
+  <div ng-if="vm.zoomLevel &gt; 0">
+    <div ng-if="::vm.item.getIn(['model', 'epics']).size" class="card-epics"><a tg-repeat="epic in ::vm.item.getIn(['model', 'epics']) track by epic.get('id')" tg-nav="project-epics-detail:project=vm.item.getIn(['model', 'project_extra_info', 'slug']),ref=epic.get('ref')" class="card-epic"><span ng-style="::{'background-color': epic.get('color')}" ng-attr-title="{{ ::epic.get('subject') }}" class="epic-color"></span><span ng-attr-title="{{ ::epic.get('subject') }}" ng-if="$index == 0 &amp;&amp; vm.zoomLevel != 0" ng-bind-html="::epic.get('subject') | emojify" class="epic-name"></span></a></div>
+  </div>
+  <h2 class="card-title"><a href="" tg-nav="{{vm.getNavKey()}}:project=vm.project.slug,ref=vm.item.getIn(['model', 'ref'])" tg-nav-get-params="{{ vm.getLinkParams() }}" ng-attr-title="{{ vm.zoomLevel == 0 ? '#' + vm.item.getIn(['model', 'ref']) + ' ' + vm.item.getIn(['model', 'subject']) : '' }}"><span ng-if="vm.visible('ref')" class="card-ref">{{::"#" + vm.item.getIn(['model', 'ref'])}}</span><span ng-if="vm.visible('subject')" ng-bind-html="vm.item.getIn(['model', 'subject']) | emojify" class="card-subject e2e-title"></span></a>
+    <div ng-if="vm.zoomLevel == 0" class="card-compact-epics">
+      <div ng-if="::vm.item.getIn(['model', 'epics']).size" class="card-epics"><a tg-repeat="epic in ::vm.item.getIn(['model', 'epics']) track by epic.get('id')" tg-nav="project-epics-detail:project=vm.item.getIn(['model', 'project_extra_info', 'slug']),ref=epic.get('ref')" class="card-epic"><span ng-style="::{'background-color': epic.get('color')}" ng-attr-title="{{ ::epic.get('subject') }}" class="epic-color"></span><span ng-attr-title="{{ ::epic.get('subject') }}" ng-if="$index == 0 &amp;&amp; vm.zoomLevel != 0" ng-bind-html="::epic.get('subject') | emojify" class="epic-name"></span></a></div>
+    </div>
+  </h2>
+  <div class="wrapper-assigned-to-data">
+    <tg-card-assigned-to item="vm.item" zoom-level="vm.zoomLevel" vm="vm"></tg-card-assigned-to>
+    <tg-card-data ng-if="vm.visible('card-data')" item="vm.item" zoom-level="vm.zoomLevel" vm="vm"></tg-card-data>
+  </div>
+  <tg-card-slideshow ng-if="vm.isSlideshowVisible()" tg-check-permission="view_tasks" images="vm.item.get('images')"></tg-card-slideshow>
+  <div tg-check-permission="view_tasks" ng-if="vm.isRelatedTasksVisible()" class="card-tasks">
+    <ul>
+      <li tg-repeat="task in vm.item.getIn(['model', 'tasks'])" class="card-task"><a href="#" tg-nav="project-tasks-detail:project=vm.project.slug,ref=task.get('ref')" ng-class="{'closed-task': task.get('is_closed'), 'blocked-task': task.get('is_blocked')}"><span class="card-task-ref">{{::"#" + task.get('ref')}}</span><span ng-bind-html="task.get('subject') | emojify" class="card-task-subject"></span></a></li>
+    </ul>
+  </div>
+  <div ng-click="!$event.ctrlKey &amp;&amp; !$event.metaKey &amp;&amp; vm.toggleFold()" ng-if="vm.visible('unfold') &amp;&amp; (vm.hasTasks() || vm.hasVisibleAttachments())" role="button" class="card-unfold ng-animate-disabled">
+    <tg-svg ng-if="vm.zoomLevel == 2" svg-icon="{{ !vm.item.get('foldStatusChanged') ? 'icon-arrow-down' : 'icon-arrow-up' }}"></tg-svg>
+    <tg-svg ng-if="vm.zoomLevel != 2" svg-icon="{{ vm.item.get('foldStatusChanged') ? 'icon-arrow-down' : 'icon-arrow-up' }}"></tg-svg>
+  </div>
+  <div tg-loading="vm.item.get('loading-extra')" class="loading-extra"></div>
+</div>
+<div class="card-transit-multi">
+  <div class="fake-us">
+    <div class="fake-img"></div>
+    <div class="column">
+      <div class="fake-text"></div>
+      <div class="fake-text"></div>
+    </div>
+  </div>
+  <div class="fake-us">
+    <div class="fake-img"></div>
+    <div class="column">
+      <div class="fake-text"></div>
+      <div class="fake-text"></div>
+    </div>
+  </div>
+</div>

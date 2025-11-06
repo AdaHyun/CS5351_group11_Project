@@ -1,0 +1,25 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<div class="form">
+  <h2 translate="LIGHTBOX.CHANGE_OWNER.TITLE" class="title"></h2>
+  <fieldset class="search">
+    <input type="text" data-maxlength="500" placeholder="{{'LIGHTBOX.ASSIGNED_TO.SEARCH' | translate}}" ng-model="vm.q" ng-change="vm.userSearch()"/>
+  </fieldset>
+  <div class="lb-user-list">
+    <div ng-if="vm.selected" class="user-list-item is-active">
+      <div class="user-list-avatar"><a href="#" title="{{'COMMON.ASSIGNED_TO.TITLE' | translate}}"><img tg-avatar="vm.selected"/></a></div><a href="" title="{{vm.selected.full_name_display}}" class="user-list-name">{{vm.selected.full_name_display}}</a>
+    </div>
+    <div ng-repeat="user in vm.getUsers()" ng-click="vm.selectUser(user)" class="user-list-item ng-animate-disabled">
+      <div class="user-list-avatar"><a href="#" title="{{'COMMON.ASSIGNED_TO.TITLE' | translate}}"><img tg-avatar="user"/></a></div><a href="" title="{{user.full_name_display}}" class="user-list-name">{{user.full_name_display}}</a>
+    </div>
+    <div ng-if="vm.totalUsers &gt; vm.limit" class="more-watchers"><span translate="COMMON.ASSIGNED_TO.TOO_MANY"></span></div>
+  </div>
+  <div class="add-comment"><a href="" ng-if="!vm.commentOpen" ng-click="vm.commentOpen = true" translate="LIGHTBOX.CHANGE_OWNER.ADD_COMMENT" class="ng-animate-disabled"></a>
+    <fieldset ng-if="vm.commentOpen"><a href="" ng-click="vm.commentOpen = false">
+        <tg-svg svg-icon="icon-close" href="" title="{{'COMMON.CLOSE' | translate}}"></tg-svg></a>
+      <label translate="LIGHTBOX.CHANGE_OWNER.ADD_COMMENT"></label>
+      <textarea ng-model="vm.comment"></textarea>
+    </fieldset>
+  </div>
+  <button tg-loading="vm.loading" ng-click="vm.submit()" ng-disabled="!vm.selected" type="submit" title="{{'LIGHTBOX.CHANGE_OWNER.BUTTON' | translate}}" translate="LIGHTBOX.CHANGE_OWNER.BUTTON" class="btn-big btn-big-full"></button>
+</div>

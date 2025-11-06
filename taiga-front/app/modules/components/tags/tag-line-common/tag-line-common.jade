@@ -1,0 +1,32 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.tags-container
+    .tag-wrapper(
+        ng-if="tag[1] && !vm.disableColorSelection"
+        ng-repeat="tag in vm.tags"
+    )
+        tg-tag(
+            tag="tag"
+            loading-remove-tag="vm.loadingRemoveTag"
+            project="vm.project"
+            on-delete-tag="vm.onDeleteTag({tag: tag})"
+            has-permissions="vm.checkPermissions()"
+        )
+    .tag-wrapper(
+        ng-if="!tag[1] || vm.disableColorSelection"
+        ng-repeat="tag in vm.tags"
+    )
+        tg-tag(
+            tag="tag"
+            loading-remove-tag="vm.loadingRemoveTag"
+            on-delete-tag="vm.onDeleteTag({tag: tag})"
+            has-permissions="vm.checkPermissions()"
+        )
+
+    include ../components/add-tag-button
+    include ../components/add-tag-input

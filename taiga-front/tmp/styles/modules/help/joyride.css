@@ -1,0 +1,44 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.introjs-overlay {
+  background: radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.2) 0, rgba(226, 227, 233, 0.2) 100%);
+  background-color: #E2E3E9; }
+
+.introjs-helperLayer {
+  border: 1px solid rgba(92, 186, 169, 0.8); }
+
+.introjs-helperLayer,
+.introjs-tooltip {
+  box-shadow: 0 1px 8px rgba(67, 68, 86, 0.2); }
+
+.introjs-tooltip h3 {
+  font-size: 1.1rem;
+  margin-bottom: .5rem; }
+
+.introjs-tooltip p {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin-bottom: 0; }
+
+.introjs-bullets ul li a.active {
+  background: #5CBAA9; }
+
+.introjs-button {
+  background-color: #25A28C;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  margin-top: 10px;
+  padding: .3rem .8rem;
+  text-shadow: none; }
+  .introjs-button:focus, .introjs-button:hover {
+    background: none;
+    background-color: #5CBAA9;
+    color: #fff; }
+  .introjs-button.introjs-disabled {
+    background: #F1F1F4;
+    background-color: none;
+    color: #fff; }

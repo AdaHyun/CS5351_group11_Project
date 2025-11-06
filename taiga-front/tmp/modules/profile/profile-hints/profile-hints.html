@@ -1,0 +1,9 @@
+
+<h4>
+  <tg-svg svg-icon="icon-question"></tg-svg><span translate="HINTS.SECTION_NAME"></span>
+</h4>
+<p>{{::vm.hint.title}}</p>
+<p>
+  {{::vm.hint.text}}
+  &nbsp;<a ng-if="::vm.hint.url" target="_blank" ng-href="{{::vm.hint.url}}" title="{{'HINTS.LINK_TITLE' | translate}}" translate="{{::vm.hint.linkText}}"></a>
+</p>

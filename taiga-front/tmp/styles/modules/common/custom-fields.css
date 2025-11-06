@@ -1,0 +1,129 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.duty-custom-fields {
+  margin-bottom: 2rem; }
+  .duty-custom-fields .custom-fields-header {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    align-content: space-between;
+    align-items: center;
+    background: #F1F1F4;
+    color: #434456;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem; }
+    .duty-custom-fields .custom-fields-header .icon {
+      cursor: pointer; }
+    .duty-custom-fields .custom-fields-header .collapse {
+      display: block;
+      transform: rotate(-90deg);
+      transition: .1s ease-out; }
+    .duty-custom-fields .custom-fields-header .open {
+      transform: rotate(0); }
+  .duty-custom-fields .custom-field-options {
+    margin: 0;
+    opacity: 0;
+    transition: opacity .2s linear; }
+    .duty-custom-fields .custom-field-options a {
+      display: inline-block; }
+    .duty-custom-fields .custom-field-options svg {
+      fill: #70728F; }
+      .duty-custom-fields .custom-field-options svg:hover {
+        fill: #25A28C; }
+  .duty-custom-fields .custom-field-data {
+    display: flex;
+    flex-direction: column;
+    white-space: break-spaces;
+    word-break: break-word; }
+    .duty-custom-fields .custom-field-data .custom-field-name {
+      display: block; }
+    .duty-custom-fields .custom-field-data .custom-field-description {
+      font-size: .875rem;
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #8d8ea5;
+      display: block;
+      line-height: .9rem; }
+  .duty-custom-fields .custom-field-value {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    align-items: flex-start;
+    flex: 1;
+    max-width: 98%;
+    padding: 0 1rem 0 2rem; }
+    .duty-custom-fields .custom-field-value.rich-text {
+      padding-right: 0; }
+    .duty-custom-fields .custom-field-value.js-value-view-mode {
+      white-space: pre-line; }
+      .duty-custom-fields .custom-field-value.js-value-view-mode.wysiwyg {
+        white-space: normal; }
+  .duty-custom-fields .custom-field-value-container {
+    display: flex; }
+  .duty-custom-fields form label {
+    cursor: pointer; }
+  .duty-custom-fields form input {
+    width: 100%; }
+  .duty-custom-fields .read-mode .ck.ck-editor__main > .ck-editor__editable,
+  .duty-custom-fields .read-mode .markdown {
+    background: #FFFFFF;
+    border: 2px solid #D8DEE9;
+    border-radius: 3px;
+    margin: 0;
+    min-height: 140px;
+    padding: .3rem 1rem .3rem .95rem;
+    width: calc(100% - 1rem); }
+
+.custom-fields-body {
+  display: flex;
+  flex-direction: column; }
+  .custom-fields-body.collapse-fields .custom-attribute {
+    flex-basis: 50%; }
+    @media screen and (max-width: 1215px) {
+      .custom-fields-body.collapse-fields .custom-attribute {
+        flex-basis: 100%; }
+        .custom-fields-body.collapse-fields .custom-attribute:nth-child(even) {
+          padding: 0; }
+        .custom-fields-body.collapse-fields .custom-attribute:nth-child(odd) {
+          padding: 0; } }
+    .custom-fields-body.collapse-fields .custom-attribute:nth-child(even) {
+      padding: 0 0 0 2rem; }
+    .custom-fields-body.collapse-fields .custom-attribute:nth-child(odd) {
+      padding: 0 2rem 0 0; }
+  .custom-fields-body .custom-attribute {
+    flex-basis: 100%; }
+    .custom-fields-body .custom-attribute:nth-child(even) {
+      padding: 0; }
+    .custom-fields-body .custom-attribute:nth-child(odd) {
+      padding: 0; }
+  .custom-fields-body .custom-field-single {
+    border-bottom: 1px solid #E2E3E9;
+    display: grid;
+    grid-template-areas: '. .';
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr;
+    justify-content: flex-start;
+    padding: .7rem; }
+    @media screen and (max-width: 1280px) {
+      .custom-fields-body .custom-field-single {
+        grid-template-areas: '.' '.';
+        grid-template-columns: 100%;
+        grid-template-rows: min-content 1fr; }
+        .custom-fields-body .custom-field-single.custom-field-checkbox {
+          grid-template-areas: '. .';
+          grid-template-columns: 1fr 80%;
+          grid-template-rows: 1fr; }
+        .custom-fields-body .custom-field-single .rich-text {
+          margin-top: 1rem;
+          padding-left: 0;
+          position: relative; }
+        .custom-fields-body .custom-field-single .custom-field-value {
+          margin-top: 1rem;
+          padding-left: 0; }
+        .custom-fields-body .custom-field-single .custom-field-options {
+          padding-top: .5rem; } }
+    .custom-fields-body .custom-field-single:hover .custom-field-options {
+      opacity: 1; }
+    .custom-fields-body .custom-field-single.editable .custom-field-options {
+      margin-top: .5rem; }
+    .custom-fields-body .custom-field-single p {
+      white-space: break-spaces;
+      word-break: break-word; }

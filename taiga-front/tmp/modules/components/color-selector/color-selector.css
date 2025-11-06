@@ -1,0 +1,71 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.color-selector {
+  position: relative; }
+  .color-selector .tag-color {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid #4C566A;
+    border-radius: 3px;
+    margin: 0;
+    transition: background .3s ease-out; }
+    .color-selector .tag-color.disabled {
+      cursor: auto; }
+    .color-selector .tag-color.empty-color {
+      background: #A9AABC;
+      position: relative; }
+
+.color-selector-dropdown {
+  background: #FFFFFF;
+  border: solid 1px #D8DEE9;
+  box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  top: 2rem;
+  width: 306px;
+  z-index: 2; }
+
+.color-selector-dropdown-list {
+  display: grid;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  grid-template-columns: repeat(7, 1fr);
+  list-style-type: none;
+  margin-bottom: 0; }
+  .color-selector-dropdown-list .color-selector-option {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem; }
+  .color-selector-dropdown-list .empty-color {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    background: #A9AABC;
+    position: relative; }
+
+.custom-color-selector {
+  display: flex;
+  margin-top: .5rem; }
+  .custom-color-selector .custom-color-input {
+    flex: 1;
+    margin: 0;
+    width: 0; }
+  .custom-color-selector .display-custom-color-wrapper {
+    background: #F1F1F4;
+    margin-right: .5rem; }
+  .custom-color-selector .display-custom-color {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem; }
+    .custom-color-selector .display-custom-color.empty-color {
+      background: #A9AABC;
+      position: relative;
+      cursor: default; }

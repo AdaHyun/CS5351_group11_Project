@@ -1,0 +1,19 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.live-announcement(ng-class="{visible: vm.open}")
+    .live-announcement-inner
+        img.anouncement-decoration(src="#{v}/images/notification-decoration.png", alt="Loading...")
+        .text
+            h2.title {{vm.title}}
+            p.warning(ng-bind-html="vm.desc")
+            a.close(
+              ng-click="vm.close()"
+              href=""
+              ng-title="COMMON.CLOSE | translate"
+            )
+                tg-svg(svg-icon="icon-close")

@@ -1,0 +1,20 @@
+
+<div class="create-project">
+  <div ng-if="vm.type == 'scrum'" class="create-project-title-wrapper">
+    <tg-svg svg-icon="icon-scrum"></tg-svg>
+    <h1 translate="PROJECT.CREATE.TEMPLATE_SCRUM" class="create-project-title"></h1>
+  </div>
+  <h3 ng-if="vm.type == 'scrum'" translate="PROJECT.CREATE.TEMPLATE_SCRUM_DESC" class="create-project-description"></h3>
+  <div ng-if="vm.type == 'kanban'" class="create-project-title-wrapper">
+    <tg-svg svg-icon="icon-kanban"></tg-svg>
+    <h1 translate="PROJECT.CREATE.TEMPLATE_KANBAN" class="create-project-title"></h1>
+  </div>
+  <h3 ng-if="vm.type == 'kanban'" translate="PROJECT.CREATE.TEMPLATE_KANBAN_DESC" class="create-project-description"></h3>
+  <form name="projectForm" ng-submit="vm.submit()" novalidate="novalidate">
+    <div ng-include="'projects/create/import-project-form-common/name.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/description.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/project-privacy.html'"></div>
+    <tg-create-project-restrictions is-private="vm.projectForm.is_private" can-create-public-projects="vm.canCreatePublicProjects" can-create-private-projects="vm.canCreatePrivateProjects"></tg-create-project-restrictions>
+    <div ng-include="'projects/create/import-project-form-common/actions.html'"></div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.tags-block {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap; }
+
+.add-tag-button {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  align-content: flex-end;
+  color: #008AA8;
+  cursor: pointer;
+  display: flex;
+  margin: .5rem 0 0 .25rem;
+  transition: all .1s ease; }
+  .add-tag-button:hover {
+    background: #D8DEE9; }
+  .add-tag-button .icon-add {
+    fill: currentColor; }
+  .add-tag-button .add-tag-text {
+    font-size: .875rem;
+    line-height: 1rem; }
+  .add-tag-button tg-svg {
+    fill: #008AA8;
+    margin-left: .25rem;
+    margin-right: 0; }

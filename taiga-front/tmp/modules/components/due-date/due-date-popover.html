@@ -1,0 +1,12 @@
+
+<div class="due-date-button-wrapper">
+  <button ng-class="{'date-set':  vm.color()}" ng-disabled="vm.disabled()" ng-style="{background: vm.color()}" ng-attr-title="{{ vm.title() }}" class="btn-icon due-date-button is-editable date-picker-popover-trigger">
+    <tg-svg svg-icon="icon-clock"></tg-svg>
+  </button>
+  <input type="hidden" picker-value="{{ vm.dueDate }}" class="due-date no-focus"/>
+  <div ng-hide="!open" class="date-picker-popover">
+    <div class="date-picker-container"></div>
+    <div ng-if="vm.dueDate" class="date-picker-popover-footer"><a href="" title="{{'LIGHTBOX.SET_DUE_DATE.TITLE_ACTION_DELETE_DUE_DATE' | translate}}" class="date-picker-clean">
+        <tg-svg svg-icon="icon-trash"></tg-svg></a></div>
+  </div>
+</div>

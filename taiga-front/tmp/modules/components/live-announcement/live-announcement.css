@@ -1,0 +1,66 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.live-announcement {
+  align-content: center;
+  background: #83EEDE;
+  display: flex;
+  height: 0;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0.5s;
+  width: 0;
+  z-index: 99; }
+  .live-announcement .live-announcement-inner {
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 100%; }
+  .live-announcement.visible {
+    height: 146px;
+    pointer-events: auto;
+    transition-delay: 0s;
+    width: 100%; }
+    .live-announcement.visible .live-announcement-inner {
+      opacity: 1;
+      transition: opacity 0.5s 0.5s; }
+
+.live-announcement-inner {
+  display: flex;
+  max-width: 1200px; }
+  .live-announcement-inner .announcement-decoration {
+    align-self: flex-end;
+    margin-right: 1rem; }
+  .live-announcement-inner .text {
+    padding: 1.25rem 3rem 1.25rem 2rem;
+    position: relative;
+    width: 100%; }
+  .live-announcement-inner .title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #2E3440;
+    margin-bottom: .5rem; }
+  .live-announcement-inner .warning {
+    color: #2E3440; }
+    .live-announcement-inner .warning a {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      color: #008AA8; }
+      .live-announcement-inner .warning a:hover {
+        color: #4C566A; }
+  .live-announcement-inner .close {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 1rem; }
+    .live-announcement-inner .close svg {
+      width: 2rem;
+      height: 2rem;
+      fill: #008AA8;
+      pointer-events: none;
+      transition: fill .2s; }
+      .live-announcement-inner .close svg:hover {
+        fill: #4C566A; }

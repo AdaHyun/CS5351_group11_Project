@@ -1,0 +1,53 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.search-list .show-closed {
+  color: #008AA8;
+  float: right; }
+  .search-list .show-closed span {
+    font-size: .9em;
+    margin: .1rem 0 0 .2rem; }
+  .search-list .show-closed svg {
+    fill: currentColor; }
+  .search-list .show-closed :hover {
+    color: #70728F; }
+    .search-list .show-closed :hover svg {
+      fill: currentColor; }
+
+.search-list ul {
+  background: #FFFFFF;
+  border: 2px solid #D8DEE9;
+  border-radius: 3px;
+  height: 200px;
+  margin: .5em 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: .25rem 1rem; }
+
+.search-list .choice {
+  font-size: .875rem;
+  color: #4C566A;
+  cursor: pointer;
+  padding: .25em .5em; }
+  .search-list .choice.selected {
+    background: #008AA8;
+    color: #FFFFFF; }
+    .search-list .choice.selected .info {
+      color: #FFFFFF; }
+  .search-list .choice[disabled] {
+    color: #A9AABC;
+    cursor: not-allowed; }
+    .search-list .choice[disabled] .info {
+      color: #A9AABC; }
+  .search-list .choice ng-include {
+    display: flex;
+    width: 100%; }
+    .search-list .choice ng-include .title {
+      flex-grow: 1;
+      text-align: left; }
+    .search-list .choice ng-include .info {
+      color: #70728F;
+      text-align: right; }
+  .search-list .choice .title span {
+    margin-right: .5em; }

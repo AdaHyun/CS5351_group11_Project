@@ -1,0 +1,7 @@
+
+<div ng-if="isPrivate &amp;&amp; !canCreatePrivateProjects.valid &amp;&amp; canCreatePrivateProjects.reason == 'max_private_projects'" class="create-project-warning">
+  <tg-svg svg-icon="icon-exclamation"></tg-svg><span>{{ 'PROJECT.CREATE.MAX_PRIVATE_PROJECTS' | translate }}</span>
+</div>
+<div ng-if="!isPrivate &amp;&amp; !canCreatePublicProjects.valid &amp;&amp; canCreatePublicProjects.reason == 'max_public_projects'" class="create-project-warning">
+  <tg-svg svg-icon="icon-exclamation"></tg-svg><span>{{ 'PROJECT.CREATE.MAX_PUBLIC_PROJECTS' | translate }}</span>
+</div>

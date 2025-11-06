@@ -1,0 +1,170 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='url'],
+input[type='email'],
+input[type='date'],
+input[type='search'],
+select,
+textarea {
+  background: #FFFFFF;
+  border: 2px solid #D8DEE9;
+  border-radius: 3px;
+  color: #4C566A;
+  margin: 0;
+  padding: .3rem 1rem .3rem .95rem;
+  width: 100%; }
+  input[type='text']::-webkit-input-placeholder,
+  input[type='number']::-webkit-input-placeholder,
+  input[type='password']::-webkit-input-placeholder,
+  input[type='url']::-webkit-input-placeholder,
+  input[type='email']::-webkit-input-placeholder,
+  input[type='date']::-webkit-input-placeholder,
+  input[type='search']::-webkit-input-placeholder,
+  select::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    font-size: .875rem;
+    color: rgba(76, 86, 106, 0.5); }
+  input[type='text']::-moz-placeholder,
+  input[type='number']::-moz-placeholder,
+  input[type='password']::-moz-placeholder,
+  input[type='url']::-moz-placeholder,
+  input[type='email']::-moz-placeholder,
+  input[type='date']::-moz-placeholder,
+  input[type='search']::-moz-placeholder,
+  select::-moz-placeholder,
+  textarea::-moz-placeholder {
+    font-size: .875rem;
+    color: rgba(76, 86, 106, 0.5); }
+  input[type='text']:-moz-placeholder,
+  input[type='number']:-moz-placeholder,
+  input[type='password']:-moz-placeholder,
+  input[type='url']:-moz-placeholder,
+  input[type='email']:-moz-placeholder,
+  input[type='date']:-moz-placeholder,
+  input[type='search']:-moz-placeholder,
+  select:-moz-placeholder,
+  textarea:-moz-placeholder {
+    font-size: .875rem;
+    color: rgba(76, 86, 106, 0.5); }
+  input[type='text']:-ms-input-placeholder,
+  input[type='number']:-ms-input-placeholder,
+  input[type='password']:-ms-input-placeholder,
+  input[type='url']:-ms-input-placeholder,
+  input[type='email']:-ms-input-placeholder,
+  input[type='date']:-ms-input-placeholder,
+  input[type='search']:-ms-input-placeholder,
+  select:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    font-size: .875rem;
+    color: rgba(76, 86, 106, 0.5); }
+  input[type='text']:focus,
+  input[type='number']:focus,
+  input[type='password']:focus,
+  input[type='url']:focus,
+  input[type='email']:focus,
+  input[type='date']:focus,
+  input[type='search']:focus,
+  select:focus,
+  textarea:focus {
+    border: 2px solid #008AA8;
+    outline: none;
+    transition: border .2s linear; }
+  input[type='text'].checksley-error,
+  input[type='number'].checksley-error,
+  input[type='password'].checksley-error,
+  input[type='url'].checksley-error,
+  input[type='email'].checksley-error,
+  input[type='date'].checksley-error,
+  input[type='search'].checksley-error,
+  select.checksley-error,
+  textarea.checksley-error {
+    border: 2px solid rgba(228, 64, 87, 0.25);
+    transition: border .2s linear; }
+    input[type='text'].checksley-error:focus,
+    input[type='number'].checksley-error:focus,
+    input[type='password'].checksley-error:focus,
+    input[type='url'].checksley-error:focus,
+    input[type='email'].checksley-error:focus,
+    input[type='date'].checksley-error:focus,
+    input[type='search'].checksley-error:focus,
+    select.checksley-error:focus,
+    textarea.checksley-error:focus {
+      border: 2px solid #E44057;
+      transition: border .2s linear; }
+
+input[type='search'] {
+  box-sizing: border-box;
+  padding-right: 25px; }
+
+button,
+button:active,
+button:focus {
+  border: 0; }
+
+textarea {
+  min-height: 10rem;
+  resize: vertical; }
+
+.checksley-error-list {
+  margin-bottom: 0; }
+  .checksley-error-list li {
+    padding: .2rem; }
+
+.capslock.ng-enter {
+  animation: dropdownFade .2s ease-in; }
+
+.capslock.ng-leave {
+  animation: dropdownFade .2s ease-in;
+  animation-direction: reverse; }
+
+.capslock .icon-capslock {
+  bottom: .8rem;
+  fill: #5A5B72;
+  height: .9rem;
+  position: absolute;
+  right: 1rem;
+  width: .9rem; }
+
+.custom-checkbox {
+  background-color: #fff;
+  border: 2px solid #D8DEE9;
+  border-radius: 3px; }
+  .custom-checkbox input {
+    display: none; }
+    .custom-checkbox input:not(:checked) + label::after {
+      opacity: 0; }
+  .custom-checkbox label {
+    align-items: center;
+    display: flex;
+    height: 14px;
+    justify-content: center;
+    width: 14px; }
+    .custom-checkbox label::after {
+      background-color: #008AA8;
+      content: '';
+      height: 10px;
+      width: 10px; }
+
+.error-text {
+  font-size: .7rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  color: #E44057;
+  margin-bottom: .5rem;
+  transition: opacity 300ms linear; }
+  .error-text.ng-enter.ng-enter-active {
+    opacity: 1; }
+  .error-text.ng-enter, .error-text.ng-leave.ng-leave-active {
+    opacity: 0;
+    transition: opacity 100ms linear; }

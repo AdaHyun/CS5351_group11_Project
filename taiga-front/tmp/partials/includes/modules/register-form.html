@@ -1,0 +1,26 @@
+
+<div tg-register="tg-register" class="register-form-container">
+  <form class="register-form">
+    <tg-register-options></tg-register-options>
+    <fieldset>
+      <input type="text" autocorrect="off" autocapitalize="none" name="username" ng-model="data.username" data-required="true" data-maxlength="255" data-regexp="^[\w.-]+$" placeholder="{{'REGISTER_FORM.PLACEHOLDER_NAME' | translate}}"/>
+    </fieldset>
+    <fieldset>
+      <input type="text" name="full_name" ng-model="data.full_name" data-required="true" data-maxlength="256" placeholder="{{'REGISTER_FORM.PLACEHOLDER_FULL_NAME' | translate}}"/>
+    </fieldset>
+    <fieldset>
+      <input type="email" name="email" ng-model="data.email" data-required="true" data-maxlength="255" placeholder="{{'REGISTER_FORM.PLACEHOLDER_EMAIL' | translate}}"/>
+    </fieldset>
+    <fieldset>
+      <input type="password" name="password" tg-capslock="tg-capslock" ng-model="data.password" data-required="true" data-minlength="4" placeholder="{{'REGISTER_FORM.PLACEHOLDER_PASSWORD' | translate}}"/>
+    </fieldset>
+    <tg-terms-of-service-and-privacy-policy-notice target="data.accepted_terms"></tg-terms-of-service-and-privacy-policy-notice>
+    <fieldset class="end">
+      <button variant="primary" ng-disabled="data.accepted_terms == false" title="{{'REGISTER_FORM.ACTION_SIGN_UP' | translate}}" translate="REGISTER_FORM.ACTION_SIGN_UP" class="btn-small full"></button>
+    </fieldset>
+    <div ng-if="authPlugins.length" class="contrib-plugins-wrapper">
+      <label translate="LOGIN_COMMON.ALT_LOGIN"></label>
+      <fieldset ng-repeat="plugin in authPlugins" ng-include="plugin.template"></fieldset>
+    </div><a href="" title="{{'REGISTER_FORM.TITLE_LINK_LOGIN' | translate}}" tg-nav="login" tg-nav-get-params="{&quot;next&quot;: &quot;{{nextUrl}}&quot;}" translate="REGISTER_FORM.LINK_LOGIN" class="register-text-top"></a>
+  </form>
+</div>

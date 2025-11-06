@@ -1,0 +1,176 @@
+.duty-custom-fields {
+    margin-bottom: 2rem;
+    .custom-fields-header {
+        @include font-type(medium);
+        align-content: space-between;
+        align-items: center;
+        background: $grey-05;
+        color: $grey-70;
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        .icon {
+            cursor: pointer;
+        }
+        .collapse {
+            display: block;
+            transform: rotate(-90deg);
+            transition: .1s ease-out;
+        }
+        .open {
+            transform: rotate(0);
+        }
+    }
+    .custom-field-options {
+        margin: 0;
+        opacity: 0;
+        transition: opacity .2s linear;
+        a {
+            display: inline-block;
+        }
+        svg {
+            fill: $gray-light;
+            &:hover {
+                fill: $primary;
+            }
+        }
+    }
+    .custom-field-data {
+        display: flex;
+        flex-direction: column;
+        white-space: break-spaces;
+        word-break: break-word;
+        .custom-field-name {
+            display: block;
+        }
+        .custom-field-description {
+            @include font-size(small);
+            @include font-type(regular);
+            color: lighten($gray, 20%);
+            display: block;
+            line-height: .9rem;
+        }
+    }
+    .custom-field-value {
+        @include font-type(regular);
+        align-items: flex-start;
+        flex: 1;
+        max-width: 98%;
+        padding: 0 1rem 0 2rem;
+        &.rich-text {
+            padding-right: 0;
+        }
+        &.js-value-view-mode {
+            white-space: pre-line;
+            &.wysiwyg {
+                white-space: normal;
+            }
+        }
+    }
+    .custom-field-value-container {
+        display: flex;
+    }
+    form {
+        label {
+            cursor: pointer;
+        }
+        input {
+            width: 100%;
+        }
+    }
+
+    .read-mode .ck.ck-editor__main > .ck-editor__editable,
+    .read-mode .markdown {
+        background: $color-white;
+        border: 2px solid $color-gray400;
+        border-radius: 3px;
+        margin: 0;
+        min-height: 140px;
+        padding: .3rem 1rem .3rem .95rem;
+        width: calc(100% - 1rem);
+    }
+}
+
+.custom-fields-body {
+    display: flex;
+    flex-direction: column;
+    &.collapse-fields {
+        .custom-attribute {
+            flex-basis: 50%;
+            @include until($widescreen) {
+                flex-basis: 100%;
+                &:nth-child(even) {
+                    padding: 0;
+                }
+                &:nth-child(odd) {
+                    padding: 0;
+                }
+            }
+            &:nth-child(even) {
+                padding: 0 0 0 2rem;
+            }
+            &:nth-child(odd) {
+                padding: 0 2rem 0 0;
+            }
+        }
+    }
+    .custom-attribute {
+        flex-basis: 100%;
+        &:nth-child(even) {
+            padding: 0;
+        }
+        &:nth-child(odd) {
+            padding: 0;
+        }
+    }
+    .custom-field-single {
+        border-bottom: 1px solid $whitish;
+        display: grid;
+        grid-template-areas: '. .';
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        justify-content: flex-start;
+        padding: .7rem;
+        @media screen and (max-width: 1280px) {
+            grid-template-areas: '.' '.';
+            grid-template-columns: 100%;
+            grid-template-rows: min-content 1fr;
+
+            &.custom-field-checkbox {
+                grid-template-areas: '. .';
+                grid-template-columns: 1fr 80%;
+                grid-template-rows: 1fr;
+            }
+
+            .rich-text {
+                margin-top: 1rem;
+                padding-left: 0;
+                position: relative;
+            }
+
+            .custom-field-value {
+                margin-top: 1rem;
+                padding-left: 0;
+            }
+
+            .custom-field-options {
+                padding-top: .5rem;
+            }
+        }
+        &:hover {
+            .custom-field-options {
+                opacity: 1;
+            }
+        }
+        &.editable {
+            .custom-field-options {
+                margin-top: .5rem;
+            }
+        }
+        p {
+            white-space: break-spaces;
+            word-break: break-word;
+        }
+    }
+
+}

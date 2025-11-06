@@ -1,0 +1,30 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-move-to-sprint .move-to-sprint-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  width: 100%; }
+  .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-header {
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center; }
+    .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-header ul {
+      display: inline-block;
+      margin: .5em auto 2.5em;
+      width: auto; }
+    .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-header li {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1em; }
+    .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-header .check {
+      margin-left: 4em; }
+  .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-controls p {
+    margin-bottom: 2.5em;
+    text-align: center; }
+  .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-controls .sprint-select {
+    margin-top: .5em; }
+  .lightbox-move-to-sprint .move-to-sprint-container .move-to-sprint-controls .move-button {
+    width: 100%; }

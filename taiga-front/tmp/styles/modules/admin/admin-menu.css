@@ -1,0 +1,20 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-menu li {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid #A9AABC;
+  text-transform: uppercase; }
+  .admin-menu li:hover {
+    background: #FFFFFF; }
+    .admin-menu li:hover a {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      color: #70728F; }
+  .admin-menu li:last-child {
+    border-bottom: 0; }
+
+.admin-menu a {
+  color: #70728F;
+  display: block;
+  padding: 1rem 0 1rem 1rem; }

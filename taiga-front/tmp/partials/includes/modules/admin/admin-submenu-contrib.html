@@ -1,0 +1,8 @@
+
+<section class="admin-submenu">
+  <nav>
+    <ul>
+      <li id="adminmenu-contrib" ng-repeat="plugin in adminPlugins" ng-class="{active: plugin.slug == currentPlugin.slug}"><a href="" tg-nav="project-admin-contrib:project=projectSlug,plugin=plugin.slug"><span class="title">{{ plugin.name }}</span></a></li>
+    </ul>
+  </nav>
+</section>

@@ -1,0 +1,55 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.category-config {
+  border-bottom: 1px solid #70728F; }
+  .category-config:first-child {
+    border-top: 1px solid #70728F; }
+  .category-config .resume {
+    align-items: space-between;
+    cursor: pointer;
+    display: flex;
+    padding: 1rem;
+    position: relative; }
+    .category-config .resume.open-drawer .icon {
+      transform: rotate(90deg); }
+  .category-config .icon {
+    transform: rotate(0);
+    transition: all .4s; }
+  .category-config .resume-title {
+    width: 280px; }
+  .category-config .count {
+    color: #70728F;
+    float: left;
+    padding-right: 5px; }
+  .category-config .summary-role {
+    flex: 1;
+    width: 280px; }
+    .category-config .summary-role .role-summary-single {
+      display: inline-block;
+      height: 20px;
+      margin-right: .1rem;
+      width: 15px; }
+  .category-config .category-items {
+    max-height: 0;
+    transition: max-height .5s ease-in;
+    overflow: hidden;
+    background-color: #F9F9FB;
+    width: 100%; }
+    .category-config .category-items.open {
+      transition: max-height .5s ease-in;
+      max-height: 400px; }
+    .category-config .category-items .items-container {
+      padding: 1rem; }
+  .category-config .category-item {
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .5rem .5rem 2rem; }
+    .category-config .category-item:last-child {
+      border-bottom: 0; }
+  .category-config .check input {
+    height: 40px;
+    width: 85px; }

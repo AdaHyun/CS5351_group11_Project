@@ -1,0 +1,49 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.board-zoom
+    .board-zoom-title {{ 'ZOOM.TITLE' | translate }}
+
+    label.zoom-radio(ng-attr-title="{{ 'ZOOM.ZOOM-1' | translate }}")
+        input(
+            type="radio"
+            value="0"
+            ng-model="value"
+            tg-bind-scope
+        )
+        .checkmark
+            span {{ 'ZOOM.ZOOM-1' | translate }}
+
+    label.zoom-radio(ng-attr-title="{{ 'ZOOM.ZOOM-2' | translate }}")
+        input(
+            type="radio"
+            value="1"
+            ng-model="value"
+            tg-bind-scope
+        )
+        .checkmark
+            span {{ 'ZOOM.ZOOM-2' | translate }}
+
+    label.zoom-radio(ng-attr-title="{{ 'ZOOM.ZOOM-3' | translate }}")
+        input(
+            type="radio"
+            value="2"
+            ng-model="value"
+            tg-bind-scope
+        )
+        .checkmark
+            span {{ 'ZOOM.ZOOM-3' | translate }}
+
+    label.zoom-radio(ng-attr-title="{{ 'ZOOM.ZOOM-4' | translate }}")
+        input(
+            type="radio"
+            value="3"
+            ng-model="value"
+            tg-bind-scope
+        )
+        .checkmark
+            span {{ 'ZOOM.ZOOM-4' | translate }}

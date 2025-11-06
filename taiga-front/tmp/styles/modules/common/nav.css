@@ -1,0 +1,17 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-project-menu {
+  background-color: #3B4252;
+  z-index: 9; }
+  tg-project-menu .sticky-project-menu {
+    height: calc(100vh - 48px);
+    position: sticky;
+    top: 0; }
+    tg-project-menu .sticky-project-menu.unblock {
+      height: 100vh; }
+  tg-project-menu tg-legacy-loader {
+    display: block;
+    height: 100%;
+    width: 100%; }

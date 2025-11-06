@@ -1,0 +1,7 @@
+
+<div ng-if="!limitMembersPublicProject.valid &amp;&amp; !isPrivate" class="create-project-warning">
+  <tg-svg svg-icon="icon-exclamation"></tg-svg><span translate="PROJECT.IMPORT.PROJECT_RESTRICTIONS.PROJECT_MEMBERS_DESC_PUBLIC" translate-values="{'members': limitMembersPublicProject.current, 'max_memberships': limitMembersPublicProject.max}"></span>
+</div>
+<div ng-if="!limitMembersPrivateProject.valid &amp;&amp; isPrivate" class="create-project-warning">
+  <tg-svg svg-icon="icon-exclamation"></tg-svg><span translate="PROJECT.IMPORT.PROJECT_RESTRICTIONS.PROJECT_MEMBERS_DESC_PRIVATE" translate-values="{'members': limitMembersPrivateProject.current, 'max_memberships': limitMembersPrivateProject.max}"></span>
+</div>

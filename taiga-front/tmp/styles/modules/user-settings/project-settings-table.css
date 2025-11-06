@@ -1,0 +1,25 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.project-settings-table .project-settings-table-row {
+  align-items: center;
+  border-bottom: 1px solid #E2E3E9;
+  display: flex;
+  justify-content: center; }
+
+.project-settings-table .project-settings-table-header {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid #70728F; }
+
+.project-settings-table .project-settings-table-project,
+.project-settings-table .project-settings-table-homepage {
+  padding: 1rem; }
+
+.project-settings-table .project-settings-table-project {
+  flex-basis: 0;
+  flex-grow: 3; }
+
+.project-settings-table .project-settings-table-homepage {
+  flex-basis: 0;
+  flex-grow: 1; }

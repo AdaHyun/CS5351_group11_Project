@@ -1,0 +1,24 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile-sidebar h4 {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  align-items: center;
+  background: #F1F1F4;
+  color: #5A5B72;
+  display: flex;
+  margin-bottom: .5rem;
+  padding: .5rem; }
+  .profile-sidebar h4 .icon {
+    margin-right: .3rem; }
+
+.profile-sidebar p {
+  font-size: .875rem;
+  color: #70728F; }
+
+.profile-sidebar .edit-profile {
+  width: 100%; }
+
+.profile-sidebar .profile-hints {
+  margin-top: 2rem; }

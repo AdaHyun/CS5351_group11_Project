@@ -233,3 +233,109 @@ taiga与Github之间已经有auth授权与一次性的项目import，但是缺�
      ![image-20250930210127278](./images/image-20250930210127278.png)
 
 下次会议时间，预计：周日-10.5号
+
+## 第6次线下会议
+
+主题: 讨论项目情况，任务进度，前后端结对编程
+
+会议时间: 2025年10月20日 19:00 
+
+结束时间：2025.10.20 21:00
+
+### 会议内容
+
+后端完成网页读取GitHub workflow数据的demo
+
+GitHub
+
+前端修改网页结构
+
+重构网站结构，更改特征
+
+UI设计
+
+### 会议结论
+
+任务
+
+- 后端
+
+  GitHub 登陆的板块
+
+  Git Action 由异步改成同步（动态进度条）
+
+  同步：进度、步骤、状态
+
+  workflow的获取和上传
+
+- 前端
+
+  修改bug: scrum userstory 的point
+
+  修改bug: GitHub只有import 没有同步
+
+  CICD可视化
+
+- CICD流程
+
+![61e5c8f1202f7da48e4856a3b27883ed](./images/61e5c8f1202f7da48e4856a3b27883ed.jpg)
+
+- 论文撰写
+
+## 第7次线下会议
+
+主题: 同步任务进度，讨论bug
+
+会议时间: 2025年10月29日 19:00 
+
+结束时间：2025.10.29 21:00
+
+### 会议内容
+
+后端完成网页关于Github的auth授权登陆，CICD工作流水设计
+
+前端无进度
+
+### 会议结论
+
+任务
+
+- 后端
+
+  修改GitHub账号登陆页面卡死无法回退到网页的Bug
+
+- 前端
+
+  编写CICD可视化页面
+
+  user story 模块Bug
+
+- 论文
+
+  先完成前三章
+
+  1. Intro()
+
+     ![image-20251029231107375](./images/image-20251029231107375.png)
+
+  2. Related work (刘轩铭)
+
+     ![image-20251029231120081](./images/image-20251029231120081.png)
+
+  3. Preliminaries
+
+     ![image-20251029231145133](./images/image-20251029231145133.png)
+
+     ![228defbbb568fdc952bcba015959855e](./images/228defbbb568fdc952bcba015959855e.png)
+
+     ![image-20251029231217453](./images/image-20251029231217453.png)
+
+     张博煜：
+
+     ![cad94efe67dcc1b7fc0138448892e1dc](./images/cad94efe67dcc1b7fc0138448892e1dc.png)
+
+     李泽宇：
+
+     ![53b5140c13d2b20aaec25feb97f7a3ab](./images/53b5140c13d2b20aaec25feb97f7a3ab.png)
+
+     

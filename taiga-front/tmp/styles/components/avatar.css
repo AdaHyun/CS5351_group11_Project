@@ -1,0 +1,8 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.avatar img {
+  border: 2px solid #fff;
+  border-radius: 8%;
+  width: 100%; }

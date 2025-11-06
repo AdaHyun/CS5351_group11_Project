@@ -1,0 +1,16 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+label.btn-icon.due-date-button.is-editable(
+    ng-if="vm.visible()"
+    ng-disabled="vm.disabled()"
+    ng-style="{background: vm.color()}"
+    ng-attr-title="{{ vm.title() }}"
+    ng-click="vm.setDueDate()"
+    ng-class="{'active': vm.color(), 'disabled': !!vm.disabled()}"
+)
+    tg-svg(svg-icon="icon-clock")

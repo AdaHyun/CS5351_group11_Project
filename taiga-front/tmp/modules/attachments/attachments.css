@@ -1,0 +1,133 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.attachments {
+  margin-bottom: 2rem; }
+  .attachments .gu-transit {
+    background: #E2E3E9;
+    height: 40px; }
+    .attachments .gu-transit * {
+      display: none; }
+  .attachments .gu-mirror {
+    opacity: 1; }
+    .attachments .gu-mirror form {
+      background: #fbfefe;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+      transition: background .2s ease-in; }
+
+.attachments-header {
+  align-content: center;
+  align-items: center;
+  background: #ECEFF4;
+  display: flex;
+  justify-content: space-between;
+  min-height: 36px; }
+  .attachments-header .attachments-title {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #4C566A;
+    line-height: 36px;
+    padding: 0 1rem; }
+  .attachments-header .options {
+    display: flex; }
+  .attachments-header label {
+    cursor: pointer;
+    margin-left: .25rem; }
+    .attachments-header label.add-attachment-button {
+      border: 0;
+      display: inline-block;
+      padding: .5rem; }
+  .attachments-header .view-gallery,
+  .attachments-header .view-list {
+    background: none;
+    margin-right: .2rem; }
+    .attachments-header .view-gallery:hover svg, .attachments-header .view-gallery.is-active svg,
+    .attachments-header .view-list:hover svg,
+    .attachments-header .view-list.is-active svg {
+      fill: #008AA8; }
+    .attachments-header .view-gallery svg,
+    .attachments-header .view-list svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: #4C566A; }
+  .attachments-header .size-info {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #5A5B72;
+    padding-left: 1rem; }
+  .attachments-header input {
+    display: none; }
+
+.attachments-empty {
+  border: 3px dashed #ECEFF4;
+  color: #70728F;
+  margin-top: .5rem;
+  padding: 1rem;
+  text-align: center;
+  transition: all .2s linear; }
+  .attachments-empty.ng-leave {
+    opacity: 1;
+    transform: translateY(0); }
+  .attachments-empty.ng-leave-active {
+    opacity: 0;
+    transform: translateY(-5px); }
+
+.single-attachment {
+  font-size: .875rem;
+  background: #FFFFFF; }
+  .single-attachment .attachment-name {
+    display: flex;
+    padding-right: 1rem; }
+    .single-attachment .attachment-name svg {
+      fill: #4C566A;
+      margin-right: .25rem; }
+    .single-attachment .attachment-name a {
+      display: flex; }
+  .single-attachment .attachment-size {
+    color: #4C566A; }
+  .single-attachment.ng-enter {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all .2s linear;
+    transition-delay: .2s; }
+  .single-attachment.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0); }
+
+.more-attachments {
+  font-size: .875rem;
+  border-bottom: 1px solid #70728F;
+  display: block;
+  padding: 1rem 0 1rem 1rem; }
+  .more-attachments span {
+    color: #70728F; }
+  .more-attachments .more-attachments-num {
+    color: #008AA8;
+    margin-left: .5rem; }
+
+.attachment-preview .attachment-preview-container svg {
+  width: 3rem;
+  height: 3rem;
+  fill: #70728F; }
+  .attachment-preview .attachment-preview-container svg:hover {
+    fill: #5CBAA9;
+    transition: fill .3s linear; }
+
+.attachment-preview .previous {
+  left: 3rem;
+  position: absolute;
+  top: calc(50% - 3rem); }
+
+.attachment-preview .next {
+  position: absolute;
+  right: 3rem;
+  top: calc(50% - 3rem); }
+
+.attachment-preview img {
+  height: 100%;
+  max-height: 80vh;
+  max-width: 80vw;
+  min-height: 100px;
+  min-width: 100px;
+  width: auto; }

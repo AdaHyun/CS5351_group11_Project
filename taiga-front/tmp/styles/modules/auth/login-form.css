@@ -1,0 +1,24 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.login-form-container {
+  padding-top: 1rem; }
+  .login-form-container .login-password {
+    position: relative; }
+  .login-form-container input:focus + .forgot-pass {
+    opacity: 0;
+    transition: opacity .3s linear; }
+  .login-form-container a {
+    color: #4C566A; }
+  .login-form-container .forgot-pass {
+    font-size: .875rem;
+    color: #4C566A;
+    opacity: 1;
+    position: absolute;
+    right: 1rem;
+    top: .6rem;
+    transition: all .3s linear; }
+    .login-form-container .forgot-pass:hover {
+      color: #3B4252;
+      transition: color .3s linear; }

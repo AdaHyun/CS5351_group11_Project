@@ -1,0 +1,24 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.diff-color-wrapper
+    span.key(
+        translate="ACTIVITY.FIELDS.COLOR"
+    )
+    span.diff(
+        ng-if="vm.diff[0]"
+        ng-style="{background: vm.diff[0]}"
+        title="{{vm.diff[0]}}"
+    )
+    tg-svg(
+        svg-icon="icon-arrow-right"
+    )
+    span.diff(
+        ng-if="vm.diff[1]"
+        ng-style="{background: vm.diff[1]}"
+        title="{{vm.diff[1]}}"
+    )

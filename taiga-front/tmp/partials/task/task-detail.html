@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div ng-controller="TaskDetailController as ctrl" ng-init="section='backlog-kanban'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <div class="main detail">
+    <div ng-class="{blocked: task.is_blocked}" class="detail-header-container">
+      <tg-detail-nav item="task"></tg-detail-nav>
+      <div class="detail-header">
+        <tg-detail-header item="task" section-name="sectionName" project="project" required-perm="modify_task" ng-if="project &amp;&amp; task" type="text"></tg-detail-header>
+        <div ng-if="task.user_story_extra_info" tg-check-permission="view_us" class="detail-header-line task-belongs-to"><span translate="TASK.OWNER_US"></span><a tg-nav="project-userstories-detail:project=project.slug,ref=task.user_story_extra_info.ref" title="{{'TASK.TITLE_LINK_GO_OWNER' | translate}}"><span ng-bind-html="'#' + task.user_story_extra_info.ref + ' ' + task.user_story_extra_info.subject | emojify"></span>
+            <tg-belong-to-epics ng-if="::task.user_story_extra_info.epics" epics="::task.user_story_extra_info.epics" format="pill"></tg-belong-to-epics></a></div>
+        <div ng-if="task.generated_user_stories.length" class="detail-header-line item-generated-us"><span ng-bind="'COMMON.PROMOTED_'+task._name.toUpperCase() | translate"></span><a ng-repeat="userstory in task.generated_user_stories track by userstory.id" tg-check-permission="view_us" tg-nav="project-userstories-detail:project=project.slug,ref=userstory.ref" ng-bind-html="'#' + userstory.ref + ' '+ userstory.subject | emojify"></a></div>
+        <div class="action-buttons"><a href="" title="{{'TASK.TITLE_LINK_TASKBOARD' | translate}}" tg-check-permission="view_milestones" tg-nav="project-taskboard:project=project.slug,sprint=sprint.slug" ng-if="sprint &amp;&amp; project.is_backlog_activated" translate="TASK.LINK_TASKBOARD" variant="secondary" class="btn-small"></a></div>
+        <div class="subheader">
+          <tg-tag-line ng-if="task &amp;&amp; project" project="project" item="task" permissions="modify_task" class="tags-block"></tg-tag-line>
+          <tg-created-by-display ng-model="task" class="ticket-created-by"></tg-created-by-display>
+        </div>
+      </div>
+    </div>
+    <div ng-if="attachmentsReady" class="detail-content">
+      <section class="duty-content">
+        <tg-item-wysiwyg type="task" model="task" required-perm="modify_task"></tg-item-wysiwyg>
+      </section>
+      <!-- Custom Fields-->
+      <tg-custom-attributes-values ng-model="task" type="task" project="project" required-edition-perm="modify_task"></tg-custom-attributes-values>
+      <tg-attachments-full obj-id="task.id" type="task" project-id="projectId" edit-permission="modify_task"></tg-attachments-full>
+      <tg-history-section ng-if="task" type="task" name="task" id="task.id" total-comments="task.total_comments" project="project"></tg-history-section>
+    </div>
+  </div>
+  <sidebar class="sidebar ticket-data">
+    <section class="ticket-header"><span tg-task-status-display ng-model="task" class="ticket-title"></span><span tg-task-status-button ng-model="task" class="detail-status"></span></section>
+    <section tg-assigned-to ng-model="task" required-perm="modify_task" class="ticket-section"></section>
+    <section tg-watchers item="task" active-users="activeUsers" on-watch="ctrl.onWatch" on-unwatch="ctrl.onUnwatch" required-perm="modify_task" class="ticket-section ticket-watchers"></section>
+    <section class="ticket-section ticket-detail-settings">
+      <tg-due-date due-date="task.due_date" format="button" is-closed="task.is_closed" item="task" obj-type="task" tg-check-permission="modify_task"></tg-due-date>
+      <tg-task-is-iocaine-button ng-model="task"></tg-task-is-iocaine-button>
+      <tg-promote-to-us-button tg-check-permission="add_us" ng-model="task"></tg-promote-to-us-button>
+      <tg-block-button tg-check-permission="modify_task" ng-model="task"></tg-block-button>
+      <tg-delete-button tg-check-permission="delete_task" on-delete-title="{{'TASK.TITLE_DELETE_ACTION' | translate}}" on-delete-go-to-url="onDeleteGoToUrl" ng-model="task"></tg-delete-button>
+    </section>
+  </sidebar>
+  <div tg-lb-block ng-model="task" title="TASK.LIGHTBOX_TITLE_BLOKING_TASK" class="lightbox lightbox-block"></div>
+</div>

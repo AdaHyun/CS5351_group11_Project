@@ -1,0 +1,92 @@
+
+<section class="admin-status-table">
+  <div class="colors-table">
+    <div class="project-values-title">
+      <h2>{{ sectionName | translate }}</h2>
+      <button variant="primary" title="{{'ADMIN.PROJECT_DUE_DATE_STATUS.ACTION_ADD_STATUS' | translate}}" class="btn-small show-add-new"><span translate="ADMIN.PROJECT_DUE_DATE_STATUS.ACTION_ADD_STATUS"></span></button>
+    </div>
+    <div class="table-header">
+      <div class="row">
+        <div translate="COMMON.FIELDS.COLOR" class="color-column"></div>
+        <div translate="COMMON.FIELDS.NAME" class="status-name"></div>
+        <div translate="ADMIN.PROJECT_DUE_DATE_STATUS.DAYS_TO_DUE_DATE" class="thresold-column"></div>
+        <div translate="ADMIN.PROJECT_DUE_DATE_STATUS.BEFORE_AFTER" class="before-after-column"></div>
+        <div class="options-column"></div>
+      </div>
+    </div>
+    <div class="table-main">
+      <div class="sortable">
+        <div ng-repeat="value in values" tg-bind-scope="tg-bind-scope">
+          <form tg-bind-scope="tg-bind-scope">
+            <div class="row table-main visualization">
+              <tg-svg svg-icon="icon-draggable"></tg-svg>
+              <div class="color-column">
+                <div ng-style="{background: value.color}" class="current-color"></div>
+              </div>
+              <div class="status-name"><span>{{ value.name }}</span></div>
+              <div class="thresold-column"><span ng-if="value.days_to_due != null">{{ value.days_to_due_abs }}</span></div>
+              <div class="before-after-column"><span ng-if="value.days_to_due" ng-switch="value.days_to_due &gt;= 0"><span ng-switch-when="true">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.BEFORE' | translate }}</span><span ng-switch-when="false">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.AFTER' | translate }}</span></span></div>
+              <div class="options-column"><a href="" class="edit-value">
+                  <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}" svg-icon="icon-edit"></tg-svg></a><a href="" ng-if="!value.by_default" class="delete-due-date">
+                  <tg-svg title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}" svg-icon="icon-trash"></tg-svg></a></div>
+            </div>
+            <div class="row table-main edition hidden">
+              <div class="color-column">
+                <tg-color-selector init-color="value.color" on-select-color="value.color = color"></tg-color-selector>
+              </div>
+              <div class="status-name">
+                <input name="name" type="text" placeholder="{{'ADMIN.STATUS.PLACEHOLDER_WRITE_STATUS_NAME' | translate}}" ng-model="value.name" data-required="true" data-maxlength="255"/>
+              </div>
+              <div ng-if="!value.by_default" class="thresold-column">
+                <input type="number" data-type="digits" min="0" name="days_to_due" ng-model="value.days_to_due_abs" class="days-to-due-abs"/>
+              </div>
+              <div class="before-after-column">
+                <div ng-if="!value.by_default &amp;&amp; value.days_to_due_abs != 0" class="before-after-selector">
+                  <div ng-class="{'checked': value.sign &gt; 0 }" class="before-after-selector-single">
+                    <input type="radio" id="due-date-status-before" name="due-date-status-after" ng-model="value.sign" value="1"/>
+                    <label for="due-date-status-before" class="days-to-due-sign">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.BEFORE' | translate }}</label>
+                  </div>
+                  <div ng-class="{'checked': value.sign &lt; 0 }" class="before-after-selector-single">
+                    <input type="radio" id="due-date-status-after" name="due-date-status-after" ng-model="value.sign" value="-1"/>
+                    <label for="due-date-status-after" class="days-to-due-sign">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.AFTER' | translate }}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="options-column"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save e2e-save">
+                  <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="cancel">
+                  <tg-svg svg-icon="icon-close" class="cancel"></tg-svg></a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <form tg-bind-scope="tg-bind-scope">
+        <div class="row table-main new-value hidden">
+          <div class="color-column">
+            <tg-color-selector init-color="newValue.color" on-select-color="newValue.color = color"></tg-color-selector>
+          </div>
+          <div class="status-name">
+            <input name="name" type="text" placeholder="{{'ADMIN.STATUS.PLACEHOLDER_WRITE_STATUS_NAME' | translate}}" ng-model="newValue.name" data-required="true" data-maxlength="255"/>
+          </div>
+          <div class="thresold-column">
+            <input type="number" data-type="digits" min="0" name="days_to_due_abs" placeholder="{{'ADMIN.STATUS.PLACEHOLDER_DAYS_TO_DUE_DATE' | translate}}" ng-model="newValue.days_to_due_abs" data-required="true" class="days-to-due-abs"/>
+          </div>
+          <div class="before-after-column">
+            <div ng-if="newValue.days_to_due_abs &amp;&amp; newValue.days_to_due_abs != 0" class="before-after-selector">
+              <div ng-class="{'checked': newValue.sign &gt; 0 }" class="before-after-selector-single">
+                <input type="radio" id="due-date-status-before" name="due-date-status-after" ng-model="newValue.sign" value="1"/>
+                <label for="due-date-status-before" class="days-to-due-sign">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.BEFORE' | translate }}</label>
+              </div>
+              <div ng-class="{'checked': newValue.sign &lt; 0}" class="before-after-selector-single">
+                <input type="radio" id="due-date-status-after" name="due-date-status-after" ng-model="newValue.sign" value="-1"/>
+                <label for="due-date-status-after" class="days-to-due-sign">{{ 'ADMIN.PROJECT_DUE_DATE_STATUS.AFTER' | translate }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="options-column"><a href="" title="{{'COMMON.ADD' | translate}}" class="add-new-due-date e2e-save">
+              <tg-svg svg-icon="icon-check-empty"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="delete-new">
+              <tg-svg svg-icon="icon-close"></tg-svg></a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

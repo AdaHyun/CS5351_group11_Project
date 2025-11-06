@@ -1,0 +1,107 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.dropdown-project-list {
+  align-items: center;
+  display: flex;
+  height: 100%; }
+  .dropdown-project-list .icon-slash {
+    fill: transparent;
+    stroke: #E44057; }
+  .dropdown-project-list .dropdown-project-list-ul {
+    border-bottom: 1px solid #83EEDE;
+    margin-bottom: 0;
+    padding-bottom: .8rem; }
+  .dropdown-project-list .dropdown-project-list-link {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    align-items: center;
+    display: flex; }
+    .dropdown-project-list .dropdown-project-list-link img {
+      margin-right: .5rem;
+      width: 24px; }
+    .dropdown-project-list .dropdown-project-list-link:hover, .dropdown-project-list .dropdown-project-list-link.active {
+      background: #D8DEE9;
+      color: #008AA8; }
+  .dropdown-project-list .navbar-dropdown {
+    width: 275px; }
+    .dropdown-project-list .navbar-dropdown:after, .dropdown-project-list .navbar-dropdown:before {
+      bottom: 100%;
+      left: 1.5rem;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none; }
+    .dropdown-project-list .navbar-dropdown:after {
+      border-color: rgba(249, 249, 251, 0);
+      border-bottom-color: #F9F9FB;
+      border-width: 8px;
+      margin-left: -8px; }
+    .dropdown-project-list .navbar-dropdown:before {
+      border-color: rgba(249, 249, 251, 0);
+      border-bottom-color: #F9F9FB;
+      border-width: calc(8px + 1px);
+      margin-left: calc(-8px + 1px); }
+  .dropdown-project-list .see-more-projects-btn {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    color: #008AA8; }
+  .dropdown-project-list .create-project-btn {
+    font-size: .875rem;
+    padding: .3rem 0; }
+    .dropdown-project-list .create-project-btn span {
+      color: #4C566A; }
+    .dropdown-project-list .create-project-btn svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #2E3440;
+      margin: 0 .25rem 0 0;
+      stroke: #2E3440; }
+    .dropdown-project-list .create-project-btn:hover span {
+      color: #fff; }
+    .dropdown-project-list .create-project-btn:hover svg {
+      fill: #fff;
+      stroke: #fff; }
+  .dropdown-project-list .dropdown-project-list-desc {
+    font-size: .7rem;
+    color: #4C566A; }
+  .dropdown-project-list h2 {
+    font-size: 1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    margin-bottom: .5rem; }
+  .dropdown-project-list:hover, .dropdown-project-list.active {
+    border-radius: 3px; }
+  .dropdown-project-list:hover .dropdown-project-list-projects {
+    background-color: #ECEFF4; }
+    .dropdown-project-list:hover .dropdown-project-list-projects span {
+      color: #70728F; }
+    .dropdown-project-list:hover .dropdown-project-list-projects .icon-folder {
+      fill: #70728F; }
+  .dropdown-project-list.active .dropdown-project-list-projects {
+    background-color: #ECEFF4; }
+    .dropdown-project-list.active .dropdown-project-list-projects span {
+      color: #008AA8; }
+    .dropdown-project-list.active .dropdown-project-list-projects .icon-folder {
+      fill: #008AA8; }
+
+.dropdown-project-list-projects {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  align-items: center;
+  display: flex;
+  padding: .25rem .5rem; }
+  .dropdown-project-list-projects span {
+    color: #008AA8;
+    font-size: .9rem; }
+  .dropdown-project-list-projects .empty-projects {
+    background: #E44057;
+    border-radius: 50%;
+    height: 6px;
+    margin-left: .5rem;
+    width: 6px; }
+  .dropdown-project-list-projects .icon-folder {
+    margin: .1rem .25rem 0 0; }
+    .dropdown-project-list-projects .icon-folder svg {
+      fill: #008AA8;
+      width: 0.9rem;
+      height: 0.9rem; }

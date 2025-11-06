@@ -1,0 +1,17 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+doctype html
+
+div.wrapper(
+    ng-controller="ContribUserSettingsController as ctrl"
+    ng-init="section='user-settings'"
+)
+    sidebar.menu-secondary.sidebar.settings-nav(tg-user-settings-navigation)
+        include ../includes/modules/user-settings-menu
+
+    section.main(ng-include="currentPlugin.template")

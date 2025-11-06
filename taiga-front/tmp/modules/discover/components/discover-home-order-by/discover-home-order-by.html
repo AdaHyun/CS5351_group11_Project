@@ -1,0 +1,10 @@
+
+<div ng-mouseleave="vm.close()" class="filter-highlighted"><a href="#" ng-click="vm.open()" class="current-filter">{{vm.currentText()}}
+    <tg-svg svg-icon="icon-arrow-down"></tg-svg></a>
+  <ul ng-if="vm.is_open" class="filter-list">
+    <li ng-click="vm.orderBy('week')"><a class="status">{{ 'DISCOVER.FILTERS.WEEK' | translate }}</a></li>
+    <li ng-click="vm.orderBy('month')"><a class="status">{{ 'DISCOVER.FILTERS.MONTH' | translate }}</a></li>
+    <li ng-click="vm.orderBy('year')"><a class="status">{{ 'DISCOVER.FILTERS.YEAR' | translate }}</a></li>
+    <li ng-click="vm.orderBy('all')"><a class="status">{{ 'DISCOVER.FILTERS.ALL_TIME' | translate }}</a></li>
+  </ul>
+</div>

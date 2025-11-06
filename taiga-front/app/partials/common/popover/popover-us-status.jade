@@ -1,0 +1,18 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+ul.popover.pop-status
+    <% _.each(statuses, function(status) { %>
+    li.popover-status
+        a.status#js-status-btn(
+            href=""
+            class!="<% if(currentStatus == status.id) { %> active-popover <% } %>"
+            title!="<%- status.name %>"
+            data-status-id!="<%- status.id %>"
+        )
+            span.item-text <%- status.name %>
+    <% }); %>

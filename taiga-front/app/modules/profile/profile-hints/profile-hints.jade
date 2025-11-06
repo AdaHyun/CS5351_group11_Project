@@ -1,0 +1,15 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+h4
+    tg-svg(svg-icon="icon-question")
+    span(translate="HINTS.SECTION_NAME")
+
+p {{::vm.hint.title}}
+p {{::vm.hint.text}}
+    | &nbsp;
+    a(ng-if="::vm.hint.url", target="_blank", ng-href="{{::vm.hint.url}}", title="{{'HINTS.LINK_TITLE' | translate}}", translate="{{::vm.hint.linkText}}")

@@ -1,0 +1,92 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.discover-results-header .discover-results-header-inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between; }
+
+.discover-results-header svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #70728F;
+  margin-right: .25rem; }
+
+.discover-results-header .title {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  align-self: center;
+  display: flex;
+  text-transform: uppercase; }
+
+.discover-results-header h2 {
+  display: inline-block;
+  margin-bottom: 0; }
+
+.filter-discover-search {
+  display: flex; }
+  .filter-discover-search .discover-search-filter {
+    display: flex;
+    margin-right: 1rem; }
+    .filter-discover-search .discover-search-filter.active {
+      color: #008AA8; }
+      .filter-discover-search .discover-search-filter.active svg {
+        fill: #008AA8; }
+  .filter-discover-search svg {
+    width: 0.8rem;
+    height: 0.8rem; }
+
+.discover-search-subfilter {
+  align-items: center;
+  background: #F1F1F4;
+  display: flex;
+  justify-content: space-between;
+  position: relative; }
+  .discover-search-subfilter:after, .discover-search-subfilter:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  .discover-search-subfilter:after {
+    border-color: rgba(241, 241, 244, 0);
+    border-bottom-color: #F1F1F4;
+    border-width: 8px;
+    margin-left: -8px; }
+  .discover-search-subfilter:before {
+    border-color: rgba(241, 241, 244, 0);
+    border-bottom-color: #F1F1F4;
+    border-width: calc(8px + 1px);
+    margin-left: calc(-8px + 1px); }
+  .discover-search-subfilter.most-liked-subfilter::after, .discover-search-subfilter.most-liked-subfilter::before {
+    left: 85%; }
+  .discover-search-subfilter.most-active-subfilter::after, .discover-search-subfilter.most-active-subfilter::before {
+    left: 95%; }
+  .discover-search-subfilter.ng-enter {
+    animation: dropdownFade .2s; }
+  .discover-search-subfilter .results {
+    font-size: .875rem;
+    color: #ffa0a0;
+    display: block;
+    padding: .5rem 1rem;
+    transition: all .2s; }
+    .discover-search-subfilter .results:hover {
+      color: #FF6363; }
+  .discover-search-subfilter .filter-list {
+    display: flex;
+    margin: 0;
+    margin-left: auto; }
+    .discover-search-subfilter .filter-list a {
+      display: block;
+      padding: .5rem 1rem;
+      transition: all .2s; }
+      .discover-search-subfilter .filter-list a:hover {
+        background: #E2E3E9;
+        color: #5A5B72; }
+      .discover-search-subfilter .filter-list a.active {
+        background: #008AA8;
+        color: #fff; }

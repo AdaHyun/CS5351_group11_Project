@@ -1,0 +1,44 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.custom-field-single(class!="<%= type === 'checkbox' ? 'custom-field-checkbox' : '' %>")
+    .custom-field-data
+        span.custom-field-name
+            <%- name %>
+        <% if (description){ %>
+        span.custom-field-description
+            <%- description %>
+        <% } %>
+
+    .custom-field-value-container
+        <% if (type=="url") { %>
+        .custom-field-value.js-value-view-mode
+            span
+                a(href!="<%- value %>")
+                    <%- value %>
+        <% } else if (type=="richtext") { %>
+        .custom-field-value.wysiwyg
+            span(
+                tg-bind-wysiwyg-html="model"
+            )
+        <% } else if (type=="checkbox") { %>
+        .custom-field-value.js-value-view-mode
+            <% if (value) { %>
+            span {{ 'COMMON.YES' | translate }}
+            <% } else { %>
+            span {{ 'COMMON.NO' | translate }}
+            <% } %>
+        <% } else { %>
+        .custom-field-value.js-value-view-mode
+            span(ng-bind-html="attributeHtml")
+        <% } %>
+
+        <% if (isEditable) { %>
+        .custom-field-options
+            a.js-edit-description(href="", title="{{'COMMON.CUSTOM_ATTRIBUTES.EDIT' | translate}}")
+                tg-svg(svg-icon="icon-edit")
+        <% } %>

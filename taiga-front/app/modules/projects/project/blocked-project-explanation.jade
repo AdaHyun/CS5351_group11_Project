@@ -1,0 +1,12 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+div(ng-if="!vm.project.get('i_am_owner')")
+    div {{'PROJECT.BLOCKED_PROJECT.THIS_PROJECT_IS_BLOCKED' | translate}}
+
+div(ng-if="vm.project.get('i_am_owner')")
+    div {{'PROJECT.BLOCKED_PROJECT.TO_UNBLOCK_CONTACT_THE_ADMIN_STAFF' | translate}}

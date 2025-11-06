@@ -1,0 +1,61 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-swimlane-selector {
+  display: block;
+  position: relative; }
+  tg-swimlane-selector .select {
+    font-size: .875rem;
+    background: #F9F9FB;
+    border: 2px solid #D8DEE9;
+    border-radius: 3px;
+    color: #2E3440;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: .3rem;
+    padding-block-start: .3rem;
+    padding-inline-end: .5rem;
+    padding-inline-start: 1rem;
+    width: 100%; }
+    tg-swimlane-selector .select tg-svg {
+      fill: #008AA8; }
+    tg-swimlane-selector .select .swimlane-select-text {
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%; }
+      tg-swimlane-selector .select .swimlane-select-text.unclassified {
+        font-style: italic; }
+    tg-swimlane-selector .select.active {
+      border-color: #008AA8; }
+  tg-swimlane-selector .options {
+    background-color: #FFFFFF;
+    border: 1px solid #D8DEE9;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+    padding: .5rem;
+    position: absolute;
+    top: calc(1.5rem + 4px);
+    width: 100%;
+    z-index: 2; }
+  tg-swimlane-selector .swimlane-default {
+    font-style: italic;
+    padding-inline-start: .5ch; }
+  tg-swimlane-selector .option {
+    font-size: .875rem;
+    background: transparent;
+    color: #008AA8;
+    cursor: pointer;
+    display: block;
+    padding: .25rem;
+    text-align: left;
+    width: 100%; }
+    tg-swimlane-selector .option.unclassified {
+      font-style: italic; }
+    tg-swimlane-selector .option:hover {
+      background: #ECEFF4; }
+    tg-swimlane-selector .option.selected {
+      color: #70728F; }

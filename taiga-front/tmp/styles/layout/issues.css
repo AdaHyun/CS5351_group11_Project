@@ -1,0 +1,73 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.issues .filters-bar {
+  width: 300px;
+  position: relative; }
+  @media screen and (max-width: 1959px) {
+    .issues .filters-bar {
+      width: 260px; } }
+  @media screen and (max-width: 1407px) {
+    .issues .filters-bar {
+      width: 240px; } }
+  @media screen and (max-width: 1215px) {
+    .issues .filters-bar {
+      width: 220px; } }
+  @media screen and (max-width: 1023px) {
+    .issues .filters-bar {
+      width: 200px; } }
+  @media screen and (max-width: 768px) {
+    .issues .filters-bar {
+      width: 180px; } }
+
+.issues tg-filter {
+  transform: translateX(0); }
+
+.issue-main {
+  padding-left: 2rem; }
+
+.issue-container {
+  display: flex; }
+  .issue-container .filters-bar {
+    background-color: #FFFFFF;
+    padding-inline-end: 1rem;
+    position: sticky;
+    top: 115px;
+    z-index: 2; }
+    .issue-container .filters-bar tg-filter {
+      background: none;
+      border: 1px solid #ECEFF4;
+      opacity: 1;
+      padding: 1rem;
+      position: relative;
+      transform: translate(0); }
+
+.issues-page {
+  width: 100%; }
+  .issues-page.filter {
+    padding-left: 0; }
+    .issues-page.filter .issues-table {
+      padding-left: 0;
+      padding-right: 0; }
+  .issues-page .issues-options {
+    display: none; }
+
+.issue-header {
+  background: #FFFFFF;
+  padding-block-end: 1rem; }
+  .issue-header .button-filter {
+    color: #008AA8;
+    margin-left: 0; }
+    .issue-header .button-filter svg {
+      fill: #008AA8; }
+  .issue-header .btn-small {
+    margin-right: 1rem; }
+
+.issue-table-options-start {
+  align-items: center;
+  display: flex; }
+  .issue-table-options-start tg-input-search {
+    margin-inline-end: .5rem;
+    margin-inline-start: .5rem;
+    width: 185px; }

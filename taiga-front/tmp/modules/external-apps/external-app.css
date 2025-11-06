@@ -1,0 +1,76 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.external-app-wrapper {
+  margin: 2rem auto;
+  text-align: center;
+  width: 480px; }
+  .external-app-wrapper .logo {
+    height: 4rem;
+    margin: 0 auto;
+    width: 4rem; }
+  .external-app-wrapper svg {
+    width: 4rem;
+    height: 4rem; }
+  .external-app-wrapper h1 {
+    justify-content: center;
+    margin-bottom: 0; }
+  .external-app-wrapper .app-card,
+  .external-app-wrapper .user-card {
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    text-align: left; }
+    .external-app-wrapper .app-card .card-inner,
+    .external-app-wrapper .user-card .card-inner {
+      display: flex; }
+    .external-app-wrapper .app-card img,
+    .external-app-wrapper .user-card img {
+      width: 100%; }
+    .external-app-wrapper .app-card h3,
+    .external-app-wrapper .app-card p,
+    .external-app-wrapper .user-card h3,
+    .external-app-wrapper .user-card p {
+      margin: 0; }
+    .external-app-wrapper .app-card h3,
+    .external-app-wrapper .user-card h3 {
+      font-size: 1.1rem; }
+    .external-app-wrapper .app-card a,
+    .external-app-wrapper .user-card a {
+      font-size: .875rem;
+      display: block; }
+  .external-app-wrapper .app-card .app-image {
+    flex-basis: 100px;
+    margin-right: 1rem;
+    max-width: 105px; }
+  .external-app-wrapper .app-card .app-data {
+    flex: 1; }
+  .external-app-wrapper .app-card a {
+    margin-bottom: .5rem; }
+  .external-app-wrapper .app-card p {
+    font-size: .875rem; }
+  .external-app-wrapper .user-card {
+    background: #fff8e4;
+    border: 1px solid #f1e8cd;
+    padding: 1rem; }
+    .external-app-wrapper .user-card .card-inner {
+      margin-bottom: .5rem; }
+    .external-app-wrapper .user-card .user-image {
+      flex-basis: 50px;
+      margin-right: 1rem;
+      max-width: 55px; }
+  .external-app-wrapper .button-green {
+    display: block; }
+  .external-app-wrapper .cancel {
+    font-size: .875rem;
+    display: block;
+    margin-top: .5rem;
+    text-align: left; }
+
+@media screen and (max-width: 768px) {
+  .external-app-wrapper {
+    margin: 0;
+    min-width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 100%; } }

@@ -1,0 +1,21 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lb-select-user-form {
+  margin: 0 .5rem; }
+  .lb-select-user-form .lb-select-user-list {
+    max-height: 28.5rem;
+    overflow-y: auto; }
+    .lb-select-user-form .lb-select-user-list.is-active {
+      background-color: #E9F6F3; }
+
+.lb-select-user-actions {
+  margin: 2rem 0 0;
+  text-align: center; }
+
+.lb-select-user-link-back {
+  color: #25A28C;
+  text-transform: uppercase; }
+  .lb-select-user-link-back:hover {
+    color: #5CBAA9; }

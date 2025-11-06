@@ -1,0 +1,118 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.attachment-simple.attachment-dragover .attachments-empty {
+  background-color: #ECEFF4;
+  border-color: #008AA8;
+  font-style: italic; }
+
+.attachment-simple .attachment-name {
+  flex-basis: 70%;
+  flex-grow: 0;
+  width: 70%; }
+
+.attachment-simple .single-attachment {
+  padding: .5rem 0 .5rem .5rem; }
+
+.attachment-simple .settings {
+  justify-content: flex-end; }
+
+.attachment-full.attachment-dragover .attachments-empty {
+  background-color: #ECEFF4;
+  border-color: #008AA8;
+  font-style: italic; }
+
+.attachment-full .attachment-settings {
+  display: flex;
+  justify-content: flex-end; }
+  .attachment-full .attachment-settings > div,
+  .attachment-full .attachment-settings .settings {
+    margin-right: .75rem; }
+    .attachment-full .attachment-settings > div:last-child,
+    .attachment-full .attachment-settings .settings:last-child {
+      margin-right: 0; }
+
+.attachment-list .single-attachment {
+  align-items: center;
+  border-bottom: 1px solid #F9F9FB;
+  display: flex;
+  padding: .5rem;
+  position: relative; }
+  .attachment-list .single-attachment:hover .settings {
+    opacity: 1;
+    transition: opacity .2s ease-in; }
+  .attachment-list .single-attachment.deprecated {
+    color: #70728F; }
+    .attachment-list .single-attachment.deprecated span,
+    .attachment-list .single-attachment.deprecated .attachment-name a {
+      color: #70728F; }
+
+.attachment-list .attachment-name {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-right: 1rem; }
+  .attachment-list .attachment-name span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.attachment-list .attachment-comments,
+.attachment-list .editable-attachment-comment {
+  flex: 2;
+  flex-basis: 50%;
+  margin-right: .5rem; }
+  .attachment-list .attachment-comments span,
+  .attachment-list .editable-attachment-comment span {
+    color: #434456; }
+
+.attachment-list .attachment-size {
+  flex-basis: 20%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center; }
+  .attachment-list .attachment-size span {
+    color: #4C566A; }
+
+.attachment-list .attachment-settings {
+  flex-basis: 10%;
+  flex-grow: 0;
+  flex-shrink: 0; }
+  .attachment-list .attachment-settings .editable-settings {
+    display: block;
+    opacity: 1; }
+  .attachment-list .attachment-settings .settings {
+    opacity: 0; }
+  .attachment-list .attachment-settings svg {
+    fill: #70728F;
+    pointer-events: none; }
+  .attachment-list .attachment-settings .icon-edit:hover,
+  .attachment-list .attachment-settings .icon-save:hover {
+    fill: #008AA8; }
+  .attachment-list .attachment-settings .icon-trash:hover,
+  .attachment-list .attachment-settings .icon-close:hover {
+    fill: #E44057; }
+  .attachment-list .attachment-settings .icon-drag {
+    cursor: move; }
+
+.attachment-list .editable-attachment-deprecated {
+  display: flex;
+  padding-left: 1rem; }
+  .attachment-list .editable-attachment-deprecated span {
+    color: #70728F; }
+  .attachment-list .editable-attachment-deprecated input {
+    margin-right: .2rem;
+    vertical-align: middle; }
+    .attachment-list .editable-attachment-deprecated input:checked + span {
+      color: #70728F; }
+
+.attachment-list progress {
+  background: #D8DEE9;
+  border: none;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+  .attachment-list progress::-webkit-progress-bar, .attachment-list progress::-moz-progress-bar {
+    background: #008AA8; }

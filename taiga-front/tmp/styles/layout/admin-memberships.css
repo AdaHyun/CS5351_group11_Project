@@ -1,0 +1,30 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-membership .header-message {
+  background: rgba(246, 201, 92, 0.25);
+  margin-top: 1rem;
+  padding: 1rem; }
+  .admin-membership .header-message .no-more-membership {
+    align-items: center;
+    color: #4C566A;
+    display: flex; }
+    .admin-membership .header-message .no-more-membership strong,
+    .admin-membership .header-message .no-more-membership a {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+    .admin-membership .header-message .no-more-membership p {
+      color: #434456;
+      flex-grow: 1;
+      margin: 0;
+      padding-left: 2rem;
+      padding-right: 1rem; }
+
+.admin-membership .limit-users-warning {
+  font-size: .875rem;
+  color: #25A28C;
+  margin-right: 1rem; }
+
+.admin-membership .check input {
+  height: 40px;
+  width: 85px; }

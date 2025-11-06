@@ -1,0 +1,23 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.severity-data(class!="<% if(editable){ %>clickable<% }%>")
+    .label.level-name(translate="COMMON.FIELDS.SEVERITY")
+    .level-data
+        span.label <%- severity.name %>
+        span.level-color(style!="background-color:<%- severity.color %>")
+
+    ul.popover.pop-severity
+        <% _.each(severityes, function(sv) { %>
+        li
+            a.severity(
+                href=""
+                title!="<%- sv.name %>"
+                data-severity-id!="<%- sv.id %>"
+            )
+                span.item-text <%- sv.name %>
+        <% }); %>

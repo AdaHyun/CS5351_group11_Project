@@ -1,0 +1,18 @@
+
+<ul class="popover us-option-popup">
+  <li>
+    <button ng-click="ctrl.editUserStory(us.project, us.ref, $event)" tg-check-permission="modify_us" class="e2e-edit edit-story">
+      <tg-svg svg-icon="icon-edit"></tg-svg><span>{{'COMMON.EDIT' | translate}}</span>
+    </button>
+  </li>
+  <li>
+    <button ng-click="ctrl.deleteUserStory(us)" tg-check-permission="delete_us" class="e2e-delete">
+      <tg-svg svg-icon="icon-trash"></tg-svg><span>{{'COMMON.DELETE' | translate}}</span>
+    </button>
+  </li>
+  <li>
+    <button ng-click="ctrl.moveUsToTopOfBacklog(us)" tg-check-permission="modify_us" class="e2e-edit move-to-top">
+      <tg-svg svg-icon="icon-move-to-top"></tg-svg><span>{{'COMMON.MOVE_TO_TOP' | translate}}</span>
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+
+<div class="wip-limit-status">
+  <div class="wip-limit-status-name">{{::vm.status.name}}</div>
+  <div ng-if="!displayWipLimitSelector" class="wip-limit-status-data"><span ng-if="!vm.status.wip_limit" class="wip-number wip-placeholder-text">{{'ADMIN.PROJECT_KANBAN_OPTIONS.WIP_LIMIT_PLACEHOLDER' | translate }}</span><span ng-if="!!vm.status.wip_limit" class="wip-number">{{vm.status.wip_limit}}</span>
+    <button type="button" arial-label="{{'COMMON.SAVE' | translate }}" ng-click="toggleWipSelectorVisibility()" class="form-button">
+      <tg-svg svg-icon="icon-edit"></tg-svg>
+    </button>
+  </div>
+  <form ng-if="displayWipLimitSelector" class="wip-limit-status-form">
+    <input tg-autofocus="tg-autofocus" type="number" maxlength="48" ng-model="vm.new_wip_limit" ng-value="statusWipLimit" placeholder="{{'ADMIN.PROJECT_KANBAN_OPTIONS.WIP_LIMIT_INPUT' | translate }}" class="wip-limit-status-form-input"/>
+    <button type="button" arial-label="{{'COMMON.SAVE' | translate }}" ng-click="vm.submitSwimlaneNewStatus()" class="form-button add-swimlane-single">
+      <tg-svg svg-icon="icon-check-empty"></tg-svg>
+    </button>
+    <button type="button" arial-label="{{'COMMON.CANCEL' | translate }}" ng-click="toggleWipSelectorVisibility()" class="form-button cancel-swimlane-single">
+      <tg-svg svg-icon="icon-close"></tg-svg>
+    </button>
+  </form>
+</div>

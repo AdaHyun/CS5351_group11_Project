@@ -1,0 +1,27 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+fieldset.create-project-check
+    label(for="links")
+        span.title(
+            translate="PROJECT.IMPORT.LINKS"
+            translate-values="{platform: vm.platformName}"
+        )
+        span.description(
+            translate="PROJECT.IMPORT.LINKS_DESCRIPTION"
+            translate-values="{platform: vm.platformName}"
+        )
+
+    .check
+        input.activate-input(
+            ng-model="vm.projectForm.keepExternalReference"
+            name="links"
+            type="checkbox"
+        )
+        div
+        span.check-text.check-yes(translate="COMMON.YES")
+        span.check-text.check-no(translate="COMMON.NO")

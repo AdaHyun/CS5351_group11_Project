@@ -1,0 +1,10 @@
+
+<div ng-repeat="user in memberships | membersFilter:filtersQ:filtersRole" class="row member">
+  <div class="username">
+    <div class="avatar"><img tg-avatar="user" tg-bo-alt="user.full_name_display"/>
+      <div class="avatar-data"><a tg-nav="user-profile:username=user.username" title="{{::user.full_name_display}}" class="name">{{::user.full_name_display}}
+          <tg-svg ng-if="user.id == owner" svg-icon="icon-badge" svg-title-translate="COMMON.OWNER"></tg-svg></a><span class="position">{{::user.role_name}}</span></div>
+    </div>
+  </div>
+  <div tg-team-member-stats="tg-team-member-stats" stats="stats" user="user.id" issuesEnabled="issuesEnabled" tasksenabled="tasksEnabled" wikienabled="wikiEnabled" class="member-stats"></div>
+</div>

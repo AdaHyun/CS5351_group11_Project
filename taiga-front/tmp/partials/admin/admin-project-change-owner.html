@@ -1,0 +1,6 @@
+
+<div class="owner-avatar"><img tg-avatar="owner" alt="{{::owner.full_name_display}}"/></div>
+<div class="owner-info">
+  <div class="owner-info-title">{{ 'ADMIN.PROJECT_PROFILE.PROJECT_OWNER' | translate }}</div>
+  <div class="owner-name">{{::owner.full_name_display}}</div>
+</div><a href="" ng-click="changeOwner()" ng-if="members &gt; 1" class="request">{{ 'ADMIN.PROJECT_PROFILE.CHANGE_OWNER' | translate }}</a>

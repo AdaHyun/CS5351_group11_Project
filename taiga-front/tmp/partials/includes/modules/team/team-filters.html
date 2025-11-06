@@ -1,0 +1,17 @@
+
+<section class="team-filters">
+  <div class="team-filters-inner">
+    <header>
+      <h1 translate="BACKLOG.FILTERS.TITLE"></h1>
+    </header>
+    <form class="search-in">
+      <fieldset>
+        <input type="text" placeholder="{{'TEAM.PLACEHOLDER_INPUT_SEARCH' | translate}}" ng-model="filtersQ"/>
+        <div class="icon-search-wrapper">
+          <tg-svg svg-icon="icon-search" title="{{'COMMON.FILTERS.TITLE_ACTION_FILTER_BUTTON' | translate}}"></tg-svg>
+        </div>
+      </fieldset>
+    </form>
+    <nav tg-team-filters="tg-team-filters"></nav>
+  </div>
+</section>

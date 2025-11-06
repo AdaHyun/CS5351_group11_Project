@@ -1,0 +1,14 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.register-form-container {
+  display: block; }
+  .register-form-container .register-text-top {
+    color: #2E3440;
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+    text-decoration: underline; }
+  .register-form-container .register-text {
+    font-size: .875rem; }

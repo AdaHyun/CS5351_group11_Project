@@ -1,0 +1,301 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.create-project {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%;
+  max-width: 800px; }
+  .create-project .error-text {
+    margin-bottom: 0;
+    margin-top: .5rem; }
+  .create-project h1 {
+    font-size: 1.7rem; }
+  .create-project .create-project-check {
+    display: flex;
+    flex-direction: column; }
+    .create-project .create-project-check label {
+      display: flex;
+      flex-direction: column; }
+    .create-project .create-project-check .title {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #2E3440;
+      margin-bottom: .5rem; }
+  .create-project .create-project-github-import-type-question label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    max-height: none;
+    padding-left: 2rem;
+    position: relative;
+    text-align: left; }
+  .create-project .create-project-github-import-type-name {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1rem; }
+  .create-project fieldset {
+    margin-bottom: 1rem; }
+  .create-project label {
+    color: #70728F;
+    display: flex;
+    margin-bottom: .25rem;
+    max-height: 44px; }
+    .create-project label span {
+      font-size: .875rem; }
+    .create-project label .mumble {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      margin-left: .25rem; }
+  .create-project input + label {
+    color: #4C566A;
+    display: flex; }
+    .create-project input + label .icon {
+      fill: #4C566A; }
+  .create-project-check {
+    position: relative; }
+    .create-project-check span {
+      display: block; }
+    .create-project-check .description {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+    .create-project-check .check {
+      bottom: .25rem;
+      position: absolute;
+      right: 0; }
+  .create-project-title-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0; }
+    .create-project-title-wrapper .create-project-title {
+      display: inline-block; }
+    .create-project-title-wrapper .icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: #008AA8;
+      margin-right: 1rem;
+      stroke: #25A28C;
+      vertical-align: middle; }
+  .create-project-title, .create-project-description {
+    margin: 0;
+    text-align: center; }
+  .create-project-description {
+    color: #70728F;
+    margin-bottom: 2rem; }
+  .create-project-limit {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #5A5B72; }
+  .create-project-import-type {
+    display: flex; }
+    .create-project-import-type fieldset:first-child label {
+      border-radius: .25rem 0 0 .25rem; }
+    .create-project-import-type fieldset:last-child label {
+      border-radius: 0 .25rem .25rem 0; }
+    .create-project-import-type label {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      align-items: center;
+      background: #F1F1F4;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: .75rem;
+      text-transform: uppercase; }
+      .create-project-import-type label:hover {
+        background: #e3e3e9;
+        transition: background .2s linear; }
+      .create-project-import-type label .icon {
+        margin-right: .25rem; }
+    .create-project-import-type input:checked + label {
+      background: #d4d4de; }
+    .create-project-import-type input:disabled + label {
+      cursor: not-allowed;
+      color: #9b9cb1; }
+      .create-project-import-type input:disabled + label .icon {
+        color: #9b9cb1; }
+    .create-project-import-type input {
+      display: none; }
+    .create-project-import-type label {
+      background: #F1F1F4; }
+  .create-project-privacity {
+    display: flex; }
+    .create-project-privacity fieldset:first-child label {
+      border-radius: .25rem 0 0 .25rem; }
+    .create-project-privacity fieldset:last-child label {
+      border-radius: 0 .25rem .25rem 0; }
+    .create-project-privacity label {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      align-items: center;
+      background: #F1F1F4;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: .75rem;
+      text-transform: uppercase; }
+      .create-project-privacity label:hover {
+        background: #e3e3e9;
+        transition: background .2s linear; }
+      .create-project-privacity label .icon {
+        margin-right: .25rem; }
+    .create-project-privacity input:checked + label {
+      background: #d4d4de; }
+    .create-project-privacity input:disabled + label {
+      cursor: not-allowed;
+      color: #9b9cb1; }
+      .create-project-privacity input:disabled + label .icon {
+        color: #9b9cb1; }
+    .create-project-privacity input {
+      display: none; }
+    .create-project-privacity input:checked + label {
+      background: #008AA8;
+      color: #FFFFFF; }
+      .create-project-privacity input:checked + label .icon {
+        fill: #FFFFFF; }
+    .create-project-privacity label {
+      min-height: 37px;
+      padding: 0 .75rem; }
+      .create-project-privacity label .icon {
+        margin-right: 1rem; }
+    .create-project-privacity .icon {
+      fill: #fff;
+      stroke: #fff; }
+    .create-project-privacity .icon-private {
+      height: 20px;
+      line-height: 12px;
+      margin-top: 2px;
+      width: 20px; }
+  .create-project-type {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase; }
+    .create-project-type span {
+      margin-left: .5rem; }
+  .create-project-selector a {
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    color: #434456;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    .create-project-selector a:hover {
+      color: currentColor; }
+  .create-project-selector li:hover {
+    background: rgba(0, 138, 168, 0.1);
+    transition: background .3s ease-in; }
+  .create-project-selector li:first-child {
+    border-top: 1px solid #E2E3E9; }
+  .create-project-selector-icon {
+    align-self: flex-start;
+    padding: 1.5rem 1rem; }
+    .create-project-selector-icon .icon {
+      width: 2.25rem;
+      height: 2.25rem; }
+  .create-project-selector-template-wrapper {
+    flex: 1;
+    padding: 1.25rem; }
+  .create-project-selector-template {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    text-transform: uppercase; }
+  .create-project-selector-description {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+  .create-project-selector-long-description {
+    margin-top: 1rem;
+    overflow: hidden;
+    transition: all 0.3s 0.2s cubic-bezier(0, 0, 0.53, 1.32); }
+    .create-project-selector-long-description.ng-hide {
+      line-height: 0;
+      max-height: 0; }
+  .create-project-selector-question {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem; }
+    .create-project-selector-question:hover svg {
+      fill: #25A28C;
+      transition: fill .2s linear; }
+    .create-project-selector-question svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: #434456; }
+  .create-project-selector p {
+    margin-bottom: 0; }
+  .create-project-action {
+    display: flex;
+    margin: 3rem 0 0; }
+    .create-project-action button {
+      font-size: 1.1rem;
+      padding: .75rem; }
+    .create-project-action-submit {
+      flex: 4;
+      margin-left: 1rem; }
+    .create-project-action-back, .create-project-action-cancel {
+      color: currentColor; }
+      .create-project-action-back:hover, .create-project-action-cancel:hover {
+        color: #5CBAA9; }
+    .create-project-action-cancel {
+      flex: 1; }
+    .create-project-action-back {
+      width: 10%; }
+  .create-project-warning {
+    font-size: .875rem;
+    background: #ECEFF4;
+    border: 2px solid #E44057;
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 1rem; }
+    .create-project-warning .icon-alert {
+      fill: #E44057;
+      margin-right: .5rem;
+      margin-top: .15rem;
+      vertical-align: middle; }
+    .create-project-warning p {
+      margin-bottom: 0; }
+      .create-project-warning p a {
+        color: #008AA8;
+        display: inline-block;
+        margin-left: .25rem; }
+  .create-project .spin {
+    text-align: center;
+    width: 100%; }
+
+.import-project-members .import-project-members-match {
+  align-items: center;
+  display: flex; }
+
+.import-project-members .import-project-members-match button {
+  border: 0;
+  height: 1rem;
+  padding: 0;
+  width: 1rem; }
+  .import-project-members .import-project-members-match button .icon {
+    height: 1rem;
+    width: 1rem; }
+
+.import-project-members .import-project-members-choose {
+  color: #008AA8; }
+
+.import-project-members .import-project-members-match-true svg {
+  fill: #008AA8; }
+
+.import-project-members .import-project-members-match-false svg {
+  fill: #E44057; }
+
+.import-project-members .avatar {
+  height: 3rem;
+  width: 3rem; }
+  .import-project-members .avatar img {
+    border: 0;
+    height: 3rem;
+    width: 3rem; }
+
+.import-project-members .import-project-members-delete svg {
+  fill: #E44057;
+  height: 1rem;
+  width: 1rem; }

@@ -1,0 +1,20 @@
+
+<div ng-if="!vm.userCanChangeColor()" class="color-selector">
+  <div ng-class="{'empty-color': !vm.color}" ng-style="{'background': vm.color}" class="tag-color disabled e2e-open-color-selector"></div>
+</div>
+<div ng-if="vm.userCanChangeColor()" class="color-selector">
+  <div ng-click="vm.toggleColorList()" ng-class="{'empty-color': !vm.color}" ng-style="{'background': vm.color}" class="tag-color e2e-open-color-selector"></div>
+  <div ng-if="vm.displayColorList" class="color-selector-dropdown">
+    <ul class="color-selector-dropdown-list e2e-color-dropdown">
+      <li ng-repeat="color in vm.colorList" ng-style="{'background': color}" ng-title="color" ng-click="vm.onSelectDropdownColor(color)" class="color-selector-option"></li>
+      <li ng-if="!vm.isColorRequired" ng-click="vm.onSelectDropdownColor(null)" class="empty-color"></li>
+    </ul>
+    <div class="custom-color-selector">
+      <div ng-if="!vm.customColor" class="display-custom-color empty-color"></div>
+      <div class="display-custom-color-wrapper">
+        <div ng-if="vm.customColor" ng-style="{'background': vm.customColor}" ng-click="vm.onSelectDropdownColor(vm.customColor)" class="display-custom-color"></div>
+      </div>
+      <input type="text" maxlength="7" placeholder="Type hex code" ng-model="vm.customColor" ng-keydown="vm.onKeyDown($event)" class="custom-color-input"/>
+    </div>
+  </div>
+</div>

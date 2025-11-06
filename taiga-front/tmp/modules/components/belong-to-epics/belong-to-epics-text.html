@@ -1,0 +1,5 @@
+<span ng-if="epicsLength &gt; 0" translate="US.OWNER_US" class="belong-to-epic-title"></span><span ng-if="epicsLength &gt; 1" class="belong-to-epic-title">:</span>
+<ul ng-class="{'unique': epicsLength == 1 }" class="belong-to-epics-list">
+  <li tg-repeat="epic in immutable_epics track by epic.get('id')" class="belong-to-epic-text-wrapper"><a href="" tg-nav="project-epics-detail:project=epic.getIn(['project', 'slug']),ref=epic.get('ref')" ng-bind-html="'#'+epic.get('ref')+' '+epic.get('subject') | emojify" class="belong-to-epic-text"></a><span ng-style="::{'background-color': epic.get('color')}" translate="EPICS.EPIC" class="belong-to-epic-label"></span><a title="{{'US.REMOVE_RELATIONSHIP_WITH_EPIC' | translate}}" href="" ng-click="removeEpicRelationship(epic)" tg-check-permission="modify_us" class="remove-epic-relationship">
+      <tg-svg svg-icon="icon-close"></tg-svg></a></li>
+</ul>

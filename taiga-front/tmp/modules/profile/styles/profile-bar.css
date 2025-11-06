@@ -1,0 +1,119 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile-bar .profile-image-wrapper {
+  height: 200px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative; }
+  .profile-bar .profile-image-wrapper.is-current-user:hover img {
+    filter: brightness(40%) saturate(150%) hue-rotate(60deg);
+    transition: all 0.2s cubic-bezier(0.01, 0.7, 1, 1); }
+  .profile-bar .profile-image-wrapper.is-current-user:hover .profile-edition {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s cubic-bezier(0.01, 0.7, 1, 1);
+    transition-delay: .3s; }
+
+.profile-bar .profile-img {
+  max-width: 100%;
+  width: 100%; }
+
+.profile-bar .profile-edition {
+  font-size: 1.1rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  background: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 1rem;
+  position: absolute;
+  transform: translateY(100%);
+  width: 100%; }
+  .profile-bar .profile-edition:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s cubic-bezier(0.01, 0.7, 1, 1); }
+
+.profile-bar .button-green {
+  display: block;
+  margin-bottom: 1rem; }
+
+.profile-bar .profile-data {
+  position: relative; }
+
+.profile-bar .flag {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 12px; }
+  .profile-bar .flag path {
+    fill: #70728F;
+    transition: all .2s linear; }
+  .profile-bar .flag:hover path {
+    fill: #FF6363;
+    transition: all .2s linear; }
+
+.profile-bar h1 {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-bottom: .25rem;
+  text-transform: none;
+  word-wrap: break-word; }
+
+.profile-bar .not-full-name {
+  word-wrap: break-word; }
+
+.profile-bar h2 {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  color: #5A5B72;
+  line-height: 1.2;
+  margin-bottom: 1rem; }
+
+.profile-bar .username {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #70728F;
+  margin-bottom: 1rem; }
+
+.profile-bar .location {
+  color: #70728F;
+  margin-bottom: 1rem; }
+  .profile-bar .location svg {
+    position: relative;
+    top: 2px;
+    width: .75rem; }
+  .profile-bar .location path {
+    fill: #70728F; }
+
+.profile-bar .profile-stats {
+  border-bottom: 1px solid #E2E3E9;
+  border-top: 1px solid #E2E3E9;
+  color: #5A5B72;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 1rem .5rem; }
+  .profile-bar .profile-stats .stat {
+    padding: 0 .2rem;
+    text-align: center; }
+  .profile-bar .profile-stats .stat-number {
+    font-size: 1.7rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    display: block;
+    line-height: 1; }
+  .profile-bar .profile-stats .stat-name {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    display: block; }
+
+.profile-bar .profile-quote {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  background: url("../images/quote.png") no-repeat top left;
+  line-height: 1.4;
+  padding: .5rem; }

@@ -1,0 +1,32 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.empty-small, .empty-large, .empty-filter {
+  margin-top: 4rem;
+  text-align: center; }
+  .empty-small img, .empty-large img, .empty-filter img {
+    margin-bottom: 1rem;
+    width: 100%; }
+  .empty-small .title, .empty-large .title, .empty-filter .title {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #70728F; }
+  .empty-small p, .empty-large p, .empty-filter p {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    margin: 0; }
+  .empty-small a, .empty-large a, .empty-filter a {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #008AA8; }
+  .empty-small .btn-small, .empty-large .btn-small, .empty-filter .btn-small {
+    margin: 1rem auto 2rem; }
+
+.empty-small img {
+  max-width: 175px; }
+
+.empty-large img {
+  max-width: 800px; }
+
+.empty-filter {
+  margin-top: 1rem; }

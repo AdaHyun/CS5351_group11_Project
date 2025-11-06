@@ -1,0 +1,11 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.contrib-plugins-wrapper {
+  margin: 1rem 0; }
+  .contrib-plugins-wrapper label {
+    font-size: .875rem;
+    color: #2E3440;
+    display: block;
+    margin-bottom: .5rem; }

@@ -1,0 +1,3 @@
+
+<div ng-if="url" class="user-avatar"><a href="{{url}}" title="{{user.full_name_display}}"><img ng-style="{'background-color': user.bg}" ng-src="{{user.avatar}}" alt="{{user.full_name_display}}"/></a></div><a ng-if="url" href="{{url}}" title="{{user.full_name_display}}" class="user-full-name">{{user.full_name_display}}</a>
+<div ng-if="!url" class="user-avatar"><img ng-style="{'background-color': user.bg}" ng-src="{{user.avatar}}" alt="{{user.full_name_display}}"/></div><span ng-if="!url" class="user-full-name">{{user.full_name_display}}</span>

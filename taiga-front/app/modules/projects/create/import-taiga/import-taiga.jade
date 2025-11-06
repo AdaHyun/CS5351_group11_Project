@@ -1,0 +1,19 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+input.hidden(
+    tg-file-change="vm.importTaiga(files)"
+    type="file"
+)
+.import-project-logo
+    img(
+        src="#{v}/images/logo-color.png"
+        alt="Taiga Logo"
+    )
+.import-project-name-wrapper
+    span.import-project-name Taiga
+    p.import-project-description(translate="PROJECT.IMPORT.TAIGA.SELECTOR")

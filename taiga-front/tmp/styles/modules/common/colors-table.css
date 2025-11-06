@@ -1,0 +1,185 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.colors-table {
+  overflow-x: inherit; }
+  .colors-table .table-header {
+    font-size: 1rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid #E2E3E9; }
+    .colors-table .table-header:hover {
+      background: transparent; }
+    .colors-table .table-header .row {
+      padding-left: 50px; }
+      .colors-table .table-header .row:hover {
+        background: transparent; }
+  .colors-table .row {
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    width: 100%; }
+    .colors-table .row:last-child {
+      border: 0; }
+    .colors-table .row.edition {
+      padding-left: 3rem; }
+      .colors-table .row.edition .current-color {
+        cursor: pointer; }
+    .colors-table .row.hidden {
+      display: none; }
+    .colors-table .row:hover {
+      background: rgba(199, 232, 226, 0.2);
+      cursor: move;
+      transition: background .2s ease-in; }
+      .colors-table .row:hover .icon {
+        opacity: 1;
+        transition: opacity .2s ease-in; }
+      .colors-table .row:hover .options-column {
+        opacity: 1;
+        transition: opacity .3s linear; }
+    .colors-table .row.no-draggable {
+      padding-left: 50px; }
+      .colors-table .row.no-draggable:hover {
+        cursor: auto; }
+    .colors-table .row.new-value {
+      padding-left: 3rem; }
+      .colors-table .row.new-value .icon-check-empty,
+      .colors-table .row.new-value .icon-close {
+        fill: #008AA8; }
+    .colors-table .row .color-column {
+      display: flex;
+      flex-basis: 80px;
+      justify-content: center;
+      min-width: 80px;
+      position: relative; }
+    .colors-table .row .is-archived-column,
+    .colors-table .row .is-closed-column,
+    .colors-table .row .options-column,
+    .colors-table .row .thresold-column,
+    .colors-table .row .before-after-column,
+    .colors-table .row .status-wip-limit {
+      flex-basis: 100px;
+      flex-grow: 1;
+      flex-shrink: 0; }
+    .colors-table .row .before-after-column {
+      padding: 0 10px; }
+    .colors-table .row .color-name {
+      flex-basis: 150px;
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 0 10px;
+      position: relative; }
+      .colors-table .row .color-name span {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        display: block; }
+    .colors-table .row .status-name,
+    .colors-table .row .status-slug {
+      flex-grow: 1;
+      min-width: 150px;
+      padding: 0 10px; }
+      .colors-table .row .status-name span,
+      .colors-table .row .status-slug span {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal; }
+    .colors-table .row .status-name {
+      flex-basis: 40%; }
+    .colors-table .row .status-slug {
+      flex-basis: 30%; }
+      @media screen and (max-width: 1023px) {
+        .colors-table .row .status-slug {
+          display: none; } }
+    .colors-table .row .options-column {
+      max-width: 60px;
+      min-width: 100px;
+      opacity: 0;
+      text-align: right; }
+    .colors-table .row .is-archived-column {
+      max-width: 130px;
+      padding: 0 0 0 10px;
+      text-align: center; }
+    .colors-table .row .is-closed-column {
+      max-width: 100px;
+      text-align: center; }
+    .colors-table .row .status-wip-limit {
+      max-width: 100px;
+      padding: 0 0 0 10px;
+      text-align: center; }
+      @media screen and (max-width: 1023px) {
+        .colors-table .row .status-wip-limit {
+          display: block; } }
+  .colors-table .before-after-selector {
+    display: flex;
+    font-size: .9rem; }
+    .colors-table .before-after-selector input {
+      display: none; }
+      .colors-table .before-after-selector input + label {
+        background: rgba(226, 227, 233, 0.7);
+        cursor: pointer;
+        display: block;
+        padding: .5rem 1rem;
+        text-align: center;
+        transition: background color .2s ease-in; }
+      .colors-table .before-after-selector input + label:hover {
+        background: rgba(92, 186, 169, 0.3);
+        transition: background color .2s ease-in; }
+    .colors-table .before-after-selector .before-after-selector-single {
+      overflow: hidden; }
+      .colors-table .before-after-selector .before-after-selector-single:first-child {
+        border-radius: .25rem 0 0 .25rem; }
+      .colors-table .before-after-selector .before-after-selector-single:last-child {
+        border-radius: 0 .25rem .25rem 0;
+        margin-right: 0; }
+      .colors-table .before-after-selector .before-after-selector-single.checked label {
+        background: #008AA8;
+        color: #fff;
+        transition: background .2s ease-in; }
+      .colors-table .before-after-selector .before-after-selector-single:not(.checked) label:hover {
+        background: rgba(0, 138, 168, 0.3);
+        color: #4C566A; }
+  .colors-table .options-column a {
+    cursor: pointer;
+    display: inline-block; }
+  .colors-table .row-edit .options-column {
+    opacity: 1; }
+  .colors-table .current-color {
+    background-color: #E2E3E9;
+    border-radius: 3px;
+    height: 2rem;
+    width: 2rem; }
+  .colors-table .icon {
+    cursor: pointer;
+    fill: #70728F;
+    margin-right: 1rem;
+    opacity: 0; }
+    .colors-table .icon:hover {
+      fill: #5CBAA9;
+      transition: all .2s ease-in; }
+    .colors-table .icon.icon-check {
+      cursor: default;
+      fill: #008AA8;
+      opacity: 1; }
+    .colors-table .icon.icon-merge {
+      cursor: default;
+      opacity: 1; }
+    .colors-table .icon.icon-search {
+      cursor: none;
+      fill: #008AA8;
+      opacity: 1; }
+    .colors-table .icon.icon-drag {
+      cursor: move; }
+    .colors-table .icon.icon-trash {
+      fill: #E44057; }
+  .colors-table .gu-mirror {
+    background: #fbfefe;
+    opacity: 1; }
+  .colors-table .gu-transit * {
+    visibility: hidden; }

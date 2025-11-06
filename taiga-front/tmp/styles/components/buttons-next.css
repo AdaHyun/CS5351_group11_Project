@@ -1,0 +1,126 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.btn-big, .btn-small, .btn-icon, .btn-filter, .btn-board {
+  font-size: .875rem;
+  align-items: center;
+  background-color: #83EEDE;
+  border: 0;
+  border-radius: 4px;
+  color: #2E3440;
+  display: inline-flex;
+  justify-content: center;
+  line-height: initial;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap; }
+  .btn-big[variant='primary']:hover, .btn-small[variant='primary']:hover, .btn-icon[variant='primary']:hover, .btn-filter[variant='primary']:hover, .btn-board[variant='primary']:hover, .btn-big[variant='secondary']:hover, .btn-small[variant='secondary']:hover, .btn-icon[variant='secondary']:hover, .btn-filter[variant='secondary']:hover, .btn-board[variant='secondary']:hover, .btn-big[variant='destructive']:disabled, .btn-small[variant='destructive']:disabled, .btn-icon[variant='destructive']:disabled, .btn-filter[variant='destructive']:disabled, .btn-board[variant='destructive']:disabled, .btn-big:hover, .btn-small:hover, .btn-icon:hover, .btn-filter:hover, .btn-board:hover {
+    background-color: #008AA8;
+    color: #FFFFFF; }
+  .btn-big[variant='primary']:disabled, .btn-small[variant='primary']:disabled, .btn-icon[variant='primary']:disabled, .btn-filter[variant='primary']:disabled, .btn-board[variant='primary']:disabled, .btn-big[variant='secondary']:disabled, .btn-small[variant='secondary']:disabled, .btn-icon[variant='secondary']:disabled, .btn-filter[variant='secondary']:disabled, .btn-board[variant='secondary']:disabled, .btn-big[variant='destructive']:disabled, .btn-small[variant='destructive']:disabled, .btn-icon[variant='destructive']:disabled, .btn-filter[variant='destructive']:disabled, .btn-board[variant='destructive']:disabled, .btn-big:disabled, .btn-small:disabled, .btn-icon:disabled, .btn-filter:disabled, .btn-board:disabled {
+    background-color: #D8DEE9;
+    color: rgba(46, 52, 64, 0.5); }
+  .btn-big tg-svg, .btn-small tg-svg, .btn-icon tg-svg, .btn-filter tg-svg, .btn-board tg-svg {
+    fill: currentColor; }
+
+.btn-big {
+  padding: .75rem 1.5rem; }
+  .btn-big tg-svg {
+    margin-right: .4rem; }
+
+.btn-small {
+  padding: .45rem 1rem; }
+  .btn-small[variant='primary'] {
+    background-color: #83EEDE;
+    color: #2E3440;
+    transition: all .3s linear; }
+  .btn-small[variant='secondary'] {
+    background-color: #D8DEE9;
+    color: #4C566A;
+    transition: all .3s linear; }
+  .btn-small[variant='destructive'] {
+    background-color: #E44057;
+    color: #FFFFFF;
+    transition: all .3s linear; }
+  .btn-small tg-svg {
+    margin-right: .5rem; }
+
+.btn-icon {
+  padding: .5rem; }
+  .btn-icon[variant='primary'] {
+    background-color: #83EEDE;
+    color: #2E3440; }
+  .btn-icon[variant='secondary'] {
+    background-color: #D8DEE9;
+    color: #4C566A; }
+  .btn-icon[variant='destructive'] {
+    background-color: #E44057;
+    color: #FFFFFF; }
+
+.btn-link {
+  font-size: .875rem;
+  appearance: none;
+  background: none;
+  color: #70728F;
+  display: flex;
+  justify-content: center;
+  padding: .25rem;
+  text-align: center; }
+  .btn-link tg-svg {
+    fill: currentColor; }
+  .btn-link[variant='icon'] {
+    color: #008AA8; }
+    .btn-link[variant='icon']:hover {
+      background: none;
+      color: #70728F; }
+      .btn-link[variant='icon']:hover > tg-svg {
+        fill: #008AA8; }
+    .btn-link[variant='icon'] > tg-svg + * {
+      margin-inline-start: .5rem; }
+    .btn-link[variant='icon'] * + tg-svg {
+      margin-inline-start: .5rem; }
+
+.btn-form {
+  background: transparent;
+  color: #008AA8;
+  padding: .25rem; }
+  .btn-form:hover {
+    background: #D8DEE9; }
+  .btn-form tg-svg {
+    fill: currentColor; }
+
+.btn-filter {
+  background-color: #F9F9FB;
+  color: #008AA8;
+  padding: .5rem .5rem;
+  text-transform: none; }
+  .btn-filter.active, .btn-filter:hover {
+    background-color: #D8DEE9;
+    color: #008AA8; }
+  .btn-filter tg-svg {
+    margin-right: .25rem; }
+  .btn-filter .selected-filters {
+    font-size: .7rem;
+    align-items: center;
+    background-color: #E44057;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    height: 1rem;
+    justify-content: center;
+    margin-inline-start: .25rem;
+    width: 1rem; }
+
+.btn-board {
+  background-color: transparent;
+  color: #70728F;
+  padding: .25rem; }
+  .btn-board tg-svg {
+    fill: currentColor; }
+  .btn-board:hover {
+    background-color: #E5E9F0;
+    color: #008AA8; }
+  .btn-board[variant='blocked']:hover {
+    background-color: rgba(228, 64, 87, 0.25);
+    color: #2E3440; }

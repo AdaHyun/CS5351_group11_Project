@@ -1,0 +1,15 @@
+
+<section class="admin-membership-table basic-table">
+  <div class="row title">
+    <div translate="ADMIN.MEMBERSHIP.COLUMN_MEMBER" class="header-member"></div>
+    <div translate="ADMIN.MEMBERSHIP.COLUMN_ADMIN" class="header-admin"></div>
+    <div translate="ADMIN.MEMBERSHIP.COLUMN_ROLE" class="header-role"></div>
+    <div translate="ADMIN.MEMBERSHIP.COLUMN_STATUS" class="header-status"></div>
+  </div>
+  <div ng-repeat="member in memberships" class="row">
+    <div tg-memberships-row-avatar="member" class="row-member"></div>
+    <div tg-memberships-row-admin-checkbox="member" class="row-admin"></div>
+    <div tg-memberships-row-role-selector="member" class="row-role"></div>
+    <div tg-memberships-row-actions="member" class="row-status"></div>
+  </div>
+</section>

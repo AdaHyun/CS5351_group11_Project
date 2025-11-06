@@ -1,0 +1,56 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.import-project-from-site {
+  align-items: center;
+  border-bottom: 1px solid #E2E3E9;
+  color: #434456;
+  cursor: pointer;
+  display: flex;
+  padding: 1rem;
+  position: relative; }
+  .import-project-from-site:hover {
+    background: rgba(0, 138, 168, 0.1);
+    transition: background .3s ease-in; }
+  .import-project-from-site:first-child {
+    border-top: 1px solid #E2E3E9; }
+    .import-project-from-site:first-child .import-project-name {
+      margin: 0; }
+    .import-project-from-site:first-child .import-project-logo img {
+      padding: 0 .9rem 0 1rem;
+      width: 5.1rem; }
+
+.import-project-logo {
+  align-self: flex-start;
+  margin-right: .5rem; }
+  .import-project-logo img {
+    padding: 0 1rem;
+    width: 5rem; }
+
+.import-project-name-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center; }
+
+.import-project-description {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  margin-bottom: 0; }
+  .import-project-description a {
+    color: #008AA8;
+    margin-left: .3rem; }
+
+.import-project-url {
+  margin-top: .5rem; }
+
+.import-project-input-holder {
+  display: flex;
+  max-width: 20rem; }
+  .import-project-input-holder .import-project-input {
+    margin-right: .5rem; }
+
+.import-project-button {
+  background: #008AA8;
+  color: #fff;
+  padding: .4rem 1rem; }

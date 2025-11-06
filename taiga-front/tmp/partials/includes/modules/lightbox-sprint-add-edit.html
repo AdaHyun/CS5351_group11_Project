@@ -1,0 +1,23 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<form ng-if="createEditOpen">
+  <h2 translate="LIGHTBOX.ADD_EDIT_SPRINT.TITLE" class="title"></h2>
+  <fieldset>
+    <input type="text" name="name" ng-model="newSprint.name" ng-model-options="{ debounce: 200 }" data-required="true" data-maxlength="500" placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_NAME' | translate}}" class="sprint-name e2e-sprint-name"/>
+    <label class="last-sprint-name"></label>
+  </fieldset>
+  <fieldset class="dates">
+    <div>
+      <input type="text" name="estimated_start" picker-value="{{newSprint.estimated_start}}" data-required="true" tg-date-selector="tg-date-selector" placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_START' | translate}}" class="date-start"/>
+    </div>
+    <div>
+      <input type="text" name="estimated_finish" picker-value="{{newSprint.estimated_finish}}" data-required="true" tg-date-selector="tg-date-selector" placeholder="{{'LIGHTBOX.ADD_EDIT_SPRINT.PLACEHOLDER_SPRINT_END' | translate}}" class="date-end"/>
+    </div>
+  </fieldset>
+  <div class="sprint-add-edit-actions">
+    <button type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-big button-large button-block"></button>
+    <button tg-check-permission="delete_milestone" title="{{'LIGHTBOX.ADD_EDIT_SPRINT.TITLE_ACTION_DELETE_SPRINT' | translate}}" class="btn-link delete-sprint">
+      <tg-svg svg-icon="icon-trash"></tg-svg><span class="delete-sprint-text">{{'LIGHTBOX.ADD_EDIT_SPRINT.ACTION_DELETE_SPRINT' | translate }}</span>
+    </button>
+  </div>
+</form>

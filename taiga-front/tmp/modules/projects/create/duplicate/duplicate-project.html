@@ -1,0 +1,20 @@
+
+<div class="create-project">
+  <h1 translate="PROJECT.DUPLICATE.TITLE" class="create-project-title"></h1>
+  <h3 translate="PROJECT.DUPLICATE.DESCRIPTION" class="create-project-description"></h3>
+  <form name="projectForm" ng-submit="vm.submit()" class="duplicate-project e2e-duplicate-project">
+    <fieldset class="duplicate-project-reference e2e-duplicate-project-reference">
+      <select ng-model="vm.projectForm.project" ng-change="vm.refreshReferenceProject(vm.projectForm.project)" data-required="true" ng-options="p.slug as p.name for p in vm.projects | toMutable| filter:{blocked_code: '!'}" id="project-selector-dropdown" autofocus="autofocus">
+        <option value="" disabled="disabled" selected="selected" translate="PROJECT.DUPLICATE.SELECT_PLACEHOLDER"></option>
+      </select>
+    </fieldset>
+    <div ng-include="'projects/create/import-project-form-common/name.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/description.html'"></div>
+    <div ng-include="'projects/create/import-project-form-common/project-privacy.html'"></div>
+    <tg-create-project-restrictions is-private="vm.projectForm.is_private" can-create-public-projects="vm.canCreatePublicProjects" can-create-private-projects="vm.canCreatePrivateProjects"></tg-create-project-restrictions>
+    <label ng-if="vm.invitedMembers"><span translate="PROJECT.CREATE.INVITE"></span><span ng-if="vm.displayUserWarning" translate="PROJECT.CREATE.SOLO_PROJECT" class="mumble"></span><span translate="PROJECT.CREATE.INVITE_LATER" class="mumble"></span></label>
+    <tg-invite-members ng-if="vm.members.size" members="vm.members" invited-members="vm.invitedMembers" on-toggle-invited-member="vm.toggleInvitedMember(member)"></tg-invite-members>
+    <tg-create-project-members-restrictions ng-if="vm.referenceProject" is-private="vm.projectForm.is_private" limit-members-private-project="vm.limitMembersPrivateProject" limit-members-public-project="vm.limitMembersPublicProject"></tg-create-project-members-restrictions>
+    <div ng-include="'projects/create/import-project-form-common/actions.html'"></div>
+  </form>
+</div>

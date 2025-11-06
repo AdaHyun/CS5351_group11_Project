@@ -1,0 +1,32 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-project-export-buttons {
+  margin: 2rem 0 1rem; }
+
+.admin-project-export-result {
+  margin-top: 1rem; }
+  .admin-project-export-result .spin {
+    margin: 0 auto;
+    width: 2.5rem; }
+    .admin-project-export-result .spin img {
+      animation-timing-function: ease-in-out;
+      animation: rotate 1.5s cubic-bezier(0, 0.05, 0.87, 1.04) infinite alternate;
+      margin: 0 auto;
+      max-height: 1rem;
+      max-width: 1rem;
+      transform-origin: 32 32;
+      width: 100%; }
+  .admin-project-export-result h3 {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    background: #F1F1F4;
+    color: #5A5B72;
+    margin: .5rem;
+    padding: .5rem;
+    text-align: center; }
+  .admin-project-export-result p {
+    color: #70728F;
+    margin: .5rem 0;
+    text-align: center; }

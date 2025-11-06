@@ -1,0 +1,27 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.search-filter {
+  border-top: 1px solid #D8DEE9;
+  display: flex;
+  margin-bottom: 0;
+  z-index: 2; }
+  .search-filter a {
+    background: #FFFFFF;
+    color: #D8DEE9;
+    display: flex;
+    padding: 1rem 1.25rem; }
+    .search-filter a.active {
+      border-left: 1px solid #D8DEE9;
+      border-right: 1px solid #D8DEE9;
+      color: #4C566A;
+      position: relative;
+      top: 1px; }
+      .search-filter a.active .icon {
+        fill: #008AA8; }
+  .search-filter .icon {
+    fill: currentColor;
+    margin-right: .4rem; }
+  .search-filter .name {
+    padding-left: 5px; }

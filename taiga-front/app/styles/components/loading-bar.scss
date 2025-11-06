@@ -1,0 +1,24 @@
+.loading-bar {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .item {
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-name: loadBar;
+        animation-timing-function: ease-in;
+        background: $gray;
+        flex: 1;
+        height: 5px;
+    }
+
+    $colors-list: $loading-color-1 $loading-color-2 $loading-color-3 $loading-color-4 $loading-color-5;
+    @each $current-color in $colors-list {
+        $i: index($colors-list, $current-color);
+        .item-#{$i} {
+            animation-delay: #{$i}s;
+            background: $current-color;
+        }
+    }
+}

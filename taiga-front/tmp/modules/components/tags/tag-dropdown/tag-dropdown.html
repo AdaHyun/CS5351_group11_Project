@@ -1,0 +1,6 @@
+
+<ul ng-if="(colorArray | filter:tag.name:strict).length &gt; 0" class="tags-dropdown">
+  <li ng-repeat="tag in colorArray | filter:tag.name:strict" ng-click="onSelectTag({name: tag[0], color: tag[1]})">
+    <div class="tags-dropdown-option"><span class="tags-dropdown-name">{{tag[0]}}</span><span ng-if="tag[1]" ng-style="{'background': tag[1]}" ng-title="tag[1]" class="tags-dropdown-color"></span></div>
+  </li>
+</ul>

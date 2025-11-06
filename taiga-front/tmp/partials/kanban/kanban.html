@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<div ng-controller="KanbanController as ctrl" ng-init="section='kanban'" class="wrapper">
+  <tg-project-menu></tg-project-menu>
+  <section ng-class="{ 'swimlane': swimlanesList.size }" class="main kanban">
+    <div class="kanban-header">
+      <header>
+        <h1 tg-main-title i18n-section-name="{{ sectionName }}"></h1>
+      </header>
+      <div class="taskboard-actions">
+        <div class="kanban-table-options-start">
+          <button ng-click="ctrl.openFilter = !ctrl.openFilter" title="{{ctrl.selectedFilters.length}} {{'COMMON.FILTERS.APPLIED_FILTERS_NUM' | translate}}" ng-class="{active: ctrl.openFilter}" class="btn-filter e2e-open-filter">
+            <tg-svg svg-icon="icon-filters"></tg-svg><span ng-if="!ctrl.openFilter" translate="BACKLOG.FILTERS.TITLE" class="text"></span><span ng-if="ctrl.openFilter" translate="BACKLOG.FILTERS.HIDE_TITLE" class="text"></span><span ng-if="ctrl.selectedFilters.length" class="selected-filters">{{ctrl.selectedFilters.length}}</span>
+          </button>
+          <tg-input-search q="ctrl.filterQ" change="ctrl.changeQ(q)"></tg-input-search>
+        </div>
+        <div class="kanban-table-options-end">
+          <tg-kanban-board-zoom on-zoom-change="ctrl.setZoom(zoomLevel, zoom)"></tg-kanban-board-zoom>
+        </div>
+      </div>
+    </div>
+    <div ng-class="{'expanded': !ctrl.openFilter}" class="kanban-manager">
+      <div ng-if="ctrl.openFilter" class="kanban-filter">
+        <tg-filter filters="ctrl.filters" custom-filters="ctrl.customFilters" selected-filters="ctrl.selectedFilters" customFilters="ctl.customFilters" on-save-custom-filter="ctrl.saveCustomFilter(name)" on-add-filter="ctrl.addFilter(filter)" on-select-custom-filter="ctrl.selectCustomFilter(filter)" on-remove-custom-filter="ctrl.removeCustomFilter(filter)" on-remove-filter="ctrl.removeFilter(filter)"></tg-filter>
+      </div>
+      <div ng-if="ctrl.initialLoad" tg-kanban-swimlane tg-kanban-sortable tg-kanban-squish-column tg-kanban ng-class="{'zoom-0': ctrl.zoomLevel == 0, 'zoom-1': ctrl.zoomLevel == 1, 'zoom-2': ctrl.zoomLevel == 2, 'zoom-3': ctrl.zoomLevel == 3, 'kanban-table-swimlane': swimlanesList.size}" class="kanban-table">
+        <div class="kanban-table-header">
+          <div class="kanban-table-inner">
+            <h2 ng-repeat="s in usStatusList track by s.id" tg-bind-title="s.name" ng-class="{vfold:folds[s.id]}" tg-class-permission="{'readonly': '!modify_task'}" class="task-colum-name">
+              <div ng-style="{'background-color':s.color}" ng-class="{ hidden:folds[s.id] }" class="deco-square"></div>
+              <div class="title">
+                <div class="name">{{ s.name }}</div>
+              </div>
+              <div class="options">
+                <button href="" title="{{'KANBAN.TITLE_ACTION_ADD_US' | translate}}" ng-click="ctrl.addNewUs('standard', s.id)" tg-check-permission="add_us" ng-hide="s.is_archived" class="btn-board option">
+                  <tg-svg svg-icon="icon-add" class="add-action"></tg-svg>
+                </button>
+                <button href="" title="{{'KANBAN.TITLE_ACTION_ADD_BULK' | translate}}" ng-click="ctrl.addNewUs('bulk', s.id)" tg-check-permission="add_us" ng-hide="s.is_archived" class="btn-board option">
+                  <tg-svg svg-icon="icon-bulk" class="bulk-action"></tg-svg>
+                </button>
+                <button href="" ng-click="foldStatus(s)" title="{{'KANBAN.TITLE_ACTION_FOLD' | translate}}" ng-class="{hidden:folds[s.id]}" class="btn-board option">
+                  <tg-svg svg-icon="icon-fold-column"></tg-svg>
+                </button>
+                <button href="" ng-click="foldStatus(s)" title="{{'KANBAN.TITLE_ACTION_UNFOLD' | translate}}" ng-class="{hidden:!folds[s.id]}" ng-if="s.is_archived" tg-kanban-archived-show-status-header="s" class="btn-board option hunfold">
+                  <tg-svg svg-icon="icon-unfold-column"></tg-svg>
+                </button>
+                <button href="" ng-click="foldStatus(s)" title="{{'KANBAN.TITLE_ACTION_UNFOLD' | translate}}" ng-hide="s.is_archived" ng-class="{hidden:!folds[s.id]}" class="btn-board option hunfold">
+                  <tg-svg svg-icon="icon-unfold-column"></tg-svg>
+                </button>
+              </div>
+            </h2>
+          </div>
+        </div>
+        <div ng-if="swimlanesList.size" tg-repeat="swimlane in swimlanesList track by swimlane.id" data-swimlane="{{swimlane.id}}" class="kanban-swimlane">
+          <button ng-mouseover="mouseoverSwimlane($event, swimlane.id)" ng-mouseleave="mouseleaveSwimlane($event)" ng-class="{'unclassified-swimlane': swimlane.id == -1, folded: ctrl.foldedSwimlane.get(swimlane.id.toString())}" ng-click="ctrl.toggleSwimlane(swimlane.id)" class="kanban-swimlane-title">
+            <tg-svg ng-if="!ctrl.foldedSwimlane.get(swimlane.id.toString())" svg-icon="icon-unfolded-swimlane" class="unfold-action"></tg-svg>
+            <tg-svg ng-if="ctrl.foldedSwimlane.get(swimlane.id.toString())" svg-icon="icon-folded-swimlane" class="fold-action"></tg-svg>
+            <h2 ng-class="{'unclassified-us-title': swimlane.id == -1}" class="title-name"> {{ swimlane.name }}</h2>
+            <div ng-if="swimlane.id == -1" class="unclassified-us-info">
+              <tg-svg svg-icon="icon-help-circle"></tg-svg>
+              <div class="tooltip pop-help">{{'KANBAN.UNCLASSIFIED_USER_STORIES_TOOLTIP' | translate}}</div>
+            </div>
+            <div ng-if="swimlane.id == project.default_swimlane &amp;&amp; project.swimlanes.length &gt; 1" class="default-swimlane">
+              <tg-svg svg-icon="icon-star" class="default-swimlane-icon"></tg-svg><span class="default-text">{{'ADMIN.PROJECT_KANBAN_OPTIONS.DEFAULT' | translate }}</span>
+            </div>
+          </button>
+          <div ng-if="!ctrl.foldedSwimlane.get(swimlane.id.toString())" tg-loaded="kanbanTableLoaded($event, swimlane.id)" class="kanban-table-body">
+            <div class="kanban-table-inner">
+              <div ng-class="{vfold:folds[s.id], vunfold: unfold == s.id}" ng-repeat="s in ::swimlanesStatuses[swimlane.id] track by s.id" id="column-{{s.id}}" tg-loaded="taskColumnLoaded($event, s.id, swimlane.id)" tg-kanban-taskboard-column tg-kanban-wip-limit="s" data-status="{{s.id}}" data-swimlane="{{swimlane.id}}" class="kanban-uses-box taskboard-column">
+                <div ng-if="!folds[s.id]" ng-attr-title="{{'KANBAN.NUMBER_US' | translate}}" class="kanban-task-counter">
+                  <tg-animated-counter disabled="ctrl.renderInProgress" data="{count: usByStatusSwimlanes.getIn([swimlane.id, s.id]).size, wip: s.wip_limit}"></tg-animated-counter>
+                </div>
+                <div ng-if="folds[s.id]" class="placeholder-collapsed">
+                  <div class="placeholder-collapsed-wrapper">
+                    <div ng-if="!s.is_archived" class="ammount">
+                      <tg-animated-counter data="{count: usByStatusSwimlanes.getIn([swimlane.id, s.id]).size, wip: s.wip_limit}" class="vertical"></tg-animated-counter>
+                    </div>
+                    <div class="text-holder">
+                      <div ng-if="s.is_archived" class="archived">{{'KANBAN.ARCHIVED' | translate}}</div>
+                      <div tg-bo-bind="s.name" class="name"></div>
+                    </div>
+                    <div ng-style="{'background-color':s.color}" class="square-color"></div>
+                  </div>
+                </div>
+                <div ng-if="ctrl.showPlaceHolder(s.id, swimlane.id)" ng-class="{&quot;not-found&quot;: ctrl.notFoundUserstories}" ng-include="'common/components/kanban-placeholder.html'" class="card-placeholder"></div>
+                <tg-card data-id="{{ usId }}" tg-loaded="cardLoaded($event, s.id, swimlane.id)" tg-repeat="usId in usByStatusSwimlanes.getIn([swimlane.id, s.id])" ng-class="{'kanban-task-maximized': ctrl.isMaximized(s.id), 'kanban-task-minimized': ctrl.isMinimized(s.id), 'kanban-task-selected': ctrl.selectedUss[usId], 'ui-multisortable-multiple': ctrl.selectedUss[usId], 'kanban-moved': ctrl.movedUs.indexOf(usId) != -1}" tg-class-permission="{'readonly': '!modify_task'}" on-toggle-fold="ctrl.toggleFold(id)" on-click-edit="ctrl.editUs(id)" on-click-delete="ctrl.deleteUs(id)" on-click-assigned-to="ctrl.changeUsAssignedUsers(id)" on-click-move-to-top="ctrl.moveToTopDropdown(usMap.get(usId))" is-first="$first" project="project" item="usMap.get(usId)" type="us" zoom="ctrl.zoom" zoom-level="ctrl.zoomLevel" archived="ctrl.isUsInArchivedHiddenStatus(usId)" in-view-port="usCardVisibility[usId]" ng-click="($event.ctrlKey || $event.metaKey) &amp;&amp; ctrl.toggleSelectedUs(usId)" class="card ng-animate-disabled"></tg-card>
+                <div ng-if="s.is_archived" tg-kanban-archived-status-intro="s" class="kanban-column-intro"></div>
+              </div>
+            </div>
+          </div>
+        </div><a ng-if="swimlanesList.size &amp;&amp; project.i_am_admin &amp;&amp; swimlanesList.size &lt;= 1" tg-nav="project-admin-project-values-kanban-power-ups:project=project.slug" class="kanban-swimlane-add">
+          <tg-svg svg-icon="icon-add" class="add-action"></tg-svg><span>{{'KANBAN.CREATE_SWIMLANE' | translate}}</span></a>
+        <div ng-if="!swimlanesList.size" tg-loaded="kanbanTableLoaded($event)" class="kanban-table-body">
+          <div class="kanban-table-inner">
+            <div ng-class="{vfold:folds[s.id], vunfold: unfold == s.id}" ng-repeat="s in ::usStatusList track by s.id" id="column-{{s.id}}" tg-loaded="taskColumnLoaded($event, s.id)" tg-kanban-wip-limit="s" tg-kanban-taskboard-column data-status="{{s.id}}" class="kanban-uses-box taskboard-column">
+              <div ng-if="!folds[s.id]" ng-attr-title="{{'KANBAN.NUMBER_US' | translate}}" class="kanban-task-counter">
+                <tg-animated-counter disabled="ctrl.renderInProgress" data="{count: usByStatus.get(s.id.toString()).size, wip: s.wip_limit}"></tg-animated-counter>
+              </div>
+              <div ng-if="folds[s.id]" class="placeholder-collapsed">
+                <div class="placeholder-collapsed-wrapper">
+                  <div ng-if="!s.is_archived" class="ammount">
+                    <tg-animated-counter data="{count: usByStatus.get(s.id.toString()).size, wip: s.wip_limit}" class="vertical"></tg-animated-counter>
+                  </div>
+                  <div class="text-holder">
+                    <div ng-if="s.is_archived" class="archived">{{'KANBAN.ARCHIVED' | translate}}</div>
+                    <div tg-bo-bind="s.name" class="name"></div>
+                  </div>
+                  <div ng-style="{'background-color':s.color}" class="square-color"></div>
+                </div>
+              </div>
+              <div ng-if="ctrl.showPlaceHolder(s.id)" ng-class="{&quot;not-found&quot;: ctrl.notFoundUserstories}" ng-include="'common/components/kanban-placeholder.html'" class="card-placeholder"></div>
+              <tg-card data-id="{{ usId }}" tg-loaded="cardLoaded($event, s.id)" tg-repeat="usId in usByStatus.get(s.id.toString())" ng-class="{'kanban-task-maximized': ctrl.isMaximized(s.id), 'kanban-task-minimized': ctrl.isMinimized(s.id), 'kanban-task-selected': ctrl.selectedUss[usId], 'ui-multisortable-multiple': ctrl.selectedUss[usId]}" tg-class-permission="{'readonly': '!modify_task'}" on-toggle-fold="ctrl.toggleFold(id)" on-click-edit="ctrl.editUs(id)" on-click-delete="ctrl.deleteUs(id)" on-click-assigned-to="ctrl.changeUsAssignedUsers(id)" is-first="$first" project="project" item="usMap.get(usId)" type="us" zoom="ctrl.zoom" zoom-level="ctrl.zoomLevel" archived="ctrl.isUsInArchivedHiddenStatus(usId)" in-view-port="usCardVisibility[usId]" ng-click="($event.ctrlKey || $event.metaKey) &amp;&amp; ctrl.toggleSelectedUs(usId)" class="card ng-animate-disabled"></tg-card>
+              <div ng-if="s.is_archived" tg-kanban-archived-status-intro="s" class="kanban-column-intro"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div tg-lb-create-edit class="lightbox lightbox-generic-form lightbox-create-edit"></div>
+  <div tg-lb-create-bulk-userstories class="lightbox lightbox-generic-bulk">
+    <tg-lightbox-close></tg-lightbox-close>
+    <form>
+      <h2 translate="COMMON.NEW_BULK" class="title"></h2>
+      <fieldset ng-if="project.us_statuses">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_STATUS' | translate }}</div>
+        <div class="bulk-status-selector-wrapper">
+          <button type="button" ng-click="toggleStatus()" ng-style="{'background-color': currentStatus.color}" class="bulk-status-selector"><span>{{ currentStatus.name }}</span>
+            <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+          </button>
+          <div ng-show="displayStatusSelector" class="bulk-status-option-wrapper">
+            <button type="button" ng-repeat="status in project.us_statuses" ng-click="setStatus(status)" ng-class="{'selected': status.id == currentStatus.id}" class="bulk-status-option">{{status.name}}</button>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="creation-position">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.LOCATION' | translate }}</div>
+        <div class="creation-position-fields">
+          <label class="custom-radio">
+            <input id="top-backlog" type="radio" ng-model="new.us_position" value="bottom" checked><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_BOTTOM' | translate }}</span>
+          </label>
+          <label class="custom-radio">
+            <input id="bottom-backlog" type="radio" ng-model="new.us_position" value="top"><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_TOP' | translate }}</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset ng-if="project.is_kanban_activated &amp;&amp; swimlanesList.size" class="swimlane-select">
+        <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_SWIMLANE' | translate }}</div>
+        <tg-swimlane-selector ng-model="new.swimlane" swimlanes="swimlanesList" default-swimlane-id="project.default_swimlane" user-story="new" has-unclassified-stories="noSwimlaneUserStories" ng-if="new"></tg-swimlane-selector>
+      </fieldset>
+      <fieldset>
+        <textarea cols="200" wrap="off" ng-model="new.bulk" data-required="true" data-linewidth="200" ng-attr-placeholder="{{'COMMON.ONE_ITEM_LINE' | translate}}"></textarea>
+      </fieldset>
+      <div class="lb-action-wrapper">
+        <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-small js-submit-button"></button>
+      </div>
+    </form>
+  </div>
+</div>

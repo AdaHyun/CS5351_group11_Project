@@ -1,0 +1,10 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.level {
+  background-color: #70728F;
+  border-radius: 9px;
+  height: 18px;
+  margin: 0 auto;
+  width: 18px; }

@@ -1,0 +1,23 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+section.related-tasks(
+    tg-related-tasks
+    ng-show="showRelatedTasks()"
+)
+    .related-tasks-header
+        span.related-tasks-title(translate="COMMON.RELATED_TASKS")
+        div(tg-related-task-create-button)
+    .related-tasks-body(tg-tasks-sortable="reorderTask(task, newIndex)")
+        .row.single-related-task.js-related-task(
+            ng-repeat="task in tasks track by task.id"
+            ng-class="{closed: task.is_closed, blocked: task.is_blocked, iocaine: task.is_iocaine}"
+            tg-related-task-row
+            tg-bind-scope
+            ng-model="task"
+        )
+        div(tg-related-task-create-form)

@@ -1,0 +1,8 @@
+
+<div ng-if="vm.attachments.size &amp;&amp; vm.current" class="attachment-preview">
+  <tg-lightbox-close></tg-lightbox-close>
+  <div class="attachment-preview-container"><a href="#" ng-click="vm.previous()" ng-if="vm.hasPagination()" class="previous">
+      <tg-svg svg-icon="icon-arrow-left"></tg-svg></a><a href="{{vm.current.get('url')}}" title="{{vm.current.get('description')}}" target="_blank" download="{{vm.current.get('name')}}">
+      <tg-preload-image preload-src="{{vm.current.get('preview_url') || vm.getCurrent().get('url')}}"><img ng-src="{{vm.current.get('preview_url') || vm.getCurrent().get('url')}}"/></tg-preload-image></a><a href="#" ng-click="vm.next()" ng-if="vm.hasPagination()" class="next">
+      <tg-svg svg-icon="icon-arrow-right"></tg-svg></a></div>
+</div>

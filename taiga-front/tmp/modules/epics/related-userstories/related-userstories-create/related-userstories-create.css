@@ -1,0 +1,47 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.lightbox-create-related-user-stories .lightbox-create-related-user-stories-wrapper {
+  max-width: 600px;
+  width: 90%; }
+
+.lightbox-create-related-user-stories fieldset label {
+  display: inline-block;
+  margin-bottom: .5rem; }
+
+.lightbox-create-related-user-stories .new-user-story-title {
+  align-items: flex-end;
+  display: flex; }
+
+.lightbox-create-related-user-stories .existing-user-story-form,
+.lightbox-create-related-user-stories .new-user-story-form {
+  margin-bottom: 1rem; }
+
+.lightbox-create-related-user-stories .no-stories-found {
+  padding: 1rem 0 0; }
+
+.lightbox-create-related-user-stories .new-user-story-options {
+  display: flex;
+  margin-left: auto; }
+  .lightbox-create-related-user-stories .new-user-story-options input {
+    display: none; }
+    .lightbox-create-related-user-stories .new-user-story-options input:checked + label {
+      background: #5CBAA9;
+      color: #fff;
+      fill: #fff;
+      transition: background .2s ease-in; }
+    .lightbox-create-related-user-stories .new-user-story-options input + label {
+      background: #F1F1F4;
+      color: #434456;
+      cursor: pointer;
+      display: block;
+      padding: .5rem;
+      transition: background .2s ease-in; }
+    .lightbox-create-related-user-stories .new-user-story-options input + label:hover {
+      background: #5CBAA9;
+      color: #fff;
+      fill: #fff; }
+
+.lightbox-create-related-user-stories button {
+  width: 100%; }

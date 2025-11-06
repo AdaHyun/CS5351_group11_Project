@@ -1,0 +1,295 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.import-project-jira-form {
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1.25rem;
+  width: 100%;
+  max-width: 800px; }
+  .import-project-jira-form .error-text {
+    margin-bottom: 0;
+    margin-top: .5rem; }
+  .import-project-jira-form h1 {
+    font-size: 1.7rem; }
+  .import-project-jira-form .create-project-check {
+    display: flex;
+    flex-direction: column; }
+    .import-project-jira-form .create-project-check label {
+      display: flex;
+      flex-direction: column; }
+    .import-project-jira-form .create-project-check .title {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #2E3440;
+      margin-bottom: .5rem; }
+  .import-project-jira-form .create-project-github-import-type-question label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    max-height: none;
+    padding-left: 2rem;
+    position: relative;
+    text-align: left; }
+  .import-project-jira-form .create-project-github-import-type-name {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1rem; }
+  .import-project-jira-form fieldset {
+    margin-bottom: 1rem; }
+  .import-project-jira-form label {
+    color: #70728F;
+    display: flex;
+    margin-bottom: .25rem;
+    max-height: 44px; }
+    .import-project-jira-form label span {
+      font-size: .875rem; }
+    .import-project-jira-form label .mumble {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+      margin-left: .25rem; }
+  .import-project-jira-form input + label {
+    color: #4C566A;
+    display: flex; }
+    .import-project-jira-form input + label .icon {
+      fill: #4C566A; }
+  .import-project-jira-form-check {
+    position: relative; }
+    .import-project-jira-form-check span {
+      display: block; }
+    .import-project-jira-form-check .description {
+      font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+    .import-project-jira-form-check .check {
+      bottom: .25rem;
+      position: absolute;
+      right: 0; }
+  .import-project-jira-form-title-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0; }
+    .import-project-jira-form-title-wrapper .create-project-title {
+      display: inline-block; }
+    .import-project-jira-form-title-wrapper .icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: #008AA8;
+      margin-right: 1rem;
+      stroke: #25A28C;
+      vertical-align: middle; }
+  .import-project-jira-form-title, .import-project-jira-form-description {
+    margin: 0;
+    text-align: center; }
+  .import-project-jira-form-description {
+    color: #70728F;
+    margin-bottom: 2rem; }
+  .import-project-jira-form-limit {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #5A5B72; }
+  .import-project-jira-form-import-type {
+    display: flex; }
+    .import-project-jira-form-import-type fieldset:first-child label {
+      border-radius: .25rem 0 0 .25rem; }
+    .import-project-jira-form-import-type fieldset:last-child label {
+      border-radius: 0 .25rem .25rem 0; }
+    .import-project-jira-form-import-type label {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      align-items: center;
+      background: #F1F1F4;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: .75rem;
+      text-transform: uppercase; }
+      .import-project-jira-form-import-type label:hover {
+        background: #e3e3e9;
+        transition: background .2s linear; }
+      .import-project-jira-form-import-type label .icon {
+        margin-right: .25rem; }
+    .import-project-jira-form-import-type input:checked + label {
+      background: #d4d4de; }
+    .import-project-jira-form-import-type input:disabled + label {
+      cursor: not-allowed;
+      color: #9b9cb1; }
+      .import-project-jira-form-import-type input:disabled + label .icon {
+        color: #9b9cb1; }
+    .import-project-jira-form-import-type input {
+      display: none; }
+    .import-project-jira-form-import-type label {
+      background: #F1F1F4; }
+  .import-project-jira-form-privacity {
+    display: flex; }
+    .import-project-jira-form-privacity fieldset:first-child label {
+      border-radius: .25rem 0 0 .25rem; }
+    .import-project-jira-form-privacity fieldset:last-child label {
+      border-radius: 0 .25rem .25rem 0; }
+    .import-project-jira-form-privacity label {
+      font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+      align-items: center;
+      background: #F1F1F4;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: .75rem;
+      text-transform: uppercase; }
+      .import-project-jira-form-privacity label:hover {
+        background: #e3e3e9;
+        transition: background .2s linear; }
+      .import-project-jira-form-privacity label .icon {
+        margin-right: .25rem; }
+    .import-project-jira-form-privacity input:checked + label {
+      background: #d4d4de; }
+    .import-project-jira-form-privacity input:disabled + label {
+      cursor: not-allowed;
+      color: #9b9cb1; }
+      .import-project-jira-form-privacity input:disabled + label .icon {
+        color: #9b9cb1; }
+    .import-project-jira-form-privacity input {
+      display: none; }
+    .import-project-jira-form-privacity input:checked + label {
+      background: #008AA8;
+      color: #FFFFFF; }
+      .import-project-jira-form-privacity input:checked + label .icon {
+        fill: #FFFFFF; }
+    .import-project-jira-form-privacity label {
+      min-height: 37px;
+      padding: 0 .75rem; }
+      .import-project-jira-form-privacity label .icon {
+        margin-right: 1rem; }
+    .import-project-jira-form-privacity .icon {
+      fill: #fff;
+      stroke: #fff; }
+    .import-project-jira-form-privacity .icon-private {
+      height: 20px;
+      line-height: 12px;
+      margin-top: 2px;
+      width: 20px; }
+  .import-project-jira-form-type {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase; }
+    .import-project-jira-form-type span {
+      margin-left: .5rem; }
+  .import-project-jira-form-selector a {
+    align-items: center;
+    border-bottom: 1px solid #E2E3E9;
+    color: #434456;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    .import-project-jira-form-selector a:hover {
+      color: currentColor; }
+  .import-project-jira-form-selector li:hover {
+    background: rgba(0, 138, 168, 0.1);
+    transition: background .3s ease-in; }
+  .import-project-jira-form-selector li:first-child {
+    border-top: 1px solid #E2E3E9; }
+  .import-project-jira-form-selector-icon {
+    align-self: flex-start;
+    padding: 1.5rem 1rem; }
+    .import-project-jira-form-selector-icon .icon {
+      width: 2.25rem;
+      height: 2.25rem; }
+  .import-project-jira-form-selector-template-wrapper {
+    flex: 1;
+    padding: 1.25rem; }
+  .import-project-jira-form-selector-template {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    text-transform: uppercase; }
+  .import-project-jira-form-selector-description {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+  .import-project-jira-form-selector-long-description {
+    margin-top: 1rem;
+    overflow: hidden;
+    transition: all 0.3s 0.2s cubic-bezier(0, 0, 0.53, 1.32); }
+    .import-project-jira-form-selector-long-description.ng-hide {
+      line-height: 0;
+      max-height: 0; }
+  .import-project-jira-form-selector-question {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem; }
+    .import-project-jira-form-selector-question:hover svg {
+      fill: #25A28C;
+      transition: fill .2s linear; }
+    .import-project-jira-form-selector-question svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: #434456; }
+  .import-project-jira-form-selector p {
+    margin-bottom: 0; }
+  .import-project-jira-form-action {
+    display: flex;
+    margin: 3rem 0 0; }
+    .import-project-jira-form-action button {
+      font-size: 1.1rem;
+      padding: .75rem; }
+    .import-project-jira-form-action-submit {
+      flex: 4;
+      margin-left: 1rem; }
+    .import-project-jira-form-action-back, .import-project-jira-form-action-cancel {
+      color: currentColor; }
+      .import-project-jira-form-action-back:hover, .import-project-jira-form-action-cancel:hover {
+        color: #5CBAA9; }
+    .import-project-jira-form-action-cancel {
+      flex: 1; }
+    .import-project-jira-form-action-back {
+      width: 10%; }
+  .import-project-jira-form-warning {
+    font-size: .875rem;
+    background: #ECEFF4;
+    border: 2px solid #E44057;
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 1rem; }
+    .import-project-jira-form-warning .icon-alert {
+      fill: #E44057;
+      margin-right: .5rem;
+      margin-top: .15rem;
+      vertical-align: middle; }
+    .import-project-jira-form-warning p {
+      margin-bottom: 0; }
+      .import-project-jira-form-warning p a {
+        color: #008AA8;
+        display: inline-block;
+        margin-left: .25rem; }
+  .import-project-jira-form .spin {
+    text-align: center;
+    width: 100%; }
+
+.create-project-import-type-info {
+  font-size: .875rem;
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem; }
+
+.create-project-type-issues-subform {
+  margin: 1rem 0 2rem; }
+  .create-project-type-issues-subform-title {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+  .create-project-type-issues-subform-radiogr input {
+    opacity: 0; }
+    .create-project-type-issues-subform-radiogr input:checked + svg {
+      fill: rgba(37, 162, 140, 0.6);
+      stroke: rgba(37, 162, 140, 0.1); }
+  .create-project-type-issues-subform-radiogr svg {
+    fill: #E2E3E9;
+    stroke: #c5c7d3;
+    stroke-width: 1px;
+    vertical-align: middle; }
+  .create-project-type-issues-subform-radiogr .control-indicator {
+    padding-left: .25rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+
+.create-project-import-type {
+  margin-bottom: .25rem; }
+  .create-project-import-type fieldset {
+    margin: 0; }

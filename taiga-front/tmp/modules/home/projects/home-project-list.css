@@ -1,0 +1,100 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.home-project {
+  background: #FFFFFF;
+  border: 1px solid #D8DEE9;
+  margin: .5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all .2s; }
+  .home-project .tags-container {
+    display: flex;
+    height: .3rem; }
+  .home-project .project-tag {
+    flex: 1; }
+  .home-project .project-card-inner {
+    padding: 1rem; }
+  .home-project .project-card-description {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #4C566A; }
+  .home-project .project-card-statistics {
+    column-gap: .5rem;
+    display: flex;
+    row-gap: .5rem;
+    margin-top: auto; }
+    .home-project .project-card-statistics svg {
+      fill: currentColor; }
+      .home-project .project-card-statistics svg:not(.icon-private) {
+        width: 0.75rem;
+        height: 0.75rem; }
+      .home-project .project-card-statistics svg.icon-private {
+        width: 1.2rem;
+        height: 1.2rem; }
+  .home-project .statistic {
+    font-size: .875rem;
+    align-items: center;
+    color: #4C566A;
+    column-gap: .25rem;
+    display: flex;
+    row-gap: .25rem; }
+    .home-project .statistic.active {
+      color: #70728F; }
+      .home-project .statistic.active svg {
+        fill: currentColor; }
+  .home-project .project-card-header {
+    display: flex;
+    flex-grow: 0; }
+    .home-project .project-card-header .icon-badge {
+      fill: #008AA8; }
+  .home-project .project-card-logo {
+    display: inline-block;
+    flex-basis: 50px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: .5rem; }
+    .home-project .project-card-logo img {
+      width: 100%; }
+  .home-project .project-card-name {
+    font-size: 1.1rem;
+    column-gap: .25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: .25rem; }
+    .home-project .project-card-name a {
+      color: #4C566A; }
+  .home-project:hover {
+    border: 1px solid rgba(92, 186, 169, 0.2);
+    box-shadow: 0 0 5px #E2E3E9; }
+  .home-project.blocked-project {
+    border: #E2E3E9; }
+    .home-project.blocked-project:hover {
+      border: #E2E3E9;
+      box-shadow: none; }
+    .home-project.blocked-project .tags-container,
+    .home-project.blocked-project .project-card-logo,
+    .home-project.blocked-project .project-card-name a,
+    .home-project.blocked-project .project-card-description,
+    .home-project.blocked-project .project-card-statistics {
+      opacity: .3; }
+
+.projects-empty {
+  text-align: center; }
+  .projects-empty svg {
+    fill: #E2E3E9;
+    height: 100px;
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%; }
+  .projects-empty p {
+    font-size: .875rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+  .projects-empty .create-project-button {
+    display: block;
+    margin-bottom: .25rem; }
+  .projects-empty .import-project-button {
+    display: block; }

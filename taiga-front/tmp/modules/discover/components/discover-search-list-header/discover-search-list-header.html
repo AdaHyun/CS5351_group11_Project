@@ -1,0 +1,28 @@
+
+<div class="discover-results-header">
+  <div class="discover-results-header-inner">
+    <div class="title">
+      <tg-svg svg-icon="icon-search"></tg-svg>
+      <h2>{{ 'DISCOVER.SEARCH.RESULTS' | translate }}</h2>
+    </div>
+    <div ng-mouseleave="vm.toggleClose()" class="filter-discover-search"><a href="#" ng-click="vm.openLike()" ng-class="{active: vm.like_is_open}" class="discover-search-filter">
+        <tg-svg svg-icon="icon-like"></tg-svg><span>{{ 'DISCOVER.MOST_LIKED' | translate }}</span></a><a href="#" ng-click="vm.openActivity()" ng-class="{active: vm.activity_is_open}" class="discover-search-filter">
+        <tg-svg svg-icon="icon-activity"></tg-svg><span>{{ 'DISCOVER.MOST_ACTIVE' | translate }}</span></a></div>
+  </div>
+  <div ng-if="vm.like_is_open" class="discover-search-subfilter most-liked-subfilter"><a ng-if="vm.orderBy" title="" href="#" ng-click="vm.setOrderBy()" class="results">{{ 'DISCOVER.FILTERS.CLEAR' | translate }}</a>
+    <ul class="filter-list">
+      <li><a ng-class="{active: vm.orderBy == '-total_fans_last_week'}" href="#" ng-click="vm.setOrderBy('-total_fans_last_week')">{{ 'DISCOVER.FILTERS.WEEK' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_fans_last_month'}" href="#" ng-click="vm.setOrderBy('-total_fans_last_month')">{{ 'DISCOVER.FILTERS.MONTH' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_fans_last_year'}" href="#" ng-click="vm.setOrderBy('-total_fans_last_year')">{{ 'DISCOVER.FILTERS.YEAR' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_fans'}" href="#" ng-click="vm.setOrderBy('-total_fans')">{{ 'DISCOVER.FILTERS.ALL_TIME' | translate }}</a></li>
+    </ul>
+  </div>
+  <div ng-if="vm.activity_is_open" class="discover-search-subfilter most-active-subfilter"><a ng-if="vm.orderBy" title="" href="#" ng-click="vm.setOrderBy()" class="results">{{ 'DISCOVER.FILTERS.CLEAR' | translate }}</a>
+    <ul class="filter-list">
+      <li><a ng-class="{active: vm.orderBy == '-total_activity_last_week'}" href="#" ng-click="vm.setOrderBy('-total_activity_last_week')">{{ 'DISCOVER.FILTERS.WEEK' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_activity_last_month'}" href="#" ng-click="vm.setOrderBy('-total_activity_last_month')">{{ 'DISCOVER.FILTERS.MONTH' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_activity_last_year'}" href="#" ng-click="vm.setOrderBy('-total_activity_last_year')">{{ 'DISCOVER.FILTERS.YEAR' | translate }}</a></li>
+      <li><a ng-class="{active: vm.orderBy == '-total_activity'}" href="#" ng-click="vm.setOrderBy('-total_activity')">{{ 'DISCOVER.FILTERS.ALL_TIME' | translate }}</a></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+
+<section class="working-on-container">
+  <header>
+    <h1 translate="HOME.WORKING_ON_SECTION" class="title-bar working-on-title"></h1>
+  </header>
+  <div ng-if="vm.assignedTo.size" class="working-on">
+    <div class="visible-duties">
+      <div ng-if="hiddenDuties['working-on'].indexOf(duty.get('id')) == -1" is-hidden="false" tg-duty="duty" type="working-on" tg-repeat="duty in vm.assignedTo" ng-class="{'blocked': duty.is_blocked}" class="duty-single"></div>
+    </div>
+    <div ng-class="{ 'inactive': hiddenDuties['working-on'].length == -1 }" ng-switch="hiddenDuties['working-on'].length &gt; 0" class="toggle-hidden"><span ng-switch-when="false">{{ 'HOME.NO_HIDDEN_ITEMS' | translate }}</span><a href="" ng-switch-when="true" ng-switch="showHiddenDuties['working-on']" ng-click="toggleShowHiddenDuties('working-on')"><span ng-switch-when="false">{{ 'HOME.SHOW_HIDDEN' | translate }}</span><span ng-switch-when="true">{{ 'HOME.HIDE_HIDDEN' | translate }}</span></a></div>
+    <div ng-if="showHiddenDuties['working-on']" class="hidden-duties">
+      <div ng-if="hiddenDuties['working-on'].indexOf(duty.get('id')) &gt; -1" is-hidden="true" tg-duty="duty" type="working-on" tg-repeat="duty in vm.assignedTo" ng-class="{'blocked': duty.is_blocked}" class="duty-single"></div>
+    </div>
+  </div>
+  <div ng-if="vm.assignedTo != undefined &amp;&amp; vm.assignedTo.size === 0" class="working-on-empty">
+    <p translate="HOME.EMPTY_WORKING_ON"></p>
+    <div class="empty-ticket">
+      <div class="avatar"></div>
+      <div class="data">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="empty-ticket">
+      <div class="avatar"></div>
+      <div class="data">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="watching-container">
+  <header>
+    <h1 translate="HOME.WATCHING_SECTION" class="title-bar watching-title"></h1>
+  </header>
+  <div ng-if="vm.watching.size" class="watching">
+    <div class="visible-duties">
+      <div ng-if="hiddenDuties['watching'].indexOf(duty.get('id')) == -1" is-hidden="false" tg-duty="duty" type="watching" tg-repeat="duty in vm.watching" ng-class="{'blocked': duty.is_blocked}" class="duty-single"></div>
+    </div>
+    <div ng-class="{ 'inactive': hiddenDuties['watching'].length == -1 }" ng-switch="hiddenDuties['watching'].length &gt; 0" class="toggle-hidden"><span ng-switch-when="false">{{ 'HOME.NO_HIDDEN_ITEMS' | translate }}</span><a href="" ng-switch-when="true" ng-switch="showHiddenDuties['watching']" ng-click="toggleShowHiddenDuties('watching')"><span ng-switch-when="false">{{ 'HOME.SHOW_HIDDEN' | translate }}</span><span ng-switch-when="true">{{ 'HOME.HIDE_HIDDEN' | translate }}</span></a></div>
+    <div ng-if="showHiddenDuties['watching']" class="hidden-duties">
+      <div ng-if="hiddenDuties['watching'].indexOf(duty.get('id')) &gt; -1" is-hidden="true" tg-duty="duty" type="watching" tg-repeat="duty in vm.watching" ng-class="{'blocked': duty.is_blocked}" class="duty-single"></div>
+    </div>
+  </div>
+  <div ng-if="vm.watching != undefined &amp;&amp; vm.watching.size === 0" class="watching-empty">
+    <p translate="HOME.EMPTY_WATCHING"></p>
+    <div class="empty-ticket">
+      <div class="avatar"></div>
+      <div class="data">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="empty-ticket">
+      <div class="avatar"></div>
+      <div class="data">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</section>

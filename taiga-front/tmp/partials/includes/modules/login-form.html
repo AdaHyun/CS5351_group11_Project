@@ -1,0 +1,20 @@
+
+<div tg-login="tg-login" class="login-form-container">
+  <form ng-if="defaultLoginEnabled" class="login-form">
+    <fieldset>
+      <input type="text" autocorrect="off" autocapitalize="none" autofocus="autofocus" required="required" name="username" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_NAME' | translate}}"/>
+    </fieldset>
+    <fieldset class="login-password">
+      <input type="password" name="password" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_PASSWORD' | translate}}" ng-focus="capslockIcon = !capslockIcon" ng-keyup="onKeyUp($event)"/><a href="" tg-nav="forgot-password" title="{{'LOGIN_COMMON.TITLE_LINK_FORGOT_PASSWORD' | translate}}" translate="LOGIN_COMMON.LINK_FORGOT_PASSWORD" class="forgot-pass"></a>
+      <tg-capslock></tg-capslock>
+    </fieldset>
+    <fieldset class="end">
+      <button variant="primary" type="submit" title="{{'LOGIN_COMMON.ACTION_SIGN_IN' | translate}}" translate="LOGIN_COMMON.ACTION_SIGN_IN" class="btn-small full"></button>
+    </fieldset>
+  </form>
+  <div ng-if="authPlugins.length" class="contrib-plugins-wrapper">
+    <label translate="LOGIN_COMMON.ALT_LOGIN" ng-if="defaultLoginEnabled"></label>
+    <fieldset ng-repeat="plugin in authPlugins" ng-include="plugin.template"></fieldset>
+  </div>
+  <tg-public-register-message></tg-public-register-message>
+</div>

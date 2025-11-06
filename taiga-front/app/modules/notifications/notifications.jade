@@ -1,0 +1,17 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+div.wrapper
+    div.notifications-page.centered
+        header.header
+            h1.title {{ 'EVENTS.MY_EVENTS' | translate }}
+            a.action(
+                href="",
+                ng-if="vm.notificationsList.size && !vm.notificationsList.get(0).get('read')",
+                ng-click="vm.setAllAsRead()") {{ 'EVENTS.DISMISS_ALL' | translate }}
+            span.action.disabled(ng-if="!vm.notificationsList.size || vm.notificationsList.get(0).get('read')") {{ 'EVENTS.DISMISS_ALL' | translate }}
+        tg-notifications-list()

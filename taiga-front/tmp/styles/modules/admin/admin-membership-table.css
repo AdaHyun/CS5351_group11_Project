@@ -1,0 +1,93 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.admin-membership-table .title {
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif; }
+
+.admin-membership-table .avatar {
+  align-items: center;
+  display: flex; }
+  .admin-membership-table .avatar img {
+    border-radius: 4px;
+    flex-grow: 0;
+    margin: 0 .5rem 0 .3rem;
+    width: 50px; }
+  .admin-membership-table .avatar .data {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    color: #5A5B72;
+    margin-top: .2rem; }
+  .admin-membership-table .avatar .pending {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #ffa0a0;
+    display: inline-block;
+    padding-left: .3rem; }
+
+.admin-membership-table .user-data .name {
+  display: flex; }
+
+.admin-membership-table .user-data .icon-badge {
+  margin-left: .25rem; }
+
+.admin-membership-table .header-role,
+.admin-membership-table .header-status {
+  padding-left: .5rem; }
+
+.admin-membership-table .row-role {
+  padding-right: 1rem; }
+
+.admin-membership-table .row-status {
+  align-items: center;
+  display: flex;
+  justify-content: space-between; }
+
+.admin-membership-table .active,
+.admin-membership-table .resend {
+  font-size: .875rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 4rem;
+  padding: .4rem .5rem; }
+
+.admin-membership-table .active {
+  background-color: #E2E3E9; }
+
+.admin-membership-table .resend {
+  background-color: #008AA8;
+  color: #fff; }
+
+.admin-membership-table .delete {
+  fill: #70728F;
+  transition: fill .2s; }
+  .admin-membership-table .delete:hover {
+    fill: #FF6363; }
+
+.admin-membership-table .pending {
+  color: #ffa0a0; }
+
+.admin-membership-table .row-admin input {
+  vertical-align: middle; }
+
+.admin-membership-table .row-admin label {
+  font-size: .875rem; }
+
+.admin-membership-table .row-member,
+.admin-membership-table .row-role,
+.admin-membership-table .header-member,
+.admin-membership-table .header-role {
+  flex-basis: 210px;
+  flex-grow: 3;
+  min-width: 210px; }
+
+.admin-membership-table .row-admin,
+.admin-membership-table .header-admin {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 70px; }
+
+.admin-membership-table .row-status,
+.admin-membership-table .header-status {
+  flex-basis: 50px;
+  flex-grow: 1; }

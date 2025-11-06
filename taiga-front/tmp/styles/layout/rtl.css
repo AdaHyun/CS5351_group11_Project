@@ -1,0 +1,729 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.rtl .navbar .nav-right {
+  margin: 0; }
+  .rtl .navbar .nav-right .user-avatar {
+    padding-left: 0;
+    padding-right: 2em;
+    text-align: left; }
+  .rtl .navbar .nav-right img {
+    margin-left: 0;
+    margin-right: .5rem; }
+
+.rtl .main-nav li:hover .helper {
+  background: linear-gradient(to left, black 0%, rgba(0, 0, 0, 0.8) 100%);
+  left: initial;
+  right: 50px; }
+  .rtl .main-nav li:hover .helper::after {
+    left: initial;
+    right: calc(-12px/2); }
+
+.rtl .main-nav .backlog-sprints-menu {
+  background: linear-gradient(to left, black 0%, rgba(0, 0, 0, 0.8) 100%);
+  left: initial;
+  right: 50px; }
+  .rtl .main-nav .backlog-sprints-menu::after {
+    left: initial;
+    right: calc(-12px/2); }
+  .rtl .main-nav .backlog-sprints-menu a {
+    text-align: right; }
+
+.rtl .admin-menu li a {
+  padding: 1rem 1rem 1rem 0; }
+
+.rtl h1 span {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl blockquote {
+  border-left: 0;
+  border-right: 5px solid #F1F1F4; }
+
+.rtl .tag {
+  border-color: transparent;
+  border-radius: 5px 0 0 5px;
+  border-width: 0 3px 0 0;
+  margin: 0 0 .5rem .5rem; }
+  .rtl .tag .icon-close {
+    margin-left: 0;
+    margin-right: .25rem; }
+
+.rtl .home-wrapper .working-on-container {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .home-project .project-card-logo {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .home-project .project-card-statistics svg {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .contact-team-large .icon-mail {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .user-profile .project-details-image {
+  margin-left: 2rem;
+  margin-right: 0; }
+
+.rtl .single-project .project-logo {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .profile-timeline .activity-item .profile-contact-picture,
+.rtl .profile-timeline .activity-item .profile-member-picture {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .profile-timeline .activity-item {
+  padding: 1rem 0 1rem .5rem; }
+  .rtl .profile-timeline .activity-item .activity-date {
+    left: .5rem;
+    right: auto; }
+  .rtl .profile-timeline .activity-item .activity-info {
+    margin-left: 130px;
+    margin-right: 0; }
+  .rtl .profile-timeline .activity-item blockquote {
+    margin-left: 0;
+    margin-right: calc(35px + 1rem); }
+
+.rtl .profile-timeline .single-attachment .icon {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .project-data .involved-team li {
+  margin-left: .13rem;
+  margin-right: 0; }
+
+.rtl .project-details-form-data .actions .delete-account {
+  text-align: left; }
+
+.rtl .project-data .timeline {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .track-icon {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .watch-options-arrow {
+  margin-left: 0;
+  margin-right: auto; }
+
+.rtl .ticket-estimation .ticket-role-points .icon-arrow-down {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .ticket-watch .ticket-watch-button {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .ticket-watch svg {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .related-tasks-body .task-assignedto .icon {
+  left: .5rem;
+  right: 0; }
+
+.rtl .related-tasks-body .avatar figcaption {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .related-tasks-body .task-name {
+  margin-left: 1rem;
+  margin-right: 0; }
+  .rtl .related-tasks-body .task-name span {
+    margin-left: .25rem;
+    margin-right: 0; }
+
+.rtl tg-filter .search-action {
+  left: .7rem;
+  right: auto; }
+
+.rtl .taskboard tg-filter,
+.rtl .kanban tg-filter {
+  left: auto;
+  right: 0;
+  transform: translateX(260px); }
+  .rtl .taskboard tg-filter.open,
+  .rtl .kanban tg-filter.open {
+    transform: translateX(0); }
+
+.rtl .issues-options .button-bulk {
+  margin-left: 0;
+  margin-right: .2rem; }
+
+.rtl .issues-table .issue-field,
+.rtl .issues-table .modified-field,
+.rtl .issues-table .assigned-field {
+  text-align: right; }
+
+.rtl .issues-table .issue-field .icon,
+.rtl .issues-table .modified-field .icon,
+.rtl .issues-table .assigned-field .icon {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .icon-arrow-left,
+.rtl .icon-arrow-right {
+  transform: scaleX(-1); }
+
+.rtl .issues-table .pop-status {
+  left: auto;
+  right: 0; }
+
+.rtl .issues-table .icon-upvote {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .issues-table .subject {
+  padding-left: 1rem;
+  padding-right: 0; }
+  .rtl .issues-table .subject a {
+    text-align: right; }
+
+.rtl .issues-table .issue-assignedto .icon {
+  left: 0;
+  right: auto; }
+
+.rtl .issues-table .avatar figcaption {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .single-filter {
+  padding-left: .5rem;
+  padding-right: 0; }
+  .rtl .single-filter .number {
+    left: 0;
+    right: auto; }
+  .rtl .single-filter .name {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 3px 0 0; }
+
+.rtl .discover-header .search-button {
+  left: 1rem;
+  right: auto; }
+
+.rtl .highlighted .header svg {
+  margin-left: 0;
+  margin-right: .5rem; }
+  .rtl .highlighted .header svg.icon-activity, .rtl .highlighted .header svg.icon-like {
+    margin-left: .5rem;
+    margin-right: 0; }
+
+.rtl .highlighted tg-most-liked {
+  margin-left: 8%;
+  margin-right: 0; }
+
+.rtl .highlighted-project .statistic {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .highlighted-project .project-statistics svg {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .highlighted-project .project-logo {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .featured-project .project-card-logo {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .featured-project .project-card-statistics svg {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .project-list-wrapper .project-list {
+  margin-left: 2rem;
+  margin-right: 0; }
+
+.rtl .project-list-wrapper .list-itemtype-project .list-itemtype-project-image {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .create-project-selector-question {
+  left: 1.5rem;
+  right: auto; }
+
+.rtl .create-project-title-wrapper .icon {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .create-project-privacity label .icon {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .create-project-action-submit {
+  margin-left: 0;
+  margin-right: 1rem; }
+
+.rtl .summary-progress-bar {
+  margin-left: 10px;
+  margin-right: 0; }
+
+.rtl .empty-burndown svg {
+  margin-left: 2rem;
+  margin-right: 0; }
+
+.rtl .backlog-menu .button-bulk {
+  margin-left: 0;
+  margin-right: .2rem; }
+
+.rtl .ticket-header .detail-status {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .ticket-status .level-name {
+  float: left; }
+
+.rtl .ticket-status .level {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .ticket-data-container .icon {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .ticket-assigned-to .assigned-to {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .user-list-avatar {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .user-list-name {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .assigned-to-list .user-list-multiple .remove-assigned-to,
+.rtl .assigned-to-list .user-list-single .remove-assigned-to,
+.rtl .ticket-watchers .delete-watcher,
+.rtl .ticket-assigned-to .remove-user,
+.rtl .ticket-assigned-users .remove-user {
+  left: .5rem;
+  right: auto; }
+
+.rtl .lightbox .close {
+  left: 3rem;
+  right: auto; }
+
+.rtl .comment .comment-avatar,
+.rtl .activity .activity-avatar {
+  margin-left: 1.5rem;
+  margin-right: 0; }
+
+.rtl .comment .comment-creator {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl tg-wysiwyg .tools {
+  padding-left: 0;
+  padding-right: 1rem; }
+
+.rtl .add-tag-button .icon-add {
+  margin: .5rem 0 0 .25rem; }
+
+.rtl .add-tag-input .save {
+  margin: .5rem .5rem 0 0; }
+
+.rtl .issue-nav {
+  left: 1rem;
+  right: auto; }
+
+.rtl .upvote-btn {
+  margin-left: .3rem;
+  margin-right: 0; }
+
+.rtl .taskboard-table-header .taskboard-table-inner {
+  margin-left: 1rem; }
+
+.rtl .taskboard-table-header .task-colum-name {
+  margin: 0 0 0 5px; }
+
+.rtl .kanban-table-header {
+  margin-left: -3.7rem; }
+  .rtl .kanban-table-header .task-colum-name {
+    margin: 0 0 0 5px; }
+
+.rtl .taskboard-table-body .task-column,
+.rtl .kanban-table-body .task-column {
+  margin: 0 0 0 5px; }
+  .rtl .taskboard-table-body .task-column:last-child,
+  .rtl .kanban-table-body .task-column:last-child {
+    margin-left: 0;
+    margin-right: initial; }
+
+.rtl .backlog-table-body .votes svg {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .backlog-table-body .user-story-name a {
+  text-align: right; }
+
+.rtl .backlog-table-header .backlog-table-title {
+  padding-left: 1rem;
+  padding-right: 0; }
+
+.rtl .backlog-table-header .backlog-table-title .status,
+.rtl .backlog-table-header .row .status,
+.rtl .backlog-table-body .backlog-table-title .status,
+.rtl .backlog-table-body .row .status {
+  flex-basis: 150px;
+  text-align: right; }
+
+.rtl .backlog-table-header .backlog-table-title .user-stories,
+.rtl .backlog-table-header .row .user-stories,
+.rtl .backlog-table-body .backlog-table-title .user-stories,
+.rtl .backlog-table-body .row .user-stories {
+  text-align: right; }
+
+.rtl .backlog-table-header .status .icon,
+.rtl .backlog-table-header .points .icon,
+.rtl .backlog-table-body .status .icon,
+.rtl .backlog-table-body .points .icon {
+  margin-left: 0;
+  margin-right: .2rem; }
+
+.rtl .sprints .sprint-table .column-us {
+  text-align: right; }
+
+.rtl .sprints .sprint-table .column-points {
+  text-align: left; }
+
+.rtl .sprints .sprint .edit-sprint {
+  left: 0;
+  margin-left: .5rem;
+  margin-right: 0;
+  right: auto; }
+
+.rtl .epic-row .progress-bar,
+.rtl .epic-row .progress-status {
+  left: auto;
+  right: 0; }
+
+.rtl .ticket-created-by .user-avatar {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .ticket-created-by .created-by .created-date {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .ticket-created-by .created-by .created-title,
+.rtl .ticket-created-by .created-by .created-date {
+  text-align: left; }
+
+.rtl tg-wysiwyg .medium-editor-placeholder,
+.rtl tg-wysiwyg .markdown-editor-placeholder {
+  padding-left: 0;
+  padding-right: 1rem;
+  text-align: right; }
+
+.rtl .attachments-header button {
+  margin-left: .2rem;
+  margin-right: 0; }
+
+.rtl .attachments-header label {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .attachment-list .attachment-comments,
+.rtl .attachment-list .editable-attachment-comment {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .attachment-list .editable-attachment-deprecated input {
+  margin-left: .2rem;
+  margin-right: 0; }
+
+.rtl .more-attachments .more-attachments-num {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .single-attachment .attachment-name {
+  padding-left: 1rem;
+  padding-right: 0; }
+  .rtl .single-attachment .attachment-name svg {
+    margin-left: .25rem;
+    margin-right: 0; }
+
+.rtl .wiki-nav .add-button svg {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .wiki-pages-table .title-field,
+.rtl .wiki-pages-table .created-field,
+.rtl .wiki-pages-table .modified-field,
+.rtl .wiki-pages-table .last-modifier-field,
+.rtl .wiki-pages-table .creator-field {
+  text-align: right; }
+
+.rtl .wiki-summary div {
+  margin-left: 1.25rem;
+  margin-right: 0; }
+
+.rtl .summary .number {
+  margin-left: .3rem;
+  margin-right: 0; }
+
+.rtl .summary .stats {
+  margin-left: initial;
+  margin-right: auto; }
+
+.rtl .table-team .avatar .avatar-data {
+  margin-left: 0;
+  margin-right: 1rem;
+  text-align: right; }
+
+.rtl .table-team .leave-project .icon {
+  margin-left: .2rem;
+  margin-right: 0; }
+
+.rtl .belong-to-epic-text-wrapper {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .epics-table-options-wrapper {
+  left: .5rem;
+  right: auto; }
+
+.rtl .epics-table-dropdown {
+  left: 0;
+  right: auto; }
+
+.rtl .story-row .icon-upvote,
+.rtl .epic-row .icon-upvote {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .story-row {
+  margin-left: 0;
+  margin-right: 4rem; }
+
+.rtl .epic-row .icon-arrow-down {
+  margin-left: 0;
+  margin-right: .1rem; }
+
+.rtl .epic-header-container .color-selector {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .related-userstories-header .related-userstories-title {
+  margin-left: 0;
+  margin-right: 1rem; }
+
+.rtl tg-related-userstory-row .userstory-name {
+  margin-left: 1rem;
+  margin-right: 0; }
+  .rtl tg-related-userstory-row .userstory-name span {
+    margin-left: 0;
+    margin-right: .25rem; }
+
+.rtl tg-related-userstory-row .avatar figcaption {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .card-owner-actions .icon {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .card-owner img {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .card-owner .card-owner-avatar img {
+  margin-left: .45rem;
+  margin-right: 0; }
+
+.rtl .card-statistics .statistic {
+  margin-left: .5rem;
+  margin-right: .5rem; }
+
+.rtl .card-statistics .icon {
+  margin-left: .2rem;
+  margin-right: 0; }
+
+.rtl .button-group .button-group-single:first-child {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .lightbox-create-related-user-stories .new-user-story-options .new-user-story-options {
+  margin-left: 0;
+  margin-right: auto; }
+
+.rtl .lightbox-generic-form .settings fieldset {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .ticket-estimation .popover {
+  left: auto;
+  right: .5rem; }
+  .rtl .ticket-estimation .popover::after {
+    left: auto;
+    right: 10px; }
+
+.rtl .profile .timeline-wrapper {
+  margin-left: 3.5rem;
+  margin-right: 0; }
+
+.rtl .profile .profile-bar {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .profile-content-tabs .icon {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .profile-sidebar h4 .icon {
+  margin-left: .3rem;
+  margin-right: auto; }
+
+.rtl .profile-filter .searchbox input {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .profile-filter .searchbox .icon-search {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .list-itemtype-ticket .list-itemtype-track .list-itemtype-track-likers,
+.rtl .list-itemtype-project .list-itemtype-track .list-itemtype-track-likers,
+.rtl .list-itemtype-ticket .list-itemtype-avatar,
+.rtl .list-itemtype-project .list-itemtype-project-image {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .list-itemtype-ticket .list-itemtype-track-likers .icon,
+.rtl .list-itemtype-ticket .list-itemtype-track-watchers .icon,
+.rtl .list-itemtype-project .list-itemtype-track-likers .icon,
+.rtl .list-itemtype-project .list-itemtype-track-watchers .icon {
+  margin-left: .25rem;
+  margin-right: 0; }
+
+.rtl .list-itemtype-ticket.blocked-project .icon-blocked-project {
+  margin-left: 0;
+  margin-right: .25rem; }
+
+.rtl .list-itemtype-ticket .list-itemtype-ticket-data {
+  margin-left: 1rem;
+  margin-right: 0; }
+
+.rtl .list-itemtype-user .list-itemtype-avatar {
+  margin-left: .75rem;
+  margin-right: 0; }
+
+.rtl .admin-submenu ul a {
+  padding: 1rem 1rem 1rem 0; }
+
+.rtl .admin-functionalities .module-desc {
+  margin: 0 0 0 2rem; }
+
+.rtl .admin-functionalities .module-icon {
+  margin: 0 0 0 .5rem; }
+
+.rtl .project-details .project-details-image {
+  margin-left: 2rem;
+  margin-right: 0; }
+
+.rtl .admin-project-profile-owner-actions .owner-info {
+  padding-left: 0;
+  padding-right: .5rem; }
+
+.rtl .admin-roles .general-category .check {
+  margin-left: 0;
+  margin-right: .5rem; }
+
+.rtl .help-button svg {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .project-details .private-or-public svg {
+  margin-left: .5rem;
+  margin-right: 0; }
+
+.rtl .project-csv .option-wrapper {
+  border-left: 1px solid #70728F;
+  border-radius: 5px 0 0 5px;
+  border-right: 0; }
+
+.rtl .colors-table .table-header .row {
+  padding-left: 0;
+  padding-right: 50px; }
+
+.rtl .basic-table .row {
+  text-align: right; }
+
+.rtl .admin-membership-table .avatar img {
+  margin: 0 .3rem 0 .5rem; }
+
+.rtl .admin-membership-table .row-role {
+  padding-left: 1rem;
+  padding-right: 0; }
+
+.rtl .category-config .icon {
+  transform: scaleX(-1); }
+
+.rtl .project-details .looking-for-people-selector .check,
+.rtl .project-details .get-feedback-inner .check {
+  margin-left: 0;
+  margin-right: auto; }
+
+.rtl .check input {
+  left: auto;
+  right: -10px; }
+  .rtl .check input:checked + div {
+    margin-left: 0;
+    margin-right: 50%; }
+  .rtl .check input:checked ~ .check-yes {
+    left: .3rem;
+    right: auto; }
+  .rtl .check input ~ .check-no {
+    left: auto;
+    right: .375rem; }
+
+.rtl .notification-message-success {
+  left: -370px;
+  right: auto; }
+  .rtl .notification-message-success.active {
+    animation: animSlideRTL 2000ms; }
+  .rtl .notification-message-success.inactive {
+    animation: animSlideOutRTL .5s; }
+
+@keyframes animSlideRTL {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.1% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 232.117, 0, 0, 1); }
+  8.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 357.804, 0, 0, 1); }
+  12.11% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 407.374, 0, 0, 1); }
+  16.12% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 417.342, 0, 0, 1); }
+  27.23% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 403.135, 0, 0, 1); }
+  38.34% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 399.585, 0, 0, 1); }
+  60.56% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 400.01, 0, 0, 1); }
+  82.78% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 400, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 400, 0, 0, 1); } }
+
+@keyframes animSlideOutRTL {
+  100% {
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 30, 0, 0, 0, 1); }
+  0% {
+    opacity: 0;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 30, 0, 0, 0, 1); } }

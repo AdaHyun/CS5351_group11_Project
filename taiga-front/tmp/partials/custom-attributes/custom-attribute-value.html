@@ -1,0 +1,13 @@
+
+<div class="custom-field-single <%= type === 'checkbox' ? 'custom-field-checkbox' : '' %>">
+  <div class="custom-field-data"><span class="custom-field-name"><%- name %></span><% if (description){ %><span class="custom-field-description"><%- description %></span><% } %></div>
+  <div class="custom-field-value-container"><% if (type=="url") { %>
+    <div class="custom-field-value js-value-view-mode"><span><a href="<%- value %>"><%- value %></a></span></div><% } else if (type=="richtext") { %>
+    <div class="custom-field-value wysiwyg"><span tg-bind-wysiwyg-html="model"></span></div><% } else if (type=="checkbox") { %>
+    <div class="custom-field-value js-value-view-mode"><% if (value) { %><span>{{ 'COMMON.YES' | translate }}</span><% } else { %><span>{{ 'COMMON.NO' | translate }}</span><% } %></div><% } else { %>
+    <div class="custom-field-value js-value-view-mode"><span ng-bind-html="attributeHtml"></span></div><% } %>
+    <% if (isEditable) { %>
+    <div class="custom-field-options"><a href="" title="{{'COMMON.CUSTOM_ATTRIBUTES.EDIT' | translate}}" class="js-edit-description">
+        <tg-svg svg-icon="icon-edit"></tg-svg></a></div><% } %>
+  </div>
+</div>

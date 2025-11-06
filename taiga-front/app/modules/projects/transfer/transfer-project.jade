@@ -1,0 +1,80 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.transfer-project-wrapper
+    h2.transfer-title(translate="ADMIN.PROJECT_TRANSFER.DO_YOU_ACCEPT_PROJECT_OWNERNSHIP")
+    .transfer-project-detail
+        img.transfer-project-image(
+            tg-project-logo-small-src="vm.project"
+            alt="{{vm.project.get('name')}}"
+        )
+        .transfer-project-data
+            h3.transfer-project-title {{::vm.project.get("name")}}
+            .transfer-project-statistics
+                .transfer-project-private(ng-if="vm.project.get('is_private')")
+                    tg-svg(svg-icon="icon-private")
+                    span(translate="ADMIN.PROJECT_TRANSFER.PRIVATE")
+                .transfer-project-members
+                    tg-svg(svg-icon="icon-team")
+                    span {{::vm.project.get("total_memberships")}}
+
+    p(
+        translate="ADMIN.PROJECT_TRANSFER.PROPOSE_OWNERSHIP"
+        translate-values="{owner: vm.project.getIn(['owner', 'full_name_display']), project: vm.project.get('name')}"
+    )
+
+    div(ng-if="vm.canBeOwnedByUser.valid")
+
+        p(
+            translate="{{vm.ownerMessage}}"
+            translate-values="{maxProjects: vm.maxProjects, currentProjects: vm.currentProjects}"
+        )
+
+        button.btn-link.transfer-project-comment-link.ng-animate-disabled(
+            href=""
+            ng-click="vm.addComment()"
+            ng-if="!vm.showAddComment"
+            translate="ADMIN.PROJECT_TRANSFER.ADD_COMMENT"
+        )
+
+        fieldset.transfer-project-comment-form(
+            ng-if="vm.showAddComment"
+            ng-class="{'open': vm.showAddComment}"
+        )
+            .transfer-project-comment-header
+                label.transfer-project-comment-label(
+                    translate="ADMIN.PROJECT_TRANSFER.ADD_COMMENT"
+                )
+                tg-svg(
+                    svg-icon="icon-close"
+                    ng-click="vm.hideComment()"
+                )
+            textarea.transfer-project-comment(
+                name="reason"
+                ng-model="vm.reason"
+            )
+
+        .transfer-project-options
+            button.btn-small.e2e-transfer-reject(
+                variant="secondary"
+                ng-click="vm.transferReject(vm.token, vm.reason, $event)"
+                href="#"
+                title="{{'ADMIN.PROJECT_TRANSFER.REJECT' | translate}}"
+                translate="ADMIN.PROJECT_TRANSFER.REJECT"
+                tg-loading="vm.loadingReject"
+            )
+
+            button.btn-small.e2e-transfer-accept(
+                variant="primary"
+                ng-click="vm.transferAccept(vm.token, vm.reason, $event)"
+                href="#"
+                title="{{'ADMIN.PROJECT_TRANSFER.ACCEPT' | translate}}"
+                translate="ADMIN.PROJECT_TRANSFER.ACCEPT"
+                tg-loading="vm.loadingAccept"
+            )
+
+    tg-cant-own-project-explanation(ng-if="!vm.canBeOwnedByUser.valid")

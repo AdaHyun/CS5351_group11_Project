@@ -1,0 +1,52 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+tg-select-import-user-lightbox .form {
+  flex-basis: 600px;
+  flex-grow: 0;
+  width: 600px; }
+
+tg-select-import-user-lightbox .candidate-user {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem; }
+  tg-select-import-user-lightbox .candidate-user .candidate-user-name {
+    margin-left: .5rem; }
+  tg-select-import-user-lightbox .candidate-user .user-list-avatar {
+    background-color: #FF6363;
+    height: 32px;
+    margin-right: .5rem;
+    width: 32px; }
+
+tg-select-import-user-lightbox .error {
+  color: #ffa0a0;
+  text-align: center; }
+
+tg-select-import-user-lightbox .more-users {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  padding: 1rem;
+  text-align: center; }
+
+tg-select-import-user-lightbox .group {
+  display: flex; }
+  tg-select-import-user-lightbox .group input {
+    flex-grow: 2;
+    margin-right: .5rem; }
+
+tg-select-import-user-lightbox .search-user-mode {
+  font-size: .875rem;
+  background: none;
+  margin-top: 2rem;
+  padding: .5rem;
+  text-align: left;
+  transition: .2s;
+  width: 100%; }
+  tg-select-import-user-lightbox .search-user-mode:hover {
+    color: #25A28C; }
+
+tg-select-import-user-lightbox label {
+  display: block;
+  padding-bottom: .5rem; }

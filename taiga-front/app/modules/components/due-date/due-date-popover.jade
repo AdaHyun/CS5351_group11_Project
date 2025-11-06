@@ -1,0 +1,24 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.due-date-button-wrapper
+    button.btn-icon.due-date-button.is-editable.date-picker-popover-trigger(
+        ng-class="{'date-set':  vm.color()}"
+        ng-disabled="vm.disabled()"
+        ng-style="{background: vm.color()}"
+        ng-attr-title="{{ vm.title() }}"
+    )
+        tg-svg(svg-icon="icon-clock")
+    input.due-date.no-focus(
+        type="hidden"
+        picker-value="{{ vm.dueDate }}"
+    )
+    div.date-picker-popover(ng-hide="!open")
+        div.date-picker-container
+        div.date-picker-popover-footer(ng-if="vm.dueDate")
+            a.date-picker-clean(href="", title="{{'LIGHTBOX.SET_DUE_DATE.TITLE_ACTION_DELETE_DUE_DATE' | translate}}")
+                tg-svg(svg-icon="icon-trash")

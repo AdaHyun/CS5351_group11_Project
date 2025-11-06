@@ -1,0 +1,17 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.change-email-form fieldset,
+.verify-email-form fieldset {
+  text-align: center; }
+
+.change-email-form p,
+.verify-email-form p {
+  color: #FFFFFF;
+  margin-bottom: .5rem;
+  text-align: center; }
+
+.change-email-form form,
+.verify-email-form form {
+  margin-top: 1rem; }

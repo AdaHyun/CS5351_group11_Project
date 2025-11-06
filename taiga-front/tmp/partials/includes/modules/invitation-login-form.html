@@ -1,0 +1,18 @@
+
+<form class="login-form">
+  <p translate="LOGIN_COMMON.HEADER" class="form-header"></p>
+  <fieldset>
+    <input type="text" autocorrect="off" autocapitalize="none" name="username" ng-model="dataLogin.username" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_NAME' | translate}}"/>
+  </fieldset>
+  <fieldset class="login-password">
+    <input type="password" name="password" tg-capslock="tg-capslock" ng-model="dataLogin.password" data-required="true" placeholder="{{'LOGIN_COMMON.PLACEHOLDER_AUTH_PASSWORD' | translate}}"/>
+    <!-- This should be hidden when focus on pass--><a href="" tg-nav="forgot-password" title="{{'LOGIN_COMMON.TITLE_LINK_FORGOT_PASSWORD' | translate}}" translate="LOGIN_COMMON.LINK_FORGOT_PASSWORD" class="forgot-pass"></a>
+  </fieldset>
+  <fieldset>
+    <button variant="primary" type="submit" translate="LOGIN_COMMON.ACTION_ENTER" class="btn-small full"></button>
+  </fieldset>
+  <div ng-if="authPlugins.length" class="contrib-plugins-wrapper">
+    <label translate="LOGIN_COMMON.ALT_LOGIN"></label>
+    <fieldset ng-repeat="plugin in authPlugins" ng-include="plugin.template"></fieldset>
+  </div>
+</form>

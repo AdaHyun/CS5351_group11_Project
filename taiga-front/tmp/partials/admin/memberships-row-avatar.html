@@ -1,0 +1,9 @@
+
+<div class="avatar"><img src="<%- imgurl %>" alt="<%- full_name %>" style="background-color: <%- bg %>"/>
+  <div class="user-data">
+    <div class="name"><span ng-non-bindable="ng-non-bindable"><%- full_name %></span><% if (isOwner) { %>
+      <tg-svg svg-icon="icon-badge" svg-title-translate="COMMON.OWNER" class="owner-badge"></tg-svg><% }  %>
+    </div>
+    <div class="data"><span class="email"><%- email %></span><% if (pending) { %><span class="pending"><%- pending %></span><% }  %></div>
+  </div>
+</div>

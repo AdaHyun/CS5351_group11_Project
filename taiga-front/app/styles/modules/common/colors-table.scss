@@ -1,0 +1,235 @@
+.colors-table {
+    overflow-x: inherit;
+    .table-header {
+        @include font-size(medium);
+        @include font-type(medium);
+        border-bottom: 3px solid $whitish;
+        &:hover {
+            background: transparent;
+        }
+        .row {
+            padding-left: 50px;
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+    .row {
+        align-items: center;
+        display: flex;
+        padding: 1rem;
+        width: 100%;
+        &:last-child {
+            border: 0;
+        }
+        &.edition {
+            padding-left: 3rem;
+            .current-color {
+                cursor: pointer;
+            }
+        }
+        &.hidden {
+            display: none;
+        }
+        &:hover {
+            background: lighten(rgba($primary-light, .2), 30%);
+            cursor: move;
+            transition: background .2s ease-in;
+            .icon {
+                opacity: 1;
+                transition: opacity .2s ease-in;
+            }
+            .options-column {
+                opacity: 1;
+                transition: opacity .3s linear;
+            }
+        }
+        &.no-draggable {
+            padding-left: 50px;
+            &:hover {
+                cursor: auto;
+            }
+        }
+        &.new-value {
+            padding-left: 3rem;
+            .icon-check-empty,
+            .icon-close {
+                fill: $color-link-primary;
+            }
+        }
+        .color-column {
+            display: flex;
+            flex-basis: 80px;
+            justify-content: center;
+            min-width: 80px;
+            position: relative;
+        }
+        .is-archived-column,
+        .is-closed-column,
+        .options-column,
+        .thresold-column,
+        .before-after-column,
+        .status-wip-limit {
+            flex-basis: 100px;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+        .before-after-column {
+            padding: 0 10px;
+        }
+
+        .color-name {
+            flex-basis: 150px;
+            flex-grow: 1;
+            flex-shrink: 0;
+            padding: 0 10px;
+            position: relative;
+            span {
+                @include ellipsis(100%);
+                display: block;
+            }
+        }
+
+        .status-name,
+        .status-slug {
+            flex-grow: 1;
+            min-width: 150px;
+            padding: 0 10px;
+            span {
+                @include ellipsis(100%);
+            }
+        }
+        .status-name {
+            flex-basis: 40%;
+        }
+        .status-slug {
+            flex-basis: 30%;
+            @include until($desktop) {
+                display: none;
+            }
+        }
+        .options-column {
+            max-width: 60px;
+            min-width: 100px;
+            opacity: 0;
+            text-align: right;
+        }
+        .is-archived-column {
+            max-width: 130px;
+            padding: 0 0 0 10px;
+            text-align: center;
+        }
+        .is-closed-column {
+            max-width: 100px;
+            text-align: center;
+        }
+        .status-wip-limit {
+            max-width: 100px;
+            padding: 0 0 0 10px;
+            text-align: center;
+            @include until($desktop) {
+                display: block;
+            }
+        }
+
+    }
+
+    .before-after-selector {
+        display: flex;
+        font-size: .9rem;
+        input {
+            display: none;
+            +label {
+                background: rgba($whitish, .7);
+                cursor: pointer;
+                display: block;
+                padding: .5rem 1rem;
+                text-align: center;
+                transition: background color .2s ease-in;
+            }
+            +label:hover {
+                background: rgba($primary-light, .3);
+                transition: background color .2s ease-in;
+            }
+        }
+        .before-after-selector-single {
+            overflow: hidden;
+            &:first-child {
+                border-radius: .25rem 0 0 .25rem;
+            }
+            &:last-child {
+                border-radius: 0 .25rem .25rem 0;
+                margin-right: 0;
+            }
+            &.checked label {
+                background: $color-link-primary;
+                color: $white;
+                transition: background .2s ease-in;
+            }
+            &:not(.checked) label:hover {
+                background: rgba($color-link-primary, .3);
+                color: $color-black600;
+            }
+        }
+    }
+
+    .options-column {
+        a {
+            cursor: pointer;
+            display: inline-block;
+        }
+    }
+
+    .row-edit {
+        .options-column {
+            opacity: 1;
+        }
+    }
+
+    .current-color {
+        background-color: $whitish;
+        border-radius: 3px;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .icon {
+        cursor: pointer;
+        fill: $gray-light;
+        margin-right: 1rem;
+        opacity: 0;
+        &:hover {
+            fill: $primary-light;
+            transition: all .2s ease-in;
+        }
+        &.icon-check {
+            cursor: default;
+            fill: $color-link-primary;
+            opacity: 1;
+        }
+        &.icon-merge {
+            cursor: default;
+            opacity: 1;
+        }
+        &.icon-search {
+            cursor: none;
+            fill: $color-link-primary;
+            opacity: 1;
+        }
+        &.icon-drag {
+            cursor: move;
+        }
+        &.icon-trash {
+            fill: $color-link-red;
+        }
+    }
+    .gu-mirror {
+        background: lighten($primary, 60%);
+        opacity: 1;
+    }
+    .gu-transit {
+        * {
+            visibility: hidden;
+        }
+    }
+}

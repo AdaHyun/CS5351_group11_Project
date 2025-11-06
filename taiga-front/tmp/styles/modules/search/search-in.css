@@ -1,0 +1,20 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.search-in {
+  border-inline-end: 1px solid #D8DEE9;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  width: 300px; }
+  .search-in .search-input {
+    padding-inline-end: 2rem; }
+  .search-in .icon-search-wrapper {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem; }
+  .search-in .icon-search {
+    fill: #70728F; }
+  .search-in .loading-spinner {
+    margin-top: .1rem; }

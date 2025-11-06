@@ -1,0 +1,73 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.transfer-project-wrapper {
+  flex-basis: 500px;
+  flex-grow: 0;
+  width: 90%; }
+
+.transfer-project {
+  align-content: center;
+  align-items: center;
+  background: url("../images/discover.png") bottom center repeat-x;
+  display: flex;
+  height: calc(100vh - 40px);
+  justify-content: center;
+  min-height: calc(100vh - 40px); }
+  .transfer-project .transfer-title {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
+  .transfer-project-detail {
+    align-items: center;
+    border-bottom: 1px solid #D8DEE9;
+    border-top: 1px solid #D8DEE9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0 3rem;
+    padding: 1rem 0; }
+  .transfer-project-image {
+    margin-right: 1rem;
+    width: 4rem; }
+  .transfer-project-title {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: .25rem; }
+  .transfer-project-statistics {
+    display: flex; }
+    .transfer-project-statistics .transfer-project-private,
+    .transfer-project-statistics .transfer-project-members {
+      color: #4C566A;
+      display: flex;
+      margin-right: .5rem; }
+    .transfer-project-statistics svg {
+      fill: #4C566A;
+      margin-right: .25rem; }
+  .transfer-project-comment-link {
+    color: #008AA8;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1rem; }
+  .transfer-project-comment-header {
+    display: flex;
+    justify-content: space-between; }
+    .transfer-project-comment-header .icon-close {
+      cursor: pointer;
+      fill: #4C566A; }
+      .transfer-project-comment-header .icon-close:hover {
+        fill: #E44057;
+        transition: fill .2s; }
+  .transfer-project-comment-form.ng-enter {
+    animation: dropdownFade .2s; }
+  .transfer-project-comment-label {
+    display: block;
+    margin-bottom: .5rem; }
+  .transfer-project-comment {
+    margin-bottom: 1rem;
+    min-height: 6rem; }
+  .transfer-project-options {
+    column-gap: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    row-gap: 1rem; }

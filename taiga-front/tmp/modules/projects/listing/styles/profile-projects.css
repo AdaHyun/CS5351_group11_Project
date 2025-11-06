@@ -1,0 +1,31 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.profile-projects {
+  border-top: 1px solid #E2E3E9; }
+  .profile-projects .list-itemtype-project {
+    display: flex;
+    justify-content: space-between;
+    min-height: 9rem;
+    padding: .75rem; }
+    .profile-projects .list-itemtype-project.blocked-project .list-itemtype-project-image,
+    .profile-projects .list-itemtype-project.blocked-project .project-title,
+    .profile-projects .list-itemtype-project.blocked-project .project-description,
+    .profile-projects .list-itemtype-project.blocked-project .list-itemtype-project-right {
+      opacity: .4; }
+    .profile-projects .list-itemtype-project .project-list-single-title-wrapper {
+      display: flex; }
+    .profile-projects .list-itemtype-project .list-itemtype-project-image {
+      flex-shrink: 0; }
+    .profile-projects .list-itemtype-project .list-itemtype-project-right {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      justify-content: space-between;
+      width: 200px; }
+    .profile-projects .list-itemtype-project .icon-blocked-project {
+      width: 1rem;
+      height: 1rem;
+      fill: #fff;
+      stroke: #ffa0a0; }

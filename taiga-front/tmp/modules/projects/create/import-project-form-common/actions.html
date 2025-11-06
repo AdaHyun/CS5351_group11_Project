@@ -1,0 +1,5 @@
+
+<div class="create-project-action">
+  <button variant="secondary" type="button" ng-click="vm.onCancelForm()" title="{{'PROJECT.CREATE.BACK' | translate}}" translate="PROJECT.CREATE.BACK" class="btn-small create-project-action-cancel"></button>
+  <button type="submit" tg-loading="vm.formSubmitLoading" ng-disabled="(vm.projectForm.is_private &amp;&amp; !vm.canCreatePrivateProjects.valid &amp;&amp; vm.canCreatePrivateProjects.reason == 'max_private_projects') || (!vm.projectForm.is_private &amp;&amp; !vm.canCreatePublicProjects.valid &amp;&amp; vm.canCreatePublicProjects.reason == 'max_public_projects')" translate="PROJECT.CREATE.TITLE" class="btn-small create-project-action-submit e2e-create-project-action-submit"></button>
+</div>

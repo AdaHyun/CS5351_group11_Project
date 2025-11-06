@@ -1,0 +1,56 @@
+
+<section class="colors-table">
+  <div class="project-values-title">
+    <h2>{{ sectionName | translate }}</h2>
+    <button variant="primary" title="{{ addNewElementText }}" class="btn-small show-add-new"><span ng-bind="addNewElementText"></span></button>
+  </div>
+  <div class="table-header">
+    <div class="row">
+      <div translate="COMMON.FIELDS.COLOR" class="color-column"></div>
+      <div translate="COMMON.FIELDS.NAME" class="status-name"></div>
+      <div class="options-column"></div>
+    </div>
+  </div>
+  <div class="table-main">
+    <div class="sortable">
+      <div ng-repeat="value in values" tg-bind-scope="tg-bind-scope">
+        <form tg-bind-scope="tg-bind-scope">
+          <div class="row table-main visualization">
+            <tg-svg svg-icon="icon-draggable"></tg-svg>
+            <div class="color-column">
+              <div ng-style="{background: value.color}" class="current-color"></div>
+            </div>
+            <div class="status-name"><span>{{ value.name }}</span></div>
+            <div class="options-column"><a href="" class="edit-value">
+                <tg-svg svg-icon="icon-edit" title="{{'ADMIN.COMMON.TITLE_ACTION_EDIT_VALUE' | translate}}"></tg-svg></a><a href="" class="delete-value">
+                <tg-svg svg-icon="icon-trash" title="{{'ADMIN.COMMON.TITLE_ACTION_DELETE_VALUE' | translate}}"></tg-svg></a></div>
+          </div>
+          <div class="row table-main edition hidden">
+            <div class="color-column">
+              <tg-color-selector init-color="value.color" on-select-color="value.color = color"></tg-color-selector>
+            </div>
+            <div class="status-name">
+              <input name="name" type="text" placeholder="{{'ADMIN.TYPES.PLACEHOLDER_WRITE_NAME' | translate}}" ng-model="value.name" data-required="true" data-maxlength="255"/>
+            </div>
+            <div class="options-column"><a href="" class="save e2e-save">
+                <tg-svg title="{{'COMMON.SAVE' | translate}}" svg-icon="icon-check-empty"></tg-svg></a><a href="" class="cancel">
+                <tg-svg title="{{'COMMON.CANCEL' | translate}}" svg-icon="icon-close"></tg-svg></a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <form>
+      <div class="row table-main new-value hidden">
+        <div class="color-column">
+          <tg-color-selector init-color="newValue.color" on-select-color="newValue.color = color"></tg-color-selector>
+        </div>
+        <div class="status-name">
+          <input name="name" type="text" placeholder="{{'ADMIN.TYPES.PLACEHOLDER_WRITE_NAME' | translate}}" ng-model="newValue.name" data-required="true" data-maxlength="255"/>
+        </div>
+        <div class="options-column"><a href="" class="add-new e2e-save">
+            <tg-svg title="{{'COMMON.ADD' | translate}}" svg-icon="icon-check-empty"></tg-svg></a><a href="" class="delete-new">
+            <tg-svg title="{{'COMMON.CANCEL' | translate}}" svg-icon="icon-close"></tg-svg></a></div>
+      </div>
+    </form>
+  </div>
+</section>

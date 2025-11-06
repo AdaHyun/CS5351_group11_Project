@@ -1,0 +1,133 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.table-team .row {
+  padding: .5rem; }
+
+.table-team .username {
+  flex-basis: 220px;
+  min-width: 25%; }
+
+.table-team .member-stats {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex: 6;
+  justify-content: flex-end; }
+
+.table-team .attribute {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  flex: 1;
+  position: relative;
+  text-align: center; }
+  .table-team .attribute .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #4C566A; }
+  .table-team .attribute .points {
+    font-size: 1.4rem;
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #434C5E; }
+  .table-team .attribute .top {
+    fill: #008AA8;
+    opacity: 1; }
+  .table-team .attribute:hover .tooltip {
+    display: block; }
+
+.table-team .leave-project {
+  font-size: .875rem;
+  color: #E44057;
+  display: flex; }
+  .table-team .leave-project .icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    fill: currentColor;
+    margin-right: .2rem; }
+  .table-team .leave-project:hover {
+    color: #FF6363; }
+    .table-team .leave-project:hover .icon {
+      color: currentColor;
+      transition: fill .3s linear; }
+
+.table-team .team-header {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+  border-bottom: 0; }
+
+.table-team .hero {
+  width: 100%; }
+  .table-team .hero .row {
+    border-bottom: 1px solid #F9F9FB;
+    border-top: 1px solid #F9F9FB;
+    margin: 1rem 0;
+    padding: 1.5rem 1rem; }
+
+.table-team .avatar {
+  align-items: center;
+  display: flex; }
+  .table-team .avatar img {
+    flex-basis: 66px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 66px; }
+  .table-team .avatar .avatar-data {
+    margin-left: 1rem; }
+    .table-team .avatar .avatar-data span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%; }
+  .table-team .avatar .name,
+  .table-team .avatar .position {
+    display: block;
+    width: 100%; }
+  .table-team .avatar .name {
+    font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
+    align-items: center;
+    display: flex; }
+    .table-team .avatar .name tg-svg {
+      display: block;
+      margin-left: .5rem; }
+  .table-team .avatar .position {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    color: #70728F; }
+
+.table-team .tooltip {
+  font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+  font-size: .875rem;
+  background: #2E3440;
+  border: 1px solid #D8DEE9;
+  border-radius: 4px;
+  bottom: 2rem;
+  box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
+  color: #F9F9FB;
+  display: none;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.3rem 0.6rem 0.4rem 0.6rem;
+  position: absolute;
+  text-align: center;
+  width: inherit;
+  z-index: 2; }
+  .table-team .tooltip li {
+    margin-bottom: .25rem;
+    padding: 0 .25rem; }
+    .table-team .tooltip li:last-child {
+      margin-bottom: 0; }
+  .table-team .tooltip::before {
+    background: #2E3440;
+    content: '';
+    height: 15px;
+    left: calc( 50% - 7px);
+    position: absolute;
+    top: calc( 100% - 7px);
+    transform: rotate(45deg);
+    width: 15px; }
+
+.table-team .icon-badge {
+  fill: #008AA8;
+  position: relative;
+  stroke: #008AA8;
+  top: .15rem; }

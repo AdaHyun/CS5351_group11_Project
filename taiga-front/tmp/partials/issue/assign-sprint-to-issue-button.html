@@ -1,0 +1,16 @@
+
+<button ng-show="!issue.milestone" tg-check-permission="modify_issue" title="{{ 'ISSUES.ACTION_ATTACH_SPRINT' | translate }}" class="btn-icon assign-issue-button is-editable button-unset">
+  <tg-svg svg-icon="icon-attach"></tg-svg>
+</button>
+<button ng-show="issue.milestone" tg-check-permission="modify_issue" title="{{ 'ISSUES.ACTION_DETACH_SPRINT' | translate }}" ng-mouseenter="detach=true" ng-mouseleave="detach=false" class="btn-icon assign-issue-button is-editable button-set">
+  <tg-svg ng-show="detach" svg-icon="icon-detach"></tg-svg>
+  <tg-svg ng-show="!detach" svg-icon="icon-attach"></tg-svg>
+</button>
+<div class="lightbox lightbox-assign-sprint-to-issue">
+  <tg-lightbox-close></tg-lightbox-close>
+  <div class="lightbox-assign-related-sprint">
+    <h2 class="title">{{ 'ISSUES.ACTION_ATTACH_SPRINT' | translate }}</h2>
+    <tg-search-list label="{{ 'ISSUES.CHOOSE_SPRINT' | translate }}" placeholder="{{ 'ISSUES.FILTER_SPRINTS' | translate }}" items="milestones" ng-model="selectedSprint" filter-by="['name', 'estimated_start', 'estimated_finish']" project="project" item-type="sprint" filter-closed="true"></tg-search-list>
+    <button href="" ng-click="saveIssueToSprint(selectedSprint, $event)" tg-loading="vm.loading" translate="COMMON.SAVE" ng-disabled="!selectedSprint" class="btn-big select-option"></button>
+  </div>
+</div>

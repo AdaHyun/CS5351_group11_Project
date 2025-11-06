@@ -1,0 +1,9 @@
+
+
+<button type="button" ng-click="displayOptions()" class="select"><span ng-if="currentSwimlane.id" class="swimlane-select-text"><span>{{currentSwimlane.name}}</span><span ng-if="currentSwimlane.id == defaultSwimlaneId &amp;&amp; swimlanes.size &gt; 1" class="swimlane-default">({{"LIGHTBOX.CREATE_EDIT.DEFAULT" | translate}})</span></span><span ng-if="!currentSwimlane.id" class="swimlane-select-text unclassified">{{ "KANBAN.UNCLASSIFIED_USER_STORIES" | translate }}</span>
+  <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+</button>
+<div ng-show="displaySelector" ng-mouseleave="hideOptions()" ng-mouseenter="displayOptions()" class="options">
+  <button type="button" ng-if="hasUnclassifiedStories == 'true'" ng-class="{'selected': selectedSwimlane == -1}" ng-click="selectSwimlane('noSwimlane')" class="option unclassified">{{ "KANBAN.UNCLASSIFIED_USER_STORIES" | translate }}</button>
+  <button type="button" tg-repeat="swimlane in swimlanes" ng-class="{'selected': swimlane.id == selectedSwimlane, 'unclassified': swimlane.id == -1 || swimlane.id == null}" ng-click="selectSwimlane(swimlane)" class="option"><span>{{ swimlane.name }}</span><span ng-if="defaultSwimlaneId == swimlane.id &amp;&amp; swimlanes.size &gt; 1" class="swimlane-default">({{"LIGHTBOX.CREATE_EDIT.DEFAULT" | translate}})</span></button>
+</div>

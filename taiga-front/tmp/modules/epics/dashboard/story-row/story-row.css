@@ -1,0 +1,127 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.story-row {
+  font-size: .875rem;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 3px;
+  display: flex;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  transition: background .2s; }
+  .story-row .vote,
+  .story-row .status-holder,
+  .story-row .sprint,
+  .story-row .name,
+  .story-row .progress {
+    padding: 1rem .5rem; }
+  .story-row .vote {
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    text-align: center; }
+  .story-row .assigned,
+  .story-row .project {
+    flex-basis: 75px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    padding: .5rem;
+    text-align: center; }
+  .story-row .status-holder {
+    flex-basis: 110px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    text-align: center; }
+  .story-row .sprint {
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%; }
+  .story-row .name,
+  .story-row .progress {
+    flex-basis: 20vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 40vw; }
+  .story-row .progress {
+    flex-shrink: 3;
+    margin-right: 1rem;
+    position: relative; }
+    @media (max-width: 1110px) {
+      .story-row .progress {
+        max-width: 234px; } }
+  .story-row:hover {
+    background-color: #F9F9FB; }
+  .story-row.is-blocked {
+    background: rgba(228, 64, 87, 0.25); }
+    .story-row.is-blocked a,
+    .story-row.is-blocked span,
+    .story-row.is-blocked div {
+      color: #FFFFFF; }
+    .story-row.is-blocked svg {
+      fill: #FFFFFF;
+      stroke: #FFFFFF; }
+  .story-row .deco-space {
+    display: inline-block;
+    margin-left: .75rem;
+    width: 1rem; }
+  .story-row.is-closed .name {
+    color: #70728F;
+    text-decoration: line-through; }
+  .story-row .name {
+    flex-basis: calc(20vw - 1.5rem);
+    flex-shrink: 1;
+    padding-left: 0; }
+    @media (max-width: 1110px) {
+      .story-row .name .name-container {
+        word-break: break-word; } }
+    .story-row .name a {
+      cursor: pointer; }
+      .story-row .name a:hover .ref,
+      .story-row .name a:hover .subject {
+        color: #008AA8; }
+    .story-row .name .subject {
+      color: #4C566A;
+      margin-left: .25rem; }
+  .story-row .progress-bar,
+  .story-row .progress-status {
+    height: 1.5rem;
+    left: 0;
+    position: absolute;
+    top: .25rem; }
+  .story-row .progress-bar {
+    background: #F9F9FB;
+    max-width: 40vw;
+    width: 100%; }
+  .story-row .progress-status {
+    background-color: #008AA8;
+    width: 10vw; }
+  .story-row .project {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; }
+  .story-row .project img,
+  .story-row .assigned img {
+    width: 25px; }
+  .story-row .assigned {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    .story-row .assigned img {
+      border-radius: 50%;
+      height: 2rem;
+      overflow: hidden;
+      width: 2rem; }

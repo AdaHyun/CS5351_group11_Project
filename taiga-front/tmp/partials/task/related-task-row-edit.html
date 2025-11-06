@@ -1,0 +1,18 @@
+
+<div class="task-reorder">
+  <tg-svg svg-icon="icon-draggable" class="icon-drag"></tg-svg>
+</div>
+<div class="task-name">
+  <input type="text" placeholder="{{'TASK.PLACEHOLDER_SUBJECT' | translate}}"/>
+</div>
+<div class="task-settings"><a href="" title="{{'COMMON.SAVE' | translate}}" class="save-task">
+    <tg-svg svg-icon="icon-save"></tg-svg></a><a href="" title="{{'COMMON.CANCEL' | translate}}" class="cancel-edit">
+    <tg-svg svg-icon="icon-cancel"></tg-svg></a></div>
+<div tg-related-task-status="task" ng-model="task" class="status"><a href="" title="{{'TASK.TITLE_SELECT_STATUS' | translate}}" class="task-status"><span class="task-status-bind"></span>
+    <tg-svg svg-icon="icon-arrow-down"></tg-svg></a></div>
+<div tg-related-task-assigned-to-inline-edition="task" class="assigned-to">
+  <div title="{{'COMMON.FIELDS.ASSIGNED_TO' | translate}}" class="task-assignedto">
+    <figure class="avatar"></figure>
+    <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+  </div>
+</div>

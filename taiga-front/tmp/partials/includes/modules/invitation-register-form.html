@@ -1,0 +1,20 @@
+
+<form class="register-form">
+  <p translate="REGISTER_FORM.TITLE" class="form-header"></p>
+  <fieldset>
+    <input type="text" autocorrect="off" autocapitalize="none" name="username" ng-model="dataRegister.username" data-required="true" data-maxlength="255" data-regexp="^[\w.-]+$" placeholder="{{'REGISTER_FORM.PLACEHOLDER_NAME' | translate}}"/>
+  </fieldset>
+  <fieldset>
+    <input type="text" name="full_name" ng-model="dataRegister.full_name" data-required="true" data-maxlength="256" placeholder="{{'REGISTER_FORM.PLACEHOLDER_FULL_NAME' | translate}}"/>
+  </fieldset>
+  <fieldset>
+    <input type="email" name="email" ng-model="dataRegister.email" data-required="true" data-maxlength="255" placeholder="{{'REGISTER_FORM.PLACEHOLDER_EMAIL' | translate}}"/>
+  </fieldset>
+  <fieldset>
+    <input type="password" name="password" tg-capslock="tg-capslock" ng-model="dataRegister.password" data-required="true" placeholder="{{'REGISTER_FORM.PLACEHOLDER_PASSWORD' | translate}}"/>
+  </fieldset>
+  <tg-terms-of-service-and-privacy-policy-notice target="dataRegister.accepted_terms"></tg-terms-of-service-and-privacy-policy-notice>
+  <fieldset>
+    <button variant="primary" type="submit" ng-disabled="dataRegister.accepted_terms == false" title="{{'REGISTER_FORM.ACTION_SIGN_UP' | translate}}" translate="REGISTER_FORM.ACTION_SIGN_UP" class="btn-small full"></button>
+  </fieldset>
+</form>

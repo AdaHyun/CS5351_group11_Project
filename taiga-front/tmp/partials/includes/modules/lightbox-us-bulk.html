@@ -1,0 +1,37 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<form>
+  <h2 translate="COMMON.NEW_BULK" class="title"></h2>
+  <fieldset ng-if="project.us_statuses">
+    <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_STATUS' | translate }}</div>
+    <div class="bulk-status-selector-wrapper">
+      <button type="button" ng-click="toggleStatus()" ng-style="{'background-color': currentStatus.color}" class="bulk-status-selector"><span>{{ currentStatus.name }}</span>
+        <tg-svg svg-icon="icon-arrow-down"></tg-svg>
+      </button>
+      <div ng-show="displayStatusSelector" class="bulk-status-option-wrapper">
+        <button type="button" ng-repeat="status in project.us_statuses" ng-click="setStatus(status)" ng-class="{'selected': status.id == currentStatus.id}" class="bulk-status-option">{{status.name}}</button>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="creation-position">
+    <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.LOCATION' | translate }}</div>
+    <div class="creation-position-fields">
+      <label class="custom-radio">
+        <input id="top-backlog" type="radio" ng-model="new.us_position" value="bottom" checked="checked"/><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_BOTTOM' | translate }}</span>
+      </label>
+      <label class="custom-radio">
+        <input id="bottom-backlog" type="radio" ng-model="new.us_position" value="top"/><span class="radio-control"></span><span class="radio-label">{{ 'LIGHTBOX.CREATE_EDIT.CREATE_TOP' | translate }}</span>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset ng-if="project.is_kanban_activated &amp;&amp; swimlanesList.size" class="swimlane-select">
+    <div class="label">{{ 'LIGHTBOX.CREATE_EDIT.SELECT_SWIMLANE' | translate }}</div>
+    <tg-swimlane-selector ng-model="new.swimlane" swimlanes="swimlanesList" default-swimlane-id="project.default_swimlane" user-story="new" has-unclassified-stories="noSwimlaneUserStories" ng-if="new"></tg-swimlane-selector>
+  </fieldset>
+  <fieldset>
+    <textarea cols="200" wrap="off" ng-model="new.bulk" data-required="true" data-linewidth="200" ng-attr-placeholder="{{'COMMON.ONE_ITEM_LINE' | translate}}"></textarea>
+  </fieldset>
+  <div class="lb-action-wrapper">
+    <button variant="primary" type="submit" title="{{'COMMON.SAVE' | translate}}" translate="COMMON.SAVE" class="btn-small js-submit-button"></button>
+  </div>
+</form>

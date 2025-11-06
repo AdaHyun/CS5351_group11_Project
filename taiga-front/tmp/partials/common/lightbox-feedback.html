@@ -1,0 +1,18 @@
+
+<tg-lightbox-close></tg-lightbox-close>
+<form>
+  <h2 translate="LIGHTBOX.FEEDBACK.TITLE" class="title"></h2>
+  <label>{{'LIGHTBOX.FEEDBACK.COMMENT' | translate}}</label>
+  <fieldset>
+    <textarea ng-model="feedback.comment" data-required="true"></textarea>
+  </fieldset>
+  <fieldset class="actions">
+    <button variant="destructive" type="submit" title="{{'LIGHTBOX.FEEDBACK.ACTION_SEND' | translate}}" translate="LIGHTBOX.FEEDBACK.ACTION_SEND" class="btn-big"></button>
+  </fieldset>
+  <div class="can-also">
+    <h3>{{'LIGHTBOX.FEEDBACK.YOU_CAN_ALSO' | translate}}</h3>
+    <div class="text"><span>{{'LIGHTBOX.FEEDBACK.VISIT' | translate}}</span><a href="https://community.taiga.io/c/faq/21" target="_blank">{{'LIGHTBOX.FEEDBACK.FAQ' | translate}}</a></div>
+    <div class="text"><span>{{'LIGHTBOX.FEEDBACK.CREATE' | translate}}</span><a href="https://tree.taiga.io/project/taiga/issues">{{'LIGHTBOX.FEEDBACK.PUBLIC' | translate}}</a></div>
+    <div class="text"><span>{{'LIGHTBOX.FEEDBACK.EMAIL' | translate}}</span><a href="mailto:support@taiga.io">{{'LIGHTBOX.FEEDBACK.SUPPORT' | translate}}</a></div>
+  </div>
+</form>

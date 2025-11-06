@@ -1,0 +1,18 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.default-values fieldset {
+  margin-bottom: 1rem; }
+  .default-values fieldset:last-child {
+    margin-top: 1.5rem; }
+
+.default-values label,
+.default-values select {
+  display: inline-block;
+  width: 49.7%; }
+
+.default-values a {
+  color: #fff;
+  display: block;
+  text-align: center; }

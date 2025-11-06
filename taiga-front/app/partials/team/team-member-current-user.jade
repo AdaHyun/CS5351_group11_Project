@@ -1,0 +1,37 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.row
+    .username
+        .avatar
+            img(tg-avatar="currentUser", tg-bo-alt="currentUser.full_name_display")
+
+            .avatar-data
+                .name
+                    span(tg-bo-bind="currentUser.full_name_display")
+                    tg-svg(
+                        ng-if="currentUser.id == owner"
+                        svg-icon="icon-badge"
+                        svg-title-translate="COMMON.OWNER"
+                    )
+
+                .position(tg-bo-bind="currentUser.role_name")
+
+                div(
+                    tg-leave-project=""
+                    project="project"
+                    user="currentUser"
+                )
+
+    .member-stats(
+        tg-team-member-stats
+        stats="stats"
+        user="currentUser.id"
+        issuesEnabled="issuesEnabled"
+        tasksenabled="tasksEnabled"
+        wikienabled="wikiEnabled"
+    )

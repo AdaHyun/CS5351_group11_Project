@@ -1,0 +1,23 @@
+
+//- This source code is licensed under the terms of the
+//- GNU Affero General Public License found in the LICENSE file in
+//- the root directory of this source tree.
+//-
+//- Copyright (c) 2021-present Kaleidos INC
+
+.ticket-section-label
+    span {{ 'COMMON.FIELDS.POINTS'|translate }}
+
+ul.points-per-role
+    <% _.each(roles, function(role) { %>
+    li.ticket-role-points.total(
+        class!="<% if(editable){ %>clickable<% } %>"
+        data-role-id!="<%- role.id %>"
+        title!="<%- role.name %>"
+    )
+        span.role(tg-loading!="<%- loading == role.id %>") <%- role.name %>
+        span.points <%- role.points %>
+    <% }); %>
+    li.ticket-role-points.total
+        span.role(translate="US.TOTAL_POINTS")
+        span.points <%- totalPoints %>

@@ -1,0 +1,24 @@
+/**********************
+**** VERTICAL HEIGHT
+***********************/
+/* Do not use this except for the main layout */
+.blocked .external-reference {
+  color: #fff; }
+  .blocked .external-reference a {
+    color: #fff;
+    transition: color .3s linear; }
+    .blocked .external-reference a:hover {
+      color: #ffa0a0; }
+
+.external-reference {
+  font-size: .875rem;
+  color: #70728F;
+  margin-top: .5rem; }
+  .external-reference a {
+    border-left: 1px solid #70728F;
+    padding: 0 .2rem;
+    transition: color .3s linear; }
+    .external-reference a:hover {
+      color: #25A28C; }
+    .external-reference a:first-child {
+      border: 0; }

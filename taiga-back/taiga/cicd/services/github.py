@@ -7,7 +7,6 @@ from typing import Dict, Any, List, Optional
 import requests
 
 # ===== 配置（测试阶段按你要求：token 写在文件里；生产请改为环境变量）=====
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "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")
 OWNER = os.getenv("GITHUB_OWNER", "atmisboru")
 REPO = os.getenv("GITHUB_REPO", "pytest-github-actions-example")
 WORKFLOW_ID = os.getenv("GITHUB_WORKFLOW_ID", "run_test.yml")

@@ -1,0 +1,69 @@
+<!-- taiga-front/app/modules/cicd/cicd.html.copy -->
+<!-- <div class="cicd-container"> -->
+<div class="cicd-container">
+    <div class="cicd-header">
+        <h2>CI/CD 流水线</h2>
+    </div>
+
+    <div class="cicd-content" ng-if="!vm.currentRun">
+        <!-- 触发运行的表单 -->
+        <div class="trigger-form">
+            <div class="form-group">
+                <label>分支/引用:</label>
+                <input type="text" ng-model="vm.form.ref" placeholder="例如: master" class="form-input">
+            </div>
+            <div class="form-group">
+                <label>输入参数 (JSON):</label>
+                <textarea ng-model="vm.form.inputs" placeholder='{"key": "value"}' class="form-textarea"></textarea>
+            </div>
+            <button ng-click="vm.triggerRun()" ng-disabled="vm.isLoading" class="btn-primary">
+                {{ vm.isLoading ? '触发中...' : '触发运行' }}
+            </button>
+        </div>
+    </div>
+
+    <div class="cicd-running" ng-if="vm.currentRun">
+        <!-- 运行状态显示 -->
+        <div class="run-status">
+            <h3>运行状态: <span ng-class="vm.getStatusClass()">{{ vm.getStatusText() }}</span></h3>
+
+            <div class="progress-bar">
+                <div class="progress-fill" ng-style="{'width': vm.getOverallProgress() + '%'}"></div>
+            </div>
+            <div class="progress-text">进度: {{ vm.getOverallProgress() }}%</div>
+
+            <button ng-click="vm.manualRefresh()" class="btn-secondary">手动刷新</button>
+            <button ng-click="vm.reset()" class="btn-danger">重置</button>
+        </div>
+
+        <!-- 错误信息 -->
+        <div class="error-message" ng-if="vm.error">
+            <div class="alert alert-error">
+                {{ vm.error }}
+                <button ng-click="vm.clearError()" class="close-btn">×</button>
+            </div>
+        </div>
+
+        <!-- Jobs 列表 -->
+        <div class="jobs-list" ng-if="vm.currentRun.jobs">
+            <div class="job-item" ng-repeat="job in vm.currentRun.jobs">
+                <h4>{{ job.name }}</h4>
+                <div class="job-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" ng-style="{'width': vm.getJobProgress(job) + '%'}"></div>
+                    </div>
+                    <span>{{ vm.getJobProgress(job) }}%</span>
+                </div>
+
+                <!-- Steps 列表 -->
+                <div class="steps-list">
+                    <div class="step-item" ng-repeat="step in job.steps"
+                        ng-class="{'current-step': vm.isStepCurrent(step)}">
+                        <span class="step-name">{{ step.name }}</span>
+                        <span class="step-status">{{ step.status }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

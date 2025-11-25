@@ -1,7 +1,8 @@
 .dropdown-project-list {
     align-items: center;
+    border: 1px solid $color-link-primary;
     display: flex;
-    height: 100%;
+    height: 85%;
 
     .icon-slash {
         fill: transparent;
@@ -40,7 +41,7 @@
     .see-more-projects-btn {
         @include font-type(medium);
 
-        color: $color-link-primary;
+        color: $color-solid-primary;
     }
 
     .create-project-btn {
@@ -48,7 +49,7 @@
         padding: .3rem 0;
 
         span {
-            color: $color-black600;
+            color: $color-link-primary;
         }
         svg {
             @include svg-size(1.5rem);
@@ -103,7 +104,7 @@
 
     &.active {
         .dropdown-project-list-projects {
-            background-color: $color-gray200;
+            background-color: $color-link-red;
             span {
                 color: $color-link-primary;
             }

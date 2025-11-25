@@ -1,0 +1,107 @@
+.cicd-view(ng-controller="CICDController as vm")
+  .cicd-header
+    h1 CI/CD Pipeline
+    //- p MVP
+
+  .cicd-error-bar(ng-if="vm.error")
+    .cicd-error-content
+      span.cicd-error-icon ⚠
+      span.cicd-error-message {{ vm.error }}
+      button.cicd-error-retry-btn(ng-click="vm.clearError()") Dismiss
+
+  .cicd-content
+    .cicd-form-section
+      .cicd-form-group
+        label.cicd-form-label Branch
+        input.cicd-form-control(
+          type="text"
+          ng-model="vm.form.ref"
+          placeholder="master"
+        )
+      
+      .cicd-form-actions
+        button.cicd-btn-primary(
+          ng-click="vm.triggerRun()"
+          ng-disabled="vm.isLoading"
+        ) Trigger Run
+        button.cicd-btn-secondary(ng-click="vm.reset()") Reset
+    
+    // 运行列表
+    div(ng-if="vm.runs.length > 0")
+      div(ng-repeat="r in vm.runs")
+        .cicd-run-section
+          .cicd-run-header
+            h2.cicd-run-title 
+              | CI/CD Run ID：
+              span {{ r.run_id }}
+            .cicd-run-actions
+              button.cicd-btn-secondary(ng-click="vm.removeRun(r)") Delete
+              span.cicd-run-duration(ng-if="vm.getRunDuration(r)")
+                | Duration: {{ vm.getRunDuration(r) }}
+          
+          .cicd-run-info
+            .cicd-run-info-item
+              strong Run ID: 
+              code.cicd-run-code {{ r.run_id }}
+            .cicd-run-info-item
+              strong Branch: 
+              span {{ r.branch || 'master' }}
+            .cicd-run-info-item
+              strong Status: 
+              span.cicd-status-badge(ng-class="vm.getStatusClass(r)") {{ vm.getStatusText(r) }}
+            .cicd-run-info-item(ng-if="r.run_html_url")
+              strong Run URL: 
+              a.cicd-run-link(href="{{ r.run_html_url }}" target="_blank") View Run
+          
+          .cicd-run-progress
+            .cicd-progress-label
+              span Overall Progress
+              span {{ r.run_progress_pct }}%
+            .cicd-progress-bar
+              .cicd-progress-fill(ng-style="{width: r.run_progress_pct + '%'}")
+          
+          // 作业部分
+          div(ng-if="r.jobs && r.jobs.length > 0")
+            .cicd-job-cards
+              div(ng-repeat="j in r.jobs")
+                .cicd-job-card(ng-class="vm.getJobCardClass(j)")
+                  .cicd-job-header
+                    .cicd-job-title
+                      h3.cicd-job-name Job: {{ j.job_name }}
+                      .cicd-job-status
+                        span.cicd-status-badge(ng-class="vm.getJobStatusClass(j)") {{ vm.getJobStatusText(j) }}
+                    .cicd-job-meta
+                      .cicd-job-times
+                        span(ng-if="j.start_time")
+                          | Started: {{ j.start_time | date:'shortTime' }}
+                      .cicd-job-progress-text
+                        | {{ j.completed_steps }}/{{ j.total_steps }} steps
+                        span(ng-if="j.job_progress_pct > 0")  ({{ j.job_progress_pct }}%)
+                  
+                  .cicd-job-progress-bar
+                    .cicd-job-progress-fill(ng-style="{width: j.job_progress_pct + '%'}")
+                  
+                  // 步骤部分
+                  div(ng-if="j.steps && j.steps.length > 0")
+                    .cicd-job-steps
+                      div(ng-repeat="s in j.steps")
+                        .cicd-step-item(ng-class="vm.getStepClass(s)")
+                          .cicd-step-icon
+                            span(ng-if="s.status === 'completed'") ✓
+                            span(ng-if="s.status === 'in_progress'") ⟳
+                            span(ng-if="s.status === 'queued'") ○
+                          .cicd-step-content
+                            .cicd-step-name {{ s.name }}
+                            .cicd-step-meta
+                              span.cicd-step-status(ng-class="vm.getStepStatusClass(s)") {{ vm.getStepStatusText(s) }}
+                              span.cicd-step-duration(ng-if="s.duration") {{ vm.getStepDuration(s) }}
+                              span.cicd-step-progress(ng-if="s.status === 'in_progress' && s.progress_pct > 0")
+                                | {{ s.progress_pct }}%
+                            .cicd-step-progress-bar(ng-if="s.status === 'in_progress'")
+                              .cicd-step-progress-fill(ng-style="{width: s.progress_pct + '%'}")
+
+    .cicd-empty-state(ng-if="vm.runs.length === 0 && !vm.isLoading")
+      .cicd-empty-icon ⚙
+      h3.cicd-empty-title No CI/CD Runs Started
+      p.cicd-empty-description Click "Trigger Run" to start simulated CI/CD workflows
+      button.cicd-btn-primary(ng-click="vm.triggerRun()") Trigger Run

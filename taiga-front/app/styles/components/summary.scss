@@ -100,7 +100,7 @@ $summary-background: $grayer;
     position: relative;
     width: 15%;
     .current-progress {
-        background-color: $color-link-primary;
+        background-color: $color-solid-primary;
         height: 24px;
     }
     .defined-points {
@@ -115,7 +115,7 @@ $summary-background: $grayer;
         position: absolute;
     }
     .closed-points-progress {
-        background: $color-link-primary;
+        background: $color-solid-primary;
         height: 24px;
         position: absolute;
     }

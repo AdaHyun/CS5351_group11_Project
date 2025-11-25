@@ -1,3 +1,4 @@
+# taiga-back/taiga/cicd/views.py
 import json
 from django.http import JsonResponse
 from django.views import View
@@ -22,7 +23,7 @@ class CicdTriggerView(View):
                 except Exception:
                     payload = {}
             ref = payload.get("ref")
-            inputs = payload.get("inputs")
+            inputs = payload.get("inputs") or {}
             data = trigger_and_return_run(ref=ref, inputs=inputs)
             return JsonResponse(data, status=201)
         except Exception as e:

@@ -1,0 +1,50 @@
+{
+  "CICD": {
+    "PAGE_TITLE": "CI/CD Visualization",
+    "PAGE_DESCRIPTION": "Trigger and monitor your CI/CD workflows in real-time",
+    
+    "BRANCH_LABEL": "Branch",
+    "BRANCH_PLACEHOLDER": "Enter branch name (e.g., main, master)",
+    "BRANCH_HELP": "The Git branch to run the workflow on",
+    
+    "INPUTS_LABEL": "Workflow Inputs (JSON)",
+    "INPUTS_PLACEHOLDER": "{\n  \"input1\": \"value1\",\n  \"input2\": \"value2\"\n}",
+    "INPUTS_HELP": "Optional JSON inputs for the workflow",
+    
+    "TRIGGER_BUTTON": "Trigger Run",
+    "TRIGGER_LOADING": "Triggering...",
+    "TRIGGER_FIRST_RUN": "Trigger Your First Run",
+    "RESET_BUTTON": "Reset",
+    
+    "RETRY_BUTTON": "Retry",
+    "STOP_POLLING_BUTTON": "Stop Polling",
+    "REFRESH_BUTTON": "Refresh",
+    
+    "RUN_HEADER": "Current Run",
+    "RUN_ID": "Run ID:",
+    "BRANCH": "Branch:",
+    "RUN_URL": "Run URL:",
+    "VIEW_ON_GITHUB": "View on GitHub",
+    "STATUS": "Status:",
+    "OVERALL_PROGRESS": "Overall Progress:",
+    
+    "STARTED_AT": "Started",
+    "COMPLETED_AT": "Completed",
+    "STEPS_COMPLETED": "steps completed",
+    
+    "EMPTY_TITLE": "No runs yet",
+    "EMPTY_DESCRIPTION": "Trigger a CI/CD run to see the visualization here",
+    
+    "NO_JOBS_TITLE": "No jobs yet",
+    "NO_JOBS_DESCRIPTION": "Jobs will appear here once the run starts processing",
+    
+    "LOADING_MESSAGE": "Loading run details...",
+    
+    "STATUS_queued": "Queued",
+    "STATUS_in_progress": "In Progress",
+    "STATUS_completed": "Completed",
+    "STATUS_success": "Success",
+    "STATUS_failure": "Failed",
+    "STATUS_cancelled": "Cancelled"
+  }
+}

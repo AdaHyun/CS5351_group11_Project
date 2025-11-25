@@ -6,7 +6,7 @@
         @include font-type(bold);
         @include font-size(xsmall);
 
-        color: $color-link-primary;
+        color: $color-link-tertiary;
         margin-right: .5rem;
         text-transform: uppercase;
     }
@@ -27,6 +27,7 @@
         width: auto;
 
         span {
+            color: $color-link-red;
             display: block;
         }
     }

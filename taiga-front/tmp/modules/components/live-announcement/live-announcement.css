@@ -4,7 +4,7 @@
 /* Do not use this except for the main layout */
 .live-announcement {
   align-content: center;
-  background: #83EEDE;
+  background: #6191BD;
   display: flex;
   height: 0;
   justify-content: center;
@@ -48,7 +48,7 @@
     color: #2E3440; }
     .live-announcement-inner .warning a {
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-      color: #008AA8; }
+      color: #FFFFFF; }
       .live-announcement-inner .warning a:hover {
         color: #4C566A; }
   .live-announcement-inner .close {
@@ -59,7 +59,7 @@
     .live-announcement-inner .close svg {
       width: 2rem;
       height: 2rem;
-      fill: #008AA8;
+      fill: #FFFFFF;
       pointer-events: none;
       transition: fill .2s; }
       .live-announcement-inner .close svg:hover {

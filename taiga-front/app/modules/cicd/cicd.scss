@@ -1,0 +1,589 @@
+.cicd-view {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 1.25rem;
+}
+
+.cicd-error-bar {
+    align-items: center;
+    background-color: rgb(254, 238, 238);
+    border: .0625rem solid rgb(255, 204, 204);
+    border-radius: .375rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .1);
+    display: flex;
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+    padding: .75rem 1rem;
+}
+
+.cicd-error-content {
+    align-items: center;
+    display: flex;
+    gap: .75rem;
+    width: 100%;
+}
+
+.cicd-error-icon {
+    color: rgb(221, 0, 0);
+    flex-shrink: 0;
+    font-size: 1.125rem;
+}
+
+.cicd-error-message {
+    color: rgb(153, 0, 0);
+    flex: 1;
+    font-weight: 500;
+}
+
+.cicd-error-retry-btn {
+    background: rgb(221, 0, 0);
+    border: none;
+    border-radius: .25rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: .875rem;
+    padding: .375rem .75rem;
+
+    &:hover {
+        background: rgb(187, 0, 0);
+    }
+}
+
+.cicd-form-section {
+    background: rgb(248, 249, 250);
+    border: .0625rem solid rgb(233, 236, 239);
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.cicd-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.cicd-form-label {
+    color: rgb(51, 51, 51);
+    display: block;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.cicd-form-control {
+    border: .0625rem solid rgb(221, 221, 221);
+    border-radius: .25rem;
+    font-size: .875rem;
+    padding: .625rem .75rem;
+    transition: border-color .2s, box-shadow .2s;
+    width: 100%;
+
+    &:focus {
+        border-color: rgb(0, 123, 255);
+        box-shadow: 0 0 0 .1875rem rgba(0, 123, 255, .1);
+        outline: none;
+    }
+
+    &.ng-invalid.ng-touched {
+        border-color: rgb(220, 53, 69);
+    }
+}
+
+.cicd-form-text {
+    color: rgb(102, 102, 102);
+    font-size: .75rem;
+    margin-top: .25rem;
+}
+
+.cicd-form-actions {
+    align-items: center;
+    display: flex;
+    gap: .75rem;
+}
+
+.cicd-btn-primary {
+    background: rgb(0, 123, 255);
+    border: none;
+    border-radius: .25rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 500;
+    padding: .625rem 1.25rem;
+    transition: background-color .2s;
+
+    &:hover:not(:disabled) {
+        background: rgb(0, 86, 179);
+    }
+
+    &:disabled {
+        background: rgb(108, 117, 125);
+        cursor: not-allowed;
+        opacity: .6;
+    }
+
+    &[aria-busy='true'] {
+        color: transparent;
+        position: relative;
+
+        &::after {
+            animation: cicd-spin 1s linear infinite;
+            border: .125rem solid transparent;
+            border-radius: 50%;
+            border-top: .125rem solid rgb(255, 255, 255);
+            content: '';
+            height: 1rem;
+            left: 50%;
+            margin-left: -.5rem;
+            margin-top: -.5rem;
+            position: absolute;
+            top: 50%;
+            width: 1rem;
+        }
+    }
+}
+
+.cicd-btn-secondary {
+    background: rgb(108, 117, 125);
+    border: none;
+    border-radius: .25rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: .875rem;
+    padding: .625rem 1rem;
+
+    &:hover:not(:disabled) {
+        background: rgb(84, 91, 98);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .6;
+    }
+}
+
+.cicd-run-section {
+    background: rgb(255, 255, 255);
+    border: .0625rem solid rgb(233, 236, 239);
+    border-radius: .5rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .05);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.cicd-run-header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.cicd-run-title {
+    color: rgb(51, 51, 51);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cicd-run-actions {
+    align-items: center;
+    display: flex;
+    gap: .5rem;
+}
+
+.cicd-run-info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    margin-bottom: 1.25rem;
+}
+
+.cicd-run-info-item {
+    align-items: center;
+    display: flex;
+    font-size: .875rem;
+    min-height: 1.5rem;
+}
+
+.cicd-run-code {
+    background: rgb(248, 249, 250);
+    border-radius: .1875rem;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: .8125rem;
+    padding: .125rem .375rem;
+}
+
+.cicd-run-link {
+    color: rgb(0, 123, 255);
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.cicd-run-duration {
+    color: rgb(102, 102, 102);
+    font-size: .875rem;
+}
+
+.cicd-run-progress {
+    margin-top: 1rem;
+}
+
+.cicd-progress-label {
+    color: rgb(85, 85, 85);
+    display: flex;
+    font-size: .875rem;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.cicd-progress-bar {
+    background: rgb(233, 236, 239);
+    border-radius: .25rem;
+    height: .5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.cicd-progress-fill {
+    background: linear-gradient(90deg, rgb(40, 167, 69), rgb(32, 201, 151));
+    height: 100%;
+    position: relative;
+    transition: width .5s ease;
+
+    &::after {
+        animation: cicd-move 1s linear infinite;
+        background-image:
+            linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, .2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, .2) 50%,
+                rgba(255, 255, 255, .2) 75%,
+                transparent 75%,
+                transparent
+            );
+        background-size: 1.25rem 1.25rem;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.cicd-job-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cicd-job-card {
+    background: rgb(255, 255, 255);
+    border: .0625rem solid rgb(233, 236, 239);
+    border-radius: .5rem;
+    box-shadow: 0 .0625rem .1875rem rgba(0, 0, 0, .05);
+    padding: 1.25rem;
+    transition: box-shadow .2s;
+
+    &:hover {
+        box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .1);
+    }
+}
+
+.cicd-job-card-queued {
+    border-left: .25rem solid rgb(255, 193, 7);
+}
+
+.cicd-job-card-in-progress {
+    border-left: .25rem solid rgb(23, 162, 184);
+}
+
+.cicd-job-card-completed {
+    border-left: .25rem solid rgb(40, 167, 69);
+}
+
+.cicd-job-header {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cicd-job-title {
+    flex: 1;
+    min-width: 12.5rem;
+}
+
+.cicd-job-name {
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+}
+
+.cicd-job-status {
+    margin-top: .5rem;
+}
+
+.cicd-job-meta {
+    color: rgb(102, 102, 102);
+    font-size: .75rem;
+    text-align: right;
+}
+
+.cicd-job-times {
+    line-height: 1.4;
+    margin-bottom: .375rem;
+}
+
+.cicd-job-progress-text {
+    font-weight: 500;
+}
+
+.cicd-job-progress-bar {
+    background: rgb(233, 236, 239);
+    border-radius: .1875rem;
+    height: .375rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.cicd-job-progress-fill {
+    background: linear-gradient(90deg, rgb(23, 162, 184), rgb(111, 66, 193));
+    height: 100%;
+    transition: width .5s ease;
+}
+
+.cicd-job-steps {
+    border-top: .0625rem solid rgb(248, 249, 250);
+    padding-top: .75rem;
+}
+
+.cicd-step-item {
+    align-items: center;
+    border-bottom: .0625rem solid rgb(248, 249, 250);
+    display: flex;
+    padding: .625rem 0;
+    transition: background-color .2s;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.cicd-step-item-current {
+    background: rgb(248, 249, 250);
+    border-left: .1875rem solid rgb(23, 162, 184);
+    border-radius: .375rem;
+    margin: 0 -.5rem;
+    padding: .625rem .5rem;
+}
+
+.cicd-step-icon {
+    flex-shrink: 0;
+    font-size: .875rem;
+    margin-right: .75rem;
+    text-align: center;
+    width: 1.5rem;
+}
+
+.cicd-step-content {
+    flex: 1;
+}
+
+.cicd-step-name {
+    color: rgb(51, 51, 51);
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+
+.cicd-step-meta {
+    align-items: center;
+    color: rgb(102, 102, 102);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .75rem;
+    gap: 1rem;
+    margin-bottom: .25rem;
+}
+
+.cicd-step-progress-bar {
+    background: rgb(233, 236, 239);
+    border-radius: .1875rem;
+    height: .375rem;
+    margin-top: .5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.cicd-step-progress-fill {
+    background: linear-gradient(90deg, rgb(23, 162, 184), rgb(111, 66, 193));
+    height: 100%;
+    transition: width .3s ease;
+}
+
+.cicd-empty-state {
+    background: rgb(255, 255, 255);
+    border: .0625rem solid rgb(233, 236, 239);
+    border-radius: .5rem;
+    color: rgb(102, 102, 102);
+    padding: 3.75rem 1.25rem;
+    text-align: center;
+}
+
+.cicd-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: .5;
+}
+
+.cicd-empty-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+}
+
+.cicd-empty-description {
+    font-size: .875rem;
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+}
+
+.cicd-status-badge {
+    border-radius: .75rem;
+    font-size: .6875rem;
+    font-weight: 600;
+    letter-spacing: .03125rem;
+    padding: .25rem .625rem;
+    text-transform: uppercase;
+}
+
+.cicd-status-queued {
+    background: rgb(255, 243, 205);
+    color: rgb(133, 100, 4);
+}
+
+.cicd-status-in-progress {
+    background: rgb(209, 236, 241);
+    color: rgb(12, 84, 96);
+}
+
+.cicd-status-completed {
+    background: rgb(212, 237, 218);
+    color: rgb(21, 87, 36);
+}
+
+.cicd-status-success {
+    background: rgb(212, 237, 218);
+    color: rgb(21, 87, 36);
+}
+
+.cicd-status-failure {
+    background: rgb(248, 215, 218);
+    color: rgb(114, 28, 36);
+}
+
+.cicd-status-cancelled {
+    background: rgb(226, 227, 229);
+    color: rgb(56, 61, 65);
+}
+
+.cicd-step-queued .cicd-step-icon {
+    color: rgb(255, 193, 7);
+}
+
+.cicd-step-in-progress .cicd-step-icon {
+    animation: cicd-pulse 1.5s infinite;
+    color: rgb(23, 162, 184);
+}
+
+.cicd-step-completed .cicd-step-icon {
+    color: rgb(40, 167, 69);
+}
+
+.cicd-step-failure .cicd-step-icon {
+    color: rgb(220, 53, 69);
+}
+
+.cicd-step-cancelled .cicd-step-icon {
+    color: rgb(108, 117, 125);
+}
+
+@keyframes cicd-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cicd-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+@keyframes cicd-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 1.25rem 0;
+    }
+}
+
+@media (max-width: 48rem) {
+    .cicd-view {
+        padding: 1rem;
+    }
+
+    .cicd-run-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .cicd-job-header {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .cicd-job-meta {
+        text-align: left;
+        width: 100%;
+    }
+
+    .cicd-run-info {
+        grid-template-columns: 1fr;
+    }
+
+    .cicd-form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .cicd-btn-primary,
+    .cicd-btn-secondary {
+        width: 100%;
+    }
+}

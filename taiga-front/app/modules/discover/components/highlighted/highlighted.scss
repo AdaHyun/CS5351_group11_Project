@@ -97,8 +97,9 @@
 .filter-highlighted {
     position: relative;
     .current-filter {
+        background-color: $color-link-red;
         display: flex;
-        padding: 1rem;
+        padding: .5rem;
         span {
             margin-left: .2rem;
             position: relative;
@@ -125,6 +126,7 @@
         overflow: unset;
 
         li {
+            background-color: $color-gray400;
             cursor: pointer;
         }
 

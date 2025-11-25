@@ -4,7 +4,7 @@
 %button {
     @include font-size(small);
     align-items: center;
-    background-color: $color-solid-primary;
+    background-color: $color-gray400;
     border: 0;
     border-radius: 4px;
     color: $color-black900;
@@ -19,7 +19,7 @@
     &[variant='destructive']:disabled,
     &:hover {
         background-color: $color-link-primary;
-        color: $color-white;
+        color: $color-gray400;
     }
     &[variant='primary']:disabled,
     &[variant='secondary']:disabled,
@@ -58,7 +58,7 @@
     }
     &[variant='secondary'] {
         background-color: $color-gray400;
-        color: $color-black600;
+        color: $color-gray100;
         transition: all .3s linear;
     }
     &[variant='destructive'] {
@@ -80,7 +80,7 @@
     padding: .5rem;
     &[variant='primary'] {
         background-color: $color-solid-primary;
-        color: $color-black900;
+        color: $color-link-primary;
     }
     &[variant='secondary'] {
         background-color: $color-gray400;
@@ -149,13 +149,13 @@
 
 .btn-filter {
     @extend %button;
-    background-color: $color-gray100;
+    background-color: $color-link-red;
     color: $color-link-primary;
     padding: .5rem .5rem;
     text-transform: none;
     &.active,
     &:hover {
-        background-color: $color-gray400;
+        background-color: $color-solid-primary;
         color: $color-link-primary;
     }
     & tg-svg {
@@ -188,13 +188,13 @@
         fill: currentColor;
     }
     &:hover {
-        background-color: $color-gray300;
+        background-color: $color-gray400;
         color: $color-link-primary;
     }
     &[variant='blocked'] {
         &:hover {
             background-color: rgba($color-link-red, .25);
-            color: $color-black900;
+            color: $color-link-primary;
         }
     }
 }

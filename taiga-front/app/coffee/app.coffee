@@ -181,7 +181,7 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
             templateUrl: "projects/project/project.html",
             loader: true,
             controller: "Project",
-            controllerAs: "vm"
+            controllerAs: "vm",
             section: "project-timeline"
         }
     )
@@ -490,6 +490,19 @@ configure = ($routeProvider, $locationProvider, $httpProvider, $provide, $tgEven
             },
             controller: "Profile",
             controllerAs: "vm"
+        }
+    )
+
+    # CICD 可视化页面
+    $routeProvider.when("/cicd",
+        {
+            templateUrl: "cicd/cicd.html",
+            controller: "CICDController",
+            controllerAs: "vm",
+            access: {
+                requiresLogin: true
+            },
+            loader: true
         }
     )
 
@@ -1087,7 +1100,10 @@ modules = [
     "taigaNotifications",
     "taigaWikiHistory",
     "taigaEpics",
-    "taigaUtils"
+    "taigaUtils",
+
+    # CICD 模块
+    "taigaCICD",
 
     # template cache
     "templates",
@@ -1138,4 +1154,9 @@ module.run([
     "$tgConfig",
     "tgProjectService",
     init
+])
+
+angular.module("taigaCICD", [
+  "taigaBase",
+  "taigaResources"
 ])

@@ -11,7 +11,7 @@
     $arrow-height: 15px,
     $align: '',
     $background-color: $color-white,
-    $text-color: $color-link-primary,
+    $text-color: $color-solid-primary,
     $hover-text-color: $color-link-tertiary,
     $hover-background: $color-gray200,
     $padding: .5rem,
@@ -93,7 +93,7 @@
     }
     a.active {
         background: $color-link-primary;
-        color: $color-white;
+        color: $color-link-red;
     }
     .point {
         align-items: center;

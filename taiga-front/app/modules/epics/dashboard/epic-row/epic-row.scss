@@ -51,7 +51,7 @@
             &:hover {
                 .ref,
                 .subject {
-                    color: $color-link-primary;
+                    color: $color-link-red;
                 }
             }
         }
@@ -113,7 +113,7 @@
         width: 100%;
     }
     .progress-status {
-        background-color: $color-link-primary;
+        background-color: $color-solid-primary;
         width: 10vw;
     }
     .assigned {

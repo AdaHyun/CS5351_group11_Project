@@ -91,8 +91,8 @@
     fill: #70728F; }
 
 .profile-bar .profile-stats {
-  border-bottom: 1px solid #E2E3E9;
-  border-top: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
+  border-top: 1px solid #edcebf;
   color: #5A5B72;
   display: flex;
   justify-content: space-between;

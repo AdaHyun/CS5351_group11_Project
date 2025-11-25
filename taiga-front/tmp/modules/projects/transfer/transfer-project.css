@@ -19,8 +19,8 @@
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif; }
   .transfer-project-detail {
     align-items: center;
-    border-bottom: 1px solid #D8DEE9;
-    border-top: 1px solid #D8DEE9;
+    border-bottom: 1px solid #8F3D38;
+    border-top: 1px solid #8F3D38;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,7 +44,7 @@
       fill: #4C566A;
       margin-right: .25rem; }
   .transfer-project-comment-link {
-    color: #008AA8;
+    color: #FFFFFF;
     cursor: pointer;
     display: block;
     margin-bottom: 1rem; }
@@ -55,7 +55,7 @@
       cursor: pointer;
       fill: #4C566A; }
       .transfer-project-comment-header .icon-close:hover {
-        fill: #E44057;
+        fill: #8F3D38;
         transition: fill .2s; }
   .transfer-project-comment-form.ng-enter {
     animation: dropdownFade .2s; }

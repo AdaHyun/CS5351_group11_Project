@@ -18,7 +18,7 @@
     align-items: center;
     background: #E5E9F0;
     border-radius: 3px;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     justify-content: center;
     min-height: 2rem;
@@ -26,16 +26,16 @@
     padding: 0 .5rem;
     transition: all .3s linear; }
   .paginator tg-svg {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .paginator a:hover {
-    background: #008AA8;
-    color: #FFFFFF;
+    background: #4B70F6;
+    color: #EBE6D9;
     transition: all .3s linear; }
     .paginator a:hover tg-svg {
-      fill: #FFFFFF; }
+      fill: #EBE6D9; }
   .paginator .active span {
     background: #F9F9FB;
     color: #70728F; }
   .paginator .dots span {
-    background: #FFFFFF;
+    background: #EBE6D9;
     color: #70728F; }

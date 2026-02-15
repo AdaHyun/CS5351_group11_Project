@@ -36,7 +36,7 @@
 .project-values-title {
   align-content: center;
   align-items: center;
-  background: #D8DEE9;
+  background: #8F3D38;
   display: flex;
   justify-content: space-between;
   padding: .8em 1rem;
@@ -89,7 +89,7 @@
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
     background: #2E3440;
-    border: 1px solid #D8DEE9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     bottom: 2rem;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
@@ -143,16 +143,16 @@
       display: flex;
       justify-content: center; }
     .admin-swimlanes-manager .admin-swimlane-item .admin-swimlane-item-drag {
-      fill: #008AA8;
+      fill: #4B70F6;
       margin-inline-end: 1rem; }
     .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled] {
       background: none; }
       .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled] .icon {
-        fill: #D8DEE9; }
+        fill: #8F3D38; }
     .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled]:hover {
       background: none; }
       .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane[disabled]:hover .icon {
-        fill: #D8DEE9; }
+        fill: #8F3D38; }
     .admin-swimlanes-manager .admin-swimlane-item .delete-swimlane:hover .icon {
       fill: #E44057; }
     .admin-swimlanes-manager .admin-swimlane-item:hover {
@@ -168,7 +168,7 @@
       fill: none;
       height: 13px;
       margin-inline-end: .25rem;
-      stroke: #D8DEE9;
+      stroke: #8F3D38;
       width: 13px; }
     .admin-swimlanes-manager .btn-default-swimlane .btn-default-swimlane-icon.default .icon {
       fill: rgba(246, 201, 92, 0.25);
@@ -185,9 +185,9 @@
   width: 500px; }
   .admin-wip-manager .admin-swimlane-title {
     align-items: center;
-    background: #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
-    box-shadow: 4px 4px 4px rgba(216, 222, 233, 0.5);
+    background: #EBE6D9;
+    border-bottom: 1px solid #EBE6D9;
+    box-shadow: 4px 4px 4px rgba(143, 61, 56, 0.5);
     display: flex;
     margin-bottom: 1px;
     padding: .625rem 1rem;
@@ -205,14 +205,14 @@
     .admin-wip-manager .admin-swimlane-title:hover .title-name {
       color: #4C566A; }
     .admin-wip-manager .admin-swimlane-title tg-svg {
-      fill: #008AA8;
+      fill: #4B70F6;
       height: 1rem;
       transition: all .6 ease;
       width: 1rem; }
     .admin-wip-manager .admin-swimlane-title .title-name {
       font-size: .875rem;
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-      color: #008AA8;
+      color: #4B70F6;
       flex: 1 1 auto;
       margin-bottom: 0;
       margin-right: .75rem;

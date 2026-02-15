@@ -39,7 +39,7 @@
     .lightbox-create-epic .settings fieldset {
       margin-right: .5rem; }
       .lightbox-create-epic .settings fieldset:hover {
-        color: #FFFFFF;
+        color: #EBE6D9;
         transition: all .2s ease-in;
         transition-delay: .2s; }
       .lightbox-create-epic .settings fieldset:last-child {
@@ -47,13 +47,13 @@
     .lightbox-create-epic .settings input {
       display: none; }
       .lightbox-create-epic .settings input:checked + label {
-        background: #008AA8;
-        border: 1px solid #008AA8;
+        background: #4B70F6;
+        border: 1px solid #4B70F6;
         color: #fff; }
       .lightbox-create-epic .settings input:checked + .blocked {
         background: #E44057;
         border: 1px solid #E44057;
-        color: #FFFFFF; }
+        color: #EBE6D9; }
   .lightbox-create-epic label {
     font-size: .875rem;
     background: #F9F9FB;
@@ -67,9 +67,9 @@
     text-transform: none;
     transition: all .2s ease-in; }
     .lightbox-create-epic label:hover {
-      background: #008AA8;
-      border: 1px solid #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      border: 1px solid #4B70F6;
+      color: #EBE6D9; }
     .lightbox-create-epic label.blocked:hover {
       background: #E44057;
       border: 1px solid #E44057; }

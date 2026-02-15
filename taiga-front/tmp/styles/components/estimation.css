@@ -31,11 +31,11 @@
 .ticket-estimation .popover {
   font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
   font-size: .875rem;
-  background: #FFFFFF;
-  border: 1px solid #D8DEE9;
+  background: #EBE6D9;
+  border: 1px solid #8F3D38;
   border-radius: 4px;
   box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-  color: #008AA8;
+  color: #4B70F6;
   display: none;
   left: 0.5rem;
   list-style-type: none;
@@ -66,10 +66,10 @@
   .ticket-estimation .popover.horizontal a {
     width: 100%; }
     .ticket-estimation .popover.horizontal a.active {
-      color: #FFFFFF; }
+      color: #EBE6D9; }
   .ticket-estimation .popover.horizontal .point {
     align-items: center;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     height: auto;
     justify-content: flex-start;
@@ -85,11 +85,11 @@
     margin: 0;
     padding: 0; }
   .ticket-estimation .popover a.active {
-    background: #008AA8;
-    color: #FFFFFF; }
+    background: #4B70F6;
+    color: #EBE6D9; }
   .ticket-estimation .popover .point {
     align-items: center;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     height: 2.5rem;
     justify-content: center;
@@ -103,7 +103,7 @@
   .ticket-estimation .popover .type,
   .ticket-estimation .popover .role {
     align-items: center;
-    color: #008AA8;
+    color: #4B70F6;
     display: flex;
     min-height: 1.5rem;
     overflow: hidden;
@@ -117,7 +117,7 @@
     .ticket-estimation .popover .role:hover {
       transition: all .25s ease; }
   .ticket-estimation .popover::before {
-    background: #FFFFFF;
+    background: #EBE6D9;
     content: '';
     height: 10px;
     left: 10px;
@@ -138,11 +138,11 @@
   .ticket-estimation .popover.fix {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     left: -160px;
     list-style-type: none;
@@ -173,10 +173,10 @@
     .ticket-estimation .popover.fix.horizontal a {
       width: 100%; }
       .ticket-estimation .popover.fix.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .ticket-estimation .popover.fix.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -192,11 +192,11 @@
       margin: 0;
       padding: 0; }
     .ticket-estimation .popover.fix a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .ticket-estimation .popover.fix .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -210,7 +210,7 @@
     .ticket-estimation .popover.fix .type,
     .ticket-estimation .popover.fix .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -224,7 +224,7 @@
       .ticket-estimation .popover.fix .role:hover {
         transition: all .25s ease; }
     .ticket-estimation .popover.fix::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 10px;
       left: 90%;

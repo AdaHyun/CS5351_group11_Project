@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .search-list .show-closed {
-  color: #008AA8;
+  color: #4B70F6;
   float: right; }
   .search-list .show-closed span {
     font-size: .9em;
@@ -16,8 +16,8 @@
       fill: currentColor; }
 
 .search-list ul {
-  background: #FFFFFF;
-  border: 2px solid #D8DEE9;
+  background: #EBE6D9;
+  border: 2px solid #8F3D38;
   border-radius: 3px;
   height: 200px;
   margin: .5em 0 0;
@@ -31,10 +31,10 @@
   cursor: pointer;
   padding: .25em .5em; }
   .search-list .choice.selected {
-    background: #008AA8;
-    color: #FFFFFF; }
+    background: #4B70F6;
+    color: #EBE6D9; }
     .search-list .choice.selected .info {
-      color: #FFFFFF; }
+      color: #EBE6D9; }
   .search-list .choice[disabled] {
     color: #A9AABC;
     cursor: not-allowed; }

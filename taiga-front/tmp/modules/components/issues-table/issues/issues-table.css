@@ -8,7 +8,7 @@
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
     background: #2E3440;
-    border: 1px solid #D8DEE9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
     color: #F9F9FB;
@@ -53,18 +53,18 @@
       display: flex;
       justify-content: center; }
       .issues-table .title [data-fieldname]:hover {
-        color: #008AA8; }
+        color: #4B70F6; }
     .issues-table .title .issue-field {
       justify-content: flex-end; }
     .issues-table .title .subject {
       justify-content: flex-start; }
     .issues-table .title .icon-arrow-up .arrow-up {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     .issues-table .title .icon-arrow-down .arrow-down {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     .issues-table .title .arrow-up,
     .issues-table .title .arrow-down {
-      fill: #D8DEE9; }
+      fill: #8F3D38; }
   .issues-table .row:not(.title) {
     font-size: .875rem;
     background: #F9F9FB;
@@ -152,10 +152,10 @@
     .issues-table .subject:hover .issue-ref {
       color: #2E3440; }
     .issues-table .subject:hover .issue-subject {
-      color: #008AA8; }
+      color: #4B70F6; }
     .issues-table .subject .issue-ref {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       margin-inline-end: 1ch; }
     .issues-table .subject .issue-subject {
@@ -231,12 +231,12 @@
         height: 32px;
         width: 32px; }
     .issues-table .assigned-field .icon {
-      fill: #008AA8;
+      fill: #4B70F6;
       margin-left: .25rem; }
   .issues-table .options-field {
     flex-basis: 16px; }
     .issues-table .options-field .icon {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     .issues-table .options-field .options-button {
       background: none;
       height: 24px;
@@ -250,11 +250,11 @@
   .issues-table .pop-status {
     font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
     font-size: .875rem;
-    background: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
     box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
-    color: #008AA8;
+    color: #4B70F6;
     display: none;
     left: auto;
     list-style-type: none;
@@ -285,10 +285,10 @@
     .issues-table .pop-status.horizontal a {
       width: 100%; }
       .issues-table .pop-status.horizontal a.active {
-        color: #FFFFFF; }
+        color: #EBE6D9; }
     .issues-table .pop-status.horizontal .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: auto;
       justify-content: flex-start;
@@ -304,11 +304,11 @@
       margin: 0;
       padding: 0; }
     .issues-table .pop-status a.active {
-      background: #008AA8;
-      color: #FFFFFF; }
+      background: #4B70F6;
+      color: #EBE6D9; }
     .issues-table .pop-status .point {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       height: 2.5rem;
       justify-content: center;
@@ -322,7 +322,7 @@
     .issues-table .pop-status .type,
     .issues-table .pop-status .role {
       align-items: center;
-      color: #008AA8;
+      color: #4B70F6;
       display: flex;
       min-height: 1.5rem;
       overflow: hidden;
@@ -336,7 +336,7 @@
       .issues-table .pop-status .role:hover {
         transition: all .25s ease; }
     .issues-table .pop-status::before {
-      background: #FFFFFF;
+      background: #EBE6D9;
       content: '';
       height: 15px;
       position: absolute;
@@ -356,10 +356,10 @@
       bottom: 0;
       top: auto; }
   .issues-table .options {
-    background-color: #FFFFFF;
-    border: 1px solid #D8DEE9;
+    background-color: #EBE6D9;
+    border: 1px solid #8F3D38;
     border-radius: 4px;
-    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5);
+    box-shadow: 4px 4px 8px rgba(143, 61, 56, 0.5);
     padding: .5rem;
     position: absolute;
     right: 0;
@@ -369,7 +369,7 @@
   .issues-table .option {
     font-size: .875rem;
     background: transparent;
-    color: #008AA8;
+    color: #4B70F6;
     cursor: pointer;
     display: flex;
     padding: .25rem;

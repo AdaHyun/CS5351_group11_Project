@@ -7,7 +7,7 @@
   margin-bottom: 2rem; }
   .working-on .duty-single,
   .watching .duty-single {
-    border-bottom: 1px solid #D8DEE9;
+    border-bottom: 1px solid #8F3D38;
     cursor: pointer;
     transition: background .2s; }
     .working-on .duty-single:hover,

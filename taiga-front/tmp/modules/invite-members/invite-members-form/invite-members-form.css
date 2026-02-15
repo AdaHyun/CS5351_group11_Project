@@ -3,14 +3,14 @@
 ***********************/
 /* Do not use this except for the main layout */
 .invite-members-form {
-  border-top: 1px solid #E2E3E9;
+  border-top: 1px solid #edcebf;
   margin: 0 5rem; }
   .invite-members-form .invite-members-form-list {
     margin: 0;
     margin-bottom: 1rem; }
   .invite-members-form .invite-members-single {
     align-items: center;
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     display: flex;
     justify-content: space-between;
     padding: 1rem; }

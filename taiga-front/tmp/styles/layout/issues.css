@@ -30,7 +30,7 @@
 .issue-container {
   display: flex; }
   .issue-container .filters-bar {
-    background-color: #FFFFFF;
+    background-color: #EBE6D9;
     padding-inline-end: 1rem;
     position: sticky;
     top: 115px;
@@ -54,13 +54,13 @@
     display: none; }
 
 .issue-header {
-  background: #FFFFFF;
+  background: #EBE6D9;
   padding-block-end: 1rem; }
   .issue-header .button-filter {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: 0; }
     .issue-header .button-filter svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
   .issue-header .btn-small {
     margin-right: 1rem; }
 

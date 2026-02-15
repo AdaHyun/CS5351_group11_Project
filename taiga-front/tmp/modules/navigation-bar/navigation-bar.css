@@ -3,7 +3,7 @@
 ***********************/
 /* Do not use this except for the main layout */
 .navbar {
-  background-color: #D8DEE9;
+  background-color: #8F3D38;
   display: flex;
   height: 48px;
   justify-content: space-between;
@@ -53,11 +53,11 @@
     .navbar .nav-right svg {
       width: 1.3rem;
       height: 1.3rem;
-      fill: #008AA8;
+      fill: #4B70F6;
       margin-top: .25rem;
       transition: all .2s linear; }
     .navbar .nav-right [tg-dropdown-notifications] svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
     .navbar .nav-right [tg-dropdown-notifications]:hover svg {
       fill: #70728F; }
   .navbar .nav-right > a,
@@ -233,7 +233,7 @@
     top: 0;
     width: 20px; }
   100% {
-    background: #25A28C; } }
+    background: #4B70F6; } }
 
 .topnav-dropdown-wrapper {
   height: 100%;
@@ -313,7 +313,7 @@
       color: #4C566A;
       cursor: default; }
     .topnav-dropdown-wrapper .navbar-dropdown-notifications .action:not(.disabled) {
-      color: #008AA8; }
+      color: #4B70F6; }
     .topnav-dropdown-wrapper .navbar-dropdown-notifications .action:not(.disabled):hover {
       color: #4C566A; }
     .topnav-dropdown-wrapper .navbar-dropdown-notifications .notifications-list {

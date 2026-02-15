@@ -74,7 +74,7 @@ body {
     cursor: auto; }
 
 .kanban-table-header {
-  background: #FFFFFF;
+  background: #EBE6D9;
   flex-basis: 2.75rem;
   min-height: 2.75rem;
   position: relative;
@@ -89,7 +89,7 @@ body {
   .kanban-table-header .task-colum-name {
     font-size: 1rem;
     align-items: center;
-    background-color: #D8DEE9;
+    background-color: #8F3D38;
     border-radius: 4px 4px 0 0;
     color: #5A5B72;
     display: flex;
@@ -136,20 +136,20 @@ body {
 
 @keyframes new-us-status-blink-folded-column {
   0% {
-    background-color: #D8DEE9; }
+    background-color: #8F3D38; }
   100% {
     background-color: #F9F9FB; } }
 
 @keyframes new-us-status-blink {
   0% {
-    background-color: #D8DEE9; }
+    background-color: #8F3D38; }
   100% {
     background-color: #ECEFF4; } }
 
 @keyframes kanban-move-animation {
   0%,
   100% {
-    box-shadow: 4px 4px 8px rgba(216, 222, 233, 0.5); }
+    box-shadow: 4px 4px 8px rgba(143, 61, 56, 0.5); }
   25%,
   75% {
     box-shadow: 0 0 8px 3px rgba(131, 238, 222, 0.5); } }
@@ -181,7 +181,7 @@ body {
     .kanban-table-body .taskboard-column.vfold.new {
       animation: new-us-status-blink-folded-column .5s ease-in 2; }
     .kanban-table-body .taskboard-column.target-drop {
-      background-color: #D8DEE9; }
+      background-color: #8F3D38; }
       .kanban-table-body .taskboard-column.target-drop .ammount {
         background-color: #fff; }
     .kanban-table-body .taskboard-column .kanban-column-intro {
@@ -218,7 +218,7 @@ body {
   .kanban-table-body .kanban-uses-box {
     background-color: #ECEFF4; }
   .kanban-table-body .kanban-task-selected.card:not(.gu-transit-multi) {
-    box-shadow: 0 0 0 1px #5CBAA9, 2px 2px 4px #c5c7d3; }
+    box-shadow: 0 0 0 1px #5CBAA9, 2px 2px 4px #e2b097; }
   .kanban-table-body .kanban-moved {
     animation: kanban-move-animation 1s ease 0s 1 normal forwards; }
 
@@ -227,14 +227,14 @@ body {
   flex-wrap: nowrap; }
 
 .card-transit-multi {
-  background: #dcdde5;
-  border: 1px dashed #cbcdd7;
+  background: #ebc8b7;
+  border: 1px dashed #e4b69f;
   display: none;
   opacity: 1;
   padding: 1rem; }
   .card-transit-multi .fake-img,
   .card-transit-multi .fake-text {
-    background: #cbcdd7; }
+    background: #e4b69f; }
   .card-transit-multi .fake-us {
     display: flex;
     margin-bottom: 1rem; }
@@ -297,9 +297,9 @@ body {
 
 .kanban-swimlane-title {
   align-items: center;
-  background: #FFFFFF;
+  background: #EBE6D9;
   border: 1px solid transparent;
-  border-bottom: solid 1px #FFFFFF;
+  border-bottom: solid 1px #EBE6D9;
   display: flex;
   max-width: var(--kanban-width);
   padding: .625rem 1rem;
@@ -326,7 +326,7 @@ body {
     color: #4C566A; }
   .kanban-swimlane-title .unfold-action,
   .kanban-swimlane-title .fold-action {
-    fill: #008AA8;
+    fill: #4B70F6;
     height: 16px;
     margin-right: .75rem;
     transition: all .6 ease;
@@ -334,7 +334,7 @@ body {
   .kanban-swimlane-title .title-name {
     font-size: .875rem;
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-    color: #008AA8;
+    color: #4B70F6;
     margin-bottom: 0;
     margin-right: .75rem;
     transition: all .6 ease; }
@@ -343,7 +343,7 @@ body {
   .kanban-swimlane-title .unclassified-us-info {
     position: relative; }
     .kanban-swimlane-title .unclassified-us-info tg-svg {
-      fill: #D8DEE9; }
+      fill: #8F3D38; }
     .kanban-swimlane-title .unclassified-us-info:hover tg-svg {
       fill: #2E3440; }
     .kanban-swimlane-title .unclassified-us-info:hover .tooltip {
@@ -352,7 +352,7 @@ body {
       font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
       font-size: .875rem;
       background: #2E3440;
-      border: 1px solid #D8DEE9;
+      border: 1px solid #8F3D38;
       border-radius: 4px;
       box-shadow: 4px 4px 8px rgba(46, 52, 64, 0.1);
       color: #F9F9FB;
@@ -445,7 +445,7 @@ body {
   .kanban-swimlane .kanban-table-inner {
     position: relative; }
     .kanban-swimlane .kanban-table-inner::before {
-      box-shadow: inset 0 4px 8px rgba(216, 222, 233, 0.5);
+      box-shadow: inset 0 4px 8px rgba(143, 61, 56, 0.5);
       content: '';
       height: 100%;
       left: 0;
@@ -479,9 +479,9 @@ body {
     fill: #70728F;
     margin-right: 1rem; }
   .kanban-swimlane-add:hover {
-    background: #D8DEE9; }
+    background: #8F3D38; }
     .kanban-swimlane-add:hover span {
-      color: #008AA8; }
+      color: #4B70F6; }
     .kanban-swimlane-add:hover .add-action {
-      border-color: #008AA8;
-      fill: #008AA8; }
+      border-color: #4B70F6;
+      fill: #4B70F6; }

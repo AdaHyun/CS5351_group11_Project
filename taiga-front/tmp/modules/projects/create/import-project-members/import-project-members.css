@@ -26,8 +26,8 @@
     max-width: 3rem; }
   .import-project-members-row {
     align-items: center;
-    border-bottom: 1px solid #E2E3E9;
-    border-top: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
+    border-top: 1px solid #edcebf;
     display: flex;
     justify-content: space-between;
     padding: .5rem 0; }
@@ -40,7 +40,7 @@
   .import-project-members-username {
     margin-left: 1rem; }
   .import-project-members .avatar.empty {
-    background-color: #E2E3E9;
+    background-color: #edcebf;
     line-height: 3rem;
     text-align: center;
     width: 3rem; }
@@ -65,13 +65,13 @@
         width: 0.75rem;
         height: 0.75rem; }
     .import-project-members-match-true {
-      border: 1px solid #25A28C;
+      border: 1px solid #4B70F6;
       margin: 0 .1rem 0 .25rem;
       transition: background .2s; }
       .import-project-members-match-true:hover {
         background: rgba(92, 186, 169, 0.3); }
       .import-project-members-match-true svg {
-        fill: #25A28C; }
+        fill: #4B70F6; }
     .import-project-members-match-false {
       border: 1px solid #FF6363;
       margin: 0 .25rem 0 .1rem;
@@ -81,7 +81,7 @@
       .import-project-members-match-false svg {
         fill: #FF6363; }
   .import-project-members-choose {
-    color: #25A28C;
+    color: #4B70F6;
     padding-right: 0;
     text-transform: lowercase; }
     .import-project-members-choose:hover {

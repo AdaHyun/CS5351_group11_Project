@@ -30,7 +30,7 @@
     .duty-custom-fields .custom-field-options svg {
       fill: #70728F; }
       .duty-custom-fields .custom-field-options svg:hover {
-        fill: #25A28C; }
+        fill: #4B70F6; }
   .duty-custom-fields .custom-field-data {
     display: flex;
     flex-direction: column;
@@ -64,8 +64,8 @@
     width: 100%; }
   .duty-custom-fields .read-mode .ck.ck-editor__main > .ck-editor__editable,
   .duty-custom-fields .read-mode .markdown {
-    background: #FFFFFF;
-    border: 2px solid #D8DEE9;
+    background: #EBE6D9;
+    border: 2px solid #8F3D38;
     border-radius: 3px;
     margin: 0;
     min-height: 140px;
@@ -95,7 +95,7 @@
     .custom-fields-body .custom-attribute:nth-child(odd) {
       padding: 0; }
   .custom-fields-body .custom-field-single {
-    border-bottom: 1px solid #E2E3E9;
+    border-bottom: 1px solid #edcebf;
     display: grid;
     grid-template-areas: '. .';
     grid-template-columns: 20% 80%;

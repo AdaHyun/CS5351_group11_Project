@@ -19,13 +19,13 @@
     "privacyPolicyUrl": null,
     "termsOfServiceUrl": null,
     "maxUploadFileSize": null,
-    "contribPlugins": ["plugins/github-auth/github-auth.json"],
+    "contribPlugins": [],
     "tagManager": {
         "accountId": null
     },
     "tribeHost": null,
     "enableAsanaImporter": false,
-    "enableGithubImporter": true,
+    "enableGithubImporter": false,
     "enableJiraImporter": false,
     "enableTrelloImporter": false,
     "gravatar": false,

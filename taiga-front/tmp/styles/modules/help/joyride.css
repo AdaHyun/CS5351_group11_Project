@@ -3,8 +3,8 @@
 ***********************/
 /* Do not use this except for the main layout */
 .introjs-overlay {
-  background: radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.2) 0, rgba(226, 227, 233, 0.2) 100%);
-  background-color: #E2E3E9; }
+  background: radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.2) 0, rgba(237, 206, 191, 0.2) 100%);
+  background-color: #edcebf; }
 
 .introjs-helperLayer {
   border: 1px solid rgba(92, 186, 169, 0.8); }
@@ -26,7 +26,7 @@
   background: #5CBAA9; }
 
 .introjs-button {
-  background-color: #25A28C;
+  background-color: #4B70F6;
   background-image: none;
   border: 0;
   border-radius: 0;

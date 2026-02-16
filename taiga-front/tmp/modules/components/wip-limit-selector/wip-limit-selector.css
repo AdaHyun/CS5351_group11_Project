@@ -38,15 +38,15 @@ tg-wip-limit-selector .wip-limit-status-form {
   justify-content: flex-end; }
 
 tg-wip-limit-selector .wip-limit-status-data .form-button .icon {
-  fill: #D8DEE9; }
+  fill: #8F3D38; }
 
 tg-wip-limit-selector .wip-limit-status-data .form-button:hover .icon {
-  fill: #008AA8; }
+  fill: #4B70F6; }
 
 tg-wip-limit-selector .wip-limit-status-form-input {
   font-size: .875rem;
-  background: #FFFFFF;
-  border: 2px solid #008AA8;
+  background: #EBE6D9;
+  border: 2px solid #4B70F6;
   border-radius: 3px;
   margin-inline-end: .5rem;
   padding: .3rem .5rem .3rem .75rem;

@@ -11,7 +11,7 @@
       <ul class="import-project-board-list">
         <li ng-repeat="project in vm.projects | toMutable | orderBy:'name' | filter:vm.searchText as filteredProjects track by project.id" ng-click="vm.selectProject(project)" class="import-project-selector-title">{{project.name}}</li>
       </ul>
-      <div ng-if="vm.projects.size == 0" class="import-project-board-no-projects empty-large"><img src="v-1761561684208/images/empty/empty_tex.png" alt="{{ vm.noProjectsMsg }}" aria-hidden="true" role="presentation"/>
+      <div ng-if="vm.projects.size == 0" class="import-project-board-no-projects empty-large"><img src="v-1761748893813/images/empty/empty_tex.png" alt="{{ vm.noProjectsMsg }}" aria-hidden="true" role="presentation"/>
         <p class="title">{{ vm.noProjectsMsg }}</p>
       </div>
       <div ng-if="vm.projects.size &gt; 0 &amp;&amp; filteredProjects.length == 0" class="import-project-board-no-results empty-filter">

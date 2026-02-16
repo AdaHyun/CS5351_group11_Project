@@ -19,7 +19,7 @@
   padding: 0;
   transition: background .2s; }
   .sprints .add-sprint svg {
-    fill: #E2E3E9;
+    fill: #edcebf;
     height: 1.4rem;
     width: 1.5rem; }
 
@@ -35,7 +35,7 @@
   .sprints .filter-closed-sprints:hover tg-svg {
     fill: #4C566A; }
   .sprints .filter-closed-sprints tg-svg {
-    fill: #008AA8;
+    fill: #4B70F6;
     height: 1rem;
     margin-right: .5rem;
     transition: all .2s ease; }
@@ -78,7 +78,7 @@
     display: flex;
     justify-content: space-between; }
     .sprints .sprint .sprint-summary:hover .edit-sprint {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(235, 230, 217, 0.8);
       opacity: 1;
       transition: all .2s ease-in; }
     .sprints .sprint .sprint-summary .edit-sprint {
@@ -94,7 +94,7 @@
       vertical-align: baseline;
       width: 100%; }
     .sprints .sprint .sprint-summary svg {
-      fill: #008AA8; }
+      fill: #4B70F6; }
       .sprints .sprint .sprint-summary svg:hover {
         transition: fill .2s ease-in; }
   .sprints .sprint .sprint-points {
@@ -135,7 +135,7 @@
   padding: 0 .5rem; }
 
 .sprints .sprint-progress-bar {
-  background-color: #FFFFFF;
+  background-color: #EBE6D9;
   border-radius: 2px;
   box-shadow: inset -2px 1px 3px rgba(46, 52, 64, 0.2);
   height: 11px;
@@ -145,7 +145,7 @@
   position: relative;
   width: 100%; }
   .sprints .sprint-progress-bar .current-progress {
-    background: #008AA8;
+    background: #4B70F6;
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(46, 52, 64, 0.45);
     height: 11px;
@@ -169,7 +169,7 @@
     text-align: center; }
   .sprints .sprint-table .row {
     background: #F9F9FB;
-    border-bottom: 1px solid #D8DEE9;
+    border-bottom: 1px solid #8F3D38;
     display: flex;
     padding: .5em 0;
     text-align: left;
@@ -179,7 +179,7 @@
       cursor: move;
       transition: background .2s ease-in; }
       .sprints .sprint-table .row:hover .us-name-text {
-        color: #008AA8; }
+        color: #4B70F6; }
       .sprints .sprint-table .row:hover .us-ref-text {
         color: #4C566A; }
     .sprints .sprint-table .row:last-child {
@@ -187,7 +187,7 @@
     .sprints .sprint-table .row.readonly {
       cursor: auto; }
     .sprints .sprint-table .row.ui-sortable-helper {
-      background: #fbfefe;
+      background: white;
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
       opacity: .9;
       transition: background .2s ease-in; }
@@ -223,7 +223,7 @@
   .sprints .sprint-table .row.blockedRow .us-name-text {
     color: #E44057; }
   .sprints .sprint-table .row.closedRow:hover {
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .sprints .sprint-table .row.closedRow:hover .column-us,
     .sprints .sprint-table .row.closedRow:hover .column-points {
       opacity: 1; }
@@ -232,7 +232,7 @@
   .sprints .sprint-table .row.closedRow .column-points {
     opacity: .5; }
   .sprints .sprint-table .row.closedRow .us-ref-text {
-    color: #008AA8;
+    color: #4B70F6;
     text-decoration: line-through; }
   .sprints .sprint-table .row.closedRow .us-name-text {
     text-decoration: line-through; }
@@ -294,7 +294,7 @@
   color: #70728F; }
 
 .sprint-closed .sprint-progress-bar .current-progress {
-  background: #008AA8; }
+  background: #4B70F6; }
 
 .sprint-closed .button-gray {
   background: #70728F; }
@@ -310,4 +310,4 @@
     margin-bottom: .5rem;
     text-transform: uppercase; }
   .sprints-empty a {
-    color: #25A28C; }
+    color: #4B70F6; }

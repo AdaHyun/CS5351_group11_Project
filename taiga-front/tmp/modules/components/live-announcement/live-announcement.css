@@ -48,7 +48,7 @@
     color: #2E3440; }
     .live-announcement-inner .warning a {
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-      color: #008AA8; }
+      color: #4B70F6; }
       .live-announcement-inner .warning a:hover {
         color: #4C566A; }
   .live-announcement-inner .close {
@@ -59,7 +59,7 @@
     .live-announcement-inner .close svg {
       width: 2rem;
       height: 2rem;
-      fill: #008AA8;
+      fill: #4B70F6;
       pointer-events: none;
       transition: fill .2s; }
       .live-announcement-inner .close svg:hover {

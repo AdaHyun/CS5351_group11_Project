@@ -8,7 +8,7 @@
   <div class="lb-user-list lb-select-user-list">
     <div ng-repeat="item in collection track by $index">
       <div ng-class="{'is-active': selected.indexOf(item) &gt; -1}" ng-if="item.type != 'role' || item.userIds.length" ng-click="addItem(item)" class="user-list-item">
-        <div class="user-list-avatar"><img style="background: {{ item.avatar.bg }}" ng-src="{{ item.avatar.url }}" ng-if="item.type == 'user'"/><img src="v-1761561684208/images/avatar-role.png" ng-if="item.type == 'role'"/></div>
+        <div class="user-list-avatar"><img style="background: {{ item.avatar.bg }}" ng-src="{{ item.avatar.url }}" ng-if="item.type == 'user'"/><img src="v-1761748893813/images/avatar-role.png" ng-if="item.type == 'role'"/></div>
         <div ng-if="item.type == 'user'" class="user-list-name">{{ item.name }}</div>
         <div ng-if="item.type == 'role'" class="user-list-name"><span class="role">{{ item.name }}</span><span class="users">{{ item.userNames }}</span></div>
         <tg-svg svg-icon="icon-close" ng-if="selected.indexOf(item) &gt; -1" title="{{'LIGHTBOX.SELECT_USER.REMOVE' | translate}}" ng-click="removeItem(item, $event)" class="remove-selected"></tg-svg>

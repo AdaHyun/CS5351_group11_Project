@@ -1,7 +1,7 @@
 
 <% if (vm.visible('assigned_to')) { %>
 <div class="card-assigned-to <%= vm.item.getIn(['model', 'is_iocaine']) ? 'is_iocaine': '' %>"><% if (!vm.item.get('assigned_to') && (!vm.item.get('assigned_users') || !vm.item.get('assigned_users').size)) { %>
-  <div class="card-user-avatar card-not-assigned"><img title="<%= translate('COMMON.ASSIGNED_TO.NOT_ASSIGNED') %>" src="v-1761561684208/images/unnamed.png"/><% if (vm.visible('assigned_to_extended')) { %><span class="card-not-assigned-title"><%= translate('COMMON.ASSIGNED_TO.NOT_ASSIGNED') %></span><% } %></div><% } %>
+  <div class="card-user-avatar card-not-assigned"><img title="<%= translate('COMMON.ASSIGNED_TO.NOT_ASSIGNED') %>" src="v-1761748893813/images/unnamed.png"/><% if (vm.visible('assigned_to_extended')) { %><span class="card-not-assigned-title"><%= translate('COMMON.ASSIGNED_TO.NOT_ASSIGNED') %></span><% } %></div><% } %>
   <% if (vm.item.get('assigned_to') || (vm.item.get('assigned_users') && vm.item.get('assigned_users').size)) { %>
   <% if (vm.item.get('assigned_users_preview')) { %>
   <% _.forEach(vm.item.get('assigned_users_preview').toJS(), function(assignedUser, index) { %>

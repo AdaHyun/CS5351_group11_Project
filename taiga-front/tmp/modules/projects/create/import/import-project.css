@@ -4,17 +4,17 @@
 /* Do not use this except for the main layout */
 .import-project-from-site {
   align-items: center;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #edcebf;
   color: #434456;
   cursor: pointer;
   display: flex;
   padding: 1rem;
   position: relative; }
   .import-project-from-site:hover {
-    background: rgba(0, 138, 168, 0.1);
+    background: rgba(75, 112, 246, 0.1);
     transition: background .3s ease-in; }
   .import-project-from-site:first-child {
-    border-top: 1px solid #E2E3E9; }
+    border-top: 1px solid #edcebf; }
     .import-project-from-site:first-child .import-project-name {
       margin: 0; }
     .import-project-from-site:first-child .import-project-logo img {
@@ -38,7 +38,7 @@
   font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
   margin-bottom: 0; }
   .import-project-description a {
-    color: #008AA8;
+    color: #4B70F6;
     margin-left: .3rem; }
 
 .import-project-url {
@@ -51,6 +51,6 @@
     margin-right: .5rem; }
 
 .import-project-button {
-  background: #008AA8;
+  background: #4B70F6;
   color: #fff;
   padding: .4rem 1rem; }

@@ -129,7 +129,7 @@ table {
 * {
   box-sizing: border-box; }
   *:focus {
-    outline: 1px dotted #008AA8; }
+    outline: 1px dotted #4B70F6; }
 
 html {
   min-height: 100%;
@@ -141,8 +141,10 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   width: 100%; }
-  body .master.ng-animate {
-    transition: 0; }
+  body .master {
+    background-color: #EBE6D9; }
+    body .master.ng-animate {
+      transition: 0; }
   body.loading-project {
     overflow: hidden; }
 
@@ -188,18 +190,18 @@ tg-svg {
     padding: 0; }
     .menu-secondary li .active {
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-      background: #FFFFFF; }
+      background: #EBE6D9; }
       .menu-secondary li .active a {
-        color: #008AA8; }
+        color: #4B70F6; }
       .menu-secondary li .active:hover {
-        background: #FFFFFF; }
+        background: #EBE6D9; }
         .menu-secondary li .active:hover a {
           font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
           color: #70728F; }
 
 .menu-tertiary {
   width: 300px;
-  background-color: #D8DEE9;
+  background-color: #8F3D38;
   border-right: 1px solid #bdbdcd;
   flex: 0 0 auto;
   min-height: calc(100vh - 48px); }
@@ -225,11 +227,11 @@ tg-svg {
     background: #E5E9F0;
     color: #70728F; }
   .menu-tertiary ul li.active {
-    background: #008AA8; }
+    background: #4B70F6; }
     .menu-tertiary ul li.active a {
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
       background: #E5E9F0;
-      color: #008AA8; }
+      color: #4B70F6; }
       .menu-tertiary ul li.active a:hover,
       .menu-tertiary ul li.active a:hover a {
         background: #E5E9F0;

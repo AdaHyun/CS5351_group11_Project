@@ -3,8 +3,8 @@
 ***********************/
 /* Do not use this except for the main layout */
 .check {
-  background-color: #D8DEE9;
-  border: 2px solid #D8DEE9;
+  background-color: #8F3D38;
+  border: 2px solid #8F3D38;
   border-radius: 24px;
   cursor: pointer;
   height: 18px;
@@ -13,10 +13,10 @@
   transition: all .2s linear;
   width: 32px; }
   .check.active div {
-    background-color: #008AA8;
+    background-color: #4B70F6;
     transition: all .2s linear; }
     .check.active div::before {
-      background-color: #FFFFFF;
+      background-color: #EBE6D9;
       left: calc(90% - 10px); }
   .check input {
     cursor: pointer;
@@ -32,7 +32,7 @@
     position: relative;
     width: 100%; }
     .check div::before {
-      background-color: #FFFFFF;
+      background-color: #EBE6D9;
       border-radius: 50%;
       content: '';
       height: 10px;
@@ -48,8 +48,8 @@
     .check input:checked:disabled + div {
       opacity: .3; }
   .check input:checked + div {
-    background-color: #008AA8;
+    background-color: #4B70F6;
     transition: all .2s linear; }
     .check input:checked + div::before {
-      background-color: #FFFFFF;
+      background-color: #EBE6D9;
       left: calc(90% - 10px); }

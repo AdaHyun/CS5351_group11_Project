@@ -100,7 +100,7 @@
   .icon-button-primary[disabled],
   .form-button[disabled],
   .filter-button[disabled] {
-    background-color: #D8DEE9;
+    background-color: #8F3D38;
     box-shadow: none;
     color: rgba(46, 52, 64, 0.5);
     cursor: not-allowed; }
@@ -135,7 +135,7 @@
     .icon-button-primary[disabled]:hover,
     .form-button[disabled]:hover,
     .filter-button[disabled]:hover {
-      background-color: #D8DEE9;
+      background-color: #8F3D38;
       color: currentColor; }
   .button.button-large,
   .button-large.button-green,
@@ -249,7 +249,7 @@
   border-radius: 0;
   color: #16171D; }
   .menu-button:hover {
-    background: #E2E3E9;
+    background: #edcebf;
     color: #5A5B72; }
   .menu-button:visited {
     color: #16171D; }
@@ -258,7 +258,7 @@
 
 .button-blackish {
   background: #16171D;
-  color: #E2E3E9; }
+  color: #edcebf; }
   .button-blackish:hover {
     background: #16171D;
     color: #fff; }
@@ -300,7 +300,7 @@
 
 .tribe-more-info {
   font-size: .875rem;
-  color: #25A28C;
+  color: #4B70F6;
   display: inline-block;
   margin-top: .5rem; }
 
@@ -309,18 +309,18 @@
 
 .button-group {
   background-color: #F9F9FB;
-  border-bottom: 1px solid #008AA8;
+  border-bottom: 1px solid #4B70F6;
   display: flex;
   margin-bottom: 1rem;
   width: 100%; }
   .button-group input {
     display: none; }
     .button-group input:checked + label {
-      background-color: #FFFFFF;
-      border: 1px solid #008AA8;
-      border-bottom: 1px solid #FFFFFF;
+      background-color: #EBE6D9;
+      border: 1px solid #4B70F6;
+      border-bottom: 1px solid #EBE6D9;
       border-radius: 4px 4px 0 0;
-      color: #008AA8; }
+      color: #4B70F6; }
     .button-group input + label {
       font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
       font-weight: 500;
@@ -332,12 +332,12 @@
       position: relative;
       top: 1px; }
     .button-group input + label:hover {
-      color: #008AA8; }
+      color: #4B70F6; }
 
 .button-check input {
   display: none; }
   .button-check input:checked + label {
-    background-color: #008AA8;
+    background-color: #4B70F6;
     transition: background .3s linear; }
 
 .button-check label {
@@ -355,11 +355,11 @@
   background: #83EEDE;
   padding: .25rem; }
   .button-primary:hover {
-    background: #008AA8;
-    color: #FFFFFF; }
+    background: #4B70F6;
+    color: #EBE6D9; }
 
 .button-secondary {
-  background: #D8DEE9;
+  background: #8F3D38;
   color: #4C566A; }
 
 .icon-button-primary {
@@ -374,29 +374,29 @@
   .form-button .icon {
     width: 1rem;
     height: 1rem;
-    fill: #008AA8;
+    fill: #4B70F6;
     margin: 0; }
   .form-button:hover {
-    background: #D8DEE9; }
+    background: #8F3D38; }
 
 .filter-button {
   background: #F9F9FB;
-  color: #008AA8;
+  color: #4B70F6;
   padding: 7px 1rem;
   text-transform: none; }
   .filter-button .text {
     color: currentColor; }
   .filter-button svg {
-    fill: #008AA8; }
+    fill: #4B70F6; }
   .filter-button:hover, .filter-button.active {
-    background: #D8DEE9;
-    color: #008AA8; }
+    background: #8F3D38;
+    color: #4B70F6; }
   .filter-button .selected-filters {
     font-size: .7rem;
     align-items: center;
     background-color: #E44057;
     border-radius: 50%;
-    color: #FFFFFF;
+    color: #EBE6D9;
     display: flex;
     height: 1rem;
     justify-content: center;

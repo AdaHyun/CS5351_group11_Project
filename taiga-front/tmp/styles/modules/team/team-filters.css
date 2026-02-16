@@ -25,20 +25,20 @@
     opacity: 0;
     transition: opacity .3s linear; }
   .menu-secondary .team-filters li:hover {
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .menu-secondary .team-filters li:hover a {
       font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
       color: #70728F; }
   .menu-secondary .team-filters li.active {
     font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
-    background: #FFFFFF; }
+    background: #EBE6D9; }
     .menu-secondary .team-filters li.active a {
-      color: #008AA8; }
+      color: #4B70F6; }
     .menu-secondary .team-filters li.active .icon {
-      fill: #008AA8;
+      fill: #4B70F6;
       opacity: 1; }
     .menu-secondary .team-filters li.active:hover {
-      background: #FFFFFF; }
+      background: #EBE6D9; }
       .menu-secondary .team-filters li.active:hover a {
         font-family: 'Ubuntu-Medium', Arial, Helvetica, sans-serif;
         color: #70728F; }
